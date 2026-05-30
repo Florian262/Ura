@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-technical: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  
+  /* Studio Print Theme Palette */
+  --color-brand-indigo: #ffffff;     /* White container surfaces */
+  --color-brand-slate: #111315;      /* Charcoal Black typography */
+  --color-brand-amber: #2D4A36;      /* Deep Forest Green Active Accent */
+  --color-brand-tiger: #636B74;      /* Slate Charcoal secondary captions */
+  --color-brand-cayenne: #c0392b;    /* Clean Crimson danger */
+  
+  --color-brand-dark: #fbfbf9;       /* warm paper backdrop base */
+  --color-brand-darker: #FBFBF9;     /* Primary Warm Bone Canvas Background */
+}
+
+/* Custom base adjustments for the Editorial System */
+:root {
+  font-family: var(--font-sans);
+  background-color: var(--color-brand-darker);
+  color: var(--color-brand-slate);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--color-brand-darker);
+}
+
+/* Pristine Editorial Glass Panels & Cards - Sharp Corners, Hairline Borders */
+.glass-panel {
+  background: #ffffff;
+  border: 1px solid #DDE1E5; /* Concrete Hairline Divider */
+}
+
+.glass-card {
+  background: #ffffff;
+  border: 1px solid #DDE1E5;
+  border-radius: 0px !important; /* Anti-Slop sharp corners rule */
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+  box-shadow: none !important; /* No box shadows */
+}
+
+.glass-card:hover {
+  border-color: #111315;
+  background-color: #ffffff;
+  transform: none; /* Avoid childish translation lifts */
+  box-shadow: none !important;
+}
+
+/* Custom shared Balkanism indicator grids */
+.balkan-card {
+  background: #fcfcfb;
+  border: 1px solid rgba(45, 74, 54, 0.25);
+  border-radius: 0px !important;
+}
+
+.balkan-card:hover {
+  background: #f4f7f4;
+  border-color: #2D4A36;
+}
+
+/* Custom character key helping rows - sharp and professional */
+.char-key {
+  border: 1px solid #DDE1E5;
+  border-radius: 0px !important;
+  background: #ffffff;
+  color: #111315;
+}
+
+.char-key:hover {
+  background: #DDE1E5;
+  color: #2D4A36;
+  border-color: #2D4A36;
+}
+
+/* Suffix tag highlights matching user preferences */
+.suffix-highlight {
+  font-family: var(--font-technical);
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  color: #2D4A36; /* Deep forest green suffix highlighting */
+}
+
+/* Translation subtitle exactly 2 font-sizes smaller, italic, neutral-600 */
+.translation-subtitle {
+  font-size: 0.825em;
+  font-style: italic;
+  color: #636B74;
+  font-weight: 500;
+  display: block;
+  margin-top: 2px;
+}
+
+/* Giant background typography watermark running vertically */
+.curriculum-watermark {
+  position: absolute;
+  right: 1.5rem;
+  top: 10%;
+  font-size: 11rem;
+  font-weight: 900;
+  color: rgba(221, 225, 229, 0.4);
+  pointer-events: none;
+  user-select: none;
+  writing-mode: vertical-rl;
+  z-index: 0;
+  font-family: var(--font-sans);
+  letter-spacing: -0.05em;
+}
+
+/* Professional Active Tap Immediate Shift (0ms transition lag) */
+.active-cta {
+  background-color: #2D4A36;
+  color: #ffffff;
+  border-radius: 0px !important;
+  transition: none !important; /* Anti-slop 0ms click lag */
+}
+
+.active-cta:active {
+  background-color: #1F3325 !important;
+}
+
+/* Scrollbar customizations matching muted slate aesthetics */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FBFBF9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DDE1E5;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #636B74;
+}
+
+/* Custom fade-in layouts */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Premium Balkan Slate & Olive - Academic Night Mode Theme Overrides */
+body.dark-theme {
+  background-color: #111214 !important;
+  color: #F3F4F6 !important;
+  
+  --color-brand-indigo: #181A1D;     /* Dark Canvas backdrop */
+  --color-brand-slate: #F3F4F6;      /* Deep UI Ink (Headlines, primary texts) */
+  --color-brand-amber: #4A7253;      /* Academic Dark Olive Accent (CTA Buttons) */
+  --color-brand-tiger: #9CA3AF;      /* Secondary Slate (Subtitles, translations) */
+  --color-brand-cayenne: #E57373;    /* Danger Crimson */
+  --color-brand-dark: #1E2227;       /* Container base background */
+  --color-brand-darker: #111214;     /* Primary Canvas Background */
+}
+
+/* Redefine editorial panels & cards */
+.dark-theme .glass-panel {
+  background: #181A1D !important;
+  border-color: #2D3136 !important;
+}
+
+.dark-theme .glass-card {
+  background: #181A1D !important;
+  border-color: #2D3136 !important;
+}
+
+.dark-theme .glass-card:hover {
+  border-color: #4A7253 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+}
+
+.dark-theme .balkan-card {
+  background: #19211B !important;
+  border-color: rgba(74, 114, 83, 0.35) !important;
+}
+
+.dark-theme .balkan-card:hover {
+  background: #202D23 !important;
+  border-color: #4A7253 !important;
+}
+
+.dark-theme .char-key {
+  background: #181A1D !important;
+  border-color: #2D3136 !important;
+  color: #F3F4F6 !important;
+}
+
+.dark-theme .char-key:hover {
+  background: #2D3136 !important;
+  color: #4A7253 !important;
+  border-color: #4A7253 !important;
+}
+
+.dark-theme .suffix-highlight {
+  color: #4A7253 !important;
+}
+
+.dark-theme .translation-subtitle {
+  color: #9CA3AF !important;
+}
+
+.dark-theme .active-cta {
+  background-color: #4A7253 !important;
+  color: #ffffff !important;
+}
+
+.dark-theme .active-cta:active {
+  background-color: #36533C !important;
+}
+
+.dark-theme .curriculum-watermark {
+  color: rgba(45, 49, 54, 0.25) !important;
+}
+
+/* Dynamically override absolute tailwind color classes in dark mode */
+.dark-theme .bg-white {
+  background-color: #181A1D !important;
+}
+
+.dark-theme .bg-neutral-50 {
+  background-color: #111214 !important;
+}
+
+.dark-theme .bg-\[\#FAFAFA\] {
+  background-color: #111214 !important;
+}
+
+.dark-theme .bg-\[\#3A5A40\] {
+  background-color: #4A7253 !important;
+}
+
+.dark-theme .bg-\[\#3A5A40\]\/10 {
+  background-color: rgba(74, 114, 83, 0.15) !important;
+}
+
+.dark-theme .bg-\[\#3A5A40\]\/15 {
+  background-color: rgba(74, 114, 83, 0.25) !important;
+}
+
+.dark-theme .bg-\[\#c0392b\]\/10 {
+  background-color: rgba(229, 115, 115, 0.15) !important;
+}
+
+.dark-theme .bg-\[\#c0392b\]\/15 {
+  background-color: rgba(229, 115, 115, 0.25) !important;
+}
+
+.dark-theme .text-\[\#1A1D20\] {
+  color: #F3F4F6 !important;
+}
+
+.dark-theme .text-\[\#565E64\] {
+  color: #9CA3AF !important;
+}
+
+.dark-theme .text-\[\#3A5A40\] {
+  color: #5A8F65 !important;
+}
+
+.dark-theme .text-\[\#c0392b\] {
+  color: #E57373 !important;
+}
+
+.dark-theme .border-\[\#E9ECEF\] {
+  border-color: #2D3136 !important;
+}
+
+.dark-theme .border-r-\[\#E9ECEF\] {
+  border-color: #2D3136 !important;
+}
+
+.dark-theme .border-b-\[\#E9ECEF\] {
+  border-color: #2D3136 !important;
+}
+
+.dark-theme .border-t-\[\#E9ECEF\] {
+  border-color: #2D3136 !important;
+}
+
+.dark-theme .border-\[\#c0392b\] {
+  border-color: #E57373 !important;
+}
+
+.dark-theme input, .dark-theme textarea, .dark-theme select {
+  background-color: #181A1D !important;
+  color: #F3F4F6 !important;
+  border-color: #2D3136 !important;
+}
+
+.dark-theme input:focus, .dark-theme textarea:focus, .dark-theme select:focus {
+  border-color: #4A7253 !important;
+}
+
+.dark-theme .hover\:bg-neutral-50:hover {
+  background-color: #2D3136 !important;
+}
+
+.dark-theme .hover\:bg-\[\#E9ECEF\]\/50:hover {
+  background-color: #2D3136 !important;
+}
+
+.dark-theme .hover\:border-\[\#3A5A40\]:hover {
+  border-color: #4A7253 !important;
+}
+
+/* Custom scrollbar adjustments in dark mode */
+.dark-theme ::-webkit-scrollbar-track {
+  background: #111214 !important;
+}
+
+.dark-theme ::-webkit-scrollbar-thumb {
+  background: #2D3136 !important;
+}
+
+.dark-theme ::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF !important;
+}
