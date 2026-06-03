@@ -18,6 +18,14 @@ test-results/
 playwright-report
 playwright-report/
 
+# Local planning & thought files
+task.md
+implementation_plan.md
+walkthrough.md
+Specifications.txt
+Thoughts/
+Thoughts
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
