@@ -1,0 +1,33 @@
+To look professional, premium educational apps avoid bright, saturated childish blues, cartoonish avatars, and messy gradients. Instead, they rely on editorial layout proportions, sharp typography, high-contrast states, and plenty of clean negative space.Here is the complete layout, palette, and structural design specification for your Landing Page.1. The Editorial Palette (Theme Consistency)We will use a professional "Balkan Slate & Olive" theme. It feels grounded, academic, and highly sophisticated.ElementHex CodeTailwind v4 EquivalentPurpose / ApplicationPrimary Canvas#FAFAFAbg-neutral-50Global background. Extremely clean white-gray that prevents eye strain.Deep Text & UI Ink#1A1D20text-neutral-900Headlines, primary text, and heavy structural borders.Secondary Slate#565E64text-neutral-600Subtitles, translations, and secondary explanations.Muted Borders#E9ECEFborder-neutral-200Subtle hairline dividers, card boundaries, and inactive elements.The Accent (Olive)#3A5A40bg-emerald-800Call to Action Buttons only. A rich, academic dark olive/emerald that signals authority and quality.2. Visual Layout Wireframe (ASCII Diagram)This is a mobile-first responsive layout design. On desktop, this centers beautifully as a clean editorial column.┌────────────────────────────────────────────────────────┐
+│                        (Top Bar)                       │
+│  [AL-TR]                                   v1.0 Offline│
+├────────────────────────────────────────────────────────┤
+│                                                        │
+│                                                        │
+│                  MËSO TURQISHT                         │ ◄── 700 Bold, Uppercase, Tracked out
+│                  NGA SHQIPJA.                          │
+│                                                        │
+│                  Në çdo kohë.                          │
+│                  Plotësisht offline.                   │ ◄── 400 Regular, Slate Gray
+│                                                        │
+│                                                        │
+│              ┌──────────────────────────┐              │
+│              │    [I] GJUHË E PASHKËPUTUR│              │ ◄── Mini Feature Badge: Hairline border,
+│              └──────────────────────────┘              │     explains zero-data-needed benefit
+│                                                        │
+│                                                        │
+│              ┌──────────────────────────┐              │
+│              │                          │              │
+│              │      FILLO MËSIMIN       │              │ ◄── Accent Accent Accent (Rich Olive)
+│              │                          │              │     Solid, 0px border radius, sharp corners
+│              └──────────────────────────┘              │
+│                                                        │
+│                                                        │
+│  ────────────────────────────────────────────────────  │ ◄── Hairline Divider
+│                                                        │
+│  [✓] Kurrikula e plotë A1 - C2                          │
+│  [✓] Strukturuar për folësit shqiptarë                 │ ◄── Semantic Meta-Points (300 Weight)
+│  [✓] 100% Privatësi e të dhënave vendase               │
+│                                                        │
+└────────────────────────────────────────────────────────┘
+3. Section-by-Section Code & Design RulesA. The Typography SystemThe Main Headline: Set your main text block to font-sans font-bold tracking-tight uppercase. Use a solid text scale ratio. The Turkish and Albanian relationship should feel architectural.The Translation Styling: Anytime a Turkish word is presented on this page as an example, the Albanian subtitle must be exactly 2 structural font-sizes smaller, styled in italic text-neutral-500 font-medium.B. Button Architecture (Anti-Slop Rule)No Rounded Corners: Avoid pill-shaped buttons or heavy rounded-xl corners. Use rounded-none or a highly conservative rounded-sm (2px). Sharp edges scream "custom professional software tool," whereas heavy roundness feels like a generic template.Hover & Active Feedback: Because this is an offline app, interaction speed is your superpower. Give your primary CTA button an immediate, crisp color shift on click:Default: bg-[#3A5A40] text-white font-medium tracking-wideActive/Tap: bg-[#2A3F2E] (immediate shift with 0ms transition lag)C. The Background "Watermark" Asset (Optional)If you want a subtle background visual element so the page doesn't feel entirely blank:Do not use an AI-generated image of a book, a mosque, or an Albanian eagle.Instead, use a pure geometric vector pattern or low-opacity typography watermark running vertically down the right edge of the screen—for example, the letters "A1 ➔ C2" typed out in a massive, ultra-light gray (text-neutral-100/40 text-9xl font-black) that sits entirely behind your text content layers.
