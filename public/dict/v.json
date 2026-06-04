@@ -1,0 +1,72 @@
+[
+  {
+    "id": "dict-tr-67",
+    "source": "tr",
+    "word": "vermek",
+    "translation": "jap",
+    "pos": "folje",
+    "inflection": "(-i / -e)",
+    "notes": "Kërkon dhanoren (-e) për marrësin dhe kallzoren (-i) për gjënë që jepet.",
+    "senses": [
+      "Lëshoj ose dorëzoj diçka në duart e dikujt tjetër.",
+      "Paguaj ose shpenzoj një shumë.",
+      "Krijoj ose shkaktoj një rezultat (p.sh. jap vendim, jap provim)."
+    ],
+    "examples": [
+      {
+        "source": "Kitabı ona vermek",
+        "target": "Ia jap atij librin (librin atij jap)"
+      },
+      {
+        "source": "Karar vermek",
+        "target": "Jap vendim (vendos)"
+      },
+      {
+        "source": "Borç vermek",
+        "target": "Jap hua (borxh)"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "veri",
+        "translation": "të dhëna (data)",
+        "pos": "emër"
+      },
+      {
+        "word": "verici",
+        "translation": "dhënës, transmetues",
+        "pos": "emër"
+      },
+      {
+        "word": "verimli",
+        "translation": "produktiv, pjellor",
+        "pos": "mbiemër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-68",
+    "source": "tr",
+    "word": "vatan",
+    "translation": "atdhe, vatan",
+    "pos": "emër",
+    "inflection": "-ı",
+    "is_balkan": true,
+    "senses": [
+      "Vendi ose shteti ku një person ka lindur dhe ka lidhje qytetare e historike; atdhe."
+    ],
+    "examples": [
+      {
+        "source": "Vatan sevgisi",
+        "target": "Dashuria ndaj atdheut"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "vatandaş",
+        "translation": "shtetas, bashkëqytetar",
+        "pos": "emër"
+      }
+    ]
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "dict-tr-57",
+    "source": "tr",
+    "word": "okul",
+    "translation": "shkollë",
+    "pos": "emër",
+    "inflection": "-u",
+    "senses": [
+      "Institucion publik ose privat ku zhvillohet mësimi dhe edukimi i nxënësve."
+    ],
+    "examples": [
+      {
+        "source": "Okula gitmek",
+        "target": "Shkoj në shkollë"
+      },
+      {
+        "source": "İlkokul",
+        "target": "Shkollë fillore"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "okullu",
+        "translation": "nxënës shkolle",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-58",
+    "source": "tr",
+    "word": "oda",
+    "translation": "dhomë, oda",
+    "pos": "emër",
+    "inflection": "-yı",
+    "is_balkan": true,
+    "senses": [
+      "Hapësirë e ndarë me mure brenda një shtëpie ose ndërtese."
+    ],
+    "examples": [
+      {
+        "source": "Oturma odası",
+        "target": "Dhomë ndenjeje"
+      },
+      {
+        "source": "Yatak odası",
+        "target": "Dhomë gjumi"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-59",
+    "source": "tr",
+    "word": "okumak",
+    "translation": "lexoj, studioj",
+    "pos": "folje",
+    "inflection": "(-i)",
+    "senses": [
+      "Shqiptoj ose kuptoj shkronjat e shkruara në një dokument ose libër; lexoj.",
+      "Vazhdoj arsimin në një institucion (p.sh. studioj gjuhësi)."
+    ],
+    "examples": [
+      {
+        "source": "Kitap okumak",
+        "target": "Lexoj libër"
+      },
+      {
+        "source": "Üniversitede okumak",
+        "target": "Studioj në universitet"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "okuma",
+        "translation": "lexim",
+        "pos": "emër"
+      },
+      {
+        "word": "okuryazar",
+        "translation": "i shkolluar (shkrim e këndim)",
+        "pos": "mbiemër"
+      }
+    ]
+  }
+]

@@ -40,9 +40,9 @@ export const ExerciseModule: React.FC = () => {
     };
 
     return (
-      <div className="bg-neutral-50 border border-[#E9ECEF] rounded-none p-5 space-y-4">
+      <div className="bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-5 space-y-4 shadow-inner animate-fade-in">
         <div>
-          <span className="text-[9px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-none uppercase tracking-wider">
+          <span className="text-[9px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-md uppercase tracking-wider shadow-xs">
             Lloji A: Skuadra e Shumësit (Zgjedhje e Shumëfishtë)
           </span>
           <p className="text-sm font-light text-[#565E64] mt-2">{ex.prompt_albanian}</p>
@@ -51,12 +51,12 @@ export const ExerciseModule: React.FC = () => {
         <div className="grid grid-cols-2 gap-3 max-w-md">
           {payload.options.map((opt: string) => {
             const isSelected = multipleChoiceAnswer === opt;
-            let optStyle = 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50';
+            let optStyle = 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50 rounded-xl hover:shadow-xs';
             
-            if (isSelected) optStyle = 'bg-[#3A5A40]/10 border-[#3A5A40] text-[#3A5A40] font-bold';
+            if (isSelected) optStyle = 'bg-[#3A5A40]/10 border-[#3A5A40] text-[#3A5A40] font-bold rounded-xl shadow-xs';
             if (isChecked) {
-              if (opt === target.correct_answer) optStyle = 'bg-emerald-100/50 border-emerald-500 text-emerald-800 font-bold';
-              else if (isSelected) optStyle = 'bg-rose-100/50 border-rose-500 text-rose-800';
+              if (opt === target.correct_answer) optStyle = 'bg-emerald-100/50 border-emerald-500 text-emerald-800 font-bold rounded-xl shadow-xs';
+              else if (isSelected) optStyle = 'bg-rose-100/50 border-rose-500 text-rose-800 rounded-xl shadow-xs';
             }
 
             return (
@@ -64,7 +64,7 @@ export const ExerciseModule: React.FC = () => {
                 key={opt}
                 disabled={isChecked}
                 onClick={() => setMultipleChoiceAnswer(opt)}
-                className={`p-3 rounded-none border text-xs text-left font-technical transition duration-200 cursor-pointer ${optStyle}`}
+                className={`p-3 border text-xs text-left font-technical transition duration-200 cursor-pointer ${optStyle}`}
               >
                 {opt}
               </button>
@@ -75,7 +75,7 @@ export const ExerciseModule: React.FC = () => {
         {!isChecked ? (
           <button
             onClick={checkAnswer}
-            className="px-4 py-2.5 bg-white border border-[#E9ECEF] text-[#1A1D20] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-none text-xs font-bold transition cursor-pointer"
+            className="px-4 py-2.5 bg-white border border-[#E9ECEF] text-[#1A1D20] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-xl text-xs font-bold transition cursor-pointer shadow-xs hover:shadow-xs"
           >
             Kontrollo Shumësin
           </button>
@@ -133,16 +133,16 @@ export const ExerciseModule: React.FC = () => {
     };
 
     return (
-      <div className="bg-neutral-50 border border-[#E9ECEF] rounded-none p-5 space-y-4">
+      <div className="bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-5 space-y-4 shadow-inner animate-fade-in">
         <div>
-          <span className="text-[9px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-none uppercase tracking-wider">
+          <span className="text-[9px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-md uppercase tracking-wider shadow-xs">
             Lloji B: Ndërtuesi i Sintaksës (Radhitja e Fjalëve)
           </span>
           <p className="text-sm font-light text-[#565E64] mt-2">{ex.prompt_albanian}</p>
         </div>
 
         {/* Placing slots display */}
-        <div className="bg-white border border-[#E9ECEF] rounded-none p-4 min-h-[50px] flex items-center justify-start gap-2 flex-wrap">
+        <div className="bg-white border border-[#E9ECEF] rounded-xl p-4 min-h-[50px] flex items-center justify-start gap-2 flex-wrap shadow-xs">
           {sortedWords.length === 0 ? (
             <span className="text-xs text-neutral-400 italic">Shtypni fjalët e mëposhtme për t'i vendosur këtu sipas radhës...</span>
           ) : (
@@ -151,12 +151,12 @@ export const ExerciseModule: React.FC = () => {
                 key={w}
                 disabled={isChecked}
                 onClick={() => handleWordTap(w, true)}
-                className={`px-3 py-1.5 rounded-none border text-xs font-bold font-technical cursor-pointer transition duration-200 ${
+                className={`px-3 py-1.5 rounded-lg border text-xs font-bold font-technical cursor-pointer transition duration-200 shadow-xs ${
                   isChecked 
                     ? result.correct
                       ? 'bg-emerald-100/50 border-emerald-500 text-emerald-800'
                       : 'bg-rose-100/50 border-rose-500 text-rose-800'
-                    : 'bg-[#3A5A40]/10 border-[#3A5A40]/30 text-[#3A5A40] hover:bg-[#3A5A40]/20'
+                    : 'bg-[#3A5A40]/10 border-[#3A5A40]/30 text-[#3A5A40] hover:bg-[#3A5A40]/25'
                 }`}
               >
                 {w}
@@ -172,7 +172,7 @@ export const ExerciseModule: React.FC = () => {
               <button
                 key={w}
                 onClick={() => handleWordTap(w, false)}
-                className="px-3 py-1.5 rounded-none border border-[#E9ECEF] bg-white hover:bg-neutral-50 text-xs font-bold font-technical text-[#565E64] cursor-pointer transition duration-200"
+                className="px-3 py-1.5 rounded-lg border border-[#E9ECEF] bg-white hover:bg-neutral-50 text-xs font-bold font-technical text-[#565E64] cursor-pointer transition duration-200 shadow-xs hover:-translate-y-0.5"
               >
                 {w}
               </button>
@@ -185,7 +185,7 @@ export const ExerciseModule: React.FC = () => {
           <div className="flex gap-2">
             <button
               onClick={checkAnswer}
-              className="px-4 py-2.5 bg-white border border-[#E9ECEF] text-[#1A1D20] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-none text-xs font-bold transition cursor-pointer"
+              className="px-4 py-2.5 bg-white border border-[#E9ECEF] text-[#1A1D20] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-xl text-xs font-bold transition cursor-pointer shadow-xs hover:shadow"
             >
               Kontrollo Sintaksën
             </button>
@@ -209,7 +209,7 @@ export const ExerciseModule: React.FC = () => {
                   setCheckedExercises(prev => ({ ...prev, [ex.id]: false }));
                   resetSorting();
                 }}
-                className="px-3 py-1.5 bg-white border border-[#E9ECEF] text-[#565E64] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-none text-xs font-bold cursor-pointer"
+                className="px-3 py-1.5 bg-white border border-[#E9ECEF] text-[#565E64] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-lg text-xs font-bold cursor-pointer shadow-xs"
               >
                 Provo Përsëri
               </button>
@@ -247,24 +247,24 @@ export const ExerciseModule: React.FC = () => {
     };
 
     return (
-      <div className="bg-neutral-50 border border-[#E9ECEF] rounded-none p-5 space-y-4">
+      <div className="bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-5 space-y-4 shadow-inner animate-fade-in">
         <div>
-          <span className="text-[9px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-none uppercase tracking-wider">
+          <span className="text-[9px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-md uppercase tracking-wider shadow-xs">
             Lloji C: Ndërtuesi i Prapashtesave (Agglutination Builder)
           </span>
           <p className="text-sm font-light text-[#565E64] mt-2">{ex.prompt_albanian}</p>
         </div>
 
         {/* Dynamic visual merging canvas */}
-        <div className="bg-white border border-[#E9ECEF] rounded-none p-6 flex justify-center items-center">
-          <div className="flex items-center gap-2 text-xl font-technical">
-            <span className="px-4 py-2 border border-[#E9ECEF] bg-neutral-50 text-[#1A1D20] rounded-none font-semibold uppercase">
+        <div className="bg-white border border-[#E9ECEF] rounded-2xl p-6 flex justify-center items-center shadow-xs">
+          <div className="flex flex-wrap justify-center items-center gap-2 text-xl font-technical">
+            <span className="px-4 py-2 border border-[#E9ECEF] bg-neutral-50 text-[#1A1D20] rounded-xl font-semibold uppercase shadow-xs">
               {payload.root}
             </span>
             <span className="text-[#3A5A40] font-black">+</span>
             
             {/* Suffix slot */}
-            <div className={`px-4 py-2 border border-dashed rounded-none min-w-[70px] text-center font-bold transition duration-200 ${
+            <div className={`px-4 py-2 border border-dashed rounded-xl min-w-[70px] text-center font-bold transition duration-200 shadow-xs ${
               builderSuffix 
                 ? isChecked
                   ? result.correct
@@ -279,7 +279,7 @@ export const ExerciseModule: React.FC = () => {
             {builderSuffix && (
               <>
                 <span className="text-neutral-400 font-bold">=</span>
-                <span className={`px-4 py-2 border rounded-none font-extrabold tracking-wide uppercase ${
+                <span className={`px-4 py-2 border rounded-xl font-extrabold tracking-wide uppercase shadow-md ${
                   isChecked
                     ? result.correct
                       ? 'bg-emerald-100/55 border-emerald-500 text-emerald-800'
@@ -300,7 +300,7 @@ export const ExerciseModule: React.FC = () => {
               <button
                 key={suff}
                 onClick={() => setBuilderSuffix(suff)}
-                className={`px-3 py-1.5 rounded-none border text-xs font-bold font-technical cursor-pointer transition duration-200 ${
+                className={`px-3 py-1.5 rounded-lg border text-xs font-bold font-technical cursor-pointer transition duration-200 shadow-xs ${
                   builderSuffix === suff
                     ? 'bg-[#3A5A40] text-white border-[#3A5A40]'
                     : 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50'
@@ -317,7 +317,7 @@ export const ExerciseModule: React.FC = () => {
           <div className="flex justify-center">
             <button
               onClick={checkAnswer}
-              className="px-4 py-2.5 bg-white border border-[#E9ECEF] text-[#1A1D20] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-none text-xs font-bold transition cursor-pointer"
+              className="px-4 py-2.5 bg-white border border-[#E9ECEF] text-[#1A1D20] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-xl text-xs font-bold transition cursor-pointer shadow-xs hover:shadow"
             >
               Bashko & Kontrollo
             </button>
@@ -333,7 +333,7 @@ export const ExerciseModule: React.FC = () => {
                   setCheckedExercises(prev => ({ ...prev, [ex.id]: false }));
                   setBuilderSuffix('');
                 }}
-                className="px-3 py-1.5 bg-white border border-[#E9ECEF] text-[#565E64] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-none text-xs font-bold cursor-pointer"
+                className="px-3 py-1.5 bg-white border border-[#E9ECEF] text-[#565E64] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-lg text-xs font-bold cursor-pointer shadow-xs"
               >
                 Provo Përsëri
               </button>
@@ -357,7 +357,7 @@ export const ExerciseModule: React.FC = () => {
   };
 
   return (
-    <div className="glass-panel rounded-none p-6 md:p-8 bg-white border border-[#E9ECEF] space-y-8">
+    <div className="glass-panel rounded-2xl p-6 md:p-8 bg-white border border-[#E9ECEF] space-y-8 shadow-sm">
       
       <div className="mb-6 pb-4 border-b border-[#E9ECEF]">
         <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-widest">Sekuenca 5</span>
@@ -379,7 +379,7 @@ export const ExerciseModule: React.FC = () => {
       <div className="pt-6 border-t border-[#E9ECEF] flex justify-end">
         <button
           onClick={handleFinishLesson}
-          className="px-6 py-3.5 bg-[#3A5A40] hover:bg-[#2A3F2E] text-white font-bold rounded-none text-xs uppercase tracking-widest transition cursor-pointer select-none active-cta"
+          className="px-6 py-3.5 bg-[#3A5A40] hover:bg-[#2A3F2E] text-white font-bold rounded-xl text-xs uppercase tracking-widest transition cursor-pointer select-none active-cta shadow-md"
         >
           Kryej Kapitullin 🏆
         </button>

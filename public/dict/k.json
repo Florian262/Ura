@@ -1,0 +1,132 @@
+[
+  {
+    "id": "dict-tr-46",
+    "source": "tr",
+    "word": "konuşmak",
+    "translation": "flas, bisedoj",
+    "pos": "folje",
+    "inflection": "(-i / -ile)",
+    "notes": "Kërkon prapashtesën bashkëpunuese \"-ile\" (me) për personin me të cilin flasim, ose kallzoren (-i) për gjuhën që flasim.",
+    "senses": [
+      "Shpreh mendime duke nxjerrë zëra me gojë; flas.",
+      "Shkëmbej mendime me dikë; bisedoj.",
+      "Njoh dhe përdor një gjuhë të caktuar (p.sh. flas turqisht)."
+    ],
+    "examples": [
+      {
+        "source": "Seninle konuşmak",
+        "target": "Flas me ty"
+      },
+      {
+        "source": "Türkçe konuşmak",
+        "target": "Flas turqisht"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "konuşma",
+        "translation": "bisedë, fjalim",
+        "pos": "emër"
+      },
+      {
+        "word": "konuşkan",
+        "translation": "fjalëshumë, llafazan, komunikues",
+        "pos": "mbiemër"
+      },
+      {
+        "word": "konuşmacı",
+        "translation": "folës, orator",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-48",
+    "source": "tr",
+    "word": "kitap",
+    "translation": "libër",
+    "pos": "emër",
+    "inflection": "-ı",
+    "senses": [
+      "Vepër e shkruar ose e shtypur, me fletë të lidhura së bashku brenda dy kapakëve."
+    ],
+    "examples": [
+      {
+        "source": "Kitap okumak",
+        "target": "Lexoj libër"
+      },
+      {
+        "source": "Kitap yazmak",
+        "target": "Shkruaj libër"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "kitaplık",
+        "translation": "bibliotekë (raft librash)",
+        "pos": "emër"
+      },
+      {
+        "word": "kitapçı",
+        "translation": "librari (shitës librash)",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-49",
+    "source": "tr",
+    "word": "kalem",
+    "translation": "laps, stilolaps",
+    "pos": "emër",
+    "inflection": "-i",
+    "senses": [
+      "Mjet i hollë dhe i gjatë që përdoret për të shkruar ose vizatuar."
+    ],
+    "examples": [
+      {
+        "source": "Kurşun kalem",
+        "target": "Laps plumbi (i thjeshtë)"
+      },
+      {
+        "source": "Tükenmez kalem",
+        "target": "Stilolaps (kimik)"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "kalemlik",
+        "translation": "kuti lapsash",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-50",
+    "source": "tr",
+    "word": "kapı",
+    "translation": "derë",
+    "pos": "emër",
+    "inflection": "-yı",
+    "senses": [
+      "Hapësirë e ndërtuar në mur për të hyrë e dalë, ose fleta e lëvizshme që mbyll këtë hapësirë."
+    ],
+    "examples": [
+      {
+        "source": "Kapıyı çalmak",
+        "target": "Trokit në derë"
+      },
+      {
+        "source": "Kapıyı açmak",
+        "target": "Hap derën"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "kapıcı",
+        "translation": "kujdestar pallati (portier)",
+        "pos": "emër"
+      }
+    ]
+  }
+]

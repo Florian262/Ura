@@ -1,0 +1,42 @@
+[
+  {
+    "id": "dict-tr-55",
+    "source": "tr",
+    "word": "ne",
+    "translation": "çfarë",
+    "pos": "përemër",
+    "senses": [
+      "Përdoret për të pyetur rreth një sendi, veprimi ose koncepti."
+    ],
+    "examples": [
+      {
+        "source": "Ne yapıyorsun?",
+        "target": "Çfarë po bën?"
+      },
+      {
+        "source": "Bu ne?",
+        "target": "Çfarë është kjo?"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-56",
+    "source": "tr",
+    "word": "nasıl",
+    "translation": "si",
+    "pos": "ndajfolje",
+    "senses": [
+      "Përdoret për të pyetur rreth mënyrës, gjendjes ose cilësisë së diçkaje."
+    ],
+    "examples": [
+      {
+        "source": "Nasılsın?",
+        "target": "Si je?"
+      },
+      {
+        "source": "Nasıl gidiyor?",
+        "target": "Si po shkon?"
+      }
+    ]
+  }
+]

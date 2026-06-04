@@ -1,0 +1,355 @@
+[
+  {
+    "id": "dict-tr-1",
+    "source": "tr",
+    "word": "altın",
+    "translation": "ar, flori",
+    "pos": "emër",
+    "inflection": "-ı",
+    "notes": "Renditet si emër mashkullor në shqip (ari). Përdoret edhe si mbiemër për të treguar diçka të çmuar.",
+    "is_balkan": true,
+    "senses": [
+      "Metal i çmuar me ngjyrë të verdhë të shndritshme, i lakueshëm dhe i qëndrueshëm ndaj ndryshkjes.",
+      "Monedhë e vjetër e prerë nga ky metal.",
+      "Objekte stolie apo zbukurimi të bëra prej ari."
+    ],
+    "examples": [
+      {
+        "source": "Altın bilezik",
+        "target": "Byzylyk ari (fig. zanat ose profesion i sigurt)"
+      },
+      {
+        "source": "Altın kalpli insan",
+        "target": "Njeri me zemër të artë"
+      },
+      {
+        "source": "Altın saat",
+        "target": "Orë ari"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "altıncı",
+        "translation": "argjendar, arpunues",
+        "pos": "emër"
+      },
+      {
+        "word": "altın sarısı",
+        "translation": "e verdhë flori",
+        "pos": "mbiemër"
+      },
+      {
+        "word": "altınlaşmak",
+        "translation": "artësohem, shndërrohem në ar",
+        "pos": "folje"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-2",
+    "source": "tr",
+    "word": "arkadaş",
+    "translation": "shok, mik",
+    "pos": "emër",
+    "inflection": "-ı",
+    "senses": [
+      "Njeri që ka lidhje shoqërore apo bashkëpunimi me një tjetër; shok i shkollës ose i punës.",
+      "Bashkudhëtar apo person me të cilin ndan një qëllim të përbashkët."
+    ],
+    "examples": [
+      {
+        "source": "Yakın arkadaş",
+        "target": "Shok i ngushtë"
+      },
+      {
+        "source": "Sınıf arkadaşı",
+        "target": "Shok klase"
+      },
+      {
+        "source": "Arkadaş olmak",
+        "target": "Bëhem shok me dikë"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "arkadaşlık",
+        "translation": "shoqëri, miqësi",
+        "pos": "emër"
+      },
+      {
+        "word": "arkadaşça",
+        "translation": "në mënyrë shoqërore, miqësisht",
+        "pos": "ndajfolje"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-3",
+    "source": "tr",
+    "word": "araba",
+    "translation": "makinë, karrocë",
+    "pos": "emër",
+    "inflection": "-yı",
+    "is_balkan": true,
+    "senses": [
+      "Mjet transporti tokësor me rrota, që shërben për të mbajtur njerëz ose ngarkesa; makinë rrugore.",
+      "Mjet i thjeshtë rrugor që tërhiqet nga kafshët ose shtyhet me dorë."
+    ],
+    "examples": [
+      {
+        "source": "Araba sürmek",
+        "target": "Ngas makinën"
+      },
+      {
+        "source": "El arabası",
+        "target": "Karrocë dore (për punë ndërtimi)"
+      },
+      {
+        "source": "Bebek arabası",
+        "target": "Karrocë fëmijësh"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "arabacı",
+        "translation": "karrocier; shofer",
+        "pos": "emër"
+      },
+      {
+        "word": "garaj (arabalık)",
+        "translation": "garazh makinash",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-4",
+    "source": "tr",
+    "word": "almak",
+    "translation": "marr, pranoj, blej",
+    "pos": "folje",
+    "inflection": "(-i)",
+    "notes": "Kërkon rasën kallzore (Akuzativ) për objektin që merret.",
+    "senses": [
+      "Marr diçka me dorë ose e vendos nën zotërim.",
+      "Pranoj një ofertë, mesazh ose detyrë.",
+      "Blej një mall duke paguar një vlerë.",
+      "Zë ose pushtoj një vend (p.sh. kalën)."
+    ],
+    "examples": [
+      {
+        "source": "Bilet almak",
+        "target": "Blej një biletë"
+      },
+      {
+        "source": "Nefes almak",
+        "target": "Marr frymë (frymëmarrje)"
+      },
+      {
+        "source": "Satın almak",
+        "target": "Blej (marr me blerje)"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "alim",
+        "translation": "blerje, marrje",
+        "pos": "emër"
+      },
+      {
+        "word": "alıcı",
+        "translation": "blerës; marrës i sinjalit",
+        "pos": "emër"
+      },
+      {
+        "word": "alınmak",
+        "translation": "prekem (fyehem); merrem",
+        "pos": "folje"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-5",
+    "source": "tr",
+    "word": "aile",
+    "translation": "familje",
+    "pos": "emër",
+    "inflection": "-yi",
+    "senses": [
+      "Bashkësi njerëzish të lidhur me martesë ose gjini, që bashkëjetojnë; vatra familjare.",
+      "Një grup i lidhur përgjithësisht sipas një linje trashëgimie."
+    ],
+    "examples": [
+      {
+        "source": "Çekirdek aile",
+        "target": "Familja e ngushtë"
+      },
+      {
+        "source": "Aile bağları",
+        "target": "Lidhjet familjare"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "ailece",
+        "translation": "familjarisht",
+        "pos": "ndajfolje"
+      },
+      {
+        "word": "aile dostu",
+        "translation": "mik familjeje",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-6",
+    "source": "tr",
+    "word": "anlamak",
+    "translation": "kuptoj",
+    "pos": "folje",
+    "inflection": "(-i)",
+    "notes": "Kërkon rasën kallzore (Akuzativ) për fjalën ose konceptin që kuptohet.",
+    "senses": [
+      "Ndërtoj një kuptim të qartë për diçka në mendje; zbuloj kuptimin.",
+      "Marr vesh ose pranoj opinionin e dikujt tjetër."
+    ],
+    "examples": [
+      {
+        "source": "Seni anlıyorum",
+        "target": "Të kuptoj ty"
+      },
+      {
+        "source": "Yanlış anlamak",
+        "target": "Kuptoj gabim"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "anlam",
+        "translation": "kuptim, domethënie",
+        "pos": "emër"
+      },
+      {
+        "word": "anlaşmak",
+        "translation": "merrem vesh, bëj marrëveshje",
+        "pos": "folje"
+      },
+      {
+        "word": "anlamlı",
+        "translation": "me kuptim, i rëndësishëm",
+        "pos": "mbiemër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-7",
+    "source": "tr",
+    "word": "akşam",
+    "translation": "aksham, mbrëmje",
+    "pos": "emër",
+    "inflection": "-ı",
+    "is_balkan": true,
+    "senses": [
+      "Periudha e ditës nga perëndimi i diellit deri në errësirë të plotë; mbrëmje.",
+      "Falja e mbrëmjes (falja e akshamit)."
+    ],
+    "examples": [
+      {
+        "source": "İyi akşamlar",
+        "target": "Mbrëmje e mirë / Mirëmbrëma"
+      },
+      {
+        "source": "Akşam yemeği",
+        "target": "Darka (ushqimi i mbrëmjes)"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "akşamüstü",
+        "translation": "ngrirje mbrëmjeje, para perëndimit",
+        "pos": "ndajfolje"
+      },
+      {
+        "word": "akşamleyin",
+        "translation": "në mbrëmje",
+        "pos": "ndajfolje"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-8",
+    "source": "tr",
+    "word": "ad",
+    "translation": "emër",
+    "pos": "emër",
+    "inflection": "-ı",
+    "senses": [
+      "Fjala që shërben për të emërtuar një qenie, send, vend apo koncept.",
+      "Reputacion apo famë (fig. ka bërë emër)."
+    ],
+    "examples": [
+      {
+        "source": "Adın ne?",
+        "target": "Si e ke emrin? (Emri yt çfarë?)"
+      },
+      {
+        "source": "Soyadı",
+        "target": "Mbiemri (emri i familjes)"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "adlandırmak",
+        "translation": "emërtoj, pagëzoj",
+        "pos": "folje"
+      },
+      {
+        "word": "adaver",
+        "translation": "homonim (që ka të njëjtin emër)",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-9",
+    "source": "tr",
+    "word": "açmak",
+    "translation": "hap",
+    "pos": "folje",
+    "inflection": "(-i)",
+    "notes": "Kërkon rasën kallzore (Akuzativ) për diçka që hapet.",
+    "senses": [
+      "Lëviz një kapak, derë ose perde për të liruar hapësirën; hap.",
+      "Zbuloj një gjë të mbyllur ose të fshehtë.",
+      "Nis një aktivitet (p.sh. hap një dyqan)."
+    ],
+    "examples": [
+      {
+        "source": "Kapıyı açmak",
+        "target": "Hap derën"
+      },
+      {
+        "source": "Dükkan açmak",
+        "target": "Hap dyqan"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "açık",
+        "translation": "hapur; e ndritshme (p.sh. ngjyrë)",
+        "pos": "mbiemër"
+      },
+      {
+        "word": "açılış",
+        "translation": "hapje, inaugurim",
+        "pos": "emër"
+      },
+      {
+        "word": "anahtar (açkı)",
+        "translation": "çelës (çelësi)",
+        "pos": "emër"
+      }
+    ]
+  }
+]

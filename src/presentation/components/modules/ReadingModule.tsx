@@ -2,9 +2,33 @@ import React, { useState } from 'react';
 import { useLesson } from '../../../application/state/LessonContext';
 import { useAudioPlayer } from '../../../application/hooks/useAudioPlayer';
 
+const Avatar: React.FC<{ speakerName: string }> = ({ speakerName }) => {
+  const initial = speakerName.charAt(0).toUpperCase();
+  
+  const getAvatarColors = (name: string) => {
+    const cleanName = name.toLowerCase().trim();
+    if (cleanName.includes('ahmet')) return 'bg-amber-500 text-white';
+    if (cleanName.includes('leyla')) return 'bg-rose-500 text-white';
+    if (cleanName.includes('valbona')) return 'bg-emerald-600 text-white';
+    if (cleanName.includes('ilir')) return 'bg-blue-600 text-white';
+    return 'bg-teal-600 text-white';
+  };
+
+  const colorClass = getAvatarColors(speakerName);
+
+  return (
+    <div 
+      className={`w-9 h-9 rounded-full flex items-center justify-center font-bold text-xs uppercase shadow-xs shrink-0 border border-white/20 select-none ${colorClass}`}
+      title={speakerName}
+    >
+      {initial}
+    </div>
+  );
+};
+
 export const ReadingModule: React.FC = () => {
   const { readingBlock, readingQuestions, setReadingCompleted, readingCompleted } = useLesson();
-  const { play, isPlaying } = useAudioPlayer();
+  const { playDialogue, playText, stop, isPlaying, currentSrc } = useAudioPlayer();
   const [showTranslation, setShowTranslation] = useState<boolean>(false);
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, number>>({});
   const [showResults, setShowResults] = useState<boolean>(false);
@@ -49,31 +73,37 @@ export const ReadingModule: React.FC = () => {
   };
 
   return (
-    <div className="glass-panel rounded-none p-6 md:p-8 bg-white border border-[#E9ECEF]">
+    <div className="glass-panel rounded-2xl p-6 md:p-8 bg-white border border-[#E9ECEF] shadow-sm">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 pb-4 border-b border-[#E9ECEF]">
         <div>
           <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-widest">Sekuenca 1</span>
           <h2 className="text-xl font-black text-[#1A1D20] uppercase font-sans">Lexim & Dëgjim (Okuma ve Dinleme)</h2>
         </div>
         <div className="flex gap-2">
-          {/* Audio Hook */}
-          {readingBlock.audio_asset_stub && (
+          {/* Audio Hook - Dialogue TTS loop */}
+          {dialogueTurkish.length > 0 && (
             <button
-              onClick={() => play(readingBlock.audio_asset_stub!)}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-none border text-xs font-bold transition duration-200 cursor-pointer ${
-                isPlaying 
+              onClick={() => {
+                if (isPlaying && currentSrc === 'dialogue') {
+                  stop();
+                } else {
+                  playDialogue(dialogueTurkish);
+                }
+              }}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-bold transition duration-200 cursor-pointer shadow-xs ${
+                isPlaying && currentSrc === 'dialogue'
                   ? 'bg-[#3A5A40]/15 text-[#3A5A40] border-[#3A5A40]/35 animate-pulse'
                   : 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50 hover:text-[#1A1D20]'
               }`}
             >
-              <span>{isPlaying ? '🔊 Po luhet...' : '🔈 Dëgjo'}</span>
+              <span>{isPlaying && currentSrc === 'dialogue' ? '⏸ Ndalo' : '🔈 Dëgjo Dialogun'}</span>
             </button>
           )}
 
           {/* Translation Toggle */}
           <button
             onClick={() => setShowTranslation(!showTranslation)}
-            className={`px-3 py-1.5 rounded-none border text-xs font-bold transition duration-200 cursor-pointer ${
+            className={`px-3 py-1.5 rounded-xl border text-xs font-bold transition duration-200 cursor-pointer shadow-xs ${
               showTranslation
                 ? 'bg-[#3A5A40] text-white border-[#3A5A40]'
                 : 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50'
@@ -85,21 +115,39 @@ export const ReadingModule: React.FC = () => {
       </div>
 
       {/* Dialogue Block */}
-      <div className="bg-neutral-50 rounded-none p-4 md:p-6 mb-8 max-h-[450px] overflow-y-auto border border-[#E9ECEF] no-scrollbar">
+      <div className="bg-neutral-50 rounded-2xl p-4 md:p-6 mb-8 max-h-[450px] overflow-y-auto border border-[#E9ECEF] no-scrollbar shadow-inner">
         <div className="space-y-4">
           {dialogueTurkish.map((line: any, idx: number) => {
             const isLeft = idx % 2 === 0;
             return (
-              <div key={idx} className={`flex flex-col ${isLeft ? 'items-start' : 'items-end'}`}>
+              <div key={idx} className={`flex items-end gap-3 w-full ${isLeft ? 'justify-start' : 'justify-end'}`}>
+                {isLeft && <Avatar speakerName={line.speaker} />}
+                
                 {/* Turkish text bubble */}
-                <div className={`max-w-[85%] rounded-none px-4 py-2.5 ${
+                <div className={`max-w-[75%] md:max-w-[70%] px-4 py-2.5 shadow-xs ${
                   isLeft 
-                    ? 'bg-white text-[#1A1D20] border border-[#E9ECEF]' 
-                    : 'bg-[#3A5A40]/10 text-[#1A1D20] border border-[#3A5A40]/25'
+                    ? 'bg-white text-[#1A1D20] border border-[#E9ECEF] rounded-2xl rounded-bl-xs' 
+                    : 'bg-[#3A5A40]/10 text-[#1A1D20] border border-[#3A5A40]/25 rounded-2xl rounded-br-xs'
                 }`}>
-                  <span className="text-[9px] font-bold text-[#3A5A40] uppercase block mb-0.5 tracking-wider font-technical">
-                    {line.speaker}
-                  </span>
+                  <div className="flex justify-between items-center gap-4 mb-1">
+                    <span className="text-[9px] font-bold text-[#3A5A40] uppercase tracking-wider font-technical">
+                      {line.speaker}
+                    </span>
+                    <button
+                      onClick={() => {
+                        if (isPlaying && currentSrc === line.text) {
+                          stop();
+                        } else {
+                          playText(line.text, 'tr');
+                        }
+                      }}
+                      className={`text-[9px] font-bold hover:text-[#3A5A40] border-b border-transparent hover:border-[#3A5A40] transition cursor-pointer select-none ${
+                        isPlaying && currentSrc === line.text ? 'text-teal-600 dark:text-teal-400 font-extrabold animate-pulse' : 'text-neutral-400'
+                      }`}
+                    >
+                      {isPlaying && currentSrc === line.text ? '⏸ Po lexohet' : '🔈 Dëgjo'}
+                    </button>
+                  </div>
                   <p className="text-sm font-technical font-medium tracking-wide">
                     {line.text}
                   </p>
@@ -111,6 +159,8 @@ export const ReadingModule: React.FC = () => {
                     </span>
                   )}
                 </div>
+
+                {!isLeft && <Avatar speakerName={line.speaker} />}
               </div>
             );
           })}
@@ -127,7 +177,7 @@ export const ReadingModule: React.FC = () => {
           {readingQuestions.map((q, qIdx) => {
             const selected = selectedAnswers[q.id];
             return (
-              <div key={q.id} className="bg-white border border-[#E9ECEF] rounded-none p-4">
+              <div key={q.id} className="bg-white border border-[#E9ECEF] rounded-xl p-4 shadow-xs">
                 <div className="mb-3">
                   <h4 className="text-sm font-bold text-[#1A1D20] font-technical uppercase tracking-tight">
                     {qIdx + 1}. {q.question_turkish}
@@ -144,15 +194,15 @@ export const ReadingModule: React.FC = () => {
                     const isSelected = selected === optIdx;
                     const isCorrectOpt = q.correct_index === optIdx;
                     
-                    let btnStyle = 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50';
+                    let btnStyle = 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50 rounded-xl hover:shadow-xs';
                     if (isSelected) {
-                      btnStyle = 'bg-[#3A5A40]/10 border-[#3A5A40] text-[#3A5A40] font-bold';
+                      btnStyle = 'bg-[#3A5A40]/10 border-[#3A5A40] text-[#3A5A40] font-bold rounded-xl shadow-xs';
                     }
                     if (showResults) {
                       if (isCorrectOpt) {
-                        btnStyle = 'bg-emerald-100/50 border-emerald-500 text-emerald-800 font-bold';
+                        btnStyle = 'bg-emerald-100/50 border-emerald-500 text-emerald-800 font-bold rounded-xl shadow-xs';
                       } else if (isSelected) {
-                        btnStyle = 'bg-rose-100/50 border-rose-500 text-rose-800';
+                        btnStyle = 'bg-rose-100/50 border-rose-500 text-rose-800 rounded-xl shadow-xs';
                       }
                     }
 
@@ -160,7 +210,7 @@ export const ReadingModule: React.FC = () => {
                       <button
                         key={optIdx}
                         onClick={() => handleOptionSelect(q.id, optIdx)}
-                        className={`text-left text-xs p-3 rounded-none border transition duration-200 font-technical cursor-pointer ${btnStyle}`}
+                        className={`text-left text-xs p-3 border transition duration-200 font-technical cursor-pointer ${btnStyle}`}
                       >
                         {opt}
                       </button>
@@ -181,12 +231,12 @@ export const ReadingModule: React.FC = () => {
           {!readingCompleted ? (
             <button
               onClick={verifyComprehension}
-              className="px-6 py-3 text-center text-xs font-bold uppercase tracking-widest rounded-none cursor-pointer select-none active-cta"
+              className="px-6 py-3 text-center text-xs font-bold uppercase tracking-widest rounded-xl cursor-pointer select-none active-cta shadow-sm"
             >
               Verifiko Përgjigjet
             </button>
           ) : (
-            <div className="flex items-center gap-2 text-[#3A5A40] bg-[#3A5A40]/10 border border-[#3A5A40]/30 px-4 py-2.5 rounded-none text-xs font-bold uppercase tracking-wider">
+            <div className="flex items-center gap-2 text-[#3A5A40] bg-[#3A5A40]/10 border border-[#3A5A40]/30 px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider">
               <span>✓</span> Të gjitha pyetjet u përgjigjën saktë! Moduli u zhbllokua.
             </div>
           )}

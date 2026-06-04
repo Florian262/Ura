@@ -1,0 +1,88 @@
+[
+  {
+    "id": "dict-tr-40",
+    "source": "tr",
+    "word": "hayat",
+    "translation": "jetë",
+    "pos": "emër",
+    "inflection": "-ı",
+    "senses": [
+      "Koha nga lindja deri në vdekjen e një qenieje; ekzistencë.",
+      "Gjendja aktive e organizmave të gjallë."
+    ],
+    "examples": [
+      {
+        "source": "Hayat hikayesi",
+        "target": "Histori jete (biografi)"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "hayati",
+        "translation": "jetik, shumë i rëndësishëm",
+        "pos": "mbiemër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-41",
+    "source": "tr",
+    "word": "hava",
+    "translation": "mot, ajër",
+    "pos": "emër",
+    "inflection": "-yı",
+    "senses": [
+      "Gazrat që rrethojnë tokën dhe që thithim; ajër.",
+      "Gjendja e motit në një çast të caktuar (p.sh. mot i ftohtë)."
+    ],
+    "examples": [
+      {
+        "source": "Hava durumu",
+        "target": "Parashikimi i motit"
+      },
+      {
+        "source": "Temiz hava",
+        "target": "Ajër i pastër"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "havalandırma",
+        "translation": "ajrosje, ventilim",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-42",
+    "source": "tr",
+    "word": "hazır",
+    "translation": "gati",
+    "pos": "mbiemër",
+    "senses": [
+      "Që është përgatitur plotësisht dhe mund të përdoret apo të veprojë menjëherë."
+    ],
+    "examples": [
+      {
+        "source": "Yemek hazır",
+        "target": "Ushqimi është gati"
+      },
+      {
+        "source": "Hazır elbise",
+        "target": "Veshje konfeksion (e gatshme)"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "hazırlamak",
+        "translation": "përgatis, bëj gati",
+        "pos": "folje"
+      },
+      {
+        "word": "hazırlık",
+        "translation": "përgatitje",
+        "pos": "emër"
+      }
+    ]
+  }
+]

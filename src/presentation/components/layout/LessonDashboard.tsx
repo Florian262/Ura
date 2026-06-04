@@ -3,6 +3,21 @@ import { useLesson } from '../../../application/state/LessonContext';
 import type { Chapter } from '../../../infrastructure/db/seedData';
 import { ProgressRepository } from '../../../infrastructure/repository/ProgressRepository';
 
+const UraIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
+  <svg 
+    className={`${className} shrink-0`}
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2.5" 
+    strokeLinecap="round" 
+    strokeLinejoin="round"
+  >
+    <path d="M3 18c4-5 8-5 12 0" />
+    <path d="M9 18c3-3 6-3 9 0" opacity="0.5" />
+  </svg>
+);
+
 export const LessonDashboard: React.FC = () => {
   const { chapters, loadChapter, userName } = useLesson();
   const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
@@ -88,20 +103,7 @@ export const LessonDashboard: React.FC = () => {
 
   const activeLevelKey = getActiveLevelKey();
 
-  // Solid, heavy progress track generator (24 character width)
-  const getProgressBarText = (percentage: number) => {
-    const totalWidth = 24;
-    if (percentage === 0) {
-      return '█' + '─'.repeat(totalWidth - 1);
-    }
-    if (percentage === 100) {
-      return '▬'.repeat(totalWidth - 1) + '█';
-    }
-    const filledWidth = Math.round((percentage / 100) * totalWidth);
-    const left = '▬'.repeat(Math.max(0, filledWidth - 1));
-    const right = '─'.repeat(Math.max(0, totalWidth - filledWidth));
-    return left + '█' + right;
-  };
+
 
   const getChapterStatus = (chapterId: number) => {
     const progress = ProgressRepository.getChapterProgress(chapterId);
@@ -133,7 +135,7 @@ export const LessonDashboard: React.FC = () => {
 
       {selectedLevel === null ? (
         /* ================= TIER 1: LEVEL ROADMAP SELECTION VIEW ================= */
-        <div className="z-10 relative space-y-12">
+        <div className="z-10 relative space-y-12 animate-fade-in">
           {/* Typographic Welcome Header */}
           <div className="text-left border-b border-[#DDE1E5] dark:border-neutral-800 pb-8">
             <div className="flex items-center justify-between flex-wrap gap-4 mb-4">
@@ -154,96 +156,111 @@ export const LessonDashboard: React.FC = () => {
             </p>
           </div>
 
-          {/* 1. THE ACTIVE ANCHOR CARD (Dominates Layout) */}
-          <div className="space-y-4">
-            <h2 className="text-xs font-mono font-bold tracking-widest text-[#636B74] uppercase select-none">
-              NIVELI AKTUAL NË ZHVILLIM
-            </h2>
-            {(() => {
-              const level = activeLevelKey;
-              const syllabus = levelSyllabus[level];
-              const { completed, total, percentage } = getLevelProgress(level);
-              const progressTrack = getProgressBarText(percentage);
-
-              return (
-                <button
-                  onClick={() => setSelectedLevel(level)}
-                  className="border-2 border-[#111315] dark:border-neutral-700 bg-[#FBFBF9] dark:bg-[#1E2226]/30 p-6 hover:bg-white dark:hover:bg-[#1E2226]/50 transition-colors duration-150 rounded-none w-full text-left cursor-pointer outline-none block group relative overflow-hidden"
-                >
-                  {/* Top Bar: Code, sub-label & Active Forest Green micro-badge */}
-                  <div className="flex justify-between items-center mb-3 flex-wrap gap-2 w-full">
-                    <span className="text-sm font-mono font-bold tracking-wider text-[#111315] dark:text-white uppercase">
-                      {syllabus.index}. NIVELI {level} — {syllabus.desc}
-                    </span>
-                    <span className="px-2.5 py-1 text-[10px] uppercase font-mono tracking-wider font-bold bg-[#2D4A36] text-white dark:bg-[#4A7253] select-none transition group-hover:bg-[#1F3325]">
-                      [ VAZHDO ]
-                    </span>
-                  </div>
-
-                  {/* Hairline Divider */}
-                  <hr className="border-[#DDE1E5] dark:border-neutral-800 my-4 w-full" />
-
-                  {/* Curiosity Syllabus Preview */}
-                  <p className="text-xs md:text-sm text-[#111315] dark:text-neutral-300 font-normal leading-relaxed mb-6">
-                    {syllabus.preview}
-                  </p>
-
-                  {/* Heavy Solid Progress Track */}
-                  <div className="space-y-2 mt-auto w-full pt-2">
-                    <div className="flex justify-between items-center text-[10px] font-mono text-[#636B74] dark:text-neutral-400 font-semibold select-none">
-                      <span>Përparimi: {completed} nga {total} mësime të përfunduara</span>
-                      <span className="font-bold text-[#111315] dark:text-white">{percentage}%</span>
-                    </div>
-                    <div className="text-xs font-mono tracking-tighter text-neutral-400 dark:text-neutral-600 font-semibold select-none overflow-hidden text-ellipsis whitespace-nowrap">
-                      {progressTrack}
-                    </div>
-                  </div>
-                </button>
-              );
-            })()}
-          </div>
-
-          {/* 2. THE ROADMAP ROAD VIEW (Future levels) */}
+          {/* Curved learning path roadmap container */}
           <div className="space-y-4 pt-4">
-            <h2 className="text-xs font-mono font-bold tracking-widest text-[#636B74] uppercase select-none">
-              VËZHGIMI I RUGËTIMIT TËND (Nivelet e Ardhshme)
+            <h2 className="text-xs font-mono font-bold tracking-widest text-[#636B74] uppercase select-none mb-6">
+              Rruga e Ndërtimit të Urave (Learning Path)
             </h2>
             
-            <div className="space-y-3">
-              {Object.keys(levels).map((level) => {
-                // Skip the active level since it is anchored above
-                if (level === activeLevelKey) return null;
-
+            {/* The vertical dashed connection line */}
+            <div className="relative border-l-2 border-dashed border-[#DDE1E5] dark:border-neutral-800 ml-4 md:ml-12 pl-6 md:pl-10 space-y-8 py-2">
+              {['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((level, index) => {
                 const syllabus = levelSyllabus[level];
-                const { percentage } = getLevelProgress(level);
+                const { completed, total, percentage } = getLevelProgress(level);
                 
+                const isActive = level === activeLevelKey;
                 const isCompleted = percentage === 100;
                 
-                // Muted Closed visual badges (but fully clickable!)
-                const statusLabel = isCompleted ? '[ PËRFUNDUAR ]' : '[ I mbyllur ]';
-                const statusStyle = isCompleted 
-                  ? 'border-[#2D4A36]/40 text-[#2D4A36] dark:text-[#4A7253]' 
-                  : 'border-[#DDE1E5] dark:border-neutral-800 text-[#636B74] dark:text-neutral-500';
+                // Alignment classes forming the bridge arch curve
+                const offsets = [
+                  'stagger-step-0',
+                  'stagger-step-1',
+                  'stagger-step-2',
+                  'stagger-step-3',
+                  'stagger-step-4',
+                  'stagger-step-5'
+                ];
+                const offsetClass = offsets[index];
+
+                // Decorative step indicator node on the dashed line
+                const nodeColor = isCompleted 
+                  ? 'bg-[var(--color-brand-success)] border-[var(--color-brand-success)]' 
+                  : isActive 
+                    ? 'bg-[var(--color-brand-accent)] border-[var(--color-brand-accent)] animate-pulse' 
+                    : 'bg-[var(--color-bg-surface)] border-[var(--color-border-primary)]';
 
                 return (
-                  <button
-                    key={level}
-                    onClick={() => setSelectedLevel(level)}
-                    className="border border-[#DDE1E5] dark:border-neutral-800 bg-[#FBFBF9]/40 dark:bg-transparent p-5 hover:bg-white dark:hover:bg-[#1E2226]/50 hover:border-[#111315] dark:hover:border-neutral-700 transition-colors duration-150 rounded-none w-full text-left cursor-pointer outline-none block opacity-80 hover:opacity-100 group"
-                  >
-                    <div className="flex justify-between items-center flex-wrap gap-2 w-full">
-                      <span className="text-xs font-mono font-bold tracking-wider text-[#636B74] dark:text-neutral-400 group-hover:text-[#111315] dark:group-hover:text-white uppercase transition-colors duration-150">
-                        {syllabus.index}. NIVELI {level} — {syllabus.desc}
-                      </span>
-                      <span className={`text-[9px] uppercase font-mono tracking-wider font-bold px-2 py-0.5 border select-none ${statusStyle}`}>
-                        {statusLabel}
-                      </span>
-                    </div>
+                  <div key={level} className="relative">
+                    
+                    {/* The node circle on the connection line (static, anchored on the straight vertical timeline) */}
+                    <div className={`absolute w-3.5 h-3.5 rounded-full border-2 -left-[31px] md:-left-[49px] top-6 z-20 ${nodeColor}`} />
 
-                    <p className="text-xs text-[#636B74] dark:text-neutral-400 mt-2 font-light italic leading-normal group-hover:text-[#111315] dark:group-hover:text-neutral-300 transition-colors duration-150">
-                      {syllabus.focus}
-                    </p>
-                  </button>
+                    {/* Staggered container wrapper shifting only the cards */}
+                    <div className={`transition-all duration-500 transform ${offsetClass}`}>
+                      {isActive ? (
+                        /* ACTIVE CHAPTER CARD */
+                        <button
+                          onClick={() => setSelectedLevel(level)}
+                          className="border-2 border-[var(--color-brand-accent)] bg-[var(--color-bg-surface-glass)] backdrop-blur-md p-6 hover:bg-[var(--color-bg-surface)] transition-all duration-300 rounded-2xl shadow-elevated w-full text-left cursor-pointer outline-none block group relative overflow-hidden hover:-translate-y-0.5"
+                        >
+                          <div className="flex justify-between items-center mb-3 flex-wrap gap-2 w-full">
+                            <span className="text-sm font-mono font-bold tracking-wider text-[var(--color-text-primary)] uppercase flex items-center gap-2">
+                              <UraIcon className="w-4 h-4 text-[var(--color-brand-accent)]" />
+                              {syllabus.index}. NIVELI {level} — {syllabus.desc}
+                            </span>
+                            <span className="px-2.5 py-1 text-[10px] uppercase font-mono tracking-wider font-bold bg-[var(--color-brand-accent)] text-white select-none rounded-lg transition-all duration-200 group-hover:scale-105">
+                              [ VAZHDO ]
+                            </span>
+                          </div>
+
+                          <hr className="border-[var(--color-border-primary-glass)] my-4 w-full" />
+
+                          <p className="text-xs md:text-sm text-[var(--color-text-primary)] opacity-90 leading-relaxed mb-6">
+                            {syllabus.preview}
+                          </p>
+
+                          <div className="space-y-2 mt-auto w-full pt-2">
+                            <div className="flex justify-between items-center text-[10px] font-mono text-[var(--color-text-secondary)] font-semibold select-none">
+                              <span>Përparimi: {completed} nga {total} mësime të përfunduara</span>
+                              <span className="font-bold text-[var(--color-text-primary)]">{percentage}%</span>
+                            </div>
+                            {/* Premium Visual Progress Bar */}
+                            <div className="w-full bg-neutral-200/50 dark:bg-stone-900/60 h-1.5 rounded-full overflow-hidden relative border border-neutral-200/20 dark:border-neutral-800/30 mt-1">
+                              <div 
+                                className="bg-gradient-to-r from-teal-500 to-[var(--color-brand-accent)] h-full rounded-full transition-all duration-500"
+                                style={{ width: `${percentage}%` }}
+                              ></div>
+                            </div>
+                          </div>
+                        </button>
+                      ) : (
+                        /* COMPLETED OR LOCKED ROADMAP CARDS */
+                        <button
+                          onClick={() => setSelectedLevel(level)}
+                          className="border border-[var(--color-border-primary-glass)] bg-[var(--color-bg-surface-glass)] backdrop-blur-md p-5 hover:bg-[var(--color-bg-surface)] hover:border-[var(--color-brand-accent)]/30 transition-all duration-300 rounded-2xl w-full text-left cursor-pointer outline-none block opacity-85 hover:opacity-100 group shadow-xs hover:shadow-md hover:-translate-y-0.5"
+                        >
+                          <div className="flex justify-between items-center flex-wrap gap-2 w-full">
+                            <span className="text-xs font-mono font-bold tracking-wider text-[var(--color-text-primary)] group-hover:text-[var(--color-brand-accent)] uppercase transition-colors duration-150 flex items-center gap-2">
+                              <UraIcon className={`w-3.5 h-3.5 ${isCompleted ? 'text-[var(--color-brand-success)]' : 'text-[var(--color-text-secondary)]'}`} />
+                              {syllabus.index}. NIVELI {level} — {syllabus.desc}
+                            </span>
+                            <span className={`text-[9px] uppercase font-mono tracking-wider font-bold px-2 py-0.5 border select-none rounded-lg ${
+                              isCompleted 
+                                ? 'border-[var(--color-brand-success)]/40 text-[var(--color-brand-success)] bg-[var(--color-brand-success-light)]' 
+                                : 'border-[var(--color-border-primary-glass)] text-[var(--color-text-secondary)] bg-neutral-100/50 dark:bg-stone-900/40'
+                            }`}>
+                              {isCompleted ? '[ PËRFUNDUAR ]' : '[ I mbyllur ]'}
+                            </span>
+                          </div>
+
+                          <p className="text-xs text-[var(--color-text-secondary)] mt-2 font-light italic leading-normal group-hover:text-[var(--color-text-primary)] transition-colors duration-150">
+                            {syllabus.focus}
+                          </p>
+                        </button>
+                      )}
+
+                    </div>
+                  </div>
                 );
               })}
             </div>
@@ -260,14 +277,14 @@ export const LessonDashboard: React.FC = () => {
           {/* Symmetrical sharp Back Button */}
           <button
             onClick={() => setSelectedLevel(null)}
-            className="mb-8 border-0 bg-transparent text-xs font-bold text-[#636B74] dark:text-neutral-400 hover:text-[#2D4A36] dark:hover:text-[#7678ed] cursor-pointer flex items-center gap-1.5 transition uppercase tracking-widest outline-none py-1.5"
+            className="mb-8 border-0 bg-transparent text-xs font-bold text-[#636B74] dark:text-neutral-400 hover:text-[#2D4A36] cursor-pointer flex items-center gap-1.5 transition uppercase tracking-widest outline-none py-1.5"
           >
             [← Kthehu te Nivelet]
           </button>
 
           {/* Level Header Info */}
           <div className="mb-12 text-left border-b border-[#DDE1E5] dark:border-neutral-800 pb-6">
-            <span className="text-[10px] font-mono font-bold tracking-wider text-[#2D4A36] dark:text-[#7678ed] uppercase select-none">
+            <span className="text-[10px] font-mono font-bold tracking-wider text-[#2D4A36] uppercase select-none">
               {levelSyllabus[selectedLevel].index}. NIVELI {selectedLevel}
             </span>
             <h2 className="text-3xl font-black text-[#111315] dark:text-white uppercase tracking-tight mt-1">
@@ -284,27 +301,38 @@ export const LessonDashboard: React.FC = () => {
               const status = getChapterStatus(ch.id);
               return (
                 <button
-                  key={ch.id}
-                  onClick={() => loadChapter(ch.id)}
-                  className="w-full text-left bg-white dark:bg-[#1E2226]/30 border border-[#DDE1E5] dark:border-neutral-800 p-5 rounded-none flex flex-col justify-between hover:border-[#2D4A36] dark:hover:border-[#7678ed] transition-colors duration-150 group relative cursor-pointer outline-none"
+                   key={ch.id}
+                   onClick={() => loadChapter(ch.id)}
+                   className="w-full text-left bg-white dark:bg-[#1E2226]/30 border border-[#DDE1E5] dark:border-neutral-800 p-5 rounded-2xl flex items-center justify-between gap-4 hover:border-[#2D4A36] transition-all duration-300 group relative cursor-pointer outline-none shadow-xs hover:shadow-md hover:-translate-y-0.5"
                 >
-                  <div className="flex justify-between items-start mb-3 w-full gap-2">
-                    <span className="text-[10px] font-mono font-bold text-[#2D4A36] dark:text-[#7678ed] uppercase tracking-wide">
-                      Mësimi {ch.order_index}
-                    </span>
-                    <span className={`text-[9px] uppercase font-bold tracking-wider px-2 py-0.5 border select-none ${status.style}`}>
-                      {status.label}
+                  <div className="flex-1">
+                    <div className="flex justify-between items-start mb-3 w-full gap-2">
+                      <span className="text-[10px] font-mono font-bold text-[#2D4A36] uppercase tracking-wide">
+                        Mësimi {ch.order_index}
+                      </span>
+                      <span className={`text-[9px] uppercase font-bold tracking-wider px-2 py-0.5 border rounded-lg select-none ${status.style}`}>
+                        {status.label}
+                      </span>
+                    </div>
+
+                    <h3 className="text-base font-bold text-[#111315] dark:text-white group-hover:text-[#2D4A36] transition-colors duration-150 uppercase tracking-tight mb-1">
+                      {ch.title_turkish}
+                    </h3>
+
+                    {/* Albanian subtitle styled 2 sizes smaller, italic, neutral-600 */}
+                    <span className="translation-subtitle block mt-0.5 text-[#636B74] dark:text-neutral-400">
+                      {ch.title_albanian}
                     </span>
                   </div>
-
-                  <h3 className="text-base font-bold text-[#111315] dark:text-white group-hover:text-[#2D4A36] dark:group-hover:text-[#7678ed] transition-colors duration-150 uppercase tracking-tight mb-1">
-                    {ch.title_turkish}
-                  </h3>
-
-                  {/* Albanian subtitle styled 2 sizes smaller, italic, neutral-600 */}
-                  <span className="translation-subtitle block mt-0.5 text-[#636B74] dark:text-neutral-400">
-                    {ch.title_albanian}
-                  </span>
+                  {ch.id === 1 && (
+                    <div className="w-14 h-14 shrink-0 relative flex items-center justify-center bg-stone-900/5 dark:bg-white/5 rounded-xl overflow-hidden p-1">
+                      <img 
+                        src="/chapter_1_badge.png" 
+                        alt="Kapitulli 1 Badge" 
+                        className="w-full h-full object-contain filter drop-shadow-xs transition-transform duration-300 group-hover:scale-110" 
+                      />
+                    </div>
+                  )}
                 </button>
               );
             })}

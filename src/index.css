@@ -1,110 +1,201 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
   --font-technical: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  
-  /* Studio Print Theme Palette */
-  --color-brand-indigo: #ffffff;     /* White container surfaces */
-  --color-brand-slate: #111315;      /* Charcoal Black typography */
-  --color-brand-amber: #2D4A36;      /* Deep Forest Green Active Accent */
-  --color-brand-tiger: #636B74;      /* Slate Charcoal secondary captions */
-  --color-brand-cayenne: #c0392b;    /* Clean Crimson danger */
-  
-  --color-brand-dark: #fbfbf9;       /* warm paper backdrop base */
-  --color-brand-darker: #FBFBF9;     /* Primary Warm Bone Canvas Background */
 }
 
-/* Custom base adjustments for the Editorial System */
 :root {
+  --color-bg-canvas: #FDFCF7;      /* Warm scholarly Ivory base background */
+  --color-bg-surface: #FFFFFF;     /* Clean white surface containers */
+  --color-bg-surface-glass: rgba(255, 255, 255, 0.7); /* Translucent white */
+  --color-text-primary: #1C1917;    /* Deep Stone-900 typography */
+  --color-text-secondary: rgba(28, 25, 23, 0.65); /* Opacity-based secondary text */
+  --color-border-primary: #E2E8F0;  /* Slate-200 dividers */
+  --color-border-primary-glass: rgba(226, 232, 240, 0.4); /* Translucent border */
+  
+  --color-brand-accent: #0D9488;    /* Scholarly Teal accent */
+  --color-brand-accent-hover: #0F766E;
+  --color-brand-accent-light: rgba(13, 148, 136, 0.08);
+  
+  --color-brand-secondary: #D97706; /* Warm Amber Gold */
+  --color-brand-secondary-hover: #B45309;
+  --color-brand-secondary-light: rgba(217, 119, 6, 0.08);
+
+  --color-brand-success: #10B981;   /* Emerald-500 */
+  --color-brand-success-light: rgba(16, 185, 129, 0.08);
+  
+  --color-brand-danger: #EF4444;    /* Rose/Crimson-500 */
+  --color-brand-danger-light: rgba(239, 68, 68, 0.08);
+
+  --border-radius-card: 16px;
+  --border-radius-button: 12px;
+  --border-radius-badge: 6px;
+  
+  --shadow-soft: 0 4px 6px -1px rgba(28, 25, 23, 0.02), 0 2px 4px -2px rgba(28, 25, 23, 0.02);
+  --shadow-medium: 0 10px 15px -3px rgba(28, 25, 23, 0.04), 0 4px 6px -4px rgba(28, 25, 23, 0.04);
+  /* Multi-layered shadow for realistic depth */
+  --shadow-elevated: 0 1px 2px rgba(28, 25, 23, 0.02), 0 4px 12px rgba(28, 25, 23, 0.03), 0 12px 24px rgba(28, 25, 23, 0.04);
+
   font-family: var(--font-sans);
-  background-color: var(--color-brand-darker);
-  color: var(--color-brand-slate);
+  background-color: var(--color-bg-canvas);
+  color: var(--color-text-primary);
   scroll-behavior: smooth;
+}
+
+body.dark-theme {
+  --color-bg-canvas: #090E14;      /* Deep midnight obsidian dark mode */
+  --color-bg-surface: #12181F;     /* Dark Slate panel surface background */
+  --color-bg-surface-glass: rgba(18, 24, 31, 0.7); /* Translucent dark slate */
+  --color-text-primary: #F1F5F9;    /* Clean Slate-100 primary text */
+  --color-text-secondary: rgba(241, 245, 249, 0.65); /* Opacity-based secondary text */
+  --color-border-primary: #1E293B;  /* Slate-800 dividers */
+  --color-border-primary-glass: rgba(30, 41, 59, 0.4); /* Translucent border */
+  
+  --color-brand-accent: #14B8A6;    /* Glowing Teal accent */
+  --color-brand-accent-hover: #0D9488;
+  --color-brand-accent-light: rgba(20, 184, 166, 0.12);
+  
+  --color-brand-secondary: #F59E0B; /* Glowing Amber Gold */
+  --color-brand-secondary-hover: #D97706;
+  --color-brand-secondary-light: rgba(245, 158, 11, 0.12);
+
+  --color-brand-success: #34D399;   /* Emerald-400 */
+  --color-brand-success-light: rgba(52, 211, 153, 0.12);
+  
+  --color-brand-danger: #FB7185;    /* Crimson-400 */
+  --color-brand-danger-light: rgba(251, 113, 133, 0.12);
+
+  --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -2px rgba(0, 0, 0, 0.15);
+  --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
+  /* Multi-layered shadow for realistic depth in dark mode */
+  --shadow-elevated: 0 1px 2px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.25), 0 12px 24px rgba(0, 0, 0, 0.35);
 }
 
 body {
   margin: 0;
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: var(--color-brand-darker);
+  background-color: var(--color-bg-canvas);
+  color: var(--color-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Pristine Editorial Glass Panels & Cards - Sharp Corners, Hairline Borders */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+/* Base textured grid pattern */
+.bg-grid-pattern {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(28, 25, 23, 0.012) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(28, 25, 23, 0.012) 1px, transparent 1px);
+}
+
+body.dark-theme .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(241, 245, 249, 0.008) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(241, 245, 249, 0.008) 1px, transparent 1px);
+}
+
+/* Premium Academic Glass Panels & Elevated Cards */
 .glass-panel {
-  background: #ffffff;
-  border: 1px solid #DDE1E5; /* Concrete Hairline Divider */
+  background: var(--color-bg-surface-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border-primary-glass);
+  border-radius: var(--border-radius-card);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
 }
 
 .glass-card {
-  background: #ffffff;
-  border: 1px solid #DDE1E5;
-  border-radius: 0px !important; /* Anti-Slop sharp corners rule */
-  transition: border-color 0.15s ease, background-color 0.15s ease;
-  box-shadow: none !important; /* No box shadows */
+  background: var(--color-bg-surface-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border-primary-glass);
+  border-radius: var(--border-radius-card);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-card:hover {
-  border-color: #111315;
-  background-color: #ffffff;
-  transform: none; /* Avoid childish translation lifts */
-  box-shadow: none !important;
+  border-color: var(--color-brand-accent);
+  background-color: var(--color-bg-surface);
+  transform: translateY(-2.5px);
+  box-shadow: var(--shadow-medium);
 }
 
-/* Custom shared Balkanism indicator grids */
+/* Shared Balkanism design elements */
 .balkan-card {
-  background: #fcfcfb;
-  border: 1px solid rgba(45, 74, 54, 0.25);
-  border-radius: 0px !important;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-primary);
+  border-left: 4px solid var(--color-brand-secondary) !important;
+  border-radius: var(--border-radius-card);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .balkan-card:hover {
-  background: #f4f7f4;
-  border-color: #2D4A36;
+  background: var(--color-brand-secondary-light);
+  border-color: var(--color-brand-secondary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
 }
 
-/* Custom character key helping rows - sharp and professional */
+/* Custom helper keys */
 .char-key {
-  border: 1px solid #DDE1E5;
-  border-radius: 0px !important;
-  background: #ffffff;
-  color: #111315;
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--border-radius-badge);
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  font-weight: 600;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
 }
 
 .char-key:hover {
-  background: #DDE1E5;
-  color: #2D4A36;
-  border-color: #2D4A36;
+  background: var(--color-brand-accent-light);
+  color: var(--color-brand-accent);
+  border-color: var(--color-brand-accent);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-medium);
 }
 
-/* Suffix tag highlights matching user preferences */
+/* Suffix tag highlights */
 .suffix-highlight {
   font-family: var(--font-technical);
   letter-spacing: 0.05em;
   font-weight: 700;
-  color: #2D4A36; /* Deep forest green suffix highlighting */
+  color: var(--color-brand-accent);
 }
 
-/* Translation subtitle exactly 2 font-sizes smaller, italic, neutral-600 */
+/* Subtitle translation format rules */
 .translation-subtitle {
   font-size: 0.825em;
   font-style: italic;
-  color: #636B74;
+  color: var(--color-text-secondary);
   font-weight: 500;
   display: block;
   margin-top: 2px;
 }
 
-/* Giant background typography watermark running vertically */
+/* Muted visual watermarks */
 .curriculum-watermark {
   position: absolute;
   right: 1.5rem;
   top: 10%;
   font-size: 11rem;
   font-weight: 900;
-  color: rgba(221, 225, 229, 0.4);
+  color: var(--color-border-primary);
+  opacity: 0.025;
   pointer-events: none;
   user-select: none;
   writing-mode: vertical-rl;
@@ -113,228 +204,273 @@ body {
   letter-spacing: -0.05em;
 }
 
-/* Professional Active Tap Immediate Shift (0ms transition lag) */
+/* Active buttons and triggers */
 .active-cta {
-  background-color: #2D4A36;
-  color: #ffffff;
-  border-radius: 0px !important;
-  transition: none !important; /* Anti-slop 0ms click lag */
+  background-color: var(--color-brand-accent) !important;
+  color: #ffffff !important;
+  border-radius: var(--border-radius-button) !important;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer;
+}
+
+.active-cta:hover {
+  background-color: var(--color-brand-accent-hover) !important;
+  transform: translateY(-1.5px);
+  box-shadow: var(--shadow-medium);
 }
 
 .active-cta:active {
-  background-color: #1F3325 !important;
+  transform: translateY(0);
+  background-color: var(--color-brand-accent-hover) !important;
 }
 
-/* Scrollbar customizations matching muted slate aesthetics */
+/* Webkit scrollbars matching color system */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #FBFBF9;
+  background: var(--color-bg-canvas);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #DDE1E5;
-  border-radius: 0px;
+  background: var(--color-border-primary);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #636B74;
+  background: var(--color-text-secondary);
 }
 
-/* Custom fade-in layouts */
+/* Animations */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(6px); }
+  from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in {
-  animation: fadeInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Premium Balkan Slate & Olive - Academic Night Mode Theme Overrides */
-body.dark-theme {
-  background-color: #111214 !important;
-  color: #F3F4F6 !important;
-  
-  --color-brand-indigo: #181A1D;     /* Dark Canvas backdrop */
-  --color-brand-slate: #F3F4F6;      /* Deep UI Ink (Headlines, primary texts) */
-  --color-brand-amber: #4A7253;      /* Academic Dark Olive Accent (CTA Buttons) */
-  --color-brand-tiger: #9CA3AF;      /* Secondary Slate (Subtitles, translations) */
-  --color-brand-cayenne: #E57373;    /* Danger Crimson */
-  --color-brand-dark: #1E2227;       /* Container base background */
-  --color-brand-darker: #111214;     /* Primary Canvas Background */
+/* Tailwind Specific Static Class Override Mappings */
+
+/* Canvas backgrounds */
+.bg-\[\#FAFAFA\], .bg-\[\#FAFAFA\]\/10, .bg-\[\#FAFAFA\]\/15 {
+  background-color: var(--color-bg-canvas) !important;
+}
+.bg-white {
+  background-color: var(--color-bg-surface) !important;
+}
+.bg-neutral-50 {
+  background-color: var(--color-bg-canvas) !important;
 }
 
-/* Redefine editorial panels & cards */
-.dark-theme .glass-panel {
-  background: #181A1D !important;
-  border-color: #2D3136 !important;
+/* Accent backgrounds */
+.bg-\[\#3A5A40\], .bg-\[\#2D4A36\] {
+  background-color: var(--color-brand-accent) !important;
+}
+.bg-\[\#3A5A40\]\/10, .bg-\[\#2D4A36\]\/10 {
+  background-color: var(--color-brand-accent-light) !important;
+}
+.bg-\[\#3A5A40\]\/15, .bg-\[\#2D4A36\]\/15 {
+  background-color: var(--color-brand-accent-light) !important;
 }
 
-.dark-theme .glass-card {
-  background: #181A1D !important;
-  border-color: #2D3136 !important;
+/* Danger backgrounds */
+.bg-\[\#c0392b\] {
+  background-color: var(--color-brand-danger) !important;
+}
+.bg-\[\#c0392b\]\/10 {
+  background-color: var(--color-brand-danger-light) !important;
+}
+.bg-\[\#c0392b\]\/15 {
+  background-color: var(--color-brand-danger-light) !important;
 }
 
-.dark-theme .glass-card:hover {
-  border-color: #4A7253 !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+/* Text primary mappings */
+.text-\[\#1A1D20\], .text-\[\#111315\], .text-\[\#1C1917\], .dark-theme .text-\[\#1A1D20\], .dark-theme .text-\[\#111315\], .dark-theme .text-\[\#1C1917\] {
+  color: var(--color-text-primary) !important;
 }
 
-.dark-theme .balkan-card {
-  background: #19211B !important;
-  border-color: rgba(74, 114, 83, 0.35) !important;
+/* Text secondary mappings */
+.text-\[\#565E64\], .text-\[\#636B74\], .text-\[\#78716C\], .dark-theme .text-\[\#565E64\], .dark-theme .text-\[\#636B74\], .dark-theme .text-\[\#78716C\] {
+  color: var(--color-text-secondary) !important;
 }
 
-.dark-theme .balkan-card:hover {
-  background: #202D23 !important;
-  border-color: #4A7253 !important;
+/* Text Accent mappings */
+.text-\[\#3A5A40\], .text-\[\#2D4A36\], .dark-theme .text-\[\#3A5A40\], .dark-theme .text-\[\#2D4A36\] {
+  color: var(--color-brand-accent) !important;
 }
 
-.dark-theme .char-key {
-  background: #181A1D !important;
-  border-color: #2D3136 !important;
-  color: #F3F4F6 !important;
+/* Text Danger mappings */
+.text-\[\#c0392b\], .dark-theme .text-\[\#c0392b\] {
+  color: var(--color-brand-danger) !important;
 }
 
-.dark-theme .char-key:hover {
-  background: #2D3136 !important;
-  color: #4A7253 !important;
-  border-color: #4A7253 !important;
+/* Divider & Border mappings */
+.border-\[\#E9ECEF\], .border-\[\#DDE1E5\], .border-neutral-300 {
+  border-color: var(--color-border-primary) !important;
+}
+.border-r-\[\#E9ECEF\], .border-r-\[\#DDE1E5\] {
+  border-right-color: var(--color-border-primary) !important;
+}
+.border-b-\[\#E9ECEF\], .border-b-\[\#DDE1E5\] {
+  border-bottom-color: var(--color-border-primary) !important;
+}
+.border-t-\[\#E9ECEF\], .border-t-\[\#DDE1E5\] {
+  border-top-color: var(--color-border-primary) !important;
 }
 
-.dark-theme .suffix-highlight {
-  color: #4A7253 !important;
+.border-\[\#3A5A40\], .border-\[\#2D4A36\] {
+  border-color: var(--color-brand-accent) !important;
+}
+.border-\[\#c0392b\] {
+  border-color: var(--color-brand-danger) !important;
 }
 
-.dark-theme .translation-subtitle {
-  color: #9CA3AF !important;
+/* Inputs, Textareas, Options styling */
+input, textarea, select {
+  background-color: var(--color-bg-surface) !important;
+  color: var(--color-text-primary) !important;
+  border-color: var(--color-border-primary) !important;
+  border-radius: var(--border-radius-button) !important;
+  transition: all 0.2s ease;
 }
 
-.dark-theme .active-cta {
-  background-color: #4A7253 !important;
-  color: #ffffff !important;
+input:focus, textarea:focus, select:focus {
+  border-color: var(--color-brand-accent) !important;
+  box-shadow: 0 0 0 3px var(--color-brand-accent-light) !important;
 }
 
-.dark-theme .active-cta:active {
-  background-color: #36533C !important;
+.hover\:bg-neutral-50:hover {
+  background-color: var(--color-brand-accent-light) !important;
+}
+.hover\:bg-\[\#E9ECEF\]\/50:hover {
+  background-color: var(--color-brand-accent-light) !important;
+}
+.hover\:border-\[\#3A5A40\]:hover {
+  border-color: var(--color-brand-accent) !important;
 }
 
-.dark-theme .curriculum-watermark {
-  color: rgba(45, 49, 54, 0.25) !important;
+/* Grammar Module Specific Premium Contrast Containers */
+.grammar-card-bg {
+  background-color: #F5F4F0 !important;
+  border: 1px solid var(--color-border-primary) !important;
 }
 
-/* Dynamically override absolute tailwind color classes in dark mode */
-.dark-theme .bg-white {
-  background-color: #181A1D !important;
+.dark-theme .grammar-card-bg {
+  background-color: #1A222B !important;
+  border: 1px solid var(--color-border-primary) !important;
 }
 
-.dark-theme .bg-neutral-50 {
-  background-color: #111214 !important;
+.grammar-output-bg {
+  background-color: #FFFFFF !important;
+  border: 1px solid var(--color-border-primary) !important;
 }
 
-.dark-theme .bg-\[\#FAFAFA\] {
-  background-color: #111214 !important;
+.dark-theme .grammar-output-bg {
+  background-color: #242E3A !important;
+  border: 1px solid var(--color-border-primary) !important;
 }
 
-.dark-theme .bg-\[\#3A5A40\] {
-  background-color: #4A7253 !important;
+/* Dynamic Dark-Theme Feedback state color overrides */
+.bg-emerald-100\/50, .bg-emerald-100\/55, .bg-emerald-100\/30 {
+  background-color: var(--color-brand-success-light) !important;
+}
+.border-emerald-500 {
+  border-color: var(--color-brand-success) !important;
+}
+.text-emerald-800 {
+  color: var(--color-brand-success) !important;
 }
 
-.dark-theme .bg-\[\#3A5A40\]\/10 {
-  background-color: rgba(74, 114, 83, 0.15) !important;
+.bg-rose-100\/50, .bg-rose-100\/55, .bg-rose-100\/30 {
+  background-color: var(--color-brand-danger-light) !important;
+}
+.border-rose-500 {
+  border-color: var(--color-brand-danger) !important;
+}
+.text-rose-800 {
+  color: var(--color-brand-danger) !important;
 }
 
-.dark-theme .bg-\[\#3A5A40\]\/15 {
-  background-color: rgba(74, 114, 83, 0.25) !important;
+.bg-amber-100\/30 {
+  background-color: var(--color-brand-secondary-light) !important;
+}
+.border-amber-500 {
+  border-color: var(--color-brand-secondary) !important;
+}
+.text-amber-800 {
+  color: var(--color-brand-secondary) !important;
 }
 
-.dark-theme .bg-\[\#c0392b\]\/10 {
-  background-color: rgba(229, 115, 115, 0.15) !important;
+/* Dynamic Dark-Theme Accent border opacities overrides */
+.border-\[\#3A5A40\]\/20, .border-\[\#3A5A40\]\/25, .border-\[\#3A5A40\]\/30, .border-\[\#3A5A40\]\/35 {
+  border-color: rgba(13, 148, 136, 0.2) !important;
+}
+.dark-theme .border-\[\#3A5A40\]\/20, .dark-theme .border-\[\#3A5A40\]\/25, .dark-theme .border-\[\#3A5A40\]\/30, .dark-theme .border-\[\#3A5A40\]\/35 {
+  border-color: rgba(20, 184, 166, 0.2) !important;
 }
 
-.dark-theme .bg-\[\#c0392b\]\/15 {
-  background-color: rgba(229, 115, 115, 0.25) !important;
+/* Premium 3D Coin Flip Trigger Card Styles */
+.coin-flip-container {
+  perspective: 1000px;
 }
 
-.dark-theme .text-\[\#1A1D20\] {
-  color: #F3F4F6 !important;
+.coin-flip-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); /* Bouncy premium feel */
 }
 
-.dark-theme .text-\[\#565E64\] {
-  color: #9CA3AF !important;
+.coin-flip-container:hover .coin-flip-card {
+  transform: rotateY(180deg);
 }
 
-.dark-theme .text-\[\#3A5A40\] {
-  color: #5A8F65 !important;
+.coin-flip-front,
+.coin-flip-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--border-radius-button);
 }
 
-.dark-theme .text-\[\#c0392b\] {
-  color: #E57373 !important;
+.coin-flip-front {
+  background: transparent;
 }
 
-.dark-theme .border-\[\#E9ECEF\] {
-  border-color: #2D3136 !important;
+.coin-flip-back {
+  background: var(--color-brand-accent-light);
+  border: 1px solid var(--color-brand-accent);
+  color: var(--color-brand-accent);
+  transform: rotateY(180deg);
 }
 
-.dark-theme .border-r-\[\#E9ECEF\] {
-  border-color: #2D3136 !important;
+/* Monospace stagger offsets for curved learning path */
+@media (min-width: 768px) {
+  .stagger-step-0 { transform: translateX(0px); }
+  .stagger-step-1 { transform: translateX(24px); }
+  .stagger-step-2 { transform: translateX(48px); }
+  .stagger-step-3 { transform: translateX(48px); }
+  .stagger-step-4 { transform: translateX(24px); }
+  .stagger-step-5 { transform: translateX(0px); }
 }
 
-.dark-theme .border-b-\[\#E9ECEF\] {
-  border-color: #2D3136 !important;
-}
 
-.dark-theme .border-t-\[\#E9ECEF\] {
-  border-color: #2D3136 !important;
-}
 
-.dark-theme .border-\[\#c0392b\] {
-  border-color: #E57373 !important;
-}
-
-.dark-theme input, .dark-theme textarea, .dark-theme select {
-  background-color: #181A1D !important;
-  color: #F3F4F6 !important;
-  border-color: #2D3136 !important;
-}
-
-.dark-theme input:focus, .dark-theme textarea:focus, .dark-theme select:focus {
-  border-color: #4A7253 !important;
-}
-
-.dark-theme .hover\:bg-neutral-50:hover {
-  background-color: #2D3136 !important;
-}
-
-.dark-theme .hover\:bg-\[\#E9ECEF\]\/50:hover {
-  background-color: #2D3136 !important;
-}
-
-.dark-theme .hover\:border-\[\#3A5A40\]:hover {
-  border-color: #4A7253 !important;
-}
-
-/* Custom scrollbar adjustments in dark mode */
-.dark-theme ::-webkit-scrollbar-track {
-  background: #111214 !important;
-}
-
-.dark-theme ::-webkit-scrollbar-thumb {
-  background: #2D3136 !important;
-}
-
-.dark-theme ::-webkit-scrollbar-thumb:hover {
-  background: #9CA3AF !important;
-}

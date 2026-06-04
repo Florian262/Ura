@@ -23,13 +23,13 @@ export const StickyNavbar: React.FC<StickyNavbarProps> = ({ onTabClick }) => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white border-b border-[#E9ECEF]">
+    <header className="sticky top-[53px] md:top-0 z-30 w-full bg-white border-b border-[#E9ECEF]">
       <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center gap-4">
         {/* Back and Title */}
         <div className="flex items-center gap-4 w-full md:w-auto">
           <button
             onClick={exitToDashboard}
-            className="flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-none border border-[#E9ECEF] bg-white hover:bg-neutral-50 hover:text-[#3A5A40] hover:border-[#3A5A40] transition text-xs font-bold text-[#1A1D20]"
+            className="flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#E9ECEF] bg-white hover:bg-neutral-50 hover:text-[#3A5A40] hover:border-[#3A5A40] transition text-xs font-bold text-[#1A1D20] cursor-pointer shadow-xs"
           >
             ← Paneli
           </button>
@@ -56,7 +56,7 @@ export const StickyNavbar: React.FC<StickyNavbarProps> = ({ onTabClick }) => {
                 key={sec.id}
                 onClick={() => handleTabClick(sec.id)}
                 disabled={false}
-                className={`flex items-center gap-1 px-3 py-2 rounded-none text-xs font-semibold whitespace-nowrap border transition duration-200 cursor-pointer ${
+                className={`flex items-center gap-1 px-3 py-2 rounded-xl text-xs font-semibold whitespace-nowrap border transition duration-200 cursor-pointer shadow-xs ${
                   isActive
                     ? 'bg-[#3A5A40] text-white border-[#3A5A40]'
                     : 'text-[#565E64] border-transparent hover:bg-[#E9ECEF]/50 hover:text-[#1A1D20]'

@@ -25,7 +25,7 @@ export const ChapterContainer: React.FC = () => {
       const timer = setTimeout(() => {
         const element = document.getElementById(activeSection);
         if (element) {
-          const yOffset = -80;
+          const yOffset = window.innerWidth < 768 ? -120 : -80;
           const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
           window.scrollTo({ top: y, behavior: 'auto' }); // Instant scroll for seamless coordinate restoration
         }
@@ -34,18 +34,32 @@ export const ChapterContainer: React.FC = () => {
     }
   }, [currentChapter?.id]);
 
-  const handleTabClick = (sectionId: string) => {
+  const handleTabClick = React.useCallback((sectionId: string) => {
     setManualScroll(); // Temporarily suspend the intersection observer
     setActiveSection(sectionId); // Set active tab instantly
 
     const element = document.getElementById(sectionId);
     if (element) {
       // Calculate offset if sticky header heights clash
-      const yOffset = -80; 
+      const yOffset = window.innerWidth < 768 ? -120 : -80; 
       const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
-  };
+  }, [setActiveSection]);
+
+  // Listen for navigation requests from the sidebar
+  React.useEffect(() => {
+    const handleNavigate = (e: Event) => {
+      const sectionId = (e as CustomEvent<string>).detail;
+      if (sectionId) {
+        handleTabClick(sectionId);
+      }
+    };
+    window.addEventListener('navigate-to-section', handleNavigate);
+    return () => {
+      window.removeEventListener('navigate-to-section', handleNavigate);
+    };
+  }, [handleTabClick]);
 
   if (!currentChapter) return null;
 
@@ -58,27 +72,27 @@ export const ChapterContainer: React.FC = () => {
       <main className="max-w-4xl mx-auto px-4 mt-8 space-y-16">
         
         {/* SECTION 1: READING & LISTENING */}
-        <section id="reading" className="scroll-mt-24">
+        <section id="reading" className="scroll-mt-28 md:scroll-mt-24">
           <ReadingModule />
         </section>
 
         {/* SECTION 2: VOCABULARY ACQUISITION */}
-        <section id="vocab" className="scroll-mt-24">
+        <section id="vocab" className="scroll-mt-28 md:scroll-mt-24">
           <VocabularyModule />
         </section>
 
         {/* SECTION 3: GRAMMAR PRESENTATION */}
-        <section id="grammar" className="scroll-mt-24">
+        <section id="grammar" className="scroll-mt-28 md:scroll-mt-24">
           <GrammarModule />
         </section>
 
         {/* SECTION 4: WRITING ENGINE */}
-        <section id="writing" className="scroll-mt-24">
+        <section id="writing" className="scroll-mt-28 md:scroll-mt-24">
           <WritingModule />
         </section>
 
         {/* SECTION 5: INTERACTIVE EXERCISES */}
-        <section id="exercises" className="scroll-mt-24">
+        <section id="exercises" className="scroll-mt-28 md:scroll-mt-24">
           <ExerciseModule />
         </section>
 

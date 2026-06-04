@@ -1,0 +1,153 @@
+[
+  {
+    "id": "dict-tr-36",
+    "source": "tr",
+    "word": "gelmek",
+    "translation": "vij, arrij",
+    "pos": "folje",
+    "inflection": "(-e / -den)",
+    "notes": "Kërkon dhanoren (-e) për vendin ku mbërrihet, ose rrjedhoren (-den) për origjinën.",
+    "senses": [
+      "Lëviz drejt vendit ku ndodhet folësi; vij.",
+      "Arrij në një destinacion të caktuar.",
+      "Ndodh ose vjen radha (p.sh. më vjen të qaj, më vjen keq)."
+    ],
+    "examples": [
+      {
+        "source": "Okuldan gelmek",
+        "target": "Vij nga shkolla"
+      },
+      {
+        "source": "Akla gelmek",
+        "target": "Më vjen ndërmend (kujtohem)"
+      },
+      {
+        "source": "Hoş geldiniz",
+        "target": "Mirë se vini"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "gelir",
+        "translation": "të ardhura financiare",
+        "pos": "emër"
+      },
+      {
+        "word": "gelecek",
+        "translation": "e ardhmja",
+        "pos": "emër"
+      },
+      {
+        "word": "geliş",
+        "translation": "ardhje, mbërritje",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-37",
+    "source": "tr",
+    "word": "göz",
+    "translation": "sy",
+    "pos": "emër",
+    "inflection": "-ü",
+    "senses": [
+      "Organi i të parit te njerëzit dhe kafshët.",
+      "Sirtar i vogël ose ndarje brenda një kutie (p.sh. syri i dollapit)."
+    ],
+    "examples": [
+      {
+        "source": "Mavi göz",
+        "target": "Sy blu"
+      },
+      {
+        "source": "Gözetim altında",
+        "target": "Nën vëzhgim"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "gözlük",
+        "translation": "syze",
+        "pos": "emër"
+      },
+      {
+        "word": "gözlükçü",
+        "translation": "optik (shitës syzesh)",
+        "pos": "emër"
+      },
+      {
+        "word": "gözlemek",
+        "translation": "vëzhgoj, mbikëqyr",
+        "pos": "folje"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-38",
+    "source": "tr",
+    "word": "gün",
+    "translation": "ditë",
+    "pos": "emër",
+    "inflection": "-ü",
+    "senses": [
+      "Periudha prej 24 orësh (nga mesnata në mesnatë).",
+      "Kohë ndërmjet lindjes dhe perëndimit të diellit; drita e ditës."
+    ],
+    "examples": [
+      {
+        "source": "Doğum günü",
+        "target": "Ditëlindje"
+      },
+      {
+        "source": "İyi günler",
+        "target": "Ditën e mirë"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "günlük",
+        "translation": "e përditshme; ditar",
+        "pos": "emër"
+      },
+      {
+        "word": "güneş",
+        "translation": "diell",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-39",
+    "source": "tr",
+    "word": "güzel",
+    "translation": "i bukur, e bukur",
+    "pos": "mbiemër",
+    "senses": [
+      "Që ka harmoni formash dhe ngjyrash dhe ngjall kënaqësi estetike.",
+      "I mirë, i këndshëm (p.sh. mot i bukur)."
+    ],
+    "examples": [
+      {
+        "source": "Güzel kız",
+        "target": "Vajzë e bukur"
+      },
+      {
+        "source": "Güzel konuşmak",
+        "target": "Flas bukur"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "güzellik",
+        "translation": "bukuri",
+        "pos": "emër"
+      },
+      {
+        "word": "güzelleşmek",
+        "translation": "bëhem i bukur",
+        "pos": "folje"
+      }
+    ]
+  }
+]

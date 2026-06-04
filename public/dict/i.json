@@ -1,0 +1,109 @@
+[
+  {
+    "id": "dict-tr-43",
+    "source": "tr",
+    "word": "istemek",
+    "translation": "dua, kërkoj",
+    "pos": "folje",
+    "inflection": "(-i)",
+    "notes": "Kërkon rasën kallzore (Akuzativ, -i) për gjënë ose personin që dëshirohet.",
+    "senses": [
+      "Ndjej dëshirë ose nevojë për diçka; dua.",
+      "Kërkoj zyrtarisht ose i drejtohem dikujt për një gjë."
+    ],
+    "examples": [
+      {
+        "source": "Su istemek",
+        "target": "Dua ujë"
+      },
+      {
+        "source": "Çay içmek istemek",
+        "target": "Dua të pi çaj"
+      },
+      {
+        "source": "Özür dilemek",
+        "target": "Kërkoj falje"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "istek",
+        "translation": "dëshirë, kërkesë",
+        "pos": "emër"
+      },
+      {
+        "word": "istekli",
+        "translation": "dëshirues, vullnetar",
+        "pos": "mbiemër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-44",
+    "source": "tr",
+    "word": "iş",
+    "translation": "punë, detyrë",
+    "pos": "emër",
+    "inflection": "-i",
+    "senses": [
+      "Aktivitet fizik ose mendor që kryhet për të arritur një qëllim ose për të fituar para.",
+      "Vendi i punës (p.sh. shkoj në punë)."
+    ],
+    "examples": [
+      {
+        "source": "İşe gitmek",
+        "target": "Shkoj në punë"
+      },
+      {
+        "source": "İş aramak",
+        "target": "Kërkoj punë"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "işçi",
+        "translation": "punëtor",
+        "pos": "emër"
+      },
+      {
+        "word": "işsiz",
+        "translation": "i papunë",
+        "pos": "mbiemër"
+      },
+      {
+        "word": "iş yeri",
+        "translation": "vend pune",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-45",
+    "source": "tr",
+    "word": "insan",
+    "translation": "njeri",
+    "pos": "emër",
+    "inflection": "-ı",
+    "senses": [
+      "Qenia më e zhvilluar shoqërore në tokë, me arsye dhe gjuhë të artikuluar."
+    ],
+    "examples": [
+      {
+        "source": "İyi bir insan",
+        "target": "Njeri i mirë"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "insanlık",
+        "translation": "njerëzi, humanizëm",
+        "pos": "emër"
+      },
+      {
+        "word": "insanca",
+        "translation": "njerëzisht",
+        "pos": "ndajfolje"
+      }
+    ]
+  }
+]

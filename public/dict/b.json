@@ -1,0 +1,282 @@
+[
+  {
+    "id": "dict-tr-10",
+    "source": "tr",
+    "word": "baba",
+    "translation": "baba",
+    "pos": "emër",
+    "inflection": "-yı",
+    "is_balkan": true,
+    "notes": "Gjinia mashkullore, trajta e shquar: babai. Shumës: baballarë.",
+    "senses": [
+      "Prindi mashkull i një fëmije.",
+      "Figurë e respektuar që ka themeluar apo udhëhequr një fushë të caktuar (fig. babai i kombit)."
+    ],
+    "examples": [
+      {
+        "source": "Baba ocağı",
+        "target": "Vatra e babait (shtëpia e prindërve)"
+      },
+      {
+        "source": "Büyükbaba",
+        "target": "Gjysh (baba i madh)"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "babalık",
+        "translation": "atësi; babaxhan",
+        "pos": "emër"
+      },
+      {
+        "word": "babaca",
+        "translation": "si baba, me dashuri prindërore",
+        "pos": "ndajfolje"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-11",
+    "source": "tr",
+    "word": "bakmak",
+    "translation": "shikoj, kujdesem",
+    "pos": "folje",
+    "inflection": "(-e)",
+    "notes": "Kërkon rasën dhanore (Dativ, -e) për drejtimin e shikimit ose kujdesit.",
+    "senses": [
+      "Drejtoj sytë drejt diçkaje për ta parë; shikoj.",
+      "Kujdesem për dikë, siguroj jetesën ose ushqimin (p.sh. kujdesem për fëmijën).",
+      "Kontrolloj apo shqyrtoj një dokument (p.sh. shikoj fjalorin)."
+    ],
+    "examples": [
+      {
+        "source": "Televizyona bakmak",
+        "target": "Shikoj televizionin"
+      },
+      {
+        "source": "Çocuğa bakmak",
+        "target": "Kujdesem për fëmijën"
+      },
+      {
+        "source": "Sözlüğe bakmak",
+        "target": "Shikoj në fjalor"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "bakış",
+        "translation": "shikim, vështrim",
+        "pos": "emër"
+      },
+      {
+        "word": "bakım",
+        "translation": "kujdes, mirëmbajtje",
+        "pos": "emër"
+      },
+      {
+        "word": "bakıcı",
+        "translation": "kujdestar, dadë",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-12",
+    "source": "tr",
+    "word": "başlamak",
+    "translation": "filloj, nis",
+    "pos": "folje",
+    "inflection": "(-e)",
+    "notes": "Kërkon rasën dhanore (Dativ, -e) për veprimin apo gjënë që fillon.",
+    "senses": [
+      "Nis të bëj një punë ose veprim që nuk ishte bërë më parë.",
+      "Hyn në një fazë të re (p.sh. fillon shkolla, fillon dita)."
+    ],
+    "examples": [
+      {
+        "source": "Derse başlamak",
+        "target": "Filloj mësimin"
+      },
+      {
+        "source": "Yeniden başlamak",
+        "target": "Filloj nga e para (rishtazi)"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "başlangıç",
+        "translation": "fillim, zanafillë",
+        "pos": "emër"
+      },
+      {
+        "word": "başlatmak",
+        "translation": "bëj të fillojë, nicioj",
+        "pos": "folje"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-13",
+    "source": "tr",
+    "word": "bebek",
+    "translation": "foshnje, bebe",
+    "pos": "emër",
+    "inflection": "-i",
+    "senses": [
+      "Fëmijë shumë i vogël, në muajt e parë të jetës; foshnje.",
+      "Kukull e thjeshtë që imiton një fëmijë (lodër)."
+    ],
+    "examples": [
+      {
+        "source": "Oyuncak bebek",
+        "target": "Kukull (bebe lodër)"
+      },
+      {
+        "source": "Bebek arabası",
+        "target": "Karrocë fëmijësh"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "bebeklik",
+        "translation": "foshnjëri",
+        "pos": "emër"
+      },
+      {
+        "word": "bebekçe",
+        "translation": "foshnjërisht, si foshnje",
+        "pos": "ndajfolje"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-14",
+    "source": "tr",
+    "word": "büyük",
+    "translation": "i madh, e madhe",
+    "pos": "mbiemër",
+    "senses": [
+      "Që ka dimensione, vëllim ose peshë mbi mesataren.",
+      "I rëndësishëm ose i famshëm (fig. njeri i madh)."
+    ],
+    "examples": [
+      {
+        "source": "Büyük ev",
+        "target": "Shtëpi e madhe"
+      },
+      {
+        "source": "Büyükbaba",
+        "target": "Gjysh"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "büyümek",
+        "translation": "rritem, zmadhohem",
+        "pos": "folje"
+      },
+      {
+        "word": "büyüklük",
+        "translation": "madhësi, madhështia",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-15",
+    "source": "tr",
+    "word": "bardak",
+    "translation": "gotë",
+    "pos": "emër",
+    "inflection": "-ı",
+    "senses": [
+      "Enë e vogël prej qelqi, plastike apo kartoni që shërben për të pirë lëngje."
+    ],
+    "examples": [
+      {
+        "source": "Bir bardak su",
+        "target": "Një gotë ujë"
+      },
+      {
+        "source": "Çay bardağı",
+        "target": "Gotë çaji (tradicionale turke)"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "bardakçı",
+        "translation": "gotëpunues, shitës gotash",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-16",
+    "source": "tr",
+    "word": "boya",
+    "translation": "bojë, ngjyrë",
+    "pos": "emër",
+    "inflection": "-yı",
+    "is_balkan": true,
+    "senses": [
+      "Lëndë kimike e lëngët ose në pluhur që përdoret për të ngjyrosur sipërfaqet (mure, rroba, vizatime)."
+    ],
+    "examples": [
+      {
+        "source": "Duvar boyası",
+        "target": "Bojë muri"
+      },
+      {
+        "source": "Saç boyası",
+        "target": "Bojë flokësh"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "boyamak",
+        "translation": "lyej, ngjyros",
+        "pos": "folje"
+      },
+      {
+        "word": "boyacı",
+        "translation": "lyes, bojaxhi",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-17",
+    "source": "tr",
+    "word": "bulmak",
+    "translation": "gjej",
+    "pos": "folje",
+    "inflection": "(-i)",
+    "notes": "Kërkon rasën kallzore (Akuzativ, -i) për gjënë e gjetur.",
+    "senses": [
+      "Ndesh ose has një objekt ose person që po kërkohej ose ishte i humbur.",
+      "Arrij në një përfundim mendor ose shpik një zgjidhje."
+    ],
+    "examples": [
+      {
+        "source": "Çözüm bulmak",
+        "target": "Gjej zgjidhje"
+      },
+      {
+        "source": "İş bulmak",
+        "target": "Gjej punë"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "buluş",
+        "translation": "shpikje, gjetje shkencore",
+        "pos": "emër"
+      },
+      {
+        "word": "bulunmak",
+        "translation": "ndodhem, gjendem",
+        "pos": "folje"
+      }
+    ]
+  }
+]

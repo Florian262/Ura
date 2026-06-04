@@ -1,0 +1,121 @@
+[
+  {
+    "id": "dict-tr-32",
+    "source": "tr",
+    "word": "ev",
+    "translation": "shtëpi, banesë",
+    "pos": "emër",
+    "inflection": "-i",
+    "senses": [
+      "Ndërtesë ose ambient ku banon një njeri ose një familje.",
+      "Vatra familjare (fig. shtëpia ime)."
+    ],
+    "examples": [
+      {
+        "source": "Eve gitmek",
+        "target": "Shkoj në shtëpi"
+      },
+      {
+        "source": "Ev sahibi",
+        "target": "Zoti i shtëpisë (pronari)"
+      },
+      {
+        "source": "Ev yapımı",
+        "target": "E bërë në shtëpi (artizanale)"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "evli",
+        "translation": "i/e martuar (që ka krijuar familje)",
+        "pos": "mbiemër"
+      },
+      {
+        "word": "evlenmek",
+        "translation": "martohem",
+        "pos": "folje"
+      },
+      {
+        "word": "evsiz",
+        "translation": "i pastrehë",
+        "pos": "mbiemër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-33",
+    "source": "tr",
+    "word": "elma",
+    "translation": "mollë",
+    "pos": "emër",
+    "inflection": "-yı",
+    "senses": [
+      "Frut i rrumbullakët e i shijshëm (i ëmbël ose i thartë) i pemës së mollës."
+    ],
+    "examples": [
+      {
+        "source": "Elma ağacı",
+        "target": "Pemë molle"
+      },
+      {
+        "source": "Yeşil elma",
+        "target": "Mollë e gjelbër"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "elmalı",
+        "translation": "me mollë (p.sh. kek)",
+        "pos": "mbiemër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-34",
+    "source": "tr",
+    "word": "ekmek",
+    "translation": "bukë",
+    "pos": "emër",
+    "inflection": "-i",
+    "senses": [
+      "Ushqim bazë i gatuar nga pjekja e brumit të miellit me ujë e maja.",
+      "Veprimi i mbjelljes së farave në tokë (si folje: ekmek)."
+    ],
+    "examples": [
+      {
+        "source": "Taze ekmek",
+        "target": "Bukë e freskët"
+      },
+      {
+        "source": "Ekmek fırını",
+        "target": "Furra e bukës"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "ekmekçi",
+        "translation": "bukëpjekës (furrtar)",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-35",
+    "source": "tr",
+    "word": "esnaf",
+    "translation": "esnaf, tregtar",
+    "pos": "emër",
+    "inflection": "-ı",
+    "is_balkan": true,
+    "senses": [
+      "Tregtar i vogël ose zanatçi që punon në mënyrë të pavarur.",
+      "Njeri i ndershëm dhe me përvojë në punë (fig. esnaf)."
+    ],
+    "examples": [
+      {
+        "source": "Esnaf lokantası",
+        "target": "Restorant tradicional (me ushqime të lira)"
+      }
+    ]
+  }
+]

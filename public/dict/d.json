@@ -1,0 +1,217 @@
+[
+  {
+    "id": "dict-tr-25",
+    "source": "tr",
+    "word": "demek",
+    "translation": "them, do të thotë",
+    "pos": "folje",
+    "inflection": "(-i)",
+    "senses": [
+      "Shpreh me fjalë një mendim apo ndjenjë; them.",
+      "Ka kuptimin e diçkaje (p.sh. çfarë do të thotë kjo fjalë?)."
+    ],
+    "examples": [
+      {
+        "source": "Ne demek?",
+        "target": "Çfarë do të thotë?"
+      },
+      {
+        "source": "Öyle demek istemedim",
+        "target": "Nuk desha të them ashtu"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "deyim",
+        "translation": "shprehje frazeologjike, idiomë",
+        "pos": "emër"
+      },
+      {
+        "word": "değer",
+        "translation": "vlerë, e vlefshme",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-26",
+    "source": "tr",
+    "word": "dönmek",
+    "translation": "kthehem, rrotullohem",
+    "pos": "folje",
+    "inflection": "(-e / -den)",
+    "notes": "Kërkon dhanoren (-e) për destinacionin e kthimit, ose rrjedhoren (-den) për vendin nga nis kthimi.",
+    "senses": [
+      "Shkoj përsëri në vendin nga u nisa; kthehem.",
+      "Lëviz rreth një boshti apo rrethi; rrotullohem.",
+      "Ndryshoj drejtim gjatë lëvizjes."
+    ],
+    "examples": [
+      {
+        "source": "Eve dönmek",
+        "target": "Kthehem në shtëpi"
+      },
+      {
+        "source": "Geri dönmek",
+        "target": "Kthehem mbrapa"
+      },
+      {
+        "source": "Köşeyi dönmek",
+        "target": "Kthehem në qoshe (fig. pasurohem shpejt)"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "dönüş",
+        "translation": "kthim, rrotullim",
+        "pos": "emër"
+      },
+      {
+        "word": "dönem",
+        "translation": "periudhë, semestër, epokë",
+        "pos": "emër"
+      },
+      {
+        "word": "döndürmek",
+        "translation": "rrotulloj diçka, bëj të kthehet",
+        "pos": "folje"
+      }
+    ]
+  },
+  {
+    "id": "dict-al-27",
+    "source": "al",
+    "word": "dritë",
+    "translation": "ışık",
+    "pos": "emër",
+    "inflection": "-a",
+    "senses": [
+      "Rrezatim fizik që ndriçon objektet dhe i bën të dukshme për syrin.",
+      "Burim ndriçimi (p.sh. llambë)."
+    ],
+    "examples": [
+      {
+        "source": "Drita e diellit",
+        "target": "Güneş ışığı"
+      },
+      {
+        "source": "Dritë jeshile",
+        "target": "Yeşil ışık (fig. leje ose aprovim)"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "ndriçoj",
+        "translation": "ışık saçmak, aydınlatmak",
+        "pos": "folje"
+      },
+      {
+        "word": "dritare",
+        "translation": "pencere",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-28",
+    "source": "tr",
+    "word": "dede",
+    "translation": "gjysh",
+    "pos": "emër",
+    "inflection": "-yi",
+    "is_balkan": true,
+    "senses": [
+      "Babai i babait ose i nënës; gjysh."
+    ],
+    "examples": [
+      {
+        "source": "Dede ocağı",
+        "target": "Shtëpia e gjyshit"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-29",
+    "source": "tr",
+    "word": "ders",
+    "translation": "mësim, orë mësimi",
+    "pos": "emër",
+    "inflection": "-i",
+    "senses": [
+      "Një orë studimi ose mësimdhënieje në shkollë.",
+      "Përvojë jetësore ose këshillë e nxjerrë nga një ngjarje."
+    ],
+    "examples": [
+      {
+        "source": "Ders çalışmak",
+        "target": "Studioj mësimet"
+      },
+      {
+        "source": "Ders almak",
+        "target": "Nxjerr mësim (nga një gabim)"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "derslik",
+        "translation": "klasë, sallë mësimi",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-30",
+    "source": "tr",
+    "word": "deniz",
+    "translation": "det",
+    "pos": "emër",
+    "inflection": "-i",
+    "senses": [
+      "Hapësirë e madhe me ujë të kripur që rrethon kontinentet."
+    ],
+    "examples": [
+      {
+        "source": "Deniz kıyısı",
+        "target": "Bregdet (anë detit)"
+      },
+      {
+        "source": "Deniz ürünleri",
+        "target": "Produkte deti"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "denizci",
+        "translation": "detar",
+        "pos": "emër"
+      },
+      {
+        "word": "denizaltı",
+        "translation": "nëndetëse",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-31",
+    "source": "tr",
+    "word": "dolap",
+    "translation": "dollap",
+    "pos": "emër",
+    "inflection": "-ı",
+    "is_balkan": true,
+    "senses": [
+      "Mobilie me sirtarë ose derë që shërben për të mbajtur rroba, enë ose libra."
+    ],
+    "examples": [
+      {
+        "source": "Elbise dolabı",
+        "target": "Dollap rrobash"
+      },
+      {
+        "source": "Mutfak dolabı",
+        "target": "Dollap kuzhine"
+      }
+    ]
+  }
+]

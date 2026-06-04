@@ -1,0 +1,89 @@
+[
+  {
+    "id": "dict-al-47",
+    "source": "al",
+    "word": "mik",
+    "translation": "arkadaş, dost",
+    "pos": "emër",
+    "inflection": "-u",
+    "notes": "Gjinia mashkullore. Trajta e shquar: miku. Shumës: miq. Forma femërore: mikeshë.",
+    "senses": [
+      "Njeri që lidhet me një tjetër me ndjenjë dashurie, besimi e respekti të ndërsjellë; shok.",
+      "Njeri që vjen për vizitë në shtëpi; mysafir.",
+      "Mbështetës ose dashamirës i një çështjeje."
+    ],
+    "examples": [
+      {
+        "source": "Mik i ngushtë",
+        "target": "Yakın arkadaş"
+      },
+      {
+        "source": "Bëj mik",
+        "target": "Dost edinmek"
+      },
+      {
+        "source": "Mik shtëpie",
+        "target": "Aile dostu (aile misafiri)"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "miqësor",
+        "translation": "dostça, cana yakın",
+        "pos": "mbiemër"
+      },
+      {
+        "word": "miqësi",
+        "translation": "dostluk, arkadaşlık",
+        "pos": "emër"
+      },
+      {
+        "word": "miqësisht",
+        "translation": "dostane",
+        "pos": "ndajfolje"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-53",
+    "source": "tr",
+    "word": "masa",
+    "translation": "tryezë, tavolinë",
+    "pos": "emër",
+    "inflection": "-yı",
+    "senses": [
+      "Mobilie me një sipërfaqe të rrafshët e të mbështetur mbi këmbë, rreth së cilës ulemi."
+    ],
+    "examples": [
+      {
+        "source": "Yemek masası",
+        "target": "Tavolinë ngrënieje"
+      },
+      {
+        "source": "Çalışma masası",
+        "target": "Tavolinë pune"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-54",
+    "source": "tr",
+    "word": "mektup",
+    "translation": "letër",
+    "pos": "emër",
+    "inflection": "-u",
+    "senses": [
+      "Mesazh i shkruar që i dërgohet dikujt me postë ose me dorë."
+    ],
+    "examples": [
+      {
+        "source": "Mektup yazmak",
+        "target": "Shkruaj letër"
+      },
+      {
+        "source": "Mektup göndermek",
+        "target": "Dërgoj letër"
+      }
+    ]
+  }
+]

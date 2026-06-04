@@ -2,6 +2,35 @@ import React, { useState, useEffect } from 'react';
 import { useLesson } from '../../../application/state/LessonContext';
 import { PluralStrategy } from '../../../core/harmony/strategies/pluralStrategy';
 
+const renderMarkdown = (text: string) => {
+  if (!text) return '';
+  
+  const boldParts = text.split('**');
+  
+  return boldParts.map((boldPart, boldIdx) => {
+    const isBold = boldIdx % 2 === 1;
+    const italicParts = boldPart.split('*');
+    
+    const content = italicParts.map((italicPart, italicIdx) => {
+      const isItalic = italicIdx % 2 === 1;
+      if (isItalic) {
+        return <em key={italicIdx} className="italic">{italicPart}</em>;
+      }
+      return italicPart;
+    });
+
+    if (isBold) {
+      return (
+        <strong key={boldIdx} className="font-bold text-[#3A5A40] dark:text-[#14B8A6]">
+          {content}
+        </strong>
+      );
+    }
+    
+    return <span key={boldIdx}>{content}</span>;
+  });
+};
+
 
 export const GrammarModule: React.FC = () => {
   const { grammarCards, carouselStep, setCarouselStep } = useLesson();
@@ -49,7 +78,7 @@ export const GrammarModule: React.FC = () => {
   }, []);
 
   return (
-    <div className="glass-panel rounded-none p-6 md:p-8 bg-white border border-[#E9ECEF]">
+    <div className="glass-panel rounded-2xl p-6 md:p-8 bg-white border border-[#E9ECEF] shadow-sm">
       <div className="mb-6 pb-4 border-b border-[#E9ECEF] flex justify-between items-center">
         <div>
           <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-widest">Sekuenca 3</span>
@@ -61,7 +90,7 @@ export const GrammarModule: React.FC = () => {
       </div>
 
       {/* Segmented Card Carousel Display */}
-      <div className="bg-neutral-50 border border-[#E9ECEF] rounded-none p-6 md:p-8 min-h-[300px] flex flex-col justify-between relative overflow-hidden transition-all duration-300">
+      <div className="grammar-card-bg rounded-2xl p-6 md:p-8 min-h-[300px] flex flex-col justify-between relative overflow-hidden transition-all duration-300 shadow-inner">
         
         <div>
           {/* Card Title */}
@@ -73,8 +102,8 @@ export const GrammarModule: React.FC = () => {
           </h3>
 
           {/* Explanation in Albanian */}
-          <div className="text-sm md:text-base text-[#565E64] font-light leading-relaxed whitespace-pre-line space-y-2">
-            {currentCard.explanation_albanian}
+          <div className="text-sm md:text-base text-[#1A1D20] dark:text-[#F1F5F9] font-normal leading-relaxed whitespace-pre-line space-y-2">
+            {renderMarkdown(currentCard.explanation_albanian)}
           </div>
         </div>
 
@@ -88,16 +117,16 @@ export const GrammarModule: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
               {/* Word Selectors */}
               <div>
-                <p className="text-xs text-[#565E64] mb-2 italic">Zgjidhni një rrënjë fjalë:</p>
+                <p className="text-xs text-[#1A1D20] font-medium mb-2 italic">Zgjidhni një rrënjë fjalë:</p>
                 <div className="grid grid-cols-3 gap-2">
                   {sampleWords.map(sw => (
                     <button
                       key={sw.turkish}
                       onClick={() => runAgglutination(sw.turkish)}
-                      className={`px-3 py-2 rounded-none border text-xs font-bold transition duration-200 cursor-pointer ${
+                      className={`px-3 py-2 rounded-xl border text-xs font-bold transition duration-200 cursor-pointer shadow-xs ${
                         selectedWord === sw.turkish
                           ? 'bg-[#3A5A40]/10 text-[#3A5A40] border-[#3A5A40]'
-                          : 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50'
+                          : 'bg-white border-[#E9ECEF] text-[#1A1D20] hover:bg-neutral-50'
                       }`}
                     >
                       <span className="font-technical font-medium">{sw.turkish}</span>
@@ -108,7 +137,7 @@ export const GrammarModule: React.FC = () => {
               </div>
 
               {/* Strategy aggregation output */}
-              <div className="bg-white border border-[#E9ECEF] rounded-none p-4 min-h-[140px] flex flex-col justify-center">
+              <div className="grammar-output-bg rounded-2xl p-4 min-h-[140px] flex flex-col justify-center shadow-xs">
                 {interactiveResult && (
                   <div className="space-y-3">
                     {/* Visual agglutination representation */}
@@ -129,7 +158,7 @@ export const GrammarModule: React.FC = () => {
                     {/* Explanations array generated dynamically by plural strategy */}
                     <div className="space-y-1">
                       {interactiveResult.changes.map((change: string, cIdx: number) => (
-                        <p key={cIdx} className="text-xs text-[#565E64] font-light leading-relaxed">
+                        <p key={cIdx} className="text-xs text-[#1A1D20] font-normal leading-relaxed">
                           📌 {change}
                         </p>
                       ))}
@@ -146,10 +175,10 @@ export const GrammarModule: React.FC = () => {
           <button
             onClick={handlePrev}
             disabled={carouselStep === 0}
-            className={`px-4 py-2 rounded-none text-xs font-bold border transition duration-200 cursor-pointer ${
+            className={`px-4 py-2 rounded-xl text-xs font-bold border transition duration-200 cursor-pointer shadow-xs ${
               carouselStep === 0
                 ? 'border-[#E9ECEF] text-neutral-300 bg-white cursor-not-allowed'
-                : 'border-[#E9ECEF] bg-white text-[#565E64] hover:bg-neutral-50'
+                : 'border-[#E9ECEF] bg-white text-[#565E64] hover:bg-neutral-50 hover:shadow-xs'
             }`}
           >
             ← Prapa
@@ -161,7 +190,7 @@ export const GrammarModule: React.FC = () => {
               <button
                 key={idx}
                 onClick={() => setCarouselStep(idx)}
-                className={`transition-all duration-300 rounded-none cursor-pointer border-0 ${
+                className={`transition-all duration-300 rounded-full cursor-pointer border-0 ${
                   carouselStep === idx ? 'bg-[#3A5A40] w-5 h-1.5' : 'bg-neutral-300 w-1.5 h-1.5'
                 }`}
               ></button>
@@ -171,10 +200,10 @@ export const GrammarModule: React.FC = () => {
           <button
             onClick={handleNext}
             disabled={carouselStep === grammarCards.length - 1}
-            className={`px-4 py-2 rounded-none text-xs font-bold border transition duration-200 cursor-pointer ${
+            className={`px-4 py-2 rounded-xl text-xs font-bold border transition duration-200 cursor-pointer shadow-xs ${
               carouselStep === grammarCards.length - 1
                 ? 'border-[#E9ECEF] text-neutral-300 bg-white cursor-not-allowed'
-                : 'border-[#E9ECEF] bg-white text-[#565E64] hover:bg-neutral-50'
+                : 'border-[#E9ECEF] bg-white text-[#565E64] hover:bg-neutral-50 hover:shadow-xs'
             }`}
           >
             Para →

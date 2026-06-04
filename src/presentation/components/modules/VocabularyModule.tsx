@@ -4,17 +4,17 @@ import { useAudioPlayer } from '../../../application/hooks/useAudioPlayer';
 
 export const VocabularyModule: React.FC = () => {
   const { vocabulary } = useLesson();
-  const { play, isPlaying, currentSrc } = useAudioPlayer();
+  const { playText, isPlaying, currentSrc } = useAudioPlayer();
 
   if (vocabulary.length === 0) return null;
 
   return (
-    <div className="glass-panel rounded-none p-6 md:p-8 bg-white border border-[#E9ECEF]">
+    <div className="glass-panel rounded-2xl p-6 md:p-8 bg-white border border-[#E9ECEF] shadow-sm">
       <div className="mb-6 pb-4 border-b border-[#E9ECEF]">
         <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-widest">Sekuenca 2</span>
         <h2 className="text-xl font-black text-[#1A1D20] uppercase font-sans">Fjalori i Ri (Yeni Kelimeler)</h2>
         <p className="text-xs text-[#565E64] font-light mt-1">
-          Lexiku i prezantuar në tekst. Vini re fjalët e shënuara si huazime të përbashkëta historike.
+          Lexiku i prezantuar në tekst. Vini re fjalët e shënuara as huazime të përbashkëta historike.
         </p>
       </div>
 
@@ -22,32 +22,32 @@ export const VocabularyModule: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {vocabulary.map(v => {
           const isBalkan = v.is_shared_balkan_word === 1;
-          const isThisPlaying = isPlaying && currentSrc === v.audio_asset_stub;
+          const isThisPlaying = isPlaying && currentSrc === v.turkish_word;
 
           return (
             <div
               key={v.id}
-              className={`glass-card rounded-none p-4 border transition duration-200 relative group overflow-hidden ${
+              className={`glass-card rounded-2xl p-4 border transition duration-200 relative group overflow-hidden shadow-xs hover:shadow-md hover:-translate-y-0.5 ${
                 isBalkan 
                   ? 'balkan-card' 
                   : 'border-[#E9ECEF]'
               }`}
             >
-              {/* Balkanism Accent Light Indicator */}
-              {isBalkan && (
-                <div className="absolute right-2 top-2">
-                  <span className="text-[9px] font-bold uppercase tracking-wider text-[#3A5A40] bg-[#3A5A40]/10 border border-[#3A5A40]/30 px-2 py-0.5 rounded-none">
-                    Balkanizëm 🤝
-                  </span>
-                </div>
-              )}
-
-              <div className="flex justify-between items-start">
-                <div className="space-y-1">
-                  {/* Turkish Word */}
-                  <h3 className="text-base font-bold text-[#1A1D20] font-technical tracking-wide group-hover:text-[#3A5A40] transition-colors uppercase">
-                    {v.turkish_word}
-                  </h3>
+              <div className="flex justify-between items-start gap-4">
+                <div className="space-y-1 flex-1">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    {/* Turkish Word */}
+                    <h3 className="text-base font-bold text-[#1A1D20] font-technical tracking-wide group-hover:text-[#3A5A40] transition-colors uppercase">
+                      {v.turkish_word}
+                    </h3>
+                    
+                    {/* Balkanism Accent Light Indicator */}
+                    {isBalkan && (
+                      <span className="text-[9px] font-bold uppercase tracking-wider text-[#3A5A40] bg-[#3A5A40]/10 border border-[#3A5A40]/30 px-2 py-0.5 rounded-md select-none shrink-0">
+                        Balkanizëm 🤝
+                      </span>
+                    )}
+                  </div>
                   
                   {/* Albanian Translation - Translation Rule */}
                   <span className="translation-subtitle mt-0.5">
@@ -55,20 +55,18 @@ export const VocabularyModule: React.FC = () => {
                   </span>
                 </div>
 
-                {/* Audio asset trigger stub */}
-                {v.audio_asset_stub && (
-                  <button
-                    onClick={() => play(v.audio_asset_stub!)}
-                    className={`p-1.5 rounded-none border text-xs transition duration-200 cursor-pointer ${
-                      isThisPlaying
-                        ? 'bg-[#3A5A40]/15 text-[#3A5A40] border-[#3A5A40]/35 animate-pulse'
-                        : 'bg-white border-[#E9ECEF] text-[#565E64] hover:text-[#3A5A40] hover:border-[#3A5A40]'
-                    }`}
-                    title="Dëgjo prononcimin"
-                  >
-                    🔊
-                  </button>
-                )}
+                {/* Audio asset trigger - Offline TTS Pronunciation */}
+                <button
+                  onClick={() => playText(v.turkish_word, 'tr')}
+                  className={`p-1.5 rounded-lg border text-xs transition duration-200 cursor-pointer shadow-xs shrink-0 ${
+                    isThisPlaying
+                      ? 'bg-[#3A5A40]/15 text-[#3A5A40] border-[#3A5A40]/35 animate-pulse'
+                      : 'bg-white border-[#E9ECEF] text-[#565E64] hover:text-[#3A5A40] hover:border-[#3A5A40]'
+                  }`}
+                  title="Dëgjo prononcimin"
+                >
+                  🔊
+                </button>
               </div>
 
               {/* Context Tag/Notes detailing lexical links */}

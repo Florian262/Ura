@@ -75,8 +75,10 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     setTheme(savedTheme);
     if (savedTheme === 'dark') {
       document.body.classList.add('dark-theme');
+      document.body.classList.add('dark');
     } else {
       document.body.classList.remove('dark-theme');
+      document.body.classList.remove('dark');
     }
 
     // Bootloader: Check if welcoming page has been seen
@@ -97,8 +99,10 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     localStorage.setItem('ura_theme', nextTheme);
     if (nextTheme === 'dark') {
       document.body.classList.add('dark-theme');
+      document.body.classList.add('dark');
     } else {
       document.body.classList.remove('dark-theme');
+      document.body.classList.remove('dark');
     }
   };
 

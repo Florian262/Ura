@@ -1,0 +1,73 @@
+[
+  {
+    "id": "dict-tr-69",
+    "source": "tr",
+    "word": "zaman",
+    "translation": "kohë, çast",
+    "pos": "emër",
+    "inflection": "-ı",
+    "senses": [
+      "Rrjedha e pandërprerë e ekzistencës dhe e ngjarjeve në të shkuarën, të tashmen dhe të ardhmen.",
+      "Një moment i caktuar ose kohëzgjatje e kufizuar për të kryer një veprim."
+    ],
+    "examples": [
+      {
+        "source": "Ne zaman?",
+        "target": "Kur? (në çfarë kohe?)"
+      },
+      {
+        "source": "Zaman harcamak",
+        "target": "Shpenzoj kohë"
+      },
+      {
+        "source": "Zaman zaman",
+        "target": "Kohë pas kohe (rrallëherë)"
+      },
+      {
+        "source": "Tam zamanında",
+        "target": "Fiks në kohë (në kohën e duhur)"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "zamanlı",
+        "translation": "i rregullt, me kohë të caktuar",
+        "pos": "mbiemër"
+      },
+      {
+        "word": "zamansız",
+        "translation": "i parakohshëm, i papërshtatshëm",
+        "pos": "mbiemër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-70",
+    "source": "tr",
+    "word": "zengin",
+    "translation": "i pasur, e pasur",
+    "pos": "mbiemër",
+    "senses": [
+      "Që ka shumë pasuri, para ose prona.",
+      "Që ka bollëk ose vlerë të madhe (fig. fjalor i pasur)."
+    ],
+    "examples": [
+      {
+        "source": "Zengin adam",
+        "target": "Njeri i pasur"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "zenginlik",
+        "translation": "pasuri, bollëk",
+        "pos": "emër"
+      },
+      {
+        "word": "zenginleşmek",
+        "translation": "pasurohem, bëhem i pasur",
+        "pos": "folje"
+      }
+    ]
+  }
+]

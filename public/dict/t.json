@@ -1,0 +1,60 @@
+[
+  {
+    "id": "dict-tr-65",
+    "source": "tr",
+    "word": "toprak",
+    "translation": "tokë, dhe",
+    "pos": "emër",
+    "inflection": "-ı",
+    "senses": [
+      "Shtresa e sipërme e kores së tokës ku mbillet dhe rritet bota bimore; dhe.",
+      "Atdheu ose tregues i sovranitetit të një vendi (p.sh. toka jonë)."
+    ],
+    "examples": [
+      {
+        "source": "Vatan toprağı",
+        "target": "Toka e atdheut"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "topraklı",
+        "translation": "me tokë (p.sh. rrymë elektrike)",
+        "pos": "mbiemër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-66",
+    "source": "tr",
+    "word": "temiz",
+    "translation": "i pastër, e pastër",
+    "pos": "mbiemër",
+    "senses": [
+      "Që nuk ka asnjë papastërti, i larë ose i pastruar.",
+      "I ndershëm ose i pafajshëm (fig. njeri i pastër)."
+    ],
+    "examples": [
+      {
+        "source": "Temiz hava",
+        "target": "Ajër i pastër"
+      },
+      {
+        "source": "Temiz çamaşır",
+        "target": "Rroba të pastra"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "temizlemek",
+        "translation": "pastroj, bëj të pastër",
+        "pos": "folje"
+      },
+      {
+        "word": "temizlik",
+        "translation": "pastrim",
+        "pos": "emër"
+      }
+    ]
+  }
+]

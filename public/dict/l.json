@@ -1,0 +1,44 @@
+[
+  {
+    "id": "dict-tr-51",
+    "source": "tr",
+    "word": "limon",
+    "translation": "limon",
+    "pos": "emër",
+    "inflection": "-u",
+    "senses": [
+      "Frut i verdhë dhe i thartë i pemës së limonit, i pasur me vitaminë C."
+    ],
+    "examples": [
+      {
+        "source": "Limon suyu",
+        "target": "Lëng limoni"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "limonata",
+        "translation": "limonatë",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-52",
+    "source": "tr",
+    "word": "lokum",
+    "translation": "llokum",
+    "pos": "emër",
+    "inflection": "-u",
+    "is_balkan": true,
+    "senses": [
+      "Ëmbëlsirë e butë xhelatinoze, e mbuluar me sheqer pluhur."
+    ],
+    "examples": [
+      {
+        "source": "Türk lokumu",
+        "target": "Llokum turk"
+      }
+    ]
+  }
+]

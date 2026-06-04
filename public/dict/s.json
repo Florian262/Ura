@@ -1,0 +1,108 @@
+[
+  {
+    "id": "dict-tr-62",
+    "source": "tr",
+    "word": "sevmek",
+    "translation": "dua, pëlqej, dashuroj",
+    "pos": "folje",
+    "inflection": "(-i)",
+    "notes": "Kërkon rasën kallzore (Akuzativ, -i) për personin ose sendin që duhet.",
+    "senses": [
+      "Ndjej dashuri të fortë, afri ose dhembshuri të thellë për dikë ose diçka; dua.",
+      "Ndjej pëlqim ose kënaqësi të madhe nga një aktivitet (p.sh. më pëlqen leximi).",
+      "Përkëdhel ose përjarg (p.sh. përkëdhel macen)."
+    ],
+    "examples": [
+      {
+        "source": "Seni seviyorum",
+        "target": "Të dua ty"
+      },
+      {
+        "source": "Okumayı sevmek",
+        "target": "Më pëlqen të lexoj"
+      },
+      {
+        "source": "Kediyi sevmek",
+        "target": "Përkëdhel macen"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "sevgi",
+        "translation": "dashuri, dhembshuri",
+        "pos": "emër"
+      },
+      {
+        "word": "sevgili",
+        "translation": "i/e dashur (partner)",
+        "pos": "emër"
+      },
+      {
+        "word": "sevecen",
+        "translation": "i përzemërt, i dashur",
+        "pos": "mbiemër"
+      },
+      {
+        "word": "sevilmek",
+        "translation": "të duhesh (forma pasive)",
+        "pos": "folje"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-63",
+    "source": "tr",
+    "word": "su",
+    "translation": "ujë",
+    "pos": "emër",
+    "inflection": "-yu",
+    "senses": [
+      "Lëng i tejdukshme pa erë e pa shije, jetik për çdo qenie të gjallë."
+    ],
+    "examples": [
+      {
+        "source": "İçme suyu",
+        "target": "Ujë i pijshëm"
+      },
+      {
+        "source": "Su içmek",
+        "target": "Pi ujë"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "sulu",
+        "translation": "me lëng (ujshëm)",
+        "pos": "mbiemër"
+      },
+      {
+        "word": "susuz",
+        "translation": "pa ujë (i etur)",
+        "pos": "mbiemër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-64",
+    "source": "tr",
+    "word": "saat",
+    "translation": "saat, orë",
+    "pos": "emër",
+    "inflection": "-i",
+    "is_balkan": true,
+    "senses": [
+      "Pajisje që shërben për të matur dhe treguar kohën.",
+      "Njësi kohore prej 60 minutash."
+    ],
+    "examples": [
+      {
+        "source": "Kol saati",
+        "target": "Orë dore"
+      },
+      {
+        "source": "Bir saat sonra",
+        "target": "Pas një ore"
+      }
+    ]
+  }
+]

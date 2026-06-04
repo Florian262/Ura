@@ -1,0 +1,53 @@
+[
+  {
+    "id": "dict-tr-60",
+    "source": "tr",
+    "word": "para",
+    "translation": "para, lekë",
+    "pos": "emër",
+    "inflection": "-yı",
+    "is_balkan": true,
+    "senses": [
+      "Mjet këmbimi i pranuar përgjithësisht për blerjen e mallrave dhe shërbimeve."
+    ],
+    "examples": [
+      {
+        "source": "Para kazanmak",
+        "target": "Fitoj para"
+      },
+      {
+        "source": "Para harcamak",
+        "target": "Shpenzoj para"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "paralı",
+        "translation": "i pasur (me para)",
+        "pos": "mbiemër"
+      },
+      {
+        "word": "parasız",
+        "translation": "pa para, falas",
+        "pos": "mbiemër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-61",
+    "source": "tr",
+    "word": "pencere",
+    "translation": "dritare",
+    "pos": "emër",
+    "inflection": "-yi",
+    "senses": [
+      "Hapësirë me xham në murin e një ndërtese që lejon kalimin e dritës dhe ajrit."
+    ],
+    "examples": [
+      {
+        "source": "Pencereyi açmak",
+        "target": "Hap dritaren"
+      }
+    ]
+  }
+]

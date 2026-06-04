@@ -1,0 +1,250 @@
+[
+  {
+    "id": "dict-tr-18",
+    "source": "tr",
+    "word": "cevap",
+    "translation": "përgjigje",
+    "pos": "emër",
+    "inflection": "-ı",
+    "is_balkan": true,
+    "notes": "Në shqip përdoret si emër femëror: përgjigjja. Trajta e pashquar: përgjigje.",
+    "senses": [
+      "Fjalët ose shkrimi që i kthehen dikujt si reagim ndaj një pyetjeje.",
+      "Reagim apo kundërveprim ndaj një sjelljeje."
+    ],
+    "examples": [
+      {
+        "source": "Cevap vermek",
+        "target": "Jap përgjigje (përgjigjem)"
+      },
+      {
+        "source": "Doğru cevap",
+        "target": "Përgjigje e saktë"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "cevaplamak",
+        "translation": "përgjigjem, i kthej përgjigje",
+        "pos": "folje"
+      },
+      {
+        "word": "cevapsız",
+        "translation": "pa përgjigje",
+        "pos": "mbiemër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-19",
+    "source": "tr",
+    "word": "çalışmak",
+    "translation": "punoj, përpiqem, studioj",
+    "pos": "folje",
+    "inflection": "(-e / -de)",
+    "notes": "Nëse do të thotë \"përpiqem për diçka\", kërkon dhanoren (-e). Nëse do të thotë \"punoj në një vend\", kërkon lokativin (-de).",
+    "senses": [
+      "Kryej një aktivitet fizik ose mendor për të prodhuar diçka apo për të fituar jetesën; punoj.",
+      "Bëj përpjekje të vazhdueshme për të arritur një qëllim; përpiqem.",
+      "Mësoj ose bëj detyrat (p.sh. studioj mësimet)."
+    ],
+    "examples": [
+      {
+        "source": "Fabrikada çalışmak",
+        "target": "Punoj në fabrikë"
+      },
+      {
+        "source": "Kazanmak için çalışmak",
+        "target": "Përpiqem për të fituar"
+      },
+      {
+        "source": "Ders çalışmak",
+        "target": "Studioj mësimet (bëj detyrat)"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "çalışkan",
+        "translation": "i/e zellshme, punëtor",
+        "pos": "mbiemër"
+      },
+      {
+        "word": "çalışan",
+        "translation": "punonjës, punëtor",
+        "pos": "emër"
+      },
+      {
+        "word": "çalışma",
+        "translation": "studim, punim, proces pune",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-20",
+    "source": "tr",
+    "word": "cam",
+    "translation": "xham",
+    "pos": "emër",
+    "inflection": "-ı",
+    "is_balkan": true,
+    "senses": [
+      "Lëndë solide e tejdukshme dhe e thyeshme, që përdoret për dritare, gota etj.",
+      "Dritarja e një dhome apo makine."
+    ],
+    "examples": [
+      {
+        "source": "Cam bardak",
+        "target": "Gotë xhami"
+      },
+      {
+        "source": "Camı açmak",
+        "target": "Hap xhamin (dritaren)"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "camcı",
+        "translation": "xhamprerës (xhamaxhi)",
+        "pos": "emër"
+      },
+      {
+        "word": "camlı",
+        "translation": "me xhama, i xhamuar",
+        "pos": "mbiemër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-21",
+    "source": "tr",
+    "word": "cep",
+    "translation": "xhep",
+    "pos": "emër",
+    "inflection": "-i",
+    "is_balkan": true,
+    "senses": [
+      "Qese e vogël e qepur brenda ose jashtë një veshjeje për të mbajtur sende të vogla.",
+      "Telefon celular (shkurtim për \"cep telefonu\")."
+    ],
+    "examples": [
+      {
+        "source": "Cep telefonu",
+        "target": "Telefon xhepi (celular)"
+      },
+      {
+        "source": "Cebimde para yok",
+        "target": "Nuk kam para në xhep"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "cepli",
+        "translation": "me xhep, që ka xhepa",
+        "pos": "mbiemër"
+      },
+      {
+        "word": "cepsiz",
+        "translation": "pa xhepa",
+        "pos": "mbiemër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-22",
+    "source": "tr",
+    "word": "çanta",
+    "translation": "çantë",
+    "pos": "emër",
+    "inflection": "-yı",
+    "is_balkan": true,
+    "senses": [
+      "Mjet prej lëkure, stofi ose plastike që shërben për të mbajtur libra, vegla ose rroba."
+    ],
+    "examples": [
+      {
+        "source": "Okul çantası",
+        "target": "Çantë shkolle"
+      },
+      {
+        "source": "Sırt çantası",
+        "target": "Çantë shpine"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "çantacı",
+        "translation": "çantëpunues, shitës çantash",
+        "pos": "emër"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-23",
+    "source": "tr",
+    "word": "çiçek",
+    "translation": "lule",
+    "pos": "emër",
+    "inflection": "-i",
+    "senses": [
+      "Pjesa shumëngjyrëshe dhe shpesh me aromë e një bime, që prodhon farën.",
+      "Bima që mbillet për zbukurim."
+    ],
+    "examples": [
+      {
+        "source": "Çiçek bahçesi",
+        "target": "Kopsht lulesh"
+      },
+      {
+        "source": "Yapay çiçek",
+        "target": "Lule artificiale"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "çiçekçi",
+        "translation": "luleshitës",
+        "pos": "emër"
+      },
+      {
+        "word": "çiçeklenmek",
+        "translation": "lulëzoj, nxjerr lule",
+        "pos": "folje"
+      }
+    ]
+  },
+  {
+    "id": "dict-tr-24",
+    "source": "tr",
+    "word": "çocuk",
+    "translation": "fëmijë",
+    "pos": "emër",
+    "inflection": "-u",
+    "senses": [
+      "Njeri në moshë shumë të re, para se të bëhet i rritur; djalë ose vajzë.",
+      "Biri ose bija e dikujt."
+    ],
+    "examples": [
+      {
+        "source": "Çocuk bahçesi",
+        "target": "Kopsht fëmijësh (kënd lojrash)"
+      },
+      {
+        "source": "Erkek çocuk",
+        "target": "Djalë (fëmijë mashkull)"
+      }
+    ],
+    "derivatives": [
+      {
+        "word": "çocukluk",
+        "translation": "fëmijëri",
+        "pos": "emër"
+      },
+      {
+        "word": "çocukça",
+        "translation": "fëmijërisht, si fëmijë",
+        "pos": "ndajfolje"
+      }
+    ]
+  }
+]

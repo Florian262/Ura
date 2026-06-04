@@ -71,7 +71,7 @@ export const PlaygroundPage: React.FC = () => {
         
         {/* left column: Controls panel */}
         <div className="lg:col-span-1 space-y-6">
-          <div className="glass-panel rounded-none p-6 space-y-6 bg-white border border-[#E9ECEF]">
+          <div className="glass-panel rounded-2xl p-6 space-y-6 bg-white border border-[#E9ECEF] shadow-sm">
             <h3 className="text-sm font-bold text-[#1A1D20] uppercase tracking-wide">Konfiguro Analizën</h3>
 
             {/* Input custom word */}
@@ -83,7 +83,7 @@ export const PlaygroundPage: React.FC = () => {
                 onChange={(e) => setCustomWord(e.target.value.replace(/[^a-zA-ZçğıöşüÇĞİÖŞÜ]/g, ''))}
                 placeholder="Shkruaj fjalën..."
                 maxLength={20}
-                className="w-full rounded-none border border-[#E9ECEF] bg-white px-4 py-2.5 text-sm text-[#1A1D20] placeholder-neutral-400 focus:border-[#565E64] focus:outline-none font-technical tracking-wide"
+                className="w-full rounded-xl border border-[#E9ECEF] bg-white px-4 py-2.5 text-sm text-[#1A1D20] placeholder-neutral-400 focus:border-[#565E64] focus:outline-none font-technical tracking-wide shadow-sm"
               />
             </div>
 
@@ -93,7 +93,7 @@ export const PlaygroundPage: React.FC = () => {
               <div className="grid grid-cols-2 gap-2">
                 <button
                   onClick={() => setActiveStrategy('plural')}
-                  className={`px-3 py-2.5 rounded-none border text-xs font-bold transition duration-200 cursor-pointer ${
+                  className={`px-3 py-2.5 rounded-xl border text-xs font-bold transition duration-200 cursor-pointer shadow-xs ${
                     activeStrategy === 'plural'
                       ? 'bg-[#3A5A40] text-white border-[#3A5A40]'
                       : 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50'
@@ -103,7 +103,7 @@ export const PlaygroundPage: React.FC = () => {
                 </button>
                 <button
                   onClick={() => setActiveStrategy('habitore')}
-                  className={`px-3 py-2.5 rounded-none border text-xs font-bold transition duration-200 cursor-pointer ${
+                  className={`px-3 py-2.5 rounded-xl border text-xs font-bold transition duration-200 cursor-pointer shadow-xs ${
                     activeStrategy === 'habitore'
                       ? 'bg-[#3A5A40] text-white border-[#3A5A40]'
                       : 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50'
@@ -125,7 +125,7 @@ export const PlaygroundPage: React.FC = () => {
                       setCustomWord(sw.word);
                       if (sw.word === 'git') setActiveStrategy('habitore');
                     }}
-                    className="px-3 py-2 rounded-none border border-[#E9ECEF] bg-white text-left hover:border-[#3A5A40] text-xs font-medium font-technical transition cursor-pointer"
+                    className="px-3 py-2 rounded-xl border border-[#E9ECEF] bg-white text-left hover:border-[#3A5A40] text-xs font-medium font-technical transition cursor-pointer shadow-xs hover:-translate-y-0.5"
                   >
                     <span className="text-[#1A1D20] font-bold block">{sw.word}</span>
                     <span className="text-[10px] text-neutral-400 font-light italic">{sw.desc}</span>
@@ -139,13 +139,13 @@ export const PlaygroundPage: React.FC = () => {
         {/* Right column: Interactive logs visualizer */}
         <div className="lg:col-span-2 space-y-6">
           {result && (
-            <div className="glass-panel rounded-none p-6 md:p-8 space-y-6 bg-white border border-[#E9ECEF]">
+            <div className="glass-panel rounded-2xl p-6 md:p-8 space-y-6 bg-white border border-[#E9ECEF] shadow-sm animate-fade-in">
 
               {/* Agglutination Canvas */}
-              <div className="bg-neutral-50 border border-[#E9ECEF] rounded-none p-8 flex flex-col items-center justify-center space-y-4">
+              <div className="bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-8 flex flex-col items-center justify-center space-y-4">
                 <div className="flex flex-wrap items-center justify-center gap-3 text-xl md:text-2xl font-technical">
                   {/* Root word card */}
-                  <span className="px-5 py-2.5 border border-[#E9ECEF] bg-white text-[#1A1D20] rounded-none font-semibold uppercase">
+                  <span className="px-5 py-2.5 border border-[#E9ECEF] bg-white text-[#1A1D20] rounded-xl font-semibold uppercase shadow-sm">
                     {result.wordAnalyzed}
                   </span>
                   
@@ -153,7 +153,7 @@ export const PlaygroundPage: React.FC = () => {
                   <span className="text-[#3A5A40] font-black">+</span>
 
                   {/* Suffix card */}
-                  <span className="px-5 py-2.5 border border-[#3A5A40]/40 bg-[#3A5A40]/10 text-[#3A5A40] rounded-none font-bold">
+                  <span className="px-5 py-2.5 border border-[#3A5A40]/40 bg-[#3A5A40]/10 text-[#3A5A40] rounded-xl font-bold">
                     -{result.suffixApplied}
                   </span>
 
@@ -161,7 +161,7 @@ export const PlaygroundPage: React.FC = () => {
                   <span className="text-neutral-400 font-bold">=</span>
 
                   {/* Merged result card */}
-                  <span className="px-6 py-2.5 border border-[#3A5A40] bg-[#3A5A40] text-white rounded-none font-black tracking-wide uppercase">
+                  <span className="px-6 py-2.5 border border-[#3A5A40] bg-[#3A5A40] text-white rounded-xl font-black tracking-wide uppercase shadow-md">
                     {result.result}
                   </span>
                 </div>
@@ -210,7 +210,7 @@ export const PlaygroundPage: React.FC = () => {
                   </div>
 
                   {/* Generated explanations from strategies */}
-                  <div className="p-4 rounded-none border border-[#E9ECEF] bg-white space-y-3">
+                  <div className="p-4 rounded-xl border border-[#E9ECEF] bg-white space-y-3">
                     <h5 className="text-[10px] font-bold text-[#1A1D20] uppercase tracking-wider">
                       Zanoret: Harmonia Vokalore & Krahasimi Shqip
                     </h5>
