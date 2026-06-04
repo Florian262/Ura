@@ -1,25 +1,11 @@
 import { a1Chapter1 } from './a1_chapter1';
+import { a1Chapter2 } from './a1_chapter2';
+import { a1Chapter3 } from './a1_chapter3';
+import { a1Chapter4 } from './a1_chapter4';
+import { a1Chapter5 } from './a1_chapter5';
+import { a1Chapter6 } from './a1_chapter6';
+import { a1Chapter7 } from './a1_chapter7';
 import type { UnifiedLesson } from './a1_chapter1';
-
-// Skeletal placeholders for Lessons 2 through 7 (ready to be filled out later)
-const a1Chapter2: UnifiedLesson = {
-  id: 2,
-  level: 'A1',
-  orderIndex: 2,
-  title: {
-    turkish: 'Nerede? (Bulunma Durumu)',
-    albanian: 'Ku është? (Rasa Vendore)'
-  },
-  reading: {
-    layoutStyle: 'dialogue',
-    audioAssetStub: null,
-    content: [],
-    questions: []
-  },
-  vocabulary: [],
-  grammar: [],
-  exercises: []
-};
 
 const a2Chapter1: UnifiedLesson = {
   id: 3,
@@ -119,6 +105,11 @@ const c2Chapter1: UnifiedLesson = {
 export const ALL_UNIFIED_LESSONS: UnifiedLesson[] = [
   a1Chapter1,
   a1Chapter2,
+  a1Chapter3,
+  a1Chapter4,
+  a1Chapter5,
+  a1Chapter6,
+  a1Chapter7,
   a2Chapter1,
   b1Chapter1,
   b2Chapter1,

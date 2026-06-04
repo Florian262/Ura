@@ -12,7 +12,7 @@ const MUTATION_MAP: Record<string, string> = {
 
 // Words that do NOT mutate despite ending in p, ç, t, k (mostly single syllable or specific loans)
 const NO_MUTATION_EXCEPTIONS = new Set([
-  'saç', 'süt', 'üç', 'iç', 'koç', 'kart', 'park', 'bilet', 'sepet', 'paket', 'at', 'ot'
+  'saç', 'süt', 'üç', 'iç', 'koç', 'kart', 'park', 'bilet', 'sepet', 'paket', 'at', 'ot', 'saat'
 ]);
 
 // Special cases that mutate despite being single syllable (e.g., git -> gid-)

@@ -17,7 +17,7 @@ test.describe('Ura Language Portal E2E UI Automation Flows', () => {
     await expect(title).toContainText('Mëso Turqisht');
 
     // Fill in username
-    const nameInput = page.locator('input[placeholder="Shkruani emrin tuaj këtu..."]');
+    const nameInput = page.locator('input[placeholder="Shkruani emrin tuaj..."]');
     await expect(nameInput).toBeVisible();
     await nameInput.fill('Florian');
 
@@ -55,12 +55,16 @@ test.describe('Ura Language Portal E2E UI Automation Flows', () => {
     await expect(firstChapter).toBeVisible();
     await expect(firstChapter).toContainText('Tanışma ve Çoğul Eki');
 
+    const secondChapter = page.locator('button:has-text("Mësimi 2")');
+    await expect(secondChapter).toBeVisible();
+    await expect(secondChapter).toContainText('Sınıfta ve Evde');
+
     // ---- STEP D: LESSON VIEWPORT & STATE ----
     // Click chapter 1 to load the lesson container
     await firstChapter.click();
 
     // Verify active chapter is successfully mounted and header is visible
-    const stickyPanel = page.locator('header.sticky');
+    const stickyPanel = page.locator('header.sticky:has-text("← Paneli")');
     await expect(stickyPanel).toBeVisible();
     
     // Assert coordinates tabs are present

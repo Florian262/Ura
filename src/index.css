@@ -472,5 +472,10 @@ input:focus, textarea:focus, select:focus {
   .stagger-step-5 { transform: translateX(0px); }
 }
 
+.nav-scroll-fade {
+  mask-image: linear-gradient(to right, transparent, black 15px, black calc(100% - 15px), transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15px, black calc(100% - 15px), transparent);
+}
+
 
 

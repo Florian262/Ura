@@ -44,7 +44,7 @@ export const DictionaryPage: React.FC = () => {
           source: 'tr',
           word: v.turkish_word,
           translation: v.albanian_word,
-          pos: 'emër', // Default to noun for core lesson items
+          pos: v.category, // Derived from core lesson items
           inflection: v.is_shared_balkan_word === 1 ? undefined : undefined,
           notes: v.notes_albanian || undefined,
           is_balkan: v.is_shared_balkan_word === 1,

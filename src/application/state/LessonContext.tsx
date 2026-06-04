@@ -86,10 +86,7 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     if (!welcomeSeen) {
       setActivePage('welcome');
     } else {
-      const lastSession = ProgressRepository.getLastAccessedProgress();
-      if (lastSession) {
-        loadChapter(lastSession.chapter_id);
-      }
+      setActivePage('lessons'); // Take them directly to the main dashboard
     }
   }, []);
 
@@ -229,7 +226,17 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   };
 
   const resetAllData = () => {
-    if (window.confirm('A jeni të sigurt që dëshironi të fshini të gjithë progresin tuaj dhe të dhënat e ruajtura? Kjo do të rivendosë aplikacionin nga fillimi.')) {
+    const confirmation = window.confirm(
+      "KUJDES: RIVENDOSJA E TË DHËNAVE\n\n" +
+      "Nëse vazhdoni, ky veprim do të kryejë të mëposhtmet:\n" +
+      "1. Do të fshijë plotësisht emrin tuaj të regjistruar.\n" +
+      "2. Do të fshijë të gjithë progresin e kapitujve (kapitujt e përfunduar do të shënohen si të paprekur).\n" +
+      "3. Do të rivendosë temën (dritë/errësirë) dhe të gjitha preferencat tuaja.\n" +
+      "4. Do t'ju kthejë në faqen e mirëseardhjes për të filluar mësimin nga fillimi.\n\n" +
+      "Ky veprim është i pakthyeshëm. A jeni plotësisht të sigurt që dëshironi të vazhdoni?"
+    );
+
+    if (confirmation) {
       localStorage.clear();
       setChapters(ChapterRepository.getAllChapters());
       setCurrentChapter(null);
@@ -244,7 +251,7 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       setCarouselStepState(0);
       setWritingPreferenceState('self_check');
       setActivePage('welcome');
-      alert('Të dhënat u fshinë me sukses! Aplikacioni u rivendos.');
+      alert('Të dhënat tuaja u fshinë me sukses! Aplikacioni u rivendos në gjendjen fillestare.');
     }
   };
 

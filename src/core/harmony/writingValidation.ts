@@ -7,6 +7,14 @@ export interface EvaluationResult {
   matchedModelAnswer?: string;
 }
 
+export interface ValidationRule {
+  type: 'required_keywords' | 'forbidden_pattern' | 'required_pattern' | 'origin_harmony' | 'reported_past_harmony' | 'conditional_harmony' | 'participle_harmony' | 'idiom_presence' | 'gittim_check' | 'okudum_check';
+  keywords?: string[];
+  regex?: string;
+  feedback: string;
+  idioms?: Array<{ name: string; keywords: string[] }>;
+}
+
 export interface WritingPrompt {
   chapterId: number;
   type: 'translation' | 'guided';
@@ -14,6 +22,7 @@ export interface WritingPrompt {
   grammarTipAlbanian: string;
   sampleAnswers?: string[];
   grammarLabel?: string;
+  validationRules?: ValidationRule[];
 }
 
 // Prompt Configurations for all 7 chapters
@@ -28,7 +37,23 @@ export const WRITING_PROMPTS: Record<number, WritingPrompt> = {
       "Merhaba! Benim adım Ahmet. İstanbulluyum.",
       "Merhaba, benim adım Leyla. Kosovalıyım."
     ],
-    grammarLabel: "Prezantimi & Origjina (-lı/yim)"
+    grammarLabel: "Prezantimi & Origjina (-lı/yim)",
+    validationRules: [
+      {
+        type: 'required_pattern',
+        regex: 'merhaba|selam|iyi günler|iyi akşamlar|günaydın',
+        feedback: "Mungon përshëndetja në fillim të fjalisë (p.sh., 'Merhaba' ose 'Selam')."
+      },
+      {
+        type: 'required_pattern',
+        regex: 'adım|ismim|adımın|ben\\s+[a-zA-ZçğışöüÇĞİŞÖÜ]+(y[ıi])?m',
+        feedback: "Mungon struktura e prezantimit të emrit tuaj (p.sh., 'Benim adım ...' ose 'İsmim ...')."
+      },
+      {
+        type: 'origin_harmony',
+        feedback: "Mungon prapashtesa e origjinës ose kombësisë (p.sh., 'Tiranlıyım' ose 'Kosovalıyım'). Sigurohuni që keni shkruar emrin e vendit, të ndjekur nga '-lı/-li/-lu/-lü' dhe prapashtesa vetanake '-yım/-yim/-yum/-yüm'."
+      }
+    ]
   },
   2: {
     chapterId: 2,
@@ -41,7 +66,39 @@ export const WRITING_PROMPTS: Record<number, WritingPrompt> = {
       "Kitap masada, defter ise çantada.",
       "Kitap masadadır, defter çantadadır."
     ],
-    grammarLabel: "Rasa Vendore (-da/-de)"
+    grammarLabel: "Rasa Vendore (-da/-de)",
+    validationRules: [
+      {
+        type: 'required_keywords',
+        keywords: ['kitap'],
+        feedback: "Mungon fjala 'kitap' (libër)."
+      },
+      {
+        type: 'required_keywords',
+        keywords: ['defter'],
+        feedback: "Mungon fjala 'defter' (fletore)."
+      },
+      {
+        type: 'forbidden_pattern',
+        regex: 'masade',
+        feedback: "Gabim Harmonie Vokalore: Fjala 'masa' ka zanore të prapme (a), prandaj prapashtesa duhet të jetë '-da' (masada, jo 'masade')."
+      },
+      {
+        type: 'required_pattern',
+        regex: 'masad[ae]',
+        feedback: "Mungon rasa vendore për tavolinën ('masada')."
+      },
+      {
+        type: 'forbidden_pattern',
+        regex: 'çantade',
+        feedback: "Gabim Harmonie Vokalore: Fjala 'çanta' ka zanore të prapme (a), prandaj prapashtesa duhet të jetë '-da' (çantada, jo 'çantade')."
+      },
+      {
+        type: 'required_pattern',
+        regex: '[çc]antad[ae]',
+        feedback: "Mungon rasa vendore për çantën ('çantada')."
+      }
+    ]
   },
   3: {
     chapterId: 3,
@@ -54,7 +111,32 @@ export const WRITING_PROMPTS: Record<number, WritingPrompt> = {
       "Dün okula gidip bir kitap okudum.",
       "Dün okuluma gittim ve bir kitap okudum."
     ],
-    grammarLabel: "Koha e Shkuar (-dı) & Drejtimi (-a)"
+    grammarLabel: "Koha e Shkuar (-dı) & Drejtimi (-a)",
+    validationRules: [
+      {
+        type: 'required_keywords',
+        keywords: ['dün'],
+        feedback: "Mungon treguesi i kohës së shkuar 'dün' (dje)."
+      },
+      {
+        type: 'forbidden_pattern',
+        regex: 'okule',
+        feedback: "Gabim Harmonie: Fjala 'okul' ka zanoren e prapme 'u', prandaj drejtimi duhet të jetë '-a' (okula, jo 'okule')."
+      },
+      {
+        type: 'required_pattern',
+        regex: 'okul[ae]',
+        feedback: "Mungon rasa e drejtimit për shkollën. Folja 'gitmek' kërkon prapashtesën '-a' (okula gittim)."
+      },
+      {
+        type: 'gittim_check',
+        feedback: ""
+      },
+      {
+        type: 'okudum_check',
+        feedback: ""
+      }
+    ]
   },
   4: {
     chapterId: 4,
@@ -66,7 +148,13 @@ export const WRITING_PROMPTS: Record<number, WritingPrompt> = {
       "Ahmet dün sinemaya gitmiş.",
       "O kitabı çok beğenmişsin."
     ],
-    grammarLabel: "Mënyra Habitore (-miş)"
+    grammarLabel: "Mënyra Habitore (-miş)",
+    validationRules: [
+      {
+        type: 'reported_past_harmony',
+        feedback: "Gabim: Nuk u gjet asnjë folje e zgjedhuar në Mënyrën Habitore. Duhet të përdorni prapashtesën '-miş/-mış/-muş/-müş' pas rrënjës së foljes (p.sh., 'gitmiş', 'gelmiş', 'yağmış')."
+      }
+    ]
   },
   5: {
     chapterId: 5,
@@ -78,7 +166,13 @@ export const WRITING_PROMPTS: Record<number, WritingPrompt> = {
       "Yağmur yağarsa evde kalacağız.",
       "Paran varsa bunu alabilirsin."
     ],
-    grammarLabel: "Mënyra Kushtore (-se/-sa)"
+    grammarLabel: "Mënyra Kushtore (-se/-sa)",
+    validationRules: [
+      {
+        type: 'conditional_harmony',
+        feedback: "Gabim: Nuk u gjet asnjë strukturë kushtore në fjali. Duhet të përdorni prapashtesën e kushtit '-se/-sa' (p.sh., 'gidersen', 'yağarsa', 'varsa')."
+      }
+    ]
   },
   6: {
     chapterId: 6,
@@ -90,7 +184,13 @@ export const WRITING_PROMPTS: Record<number, WritingPrompt> = {
       "En sevdiğim yemek köftedir.",
       "Yazdığın mektubu okudum."
     ],
-    grammarLabel: "Pjesoret (Sıfat-Fiiller)"
+    grammarLabel: "Pjesoret (Sıfat-Fiiller)",
+    validationRules: [
+      {
+        type: 'participle_harmony',
+        feedback: "Gabim: Nuk u gjet asnjë pjesore (sıfat-fiil) në fjali. Përdorni një folje me prapashtesën '-an/-en' (p.sh., 'gelen adam') ose '-dık/-dik' me prapashtesë pronore (p.sh., 'sevdiğim yemek')."
+      }
+    ]
   },
   7: {
     chapterId: 7,
@@ -102,7 +202,19 @@ export const WRITING_PROMPTS: Record<number, WritingPrompt> = {
       "Tatile gitmek için can atıyorum.",
       "Bu küçük soruna kafayı takma."
     ],
-    grammarLabel: "Idiomat e Përbashkëta (Deyimler)"
+    grammarLabel: "Idiomat e Përbashkëta (Deyimler)",
+    validationRules: [
+      {
+        type: 'idiom_presence',
+        idioms: [
+          { name: "gözden düşmek", keywords: ["göz", "düş"] },
+          { name: "can atmak", keywords: ["can", "at"] },
+          { name: "kulak asmak", keywords: ["kulak", "as"] },
+          { name: "kafayı takmak", keywords: ["kafa", "tak"] }
+        ],
+        feedback: "Gabim: Nuk u gjet asnjë nga idiomat e kërkuara të përbashkëta (si 'gözden düşmek', 'can atmak', 'kulak asmak', ose 'kafayı takmak'). Sigurohuni që t'i shkruani saktë fjalët e idiomës."
+      }
+    ]
   }
 };
 
@@ -195,7 +307,247 @@ export function findTypoDetails(userInput: string, modelAnswer: string): string 
   return `Keni një gabim të vogël në gërmëzim krahasuar me fjalinë model: "${modelAnswer}".`;
 }
 
-// Evaluates a Turkish writing input offline using Method 2 and Method 3
+// Helper to evaluate a single declarative validation rule
+function runRule(rule: ValidationRule, normalizedInput: string): string | null {
+  switch (rule.type) {
+    case 'required_keywords': {
+      if (!rule.keywords) return null;
+      for (const kw of rule.keywords) {
+        if (!normalizedInput.includes(kw)) {
+          return rule.feedback;
+        }
+      }
+      return null;
+    }
+    case 'required_pattern': {
+      if (!rule.regex) return null;
+      const re = new RegExp(rule.regex, 'i');
+      if (!re.test(normalizedInput)) {
+        return rule.feedback;
+      }
+      return null;
+    }
+    case 'forbidden_pattern': {
+      if (!rule.regex) return null;
+      const re = new RegExp(rule.regex, 'i');
+      if (re.test(normalizedInput)) {
+        return rule.feedback;
+      }
+      return null;
+    }
+    case 'origin_harmony': {
+      const words = normalizedInput.split(' ');
+      let originMatch = null;
+      let cityRoot = '';
+      let liSuffix = '';
+      let yimSuffix = '';
+
+      for (const w of words) {
+        const match = w.match(/^([a-zçğışöü]+)(l[ıilu])(y[ıiu]m)$/);
+        if (match) {
+          originMatch = match;
+          cityRoot = match[1];
+          liSuffix = match[2];
+          yimSuffix = match[3];
+          break;
+        }
+      }
+
+      if (!originMatch) {
+        return rule.feedback;
+      }
+
+      // Check vowel harmony of the origin suffix
+      const correctVowel = getVowelHarmony4(cityRoot);
+      const expectedLi = `l${correctVowel}`;
+      const expectedYim = `y${correctVowel}m`;
+
+      if (liSuffix !== expectedLi || yimSuffix !== expectedYim) {
+        return `Gabim Harmonie te origjina: Qyteti '${cityRoot}' ka zanoren e fundit '${getLastVowel(cityRoot)}', prandaj prapashtesat duhet të jenë '-${expectedLi}' dhe '-${expectedYim}' → '${cityRoot}${expectedLi}${expectedYim}' (ju keni shkruar '${cityRoot}${liSuffix}${yimSuffix}').`;
+      }
+      return null;
+    }
+    case 'reported_past_harmony': {
+      const words = normalizedInput.split(' ');
+      let habitoreMatch = null;
+      let verbRoot = '';
+      let misSuffix = '';
+
+      for (const w of words) {
+        const match = w.match(/^([a-zçğışöü]+)(miş|mış|muş|müş)(im|sin|miş|ik|iniz|ler)?$/);
+        if (match) {
+          habitoreMatch = match;
+          verbRoot = match[1];
+          misSuffix = match[2];
+          break;
+        }
+      }
+
+      if (!habitoreMatch) {
+        return rule.feedback;
+      }
+
+      if (!isValidVerbBase(verbRoot)) {
+        return `Gabim: Baza ose rrënja e foljes '${verbRoot}' ka gabim të harmonisë vokalike (kombinim i pasaktë i zanoreve para prapashtesës).`;
+      }
+
+      const expectedVowel = getVowelHarmony4(verbRoot);
+      const expectedSuffix = `m${expectedVowel}ş`;
+
+      if (misSuffix !== expectedSuffix) {
+        return `Gabim Harmonie Vokalore: Rrënja e foljes '${verbRoot}' ka zanoren e fundit '${getLastVowel(verbRoot)}', prandaj prapashtesa e habitores duhet të jetë '-${expectedSuffix}' → '${verbRoot}${expectedSuffix}' (ju keni shkruar '${verbRoot}${misSuffix}').`;
+      }
+      return null;
+    }
+    case 'conditional_harmony': {
+      const words = normalizedInput.split(' ');
+      let condMatch = null;
+      let base = '';
+      let suffix = '';
+      const hasVarYokCond = /\b(varsa|yoksa)\b/.test(normalizedInput);
+
+      for (const w of words) {
+        const match = w.match(/^([a-zçğışöü]+)(se|sa)(m|n|k|niz|ler)?$/);
+        if (match) {
+          condMatch = match;
+          base = match[1];
+          suffix = match[2];
+          break;
+        }
+      }
+
+      if (!condMatch && !hasVarYokCond) {
+        return rule.feedback;
+      }
+
+      if (condMatch && !hasVarYokCond) {
+        if (!isValidVerbBase(base)) {
+          return `Gabim: Baza e foljes '${base}' ka gabim të harmonisë vokalike (kombinim i pasaktë i zanoreve para prapashtesës).`;
+        }
+
+        const expectedHarmony = getVowelHarmony2(base);
+        const expectedSuffix = `s${expectedHarmony}`;
+
+        if (suffix !== expectedSuffix) {
+          return `Gabim Harmonie Vokalore: Rrënja/baza '${base}' kërkon prapashtesën e kushtit '-${expectedSuffix}' (2-she), por keni shkruar '-${suffix}' → '${base}${expectedSuffix}' (jo '${base}${suffix}').`;
+        }
+      }
+      return null;
+    }
+    case 'participle_harmony': {
+      const words = normalizedInput.split(' ');
+      let activeMatch = null;
+      let passiveMatch = null;
+
+      for (const w of words) {
+        const matchA = w.match(/^([a-zçğışöü]+)(en|an)$/);
+        if (matchA) {
+          const root = matchA[1];
+          if (root.length >= 2 && !['b', 's', 'o'].includes(root)) {
+            activeMatch = matchA;
+            break;
+          }
+        }
+        const matchP = w.match(/^([a-zçğışöü]+)(diğ|dığ|duğ|düğ|dik|dık|duk|dük)(i|im|in|imiz|iniz|i|leri)?$/);
+        if (matchP) {
+          passiveMatch = matchP;
+          break;
+        }
+      }
+
+      if (!activeMatch && !passiveMatch) {
+        return rule.feedback;
+      }
+
+      if (activeMatch) {
+        const root = activeMatch[1];
+        const suffix = activeMatch[2];
+        
+        if (!isValidVerbBase(root)) {
+          return `Gabim: Rrënja e foljes '${root}' ka gabim të harmonisë vokalike.`;
+        }
+
+        const expected = getVowelHarmony2(root);
+        const expectedSuffix = `${expected}n`;
+
+        if (suffix !== expectedSuffix) {
+          return `Gabim Harmonie te pjesorja: Rrënja '${root}' duhet të ketë prapashtesën '-${expectedSuffix}' → '${root}${expectedSuffix}' (ju shkruat '${root}${suffix}').`;
+        }
+      }
+
+      if (passiveMatch) {
+        const root = passiveMatch[1];
+        const suffix = passiveMatch[2];
+
+        if (!isValidVerbBase(root)) {
+          return `Gabim: Rrënja e foljes '${root}' ka gabim të harmonisë vokalike.`;
+        }
+
+        const expectedVowel = getVowelHarmony4(root);
+        const lastChar = root.slice(-1);
+        const isVoiceless = 'çfhkpsştÇFHKPSŞT'.includes(lastChar);
+        const expectedD = isVoiceless ? 't' : 'd';
+        const expectedSuffixStart = `${expectedD}${expectedVowel}`;
+        
+        if (!suffix.startsWith(expectedSuffixStart)) {
+          return `Gabim Harmonie/Mutacioni: Pjesorja pasive për '${root}' kërkon prapashtesën që fillon me '${expectedSuffixStart}' (p.sh., '${root}${expectedSuffixStart}ğ...'), por ju shkruat '${root}${suffix}'.`;
+        }
+      }
+      return null;
+    }
+    case 'idiom_presence': {
+      if (!rule.idioms) return null;
+      let foundIdiom = '';
+      for (const idm of rule.idioms) {
+        const matchAll = idm.keywords.every(kw => normalizedInput.includes(kw));
+        if (matchAll) {
+          foundIdiom = idm.name;
+          break;
+        }
+      }
+      if (!foundIdiom) {
+        return rule.feedback;
+      }
+      return null;
+    }
+    case 'gittim_check': {
+      const hasGittim = /git(ti|tı|tü|tu)[mndk]?/.test(normalizedInput);
+      if (hasGittim) {
+        const match = normalizedInput.match(/git(ti|tı|tü|tu)([mndk]?)/);
+        if (match && match[2] !== 'm') {
+          return `Keni shkruar foljen 'gitmek' në vetën e gabuar. Për 'shkova' duhet veta e parë njëjës: 'gittim' (jo 'gitti' apo 'gittin').`;
+        } else if (match && match[1] !== 'ti') {
+          return "Gabim Harmonie: Zgjedhimi i shkuar i 'gitmek' duhet të jetë 'gittim' (jo 'gittım' ose 'gittum').";
+        }
+      } else if (normalizedInput.includes('gitmek') || normalizedInput.includes('git')) {
+        return "Folja 'gitmek' duhet të zgjedhohet në kohën e shkuar vetanake: 'gittim'.";
+      } else {
+        return "Mungon folja 'shkova' (gittim) në fjali.";
+      }
+      return null;
+    }
+    case 'okudum_check': {
+      const hasOkudum = /oku(du|dı|di|dü)[mndk]?/.test(normalizedInput);
+      if (hasOkudum) {
+        const match = normalizedInput.match(/oku(du|dı|di|dü)([mndk]?)/);
+        if (match && match[2] !== 'm') {
+          return `Keni shkruar foljen 'okumak' në vetën e gabuar. Për 'lexova' duhet 'okudum'.`;
+        } else if (match && match[1] !== 'du') {
+          return "Gabim Harmonie: Zgjedhimi i shkuar i 'okumak' është 'okudum' (pas zanores 'u' vjen 'u', jo 'okudim' apo 'okudım').";
+        }
+      } else if (normalizedInput.includes('okumak') || normalizedInput.includes('oku')) {
+        return "Folja 'okumak' duhet të zgjedhohet në kohën e shkuar: 'okudum'.";
+      } else {
+        return "Mungon folja 'lexova' (okudum) në fjali.";
+      }
+      return null;
+    }
+    default:
+      return null;
+  }
+}
+
+// Evaluates a Turkish writing input offline using a generic validation rule engine
 export function evaluateWriting(chapterId: number, input: string): EvaluationResult {
   const prompt = WRITING_PROMPTS[chapterId];
   if (!prompt) {
@@ -212,93 +564,26 @@ export function evaluateWriting(chapterId: number, input: string): EvaluationRes
 
   const normalizedInput = normalizeText(cleanInput);
 
-  // ==========================================
-  // TYPE A: TRANSLATION CHECKS (Method 2)
-  // ==========================================
+  // 1. Run the declarative validation rules if they exist
+  if (prompt.validationRules && prompt.validationRules.length > 0) {
+    const errors: string[] = [];
+    for (const rule of prompt.validationRules) {
+      const error = runRule(rule, normalizedInput);
+      if (error) {
+        errors.push(error);
+      }
+    }
+    if (errors.length > 0) {
+      return {
+        status: 'error',
+        feedback: `${prompt.type === 'translation' ? 'Përkthimi ka probleme gramatikore. Ju lutemi rregulloni:' : 'Prezantimi ka disa gabime gramatikore:'}\n${errors.map(e => `• ${e}`).join('\n')}`,
+        suggestions: prompt.sampleAnswers
+      };
+    }
+  }
+
+  // 2. Perform fuzzy string matching for translation types
   if (prompt.type === 'translation' && prompt.sampleAnswers) {
-    // 1. Run specific grammatical checks FIRST so that conjugation/vowel harmony errors are marked as 'error' instead of 'typo'
-    if (chapterId === 2) {
-      const hasKitap = /kitap/.test(normalizedInput);
-      const hasDefter = /defter/.test(normalizedInput);
-      const hasMasada = /masad[ae]/.test(normalizedInput);
-      const hasCantada = /[çc]antad[ae]/.test(normalizedInput);
-
-      const errors: string[] = [];
-      if (!hasKitap) errors.push("Mungon fjala 'kitap' (libër).");
-      if (!hasDefter) errors.push("Mungon fjala 'defter' (fletore).");
-      
-      if (/masade/.test(normalizedInput)) {
-        errors.push("Gabim Harmonie Vokalore: Fjala 'masa' ka zanore të prapme (a), prandaj prapashtesa duhet të jetë '-da' (masada, jo 'masade').");
-      } else if (!hasMasada) {
-        errors.push("Mungon rasa vendore për tavolinën ('masada').");
-      }
-
-      if (/çantade/.test(normalizedInput)) {
-        errors.push("Gabim Harmonie Vokalore: Fjala 'çanta' ka zanore të prapme (a), prandaj prapashtesa duhet të jetë '-da' (çantada, jo 'çantade').");
-      } else if (!hasCantada) {
-        errors.push("Mungon rasa vendore për çantën ('çantada').");
-      }
-
-      if (errors.length > 0) {
-        return {
-          status: 'error',
-          feedback: `Përkthimi nuk është i saktë. Korrigjoni pikat e mëposhtme:\n${errors.map(e => `• ${e}`).join('\n')}`,
-          suggestions: prompt.sampleAnswers
-        };
-      }
-    }
-
-    if (chapterId === 3) {
-      const hasDun = /dün/.test(normalizedInput);
-      const hasOkula = /okul[ae]/.test(normalizedInput);
-      const hasGittim = /git(ti|tı|tü|tu)[mndk]?/.test(normalizedInput);
-      const hasOkudum = /oku(du|dı|di|dü)[mndk]?/.test(normalizedInput);
-
-      const errors: string[] = [];
-      if (!hasDun) errors.push("Mungon treguesi i kohës së shkuar 'dün' (dje).");
-      
-      if (normalizedInput.includes('okule')) {
-        errors.push("Gabim Harmonie: Fjala 'okul' ka zanoren e prapme 'u', prandaj drejtimi duhet të jetë '-a' (okula, jo 'okule').");
-      } else if (!hasOkula) {
-        errors.push("Mungon rasa e drejtimit për shkollën. Folja 'gitmek' kërkon prapashtesën '-a' (okula gittim).");
-      }
-
-      if (hasGittim) {
-        const match = normalizedInput.match(/git(ti|tı|tü|tu)([mndk]?)/);
-        if (match && match[2] !== 'm') {
-          errors.push(`Keni shkruar foljen 'gitmek' në vetën e gabuar. Për 'shkova' duhet veta e parë njëjës: 'gittim' (jo 'gitti' apo 'gittin').`);
-        } else if (match && match[1] !== 'ti') {
-          errors.push("Gabim Harmonie: Zgjedhimi i shkuar i 'gitmek' duhet të jetë 'gittim' (jo 'gittım' ose 'gittum').");
-        }
-      } else if (normalizedInput.includes('gitmek') || normalizedInput.includes('git')) {
-        errors.push("Folja 'gitmek' duhet të zgjedhohet në kohën e shkuar vetanake: 'gittim'.");
-      } else {
-        errors.push("Mungon folja 'shkova' (gittim) në fjali.");
-      }
-
-      if (hasOkudum) {
-        const match = normalizedInput.match(/oku(du|dı|di|dü)([mndk]?)/);
-        if (match && match[2] !== 'm') {
-          errors.push(`Keni shkruar foljen 'okumak' në vetën e gabuar. Për 'lexova' duhet 'okudum'.`);
-        } else if (match && match[1] !== 'du') {
-          errors.push("Gabim Harmonie: Zgjedhimi i shkuar i 'okumak' është 'okudum' (pas zanores 'u' vjen 'u', jo 'okudim' apo 'okudım').");
-        }
-      } else if (normalizedInput.includes('okumak') || normalizedInput.includes('oku')) {
-        errors.push("Folja 'okumak' duhet të zgjedhohet në kohën e shkuar: 'okudum'.");
-      } else {
-        errors.push("Mungon folja 'lexova' (okudum) në fjali.");
-      }
-
-      if (errors.length > 0) {
-        return {
-          status: 'error',
-          feedback: `Përkthimi ka probleme gramatikore. Ju lutemi rregulloni:\n${errors.map(e => `• ${e}`).join('\n')}`,
-          suggestions: prompt.sampleAnswers
-        };
-      }
-    }
-
-    // 2. Perform fuzzy string matching using Levenshtein distance
     let bestMatchAnswer = '';
     let minDistance = 999;
 
@@ -340,279 +625,22 @@ export function evaluateWriting(chapterId: number, input: string): EvaluationRes
     };
   }
 
-  // ==========================================
-  // TYPE B: GUIDED FREE WRITING (Method 3)
-  // ==========================================
-  
-  // Chapter 1: Introduction Check (Greeting, name, origin)
+  // 3. For guided types (which passed validationRules), return success feedback depending on chapter or generic
+  let successFeedback = 'Shkëlqyeshëm! Detyra e shkrimit u përfundua me sukses.';
   if (chapterId === 1) {
-    const hasGreeting = /merhaba|selam|iyi günler|iyi akşamlar|günaydın/.test(normalizedInput);
-    const hasNameStructure = /adım|ismim|adımın|ben\s+[a-zA-ZçğışöüÇĞİŞÖÜ]+(y[ıi])?m/.test(normalizedInput);
-    
-    // Origin suffix check e.g. Tiranlıyım, Kosovalıyım, İstanbulluyum
-    // Suffix: -lı/-li/-lu/-lü + -yım/-yim/-yum/-yüm
-    const words = normalizedInput.split(' ');
-    let originMatch = null;
-    let cityRoot = '';
-    let liSuffix = '';
-    let yimSuffix = '';
-
-    for (const w of words) {
-      const match = w.match(/^([a-zçğışöü]+)(l[ıilu])(y[ıiu]m)$/);
-      if (match) {
-        originMatch = match;
-        cityRoot = match[1];
-        liSuffix = match[2];
-        yimSuffix = match[3];
-        break;
-      }
-    }
-
-    const errors: string[] = [];
-    if (!hasGreeting) {
-      errors.push("Mungon përshëndetja në fillim të fjalisë (p.sh., 'Merhaba' ose 'Selam').");
-    }
-    if (!hasNameStructure) {
-      errors.push("Mungon struktura e prezantimit të emrit tuaj (p.sh., 'Benim adım ...' ose 'İsmim ...').");
-    }
-
-    if (!originMatch) {
-      errors.push("Mungon prapashtesa e origjinës ose kombësisë (p.sh., 'Tiranlıyım' ose 'Kosovalıyım'). Sigurohuni që keni shkruar emrin e vendit, të ndjekur nga '-lı/-li/-lu/-lü' dhe prapashtesa vetanake '-yım/-yim/-yum/-yüm'.");
-    } else {
-      // Check vowel harmony of the origin suffix
-      const correctVowel = getVowelHarmony4(cityRoot);
-      const expectedLi = `l${correctVowel}`;
-      const expectedYim = `y${correctVowel}m`;
-
-      if (liSuffix !== expectedLi || yimSuffix !== expectedYim) {
-        errors.push(`Gabim Harmonie te origjina: Qyteti '${cityRoot}' ka zanoren e fundit '${getLastVowel(cityRoot)}', prandaj prapashtesat duhet të jenë '-${expectedLi}' dhe '-${expectedYim}' $\\rightarrow$ '${cityRoot}${expectedLi}${expectedYim}' (ju keni shkruar '${cityRoot}${liSuffix}${yimSuffix}').`);
-      }
-    }
-
-    if (errors.length > 0) {
-      return {
-        status: 'error',
-        feedback: `Prezantimi ka disa gabime gramatikore:\n${errors.map(e => `• ${e}`).join('\n')}`
-      };
-    }
-
-    return {
-      status: 'success',
-      feedback: 'Shkëlqyeshëm! Keni shkruar një përshëndetje të saktë, keni prezantuar emrin tuaj dhe keni vendosur prapashtesat e duhura të harmonizuara për origjinën.'
-    };
+    successFeedback = 'Shkëlqyeshëm! Keni shkruar një përshëndetje të saktë, keni prezantuar emrin tuaj dhe keni vendosur prapashtesat e duhura të harmonizuara për origjinën.';
+  } else if (chapterId === 4) {
+    successFeedback = 'Shkëlqyeshëm! Keni përdorur saktë Mënyrën Habitore duke respektuar rregullat e harmonisë vokalike 4-she.';
+  } else if (chapterId === 5) {
+    successFeedback = 'Shkëlqyeshëm! Fjali kushtore e saktë me përdorim të rregullt të prapashtesës së kushtit (-se/-sa).';
+  } else if (chapterId === 6) {
+    successFeedback = 'Shkëlqyeshëm! Keni krijuar një fjali të saktë duke përdorur strukturën e pjesoreve (sıfat-fiil).';
+  } else if (chapterId === 7) {
+    successFeedback = 'Shkëlqyeshëm! Keni përdorur me sukses idiomën e kërkuar në fjalinë tuaj.';
   }
 
-  // Chapter 4: Reported Past Tense (-miş)
-  if (chapterId === 4) {
-    const words = normalizedInput.split(' ');
-    let habitoreMatch = null;
-    let verbRoot = '';
-    let misSuffix = '';
-
-    for (const w of words) {
-      const match = w.match(/^([a-zçğışöü]+)(miş|mış|muş|müş)(im|sin|miş|ik|iniz|ler)?$/);
-      if (match) {
-        habitoreMatch = match;
-        verbRoot = match[1];
-        misSuffix = match[2];
-        break;
-      }
-    }
-
-    if (!habitoreMatch) {
-      return {
-        status: 'error',
-        feedback: "Gabim: Nuk u gjet asnjë folje e zgjedhuar në Mënyrën Habitore. Duhet të përdorni prapashtesën '-miş/-mış/-muş/-müş' pas rrënjës së foljes (p.sh., 'gitmiş', 'gelmiş', 'yağmış')."
-      };
-    }
-
-    // Check base harmony
-    if (!isValidVerbBase(verbRoot)) {
-      return {
-        status: 'error',
-        feedback: `Gabim: Baza ose rrënja e foljes '${verbRoot}' ka gabim të harmonisë vokalike (kombinim i pasaktë i zanoreve para prapashtesës).`
-      };
-    }
-
-    const expectedVowel = getVowelHarmony4(verbRoot);
-    const expectedSuffix = `m${expectedVowel}ş`;
-
-    if (misSuffix !== expectedSuffix) {
-      return {
-        status: 'error',
-        feedback: `Gabim Harmonie Vokalore: Rrënja e foljes '${verbRoot}' ka zanoren e fundit '${getLastVowel(verbRoot)}', prandaj prapashtesa e habitores duhet të jetë '-${expectedSuffix}' $\\rightarrow$ '${verbRoot}${expectedSuffix}' (ju keni shkruar '${verbRoot}${misSuffix}').`
-      };
-    }
-
-    return {
-      status: 'success',
-      feedback: `Shkëlqyeshëm! Keni përdorur saktë Mënyrën Habitore me foljen '${verbRoot}${misSuffix}' duke respektuar rregullat e harmonisë vokalike 4-she.`
-    };
-  }
-
-  // Chapter 5: Conditional Suffix (-se / -sa)
-  if (chapterId === 5) {
-    const words = normalizedInput.split(' ');
-    let condMatch = null;
-    let base = '';
-    let suffix = '';
-    const hasVarYokCond = /\b(varsa|yoksa)\b/.test(normalizedInput);
-
-    for (const w of words) {
-      const match = w.match(/^([a-zçğışöü]+)(se|sa)(m|n|k|niz|ler)?$/);
-      if (match) {
-        condMatch = match;
-        base = match[1];
-        suffix = match[2];
-        break;
-      }
-    }
-
-    if (!condMatch && !hasVarYokCond) {
-      return {
-        status: 'error',
-        feedback: "Gabim: Nuk u gjet asnjë strukturë kushtore në fjali. Duhet të përdorni prapashtesën e kushtit '-se/-sa' (p.sh., 'gidersen', 'yağarsa', 'varsa')."
-      };
-    }
-
-    if (condMatch && !hasVarYokCond) {
-      // Check base harmony
-      if (!isValidVerbBase(base)) {
-        return {
-          status: 'error',
-          feedback: `Gabim: Baza e foljes '${base}' ka gabim të harmonisë vokalike (kombinim i pasaktë i zanoreve para prapashtesës).`
-        };
-      }
-
-      const expectedHarmony = getVowelHarmony2(base);
-      const expectedSuffix = `s${expectedHarmony}`;
-
-      if (suffix !== expectedSuffix) {
-        return {
-          status: 'error',
-          feedback: `Gabim Harmonie Vokalore: Rrënja/baza '${base}' kërkon prapashtesën e kushtit '-${expectedSuffix}' (2-she), por keni shkruar '-${suffix}' $\\rightarrow$ '${base}${expectedSuffix}' (jo '${base}${suffix}').`
-        };
-      }
-    }
-
-    return {
-      status: 'success',
-      feedback: 'Shkëlqyeshëm! Fjali kushtore e saktë me përdorim të rregullt të prapashtesës së kushtit (-se/-sa).'
-    };
-  }
-
-  // Chapter 6: Participles (Sıfat-Fiiller)
-  if (chapterId === 6) {
-    const words = normalizedInput.split(' ');
-    let activeMatch = null;
-    let passiveMatch = null;
-
-    for (const w of words) {
-      const matchA = w.match(/^([a-zçğışöü]+)(en|an)$/);
-      if (matchA) {
-        const root = matchA[1];
-        if (root.length >= 2 && !['b', 's', 'o'].includes(root)) {
-          activeMatch = matchA;
-          break;
-        }
-      }
-      const matchP = w.match(/^([a-zçğışöü]+)(diğ|dığ|duğ|düğ|dik|dık|duk|dük)(i|im|in|imiz|iniz|i|leri)?$/);
-      if (matchP) {
-        passiveMatch = matchP;
-        break;
-      }
-    }
-
-    if (!activeMatch && !passiveMatch) {
-      return {
-        status: 'error',
-        feedback: "Gabim: Nuk u gjet asnjë pjesore (sıfat-fiil) në fjali. Përdorni një folje me prapashtesën '-an/-en' (p.sh., 'gelen adam') ose '-dık/-dik' me prapashtesë pronore (p.sh., 'sevdiğim yemek')."
-      };
-    }
-
-    if (activeMatch) {
-      const root = activeMatch[1];
-      const suffix = activeMatch[2];
-      
-      if (!isValidVerbBase(root)) {
-        return {
-          status: 'error',
-          feedback: `Gabim: Rrënja e foljes '${root}' ka gabim të harmonisë vokalike.`
-        };
-      }
-
-      const expected = getVowelHarmony2(root);
-      const expectedSuffix = `${expected}n`;
-
-      if (suffix !== expectedSuffix) {
-        return {
-          status: 'error',
-          feedback: `Gabim Harmonie te pjesorja: Rrënja '${root}' duhet të ketë prapashtesën '-${expectedSuffix}' $\\rightarrow$ '${root}${expectedSuffix}' (ju shkruat '${root}${suffix}').`
-        };
-      }
-    }
-
-    if (passiveMatch) {
-      const root = passiveMatch[1];
-      const suffix = passiveMatch[2];
-
-      if (!isValidVerbBase(root)) {
-        return {
-          status: 'error',
-          feedback: `Gabim: Rrënja e foljes '${root}' ka gabim të harmonisë vokalike.`
-        };
-      }
-
-      const expectedVowel = getVowelHarmony4(root);
-      const lastChar = root.slice(-1);
-      const isVoiceless = 'çfhkpsştÇFHKPSŞT'.includes(lastChar);
-      const expectedD = isVoiceless ? 't' : 'd';
-      const expectedSuffixStart = `${expectedD}${expectedVowel}`;
-      
-      if (!suffix.startsWith(expectedSuffixStart)) {
-        return {
-          status: 'error',
-          feedback: `Gabim Harmonie/Mutacioni: Pjesorja pasive për '${root}' kërkon prapashtesën që fillon me '${expectedSuffixStart}' (p.sh., '${root}${expectedSuffixStart}ğ...'), por ju shkruat '${root}${suffix}'.`
-        };
-      }
-    }
-
-    return {
-      status: 'success',
-      feedback: 'Shkëlqyeshëm! Keni krijuar një fjali të saktë duke përdorur strukturën e pjesoreve (sıfat-fiil).'
-    };
-  }
-
-  // Chapter 7: Balkan Idioms
-  if (chapterId === 7) {
-    const idioms = [
-      { name: "gözden düşmek", keywords: ["göz", "düş"] },
-      { name: "can atmak", keywords: ["can", "at"] },
-      { name: "kulak asmak", keywords: ["kulak", "as"] },
-      { name: "kafayı takmak", keywords: ["kafa", "tak"] }
-    ];
-
-    let foundIdiom = '';
-    for (const idm of idioms) {
-      const matchAll = idm.keywords.every(kw => normalizedInput.includes(kw));
-      if (matchAll) {
-        foundIdiom = idm.name;
-        break;
-      }
-    }
-
-    if (!foundIdiom) {
-      return {
-        status: 'error',
-        feedback: "Gabim: Nuk u gjet asnjë nga idiomat e kërkuara të përbashkëta (si 'gözden düşmek', 'can atmak', 'kulak asmak', ose 'kafayı takmak'). Sigurohuni që t'i shkruani saktë fjalët e idiomës."
-      };
-    }
-
-    return {
-      status: 'success',
-      feedback: `Shkëlqyeshëm! Keni përdorur me sukses idiomën '${foundIdiom}' në fjalinë tuaj.`
-    };
-  }
-
-  return { status: 'success', feedback: 'Vlerësimi u krye me sukses!' };
+  return {
+    status: 'success',
+    feedback: successFeedback
+  };
 }

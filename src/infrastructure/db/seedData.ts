@@ -31,6 +31,7 @@ export interface Vocabulary {
   chapter_id: number;
   turkish_word: string;
   albanian_word: string;
+  category: 'emër' | 'folje' | 'mbiemër' | 'ndajfolje' | 'përemër' | 'lidhëz' | 'pasthirrmë' | 'shprehje';
   is_shared_balkan_word: number; // 0 or 1
   notes_albanian: string | null;
   audio_asset_stub: string | null;
@@ -94,6 +95,7 @@ export const SEED_VOCABULARY: Vocabulary[] = ALL_UNIFIED_LESSONS.flatMap(l =>
     chapter_id: l.id,
     turkish_word: v.turkishWord,
     albanian_word: v.albanianWord,
+    category: v.category,
     is_shared_balkan_word: v.isSharedBalkanWord ? 1 : 0,
     notes_albanian: v.notesAlbanian,
     audio_asset_stub: v.audioAssetStub

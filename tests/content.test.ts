@@ -79,6 +79,9 @@ describe('Unified Lesson Blueprints Content Integrity', () => {
         expect(v.albanianWord, `Lesson ${lesson.id} vocab ${idx} Albanian`).toBeTypeOf('string');
         expect(v.albanianWord.trim().length).toBeGreaterThan(0);
 
+        expect(v.category, `Lesson ${lesson.id} vocab ${idx} category`).toBeTypeOf('string');
+        expect(['emër', 'folje', 'mbiemër', 'ndajfolje', 'përemër', 'lidhëz', 'pasthirrmë', 'shprehje']).toContain(v.category);
+
         expect(v.isSharedBalkanWord, `Lesson ${lesson.id} vocab ${idx} isSharedBalkanWord`).toBeTypeOf('boolean');
 
         if (v.notesAlbanian !== null) {

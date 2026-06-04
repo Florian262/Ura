@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLesson } from '../../../application/state/LessonContext';
-import { PluralStrategy } from '../../../core/harmony/strategies/pluralStrategy';
+import { SuffixRegistry } from '../../../core/harmony/strategies/suffixRegistry';
 
 const renderMarkdown = (text: string) => {
   if (!text) return '';
@@ -32,25 +32,31 @@ const renderMarkdown = (text: string) => {
 };
 
 
-export const GrammarModule: React.FC = () => {
+interface GrammarModuleProps {
+  onComplete?: () => void;
+}
+
+export const GrammarModule: React.FC<GrammarModuleProps> = ({ onComplete }) => {
   const { grammarCards, carouselStep, setCarouselStep } = useLesson();
   
   // Local states for interactive tool
   const [selectedWord, setSelectedWord] = useState<string>('kitap');
   const [interactiveResult, setInteractiveResult] = useState<any>(null);
-
-  const sampleWords = [
-    { turkish: 'kitap', albanian: 'libër', isException: false },
-    { turkish: 'ev', albanian: 'shtëpi', isException: false },
-    { turkish: 'oda', albanian: 'dhomë', isException: false },
-    { turkish: 'göz', albanian: 'sy', isException: false },
-    { turkish: 'saat', albanian: 'orë', isException: true },
-    { turkish: 'renk', albanian: 'ngjyrë', isException: false }
-  ];
-
-  if (grammarCards.length === 0) return null;
+  const [customWordInput, setCustomWordInput] = useState<string>('');
 
   const currentCard = grammarCards[carouselStep] || grammarCards[0];
+
+  const config = currentCard?.interactive_example_json 
+    ? JSON.parse(currentCard.interactive_example_json)
+    : null;
+  const cardSampleWords = config?.sampleWords || [];
+
+  // Trigger onComplete when reaching the final step in the carousel
+  useEffect(() => {
+    if (grammarCards.length > 0 && carouselStep === grammarCards.length - 1) {
+      onComplete?.();
+    }
+  }, [carouselStep, grammarCards.length, onComplete]);
 
   const handleNext = () => {
     if (carouselStep < grammarCards.length - 1) {
@@ -64,18 +70,50 @@ export const GrammarModule: React.FC = () => {
     }
   };
 
-  // Run the Plural Strategy on the selected word
+  // Run dynamic strategy on the selected word
   const runAgglutination = (word: string) => {
     setSelectedWord(word);
-    const strategy = new PluralStrategy();
-    const output = strategy.apply(word);
-    setInteractiveResult(output);
+    
+    const currentConfig = currentCard?.interactive_example_json 
+      ? JSON.parse(currentCard.interactive_example_json)
+      : null;
+    const strategyKey = currentConfig?.strategy || 'plural';
+    const StrategyClass = SuffixRegistry[strategyKey];
+
+    if (StrategyClass) {
+      const strategy = new StrategyClass();
+      const output = strategy.apply(word);
+      setInteractiveResult(output);
+      onComplete?.();
+    }
   };
 
-  // Initialize interactive result
+  const handleCustomWordSubmit = () => {
+    const cleanWord = customWordInput
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-zçğışöüÇĞİŞÖÜ]/gi, '');
+      
+    if (cleanWord.length > 0) {
+      runAgglutination(cleanWord);
+      setCustomWordInput('');
+    } else {
+      alert('Ju lutemi shkruani një fjalë të vlefshme me shkronja!');
+    }
+  };
+
+  // Initialize interactive result on card change
   useEffect(() => {
-    runAgglutination('kitap');
-  }, []);
+    if (currentCard?.interactive_example_json) {
+      const currentConfig = JSON.parse(currentCard.interactive_example_json);
+      const initialWord = currentConfig.root || 'kitap';
+      runAgglutination(initialWord);
+    } else {
+      setInteractiveResult(null);
+    }
+  }, [currentCard?.id]);
+
+  if (grammarCards.length === 0) return null;
 
   return (
     <div className="glass-panel rounded-2xl p-6 md:p-8 bg-white border border-[#E9ECEF] shadow-sm">
@@ -115,24 +153,51 @@ export const GrammarModule: React.FC = () => {
             </span>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-              {/* Word Selectors */}
-              <div>
-                <p className="text-xs text-[#1A1D20] font-medium mb-2 italic">Zgjidhni një rrënjë fjalë:</p>
-                <div className="grid grid-cols-3 gap-2">
-                  {sampleWords.map(sw => (
+              {/* Word Selectors & Custom Input */}
+              <div className="space-y-4">
+                <div>
+                  <p className="text-xs text-[#1A1D20] font-medium mb-2 italic">Zgjidhni një rrënjë fjalë:</p>
+                  <div className="grid grid-cols-3 gap-2">
+                    {cardSampleWords.map((sw: any) => (
+                      <button
+                        key={sw.turkish}
+                        onClick={() => runAgglutination(sw.turkish)}
+                        className={`px-3 py-2 rounded-xl border text-xs font-bold transition duration-200 cursor-pointer shadow-xs ${
+                          selectedWord === sw.turkish
+                            ? 'bg-[#3A5A40]/10 text-[#3A5A40] border-[#3A5A40]'
+                            : 'bg-white border-[#E9ECEF] text-[#1A1D20] hover:bg-neutral-50'
+                        }`}
+                      >
+                        <span className="font-technical font-medium">{sw.turkish}</span>
+                        <span className="text-[9px] text-[#565E64] block font-light italic">({sw.albanian})</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="border-t border-[#E9ECEF]/60 pt-3">
+                  <p className="text-xs text-[#1A1D20] font-medium mb-1.5 italic">Ose shkruani fjalën tuaj:</p>
+                  <form 
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      handleCustomWordSubmit();
+                    }}
+                    className="flex gap-2"
+                  >
+                    <input
+                      type="text"
+                      value={customWordInput}
+                      onChange={(e) => setCustomWordInput(e.target.value)}
+                      placeholder="p.sh., defter, masa, araba..."
+                      className="px-3 py-2 text-xs border border-[#E9ECEF] rounded-xl focus:outline-hidden focus:border-[#3A5A40] focus:ring-1 focus:ring-[#3A5A40] flex-1 bg-white font-technical"
+                    />
                     <button
-                      key={sw.turkish}
-                      onClick={() => runAgglutination(sw.turkish)}
-                      className={`px-3 py-2 rounded-xl border text-xs font-bold transition duration-200 cursor-pointer shadow-xs ${
-                        selectedWord === sw.turkish
-                          ? 'bg-[#3A5A40]/10 text-[#3A5A40] border-[#3A5A40]'
-                          : 'bg-white border-[#E9ECEF] text-[#1A1D20] hover:bg-neutral-50'
-                      }`}
+                      type="submit"
+                      className="px-4 py-2 bg-[#3A5A40] hover:bg-[#2A3F2E] text-white font-bold rounded-xl text-xs transition cursor-pointer select-none whitespace-nowrap active:scale-95"
                     >
-                      <span className="font-technical font-medium">{sw.turkish}</span>
-                      <span className="text-[9px] text-[#565E64] block font-light italic">({sw.albanian})</span>
+                      Provo ⚡
                     </button>
-                  ))}
+                  </form>
                 </div>
               </div>
 

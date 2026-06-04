@@ -17,7 +17,6 @@ const MainLayout: React.FC = () => {
     currentChapter, 
     activePage, 
     setActivePage, 
-    resetAllData, 
     theme, 
     toggleTheme, 
     activeSection, 
@@ -112,7 +111,7 @@ const MainLayout: React.FC = () => {
       </header>
 
       {/* 2. Collapsible Left-side Sidebar Navigation Drawer */}
-      <aside className={`fixed md:sticky top-0 left-0 bottom-0 md:h-screen z-50 overflow-y-auto no-scrollbar transition-all duration-300 bg-[var(--color-bg-surface-glass)] border-r border-[var(--color-border-primary-glass)] backdrop-blur-xl flex flex-col justify-between ${
+      <aside className={`fixed md:sticky top-0 left-0 bottom-0 md:h-screen z-50 overflow-y-auto no-scrollbar transition-all duration-300 bg-white/95 dark:bg-[#12181F]/95 border-r border-[var(--color-border-primary-glass)] backdrop-blur-xl flex flex-col justify-between ${
         isSidebarCollapsed 
           ? 'w-16 p-3 items-center' 
           : 'w-64 p-5 items-stretch'
@@ -120,6 +119,8 @@ const MainLayout: React.FC = () => {
         mobileMenuOpen ? 'translate-x-0 w-64 p-5 items-stretch animate-fade-in' : '-translate-x-full md:translate-x-0'
       }`}>
         
+
+
         {/* COLLAPSED STATE LAYOUT */}
         {isSidebarCollapsed && !mobileMenuOpen ? (
           <div className="flex flex-col items-center gap-8 w-full">
@@ -149,24 +150,25 @@ const MainLayout: React.FC = () => {
                 const isDisabled = item.disabled;
 
                 return (
-                  <button
-                    key={item.id}
-                    disabled={isDisabled}
-                    onClick={() => handleNavClick(item.id)}
-                    title={`${item.label}: ${item.desc}`}
-                    className={`w-10 h-10 flex items-center justify-center rounded-xl text-base transition-all duration-200 border transform active:scale-95 cursor-pointer ${
-                      isActive
-                        ? 'bg-[var(--color-brand-accent-light)] text-[var(--color-brand-accent)] border-[var(--color-brand-accent)]/30 shadow-xs'
-                        : isDisabled
-                        ? 'text-stone-900/30 dark:text-slate-100/30 border-transparent cursor-not-allowed opacity-35'
-                        : 'text-[var(--color-text-secondary)] border-transparent hover:bg-stone-900/5 dark:hover:bg-white/5 hover:text-[var(--color-text-primary)]'
-                    }`}
-                  >
-                    {item.icon}
-                    {isActive && (
-                      <span className="absolute right-1.5 top-1.5 w-1.5 h-1.5 rounded-full bg-[var(--color-brand-accent)]"></span>
-                    )}
-                  </button>
+                  <div key={item.id} className="relative group">
+                    <button
+                      disabled={isDisabled}
+                      onClick={() => handleNavClick(item.id)}
+                      className={`w-10 h-10 rounded-xl flex items-center justify-center text-lg transition duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-[var(--color-brand-accent)] focus:outline-none ${
+                        isActive
+                          ? 'bg-[var(--color-brand-accent-light)] text-[var(--color-brand-accent)] border border-[var(--color-brand-accent)]/20 shadow-xs'
+                          : isDisabled
+                          ? 'text-stone-900/20 dark:text-slate-100/20 cursor-not-allowed opacity-35'
+                          : 'text-[var(--color-text-secondary)] hover:bg-stone-900/5 dark:hover:bg-white/5 hover:text-[var(--color-text-primary)]'
+                      }`}
+                    >
+                      {item.icon}
+                    </button>
+                    {/* Premium CSS Tooltip */}
+                    <div className="absolute left-full ml-3.5 top-1/2 -translate-y-1/2 px-2.5 py-1.5 bg-neutral-900 dark:bg-stone-900 text-white text-[10px] font-bold rounded-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-md z-50 select-none before:content-[''] before:absolute before:right-full before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-transparent before:border-r-neutral-900 dark:before:border-r-stone-900">
+                      {item.label}
+                    </div>
+                  </div>
                 );
               })}
             </nav>
@@ -228,7 +230,7 @@ const MainLayout: React.FC = () => {
                       <button
                         disabled={isDisabled}
                         onClick={() => handleNavClick(item.id)}
-                        className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-left transition-all duration-200 border transform hover:translate-x-0.5 active:scale-98 cursor-pointer ${
+                        className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-left transition-all duration-200 border transform hover:translate-x-0.5 active:scale-98 cursor-pointer focus-visible:ring-2 focus-visible:ring-[var(--color-brand-accent)] focus:outline-none ${
                           isActive
                             ? 'bg-[var(--color-brand-accent-light)] text-[var(--color-brand-accent)] border-[var(--color-brand-accent)]/20 shadow-xs'
                             : isDisabled
@@ -281,15 +283,6 @@ const MainLayout: React.FC = () => {
               <p className="font-semibold text-[var(--color-text-primary)]">Offline Framework</p>
               <p className="mt-0.5">Albanian-Turkish A1-C2</p>
               <p className="text-[8px] text-stone-900/40 dark:text-slate-100/40 mt-2">© {new Date().getFullYear()} Ura e Gjuhës</p>
-              
-              {/* Reset Progress Button */}
-              <button
-                onClick={resetAllData}
-                className="w-full text-center py-2 px-3 text-[9px] font-bold text-rose-600/70 dark:text-rose-400/70 hover:text-white hover:bg-[var(--color-brand-danger)] bg-rose-500/5 hover:border-[var(--color-brand-danger)] rounded-xl uppercase tracking-widest mt-4 border border-rose-500/10 cursor-pointer flex items-center justify-center gap-1.5 transition duration-200"
-                title="Rivendos të dhënat"
-              >
-                ⚠️ Reset Progress
-              </button>
             </div>
           </div>
         )}

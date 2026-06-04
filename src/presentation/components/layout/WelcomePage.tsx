@@ -74,7 +74,7 @@ export const WelcomePage: React.FC = () => {
               <input
                 type="text"
                 value={nameInput}
-                onChange={(e) => setNameInput(e.target.value.replace(/[^a-zA-Z]/g, ''))}
+                onChange={(e) => setNameInput(e.target.value.replace(/[^a-zA-ZëËçÇğĞıİöÖşŞüÜ\s]/g, ''))}
                 placeholder="Shkruani emrin tuaj..."
                 maxLength={15}
                 className="w-full rounded-xl border border-[#E9ECEF] bg-white px-4 py-3 text-sm text-[#1A1D20] placeholder-neutral-400 focus:border-[#565E64] focus:outline-none font-technical tracking-wide shadow-sm"

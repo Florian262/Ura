@@ -324,15 +324,26 @@ export const LessonDashboard: React.FC = () => {
                       {ch.title_albanian}
                     </span>
                   </div>
-                  {ch.id === 1 && (
-                    <div className="w-14 h-14 shrink-0 relative flex items-center justify-center bg-stone-900/5 dark:bg-white/5 rounded-xl overflow-hidden p-1">
+                  {/* Dynamic Chapter Badges or fallback styled initials/number */}
+                  <div className="w-14 h-14 shrink-0 relative flex items-center justify-center bg-stone-900/5 dark:bg-white/5 rounded-xl overflow-hidden p-1">
+                    {ch.id === 1 ? (
                       <img 
                         src="/chapter_1_badge.png" 
                         alt="Kapitulli 1 Badge" 
                         className="w-full h-full object-contain filter drop-shadow-xs transition-transform duration-300 group-hover:scale-110" 
                       />
-                    </div>
-                  )}
+                    ) : ch.id === 2 ? (
+                      <img 
+                        src="/chapter_2_badge.png" 
+                        alt="Kapitulli 2 Badge" 
+                        className="w-full h-full object-contain filter drop-shadow-xs transition-transform duration-300 group-hover:scale-110" 
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-teal-500/10 text-teal-600 dark:text-teal-400 font-mono font-bold text-sm rounded-lg border border-teal-500/25">
+                        K{ch.order_index}
+                      </div>
+                    )}
+                  </div>
                 </button>
               );
             })}

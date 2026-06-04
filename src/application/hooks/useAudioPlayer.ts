@@ -214,17 +214,39 @@ export function useAudioPlayer() {
     };
   }, [stop, playText]);
 
-  // Backwards compatibility with the play(src) signature
-  const play = useCallback((src: string) => {
+  // Backwards compatibility/hybrid loader with the play(src) signature
+  const play = useCallback((src: string, textFallback?: string) => {
     console.log(`[Audio Play] Trigeruar skedari: ${src}`);
-    if (src.includes('vocab')) {
-      playText('Merhaba', 'tr');
-    } else if (src.includes('chapter1')) {
-      playText('Merhaba! Benim adım Ahmet. Senin adın ne?', 'tr');
-    } else {
-      playText('Günaydın', 'tr');
-    }
-  }, [playText]);
+    stop();
+
+    const fallbackWord = textFallback || src.split('/').pop()?.split('.')[0]?.replace(/^(vocab_|chapter\d+_|audio_)/, '').replace(/_/g, ' ') || '';
+
+    setIsPlaying(true);
+    setCurrentSrc(fallbackWord);
+
+    const audio = new Audio(src);
+    activeAudioRef.current = audio;
+
+    audio.onended = () => {
+      setIsPlaying(false);
+      setCurrentSrc(null);
+      activeAudioRef.current = null;
+    };
+
+    audio.onerror = () => {
+      console.log(`[Audio Play] Asset not found at ${src}, playing fallback TTS...`);
+      activeAudioRef.current = null;
+      playText(fallbackWord, 'tr');
+    };
+
+    audio.play().catch((err) => {
+      if (activeAudioRef.current === audio) {
+        console.log(`[Audio Play] play() promise rejected for ${src}, playing fallback TTS...`, err);
+        activeAudioRef.current = null;
+        playText(fallbackWord, 'tr');
+      }
+    });
+  }, [stop, playText]);
 
   return {
     isPlaying,

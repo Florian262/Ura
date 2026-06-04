@@ -2,7 +2,11 @@ import React, { useState, useRef } from 'react';
 import { useLesson } from '../../../application/state/LessonContext';
 import { WRITING_PROMPTS, evaluateWriting, type EvaluationResult } from '../../../core/harmony/writingValidation';
 
-export const WritingModule: React.FC = () => {
+interface WritingModuleProps {
+  onComplete?: () => void;
+}
+
+export const WritingModule: React.FC<WritingModuleProps> = ({ onComplete }) => {
   const { writingPreference, setWritingPreference, currentChapter } = useLesson();
   
   const chapterId = currentChapter?.id || 1;
@@ -64,6 +68,9 @@ export const WritingModule: React.FC = () => {
     if (writingPreference === 'strict') {
       const result = evaluateWriting(chapterId, writingInput);
       setEvaluationResult(result);
+      if (result.status === 'success' || result.status === 'typo') {
+        onComplete?.();
+      }
     }
   };
 
@@ -278,7 +285,10 @@ export const WritingModule: React.FC = () => {
                   <div className="bg-white dark:bg-neutral-900/50 p-3 rounded-xl border border-neutral-200 dark:border-neutral-800 flex items-center justify-between shadow-xs">
                     <span className="text-xs text-neutral-500 dark:text-neutral-400 font-light italic">Krahasuat shkrimin tuaj me modelin dhe gjithçka është në rregull?</span>
                     <button
-                      onClick={() => setIsSubmitted(false)}
+                      onClick={() => {
+                        setIsSubmitted(false);
+                        onComplete?.();
+                      }}
                       className="px-3 py-1.5 bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/30 rounded-lg text-xs font-bold hover:bg-teal-500/20 dark:hover:bg-teal-400/20 transition cursor-pointer shadow-xs active:scale-95"
                     >
                       Auditimi u Krye

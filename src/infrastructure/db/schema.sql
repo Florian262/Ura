@@ -39,6 +39,7 @@ CREATE TABLE IF NOT EXISTS vocabulary (
     chapter_id INTEGER NOT NULL,
     turkish_word TEXT NOT NULL,
     albanian_word TEXT NOT NULL,
+    category TEXT NOT NULL,
     is_shared_balkan_word INTEGER DEFAULT 0, -- Boolean structural flag override (1 = yes, 0 = no)
     notes_albanian TEXT,
     audio_asset_stub TEXT,

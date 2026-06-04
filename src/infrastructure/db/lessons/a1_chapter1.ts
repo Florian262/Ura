@@ -24,6 +24,7 @@ export interface UnifiedLesson {
   vocabulary: Array<{
     turkishWord: string;
     albanianWord: string;
+    category: 'emër' | 'folje' | 'mbiemër' | 'ndajfolje' | 'përemër' | 'lidhëz' | 'pasthirrmë' | 'shprehje';
     isSharedBalkanWord: boolean;
     notesAlbanian: string | null;
     audioAssetStub: string | null;
@@ -35,6 +36,7 @@ export interface UnifiedLesson {
     interactiveExample: {
       root: string;
       strategy: 'plural' | 'habitore' | string;
+      sampleWords?: Array<{ turkish: string; albanian: string; isException?: boolean }>;
     } | null;
   }>;
   exercises: Array<{
@@ -95,6 +97,7 @@ export const a1Chapter1: UnifiedLesson = {
     {
       turkishWord: 'Merhaba',
       albanianWord: 'Tungjatjeta / Përshëndetje',
+      category: 'shprehje',
       isSharedBalkanWord: false,
       notesAlbanian: 'Përshëndetja më e përdorur në turqisht.',
       audioAssetStub: 'audio/vocab_merhaba.mp3'
@@ -102,20 +105,23 @@ export const a1Chapter1: UnifiedLesson = {
     {
       turkishWord: 'Nasılsın?',
       albanianWord: 'Si je?',
+      category: 'shprehje',
       isSharedBalkanWord: false,
       notesAlbanian: 'Formë bisedore e pyetjes për gjendjen.',
       audioAssetStub: 'audio/vocab_nasilsin.mp3'
     },
     {
-      turkishWord: 'Dollap',
+      turkishWord: 'Dolap',
       albanianWord: 'Dollap',
+      category: 'emër',
       isSharedBalkanWord: true,
       notesAlbanian: 'Fjalë e përbashkët Ballkanike. Huazim i drejtpërdrejtë nga turqishtja osmane dolap.',
       audioAssetStub: 'audio/vocab_dollap.mp3'
     },
     {
-      turkishWord: 'Xham',
+      turkishWord: 'Cam',
       albanianWord: 'Xham',
+      category: 'emër',
       isSharedBalkanWord: true,
       notesAlbanian: 'Fjalë e përbashkët Ballkanike. Nga turqishtja cam.',
       audioAssetStub: 'audio/vocab_xham.mp3'
@@ -123,13 +129,15 @@ export const a1Chapter1: UnifiedLesson = {
     {
       turkishWord: 'Çorap',
       albanianWord: 'Çorape',
+      category: 'emër',
       isSharedBalkanWord: true,
       notesAlbanian: 'Fjalë e përbashkët Ballkanike. Nga turqishtja çorap.',
       audioAssetStub: 'audio/vocab_corap.mp3'
     },
     {
-      turkishWord: 'Kuti',
+      turkishWord: 'Kutu',
       albanianWord: 'Kuti',
+      category: 'emër',
       isSharedBalkanWord: true,
       notesAlbanian: 'Fjalë e përbashkët Ballkanike. Nga turqishtja kutu.',
       audioAssetStub: 'audio/vocab_kuti.mp3'
@@ -137,6 +145,7 @@ export const a1Chapter1: UnifiedLesson = {
     {
       turkishWord: 'Bela',
       albanianWord: 'Bela (telash)',
+      category: 'emër',
       isSharedBalkanWord: true,
       notesAlbanian: 'Shpesh e përdorur në gjuhën shqipe popullore për telash ose fatkeqësi.',
       audioAssetStub: 'audio/vocab_bela.mp3'
@@ -144,6 +153,7 @@ export const a1Chapter1: UnifiedLesson = {
     {
       turkishWord: 'Teşekkür ederim',
       albanianWord: 'Faleminderit (shumë)',
+      category: 'shprehje',
       isSharedBalkanWord: false,
       notesAlbanian: 'Shprehje formale e mirënjohjes.',
       audioAssetStub: 'audio/vocab_tesekkur.mp3'
@@ -160,19 +170,52 @@ export const a1Chapter1: UnifiedLesson = {
       titleAlbanian: 'Hyrje: Shumësi në Turqisht',
       ruleConceptTurkish: '-lar / -ler',
       explanationAlbanian: 'Në shqip shumësi formohet me shumë prapashtesa të ndryshme (-t, -at, -ë, -et). Në turqisht, shumësi është jashtëzakonisht i thjeshtë dhe ka vetëm dy trajta: **-lar** dhe **-ler**. Përzgjedhja mes tyre varet plotësisht nga zanorja e fundit e fjalës (Harmonia Vokalore).',
-      interactiveExample: { root: 'okul', strategy: 'plural' }
+      interactiveExample: {
+        root: 'okul',
+        strategy: 'plural',
+        sampleWords: [
+          { turkish: 'kitap', albanian: 'libër', isException: false },
+          { turkish: 'ev', albanian: 'shtëpi', isException: false },
+          { turkish: 'oda', albanian: 'dhomë', isException: false },
+          { turkish: 'göz', albanian: 'sy', isException: false },
+          { turkish: 'saat', albanian: 'orë', isException: true },
+          { turkish: 'renk', albanian: 'ngjyrë', isException: false }
+        ]
+      }
     },
     {
       titleAlbanian: 'Harmonia Vokalore 2-she',
       ruleConceptTurkish: 'Zanore e Prapme vs. Zanore e Përparme',
-      explanationAlbanian: '1. **Zanoret e Prapme (a, ı, o, u):** Nëse zanorja e fundit e rrënjës është një nga këto, shtohet **-lar**.\n   *Shembull:* Kit**a**p $\\rightarrow$ Kitap**lar** (Libër -> Libra)\n\n2. **Zanoret e Përparme (e, i, ö, ü):** Nëse zanorja e fundit e rrënjës është një nga këto, shtohet **-ler**.\n   *Shembull:* Ev $\\rightarrow$ Ev**ler** (Shtëpi -> Shtëpi / Shtëpitë)\n\n*Vini Re:* Ndryshe nga shqipja, nuk ka ndryshim gjinie apo lakime të ndërlikuara!',
-      interactiveExample: { root: 'ev', strategy: 'plural' }
+      explanationAlbanian: '1. **Zanoret e Prapme (a, ı, o, u):** Nëse zanorja e fundit e rrënjës është një nga këto, shtohet **-lar**.\n   *Shembull:* Kit**a**p → Kitap**lar** (Libër -> Libra)\n\n2. **Zanoret e Përparme (e, i, ö, ü):** Nëse zanorja e fundit e rrënjës është një nga këto, shtohet **-ler**.\n   *Shembull:* Ev → Ev**ler** (Shtëpi -> Shtëpi / Shtëpitë)\n\n*Vini Re:* Ndryshe nga shqipja, nuk ka ndryshim gjinie apo lakime të ndërlikuara!',
+      interactiveExample: {
+        root: 'ev',
+        strategy: 'plural',
+        sampleWords: [
+          { turkish: 'kitap', albanian: 'libër', isException: false },
+          { turkish: 'ev', albanian: 'shtëpi', isException: false },
+          { turkish: 'oda', albanian: 'dhomë', isException: false },
+          { turkish: 'göz', albanian: 'sy', isException: false },
+          { turkish: 'saat', albanian: 'orë', isException: true },
+          { turkish: 'renk', albanian: 'ngjyrë', isException: false }
+        ]
+      }
     },
     {
       titleAlbanian: 'Lidhja Shqip-Turqisht: Prapashtesat',
       ruleConceptTurkish: 'Krahasim Strukturor',
-      explanationAlbanian: 'Meqenëse si shqipja, ashtu edhe turqishtja janë gjuhë që përdorin prapashtesat për të ndryshme kuptime, struktura është shumë e ngjashme:\n\n*   **Shkollë** (rrënja) $\\rightarrow$ **Shkollat** (shumësi i shquar)\n*   **Okul** (rrënja) $\\rightarrow$ **Okullar** (shumësi turk)\n\nKjo e bën procesin e mësimit të prapashtesave të natyrshëm për shqipfolësit!',
-      interactiveExample: { root: 'saat', strategy: 'plural' }
+      explanationAlbanian: 'Meqenëse si shqipja, ashtu edhe turqishtja janë gjuhë që përdorin prapashtesat për të ndryshme kuptime, struktura është shumë e ngjashme:\n\n*   **Shkollë** (rrënja) → **Shkollat** (shumësi i shquar)\n*   **Okul** (rrënja) → **Okullar** (shumësi turk)\n\nKjo e bën procesin e mësimit të prapashtesave të natyrshëm për shqipfolësit!',
+      interactiveExample: {
+        root: 'saat',
+        strategy: 'plural',
+        sampleWords: [
+          { turkish: 'kitap', albanian: 'libër', isException: false },
+          { turkish: 'ev', albanian: 'shtëpi', isException: false },
+          { turkish: 'oda', albanian: 'dhomë', isException: false },
+          { turkish: 'göz', albanian: 'sy', isException: false },
+          { turkish: 'saat', albanian: 'orë', isException: true },
+          { turkish: 'renk', albanian: 'ngjyrë', isException: false }
+        ]
+      }
     }
   ],
   exercises: [
@@ -184,7 +227,9 @@ export const a1Chapter1: UnifiedLesson = {
         options: ['odaler', 'odalar', 'odas', 'odaları']
       },
       validation: {
-        correct_answer: 'odalar'
+        correct_answer: 'odalar',
+        msg_success: 'E saktë! Zanorja e fundit e rrënjës është "a" (e prapme), prandaj shumësi është "oda" + "lar" = "odalar".',
+        msg_failure: 'E pasaktë. Kontrolloni harmoninë vokalore 2-she për fjalën "oda".'
       }
     },
     {
@@ -194,7 +239,9 @@ export const a1Chapter1: UnifiedLesson = {
         words: ['adım', 'Valbona', 'Benim']
       },
       validation: {
-        correct_sequence: ['Benim', 'adım', 'Valbona']
+        correct_sequence: ['Benim', 'adım', 'Valbona'],
+        msg_success: "E saktë! Në turqisht, emri pronor 'Benim' pasohet nga emri me prapashtesën pronore 'adım' dhe emri i përveçëm në fund.",
+        msg_failure: "E pasaktë. Mbani mend: Pronori 'Benim' (i imi) + 'adım' (emri im) + emri i përveçëm 'Valbona'."
       }
     },
     {
@@ -206,7 +253,9 @@ export const a1Chapter1: UnifiedLesson = {
       },
       validation: {
         correct_suffix: 'ler',
-        result: 'gözler'
+        result: 'gözler',
+        msg_success: "E saktë! Fjala 'göz' përmban zanorën e përparme 'ö', prandaj merr prapashtesën '-ler' për shumësin: 'gözler' (sy - sytë).",
+        msg_failure: "E pasaktë. Kontrolloni zanorën 'ö' (të përparme) të rrënjës 'göz' dhe rregullin e harmonisë 2-she."
       }
     }
   ]

@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { useLesson } from '../../../application/state/LessonContext';
 
-export const ExerciseModule: React.FC = () => {
-  const { exercises, markChapterCompleted } = useLesson();
+interface ExerciseModuleProps {
+  onComplete?: () => void;
+}
+
+export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) => {
+  const { exercises, markChapterCompleted, readingCompleted } = useLesson();
   
   // States for exercises
   const [multipleChoiceAnswer, setMultipleChoiceAnswer] = useState<string>('');
@@ -33,8 +37,8 @@ export const ExerciseModule: React.FC = () => {
         [ex.id]: {
           correct,
           msg: correct 
-            ? 'E saktë! Zanorja e fundit e rrënjës është "a" (e prapme), prandaj shumësi është "oda" + "lar" = "odalar".' 
-            : 'E pasaktë. Kontrolloni harmoninë vokalore 2-she për fjalën "oda".'
+            ? (target.msg_success || 'E saktë!') 
+            : (target.msg_failure || 'E pasaktë.')
         }
       }));
     };
@@ -122,8 +126,8 @@ export const ExerciseModule: React.FC = () => {
         [ex.id]: {
           correct,
           msg: correct
-            ? "E saktë! Në turqisht, emri pronor 'Benim' pasohet nga emri me prapashtesën pronore 'adım' dhe emri i përveçëm në fund."
-            : "E pasaktë. Mbani mend: Pronori 'Benim' (i imi) + 'adım' (emri im) + emri i përveçëm 'Valbona'."
+            ? (target.msg_success || "E saktë!")
+            : (target.msg_failure || "E pasaktë.")
         }
       }));
     };
@@ -240,8 +244,8 @@ export const ExerciseModule: React.FC = () => {
         [ex.id]: {
           correct,
           msg: correct
-            ? `E saktë! Fjala 'göz' përmban zanorën e përparme 'ö', prandaj merr prapashtesën '-ler' për shumësin: 'gözler' (sy - sytë).`
-            : "E pasaktë. Kontrolloni zanorën 'ö' (të përparme) të rrënjës 'göz' dhe rregullin e harmonisë 2-she."
+            ? (target.msg_success || "E saktë!")
+            : (target.msg_failure || "E pasaktë.")
         }
       }));
     };
@@ -352,8 +356,15 @@ export const ExerciseModule: React.FC = () => {
     }
     
     markChapterCompleted();
-    alert('🎉 Kapitulli u përfundua me sukses! Progresi juaj u sinkronizua dhe u ruajt offline. Ju lumtë!');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    onComplete?.();
+    
+    // Smooth scroll to the completion card at the bottom of the container
+    setTimeout(() => {
+      const completionCard = document.getElementById('chapter-completion-card');
+      if (completionCard) {
+        completionCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 150);
   };
 
   return (
@@ -376,12 +387,19 @@ export const ExerciseModule: React.FC = () => {
         })}
       </div>
 
-      <div className="pt-6 border-t border-[#E9ECEF] flex justify-end">
+      <div className="pt-6 border-t border-[#E9ECEF] flex flex-wrap items-center justify-between gap-4">
+        <div>
+          {readingCompleted && (
+            <div className="text-xs text-[#3A5A40] bg-[#3A5A40]/10 border border-[#3A5A40]/30 px-4 py-2.5 rounded-xl font-bold uppercase tracking-wider flex items-center gap-1.5 select-none">
+              <span>✓</span> Ky kapitull u përfundua!
+            </div>
+          )}
+        </div>
         <button
           onClick={handleFinishLesson}
           className="px-6 py-3.5 bg-[#3A5A40] hover:bg-[#2A3F2E] text-white font-bold rounded-xl text-xs uppercase tracking-widest transition cursor-pointer select-none active-cta shadow-md"
         >
-          Kryej Kapitullin 🏆
+          {readingCompleted ? 'Kryej Kapitullin Përsëri 🏆' : 'Kryej Kapitullin 🏆'}
         </button>
       </div>
     </div>
