@@ -13,6 +13,7 @@ import { a2Chapter4 } from './a2_chapter4';
 import { a2Chapter5 } from './a2_chapter5';
 import { a2Chapter6 } from './a2_chapter6';
 import { a2Chapter7 } from './a2_chapter7';
+import { a2Chapter8 } from './a2_chapter8';
 import type { UnifiedLesson } from './a1_chapter1';
 
 const b1Chapter1: UnifiedLesson = {
@@ -107,6 +108,7 @@ export const ALL_UNIFIED_LESSONS: UnifiedLesson[] = [
   a2Chapter5,
   a2Chapter6,
   a2Chapter7,
+  a2Chapter8,
   b1Chapter1,
   b2Chapter1,
   c1Chapter1,
