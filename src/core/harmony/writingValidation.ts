@@ -8,7 +8,7 @@ export interface EvaluationResult {
 }
 
 export interface ValidationRule {
-  type: 'required_keywords' | 'forbidden_pattern' | 'required_pattern' | 'origin_harmony' | 'reported_past_harmony' | 'conditional_harmony' | 'participle_harmony' | 'idiom_presence' | 'gittim_check' | 'okudum_check';
+  type: 'required_keywords' | 'forbidden_pattern' | 'required_pattern' | 'origin_harmony' | 'reported_past_harmony' | 'conditional_harmony' | 'participle_harmony' | 'idiom_presence' | 'gittim_check' | 'okudum_check' | 'adverbial_ip_harmony';
   keywords?: string[];
   regex?: string;
   feedback: string;
@@ -421,6 +421,28 @@ export const WRITING_PROMPTS: Record<number, WritingPrompt> = {
         feedback: "Nuk u gjet asnjë folje e zgjedhuar saktë në kohën e shkuar të vazhdueshme (p.sh., 'okuyordum', 'oynuyorduk', 'yaşıyordum')."
       }
     ]
+  },
+  20: {
+    chapterId: 20,
+    type: 'guided',
+    promptAlbanian: "Shkruani 2-3 fjali në turqisht për ditën tuaj duke treguar veprime të lidhura me zarf-foljen '-ip' (p.sh., duke shkuar në një vend dhe duke bërë diçka) ose duke përdorur lidhëza si 'çünkü' ose 'bu yüzden' për të shpjeguar arsyet.",
+    grammarTipAlbanian: "Fjalitë duhet të përdorin zarf-foljen me prapashtesën '-ip / -ıp / -up / -üp' (p.sh., 'gidip', 'yapıp') ose lidhëza si 'çünkü' (sepse), 'bu yüzden' (prandaj), 'ama' (por) për të lidhur mendimet.",
+    sampleAnswers: [
+      "Sabah uyanıp kahvaltı yaptım çünkü çok açtım.",
+      "Kütüphaneye gidip ders çalıştım, bu yüzden çok yoruldum."
+    ],
+    grammarLabel: "Lidhëzat & Zarf-Foljet",
+    validationRules: [
+      {
+        type: 'required_pattern',
+        regex: 'çünkü|bu yüzden|veya|ama|ve|[a-zçğışöü]+(ıp|ip|up|üp)(?=$|[\\s.,!?])',
+        feedback: "Sigurohuni që të përdorni të paktën një lidhëz (si 'çünkü', 'bu yüzden', 'ama') ose një folje me zarf-foljen '-ip' (si 'gidip', 'yapıp', 'okuyup')."
+      },
+      {
+        type: 'adverbial_ip_harmony',
+        feedback: "Gabim Harmonie: Zarf-folja e përdorur me prapashtesën '-ip' nuk respekton rregullat e harmonisë vokalore turke."
+      }
+    ]
   }
 };
 
@@ -748,6 +770,45 @@ function runRule(rule: ValidationRule, normalizedInput: string): string | null {
       }
       return null;
     }
+    case 'adverbial_ip_harmony': {
+      const words = normalizedInput.split(' ');
+      let ipMatch = null;
+      let verbRoot = '';
+      let ipSuffix = '';
+
+      for (const w of words) {
+        const match = w.match(/^([a-zçğışöü]+)(yıp|yip|yup|yüp|ıp|ip|up|üp)$/);
+        if (match) {
+          ipMatch = match;
+          verbRoot = match[1];
+          ipSuffix = match[2];
+          break;
+        }
+      }
+
+      if (!ipMatch) {
+        return rule.feedback;
+      }
+
+      if (verbRoot === 'git' || verbRoot === 'et') {
+        const voicedRoot = verbRoot === 'git' ? 'gid' : 'ed';
+        return `Gabim Zbutjeje: Bashkëtingëllorja 't' e foljes '${verbRoot}' duhet të zbutet në 'd' sepse pasohet nga një zanore → '${voicedRoot}${ipSuffix}' (jo '${verbRoot}${ipSuffix}').`;
+      }
+
+      if (!isValidVerbBase(verbRoot)) {
+        return `Gabim: Rrënja e foljes '${verbRoot}' ka gabim të harmonisë vokalike.`;
+      }
+
+      const lastChar = verbRoot.slice(-1);
+      const endsWithVowel = new Set(['a', 'ı', 'o', 'u', 'e', 'i', 'ö', 'ü']).has(lastChar);
+      const expectedVowel = getVowelHarmony4(verbRoot);
+      const expectedSuffix = endsWithVowel ? `y${expectedVowel}p` : `${expectedVowel}p`;
+
+      if (ipSuffix !== expectedSuffix) {
+        return `Gabim Harmonie: Rrënja '${verbRoot}' kërkon prapashtesën '-${expectedSuffix}', por ju keni shkruar '-${ipSuffix}' → '${verbRoot}${expectedSuffix}' (jo '${verbRoot}${ipSuffix}').`;
+      }
+      return null;
+    }
     default:
       return null;
   }
@@ -849,6 +910,8 @@ export function evaluateWriting(chapterId: number, input: string): EvaluationRes
     successFeedback = 'Shkëlqyeshëm! Keni shkruar saktë krahasimin duke përdorur fjalën \'daha\' dhe rasën rrjedhore (-dan/-den).';
   } else if (chapterId === 19) {
     successFeedback = 'Shkëlqyeshëm! Keni përshkruar saktë fëmijërinë dhe zakonet tuaja të kaluara duke përdorur kohën e shkuar të vazhdueshme.';
+  } else if (chapterId === 20) {
+    successFeedback = 'Shkëlqyeshëm! Keni përshkruar saktë veprimet dhe arsyet e ditës suaj duke përdorur saktë lidhëzat dhe zarf-foljet.';
   } else if (chapterId === 4) {
     successFeedback = 'Shkëlqyeshëm! Keni përdorur saktë Mënyrën Habitore duke respektuar rregullat e harmonisë vokalike 4-she.';
   } else if (chapterId === 5) {

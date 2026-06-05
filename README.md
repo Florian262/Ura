@@ -66,6 +66,30 @@ npm run test
 
 ---
 
+## 🗺️ Curriculum Roadmap (Levels A1 & A2)
+
+### 🟢 Level A1: Foundations
+* **Chapter 1**: Prezantimi & Origjina (Introduction & Origin suffix `-lı/yim`)
+* **Chapter 2**: Rasa Vendore (Locative Case `-da/-de`)
+* **Chapter 3**: Koha e Shkuar (Direct Past Tense `-dı`)
+* **Chapter 4**: Mënyra Habitore (Reported Past/Admirative Mood `-miş`)
+* **Chapter 5**: Mënyra Kushtore (Conditional Clause `-se/-sa`)
+* **Chapter 6**: Pjesoret (Active & Passive Participles `-an / -dık`)
+* **Chapter 7**: Idiomat e Përbashkëta (Common shared Balkan idioms)
+* **Chapter 8**: Ekzistencialet & Pyetjet (Existential statements and questions `var mı?`)
+
+### 🔵 Level A2: Intermediate Expansion
+* **Chapter 1**: Koha e Shkuar & Fundjava (Past Tense review and narrative build)
+* **Chapter 2**: Koha e Ardhshme (Future Tense `-acak/-ecek`)
+* **Chapter 3**: Koha e Gjerë (Broad Tense/Geniş Zaman `-r/-ar/-er`)
+* **Chapter 4**: Folja e Mundësisë (Potential/Capability mood `-abil/-ebil`)
+* **Chapter 5**: Mënyra Detyrore (Necessity & Obligation `-malı/-meli`)
+* **Chapter 6**: Krahasimi & Rasa Rrjedhore (Comparison using `daha` and Ablative `-dan/-den`)
+* **Chapter 7**: Koha e Shkuar e Vazhdueshme (Past Continuous `-iyordu`)
+* **Chapter 8**: Lidhëzat & Zarf-Foljet e Thjeshta (Connectors `çünkü / bu yüzden` & Adverbial `-ip`)
+
+---
+
 ## 📂 Project Directory Structure
 
 ```text
