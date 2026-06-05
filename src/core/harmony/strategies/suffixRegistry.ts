@@ -15,6 +15,8 @@ import { NecessityStrategy } from './NecessityStrategy';
 import { AblativeStrategy } from './AblativeStrategy';
 import { PastContinuousStrategy } from './PastContinuousStrategy';
 import { AdverbialIpStrategy } from './AdverbialIpStrategy';
+import { ConditionalStrategy } from './ConditionalStrategy';
+import { SinceStrategy } from './SinceStrategy';
 import type { SuffixStrategy } from './suffixStrategy';
 
 /**
@@ -38,5 +40,7 @@ export const SuffixRegistry: Record<string, new () => SuffixStrategy> = {
   necessity: NecessityStrategy,
   ablative: AblativeStrategy,
   past_continuous: PastContinuousStrategy,
-  adverbial_ip: AdverbialIpStrategy
+  adverbial_ip: AdverbialIpStrategy,
+  conditional: ConditionalStrategy,
+  since: SinceStrategy
 };

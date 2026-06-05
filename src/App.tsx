@@ -132,10 +132,10 @@ const MainLayout: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row bg-grid-pattern bg-[#FAFAFA] text-[#1A1D20] relative">
+    <div className="min-h-screen flex flex-col md:flex-row bg-grid-pattern bg-[var(--color-bg-canvas)] text-[var(--color-text-primary)] relative">
       
       {/* 1. Mobile Menu Header (hidden on desktop) */}
-      <header className="sticky top-0 md:hidden w-full bg-white px-4 py-3 flex justify-between items-center z-40 border-b border-[#E9ECEF]">
+      <header className="sticky top-0 md:hidden w-full bg-[var(--color-bg-surface)] px-4 py-3 flex justify-between items-center z-40 border-b border-[var(--color-border-primary)]">
         <div className="flex items-center gap-2">
           <Logo type="wordmark" size={22} className="w-auto h-5.5" />
           <span className="text-[9px] font-bold text-[var(--color-text-secondary)] uppercase tracking-widest block mt-1.5 ml-1.5 border-l border-[var(--color-border-primary-glass)] pl-2">
@@ -146,7 +146,7 @@ const MainLayout: React.FC = () => {
           {/* Theme toggle button */}
           <button
             onClick={toggleTheme}
-            className="w-8 h-8 border border-[#E9ECEF] bg-transparent text-sm cursor-pointer transition select-none flex items-center justify-center rounded-lg hover:bg-[#E9ECEF]/30"
+            className="w-8 h-8 border border-[var(--color-border-primary)] bg-transparent text-sm cursor-pointer transition select-none flex items-center justify-center rounded-lg hover:bg-[var(--color-brand-accent-light)]"
             title="Ndrysho Temën"
           >
                 {theme === 'dark' ? (
@@ -169,7 +169,7 @@ const MainLayout: React.FC = () => {
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-2xl p-1 bg-transparent border-0 text-[#1A1D20] cursor-pointer"
+            className="text-2xl p-1 bg-transparent border-0 text-[var(--color-text-primary)] cursor-pointer"
           >
             {mobileMenuOpen ? '✕' : '☰'}
           </button>
@@ -402,7 +402,7 @@ const MainLayout: React.FC = () => {
         </div>
 
         {/* Bottom Persistent footer */}
-        <footer className="w-full bg-white border-t border-[#E9ECEF] py-6 text-center text-[10px] text-[#565E64] font-light space-y-1.5">
+        <footer className="w-full bg-[var(--color-bg-surface)] border-t border-[var(--color-border-primary)] py-6 text-center text-[10px] text-[var(--color-text-secondary)] font-light space-y-1.5">
           <p className="tracking-wide">
             © {new Date().getFullYear()} Ura e Gjuhës. Zhvilluar për studim profesional offline.
           </p>

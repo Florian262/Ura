@@ -127,4 +127,50 @@ describe('Writing Grading Engine - Chapter Evaluations', () => {
     expect(res.status).toBe('error');
     expect(res.feedback).toContain('Mungon pjesëza pyetëse');
   });
+
+  // B1 CHAPTER 1 (ID 4 - Past Continuous / -ken & Conjunctions)
+  describe('B1 Chapter 1 (ID 4) Writing Validation', () => {
+    it('passes valid guided paragraph', () => {
+      const res = evaluateWriting(4, "Ben kitap okuyorken telefonuma bir bildirim geldi. Çok heyecanlandım, fakat hemen cevap yazamadım.");
+      expect(res.status).toBe('success');
+    });
+
+    it('flags short inputs below 60 characters', () => {
+      const res = evaluateWriting(4, "Ben okuyordum fakat telefon geldi."); // < 60 chars
+      expect(res.status).toBe('error');
+      expect(res.feedback).toContain('shkruani të paktën 60 karaktere');
+    });
+
+    it('flags missing past continuous or -ken patterns', () => {
+      const res = evaluateWriting(4, "Ben kitap okudum. Telefonuma bir bildirim geldi. Çok heyecanlandım fakat cevap yazamadım."); // okudum is simple past, missing okuyorken/okuyordum
+      expect(res.status).toBe('error');
+      expect(res.feedback).toContain('Mungon përdorimi i kohës së shkuar të vazhdueshme');
+    });
+
+    it('flags missing B1 conjunctions', () => {
+      const res = evaluateWriting(4, "Ben kitap okuyorken telefonuma bir bildirim geldi. Çok heyecanlandım. Hemen cevap yazamadım."); // missing fakat/oysa/ama
+      expect(res.status).toBe('error');
+      expect(res.feedback).toContain('Mungon një nga lidhëzat');
+    });
+  });
+
+  // B1 CHAPTER 2 (ID 22 - Reciprocal Voice)
+  describe('B1 Chapter 2 (ID 22) Writing Validation', () => {
+    it('passes valid reciprocal dialogue description', () => {
+      const res = evaluateWriting(22, "Biz dün kafede buluştuk ve yeni projeyi görüştük. Her konuda anlaştık ve fikirlerimizi paylaştık.");
+      expect(res.status).toBe('success');
+    });
+
+    it('flags short inputs below 60 characters', () => {
+      const res = evaluateWriting(22, "Biz buluştuk ve görüştük."); // < 60 chars
+      expect(res.status).toBe('error');
+      expect(res.feedback).toContain('shkruani të paktën 60 karaktere');
+    });
+
+    it('flags missing reciprocal voice verbs', () => {
+      const res = evaluateWriting(22, "Biz dün kafede kahve içtik ve yeni proje hakkında konuştuk. Her fikir hakkında karar verdik."); // no buluşmak, görüşmek etc.
+      expect(res.status).toBe('error');
+      expect(res.feedback).toContain('Mungon përdorimi i foljeve reciproke');
+    });
+  });
 });

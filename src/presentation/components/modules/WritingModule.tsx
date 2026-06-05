@@ -11,6 +11,9 @@ export const WritingModule: React.FC<WritingModuleProps> = ({ onComplete }) => {
   
   const chapterId = currentChapter?.id || 1;
   const activePrompt = WRITING_PROMPTS[chapterId] || WRITING_PROMPTS[1];
+  
+  const b1Chapters = [4, 22, 23, 24];
+  const minLength = b1Chapters.includes(chapterId) ? 60 : 10;
 
   // States
   const [showPreferenceModal, setShowPreferenceModal] = useState<boolean>(true);
@@ -62,8 +65,8 @@ export const WritingModule: React.FC<WritingModuleProps> = ({ onComplete }) => {
   };
 
   const submitWriting = () => {
-    if (writingInput.trim().length < 10) {
-      alert('Ju lutemi shkruani një tekst pak më të plotë (të paktën 10 karaktere).');
+    if (writingInput.trim().length < minLength) {
+      alert(`Ju lutemi shkruani një tekst pak më të plotë (të paktën ${minLength} karaktere).`);
       return;
     }
 
@@ -214,7 +217,7 @@ export const WritingModule: React.FC<WritingModuleProps> = ({ onComplete }) => {
                 </span>
               </div>
               <div className="flex items-center gap-1.5">
-                {charCount >= 10 ? (
+                {charCount >= minLength ? (
                   <span className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-bold transition duration-150">
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -223,7 +226,7 @@ export const WritingModule: React.FC<WritingModuleProps> = ({ onComplete }) => {
                   </span>
                 ) : (
                   <span className="text-rose-500 dark:text-rose-455 font-medium transition duration-150">
-                    Duhen edhe {10 - charCount} karaktere
+                    Duhen edhe {minLength - charCount} karaktere
                   </span>
                 )}
               </div>
@@ -238,9 +241,9 @@ export const WritingModule: React.FC<WritingModuleProps> = ({ onComplete }) => {
             
             <button
               onClick={submitWriting}
-              disabled={charCount < 10}
+              disabled={charCount < minLength}
               className={`px-6 py-3 text-center text-xs font-bold uppercase tracking-widest rounded-xl select-none shadow-sm transition-all duration-250 ${
-                charCount < 10
+                charCount < minLength
                   ? 'bg-neutral-200 dark:bg-neutral-800 text-neutral-400 dark:text-neutral-500 cursor-not-allowed opacity-60'
                   : 'active-cta'
               }`}

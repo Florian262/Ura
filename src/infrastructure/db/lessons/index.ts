@@ -15,26 +15,11 @@ import { a2Chapter5 } from './a2_chapter5';
 import { a2Chapter6 } from './a2_chapter6';
 import { a2Chapter7 } from './a2_chapter7';
 import { a2Chapter8 } from './a2_chapter8';
+import { b1Chapter1 } from './b1_chapter1';
+import { b1Chapter2 } from './b1_chapter2';
+import { b1Chapter3 } from './b1_chapter3';
+import { b1Chapter4 } from './b1_chapter4';
 import type { UnifiedLesson } from './a1_chapter1';
-
-const b1Chapter1: UnifiedLesson = {
-  id: 4,
-  level: 'B1',
-  orderIndex: 1,
-  title: {
-    turkish: 'Belirsiz Geçmiş Zaman (-miş)',
-    albanian: 'Mënyra Habitore (E shkuara e pacaktuar)'
-  },
-  reading: {
-    layoutStyle: 'narrative',
-    audioAssetStub: null,
-    content: [],
-    questions: []
-  },
-  vocabulary: [],
-  grammar: [],
-  exercises: []
-};
 
 const b2Chapter1: UnifiedLesson = {
   id: 5,
@@ -112,6 +97,9 @@ export const ALL_UNIFIED_LESSONS: UnifiedLesson[] = [
   a2Chapter7,
   a2Chapter8,
   b1Chapter1,
+  b1Chapter2,
+  b1Chapter3,
+  b1Chapter4,
   b2Chapter1,
   c1Chapter1,
   c2Chapter1

@@ -133,7 +133,7 @@ export const ChapterContainer: React.FC = () => {
   if (!currentChapter) return null;
 
   return (
-    <div className="min-h-screen pb-24 text-[#1A1D20] relative">
+    <div className="min-h-screen pb-24 text-[var(--color-text-primary)] relative">
       {/* Sticky Top Navbar */}
       <StickyNavbar onTabClick={handleTabClick} completions={completions} />
 

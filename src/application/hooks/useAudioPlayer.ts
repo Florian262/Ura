@@ -1,5 +1,22 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 
+const splitIntoSentences = (text: string): string[] => {
+  return text
+    .split(/([.!?])/)
+    .reduce((acc: string[], val: string, idx: number) => {
+      if (idx % 2 === 0) {
+        if (val.trim()) {
+          acc.push(val.trim());
+        }
+      } else {
+        if (acc.length > 0) {
+          acc[acc.length - 1] += val;
+        }
+      }
+      return acc;
+    }, []);
+};
+
 /**
  * Audio player hook that implements a hybrid text-to-speech engine:
  * 1. Prioritizes premium natural online pronunciation (Google Translate TTS via tw-ob client).
@@ -9,6 +26,7 @@ import { useState, useCallback, useRef, useEffect } from 'react';
 export function useAudioPlayer() {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [currentSrc, setCurrentSrc] = useState<string | null>(null);
+  const [activeDialogueIndex, setActiveDialogueIndex] = useState<number | null>(null);
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
   
   // Keep reference to speechSynthesis
@@ -18,6 +36,12 @@ export function useAudioPlayer() {
 
   // Reference to track active Audio element if playing online
   const activeAudioRef = useRef<HTMLAudioElement | null>(null);
+
+  // Reference to abort dialogue loop safely
+  const isDialoguePlayingRef = useRef<boolean>(false);
+
+  // Reference to abort text loop safely
+  const isTextPlayingRef = useRef<boolean>(false);
 
   // Dynamically load system voices when they change (asynchronous population)
   useEffect(() => {
@@ -68,6 +92,8 @@ export function useAudioPlayer() {
   }, [voices]);
 
   const stop = useCallback(() => {
+    isDialoguePlayingRef.current = false;
+    isTextPlayingRef.current = false;
     if (activeAudioRef.current) {
       activeAudioRef.current.pause();
       activeAudioRef.current = null;
@@ -77,72 +103,55 @@ export function useAudioPlayer() {
     }
     setIsPlaying(false);
     setCurrentSrc(null);
+    setActiveDialogueIndex(null);
   }, []);
 
-  // System Text-to-Speech fallback
-  const playSystemSpeech = useCallback((text: string, lang: 'tr' | 'al', onEndCallback?: () => void) => {
+  // System speech internal helper that does not reset state hooks
+  const playSystemSpeechInternal = useCallback((text: string, lang: 'tr' | 'al', onEndCallback?: () => void) => {
     if (!synthRef.current) {
       if (onEndCallback) onEndCallback();
       return;
     }
-
-    synthRef.current.cancel();
-    setIsPlaying(true);
-    setCurrentSrc(text);
-
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = lang === 'tr' ? 'tr-TR' : 'sq-AL';
-
     const voice = getBestSystemVoice(lang);
-    if (voice) {
-      utterance.voice = voice;
-      console.log(`[Audio Play] Duke përdorur zërin e sistemit: ${voice.name}`);
-    } else {
-      console.log(`[Audio Play] Nuk u gjet asnjë zë specifik, duke përdorur zërin e paracaktuar.`);
-    }
+    if (voice) utterance.voice = voice;
 
     utterance.onend = () => {
-      setIsPlaying(false);
-      setCurrentSrc(null);
       if (onEndCallback) onEndCallback();
     };
-
     utterance.onerror = () => {
-      setIsPlaying(false);
-      setCurrentSrc(null);
       if (onEndCallback) onEndCallback();
     };
-
     synthRef.current.speak(utterance);
   }, [getBestSystemVoice]);
 
-  // Hybrid player: Google TTS primary, Youdao TTS secondary, System Speech tertiary
-  const playText = useCallback((text: string, lang: 'tr' | 'al' = 'tr', onEndCallback?: () => void) => {
-    stop(); // stop any active audio first
+  // Play single sentence audio (guaranteed to be short enough for online engines)
+  const playSingleSentenceAudio = useCallback((text: string, lang: 'tr' | 'al' = 'tr', onEndCallback?: () => void) => {
+    if (activeAudioRef.current) {
+      activeAudioRef.current.pause();
+      activeAudioRef.current = null;
+    }
+    if (synthRef.current) {
+      synthRef.current.cancel();
+    }
 
     if (typeof navigator !== 'undefined' && navigator.onLine) {
-      setIsPlaying(true);
-      setCurrentSrc(text);
-
       const playWithGoogle = () => {
         const googleUrl = `https://translate.google.com/translate_tts?ie=UTF-8&tl=${lang === 'tr' ? 'tr' : 'sq'}&client=tw-ob&q=${encodeURIComponent(text)}`;
         const audio = new Audio(googleUrl);
         activeAudioRef.current = audio;
 
         audio.onended = () => {
-          setIsPlaying(false);
-          setCurrentSrc(null);
           activeAudioRef.current = null;
           if (onEndCallback) onEndCallback();
         };
 
         audio.onerror = () => {
-          console.log("[Audio Hybrid] Dështoi Google TTS online, duke provuar Youdao TTS...");
           playWithYoudao();
         };
 
         audio.play().catch(() => {
-          console.log("[Audio Hybrid] Dështoi luajtja e Google TTS, duke provuar Youdao TTS...");
           playWithYoudao();
         });
       };
@@ -154,51 +163,97 @@ export function useAudioPlayer() {
         activeAudioRef.current = audio;
 
         audio.onended = () => {
-          setIsPlaying(false);
-          setCurrentSrc(null);
           activeAudioRef.current = null;
           if (onEndCallback) onEndCallback();
         };
 
         audio.onerror = () => {
-          console.log("[Audio Hybrid] Dështoi Youdao TTS online, duke kaluar te zëri i sistemit...");
-          playSystemSpeech(text, lang, onEndCallback);
+          playSystemSpeechInternal(text, lang, onEndCallback);
         };
 
         audio.play().catch(() => {
-          console.log("[Audio Hybrid] Dështoi luajtja e Youdao TTS, duke kaluar te zëri i sistemit...");
-          playSystemSpeech(text, lang, onEndCallback);
+          playSystemSpeechInternal(text, lang, onEndCallback);
         });
       };
 
       playWithGoogle();
     } else {
-      // Offline fallback
-      playSystemSpeech(text, lang, onEndCallback);
+      playSystemSpeechInternal(text, lang, onEndCallback);
     }
-  }, [stop, playSystemSpeech]);
+  }, [playSystemSpeechInternal]);
 
-  const playDialogue = useCallback((lines: Array<{ speaker: string; text: string }>) => {
-    stop();
-    setIsPlaying(true);
-    setCurrentSrc('dialogue');
+  // Internal play text helper that does not clear parent loop states
+  const playTextInternal = useCallback((text: string, lang: 'tr' | 'al' = 'tr', onEndCallback?: () => void) => {
+    const sentences = splitIntoSentences(text);
+    if (sentences.length === 0) {
+      if (onEndCallback) onEndCallback();
+      return;
+    }
 
-    let index = 0;
-    let active = true;
+    let sentenceIndex = 0;
 
-    const originalStop = stop;
-
-    const speakNextLine = () => {
-      if (!active) return;
-      if (index >= lines.length) {
-        setIsPlaying(false);
-        setCurrentSrc(null);
+    const speakNextSentence = () => {
+      // Abort if stopped
+      if (!isDialoguePlayingRef.current && !isTextPlayingRef.current) return;
+      if (sentenceIndex >= sentences.length) {
+        if (onEndCallback) onEndCallback();
         return;
       }
 
-      const currentLine = lines[index];
+      playSingleSentenceAudio(sentences[sentenceIndex], lang, () => {
+        sentenceIndex++;
+        // Short pause between sentences
+        setTimeout(speakNextSentence, 400);
+      });
+    };
+
+    speakNextSentence();
+  }, [playSingleSentenceAudio]);
+
+  // Hybrid player: Google TTS primary, Youdao TTS secondary, System Speech tertiary
+  const playText = useCallback((text: string, lang: 'tr' | 'al' = 'tr', onEndCallback?: () => void) => {
+    stop(); // stop any active audio first
+
+    const sentences = splitIntoSentences(text);
+    if (sentences.length === 0) {
+      if (onEndCallback) onEndCallback();
+      return;
+    }
+
+    setIsPlaying(true);
+    setCurrentSrc(text);
+    isTextPlayingRef.current = true;
+
+    playTextInternal(text, lang, () => {
+      setIsPlaying(false);
+      setCurrentSrc(null);
+      isTextPlayingRef.current = false;
+      if (onEndCallback) onEndCallback();
+    });
+  }, [stop, playTextInternal]);
+
+  const playDialogue = useCallback((lines: Array<{ speaker?: string; text: string }>) => {
+    stop();
+    setIsPlaying(true);
+    setCurrentSrc('dialogue');
+    setActiveDialogueIndex(0);
+    isDialoguePlayingRef.current = true;
+
+    let index = 0;
+
+    const speakNextLine = () => {
+      if (!isDialoguePlayingRef.current) return;
+      if (index >= lines.length) {
+        setIsPlaying(false);
+        setCurrentSrc(null);
+        setActiveDialogueIndex(null);
+        isDialoguePlayingRef.current = false;
+        return;
+      }
+
+      setActiveDialogueIndex(index);
       
-      playText(currentLine.text, 'tr', () => {
+      playTextInternal(lines[index].text, 'tr', () => {
         index++;
         // Short pause between dialogues for natural flow
         setTimeout(speakNextLine, 800);
@@ -209,10 +264,10 @@ export function useAudioPlayer() {
 
     // Return clean stop override
     return () => {
-      active = false;
-      originalStop();
+      isDialoguePlayingRef.current = false;
+      stop();
     };
-  }, [stop, playText]);
+  }, [stop, playTextInternal]);
 
   // Backwards compatibility/hybrid loader with the play(src) signature
   const play = useCallback((src: string, textFallback?: string) => {
@@ -251,6 +306,7 @@ export function useAudioPlayer() {
   return {
     isPlaying,
     currentSrc,
+    activeDialogueIndex,
     play,
     playText,
     playDialogue,

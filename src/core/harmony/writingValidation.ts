@@ -8,7 +8,7 @@ export interface EvaluationResult {
 }
 
 export interface ValidationRule {
-  type: 'required_keywords' | 'forbidden_pattern' | 'required_pattern' | 'origin_harmony' | 'reported_past_harmony' | 'conditional_harmony' | 'participle_harmony' | 'idiom_presence' | 'gittim_check' | 'okudum_check' | 'adverbial_ip_harmony';
+  type: 'required_keywords' | 'forbidden_pattern' | 'required_pattern' | 'origin_harmony' | 'reported_past_harmony' | 'conditional_harmony' | 'participle_harmony' | 'idiom_presence' | 'gittim_check' | 'okudum_check' | 'adverbial_ip_harmony' | 'since_harmony';
   keywords?: string[];
   regex?: string;
   feedback: string;
@@ -477,6 +477,89 @@ export const WRITING_PROMPTS: Record<number, WritingPrompt> = {
         feedback: "Sigurohuni që keni shkruar 'İyi günler' për përshëndetjen 'Mirëdita'."
       }
     ]
+  },
+  4: {
+    chapterId: 4,
+    type: 'guided',
+    promptAlbanian: "Shkruani një paragraf të shkurtër në turqisht (të paktën 60 karaktere) ku përshkruani se si ndryshoi dita juaj kur ishit duke bërë diçka dhe morët një lajm (p.sh., 'Unë isha duke lexuar një libër kur erdhi një njoftim...'). Përdorni të paktën një lidhëz si 'fakat' ose 'oysa' dhe prapashtesën e së shkuarës së vazhdueshme '-iyordu' ose gerundin '-ken'.",
+    grammarTipAlbanian: "Përdorni prapashtesat e kohës së shkuar të vazhdueshme '-iyordu' ose zarf-foljes '-ken' (p.sh., okuyorken, yapıyordum) dhe lidhëzat si 'fakat', 'oysa', 'ancak' ose 'bununla birlikte' për të lidhur fjalitë.",
+    sampleAnswers: [
+      "Ben kitap okuyorken telefonuma bir bildirim geldi. Çok heyecanlandım, fakat hemen cevap yazamadım.",
+      "Yolda yürüyorken eski bir arkadaşımla karşılaştım. Oysa onu dün aramayı düşünüyordum.",
+      "Kahve içiyorken haberleri televizyondan takip ediyordum. Birden elektrikler kesildi."
+    ],
+    grammarLabel: "E Shkuara e Vazhdueshme & Gerundi -ken",
+    validationRules: [
+      {
+        type: 'required_pattern',
+        regex: '(iyor|üyor|ıyor|eyor)du|(y)?ken',
+        feedback: "Mungon përdorimi i kohës së shkuar të vazhdueshme (-iyordu) ose zarf-foljes (-ken)."
+      },
+      {
+        type: 'required_pattern',
+        regex: '\\b(fakat|oysa|ancak|bununla birlikte|ama)\\b',
+        feedback: "Mungon një nga lidhëzat e B1 (p.sh., 'fakat', 'oysa', 'ancak', 'bununla birlikte')."
+      }
+    ]
+  },
+  22: {
+    chapterId: 22,
+    type: 'guided',
+    promptAlbanian: "Shkruani një paragraf të shkurtër në turqisht (të paktën 60 karaktere) duke përshkruar një takim ose komunikim pune apo studimi me një mik ose koleg. Përdorni të paktën dy folje reciproke (si buluşmak, görüşmek, yazışmak, anlaşmak, paylaşmak).",
+    grammarTipAlbanian: "Përdorni prapashtesën reciproke '-(I)ş' për të formuar folje si 'buluşmak', 'görüşmek', 'yazışmak', 'anlaşmak' ose 'paylaşmak' për të treguar veprime të ndërsjella ose të përbashkëta.",
+    sampleAnswers: [
+      "Biz dün kafede buluştuk ve yeni projeyi görüştük. Her konuda anlaştık ve fikirlerimizi paylaştık.",
+      "Arkadaşımla her gün e-posta ile yazışıyoruz. Hafta sonu buluşmak için karar verdik.",
+      "Mülakattan sonra müdürle görüştüm. İş detaylarını paylaştık ve ortak bir noktada anlaştık."
+    ],
+    grammarLabel: "Foljet Reciproke (-(I)ş)",
+    validationRules: [
+      {
+        type: 'required_pattern',
+        regex: 'buluş|görüş|yazış|anlaş|paylaş|tanış|tartış',
+        feedback: "Mungon përdorimi i foljeve reciproke me prapashtesën '-(I)ş' (si buluşmak, görüşmek, yazışmak, anlaşmak, paylaşmak)."
+      }
+    ]
+  },
+  23: {
+    chapterId: 23,
+    type: 'guided',
+    promptAlbanian: "Shkruani një paragraf të shkurtër në turqisht (të paktën 60 karaktere) rreth rëndësisë së edukimit, librave ose mësimit të gjuhëve të huaja. Përdorni të paktën një strukturë kushtore me '-se/-sa' ose formën e së shkuarës dëshirore '-seydi/-saydı' (p.sh. 'eğer kitap okursak...', 'keşke Türkçe öğrenseydim...').",
+    grammarTipAlbanian: "Përdorni prapashtesën kushtore '-se / -sa' (p.sh. 'varsa' - nëse ka, 'okursak' - nëse lexojmë) ose dëshiroren e së shkuarës '-seydi / -saydı' (p.sh. 'öğrenseydim' - sikur të kisha mësuar). Mund të përdorni fjalët 'eğer' (nëse) ose 'keşke' (sikur/ah sikur) për të përforcuar fjalinë.",
+    sampleAnswers: [
+      "Eğer her gün yeni kelimeler öğrenirsem, Türkçe konuşmam kolaylaşır. Kitap okumak da çok faydalıdır.",
+      "Keşke gençken daha fazla yabancı dil öğrenseydim. Dil öğrenmek insanı geliştirir ve yeni kapılar açar.",
+      "Kitap okursak ufkumuz genişler. Eğer vaktim olursa her gün en az otuz sayfa kitap okumak isterim."
+    ],
+    grammarLabel: "Kushtorja & Dëshirorja (-se / -seydi)",
+    validationRules: [
+      {
+        type: 'conditional_harmony',
+        feedback: "Gabim: Nuk u gjet asnjë strukturë kushtore ose dëshirore në fjali. Duhet të përdorni prapashtesën e kushtit ose dëshirës '-se/-sa' ose '-seydi/-saydı' (p.sh., 'varsa', 'okursak', 'öğrenseydim')."
+      }
+    ]
+  },
+  24: {
+    chapterId: 24,
+    type: 'guided',
+    promptAlbanian: "Shkruani një paragraf të shkurtër në turqisht (të paktën 60 karaktere) ku përshkruani përvojën tuaj të mësimit të turqishtes ose rregullat në shtëpinë tuaj të re. Përdorni të paktën një folje me prapashtesën e detyrimit '-malı/-meli' ose prapashtesën e kohëzgjatjes '-diğinden beri' (p.sh., 'Türkçe çalıştığımdan beri...', 'daha çok pratik yapmalıyım').",
+    grammarTipAlbanian: "Përdorni prapashtesën detyrore '-malı / -meli' (p.sh. 'yapmalıyım' - duhet të bëj) ose strukturën e kohëzgjatjes '-diğinden beri / -dığından beri' (p.sh. 'öğrenmeye başladığımdan beri' - që kur fillova të mësoj).",
+    sampleAnswers: [
+      "Türkçe öğrenmeye başladığımdan beri her gün yeni kelimeler çalışıyorum. Daha çok pratik yapmalıyım.",
+      "Yeni evime geçen hafta taşındım. Evde çok gürültü yapmamalıyız çünkü komşular rahatsız olabilir."
+    ],
+    grammarLabel: "Detyrimi (-malı) & Që kur (-diğinden beri)",
+    validationRules: [
+      {
+        type: 'required_pattern',
+        regex: '(malı|meli|[a-zçğışöü]+(d|t)(ı|i|u|ü)ğ(ı|i|u|ü)(m|n|miz|niz)?(dan|den)\\s+beri)',
+        feedback: "Gabim: Duhet të përdorni të paktën një prapashtesë detyrimi '-malı/-meli' (p.sh., 'yapmalıyım') ose prapashtesën e kohëzgjatjes '-diğinden beri' (p.sh., 'başladığımdan beri')."
+      },
+      {
+        type: 'since_harmony',
+        feedback: "Gabim Harmonie te prapashtesa '-diğinden beri': Kontrolloni zbutjen ose harmoninë vokalore."
+      }
+    ]
   }
 };
 
@@ -670,8 +753,14 @@ function runRule(rule: ValidationRule, normalizedInput: string): string | null {
       let suffix = '';
       const hasVarYokCond = /\b(varsa|yoksa)\b/.test(normalizedInput);
 
+      const EXCLUDED_PREFIXES = ['herkes', 'kimse', 'elbise', 'lise', 'kilise', 'hadise', 'masa', 'kasa', 'yasa', 'arsa', 'bursa', 'pırasa'];
+      const EXCLUDED_EXACT = new Set(['tas', 'yas', 'pas', 'has', 'tasa', 'kese', 'kase']);
+
       for (const w of words) {
-        const match = w.match(/^([a-zçğışöü]+)(se|sa)(m|n|k|niz|ler)?$/);
+        if (EXCLUDED_EXACT.has(w) || EXCLUDED_PREFIXES.some(p => w.startsWith(p))) {
+          continue;
+        }
+        const match = w.match(/^([a-zçğışöü]+)(se|sa)(?:yd[ıi])?(m|n|k|niz|ler)?$/);
         if (match) {
           condMatch = match;
           base = match[1];
@@ -845,6 +934,42 @@ function runRule(rule: ValidationRule, normalizedInput: string): string | null {
       }
       return null;
     }
+    case 'since_harmony': {
+      const match = normalizedInput.match(/\b([a-zçğışöü]+)(d|t)(ı|i|u|ü)ğ(ı|i|u|ü)(m|n|miz|niz)?(dan|den)\s+beri\b/);
+      if (!match) {
+        return null;
+      }
+
+      const base = match[1];
+      const dt = match[2];
+      const v1 = match[3];
+      const v2 = match[4];
+      const danden = match[6];
+
+      if (!isValidVerbBase(base)) {
+        return `Gabim: Rrënja e foljes '${base}' ka gabim të harmonisë vokalike.`;
+      }
+
+      const lastChar = base.slice(-1);
+      const isVoiceless = 'çfhkpsştÇFHKPSŞT'.includes(lastChar);
+      const expectedDt = isVoiceless ? 't' : 'd';
+      if (dt !== expectedDt) {
+        return `Gabim Mutacioni: Rrënja '${base}' përfundon me bashkëtingëllore ${isVoiceless ? 'të shurdhët' : 'të zëshme'}, prandaj prapashtesa duhet të fillojë me '${expectedDt}' (jo '${dt}').`;
+      }
+
+      const expectedV4 = getVowelHarmony4(base);
+      if (v1 !== expectedV4 || v2 !== expectedV4) {
+        return `Gabim Harmonie Vokalore: Rrënja '${base}' kërkon zanoren e harmonizuar 4-she '${expectedV4}' te prapashtesa (ju shkruat '${v1}' dhe '${v2}').`;
+      }
+
+      const expectedV2 = getVowelHarmony2(base);
+      const expectedDanden = expectedV2 === 'a' ? 'dan' : 'den';
+      if (danden !== expectedDanden) {
+        return `Gabim Harmonie Vokalore: Rasa rrjedhore pas '${base}' duhet të jetë '-${expectedDanden}' (jo '-${danden}').`;
+      }
+
+      return null;
+    }
     default:
       return null;
   }
@@ -858,10 +983,12 @@ export function evaluateWriting(chapterId: number, input: string): EvaluationRes
   }
 
   const cleanInput = input.trim();
-  if (cleanInput.length < 10) {
+  const b1Chapters = [4, 22, 23, 24];
+  const minLength = b1Chapters.includes(chapterId) ? 60 : 10;
+  if (cleanInput.length < minLength) {
     return { 
       status: 'error', 
-      feedback: 'Teksti juaj është shumë i shkurtër. Ju lutemi shkruani të paktën 10 karaktere për të lejuar kontrollin.' 
+      feedback: `Teksti juaj është shumë i shkurtër. Ju lutemi shkruani të paktën ${minLength} karaktere për të lejuar kontrollin.` 
     };
   }
 
@@ -951,7 +1078,13 @@ export function evaluateWriting(chapterId: number, input: string): EvaluationRes
   } else if (chapterId === 21) {
     successFeedback = 'Shkëlqyeshëm! Keni shkruar saktë përshëndetjen tuaj të parë në turqisht duke përdorur shkronjat dhe shqiptimin e duhur.';
   } else if (chapterId === 4) {
-    successFeedback = 'Shkëlqyeshëm! Keni përdorur saktë Mënyrën Habitore duke respektuar rregullat e harmonisë vokalike 4-she.';
+    successFeedback = 'Shkëlqyeshëm! Keni shkruar një paragraf duke përdorur saktë kohën e shkuar të vazhdueshme ose zarf-foljen \'-ken\' dhe lidhëzat përkatëse.';
+  } else if (chapterId === 22) {
+    successFeedback = 'Shkëlqyeshëm! Keni shkruar një përshkrim të saktë duke përdorur foljet reciproke në formën e duhur.';
+  } else if (chapterId === 23) {
+    successFeedback = 'Shkëlqyeshëm! Keni shkruar një paragraf të saktë duke përdorur strukturën kushtore ose dëshirore për të përshkruar rëndësinë e edukimit.';
+  } else if (chapterId === 24) {
+    successFeedback = 'Shkëlqyeshëm! Keni shkruar një paragraf të saktë duke përdorur prapashtesat e detyrimit dhe kohëzgjatjes për të përshkruar shtëpinë ose mësimin e gjuhës.';
   } else if (chapterId === 5) {
     successFeedback = 'Shkëlqyeshëm! Fjali kushtore e saktë me përdorim të rregullt të prapashtesës së kushtit (-se/-sa).';
   } else if (chapterId === 6) {

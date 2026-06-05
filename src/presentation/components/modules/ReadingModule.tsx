@@ -43,7 +43,7 @@ const Avatar: React.FC<{ speakerName: string }> = ({ speakerName }) => {
 
 export const ReadingModule: React.FC = () => {
   const { readingBlock, readingQuestions, setReadingCompleted, readingCompleted } = useLesson();
-  const { playDialogue, playText, stop, isPlaying, currentSrc } = useAudioPlayer();
+  const { playDialogue, playText, stop, isPlaying, currentSrc, activeDialogueIndex } = useAudioPlayer();
   const [showTranslation, setShowTranslation] = useState<boolean>(false);
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, number>>({});
   const [showResults, setShowResults] = useState<boolean>(false);
@@ -479,7 +479,7 @@ export const ReadingModule: React.FC = () => {
         </div>
         {readingBlock.chapter_id !== 21 && (
           <div className="flex gap-2">
-            {/* Audio Hook - Dialogue TTS loop */}
+            {/* Audio Hook - Dialogue/Narrative TTS loop */}
             {dialogueTurkish.length > 0 && (
               <button
                 onClick={() => {
@@ -495,7 +495,13 @@ export const ReadingModule: React.FC = () => {
                     : 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50 hover:text-[#1A1D20]'
                 }`}
               >
-                <span>{isPlaying && currentSrc === 'dialogue' ? '⏸ Ndalo' : '🔈 Dëgjo Dialogun'}</span>
+                <span>
+                  {isPlaying && currentSrc === 'dialogue'
+                    ? '⏸ Ndalo'
+                    : readingBlock.layout_style === 'dialogue'
+                    ? '🔈 Dëgjo Dialogun'
+                    : '🔈 Dëgjo Tekstin'}
+                </span>
               </button>
             )}
 
@@ -524,33 +530,34 @@ export const ReadingModule: React.FC = () => {
             <div className="space-y-4">
               {dialogueTurkish.map((line: any, idx: number) => {
                 const isLeft = idx % 2 === 0;
+                const isLinePlaying = isPlaying && (currentSrc === line.text || (currentSrc === 'dialogue' && activeDialogueIndex === idx));
                 return (
                   <div key={idx} className={`flex items-end gap-3 w-full ${isLeft ? 'justify-start' : 'justify-end'}`}>
                     {isLeft && <Avatar speakerName={line.speaker} />}
                     
                     {/* Turkish text bubble */}
-                    <div className={`max-w-[75%] md:max-w-[70%] px-4 py-2.5 shadow-xs ${
+                    <div className={`max-w-[75%] md:max-w-[70%] px-4 py-2.5 shadow-xs transition-all duration-300 ${
                       isLeft 
                         ? 'bg-white text-[#1A1D20] border border-[#E9ECEF] rounded-2xl rounded-bl-xs' 
                         : 'bg-[#3A5A40]/10 text-[#1A1D20] border border-[#3A5A40]/25 rounded-2xl rounded-br-xs'
-                    }`}>
+                    } ${isLinePlaying ? 'ring-2 ring-teal-500/50 border-teal-500 shadow-md scale-[1.01]' : ''}`}>
                       <div className="flex justify-between items-center gap-4 mb-1">
                         <span className="text-[9px] font-bold text-[#3A5A40] uppercase tracking-wider font-technical">
                           {line.speaker}
                         </span>
                         <button
                           onClick={() => {
-                            if (isPlaying && currentSrc === line.text) {
+                            if (isLinePlaying) {
                               stop();
                             } else {
                               playText(line.text, 'tr');
                             }
                           }}
                           className={`text-[9px] font-bold hover:text-[#3A5A40] border-b border-transparent hover:border-[#3A5A40] transition cursor-pointer select-none ${
-                            isPlaying && currentSrc === line.text ? 'text-teal-600 dark:text-teal-400 font-extrabold animate-pulse' : 'text-neutral-400'
+                            isLinePlaying ? 'text-teal-600 dark:text-teal-400 font-extrabold animate-pulse' : 'text-neutral-400'
                           }`}
                         >
-                          {isPlaying && currentSrc === line.text ? '⏸ Po lexohet' : '🔈 Dëgjo'}
+                          {isLinePlaying ? '⏸ Po lexohet' : '🔈 Dëgjo'}
                         </button>
                       </div>
                       <p className="text-sm font-technical font-medium tracking-wide">
@@ -603,80 +610,94 @@ export const ReadingModule: React.FC = () => {
                 </div>
                 
                 <div className="space-y-6 text-[#1A1D20] dark:text-neutral-200">
-                  {dialogueTurkish.map((line: any, idx: number) => (
-                    <div key={idx} className="relative pl-4 border-l-2 border-dashed border-[#E9ECEF] dark:border-neutral-800 hover:border-[var(--color-brand-accent)] transition duration-200">
-                      <div className="flex justify-between items-center gap-4 mb-1.5 select-none">
-                        {line.speaker && (
-                          <span className="text-[9px] font-bold text-[var(--color-brand-accent)] uppercase tracking-wider font-mono">
-                            {line.speaker}
-                          </span>
-                        )}
-                        <button
-                          onClick={() => {
-                            if (isPlaying && currentSrc === line.text) {
-                              stop();
-                            } else {
-                              playText(line.text, 'tr');
-                            }
-                          }}
-                          className={`text-[9px] font-bold hover:text-[var(--color-brand-accent)] border-b border-transparent hover:border-[var(--color-brand-accent)] transition cursor-pointer select-none ml-auto ${
-                            isPlaying && currentSrc === line.text ? 'text-teal-600 dark:text-teal-400 font-extrabold animate-pulse' : 'text-neutral-400'
-                          }`}
-                        >
-                          {isPlaying && currentSrc === line.text ? '⏸ Po lexohet' : '🔈 Dëgjo'}
-                        </button>
-                      </div>
-                      
-                      <p className="text-sm font-technical font-medium tracking-wide leading-relaxed">
-                        {line.text}
-                      </p>
-                      
-                      {showTranslation && (
-                        <p className="translation-subtitle mt-2 pt-1.5 border-t border-[#E9ECEF]/30 dark:border-neutral-800/50 leading-relaxed text-[#636B74] italic">
-                          {dialogueAlbanian[idx].text}
+                  {dialogueTurkish.map((line: any, idx: number) => {
+                    const isLinePlaying = isPlaying && (currentSrc === line.text || (currentSrc === 'dialogue' && activeDialogueIndex === idx));
+                    return (
+                      <div key={idx} className={`relative pl-4 border-l-2 transition-all duration-300 ${
+                        isLinePlaying 
+                          ? 'border-teal-500 bg-teal-500/5' 
+                          : 'border-dashed border-[#E9ECEF] dark:border-neutral-800 hover:border-[var(--color-brand-accent)]'
+                      }`}>
+                        <div className="flex justify-between items-center gap-4 mb-1.5 select-none">
+                          {line.speaker && (
+                            <span className="text-[9px] font-bold text-[var(--color-brand-accent)] uppercase tracking-wider font-mono">
+                              {line.speaker}
+                            </span>
+                          )}
+                          <button
+                            onClick={() => {
+                              if (isLinePlaying) {
+                                stop();
+                              } else {
+                                playText(line.text, 'tr');
+                              }
+                            }}
+                            className={`text-[9px] font-bold hover:text-[var(--color-brand-accent)] border-b border-transparent hover:border-[var(--color-brand-accent)] transition cursor-pointer select-none ml-auto ${
+                              isLinePlaying ? 'text-teal-600 dark:text-teal-400 font-extrabold animate-pulse' : 'text-neutral-400'
+                            }`}
+                          >
+                            {isLinePlaying ? '⏸ Po lexohet' : '🔈 Dëgjo'}
+                          </button>
+                        </div>
+                        
+                        <p className="text-sm font-technical font-medium tracking-wide leading-relaxed">
+                          {line.text}
                         </p>
-                      )}
-                    </div>
-                  ))}
+                        
+                        {showTranslation && (
+                          <p className="translation-subtitle mt-2 pt-1.5 border-t border-[#E9ECEF]/30 dark:border-neutral-800/50 leading-relaxed text-[#636B74] italic">
+                            {dialogueAlbanian[idx].text}
+                          </p>
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
           ) : (
             /* standard paragraph narrative prose layout */
             <div className="space-y-6 text-left">
-              {dialogueTurkish.map((line: any, idx: number) => (
-                <div key={idx} className="bg-white dark:bg-neutral-900/30 border border-[#E9ECEF] rounded-2xl p-5 shadow-xs relative group hover:border-[#3A5A40]/30 transition duration-200">
-                  <div className="flex justify-between items-center gap-4 mb-2">
-                    {line.speaker && (
-                      <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-wider font-technical">
-                        {line.speaker}
-                      </span>
-                    )}
-                    <button
-                      onClick={() => {
-                        if (isPlaying && currentSrc === line.text) {
-                          stop();
-                        } else {
-                          playText(line.text, 'tr');
-                        }
-                      }}
-                      className={`text-[9px] font-bold hover:text-[#3A5A40] border-b border-transparent hover:border-[#3A5A40] transition cursor-pointer select-none ml-auto ${
-                        isPlaying && currentSrc === line.text ? 'text-teal-600 dark:text-teal-400 font-extrabold animate-pulse' : 'text-neutral-400'
-                      }`}
-                    >
-                      {isPlaying && currentSrc === line.text ? '⏸ Po lexohet' : '🔈 Dëgjo'}
-                    </button>
-                  </div>
-                  <p className="text-sm font-technical font-medium tracking-wide leading-relaxed">
-                    {line.text}
-                  </p>
-                  {showTranslation && (
-                    <p className="translation-subtitle border-t border-[#E9ECEF]/80 pt-2 mt-2 leading-relaxed">
-                      {dialogueAlbanian[idx].text}
+              {dialogueTurkish.map((line: any, idx: number) => {
+                const isLinePlaying = isPlaying && (currentSrc === line.text || (currentSrc === 'dialogue' && activeDialogueIndex === idx));
+                return (
+                  <div key={idx} className={`bg-white dark:bg-neutral-900/30 border rounded-2xl p-5 shadow-xs relative group transition-all duration-300 ${
+                    isLinePlaying 
+                      ? 'border-teal-500 ring-2 ring-teal-500/20 shadow-sm' 
+                      : 'border-[#E9ECEF] hover:border-[#3A5A40]/30'
+                  }`}>
+                    <div className="flex justify-between items-center gap-4 mb-2">
+                      {line.speaker && (
+                        <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-wider font-technical">
+                          {line.speaker}
+                        </span>
+                      )}
+                      <button
+                        onClick={() => {
+                          if (isLinePlaying) {
+                            stop();
+                          } else {
+                            playText(line.text, 'tr');
+                          }
+                        }}
+                        className={`text-[9px] font-bold hover:text-[#3A5A40] border-b border-transparent hover:border-[#3A5A40] transition cursor-pointer select-none ml-auto ${
+                          isLinePlaying ? 'text-teal-600 dark:text-teal-400 font-extrabold animate-pulse' : 'text-neutral-400'
+                        }`}
+                      >
+                        {isLinePlaying ? '⏸ Po lexohet' : '🔈 Dëgjo'}
+                      </button>
+                    </div>
+                    <p className="text-sm font-technical font-medium tracking-wide leading-relaxed">
+                      {line.text}
                     </p>
-                  )}
-                </div>
-              ))}
+                    {showTranslation && (
+                      <p className="translation-subtitle border-t border-[#E9ECEF]/80 pt-2 mt-2 leading-relaxed">
+                        {dialogueAlbanian[idx].text}
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           )}
         </div>

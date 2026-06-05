@@ -8,10 +8,10 @@ interface ExerciseModuleProps {
 export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) => {
   const { exercises, markChapterCompleted, readingCompleted } = useLesson();
   
-  // States for exercises
-  const [multipleChoiceAnswer, setMultipleChoiceAnswer] = useState<string>('');
-  const [sortedWords, setSortedWords] = useState<string[]>([]);
-  const [builderSuffix, setBuilderSuffix] = useState<string>('');
+  // States for exercises (keyed by exercise ID to prevent cross-card state contamination)
+  const [multipleChoiceAnswers, setMultipleChoiceAnswers] = useState<Record<number, string>>({});
+  const [sortedWordsList, setSortedWordsList] = useState<Record<number, string[]>>({});
+  const [builderSuffixes, setBuilderSuffixes] = useState<Record<number, string>>({});
   
   const [checkedExercises, setCheckedExercises] = useState<Record<number, boolean>>({});
   const [exerciseResults, setExerciseResults] = useState<Record<number, { correct: boolean; msg: string }>>({});
@@ -24,13 +24,14 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
     const target = JSON.parse(ex.validation_target_json);
     const isChecked = checkedExercises[ex.id];
     const result = exerciseResults[ex.id];
+    const currentAnswer = multipleChoiceAnswers[ex.id] || '';
 
     const checkAnswer = () => {
-      if (!multipleChoiceAnswer) {
+      if (!currentAnswer) {
         alert('Ju lutemi zgjidhni një opsion!');
         return;
       }
-      const correct = multipleChoiceAnswer === target.correct_answer;
+      const correct = currentAnswer === target.correct_answer;
       setCheckedExercises(prev => ({ ...prev, [ex.id]: true }));
       setExerciseResults(prev => ({
         ...prev,
@@ -54,7 +55,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
 
         <div className="grid grid-cols-2 gap-3 max-w-md">
           {payload.options.map((opt: string) => {
-            const isSelected = multipleChoiceAnswer === opt;
+            const isSelected = currentAnswer === opt;
             let optStyle = 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50 rounded-xl hover:shadow-xs';
             
             if (isSelected) optStyle = 'bg-[#3A5A40]/10 border-[#3A5A40] text-[#3A5A40] font-bold rounded-xl shadow-xs';
@@ -67,7 +68,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
               <button
                 key={opt}
                 disabled={isChecked}
-                onClick={() => setMultipleChoiceAnswer(opt)}
+                onClick={() => setMultipleChoiceAnswers(prev => ({ ...prev, [ex.id]: opt }))}
                 className={`p-3 border text-xs text-left font-technical transition duration-200 cursor-pointer ${optStyle}`}
               >
                 {opt}
@@ -81,7 +82,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
             onClick={checkAnswer}
             className="px-4 py-2.5 bg-white border border-[#E9ECEF] text-[#1A1D20] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-xl text-xs font-bold transition cursor-pointer shadow-xs hover:shadow-xs"
           >
-            Kontrollo Shumësin
+            Kontrollo Përgjigjen
           </button>
         ) : (
           <p className={`text-xs font-semibold mt-2 leading-relaxed ${result.correct ? 'text-[#3A5A40]' : 'text-[#c0392b]'}`}>
@@ -98,28 +99,35 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
     const target = JSON.parse(ex.validation_target_json);
     const isChecked = checkedExercises[ex.id];
     const result = exerciseResults[ex.id];
+    const currentSorted = sortedWordsList[ex.id] || [];
 
     // Source words not yet placed in the sorted pool
-    const unusedWords = payload.words.filter((w: string) => !sortedWords.includes(w));
+    const unusedWords = payload.words.filter((w: string) => !currentSorted.includes(w));
 
     const handleWordTap = (word: string, isSortingPool: boolean) => {
       if (isChecked) return;
       if (isSortingPool) {
         // Remove from sorting pool
-        setSortedWords(prev => prev.filter(w => w !== word));
+        setSortedWordsList(prev => ({
+          ...prev,
+          [ex.id]: currentSorted.filter(w => w !== word)
+        }));
       } else {
         // Append to sorting pool
-        setSortedWords(prev => [...prev, word]);
+        setSortedWordsList(prev => ({
+          ...prev,
+          [ex.id]: [...currentSorted, word]
+        }));
       }
     };
 
     const checkAnswer = () => {
-      if (sortedWords.length < target.correct_sequence.length) {
+      if (currentSorted.length < target.correct_sequence.length) {
         alert('Ju lutemi radhitni të gjitha fjalët përpara kontrollit!');
         return;
       }
 
-      const correct = JSON.stringify(sortedWords) === JSON.stringify(target.correct_sequence);
+      const correct = JSON.stringify(currentSorted) === JSON.stringify(target.correct_sequence);
       setCheckedExercises(prev => ({ ...prev, [ex.id]: true }));
       setExerciseResults(prev => ({
         ...prev,
@@ -133,7 +141,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
     };
 
     const resetSorting = () => {
-      setSortedWords([]);
+      setSortedWordsList(prev => ({ ...prev, [ex.id]: [] }));
     };
 
     return (
@@ -147,10 +155,10 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
 
         {/* Placing slots display */}
         <div className="bg-white border border-[#E9ECEF] rounded-xl p-4 min-h-[50px] flex items-center justify-start gap-2 flex-wrap shadow-xs">
-          {sortedWords.length === 0 ? (
+          {currentSorted.length === 0 ? (
             <span className="text-xs text-neutral-400 italic">Shtypni fjalët e mëposhtme për t'i vendosur këtu sipas radhës...</span>
           ) : (
-            sortedWords.map(w => (
+            currentSorted.map(w => (
               <button
                 key={w}
                 disabled={isChecked}
@@ -193,7 +201,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
             >
               Kontrollo Sintaksën
             </button>
-            {sortedWords.length > 0 && (
+            {currentSorted.length > 0 && (
               <button
                 onClick={resetSorting}
                 className="px-3 py-2 text-xs text-[#565E64] hover:text-[#1A1D20] bg-transparent border-0 cursor-pointer"
@@ -230,14 +238,15 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
     const target = JSON.parse(ex.validation_target_json);
     const isChecked = checkedExercises[ex.id];
     const result = exerciseResults[ex.id];
+    const currentSuffix = builderSuffixes[ex.id] || '';
 
     const checkAnswer = () => {
-      if (!builderSuffix) {
+      if (!currentSuffix) {
         alert('Ju lutemi zgjidhni një prapashtesë për ta bashkuar!');
         return;
       }
 
-      const correct = builderSuffix === target.correct_suffix;
+      const correct = currentSuffix === target.correct_suffix;
       setCheckedExercises(prev => ({ ...prev, [ex.id]: true }));
       setExerciseResults(prev => ({
         ...prev,
@@ -269,7 +278,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
             
             {/* Suffix slot */}
             <div className={`px-4 py-2 border border-dashed rounded-xl min-w-[70px] text-center font-bold transition duration-200 shadow-xs ${
-              builderSuffix 
+              currentSuffix 
                 ? isChecked
                   ? result.correct
                     ? 'bg-emerald-100/50 border-emerald-500 text-emerald-800'
@@ -277,10 +286,10 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
                   : 'bg-[#3A5A40]/10 border-[#3A5A40] text-[#3A5A40]' 
                 : 'border-neutral-300 bg-neutral-100 text-neutral-450'
             }`}>
-              {builderSuffix ? `-${builderSuffix}` : '?'}
+              {currentSuffix ? `-${currentSuffix}` : '?'}
             </div>
 
-            {builderSuffix && (
+            {currentSuffix && (
               <>
                 <span className="text-neutral-400 font-bold">=</span>
                 <span className={`px-4 py-2 border rounded-xl font-extrabold tracking-wide uppercase shadow-md ${
@@ -290,7 +299,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
                       : 'bg-rose-100/55 border-rose-500 text-rose-800'
                     : 'bg-neutral-50 border-[#E9ECEF] text-[#1A1D20]'
                 }`}>
-                  {payload.root + builderSuffix}
+                  {payload.root + currentSuffix}
                 </span>
               </>
             )}
@@ -303,9 +312,9 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
             {payload.suffixes.map((suff: string) => (
               <button
                 key={suff}
-                onClick={() => setBuilderSuffix(suff)}
+                onClick={() => setBuilderSuffixes(prev => ({ ...prev, [ex.id]: suff }))}
                 className={`px-3 py-1.5 rounded-lg border text-xs font-bold font-technical cursor-pointer transition duration-200 shadow-xs ${
-                  builderSuffix === suff
+                  currentSuffix === suff
                     ? 'bg-[#3A5A40] text-white border-[#3A5A40]'
                     : 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50'
                 }`}
@@ -335,7 +344,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
               <button
                 onClick={() => {
                   setCheckedExercises(prev => ({ ...prev, [ex.id]: false }));
-                  setBuilderSuffix('');
+                  setBuilderSuffixes(prev => ({ ...prev, [ex.id]: '' }));
                 }}
                 className="px-3 py-1.5 bg-white border border-[#E9ECEF] text-[#565E64] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-lg text-xs font-bold cursor-pointer shadow-xs"
               >
@@ -347,6 +356,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
       </div>
     );
   };
+
 
   const handleFinishLesson = () => {
     // Check if at least one exercise checked
