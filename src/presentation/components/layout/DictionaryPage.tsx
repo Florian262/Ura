@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { ChapterRepository } from '../../../infrastructure/repository/ChapterRepository';
 import { a1VocabularyData } from '../../../infrastructure/db/a1Vocabulary';
+import { a2VocabularyData } from '../../../infrastructure/db/a2Vocabulary';
 import { WordDetailDrawer } from '../common/WordDetailDrawer';
 import { useAudioPlayer } from '../../../application/hooks/useAudioPlayer';
 
@@ -18,6 +19,7 @@ export interface DictionaryEntry {
   is_balkan?: boolean;
   chapterTitle?: string;    // If derived from curriculum
   is_a1_vocab?: boolean;    // Badge flag for A1 Thematic Vocab items
+  is_a2_vocab?: boolean;    // Badge flag for A2 Thematic Vocab items
 }
 
 export const DictionaryPage: React.FC = () => {
@@ -90,6 +92,39 @@ export const DictionaryPage: React.FC = () => {
       is_balkan: item.is_balkan,
       is_a1_vocab: true,
       chapterTitle: `Fjalorthi Tematik A1 • ${getCategoryLabel(item.category)}`
+    }));
+  }, []);
+
+  // Compile static A2 thematic vocabulary
+  const a2VocabEntries = useMemo(() => {
+    const getCategoryLabel = (cat: string): string => {
+      const mapping: Record<string, string> = {
+        work: 'Punë & Profesione 💼',
+        leisure: 'Koha e Lirë & Hobit 🏖️',
+        travel: 'Udhëtime & Turizëm ✈️',
+        education: 'Arsimi & Mësimi 📚',
+        environment: 'Mjedisi & Natyra 🌳',
+        emotions: 'Ndjenjat & Emocionet ❤️',
+        technology: 'Teknologjia & Media 💻',
+        society: 'Jeta Shoqërore 👥',
+        verbs: 'Foljet e Përditshme A2 🏃‍♂️',
+        adverbs: 'Ndajfolje & Lidhëza A2 🔗'
+      };
+      return mapping[cat] || cat;
+    };
+
+    return a2VocabularyData.map((item): DictionaryEntry => ({
+      id: `a2-vocab-${item.id}`,
+      source: 'tr',
+      word: item.word,
+      translation: item.translation,
+      pos: item.pos,
+      notes: item.notes,
+      examples: item.examples,
+      derivatives: item.derivatives,
+      is_balkan: item.is_balkan,
+      is_a2_vocab: true,
+      chapterTitle: `Fjalorthi Tematik A2 • ${getCategoryLabel(item.category)}`
     }));
   }, []);
 
@@ -186,8 +221,25 @@ export const DictionaryPage: React.FC = () => {
       }
     });
 
+    // Merge A2 thematic vocabulary
+    a2VocabEntries.forEach(item => {
+      const key = `${item.word.toLowerCase()}-${item.translation.toLowerCase()}`;
+      if (!map.has(key)) {
+        map.set(key, item);
+      } else {
+        const existing = map.get(key)!;
+        map.set(key, {
+          ...existing,
+          is_a2_vocab: true,
+          notes: existing.notes || item.notes,
+          examples: existing.examples || item.examples,
+          derivatives: existing.derivatives || item.derivatives
+        });
+      }
+    });
+
     return Array.from(map.values());
-  }, [loadedEntries, curriculumEntries, a1VocabEntries]);
+  }, [loadedEntries, curriculumEntries, a1VocabEntries, a2VocabEntries]);
 
   // Filter entries based on queries & POS tags
   const filteredEntries = useMemo(() => {
@@ -363,7 +415,7 @@ export const DictionaryPage: React.FC = () => {
                     }`}
                   >
                     <div className="space-y-0.5">
-                      <span className="text-xs font-bold text-[#1C1917] font-technical uppercase flex items-center gap-1.5">
+                      <span lang="tr" className="text-xs font-bold text-[#1C1917] font-technical flex items-center gap-1.5">
                         {entry.word}
                         {entry.inflection && (
                           <span className="text-[10px] font-light text-neutral-400 normal-case">{entry.inflection}</span>
@@ -383,6 +435,11 @@ export const DictionaryPage: React.FC = () => {
                       {entry.is_a1_vocab && (
                         <span className="text-[8px] font-extrabold text-[#0D9488] bg-[#0D9488]/10 border border-[#0D9488]/20 px-1 rounded-md" title="Fjalorthi Tematik A1">
                           A1
+                        </span>
+                      )}
+                      {entry.is_a2_vocab && (
+                        <span className="text-[8px] font-extrabold text-[#3B82F6] bg-[#3B82F6]/10 border border-[#3B82F6]/20 px-1 rounded-md" title="Fjalorthi Tematik A2">
+                          A2
                         </span>
                       )}
                       <span className="text-[9px] font-bold text-[#565E64] capitalize bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-1.5 py-0.5 rounded-md">
@@ -414,7 +471,7 @@ export const DictionaryPage: React.FC = () => {
                   <div>
                     {/* Headword */}
                     <div className="flex items-baseline gap-2">
-                      <h3 className="text-lg font-black text-[#1C1917] font-technical uppercase tracking-wide">
+                      <h3 lang="tr" className="text-lg font-black text-[#1C1917] font-technical tracking-wide">
                         {selectedEntry.word}
                       </h3>
                       {selectedEntry.inflection && (
@@ -437,6 +494,11 @@ export const DictionaryPage: React.FC = () => {
                       {selectedEntry.is_a1_vocab && (
                         <span className="text-[9px] font-bold uppercase tracking-wider text-[#0D9488] bg-[#0D9488]/10 border border-[#0D9488]/30 px-1.5 py-0.5 rounded-md leading-none">
                           Fjalorth A1 📚
+                        </span>
+                      )}
+                      {selectedEntry.is_a2_vocab && (
+                        <span className="text-[9px] font-bold uppercase tracking-wider text-[#3B82F6] bg-[#3B82F6]/10 border border-[#3B82F6]/30 px-1.5 py-0.5 rounded-md leading-none">
+                          Fjalorth A2 📚
                         </span>
                       )}
                     </div>
@@ -504,7 +566,7 @@ export const DictionaryPage: React.FC = () => {
                     <div className="flex flex-wrap gap-1.5">
                       {selectedEntry.derivatives.map((deriv, idx) => (
                         <div key={idx} className="bg-neutral-100 dark:bg-neutral-800/40 border border-neutral-200/50 dark:border-neutral-700/50 rounded-lg px-2.5 py-1 text-xs">
-                          <span className="font-bold text-[#1C1917]">{deriv.word}</span>
+                          <span lang="tr" className="font-bold text-[#1C1917]">{deriv.word}</span>
                           <span className="text-[10px] text-neutral-400 mx-1.5">|</span>
                           <span className="text-neutral-500 italic">{deriv.translation}</span>
                           <span className="text-[8px] text-[#0D9488] font-bold ml-1 bg-[#0D9488]/10 px-1 rounded-sm uppercase tracking-wide">{deriv.pos}</span>

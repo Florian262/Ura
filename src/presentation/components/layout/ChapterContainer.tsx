@@ -146,24 +146,32 @@ export const ChapterContainer: React.FC = () => {
         </section>
 
         {/* SECTION 2: VOCABULARY ACQUISITION */}
-        <section id="vocab" className="scroll-mt-28 md:scroll-mt-24">
-          <VocabularyModule onComplete={() => markSectionComplete('vocab')} />
-        </section>
+        {currentChapter.id !== 21 && (
+          <section id="vocab" className="scroll-mt-28 md:scroll-mt-24">
+            <VocabularyModule onComplete={() => markSectionComplete('vocab')} />
+          </section>
+        )}
 
         {/* SECTION 3: GRAMMAR PRESENTATION */}
-        <section id="grammar" className="scroll-mt-28 md:scroll-mt-24">
-          <GrammarModule onComplete={() => markSectionComplete('grammar')} />
-        </section>
+        {currentChapter.id !== 21 && (
+          <section id="grammar" className="scroll-mt-28 md:scroll-mt-24">
+            <GrammarModule onComplete={() => markSectionComplete('grammar')} />
+          </section>
+        )}
 
         {/* SECTION 4: WRITING ENGINE */}
-        <section id="writing" className="scroll-mt-28 md:scroll-mt-24">
-          <WritingModule onComplete={() => markSectionComplete('writing')} />
-        </section>
+        {currentChapter.id !== 21 && (
+          <section id="writing" className="scroll-mt-28 md:scroll-mt-24">
+            <WritingModule onComplete={() => markSectionComplete('writing')} />
+          </section>
+        )}
 
         {/* SECTION 5: INTERACTIVE EXERCISES */}
-        <section id="exercises" className="scroll-mt-28 md:scroll-mt-24">
-          <ExerciseModule onComplete={() => markSectionComplete('exercises')} />
-        </section>
+        {currentChapter.id !== 21 && (
+          <section id="exercises" className="scroll-mt-28 md:scroll-mt-24">
+            <ExerciseModule onComplete={() => markSectionComplete('exercises')} />
+          </section>
+        )}
 
         {/* Lesson Completion Summary Card */}
         {readingCompleted && (

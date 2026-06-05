@@ -150,7 +150,7 @@ export const ProgressPage: React.FC = () => {
                   <span className="text-[9px] font-bold text-[#565E64] uppercase mr-2 bg-neutral-100 px-1.5 py-0.5 rounded-md border border-[#E9ECEF] leading-none">
                     {ch.level}
                   </span>
-                  <span className="text-sm font-bold text-[#1A1D20] font-technical uppercase">
+                  <span lang="tr" className="text-sm font-bold text-[#1A1D20] font-technical">
                     {ch.title_turkish}
                   </span>
                   

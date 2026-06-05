@@ -70,7 +70,7 @@ export const VocabularyModule: React.FC<VocabularyModuleProps> = ({ onComplete }
                 <div className="space-y-1 flex-1">
                   <div className="flex items-center gap-2 flex-wrap">
                     {/* Turkish Word */}
-                    <h3 className="text-base font-bold text-[#1A1D20] font-technical tracking-wide group-hover:text-[#3A5A40] transition-colors uppercase">
+                    <h3 lang="tr" className="text-base font-bold text-[#1A1D20] font-technical tracking-wide group-hover:text-[#3A5A40] transition-colors">
                       {v.turkish_word}
                     </h3>
                     

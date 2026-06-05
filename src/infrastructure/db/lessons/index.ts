@@ -1,3 +1,4 @@
+import { a1Chapter0 } from './a1_chapter0';
 import { a1Chapter1 } from './a1_chapter1';
 import { a1Chapter2 } from './a1_chapter2';
 import { a1Chapter3 } from './a1_chapter3';
@@ -93,6 +94,7 @@ const c2Chapter1: UnifiedLesson = {
 };
 
 export const ALL_UNIFIED_LESSONS: UnifiedLesson[] = [
+  a1Chapter0,
   a1Chapter1,
   a1Chapter2,
   a1Chapter3,

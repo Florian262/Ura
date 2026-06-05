@@ -14,6 +14,7 @@ export interface DictionaryEntry {
   is_balkan?: boolean;
   chapterTitle?: string;
   is_a1_vocab?: boolean; // Badge flag for A1 Thematic Vocab items
+  is_a2_vocab?: boolean; // Badge flag for A2 Thematic Vocab items
 }
 
 interface WordDetailDrawerProps {
@@ -63,7 +64,7 @@ export const WordDetailDrawer: React.FC<WordDetailDrawerProps> = ({
           <div className="flex justify-between items-start border-b border-[#E9ECEF] dark:border-neutral-800 pb-4">
             <div>
               <div className="flex items-baseline gap-2 flex-wrap">
-                <h3 className="text-xl font-black text-[#1C1917] dark:text-white font-technical uppercase tracking-wide">
+                <h3 lang="tr" className="text-xl font-black text-[#1C1917] dark:text-white font-technical tracking-wide">
                   {entry.word}
                 </h3>
                 {entry.inflection && (
@@ -86,6 +87,11 @@ export const WordDetailDrawer: React.FC<WordDetailDrawerProps> = ({
                 {entry.is_a1_vocab && (
                   <span className="text-[9px] font-bold uppercase tracking-wider text-[#0D9488] bg-[#0D9488]/10 border border-[#0D9488]/30 px-1.5 py-0.5 rounded-md leading-none">
                     Fjalorth A1 📚
+                  </span>
+                )}
+                {entry.is_a2_vocab && (
+                  <span className="text-[9px] font-bold uppercase tracking-wider text-[#3B82F6] bg-[#3B82F6]/10 border border-[#3B82F6]/30 px-1.5 py-0.5 rounded-md leading-none">
+                    Fjalorth A2 📚
                   </span>
                 )}
               </div>
@@ -181,7 +187,7 @@ export const WordDetailDrawer: React.FC<WordDetailDrawerProps> = ({
                     key={idx}
                     className="bg-neutral-100 dark:bg-neutral-800/40 border border-neutral-200/50 dark:border-neutral-750/50 rounded-lg px-2.5 py-1.5 text-xs flex items-center"
                   >
-                    <span className="font-bold text-[#1C1917] dark:text-neutral-200">
+                    <span lang="tr" className="font-bold text-[#1C1917] dark:text-neutral-200">
                       {deriv.word}
                     </span>
                     <span className="text-[10px] text-neutral-400 dark:text-neutral-600 mx-1.5">

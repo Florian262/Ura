@@ -28,7 +28,7 @@ export const StickyNavbar: React.FC<StickyNavbarProps> = ({ onTabClick, completi
     { id: 'grammar', label: '3. Gramatika', icon: '✍️', locked: false },
     { id: 'writing', label: '4. Shkrimi', icon: '📝', locked: false },
     { id: 'exercises', label: '5. Ushtrime', icon: '🧩', locked: false }
-  ];
+  ].filter(sec => currentChapter.id !== 21 || sec.id === 'reading');
 
   const handleTabClick = (sectionId: string) => {
     onTabClick(sectionId);

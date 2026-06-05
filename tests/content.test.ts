@@ -12,7 +12,7 @@ describe('Unified Lesson Blueprints Content Integrity', () => {
       expect(lesson.id).toBeGreaterThan(0);
       expect(['A1', 'A2', 'B1', 'B2', 'C1', 'C2']).toContain(lesson.level);
       expect(lesson.orderIndex).toBeTypeOf('number');
-      expect(lesson.orderIndex).toBeGreaterThan(0);
+      expect(lesson.orderIndex).toBeGreaterThanOrEqual(0);
 
       // Title
       expect(lesson.title).toBeTypeOf('object');

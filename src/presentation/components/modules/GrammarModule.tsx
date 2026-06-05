@@ -135,7 +135,7 @@ export const GrammarModule: React.FC<GrammarModuleProps> = ({ onComplete }) => {
           <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-wider block mb-1">
             {currentCard.title_albanian}
           </span>
-          <h3 className="text-xl font-black text-[#1A1D20] font-technical mb-4 uppercase tracking-tight">
+          <h3 lang="tr" className="text-xl font-black text-[#1A1D20] font-technical mb-4 tracking-tight">
             {currentCard.rule_concept_turkish}
           </h3>
 
@@ -207,15 +207,15 @@ export const GrammarModule: React.FC<GrammarModuleProps> = ({ onComplete }) => {
                   <div className="space-y-3">
                     {/* Visual agglutination representation */}
                     <div className="text-center pb-2 border-b border-[#E9ECEF]">
-                      <span className="text-base font-technical font-medium text-[#1A1D20]">
+                      <span lang="tr" className="text-base font-technical font-medium text-[#1A1D20]">
                         {selectedWord}
                       </span>
                       <span className="text-base font-bold text-[#3A5A40] mx-1.5">+</span>
-                      <span className="text-base font-bold text-[#3A5A40] font-technical">
+                      <span lang="tr" className="text-base font-bold text-[#3A5A40] font-technical">
                         -{interactiveResult.suffixApplied}
                       </span>
                       <span className="text-base font-bold text-[#1A1D20] mx-2">=</span>
-                      <span className="text-lg font-black text-[#3A5A40] font-technical tracking-wide uppercase">
+                      <span lang="tr" className="text-lg font-black text-[#3A5A40] font-technical tracking-wide">
                         {interactiveResult.result}
                       </span>
                     </div>

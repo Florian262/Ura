@@ -443,6 +443,40 @@ export const WRITING_PROMPTS: Record<number, WritingPrompt> = {
         feedback: "Gabim Harmonie: Zarf-folja e përdorur me prapashtesën '-ip' nuk respekton rregullat e harmonisë vokalore turke."
       }
     ]
+  },
+  21: {
+    chapterId: 21,
+    type: 'translation',
+    promptAlbanian: "Përktheni në turqisht fjalinë e përshëndetjes: 'Mirëdita, si jeni?'",
+    grammarTipAlbanian: "Përdorni 'İyi günler' (Mirëdita) dhe 'nasılsınız?' (si jeni?). Sigurohuni që t'i shkruani saktë shkronjat turke (ı, ü).",
+    sampleAnswers: [
+      "İyi günler, nasılsınız?",
+      "İyi günler nasılsınız?",
+      "İyi günler, nasılsınız"
+    ],
+    grammarLabel: "Përshëndetja & Alfabeti",
+    validationRules: [
+      {
+        type: 'required_keywords',
+        keywords: ['iyi'],
+        feedback: "Mungon fjala 'İyi'."
+      },
+      {
+        type: 'required_keywords',
+        keywords: ['günler'],
+        feedback: "Mungon fjala 'günler'."
+      },
+      {
+        type: 'required_keywords',
+        keywords: ['nasılsınız'],
+        feedback: "Mungon fjala 'nasılsınız'."
+      },
+      {
+        type: 'required_pattern',
+        regex: 'iyi\\s+günler',
+        feedback: "Sigurohuni që keni shkruar 'İyi günler' për përshëndetjen 'Mirëdita'."
+      }
+    ]
   }
 };
 
@@ -473,6 +507,8 @@ export function getLevenshteinDistance(a: string, b: string): number {
 // Normalizes text for comparison (lowercasing, cleaning punctuation, removing double spaces)
 export function normalizeText(text: string): string {
   return text
+    .replace(/İ/g, 'i')
+    .replace(/I/g, 'ı')
     .toLowerCase()
     .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"']/g, '') // remove punctuation
     .replace(/\s+/g, ' ') // collapse multiple spaces
@@ -912,6 +948,8 @@ export function evaluateWriting(chapterId: number, input: string): EvaluationRes
     successFeedback = 'Shkëlqyeshëm! Keni përshkruar saktë fëmijërinë dhe zakonet tuaja të kaluara duke përdorur kohën e shkuar të vazhdueshme.';
   } else if (chapterId === 20) {
     successFeedback = 'Shkëlqyeshëm! Keni përshkruar saktë veprimet dhe arsyet e ditës suaj duke përdorur saktë lidhëzat dhe zarf-foljet.';
+  } else if (chapterId === 21) {
+    successFeedback = 'Shkëlqyeshëm! Keni shkruar saktë përshëndetjen tuaj të parë në turqisht duke përdorur shkronjat dhe shqiptimin e duhur.';
   } else if (chapterId === 4) {
     successFeedback = 'Shkëlqyeshëm! Keni përdorur saktë Mënyrën Habitore duke respektuar rregullat e harmonisë vokalike 4-she.';
   } else if (chapterId === 5) {

@@ -19,7 +19,7 @@ const UraIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) =>
 );
 
 export const LessonDashboard: React.FC = () => {
-  const { chapters, loadChapter, userName } = useLesson();
+  const { chapters, loadChapter, userName, setActivePage } = useLesson();
   const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
 
   // Group chapters by level
@@ -123,6 +123,15 @@ export const LessonDashboard: React.FC = () => {
       label: 'Në Zhvillim', 
       style: 'text-[#636B74] bg-neutral-100 dark:bg-neutral-800/50 border-[#DDE1E5] dark:border-neutral-800' 
     };
+  };
+
+  const isA2Completed = () => {
+    const a2Chapters = levels['A2'] || [];
+    if (a2Chapters.length === 0) return false;
+    return a2Chapters.every(ch => {
+      const progress = ProgressRepository.getChapterProgress(ch.id);
+      return progress?.is_completed === true;
+    });
   };
 
   return (
@@ -362,6 +371,62 @@ export const LessonDashboard: React.FC = () => {
               );
             })}
           </div>
+
+          {/* A2 Finishing Test Card */}
+          {selectedLevel === 'A2' && (
+            <div className="mt-8 border-t border-[#DDE1E5] dark:border-neutral-800 pt-8 animate-fade-in">
+              {(() => {
+                const completedAll = isA2Completed();
+                const hasPassed = localStorage.getItem('ura_a2_test_passed') === 'true';
+                const testScore = localStorage.getItem('ura_a2_test_score');
+
+                return (
+                  <button
+                    onClick={() => setActivePage('a2_test')}
+                    className="w-full text-left p-6 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 transition-all duration-300 relative outline-hidden border bg-gradient-to-r from-amber-500/10 to-[#3A5A40]/10 border-[#3A5A40]/30 hover:border-[#3A5A40] cursor-pointer shadow-xs hover:shadow-md hover:-translate-y-0.5"
+                  >
+                    <div className="flex-1 space-y-2">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="text-[10px] font-mono font-bold tracking-wider px-2.5 py-0.5 bg-amber-500 text-white rounded-lg select-none">
+                          PROVIMI PËRFUNDIMTAR A2
+                        </span>
+                        {!completedAll && (
+                          <span className="text-[9px] uppercase font-mono tracking-wider font-bold px-2 py-0.5 border border-amber-500/30 text-amber-700 bg-amber-50 select-none rounded-lg">
+                            [ HAPUR PËR TESTIM ]
+                          </span>
+                        )}
+                        {completedAll && !hasPassed && (
+                          <span className="text-[9px] uppercase font-mono tracking-wider font-bold px-2 py-0.5 border border-[#3A5A40]/40 text-[#3A5A40] bg-white select-none rounded-lg">
+                            [ E Zhbllokuar ]
+                          </span>
+                        )}
+                        {hasPassed && (
+                          <span className="text-[9px] uppercase font-mono tracking-wider font-bold px-2 py-0.5 border border-emerald-500/40 text-emerald-700 bg-emerald-50 select-none rounded-lg">
+                            [ PËRFUNDUAR — {testScore}% ]
+                          </span>
+                        )}
+                      </div>
+
+                      <h3 className="text-lg font-black text-[#111315] dark:text-white uppercase tracking-tight">
+                        Provimi Gjithëpërfshirës i Nivelit A2
+                      </h3>
+                      <p className="text-xs text-[#636B74] dark:text-neutral-400 font-light leading-relaxed max-w-xl">
+                        {completedAll
+                          ? 'Ju keni përfunduar të gjithë kapitujt e nivelit A2! Testoni njohuritë tuaja leximore, gramatikore, sintaksore dhe të përkthimit në këtë provim përfundimtar me 25 pyetje.'
+                          : 'Kapitujt e nivelit A2 nuk janë përfunduar plotësisht, por ju mund të hyni në provim për të testuar njohuritë tuaja në çdo kohë.'}
+                      </p>
+                    </div>
+
+                    <div className="flex items-center gap-3 shrink-0">
+                      <div className="w-14 h-14 bg-gradient-to-br from-amber-500 to-[#3A5A40] text-white flex items-center justify-center rounded-2xl shadow-md text-2xl animate-pulse">
+                        🏆
+                      </div>
+                    </div>
+                  </button>
+                );
+              })()}
+            </div>
+          )}
         </div>
       )}
     </div>

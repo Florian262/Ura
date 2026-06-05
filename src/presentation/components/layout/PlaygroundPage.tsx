@@ -145,7 +145,7 @@ export const PlaygroundPage: React.FC = () => {
               <div className="bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-8 flex flex-col items-center justify-center space-y-4">
                 <div className="flex flex-wrap items-center justify-center gap-3 text-xl md:text-2xl font-technical">
                   {/* Root word card */}
-                  <span className="px-5 py-2.5 border border-[#E9ECEF] bg-white text-[#1A1D20] rounded-xl font-semibold uppercase shadow-sm">
+                  <span lang="tr" className="px-5 py-2.5 border border-[#E9ECEF] bg-white text-[#1A1D20] rounded-xl font-semibold shadow-sm">
                     {result.wordAnalyzed}
                   </span>
                   
@@ -153,7 +153,7 @@ export const PlaygroundPage: React.FC = () => {
                   <span className="text-[#3A5A40] font-black">+</span>
 
                   {/* Suffix card */}
-                  <span className="px-5 py-2.5 border border-[#3A5A40]/40 bg-[#3A5A40]/10 text-[#3A5A40] rounded-xl font-bold">
+                  <span lang="tr" className="px-5 py-2.5 border border-[#3A5A40]/40 bg-[#3A5A40]/10 text-[#3A5A40] rounded-xl font-bold">
                     -{result.suffixApplied}
                   </span>
 
@@ -161,20 +161,20 @@ export const PlaygroundPage: React.FC = () => {
                   <span className="text-neutral-400 font-bold">=</span>
 
                   {/* Merged result card */}
-                  <span className="px-6 py-2.5 border border-[#3A5A40] bg-[#3A5A40] text-white rounded-xl font-black tracking-wide uppercase shadow-md">
+                  <span lang="tr" className="px-6 py-2.5 border border-[#3A5A40] bg-[#3A5A40] text-white rounded-xl font-black tracking-wide shadow-md">
                     {result.result}
                   </span>
                 </div>
 
                 <div className="text-center pt-2">
                   <span className="text-xs text-[#565E64] font-light">Zanorja e fundit e rrënjës: </span>
-                  <span className="text-xs font-bold text-[#3A5A40] font-technical uppercase">{getLastVowel(result.wordAnalyzed)}</span>
+                  <span lang="tr" className="text-xs font-bold text-[#3A5A40] font-technical">{getLastVowel(result.wordAnalyzed)}</span>
                   <span className="text-neutral-300 mx-2">|</span>
                   <span className="text-xs text-[#565E64] font-light">Harmonia 2-she: </span>
-                  <span className="text-xs font-bold text-[#1A1D20] font-technical uppercase">-{getVowelHarmony2(result.wordAnalyzed)}</span>
+                  <span lang="tr" className="text-xs font-bold text-[#1A1D20] font-technical">-{getVowelHarmony2(result.wordAnalyzed)}</span>
                   <span className="text-neutral-300 mx-2">|</span>
                   <span className="text-xs text-[#565E64] font-light">Harmonia 4-she: </span>
-                  <span className="text-xs font-bold text-[#1A1D20] font-technical uppercase">-{getVowelHarmony4(result.wordAnalyzed)}</span>
+                  <span lang="tr" className="text-xs font-bold text-[#1A1D20] font-technical">-{getVowelHarmony4(result.wordAnalyzed)}</span>
                 </div>
               </div>
 

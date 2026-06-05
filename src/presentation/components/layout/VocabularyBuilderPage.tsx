@@ -1,18 +1,18 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import { a1VocabularyData } from '../../../infrastructure/db/a1Vocabulary';
-import type { A1VocabularyItem } from '../../../infrastructure/db/a1Vocabulary';
+import { a2VocabularyData } from '../../../infrastructure/db/a2Vocabulary';
 import { WordDetailDrawer } from '../common/WordDetailDrawer';
 import type { DictionaryEntry } from '../common/WordDetailDrawer';
 import { useAudioPlayer } from '../../../application/hooks/useAudioPlayer';
 
 interface CategoryConfig {
-  id: 'greetings' | 'family' | 'home' | 'cooking' | 'weather' | 'shopping' | 'transport' | 'verbs' | 'adjectives' | 'health';
+  id: string;
   label: string;
   emoji: string;
   desc: string;
 }
 
-const CATEGORIES: CategoryConfig[] = [
+const A1_CATEGORIES: CategoryConfig[] = [
   { id: 'greetings', label: 'Përshëndetje & Bazat', emoji: '👋', desc: 'Përshëndetje, shprehje mirësjelljeje dhe fraza bazike.' },
   { id: 'family', label: 'Familja & Njerëzit', emoji: '👥', desc: 'Anëtarët e familjes, profesionet dhe marrëdhëniet shoqërore.' },
   { id: 'home', label: 'Shtëpia & Vendet', emoji: '🏠', desc: 'Dhomat, mobiljet, vendet publike dhe mjedisi rrethues.' },
@@ -25,23 +25,43 @@ const CATEGORIES: CategoryConfig[] = [
   { id: 'health', label: 'Trupi & Shëndeti', emoji: '🏥', desc: 'Pjesët e trupit, shëndeti, spitali dhe simptomat bazë.' }
 ];
 
+const A2_CATEGORIES: CategoryConfig[] = [
+  { id: 'work', label: 'Punë & Profesione', emoji: '💼', desc: 'Profesione, orari i punës, pagat dhe jeta profesionale.' },
+  { id: 'leisure', label: 'Koha e Lirë & Hobit', emoji: '🏖️', desc: 'Sportet, aktivitetet rekreative, arti dhe koha e lirë.' },
+  { id: 'travel', label: 'Udhëtime & Turizëm', emoji: '✈️', desc: 'Rezervimet, fluturimet, hotelet dhe eksplorimi i vendeve.' },
+  { id: 'education', label: 'Arsimi & Mësimi', emoji: '📚', desc: 'Mësimet, provimet, jeta universitare dhe studimet.' },
+  { id: 'environment', label: 'Mjedisi & Natyra', emoji: '🌳', desc: 'Ekologjia, klima, burimet natyrore dhe mbrojtja e natyrës.' },
+  { id: 'emotions', label: 'Ndjenjat & Emocionet', emoji: '❤️', desc: 'Ndjenjat pozitive/negative, vlerat dhe marrëdhëniet shpirtërore.' },
+  { id: 'technology', label: 'Teknologjia & Media', emoji: '💻', desc: 'Kompjuterat, interneti, programimi dhe pajisjet smart.' },
+  { id: 'society', label: 'Jeta Shoqërore', emoji: '👥', desc: 'Ligjet, shteti, drejtësia, traditat dhe politika.' },
+  { id: 'verbs', label: 'Foljet A2', emoji: '🏃‍♂️', desc: 'Foljet kyçe të nivelit A2 për të shprehur veprime komplekse.' },
+  { id: 'adverbs', label: 'Ndajfolje & Lidhëza', emoji: '🔗', desc: 'Lidhëzat dhe ndajfoljet për të strukturuar fjali të gjata.' }
+];
+
 export const VocabularyBuilderPage: React.FC = () => {
   const { playText } = useAudioPlayer();
-  const [selectedCategoryId, setSelectedCategoryId] = useState<CategoryConfig['id'] | null>(null);
+  const [activeLevel, setActiveLevel] = useState<'A1' | 'A2'>('A1');
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedEntry, setSelectedEntry] = useState<DictionaryEntry | null>(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
 
+  // Categories config dependent on active level
+  const categoriesList = useMemo(() => {
+    return activeLevel === 'A1' ? A1_CATEGORIES : A2_CATEGORIES;
+  }, [activeLevel]);
+
   // Active Category configuration
   const activeCategory = useMemo(() => {
-    return CATEGORIES.find(c => c.id === selectedCategoryId) || null;
-  }, [selectedCategoryId]);
+    return categoriesList.find(c => c.id === selectedCategoryId) || null;
+  }, [selectedCategoryId, categoriesList]);
 
   // Words in the active category
   const categoryWords = useMemo(() => {
     if (!selectedCategoryId) return [];
-    return a1VocabularyData.filter(w => w.category === selectedCategoryId);
-  }, [selectedCategoryId]);
+    const sourceData = activeLevel === 'A1' ? a1VocabularyData : a2VocabularyData;
+    return sourceData.filter(w => w.category === selectedCategoryId);
+  }, [selectedCategoryId, activeLevel]);
 
   // Filtered words based on search query inside the active category
   const filteredWords = useMemo(() => {
@@ -57,14 +77,15 @@ export const VocabularyBuilderPage: React.FC = () => {
 
   // Total statistics
   const stats = useMemo(() => {
-    const total = a1VocabularyData.length;
-    const balkan = a1VocabularyData.filter(w => w.is_balkan).length;
-    const posCounts = a1VocabularyData.reduce((acc, w) => {
+    const sourceData = activeLevel === 'A1' ? a1VocabularyData : a2VocabularyData;
+    const total = sourceData.length;
+    const balkan = sourceData.filter(w => w.is_balkan).length;
+    const posCounts = sourceData.reduce((acc, w) => {
       acc[w.pos] = (acc[w.pos] || 0) + 1;
       return acc;
     }, {} as Record<string, number>);
     return { total, balkan, posCounts };
-  }, []);
+  }, [activeLevel]);
 
   // Audio Speech Synthesis Trigger
   const speakWord = useCallback((word: string, sourceLang: 'tr' | 'al') => {
@@ -72,9 +93,9 @@ export const VocabularyBuilderPage: React.FC = () => {
   }, [playText]);
 
   // Map database item to drawer format
-  const handleOpenDetail = useCallback((item: A1VocabularyItem, categoryLabel: string) => {
+  const handleOpenDetail = useCallback((item: any, categoryLabel: string) => {
     const mapped: DictionaryEntry = {
-      id: `a1-vocab-${item.id}`,
+      id: `${activeLevel.toLowerCase()}-vocab-${item.id}`,
       source: 'tr',
       word: item.word,
       translation: item.translation,
@@ -83,12 +104,13 @@ export const VocabularyBuilderPage: React.FC = () => {
       examples: item.examples,
       derivatives: item.derivatives,
       is_balkan: item.is_balkan,
-      is_a1_vocab: true,
-      chapterTitle: `Fjalorthi Tematik A1 • ${categoryLabel}`
+      is_a1_vocab: activeLevel === 'A1',
+      is_a2_vocab: activeLevel === 'A2',
+      chapterTitle: `Fjalorthi Tematik ${activeLevel} • ${categoryLabel}`
     };
     setSelectedEntry(mapped);
     setIsDrawerOpen(true);
-  }, []);
+  }, [activeLevel]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8 space-y-6 relative h-full">
@@ -103,16 +125,50 @@ export const VocabularyBuilderPage: React.FC = () => {
         <div className="absolute w-48 h-48 rounded-full bg-teal-500/5 blur-2xl -top-12 -left-12 pointer-events-none"></div>
         <div className="absolute w-48 h-48 rounded-full bg-amber-500/5 blur-2xl -bottom-12 -right-12 pointer-events-none"></div>
 
-        <div className="space-y-2 flex-1 text-left">
-          <span className="text-[10px] font-mono font-bold tracking-widest text-[#0D9488] uppercase select-none">
-            Ndërtuesi i Fjalorit (Kelime Hazinesi A1)
-          </span>
-          <h2 className="text-2xl font-black text-[#1A1D20] dark:text-white uppercase tracking-tight font-display leading-tight">
-            Fjalorthi Tematik A1
-          </h2>
-          <p className="text-xs text-[#565E64] dark:text-neutral-400 font-light max-w-2xl leading-relaxed">
-            Zgjidhni një kategori tematike për të mësuar 300 fjalët më të rëndësishme të nivelit A1. Çdo fjalë përfshin kuptimin shqip, shqiptimin me zë, shembuj dhe fjalë të prejardhura gramatikore.
-          </p>
+        <div className="space-y-4 flex-1 text-left">
+          <div className="space-y-2">
+            <span className="text-[10px] font-mono font-bold tracking-widest text-[#0D9488] dark:text-[#14B8A6] uppercase select-none">
+              Ndërtuesi i Fjalorit (Kelime Hazinesi {activeLevel})
+            </span>
+            <h2 className="text-2xl font-black text-[#1A1D20] dark:text-white uppercase tracking-tight font-display leading-tight">
+              Fjalorthi Tematik {activeLevel}
+            </h2>
+            <p className="text-xs text-[#565E64] dark:text-neutral-400 font-light max-w-2xl leading-relaxed">
+              Zgjidhni një kategori tematike më poshtë për të mësuar fjalët më të rëndësishme të nivelit {activeLevel}. Çdo fjalë përfshin kuptimin shqip, shqiptimin zanor, shembuj kontekstualë dhe fjalë të prejardhura.
+            </p>
+          </div>
+
+          {/* Level Switcher Switch Tabs */}
+          <div className="flex bg-stone-900/5 dark:bg-white/5 p-1 rounded-xl w-fit border border-stone-900/10 dark:border-white/10 relative z-20">
+            <button
+              onClick={() => {
+                setActiveLevel('A1');
+                setSelectedCategoryId(null);
+                setSearchQuery('');
+              }}
+              className={`px-4 py-2 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer ${
+                activeLevel === 'A1'
+                  ? 'bg-white dark:bg-neutral-800 text-[#0D9488] shadow-sm'
+                  : 'text-neutral-500 hover:text-neutral-800 dark:hover:text-neutral-200'
+              }`}
+            >
+              Niveli A1 (300 Fjalë)
+            </button>
+            <button
+              onClick={() => {
+                setActiveLevel('A2');
+                setSelectedCategoryId(null);
+                setSearchQuery('');
+              }}
+              className={`px-4 py-2 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer ${
+                activeLevel === 'A2'
+                  ? 'bg-white dark:bg-neutral-800 text-[#3B82F6] shadow-sm'
+                  : 'text-neutral-500 hover:text-neutral-800 dark:hover:text-neutral-200'
+              }`}
+            >
+              Niveli A2 (500 Fjalë)
+            </button>
+          </div>
         </div>
 
         {/* Dynamic Badge Stats */}
@@ -132,14 +188,16 @@ export const VocabularyBuilderPage: React.FC = () => {
       {!selectedCategoryId ? (
         /* CATEGORIES GRID VIEW */
         <div className="space-y-4 relative z-10">
-          <div className="text-[10px] font-bold text-[#565E64] uppercase tracking-wider">
+          <div className="text-[10px] font-bold text-[#565E64] uppercase tracking-wider text-left">
             Zgjidhni Kategorinë e Fjalëve:
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {CATEGORIES.map(category => {
+            {categoriesList.map(category => {
               // Count balkan items in this category
-              const balkanCount = a1VocabularyData.filter(w => w.category === category.id && w.is_balkan).length;
+              const sourceData = activeLevel === 'A1' ? a1VocabularyData : a2VocabularyData;
+              const balkanCount = sourceData.filter(w => w.category === category.id && w.is_balkan).length;
+              const wordCount = activeLevel === 'A1' ? 30 : 50;
 
               return (
                 <button
@@ -170,7 +228,7 @@ export const VocabularyBuilderPage: React.FC = () => {
 
                   <div className="flex justify-between items-center mt-3 pt-2 border-t border-neutral-100 dark:border-neutral-800">
                     <span className="text-[9px] font-bold text-[#0D9488] dark:text-[#14B8A6] bg-[#0D9488]/10 dark:bg-[#14B8A6]/10 px-2 py-0.5 rounded-full uppercase tracking-wider">
-                      30 fjalë
+                      {wordCount} fjalë
                     </span>
 
                     {balkanCount > 0 && (
@@ -192,7 +250,7 @@ export const VocabularyBuilderPage: React.FC = () => {
             {/* Back to categories button */}
             <button
               onClick={() => setSelectedCategoryId(null)}
-              className="self-start px-4 py-2 rounded-xl bg-white dark:bg-neutral-850 text-neutral-600 dark:text-neutral-300 border border-[#E9ECEF] dark:border-neutral-850 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition duration-200 text-xs font-bold shadow-xs cursor-pointer flex items-center gap-2"
+              className="self-start px-4 py-2 rounded-xl bg-white dark:bg-neutral-850 text-neutral-600 dark:text-neutral-300 border border-[#E9ECEF] dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition duration-200 text-xs font-bold shadow-xs cursor-pointer flex items-center gap-2"
             >
               ← Kthehu tek Kategoritë
             </button>
@@ -205,7 +263,7 @@ export const VocabularyBuilderPage: React.FC = () => {
                   {activeCategory?.label}
                 </h3>
                 <span className="text-[10px] text-neutral-400 dark:text-neutral-500 font-light">
-                  Rezultatet: {filteredWords.length} / 30 fjalë
+                  Rezultatet: {filteredWords.length} / {activeLevel === 'A1' ? 30 : 50} fjalë
                 </span>
               </div>
             </div>
@@ -217,7 +275,7 @@ export const VocabularyBuilderPage: React.FC = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder={`Kërko në ${activeCategory?.label}...`}
-                className="w-full rounded-xl border border-[#E9ECEF] dark:border-neutral-850 bg-white dark:bg-neutral-900 px-4 py-2.5 text-xs text-[#1A1D20] dark:text-white placeholder-neutral-450 focus:outline-none font-technical tracking-wide shadow-xs"
+                className="w-full rounded-xl border border-[#E9ECEF] dark:border-neutral-800 bg-white dark:bg-neutral-900 px-4 py-2.5 text-xs text-[#1A1D20] dark:text-white placeholder-neutral-450 focus:outline-none font-technical tracking-wide shadow-xs"
               />
               {searchQuery && (
                 <button
@@ -242,7 +300,7 @@ export const VocabularyBuilderPage: React.FC = () => {
                   <div className="flex justify-between items-start">
                     <div className="space-y-0.5">
                       {/* Turkish Word */}
-                      <span className="text-sm font-black text-[#1C1917] dark:text-white uppercase font-technical tracking-wide block">
+                      <span lang="tr" className="text-sm font-black text-[#1C1917] dark:text-white font-technical tracking-wide block">
                         {wordItem.word}
                       </span>
                       {/* Part of Speech */}
@@ -280,7 +338,7 @@ export const VocabularyBuilderPage: React.FC = () => {
                     <span className="text-[10px] font-bold text-neutral-450 dark:text-neutral-500 uppercase tracking-widest block mb-0.5">
                       Përkthimi:
                     </span>
-                    <p className="text-xs font-semibold text-[#0D9488] dark:text-[#14B8A6] line-clamp-1 leading-snug">
+                    <p className={`text-xs font-semibold line-clamp-1 leading-snug ${activeLevel === 'A1' ? 'text-[#0D9488] dark:text-[#14B8A6]' : 'text-[#3B82F6]'}`}>
                       {wordItem.translation}
                     </p>
                   </div>
