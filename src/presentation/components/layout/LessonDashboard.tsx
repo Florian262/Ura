@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLesson } from '../../../application/state/LessonContext';
 import type { Chapter } from '../../../infrastructure/db/seedData';
 import { ProgressRepository } from '../../../infrastructure/repository/ProgressRepository';
+import { ChapterRepository } from '../../../infrastructure/repository/ChapterRepository';
 
 const UraIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
   <svg 
@@ -39,42 +40,48 @@ export const LessonDashboard: React.FC = () => {
   });
 
   // Pedagogical Preview Syllabus & Curiosity Gaps focus configurations
-  const levelSyllabus: Record<string, { desc: string; preview: string; focus: string; index: string }> = {
+  const levelSyllabus: Record<string, { desc: string; preview: string; focus: string; index: string; tags: string[] }> = {
     A1: { 
       desc: 'FILL ESTAR', 
       index: '01',
       preview: 'Kurrikula: Prezantimi, Harmonia Vokalike, dhe 250 fjalë të përbashkëta (Dollap, Xham, Çorape).', 
-      focus: 'Fokusimi: Prezantimi dhe Harmonia Vokalike (Çoğul Eki).' 
+      focus: 'Fokusimi: Prezantimi dhe Harmonia Vokalike (Çoğul Eki).',
+      tags: ['Harmoni Vokalike', 'Çoğul Eki', '250 Cognates']
     },
     A2: { 
       desc: 'ELEMENTAR', 
       index: '02',
       preview: 'Kurrikula: Koha e shkuar e drejtpërdrejtë dhe strukturat e lakimit vendor për biseda elementare.', 
-      focus: 'Fokusimi: Koha e shkuar e drejtpërdrejtë (-dı) dhe përshkrimet elementare.' 
+      focus: 'Fokusimi: Koha e shkuar e drejtpërdrejtë (-dı) dhe përshkrimet elementare.',
+      tags: ['Koha e Shkuar (-dı)', 'Lokativi', 'Përshkrime']
     },
     B1: { 
       desc: 'NDËRMJETËM', 
       index: '03',
       preview: 'Kurrikula: Zotërimi i Mënyrës Habitore të shkuar të pacaktuar për të shprehur habi dhe thashetheme.', 
-      focus: 'Fokusimi: Lidhja e fjalive me Mënyrën Habitore (Mënyra e habitshme -miş).' 
+      focus: 'Fokusimi: Lidhja e fjalive me Mënyrën Habitore (Mënyra e habitshme -miş).',
+      tags: ['Habitore (-miş)', 'Lidhëzat', 'Tregime']
     },
     B2: { 
       desc: 'NDËRMJETËM I LARTË', 
       index: '04',
       preview: 'Kurrikula: Strukturat hipotetike kushtore dhe shprehja e dëshirave komplekse në turqisht.', 
-      focus: 'Fokusimi: Fjalia kushtore (-se), hipotezat dhe shprehja e dëshirave.' 
+      focus: 'Fokusimi: Fjalia kushtore (-se), hipotezat dhe shprehja e dëshirave.',
+      tags: ['Kushtorja (-se)', 'Dëshirat', 'Hipotezat']
     },
     C1: { 
       desc: 'AVANCUAR', 
       index: '05',
       preview: 'Kurrikula: Strukturat letrare akademike, gazetareske dhe pjesoret e ndërlikuara turke.', 
-      focus: 'Fokusimi: Pjesoret & strukturat e ndërlikuara letrare turke (Sıfat-Fiiller).' 
+      focus: 'Fokusimi: Pjesoret & strukturat e ndërlikuara letrare turke (Sıfat-Fiiller).',
+      tags: ['Sıfat-Fiiller', 'Letrare', 'Akademike']
     },
     C2: { 
       desc: 'PRANË GJUHËS AMTARE', 
       index: '06',
       preview: 'Kurrikula: Idiomat kulturore, shprehjet e urta popullore dhe huazimet e përbashkëta Ballkanike.', 
-      focus: 'Fokusimi: Idiomat, shprehjet e urta popullore dhe huazimet e përbashkëta Ballkanike.' 
+      focus: 'Fokusimi: Idiomat, shprehjet e urta popullore dhe huazimet e përbashkëta Ballkanike.',
+      tags: ['Balkanizmat', 'Idiomat', 'Proverbat']
     }
   };
 
@@ -102,6 +109,29 @@ export const LessonDashboard: React.FC = () => {
   };
 
   const activeLevelKey = getActiveLevelKey();
+
+  const stats = React.useMemo(() => {
+    const progressMap = ProgressRepository.getProgressMap();
+    const progressItems = Object.values(progressMap);
+    const completedChapters = progressItems.filter(p => p.is_completed).length;
+    const completionPercentage = chapters.length > 0 
+      ? Math.round((completedChapters / chapters.length) * 100) 
+      : 0;
+
+    let balkanWordsMastered = 0;
+    progressItems.forEach(p => {
+      if (p.is_completed) {
+        const vocab = ChapterRepository.getVocabularyForChapter(p.chapter_id);
+        balkanWordsMastered += vocab.filter(v => v.is_shared_balkan_word === 1).length;
+      }
+    });
+
+    return {
+      completionPercentage,
+      balkanWordsMastered,
+      completedChapters
+    };
+  }, [chapters]);
 
 
 
@@ -148,13 +178,27 @@ export const LessonDashboard: React.FC = () => {
           {/* Typographic Welcome Header */}
           <div className="text-left border-b border-[#DDE1E5] dark:border-neutral-800 pb-8">
             <div className="flex items-center justify-between flex-wrap gap-4 mb-4">
-              <span className="text-[10px] uppercase font-mono font-bold tracking-wider px-2 py-0.5 border border-[#111315] dark:border-neutral-800 bg-[#111315] dark:bg-neutral-900 text-[#FBFBF9] select-none">
-                Ura e Gjuhës v1.0 Offline
-              </span>
-              {userName && (
-                <span className="text-[10px] font-bold text-[#636B74] select-none">
-                  Mirë se vjen, {userName}! 👋
+              <div className="flex items-center gap-2.5">
+                <span className="text-[10px] uppercase font-mono font-bold tracking-wider px-2 py-0.5 border border-[#111315] dark:border-neutral-800 bg-[#111315] dark:bg-neutral-900 text-[#FBFBF9] select-none">
+                  Ura e Gjuhës v1.0 Offline
                 </span>
+                {/* Custom SVG Flame Study Streak */}
+                <div className="flex items-center gap-1 border border-amber-500/20 bg-amber-500/5 px-2 py-0.5 rounded-lg select-none">
+                  <svg className="w-3.5 h-3.5 text-amber-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+                  </svg>
+                  <span className="text-[9px] font-bold text-amber-600 dark:text-amber-400 font-mono">1 ditë</span>
+                </div>
+              </div>
+              {userName && (
+                <div className="flex items-center gap-2 select-none border border-[var(--color-border-primary-glass)] bg-[var(--color-bg-surface-glass)] px-2.5 py-1 rounded-full shadow-xs">
+                  <div className="w-4.5 h-4.5 rounded-full bg-[var(--color-brand-accent)] text-white text-[9px] font-black flex items-center justify-center">
+                    {userName.charAt(0).toUpperCase()}
+                  </div>
+                  <span className="text-[10px] font-bold text-[var(--color-text-secondary)]">
+                    {userName}
+                  </span>
+                </div>
               )}
             </div>
 
@@ -174,6 +218,64 @@ export const LessonDashboard: React.FC = () => {
                     Lidhja kulturore dhe gjuhësore mes Shqipërisë dhe Turqisë. Zgjidh kapitullin ku dëshiron të përqendrohesh sot.
                   </p>
                 </div>
+              </div>
+            </div>
+
+            {/* Frosted Stats Pedestal Row */}
+            <div className="grid grid-cols-3 gap-4 mt-6">
+              {/* Card 1: Overall progress */}
+              <div className="glass-panel p-4 flex flex-col justify-between select-none relative overflow-hidden bg-white/40 dark:bg-neutral-900/40">
+                <div className="flex items-center gap-2 mb-2">
+                  <svg className="w-4 h-4 text-[var(--color-brand-accent)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  <span className="text-[9px] font-bold text-[var(--color-text-secondary)] uppercase tracking-wider">Mësimi</span>
+                </div>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-xl font-extrabold text-[var(--color-text-primary)]">{stats.completionPercentage}%</span>
+                </div>
+                <p className="text-[9px] text-[var(--color-text-secondary)] font-light mt-1">
+                  {stats.completedChapters}/{chapters.length} kapituj kryer
+                </p>
+              </div>
+
+              {/* Card 2: Shared words */}
+              <div className="glass-panel p-4 flex flex-col justify-between select-none relative overflow-hidden bg-white/40 dark:bg-neutral-900/40">
+                <div className="flex items-center gap-2 mb-2">
+                  <svg className="w-4 h-4 text-emerald-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                  </svg>
+                  <span className="text-[9px] font-bold text-[var(--color-text-secondary)] uppercase tracking-wider">Cognates</span>
+                </div>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-xl font-extrabold text-[var(--color-text-primary)]">{stats.balkanWordsMastered}</span>
+                  <span className="text-[9px] font-bold text-[var(--color-text-secondary)] uppercase">Fjalë</span>
+                </div>
+                <p className="text-[9px] text-[var(--color-text-secondary)] font-light mt-1">
+                  Huazime të përbashkëta
+                </p>
+              </div>
+
+              {/* Card 3: Milestone Active Goal */}
+              <div className="glass-panel p-4 flex flex-col justify-between select-none relative overflow-hidden bg-white/40 dark:bg-neutral-900/40">
+                <div className="flex items-center gap-2 mb-2">
+                  <svg className="w-4 h-4 text-amber-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                    <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                    <path d="M4 22h16" />
+                    <path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34" />
+                    <path d="M12 2a6 6 0 0 1 6 6v5H6V8a6 6 0 0 1 6-6z" />
+                  </svg>
+                  <span className="text-[9px] font-bold text-[var(--color-text-secondary)] uppercase tracking-wider">Synimi</span>
+                </div>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-xl font-extrabold text-[var(--color-text-primary)]">{activeLevelKey}</span>
+                </div>
+                <p className="text-[9px] text-[var(--color-text-secondary)] font-light mt-1">
+                  Niveli aktual aktiv
+                </p>
               </div>
             </div>
           </div>
@@ -219,6 +321,9 @@ export const LessonDashboard: React.FC = () => {
 
                     {/* Staggered container wrapper shifting only the cards */}
                     <div className={`transition-all duration-500 transform ${offsetClass}`}>
+                      {/* Stagger timeline bridge connector line */}
+                      <div className="stagger-connector" />
+
                       <button
                         onClick={() => setSelectedLevel(level)}
                         className={`dashboard-card-transition bg-[var(--color-bg-surface-glass)] backdrop-blur-md rounded-2xl w-full text-left cursor-pointer outline-none block group relative overflow-hidden ${
@@ -258,13 +363,25 @@ export const LessonDashboard: React.FC = () => {
                         </div>
 
                         <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                          isActive ? 'max-h-[300px] opacity-100 mt-4' : 'max-h-0 opacity-0 pointer-events-none'
+                          isActive ? 'max-h-[350px] opacity-100 mt-4' : 'max-h-0 opacity-0 pointer-events-none'
                         }`}>
                           <hr className="border-[var(--color-border-primary-glass)] mb-4 w-full" />
 
-                          <p className="text-xs md:text-sm text-[var(--color-text-primary)] opacity-90 leading-relaxed mb-6">
+                          <p className="text-xs md:text-sm text-[var(--color-text-primary)] opacity-90 leading-relaxed mb-4">
                             {syllabus.preview}
                           </p>
+
+                          {/* Syllabus Tags Pedestal */}
+                          <div className="flex flex-wrap gap-1.5 mb-6">
+                            {syllabus.tags.map((tag, tIdx) => (
+                              <span 
+                                key={tIdx} 
+                                className="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md border text-[var(--color-brand-accent)] border-[var(--color-brand-accent)]/20 bg-[var(--color-brand-accent-light)] select-none"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
 
                           <div className="space-y-2 mt-auto w-full pt-2">
                             <div className="flex justify-between items-center text-[10px] font-mono text-[var(--color-text-secondary)] font-semibold select-none">
@@ -418,8 +535,14 @@ export const LessonDashboard: React.FC = () => {
                     </div>
 
                     <div className="flex items-center gap-3 shrink-0">
-                      <div className="w-14 h-14 bg-gradient-to-br from-amber-500 to-[#3A5A40] text-white flex items-center justify-center rounded-2xl shadow-md text-2xl animate-pulse">
-                        🏆
+                      <div className="w-14 h-14 bg-gradient-to-br from-amber-500 to-[#3A5A40] text-white flex items-center justify-center rounded-2xl shadow-md animate-pulse">
+                        <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                          <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                          <path d="M4 22h16" />
+                          <path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34" />
+                          <path d="M12 2a6 6 0 0 1 6 6v5H6V8a6 6 0 0 1 6-6z" />
+                        </svg>
                       </div>
                     </div>
                   </button>

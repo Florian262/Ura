@@ -10,6 +10,49 @@ import { WelcomePage } from './presentation/components/layout/WelcomePage';
 import { SplashScreen } from './presentation/components/layout/SplashScreen';
 import { VocabularyBuilderPage } from './presentation/components/layout/VocabularyBuilderPage';
 import { A2FinishingTestPage } from './presentation/components/layout/A2FinishingTestPage';
+const HomeIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+    <polyline points="9 22 9 12 15 12 15 22" />
+  </svg>
+);
+
+const BookOpenIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+  </svg>
+);
+
+const SearchIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="11" cy="11" r="8" />
+    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+  </svg>
+);
+
+const BooksIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+    <line x1="8" y1="6" x2="16" y2="6" strokeWidth="2" opacity="0.6" />
+    <line x1="8" y1="10" x2="16" y2="10" strokeWidth="2" opacity="0.6" />
+  </svg>
+);
+
+const LightningIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+  </svg>
+);
+
+const BarChartIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="18" y1="20" x2="18" y2="10" />
+    <line x1="12" y1="20" x2="12" y2="4" />
+    <line x1="6" y1="20" x2="6" y2="14" />
+  </svg>
+);
 
 
 const MainLayout: React.FC = () => {
@@ -31,12 +74,12 @@ const MainLayout: React.FC = () => {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState<boolean>(true); // Starts collapsed (1cm space)
 
   const navItems = [
-    { id: 'lessons', label: 'Dashboard', icon: '🏠', desc: 'Kapitujt e Studimit' },
-    { id: 'lesson_active', label: 'Kapitulli Aktiv', icon: '📖', desc: 'Mësimi aktual', disabled: !currentChapter },
-    { id: 'dictionary', label: 'Fjalori', icon: '🔍', desc: 'Balkanizmat e përbashkët' },
-    { id: 'vocab_builder', label: 'Fjalorthi Tematik', icon: '📚', desc: 'Fjalët A1 & A2' },
-    { id: 'playground', label: 'Playground', icon: '⚡', desc: 'Motorri Aglutinues' },
-    { id: 'progress', label: 'Progresi Im', icon: '📊', desc: 'Statistikat & Gjurmimi' }
+    { id: 'lessons', label: 'Dashboard', icon: <HomeIcon className="w-5 h-5" />, desc: 'Kapitujt e Studimit' },
+    { id: 'lesson_active', label: 'Kapitulli Aktiv', icon: <BookOpenIcon className="w-5 h-5" />, desc: 'Mësimi aktual', disabled: !currentChapter },
+    { id: 'dictionary', label: 'Fjalori', icon: <SearchIcon className="w-5 h-5" />, desc: 'Balkanizmat e përbashkët' },
+    { id: 'vocab_builder', label: 'Fjalorthi Tematik', icon: <BooksIcon className="w-5 h-5" />, desc: 'Fjalët A1 & A2' },
+    { id: 'playground', label: 'Playground', icon: <LightningIcon className="w-5 h-5" />, desc: 'Motorri Aglutinues' },
+    { id: 'progress', label: 'Progresi Im', icon: <BarChartIcon className="w-5 h-5" />, desc: 'Statistikat & Gjurmimi' }
   ];
 
   const handleNavClick = (pageId: string) => {
@@ -106,7 +149,23 @@ const MainLayout: React.FC = () => {
             className="w-8 h-8 border border-[#E9ECEF] bg-transparent text-sm cursor-pointer transition select-none flex items-center justify-center rounded-lg hover:bg-[#E9ECEF]/30"
             title="Ndrysho Temën"
           >
-            {theme === 'dark' ? '☀️' : '🌙'}
+                {theme === 'dark' ? (
+                  <svg className="w-3.5 h-3.5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="4" />
+                    <path d="M12 2v2" />
+                    <path d="M12 20v2" />
+                    <path d="M4.93 4.93L6.34 6.34" />
+                    <path d="M17.66 17.66l1.41 1.41" />
+                    <path d="M2 12h2" />
+                    <path d="M20 12h2" />
+                    <path d="M6.34 17.66l-1.41 1.41" />
+                    <path d="M19.07 4.93l-1.41 1.41" />
+                  </svg>
+                ) : (
+                  <svg className="w-3.5 h-3.5 text-[var(--color-text-secondary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                  </svg>
+                )}
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -118,7 +177,7 @@ const MainLayout: React.FC = () => {
       </header>
 
       {/* 2. Collapsible Left-side Sidebar Navigation Drawer */}
-      <aside className={`fixed md:sticky top-0 left-0 bottom-0 md:h-screen z-50 overflow-y-auto no-scrollbar transition-all duration-300 bg-white/95 dark:bg-[#12181F]/95 border-r border-[var(--color-border-primary-glass)] backdrop-blur-xl flex flex-col justify-between ${
+      <aside className={`fixed md:sticky top-0 left-0 bottom-0 md:h-screen z-50 overflow-y-auto no-scrollbar transition-all duration-300 bg-[var(--color-bg-surface-glass)] border-r border-[var(--color-border-primary-glass)] backdrop-blur-xl flex flex-col justify-between ${
         isSidebarCollapsed 
           ? 'w-16 p-3 items-center' 
           : 'w-64 p-5 items-stretch'
@@ -186,7 +245,23 @@ const MainLayout: React.FC = () => {
               className="w-8 h-8 flex items-center justify-center rounded-lg border border-[var(--color-border-primary-glass)] bg-transparent text-xs hover:bg-stone-900/5 dark:hover:bg-white/5 transition cursor-pointer mb-2"
               title="Ndrysho Temën"
             >
-              {theme === 'dark' ? '☀️' : '🌙'}
+              {theme === 'dark' ? (
+                <svg className="w-3.5 h-3.5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="4" />
+                  <path d="M12 2v2" />
+                  <path d="M12 20v2" />
+                  <path d="M4.93 4.93L6.34 6.34" />
+                  <path d="M17.66 17.66l1.41 1.41" />
+                  <path d="M2 12h2" />
+                  <path d="M20 12h2" />
+                  <path d="M6.34 17.66l-1.41 1.41" />
+                  <path d="M19.07 4.93l-1.41 1.41" />
+                </svg>
+              ) : (
+                <svg className="w-3.5 h-3.5 text-[var(--color-text-secondary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                </svg>
+              )}
             </button>
 
             {/* Collapsed bottom indicator */}
@@ -214,7 +289,23 @@ const MainLayout: React.FC = () => {
                     className="w-7 h-7 rounded-md border border-[var(--color-border-primary-glass)] bg-transparent text-[var(--color-text-secondary)] hover:text-[var(--color-brand-accent)] hover:border-[var(--color-brand-accent)]/30 flex items-center justify-center text-xs font-bold transition duration-200 cursor-pointer shadow-xs"
                     title="Ndrysho Temën"
                   >
-                    {theme === 'dark' ? '☀️' : '🌙'}
+                    {theme === 'dark' ? (
+                      <svg className="w-3.5 h-3.5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="4" />
+                        <path d="M12 2v2" />
+                        <path d="M12 20v2" />
+                        <path d="M4.93 4.93L6.34 6.34" />
+                        <path d="M17.66 17.66l1.41 1.41" />
+                        <path d="M2 12h2" />
+                        <path d="M20 12h2" />
+                        <path d="M6.34 17.66l-1.41 1.41" />
+                        <path d="M19.07 4.93l-1.41 1.41" />
+                      </svg>
+                    ) : (
+                      <svg className="w-3.5 h-3.5 text-[var(--color-text-secondary)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                      </svg>
+                    )}
                   </button>
                   <button
                     onClick={() => setIsSidebarCollapsed(true)}

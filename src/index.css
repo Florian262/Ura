@@ -9,17 +9,17 @@
 }
 
 :root {
-  --color-bg-canvas: #FDFCF7;      /* Warm scholarly Ivory base background */
+  --color-bg-canvas: #edf2fb;      /* Tranquil Alice Blue background */
   --color-bg-surface: #FFFFFF;     /* Clean white surface containers */
-  --color-bg-surface-glass: rgba(255, 255, 255, 0.7); /* Translucent white */
-  --color-text-primary: #1C1917;    /* Deep Stone-900 typography */
-  --color-text-secondary: rgba(28, 25, 23, 0.65); /* Opacity-based secondary text */
-  --color-border-primary: #E2E8F0;  /* Slate-200 dividers */
-  --color-border-primary-glass: rgba(226, 232, 240, 0.4); /* Translucent border */
+  --color-bg-surface-glass: rgba(226, 234, 252, 0.7); /* Translucent Lavender-tinted glass */
+  --color-text-primary: #00132d;    /* Deep Prussian Blue for high contrast */
+  --color-text-secondary: rgba(0, 19, 45, 0.65); /* Opacity-based secondary text */
+  --color-border-primary: #ccdbfd;  /* Soft Lavender-Blue dividers */
+  --color-border-primary-glass: rgba(204, 219, 253, 0.4); /* Translucent borders */
   
-  --color-brand-accent: #0D9488;    /* Scholarly Teal accent */
-  --color-brand-accent-hover: #0F766E;
-  --color-brand-accent-light: rgba(13, 148, 136, 0.08);
+  --color-brand-accent: #002d67;    /* Dignified Oxford Navy primary controls */
+  --color-brand-accent-hover: #00377e; /* Regal Navy hover */
+  --color-brand-accent-light: #e2eafc; /* Light Lavender accent background tint */
   
   --color-brand-secondary: #D97706; /* Warm Amber Gold */
   --color-brand-secondary-hover: #B45309;
@@ -35,10 +35,10 @@
   --border-radius-button: 12px;
   --border-radius-badge: 6px;
   
-  --shadow-soft: 0 4px 6px -1px rgba(28, 25, 23, 0.02), 0 2px 4px -2px rgba(28, 25, 23, 0.02);
-  --shadow-medium: 0 10px 15px -3px rgba(28, 25, 23, 0.04), 0 4px 6px -4px rgba(28, 25, 23, 0.04);
+  --shadow-soft: 0 4px 6px -1px rgba(0, 19, 45, 0.02), 0 2px 4px -2px rgba(0, 19, 45, 0.02);
+  --shadow-medium: 0 10px 15px -3px rgba(0, 19, 45, 0.04), 0 4px 6px -4px rgba(0, 19, 45, 0.04);
   /* Multi-layered shadow for realistic depth */
-  --shadow-elevated: 0 1px 2px rgba(28, 25, 23, 0.02), 0 4px 12px rgba(28, 25, 23, 0.03), 0 12px 24px rgba(28, 25, 23, 0.04);
+  --shadow-elevated: 0 1px 2px rgba(0, 19, 45, 0.02), 0 4px 12px rgba(0, 19, 45, 0.03), 0 12px 24px rgba(0, 19, 45, 0.04);
 
   font-family: var(--font-sans);
   background-color: var(--color-bg-canvas);
@@ -47,17 +47,17 @@
 }
 
 :root.dark-theme, body.dark-theme {
-  --color-bg-canvas: #090E14;      /* Deep midnight obsidian dark mode */
-  --color-bg-surface: #12181F;     /* Dark Slate panel surface background */
-  --color-bg-surface-glass: rgba(18, 24, 31, 0.7); /* Translucent dark slate */
+  --color-bg-canvas: #00132d;      /* Inky Prussian Blue canvas */
+  --color-bg-surface: #00193b;     /* Elevated Prussian Blue surfaces */
+  --color-bg-surface-glass: rgba(0, 25, 59, 0.7); /* Translucent deep navy */
   --color-text-primary: #F1F5F9;    /* Clean Slate-100 primary text */
   --color-text-secondary: rgba(241, 245, 249, 0.65); /* Opacity-based secondary text */
-  --color-border-primary: #1E293B;  /* Slate-800 dividers */
-  --color-border-primary-glass: rgba(30, 41, 59, 0.4); /* Translucent border */
+  --color-border-primary: #002657;  /* Prussian Blue dividers */
+  --color-border-primary-glass: rgba(0, 38, 87, 0.4); /* Translucent borders */
   
-  --color-brand-accent: #14B8A6;    /* Glowing Teal accent */
-  --color-brand-accent-hover: #0D9488;
-  --color-brand-accent-light: rgba(20, 184, 166, 0.12);
+  --color-brand-accent: #3b82f6;    /* Bright Royal Blue accent */
+  --color-brand-accent-hover: #60a5fa; /* Soft blue hover */
+  --color-brand-accent-light: rgba(59, 130, 246, 0.12);
   
   --color-brand-secondary: #F59E0B; /* Glowing Amber Gold */
   --color-brand-secondary-hover: #D97706;
@@ -376,12 +376,12 @@ input:focus, textarea:focus, select:focus {
 
 /* Grammar Module Specific Premium Contrast Containers */
 .grammar-card-bg {
-  background-color: #F5F4F0 !important;
+  background-color: #d7e3fc !important; /* Soft Lavender */
   border: 1px solid var(--color-border-primary) !important;
 }
 
 .dark-theme .grammar-card-bg {
-  background-color: #1A222B !important;
+  background-color: #001e45 !important; /* Prussian Blue */
   border: 1px solid var(--color-border-primary) !important;
 }
 
@@ -391,7 +391,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .dark-theme .grammar-output-bg {
-  background-color: #242E3A !important;
+  background-color: #00193b !important; /* Elevated Prussian Blue */
   border: 1px solid var(--color-border-primary) !important;
 }
 
@@ -489,5 +489,140 @@ input:focus, textarea:focus, select:focus {
   -webkit-mask-image: linear-gradient(to right, transparent, black 15px, black calc(100% - 15px), transparent);
 }
 
+@keyframes logoElastic {
+  0% { transform: scale(0.3) rotate(-45deg); opacity: 0; }
+  70% { transform: scale(1.1) rotate(10deg); }
+  90% { transform: scale(0.95) rotate(-3deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
 
+.animate-logo-elastic {
+  animation: logoElastic 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
 
+/* Premium Floating Aurora animations */
+@keyframes float-slow {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.15); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(-40px, 40px) scale(1.1); }
+}
+
+.animate-float-slow {
+  animation: float-slow 20s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 24s ease-in-out infinite;
+}
+
+/* Splash Vignette Background styles */
+.splash-bg-vignette {
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.6) 0%, var(--color-bg-canvas) 80%);
+}
+.dark-theme .splash-bg-vignette {
+  background: radial-gradient(circle at center, rgba(0, 38, 87, 0.6) 0%, var(--color-bg-canvas) 85%);
+}
+
+/* Slightly more visible grid pattern for splash/general */
+.bg-grid-visible {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 19, 45, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 19, 45, 0.025) 1px, transparent 1px);
+}
+.dark-theme .bg-grid-visible {
+  background-image: 
+    linear-gradient(to right, rgba(241, 245, 249, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(241, 245, 249, 0.02) 1px, transparent 1px);
+}
+
+/* Splash Fact Card Pedestal */
+.splash-fact-card {
+  background: var(--color-bg-surface-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border-primary-glass);
+  border-radius: var(--border-radius-card);
+  box-shadow: var(--shadow-medium);
+  padding: 1.25rem 1.5rem;
+  max-width: 25rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.625rem;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+/* Premium frameless free-floating drop shadows for logo */
+.splash-logo-float {
+  border-radius: 9999px !important;
+  filter: drop-shadow(0 16px 32px rgba(0, 19, 45, 0.25)) drop-shadow(0 4px 12px rgba(0, 19, 45, 0.15));
+}
+
+.dark-theme .splash-logo-float {
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.6)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+/* Stagger Timeline Connectors */
+.stagger-connector {
+  position: absolute;
+  top: 1.55rem; /* Aligns perfectly with the timeline node dot */
+  height: 2px;
+  border-top: 2px dashed var(--color-border-primary);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.3s ease, border-color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .stagger-step-0 .stagger-connector { width: 42px; left: -42px; }
+  .stagger-step-1 .stagger-connector { width: 66px; left: -66px; }
+  .stagger-step-2 .stagger-connector { width: 90px; left: -90px; }
+  .stagger-step-3 .stagger-connector { width: 90px; left: -90px; }
+  .stagger-step-4 .stagger-connector { width: 66px; left: -66px; }
+  .stagger-step-5 .stagger-connector { width: 42px; left: -42px; }
+}
+
+@media (max-width: 767px) {
+  .stagger-connector { width: 24px; left: -24px; }
+}
+
+/* Active State Timeline Bridge highlights */
+.stagger-step-0:has(.border-2) .stagger-connector,
+.stagger-step-1:has(.border-2) .stagger-connector,
+.stagger-step-2:has(.border-2) .stagger-connector,
+.stagger-step-3:has(.border-2) .stagger-connector,
+.stagger-step-4:has(.border-2) .stagger-connector,
+.stagger-step-5:has(.border-2) .stagger-connector {
+  border-top-style: solid;
+  border-top-color: var(--color-brand-accent) !important;
+  opacity: 0.8;
+}
+
+/* Completed State Timeline Bridge highlights */
+.stagger-step-0:has(.border-\[var\(--color-brand-success-light\)\]) .stagger-connector,
+.stagger-step-0:has(.border-\[var\(--color-brand-success\)\]) .stagger-connector,
+.stagger-step-1:has(.border-\[var\(--color-brand-success-light\)\]) .stagger-connector,
+.stagger-step-1:has(.border-\[var\(--color-brand-success\)\]) .stagger-connector,
+.stagger-step-2:has(.border-\[var\(--color-brand-success-light\)\]) .stagger-connector,
+.stagger-step-2:has(.border-\[var\(--color-brand-success\)\]) .stagger-connector,
+.stagger-step-3:has(.border-\[var\(--color-brand-success-light\)\]) .stagger-connector,
+.stagger-step-3:has(.border-\[var\(--color-brand-success\)\]) .stagger-connector,
+.stagger-step-4:has(.border-\[var\(--color-brand-success-light\)\]) .stagger-connector,
+.stagger-step-4:has(.border-\[var\(--color-brand-success\)\]) .stagger-connector,
+.stagger-step-5:has(.border-\[var\(--color-brand-success-light\)\]) .stagger-connector,
+.stagger-step-5:has(.border-\[var\(--color-brand-success\)\]) .stagger-connector {
+  border-top-style: solid;
+  border-top-color: var(--color-brand-success) !important;
+  opacity: 0.6;
+}
