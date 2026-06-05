@@ -12,22 +12,35 @@ test.describe('Ura Language Portal E2E UI Automation Flows', () => {
 
   test('Should navigate welcome onboarding, enter dashboard, explore levels, and load Chapter 1', async ({ page }) => {
     // ---- STEP A: ONBOARDING ----
+    // Wait for the 5-second welcoming splash screen to fade out and be unmounted
+    await expect(page.locator('h1:has-text("Ura e Gjuhës")')).toBeHidden({ timeout: 8000 });
+
     // Verify onboarding welcome page is displayed
-    const title = page.locator('h1');
-    await expect(title).toContainText('Mëso Turqisht');
+    const title = page.locator('h1:has-text("Mëso Turqisht")');
+    await expect(title).toBeVisible();
 
     // Fill in username
     const nameInput = page.locator('input[placeholder="Shkruani emrin tuaj..."]');
     await expect(nameInput).toBeVisible();
     await nameInput.fill('Florian');
 
-    // Submit form (Fillo Mësimin button)
+    // Click Vazhdo to go to Quiz step
+    const nextButton = page.locator('button:has-text("Vazhdo")');
+    await nextButton.click();
+
+    // Select quiz option to go to Success step
+    const quizOption = page.locator('button:has-text("Të gjitha këto")');
+    await expect(quizOption).toBeVisible();
+    await quizOption.click();
+
+    // Click Fillo Mësimin to enter Dashboard
     const startButton = page.locator('button:has-text("Fillo Mësimin")');
+    await expect(startButton).toBeVisible();
     await startButton.click();
 
     // ---- STEP B: LEVEL ROADMAP SELECTION DASHBOARD ----
-    // Assert redirect to Dashboard and check welcome username message
-    const welcomeUser = page.locator('text=Mirë se vjen, Florian! 👋');
+    // Assert redirect to Dashboard and check welcome username message inside the profile badge
+    const welcomeUser = page.locator('text=Florian');
     await expect(welcomeUser).toBeVisible();
 
     const mainHeader = page.locator('h1');
