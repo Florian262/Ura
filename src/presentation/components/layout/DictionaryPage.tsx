@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { ChapterRepository } from '../../../infrastructure/repository/ChapterRepository';
+import { a1VocabularyData } from '../../../infrastructure/db/a1Vocabulary';
+import { WordDetailDrawer } from '../common/WordDetailDrawer';
+import { useAudioPlayer } from '../../../application/hooks/useAudioPlayer';
 
 export interface DictionaryEntry {
   id: string;
@@ -14,9 +17,11 @@ export interface DictionaryEntry {
   derivatives?: { word: string; translation: string; pos: string }[];
   is_balkan?: boolean;
   chapterTitle?: string;    // If derived from curriculum
+  is_a1_vocab?: boolean;    // Badge flag for A1 Thematic Vocab items
 }
 
 export const DictionaryPage: React.FC = () => {
+  const { playText } = useAudioPlayer();
   // States
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedPOS, setSelectedPOS] = useState<string>('ALL');
@@ -53,6 +58,39 @@ export const DictionaryPage: React.FC = () => {
       });
     });
     return list;
+  }, []);
+
+  // Compile static A1 thematic vocabulary
+  const a1VocabEntries = useMemo(() => {
+    const getCategoryLabel = (cat: string): string => {
+      const mapping: Record<string, string> = {
+        greetings: 'Përshëndetje & Bazat 👋',
+        family: 'Familja & Njerëzit 👥',
+        home: 'Shtëpia & Vendet 🏠',
+        cooking: 'Ushqimi & Gatimi 🍳',
+        weather: 'Moti & Koha 🌤️',
+        shopping: 'Blerjet & Numrat 🛍️',
+        transport: 'Transporti & Qyteti 🚌',
+        verbs: 'Foljet e Përditshme 🏃‍♂️',
+        adjectives: 'Mbiemrat & Ngjyrat 🎨',
+        health: 'Trupi & Shendeti 🏥'
+      };
+      return mapping[cat] || cat;
+    };
+
+    return a1VocabularyData.map((item): DictionaryEntry => ({
+      id: `a1-vocab-${item.id}`,
+      source: 'tr',
+      word: item.word,
+      translation: item.translation,
+      pos: item.pos,
+      notes: item.notes,
+      examples: item.examples,
+      derivatives: item.derivatives,
+      is_balkan: item.is_balkan,
+      is_a1_vocab: true,
+      chapterTitle: `Fjalorthi Tematik A1 • ${getCategoryLabel(item.category)}`
+    }));
   }, []);
 
   // Map letters to normalized JSON files
@@ -114,7 +152,7 @@ export const DictionaryPage: React.FC = () => {
       });
   }, [searchQuery]);
 
-  // Combine curriculum and dynamically fetched entries
+  // Combine curriculum, a1 thematic vocabulary, and dynamically fetched entries
   const allEntries = useMemo(() => {
     const map = new Map<string, DictionaryEntry>();
     
@@ -131,8 +169,25 @@ export const DictionaryPage: React.FC = () => {
       }
     });
 
+    // Merge A1 thematic vocabulary
+    a1VocabEntries.forEach(item => {
+      const key = `${item.word.toLowerCase()}-${item.translation.toLowerCase()}`;
+      if (!map.has(key)) {
+        map.set(key, item);
+      } else {
+        const existing = map.get(key)!;
+        map.set(key, {
+          ...existing,
+          is_a1_vocab: true,
+          notes: existing.notes || item.notes,
+          examples: existing.examples || item.examples,
+          derivatives: existing.derivatives || item.derivatives
+        });
+      }
+    });
+
     return Array.from(map.values());
-  }, [loadedEntries, curriculumEntries]);
+  }, [loadedEntries, curriculumEntries, a1VocabEntries]);
 
   // Filter entries based on queries & POS tags
   const filteredEntries = useMemo(() => {
@@ -174,14 +229,8 @@ export const DictionaryPage: React.FC = () => {
 
   // Speech synthesis pronunciation helper
   const speakWord = useCallback((word: string, sourceLang: 'tr' | 'al') => {
-    if ('speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(word);
-      // Pronounce Turkish words, default to tr
-      utterance.lang = sourceLang === 'tr' ? 'tr-TR' : 'sq-AL';
-      window.speechSynthesis.speak(utterance);
-    }
-  }, []);
+    playText(word, sourceLang);
+  }, [playText]);
 
   const posTags = [
     { id: 'ALL', label: 'Çdo gjë' },
@@ -192,13 +241,14 @@ export const DictionaryPage: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8 animate-fade-in space-y-6 relative h-full">
+    <div className="max-w-7xl mx-auto px-4 py-8 space-y-6 relative h-full">
       {/* Background Typography Watermark */}
       <div className="curriculum-watermark opacity-25">
         FJALORI
       </div>
 
-      {/* Premium Dictionary Header Card */}
+      <div className="animate-fade-in space-y-6">
+        {/* Premium Dictionary Header Card */}
       <div className="glass-panel p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative overflow-hidden z-10 shadow-elevated border border-white/20">
         {/* Volumetric background glow circles */}
         <div className="absolute w-48 h-48 rounded-full bg-teal-500/5 blur-2xl -top-12 -left-12 pointer-events-none"></div>
@@ -330,6 +380,11 @@ export const DictionaryPage: React.FC = () => {
                           🤝
                         </span>
                       )}
+                      {entry.is_a1_vocab && (
+                        <span className="text-[8px] font-extrabold text-[#0D9488] bg-[#0D9488]/10 border border-[#0D9488]/20 px-1 rounded-md" title="Fjalorthi Tematik A1">
+                          A1
+                        </span>
+                      )}
                       <span className="text-[9px] font-bold text-[#565E64] capitalize bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-1.5 py-0.5 rounded-md">
                         {entry.pos}
                       </span>
@@ -370,13 +425,18 @@ export const DictionaryPage: React.FC = () => {
                     </div>
                     
                     {/* Part of Speech Label */}
-                    <div className="flex gap-2 items-center mt-1">
+                    <div className="flex gap-2 items-center mt-1 flex-wrap">
                       <span className="text-[9px] font-bold uppercase tracking-wider text-[#565E64] bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-1.5 py-0.5 rounded-md leading-none">
                         {selectedEntry.pos}
                       </span>
                       {selectedEntry.is_balkan && (
                         <span className="text-[9px] font-bold uppercase tracking-wider text-[#D97706] bg-[#D97706]/10 border border-[#D97706]/35 px-1.5 py-0.5 rounded-md leading-none">
                           Huazim Ballkanik 🤝
+                        </span>
+                      )}
+                      {selectedEntry.is_a1_vocab && (
+                        <span className="text-[9px] font-bold uppercase tracking-wider text-[#0D9488] bg-[#0D9488]/10 border border-[#0D9488]/30 px-1.5 py-0.5 rounded-md leading-none">
+                          Fjalorth A1 📚
                         </span>
                       )}
                     </div>
@@ -474,132 +534,17 @@ export const DictionaryPage: React.FC = () => {
 
       </div>
 
-      {/* MOBILE DRAWER SHEET (Slide-up modal from bottom) */}
-      {isDrawerOpen && selectedEntry && (
-        <div className="md:hidden fixed inset-0 z-50 flex items-end justify-center">
-          {/* Backdrop backing */}
-          <div 
-            onClick={() => setIsDrawerOpen(false)}
-            className="absolute inset-0 bg-black/40 backdrop-blur-xs transition-opacity duration-300"
-          ></div>
-          
-          {/* Slide up Drawer content */}
-          <div className="relative w-full bg-white rounded-t-3xl border-t border-[#E9ECEF] max-h-[85vh] overflow-y-auto p-6 space-y-5 shadow-elevated z-10 animate-fade-in">
-            {/* Close handle indicator */}
-            <div className="w-12 h-1.5 bg-neutral-200 rounded-full mx-auto mb-2"></div>
-            
-            <div className="flex justify-between items-start border-b border-[#E9ECEF] pb-3">
-              <div>
-                <div className="flex items-baseline gap-2">
-                  <h3 className="text-base font-bold text-[#1C1917] font-technical uppercase">
-                    {selectedEntry.word}
-                  </h3>
-                  {selectedEntry.inflection && (
-                    <span className="text-xs font-bold text-[#D97706]">
-                      {selectedEntry.inflection}
-                    </span>
-                  )}
-                </div>
-                
-                <div className="flex gap-2 items-center mt-1">
-                  <span className="text-[9px] font-bold uppercase tracking-wider text-[#565E64] bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-1.5 py-0.5 rounded-md leading-none">
-                    {selectedEntry.pos}
-                  </span>
-                  {selectedEntry.is_balkan && (
-                    <span className="text-[9px] font-bold uppercase tracking-wider text-[#D97706] bg-[#D97706]/10 border border-[#D97706]/35 px-1.5 py-0.5 rounded-md leading-none">
-                      Huazim Ballkanik 🤝
-                    </span>
-                  )}
-                </div>
-              </div>
+      </div>
 
-              <div className="flex gap-2">
-                <button
-                  onClick={() => speakWord(selectedEntry.word, selectedEntry.source)}
-                  className="w-8 h-8 rounded-lg border border-[#E9ECEF] bg-white flex items-center justify-center cursor-pointer shadow-xs text-sm"
-                >
-                  🔊
-                </button>
-                <button
-                  onClick={() => setIsDrawerOpen(false)}
-                  className="w-8 h-8 rounded-lg border border-[#E9ECEF] bg-white text-xs font-bold flex items-center justify-center cursor-pointer shadow-xs"
-                >
-                  ✕
-                </button>
-              </div>
-            </div>
-
-            {/* Translation senses */}
-            <div className="space-y-2 pt-1">
-              <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block">Përkthimi:</span>
-              {selectedEntry.senses && selectedEntry.senses.length > 0 ? (
-                <ol className="list-decimal pl-4 space-y-1">
-                  {selectedEntry.senses.map((sense, idx) => (
-                    <li key={idx} className="text-xs font-medium text-[#1C1917]">
-                      {sense}
-                    </li>
-                  ))}
-                </ol>
-              ) : (
-                <span className="text-xs font-semibold text-[#0D9488] block">
-                  {selectedEntry.translation}
-                </span>
-              )}
-            </div>
-
-            {/* Notes Section */}
-            {selectedEntry.notes && (
-              <div className="bg-[#3A5A40]/5 border border-[#3A5A40]/10 rounded-xl p-3.5 mt-2 text-xs text-[#1A1D20] font-normal leading-relaxed italic">
-                <span className="font-bold text-[#3A5A40] normal-case not-italic block text-[9px] uppercase tracking-wider mb-1">Shënim Gramatikor:</span>
-                {selectedEntry.notes}
-              </div>
-            )}
-
-            {/* Examples */}
-            <div className="space-y-2 pt-4 border-t border-[#E9ECEF]">
-              {selectedEntry.examples && selectedEntry.examples.length > 0 ? (
-                <div className="space-y-2">
-                  <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block">Shembuj përdorimi:</span>
-                  <div className="space-y-1.5">
-                    {selectedEntry.examples.map((ex, idx) => (
-                      <div key={idx} className="text-xs italic font-light text-[#565E64] border-l-2 border-[#E9ECEF] pl-2.5">
-                        {ex.source} &rarr; <span className="font-medium text-[#0D9488] not-italic">{ex.target}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <div className="text-[10px] text-neutral-300 italic font-light">Nuk ka shembuj shtesë të regjistruar për këtë fjalë.</div>
-              )}
-
-              {/* Derivatives Section */}
-              {selectedEntry.derivatives && selectedEntry.derivatives.length > 0 && (
-                <div className="space-y-2 pt-3 border-t border-[#E9ECEF]/60">
-                  <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block">Fjalë të prejardhura (Derivatives):</span>
-                  <div className="flex flex-wrap gap-1.5">
-                    {selectedEntry.derivatives.map((deriv, idx) => (
-                      <div key={idx} className="bg-neutral-100 dark:bg-neutral-800/40 border border-neutral-200/50 dark:border-neutral-700/50 rounded-lg px-2.5 py-1 text-xs">
-                        <span className="font-bold text-[#1C1917]">{deriv.word}</span>
-                        <span className="text-[10px] text-neutral-400 mx-1.5">|</span>
-                        <span className="text-neutral-500 italic">{deriv.translation}</span>
-                        <span className="text-[8px] text-[#0D9488] font-bold ml-1 bg-[#0D9488]/10 px-1 rounded-sm uppercase tracking-wide">{deriv.pos}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Source Metadata */}
-              {selectedEntry.chapterTitle && (
-                <div className="text-[9px] text-neutral-400 pt-2 flex justify-between items-center border-t border-[#E9ECEF]/40 font-light mt-4">
-                  <span>Burimi: Kurrikula e Mësimit</span>
-                  <span className="font-medium text-[#565E64]">{selectedEntry.chapterTitle}</span>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
+      {/* MOBILE DRAWER SHEET (Slide-up modal from bottom) using reusable component */}
+      <div className="md:hidden">
+        <WordDetailDrawer
+          entry={selectedEntry}
+          isOpen={isDrawerOpen && !!selectedEntry}
+          onClose={() => setIsDrawerOpen(false)}
+          onSpeak={speakWord}
+        />
+      </div>
 
     </div>
   );

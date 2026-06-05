@@ -5,26 +5,15 @@ import { a1Chapter4 } from './a1_chapter4';
 import { a1Chapter5 } from './a1_chapter5';
 import { a1Chapter6 } from './a1_chapter6';
 import { a1Chapter7 } from './a1_chapter7';
+import { a1Chapter8 } from './a1_chapter8';
+import { a2Chapter1 } from './a2_chapter1';
+import { a2Chapter2 } from './a2_chapter2';
+import { a2Chapter3 } from './a2_chapter3';
+import { a2Chapter4 } from './a2_chapter4';
+import { a2Chapter5 } from './a2_chapter5';
+import { a2Chapter6 } from './a2_chapter6';
+import { a2Chapter7 } from './a2_chapter7';
 import type { UnifiedLesson } from './a1_chapter1';
-
-const a2Chapter1: UnifiedLesson = {
-  id: 3,
-  level: 'A2',
-  orderIndex: 1,
-  title: {
-    turkish: 'Belirli Geçmiş Zaman (-dı)',
-    albanian: 'Koha e Shkuar e Drejtpërdrejtë'
-  },
-  reading: {
-    layoutStyle: 'narrative',
-    audioAssetStub: null,
-    content: [],
-    questions: []
-  },
-  vocabulary: [],
-  grammar: [],
-  exercises: []
-};
 
 const b1Chapter1: UnifiedLesson = {
   id: 4,
@@ -110,7 +99,14 @@ export const ALL_UNIFIED_LESSONS: UnifiedLesson[] = [
   a1Chapter5,
   a1Chapter6,
   a1Chapter7,
+  a1Chapter8,
   a2Chapter1,
+  a2Chapter2,
+  a2Chapter3,
+  a2Chapter4,
+  a2Chapter5,
+  a2Chapter6,
+  a2Chapter7,
   b1Chapter1,
   b2Chapter1,
   c1Chapter1,

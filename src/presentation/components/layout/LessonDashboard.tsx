@@ -139,7 +139,7 @@ export const LessonDashboard: React.FC = () => {
           {/* Typographic Welcome Header */}
           <div className="text-left border-b border-[#DDE1E5] dark:border-neutral-800 pb-8">
             <div className="flex items-center justify-between flex-wrap gap-4 mb-4">
-              <span className="text-[10px] uppercase font-mono font-bold tracking-wider px-2 py-0.5 border border-[#111315] bg-[#111315] text-[#FBFBF9] select-none">
+              <span className="text-[10px] uppercase font-mono font-bold tracking-wider px-2 py-0.5 border border-[#111315] dark:border-neutral-800 bg-[#111315] dark:bg-neutral-900 text-[#FBFBF9] select-none">
                 Ura e Gjuhës v1.0 Offline
               </span>
               {userName && (
@@ -148,12 +148,25 @@ export const LessonDashboard: React.FC = () => {
                 </span>
               )}
             </div>
-            <h1 className="text-3xl md:text-4xl font-black tracking-tight text-[#111315] dark:text-white uppercase font-sans leading-none">
-              UDHËTIMI I DIJES SATE
-            </h1>
-            <p className="text-sm text-[#636B74] dark:text-neutral-400 mt-2 font-normal">
-              Zgjidh kapitullin ku dëshiron të përqendrohesh sot. Programi është optimizuar plotësisht për përpunim lokal, pa server.
-            </p>
+
+            {/* Visual Hero Banner */}
+            <div className="w-full h-48 rounded-2xl overflow-hidden mb-6 relative border border-[#DDE1E5] dark:border-neutral-800 shadow-sm bg-stone-950">
+              <img 
+                src="/ura_dashboard_hero.png" 
+                alt="Ura e Gjuhës Hero" 
+                className="w-full h-full object-cover opacity-85"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+                <div>
+                  <h1 className="text-2xl md:text-3xl font-black tracking-tight text-white uppercase font-sans leading-none">
+                    UDHËTIMI I DIJES SATE
+                  </h1>
+                  <p className="text-xs text-neutral-300 mt-1.5 max-w-lg font-normal">
+                    Lidhja kulturore dhe gjuhësore mes Shqipërisë dhe Turqisë. Zgjidh kapitullin ku dëshiron të përqendrohesh sot.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Curved learning path roadmap container */}
@@ -197,23 +210,48 @@ export const LessonDashboard: React.FC = () => {
 
                     {/* Staggered container wrapper shifting only the cards */}
                     <div className={`transition-all duration-500 transform ${offsetClass}`}>
-                      {isActive ? (
-                        /* ACTIVE CHAPTER CARD */
-                        <button
-                          onClick={() => setSelectedLevel(level)}
-                          className="border-2 border-[var(--color-brand-accent)] bg-[var(--color-bg-surface-glass)] backdrop-blur-md p-6 hover:bg-[var(--color-bg-surface)] transition-all duration-300 rounded-2xl shadow-elevated w-full text-left cursor-pointer outline-none block group relative overflow-hidden hover:-translate-y-0.5"
-                        >
-                          <div className="flex justify-between items-center mb-3 flex-wrap gap-2 w-full">
-                            <span className="text-sm font-mono font-bold tracking-wider text-[var(--color-text-primary)] uppercase flex items-center gap-2">
-                              <UraIcon className="w-4 h-4 text-[var(--color-brand-accent)]" />
-                              {syllabus.index}. NIVELI {level} — {syllabus.desc}
-                            </span>
+                      <button
+                        onClick={() => setSelectedLevel(level)}
+                        className={`dashboard-card-transition bg-[var(--color-bg-surface-glass)] backdrop-blur-md rounded-2xl w-full text-left cursor-pointer outline-none block group relative overflow-hidden ${
+                          isActive 
+                            ? 'border-2 border-[var(--color-brand-accent)] p-6 shadow-elevated hover:bg-[var(--color-bg-surface)] hover:-translate-y-0.5' 
+                            : isCompleted 
+                              ? 'border border-[var(--color-brand-success)]/30 py-3.5 px-5 hover:bg-[var(--color-bg-surface)] hover:border-[var(--color-brand-success)]/60 shadow-xs hover:shadow-md hover:-translate-y-0.5' 
+                              : 'border border-[var(--color-border-primary-glass)] bg-[var(--color-bg-surface-glass)]/35 py-3.5 px-5 opacity-50 hover:opacity-85 hover:border-[var(--color-brand-accent)]/30 shadow-xs hover:shadow-md hover:-translate-y-0.5'
+                        }`}
+                      >
+                        <div className="flex justify-between items-center flex-wrap gap-2 w-full">
+                          <span className={`font-mono font-bold tracking-wider text-[var(--color-text-primary)] uppercase flex items-center gap-2 transition-all duration-300 ${
+                            isActive ? 'text-sm' : 'text-xs'
+                          }`}>
+                            <UraIcon className={`transition-all duration-300 ${
+                              isActive 
+                                ? 'w-4 h-4 text-[var(--color-brand-accent)]' 
+                                : isCompleted 
+                                  ? 'w-3.5 h-3.5 text-[var(--color-brand-success)]' 
+                                  : 'w-3.5 h-3.5 text-[var(--color-text-secondary)] opacity-50'
+                            }`} />
+                            {syllabus.index}. NIVELI {level} — {syllabus.desc}
+                          </span>
+                          {isActive ? (
                             <span className="px-2.5 py-1 text-[10px] uppercase font-mono tracking-wider font-bold bg-[var(--color-brand-accent)] text-white select-none rounded-lg transition-all duration-200 group-hover:scale-105">
                               [ VAZHDO ]
                             </span>
-                          </div>
+                          ) : isCompleted ? (
+                            <span className="text-[9px] uppercase font-mono tracking-wider font-bold px-2 py-0.5 border border-[var(--color-brand-success)]/40 text-[var(--color-brand-success)] bg-[var(--color-brand-success-light)] select-none rounded-lg">
+                              [ PËRFUNDUAR ]
+                            </span>
+                          ) : (
+                            <span className="text-[9px] uppercase font-mono tracking-wider font-bold px-2 py-0.5 border border-[var(--color-border-primary-glass)] text-[var(--color-text-secondary)] bg-neutral-100/50 dark:bg-stone-900/40 select-none rounded-lg">
+                              [ I mbyllur ]
+                            </span>
+                          )}
+                        </div>
 
-                          <hr className="border-[var(--color-border-primary-glass)] my-4 w-full" />
+                        <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                          isActive ? 'max-h-[300px] opacity-100 mt-4' : 'max-h-0 opacity-0 pointer-events-none'
+                        }`}>
+                          <hr className="border-[var(--color-border-primary-glass)] mb-4 w-full" />
 
                           <p className="text-xs md:text-sm text-[var(--color-text-primary)] opacity-90 leading-relaxed mb-6">
                             {syllabus.preview}
@@ -232,32 +270,8 @@ export const LessonDashboard: React.FC = () => {
                               ></div>
                             </div>
                           </div>
-                        </button>
-                      ) : (
-                        /* COMPLETED OR LOCKED ROADMAP CARDS */
-                        <button
-                          onClick={() => setSelectedLevel(level)}
-                          className="border border-[var(--color-border-primary-glass)] bg-[var(--color-bg-surface-glass)] backdrop-blur-md p-5 hover:bg-[var(--color-bg-surface)] hover:border-[var(--color-brand-accent)]/30 transition-all duration-300 rounded-2xl w-full text-left cursor-pointer outline-none block opacity-85 hover:opacity-100 group shadow-xs hover:shadow-md hover:-translate-y-0.5"
-                        >
-                          <div className="flex justify-between items-center flex-wrap gap-2 w-full">
-                            <span className="text-xs font-mono font-bold tracking-wider text-[var(--color-text-primary)] group-hover:text-[var(--color-brand-accent)] uppercase transition-colors duration-150 flex items-center gap-2">
-                              <UraIcon className={`w-3.5 h-3.5 ${isCompleted ? 'text-[var(--color-brand-success)]' : 'text-[var(--color-text-secondary)]'}`} />
-                              {syllabus.index}. NIVELI {level} — {syllabus.desc}
-                            </span>
-                            <span className={`text-[9px] uppercase font-mono tracking-wider font-bold px-2 py-0.5 border select-none rounded-lg ${
-                              isCompleted 
-                                ? 'border-[var(--color-brand-success)]/40 text-[var(--color-brand-success)] bg-[var(--color-brand-success-light)]' 
-                                : 'border-[var(--color-border-primary-glass)] text-[var(--color-text-secondary)] bg-neutral-100/50 dark:bg-stone-900/40'
-                            }`}>
-                              {isCompleted ? '[ PËRFUNDUAR ]' : '[ I mbyllur ]'}
-                            </span>
-                          </div>
-
-                          <p className="text-xs text-[var(--color-text-secondary)] mt-2 font-light italic leading-normal group-hover:text-[var(--color-text-primary)] transition-colors duration-150">
-                            {syllabus.focus}
-                          </p>
-                        </button>
-                      )}
+                        </div>
+                      </button>
 
                     </div>
                   </div>

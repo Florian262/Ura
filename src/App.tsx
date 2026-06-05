@@ -8,6 +8,7 @@ import { ProgressPage } from './presentation/components/layout/ProgressPage';
 import { Logo } from './presentation/components/common/Logo';
 import { WelcomePage } from './presentation/components/layout/WelcomePage';
 import { SplashScreen } from './presentation/components/layout/SplashScreen';
+import { VocabularyBuilderPage } from './presentation/components/layout/VocabularyBuilderPage';
 
 
 const MainLayout: React.FC = () => {
@@ -32,6 +33,7 @@ const MainLayout: React.FC = () => {
     { id: 'lessons', label: 'Dashboard', icon: '🏠', desc: 'Kapitujt e Studimit' },
     { id: 'lesson_active', label: 'Kapitulli Aktiv', icon: '📖', desc: 'Mësimi aktual', disabled: !currentChapter },
     { id: 'dictionary', label: 'Fjalori', icon: '🔍', desc: 'Balkanizmat e përbashkët' },
+    { id: 'vocab_builder', label: 'Fjalorthi A1', icon: '📚', desc: '300 Fjalë Tematike' },
     { id: 'playground', label: 'Playground', icon: '⚡', desc: 'Motorri Aglutinues' },
     { id: 'progress', label: 'Progresi Im', icon: '📊', desc: 'Statistikat & Gjurmimi' }
   ];
@@ -64,6 +66,8 @@ const MainLayout: React.FC = () => {
         return <ChapterContainer />;
       case 'dictionary':
         return <DictionaryPage />;
+      case 'vocab_builder':
+        return <VocabularyBuilderPage />;
       case 'playground':
         return <PlaygroundPage />;
       case 'progress':

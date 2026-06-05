@@ -181,6 +181,77 @@ export const ReadingModule: React.FC = () => {
               );
             })}
           </div>
+        ) : readingBlock.layout_style === 'blog_post' ? (
+          /* premium blog post article layout */
+          <div className="bg-white dark:bg-[#12181F] border border-[#E9ECEF] dark:border-neutral-800 rounded-2xl overflow-hidden shadow-xs text-left max-h-[500px] overflow-y-auto no-scrollbar">
+            {/* Header Image */}
+            <div className="w-full h-36 relative bg-stone-900">
+              <img 
+                src="/welcome_hero.png" 
+                alt="Blog Cover" 
+                className="w-full h-full object-cover opacity-70"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex items-end p-4">
+                <div>
+                  <span className="text-[9px] uppercase font-mono tracking-widest font-bold bg-[var(--color-brand-accent)] text-white px-2 py-0.5 rounded-sm">
+                    KULTURË & GJUHË
+                  </span>
+                  <h3 className="text-sm md:text-base font-black text-white uppercase tracking-tight mt-1">
+                    Ditar i Udhëtimit (Seyahat Günlüğü)
+                  </h3>
+                </div>
+              </div>
+            </div>
+            
+            {/* Post Metadata & Content Body */}
+            <div className="p-5 md:p-6 space-y-6">
+              <div className="flex items-center gap-3 text-[10px] font-mono text-[#636B74] border-b border-[#E9ECEF] dark:border-neutral-800 pb-3 select-none">
+                <span>✍️ Nga: Ura e Gjuhës</span>
+                <span>•</span>
+                <span>⏱️ 3 min lexim</span>
+                <span>•</span>
+                <span>📅 2026-06-05</span>
+              </div>
+              
+              <div className="space-y-6 text-[#1A1D20] dark:text-neutral-200">
+                {dialogueTurkish.map((line: any, idx: number) => (
+                  <div key={idx} className="relative pl-4 border-l-2 border-dashed border-[#E9ECEF] dark:border-neutral-800 hover:border-[var(--color-brand-accent)] transition duration-200">
+                    <div className="flex justify-between items-center gap-4 mb-1.5 select-none">
+                      {line.speaker && (
+                        <span className="text-[9px] font-bold text-[var(--color-brand-accent)] uppercase tracking-wider font-mono">
+                          {line.speaker}
+                        </span>
+                      )}
+                      <button
+                        onClick={() => {
+                          if (isPlaying && currentSrc === line.text) {
+                            stop();
+                          } else {
+                            playText(line.text, 'tr');
+                          }
+                        }}
+                        className={`text-[9px] font-bold hover:text-[var(--color-brand-accent)] border-b border-transparent hover:border-[var(--color-brand-accent)] transition cursor-pointer select-none ml-auto ${
+                          isPlaying && currentSrc === line.text ? 'text-teal-600 dark:text-teal-400 font-extrabold animate-pulse' : 'text-neutral-400'
+                        }`}
+                      >
+                        {isPlaying && currentSrc === line.text ? '⏸ Po lexohet' : '🔈 Dëgjo'}
+                      </button>
+                    </div>
+                    
+                    <p className="text-sm font-technical font-medium tracking-wide leading-relaxed">
+                      {line.text}
+                    </p>
+                    
+                    {showTranslation && (
+                      <p className="translation-subtitle mt-2 pt-1.5 border-t border-[#E9ECEF]/30 dark:border-neutral-800/50 leading-relaxed text-[#636B74] italic">
+                        {dialogueAlbanian[idx].text}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         ) : (
           /* standard paragraph narrative prose layout */
           <div className="space-y-6 text-left">

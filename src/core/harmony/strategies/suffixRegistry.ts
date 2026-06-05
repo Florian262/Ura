@@ -6,6 +6,14 @@ import { PresentContinuousStrategy } from './PresentContinuousStrategy';
 import { DativeStrategy } from './DativeStrategy';
 import { PossessiveStrategy } from './PossessiveStrategy';
 import { AccusativeStrategy } from './AccusativeStrategy';
+import { QuestionStrategy } from './QuestionStrategy';
+import { PastTenseStrategy } from './PastTenseStrategy';
+import { FutureTenseStrategy } from './FutureTenseStrategy';
+import { AoristStrategy } from './AoristStrategy';
+import { PotentialStrategy } from './PotentialStrategy';
+import { NecessityStrategy } from './NecessityStrategy';
+import { AblativeStrategy } from './AblativeStrategy';
+import { PastContinuousStrategy } from './PastContinuousStrategy';
 import type { SuffixStrategy } from './suffixStrategy';
 
 /**
@@ -20,5 +28,13 @@ export const SuffixRegistry: Record<string, new () => SuffixStrategy> = {
   present_continuous: PresentContinuousStrategy,
   dative: DativeStrategy,
   possessive: PossessiveStrategy,
-  accusative: AccusativeStrategy
+  accusative: AccusativeStrategy,
+  question: QuestionStrategy,
+  past_tense: PastTenseStrategy,
+  future_tense: FutureTenseStrategy,
+  aorist: AoristStrategy,
+  potential: PotentialStrategy,
+  necessity: NecessityStrategy,
+  ablative: AblativeStrategy,
+  past_continuous: PastContinuousStrategy
 };

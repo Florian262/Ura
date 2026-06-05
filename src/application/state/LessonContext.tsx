@@ -76,9 +76,13 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     if (savedTheme === 'dark') {
       document.body.classList.add('dark-theme');
       document.body.classList.add('dark');
+      document.documentElement.classList.add('dark-theme');
+      document.documentElement.classList.add('dark');
     } else {
       document.body.classList.remove('dark-theme');
       document.body.classList.remove('dark');
+      document.documentElement.classList.remove('dark-theme');
+      document.documentElement.classList.remove('dark');
     }
 
     // Bootloader: Check if welcoming page has been seen
@@ -97,9 +101,13 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     if (nextTheme === 'dark') {
       document.body.classList.add('dark-theme');
       document.body.classList.add('dark');
+      document.documentElement.classList.add('dark-theme');
+      document.documentElement.classList.add('dark');
     } else {
       document.body.classList.remove('dark-theme');
       document.body.classList.remove('dark');
+      document.documentElement.classList.remove('dark-theme');
+      document.documentElement.classList.remove('dark');
     }
   };
 

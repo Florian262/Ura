@@ -20,6 +20,10 @@ export const WritingModule: React.FC<WritingModuleProps> = ({ onComplete }) => {
   
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
+  // Real-time word and character counts
+  const wordCount = writingInput.trim() === '' ? 0 : writingInput.trim().split(/\s+/).length;
+  const charCount = writingInput.length;
+
   // Evaluation Modes Selection
   const selectPreference = (pref: 'self_check' | 'strict') => {
     setWritingPreference(pref);
@@ -142,19 +146,51 @@ export const WritingModule: React.FC<WritingModuleProps> = ({ onComplete }) => {
             </p>
           </div>
 
-          <div className="space-y-3">
-            {/* Custom Special Input helper key-row overlay */}
-            <div className="flex flex-wrap items-center gap-1.5 bg-neutral-50 dark:bg-neutral-900/50 p-2.5 rounded-xl border border-neutral-200 dark:border-neutral-800 justify-start shadow-inner">
-              <span className="text-[9px] text-neutral-500 dark:text-neutral-400 font-bold uppercase tracking-wider mr-2">Zanoret/Bashkëtingëlloret Turke:</span>
-              {['ç', 'ğ', 'ı', 'ö', 'ş', 'ü', 'Ç', 'Ğ', 'İ', 'Ö', 'Ş', 'Ü'].map(char => (
-                <button
-                  key={char}
-                  onClick={() => insertSpecialCharacter(char)}
-                  className="w-9 h-9 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-850 text-neutral-800 dark:text-neutral-200 hover:bg-teal-500/10 hover:text-teal-600 dark:hover:text-teal-400 hover:border-teal-500 text-xs font-bold font-technical flex items-center justify-center transition active:scale-95 shadow-xs cursor-pointer"
-                >
-                  {char
-                }</button>
-              ))}
+          <div className="space-y-4">
+            {/* Conditional past-tense vowel harmony tip banner */}
+            {chapterId === 3 && (
+              <div className="bg-teal-50/50 dark:bg-teal-950/10 border-l-4 border-teal-500 rounded-r-xl p-4 space-y-2 shadow-xs transition duration-200">
+                <div className="flex items-center gap-2 text-teal-800 dark:text-teal-400 font-bold text-xs uppercase tracking-wide">
+                  <span>💡 Këshillë për Harmoninë Vokalore të së Shkuarës (-dı / -di)</span>
+                </div>
+                <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed font-light">
+                  Koha e shkuar e drejtpërdrejtë ndjek harmoninë vokalore 4-she dhe rregullën e bashkëtingëlloreve të shurdhëta (Fıstıkçı Şahap):
+                </p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-[11px] font-technical bg-white/40 dark:bg-neutral-900/40 p-2.5 rounded-lg border border-neutral-200/50 dark:border-neutral-800/50">
+                  <div>
+                    <span className="font-bold text-teal-700 dark:text-teal-400">a, ı</span> → <span className="font-mono text-neutral-800 dark:text-neutral-200 bg-neutral-100 dark:bg-neutral-800 px-1 rounded">-dı / -tı</span>
+                    <div className="text-[10px] text-neutral-400 mt-0.5">yaptı, aldı</div>
+                  </div>
+                  <div>
+                    <span className="font-bold text-teal-700 dark:text-teal-400">e, i</span> → <span className="font-mono text-neutral-800 dark:text-neutral-200 bg-neutral-100 dark:bg-neutral-800 px-1 rounded">-di / -ti</span>
+                    <div className="text-[10px] text-neutral-400 mt-0.5">gitti, geldi</div>
+                  </div>
+                  <div>
+                    <span className="font-bold text-teal-700 dark:text-teal-400">o, u</span> → <span className="font-mono text-neutral-800 dark:text-neutral-200 bg-neutral-100 dark:bg-neutral-800 px-1 rounded">-du / -tu</span>
+                    <div className="text-[10px] text-neutral-400 mt-0.5">okudu, buluştu</div>
+                  </div>
+                  <div>
+                    <span className="font-bold text-teal-700 dark:text-teal-400">ö, ü</span> → <span className="font-mono text-neutral-800 dark:text-neutral-200 bg-neutral-100 dark:bg-neutral-800 px-1 rounded">-dü / -tü</span>
+                    <div className="text-[10px] text-neutral-400 mt-0.5">gördü, düştü</div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Restyled Premium Virtual Keyboard Helper Dock */}
+            <div className="border-l-4 border-teal-500 bg-gradient-to-r from-neutral-50/80 to-neutral-100/80 dark:from-neutral-900/40 dark:to-neutral-850/40 backdrop-blur-md p-3 rounded-r-xl border-y border-r border-neutral-200 dark:border-neutral-800 flex flex-wrap items-center gap-2 justify-start shadow-sm transition duration-200">
+              <span className="text-[10px] text-neutral-500 dark:text-neutral-400 font-bold uppercase tracking-wider mr-2">Zanoret/Bashkëtingëlloret Turke:</span>
+              <div className="flex flex-wrap gap-1.5">
+                {['ç', 'ğ', 'ı', 'ö', 'ş', 'ü', 'Ç', 'Ğ', 'İ', 'Ö', 'Ş', 'Ü'].map(char => (
+                  <button
+                    key={char}
+                    onClick={() => insertSpecialCharacter(char)}
+                    className="w-9 h-9 rounded-lg border border-neutral-200 dark:border-neutral-850 bg-white dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 hover:bg-teal-500/10 hover:text-teal-600 dark:hover:text-teal-400 hover:border-teal-500 text-xs font-bold font-technical flex items-center justify-center transition-all duration-150 active:scale-90 shadow-xs cursor-pointer"
+                  >
+                    {char}
+                  </button>
+                ))}
+              </div>
             </div>
 
             {/* Input console */}
@@ -166,17 +202,48 @@ export const WritingModule: React.FC<WritingModuleProps> = ({ onComplete }) => {
               placeholder="Shkruani tekstin tuaj në turqisht këtu..."
               className="w-full rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 p-4 text-sm font-technical text-neutral-900 dark:text-neutral-100 placeholder-neutral-400 focus:border-teal-500 focus:ring-1 focus:ring-teal-500/25 focus:outline-none tracking-wide shadow-sm transition duration-150"
             ></textarea>
+
+            {/* Live Count Status Row */}
+            <div className="flex justify-between items-center px-1 text-xs">
+              <div className="flex gap-4 text-neutral-500 dark:text-neutral-400 font-light">
+                <span>
+                  Fjalë: <span className="font-bold text-neutral-700 dark:text-neutral-300">{wordCount}</span>
+                </span>
+                <span>
+                  Karaktere: <span className="font-bold text-neutral-700 dark:text-neutral-300">{charCount}</span>
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                {charCount >= 10 ? (
+                  <span className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-bold transition duration-150">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    Gjatësia e mjaftueshme
+                  </span>
+                ) : (
+                  <span className="text-rose-500 dark:text-rose-455 font-medium transition duration-150">
+                    Duhen edhe {10 - charCount} karaktere
+                  </span>
+                )}
+              </div>
+            </div>
           </div>
 
           {/* Verification triggers */}
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center pt-2">
             <div className="text-xs text-neutral-500 dark:text-neutral-400 italic">
               Metoda aktive: <span className="font-bold text-teal-600 dark:text-teal-400">{writingPreference === 'strict' ? 'Vlerësim Rigoroz' : 'Vetë-Auditim'}</span>
             </div>
             
             <button
               onClick={submitWriting}
-              className="px-6 py-3 text-center text-xs font-bold uppercase tracking-widest rounded-xl select-none active-cta shadow-sm"
+              disabled={charCount < 10}
+              className={`px-6 py-3 text-center text-xs font-bold uppercase tracking-widest rounded-xl select-none shadow-sm transition-all duration-250 ${
+                charCount < 10
+                  ? 'bg-neutral-200 dark:bg-neutral-800 text-neutral-400 dark:text-neutral-500 cursor-not-allowed opacity-60'
+                  : 'active-cta'
+              }`}
             >
               Dërgo Shkrimin
             </button>

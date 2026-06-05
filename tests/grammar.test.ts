@@ -9,6 +9,7 @@ import { PresentContinuousStrategy } from '../src/core/harmony/strategies/Presen
 import { DativeStrategy } from '../src/core/harmony/strategies/DativeStrategy';
 import { PossessiveStrategy } from '../src/core/harmony/strategies/PossessiveStrategy';
 import { AccusativeStrategy } from '../src/core/harmony/strategies/AccusativeStrategy';
+import { QuestionStrategy } from '../src/core/harmony/strategies/QuestionStrategy';
 
 describe('Vowel Harmony Logic', () => {
   it('getLastVowel extracts last vowel correctly', () => {
@@ -165,5 +166,13 @@ describe('Grammar Suffix Strategies', () => {
     expect(strategy.apply('Kosova').result).toBe("Kosova'yı");
     // Loanword exception
     expect(strategy.apply('saat').result).toBe('saati');
+  });
+
+  it('QuestionStrategy applies question particle mı/mi/mu/mü with space separation', () => {
+    const strategy = new QuestionStrategy();
+    expect(strategy.apply('ev').result).toBe('ev mi?');
+    expect(strategy.apply('kitap').result).toBe('kitap mı?');
+    expect(strategy.apply('okul').result).toBe('okul mu?');
+    expect(strategy.apply('süt').result).toBe('süt mü?');
   });
 });
