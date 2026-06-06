@@ -42,7 +42,7 @@ export const LessonDashboard: React.FC = () => {
   // Pedagogical Preview Syllabus & Curiosity Gaps focus configurations
   const levelSyllabus: Record<string, { desc: string; preview: string; focus: string; index: string; tags: string[] }> = {
     A1: { 
-      desc: 'FILL ESTAR', 
+      desc: 'FILLESTAR', 
       index: '01',
       preview: 'Kurrikula: Prezantimi, Harmonia Vokalike, dhe 250 fjalë të përbashkëta (Dollap, Xham, Çorape).', 
       focus: 'Fokusimi: Prezantimi dhe Harmonia Vokalike (Çoğul Eki).',
