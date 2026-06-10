@@ -673,3 +673,249 @@ input:focus, textarea:focus, select:focus {
   border-top-color: var(--color-brand-success) !important;
   opacity: 0.6;
 }
+
+/* ============================================================
+   ROADMAP TILT & NEON BORDER GLOW ACCORDION STYLES
+   ============================================================ */
+
+:root {
+  --lv-a1:        #D97706; --lv-a1-l: rgba(217,119,6,0.10);  --lv-a1-b: rgba(217,119,6,0.22);
+  --lv-a2:        #059669; --lv-a2-l: rgba(5,150,105,0.09);  --lv-a2-b: rgba(5,150,105,0.20);
+  --lv-b1:        #1e40af; --lv-b1-l: rgba(30,64,175,0.08);  --lv-b1-b: rgba(30,64,175,0.20);
+  --lv-b2:        #4338CA; --lv-b2-l: rgba(67,56,202,0.08);  --lv-b2-b: rgba(67,56,202,0.20);
+  --lv-c1:        #7C3AED; --lv-c1-l: rgba(124,58,237,0.08); --lv-c1-b: rgba(124,58,237,0.20);
+  --lv-c2:        #1E3A8A; --lv-c2-l: rgba(30,58,138,0.08);  --lv-c2-b: rgba(30,58,138,0.20);
+}
+
+.dark-theme {
+  --lv-a1:  #F59E0B; --lv-a1-l: rgba(245,158,11,0.12);  --lv-a1-b: rgba(245,158,11,0.25);
+  --lv-a2:  #34D399; --lv-a2-l: rgba(52,211,153,0.12);  --lv-a2-b: rgba(52,211,153,0.25);
+  --lv-b1:  #60a5fa; --lv-b1-l: rgba(96,165,250,0.12);  --lv-b1-b: rgba(96,165,250,0.25);
+  --lv-b2:  #818CF8; --lv-b2-l: rgba(129,140,248,0.12); --lv-b2-b: rgba(129,140,248,0.25);
+  --lv-c1:  #A78BFA; --lv-c1-l: rgba(167,139,250,0.12); --lv-c1-b: rgba(167,139,250,0.25);
+  --lv-c2:  #93C5FD; --lv-c2-l: rgba(147,197,253,0.12); --lv-c2-b: rgba(147,197,253,0.25);
+}
+
+/* 3D perspective for levels container */
+.levels-perspective {
+  perspective: 1000px;
+}
+
+/* Base Level Card redesign overrides */
+.level-card {
+  position: relative;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--border-radius-card);
+  overflow: hidden;
+  transition: transform 0.1s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: var(--shadow-soft);
+  transform-style: preserve-3d;
+}
+
+.level-card:hover:not(.locked) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.level-card.locked {
+  opacity: 0.52;
+}
+
+/* Watermark adjustments inside cards */
+.lv-watermark {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: 82px;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: var(--color-text-primary);
+  opacity: 0.035;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Glass shine on card hover */
+.level-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle 250px at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(255, 255, 255, 0.08), transparent 80%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.dark-theme .level-card::after {
+  background: radial-gradient(circle 250px at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(255, 255, 255, 0.05), transparent 80%);
+}
+
+.level-card:hover:not(.locked)::after {
+  opacity: 1;
+}
+
+/* Active neon border glow overlay */
+.border-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  border: 2px solid transparent;
+  background: conic-gradient(from var(--angle, 0deg), transparent 30%, var(--glow-color, var(--lv-a1)) 50%, transparent 70%) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  z-index: 10;
+  display: none;
+}
+
+.level-card.active-glow .border-glow {
+  display: block;
+}
+
+/* Accordion transition wrapper */
+.chapters-wrap {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+}
+
+.chapters-wrap.open {
+  max-height: none;
+  opacity: 1;
+}
+
+/* Layout components for chapters inside accordion */
+.chapters-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  padding-top: 12px;
+}
+
+@media (max-width: 640px) {
+  .chapters-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Individual lesson card buttons */
+.ch-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--color-bg-canvas);
+  border: 1px solid var(--color-border-primary-glass);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.ch-item:hover {
+  border-color: var(--color-brand-accent);
+  background: var(--color-brand-accent-light);
+}
+
+.ch-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.ch-num {
+  font-family: var(--font-technical);
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--color-brand-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1px;
+}
+
+.ch-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ch-sub {
+  font-size: 10px;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 1px;
+}
+
+.ch-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-technical);
+  font-size: 8px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.ch-done {
+  background: var(--color-brand-success-light);
+  color: var(--color-brand-success);
+}
+
+.ch-pending {
+  background: var(--color-bg-surface);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border-primary);
+}
+
+.expand-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 9px 14px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid var(--color-border-primary-glass);
+  font-family: var(--font-technical);
+  font-size: 8.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.expand-btn:hover {
+  border-color: var(--color-brand-accent);
+  color: var(--color-brand-accent);
+  background: var(--color-brand-accent-light);
+}
+
+/* Left stripe in card */
+.lv-stripe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+}

@@ -10,6 +10,7 @@ import { WelcomePage } from './presentation/components/layout/WelcomePage';
 import { SplashScreen } from './presentation/components/layout/SplashScreen';
 import { VocabularyBuilderPage } from './presentation/components/layout/VocabularyBuilderPage';
 import { A2FinishingTestPage } from './presentation/components/layout/A2FinishingTestPage';
+import JourneyDashboard from './presentation/components/layout/JourneyDashboard';
 const HomeIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
     <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -54,6 +55,13 @@ const BarChartIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" 
   </svg>
 );
 
+const BridgeIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 18c4-5 8-5 12 0" />
+    <path d="M9 18c3-3 6-3 9 0" opacity="0.5" />
+  </svg>
+);
+
 
 const MainLayout: React.FC = () => {
   const [showSplash, setShowSplash] = useState<boolean>(true);
@@ -75,6 +83,7 @@ const MainLayout: React.FC = () => {
 
   const navItems = [
     { id: 'lessons', label: 'Dashboard', icon: <HomeIcon className="w-5 h-5" />, desc: 'Kapitujt e Studimit' },
+    { id: 'journey', label: 'Udhëtimi', icon: <BridgeIcon className="w-5 h-5" />, desc: 'Udhëtimi Parallaks' },
     { id: 'lesson_active', label: 'Kapitulli Aktiv', icon: <BookOpenIcon className="w-5 h-5" />, desc: 'Mësimi aktual', disabled: !currentChapter },
     { id: 'dictionary', label: 'Fjalori', icon: <SearchIcon className="w-5 h-5" />, desc: 'Balkanizmat e përbashkët' },
     { id: 'vocab_builder', label: 'Fjalorthi Tematik', icon: <BooksIcon className="w-5 h-5" />, desc: 'Fjalët A1 & A2' },
@@ -106,6 +115,8 @@ const MainLayout: React.FC = () => {
     switch (activePage) {
       case 'lessons':
         return <LessonDashboard />;
+      case 'journey':
+        return <JourneyDashboard />;
       case 'lesson_active':
         return <ChapterContainer />;
       case 'dictionary':
@@ -402,14 +413,16 @@ const MainLayout: React.FC = () => {
         </div>
 
         {/* Bottom Persistent footer */}
-        <footer className="w-full bg-[var(--color-bg-surface)] border-t border-[var(--color-border-primary)] py-6 text-center text-[10px] text-[var(--color-text-secondary)] font-light space-y-1.5">
-          <p className="tracking-wide">
-            © {new Date().getFullYear()} Ura e Gjuhës. Zhvilluar për studim profesional offline.
-          </p>
-          <p className="italic text-[var(--color-text-secondary)] opacity-60 max-w-lg mx-auto leading-relaxed px-4">
-            Ky portal përdor huazimet e përbashkëta Ballkanike dhe krahasimet e Mënyrës Habitore me Kohën e Shkuar të Pacaktuar turke për të përshpejtuar mësimin.
-          </p>
-        </footer>
+        {activePage !== 'journey' && (
+          <footer className="w-full bg-[var(--color-bg-surface)] border-t border-[var(--color-border-primary)] py-6 text-center text-[10px] text-[var(--color-text-secondary)] font-light space-y-1.5">
+            <p className="tracking-wide">
+              © {new Date().getFullYear()} Ura e Gjuhës. Zhvilluar për studim profesional offline.
+            </p>
+            <p className="italic text-[var(--color-text-secondary)] opacity-60 max-w-lg mx-auto leading-relaxed px-4">
+              Ky portal përdor huazimet e përbashkëta Ballkanike dhe krahasimet e Mënyrës Habitore me Kohën e Shkuar të Pacaktuar turke për të përshpejtuar mësimin.
+            </p>
+          </footer>
+        )}
       </main>
 
     </div>

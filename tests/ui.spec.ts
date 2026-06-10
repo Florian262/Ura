@@ -62,7 +62,7 @@ test.describe('Ura Language Portal E2E UI Automation Flows', () => {
     await expect(backButton).toBeVisible();
 
     const levelHeader = page.locator('h2');
-    await expect(levelHeader).toContainText('FILL ESTAR');
+    await expect(levelHeader).toContainText('FILLESTAR');
 
     const firstChapter = page.locator('button:has-text("Mësimi 1")');
     await expect(firstChapter).toBeVisible();

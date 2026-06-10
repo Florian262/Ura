@@ -5,6 +5,9 @@ import tailwind from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react() as any, tailwind() as any],
+  optimizeDeps: {
+    exclude: ['animejs']
+  },
   test: {
     globals: true,
     environment: 'node',
