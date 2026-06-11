@@ -174,5 +174,24 @@ export const a1Chapter5: UnifiedLesson = {
         msg_failure: 'E pasaktë. Kujdes: Tiran është emër i përveçëm, prandaj nevojitet apostrofi para prapashtesës.'
       }
     }
-  ]
+  ],
+  listening: {
+    audioAssetStub: null,
+    text: "Ardit: Afedersiniz, kütüphane nerede? Selin: Kütüphane çok yakın. Bu caddeden düz gidin, sonra sağa dönün. Kütüphane marketin karşısında. Ardit: Anladım. Peki, sinema da kütüphaneye yakın mı? Selin: Evet, sinema da kütüphanenin yanındadır. Kütüphaneden sola döneceksiniz. Ardit: Çok teşekkür ederim, iyi günler! Selin: Rica ederim, iyi günler!",
+    translation: "Ardit: Më falni, ku është biblioteka? Selin: Biblioteka është shumë afër. Shkoni drejt në këtë rrugë, pastaj kthehuni djathtas. Biblioteka është përballë marketit. Ardit: E kuptova. Po kinemaja, a është gjithashtu afër bibliotekës? Selin: Po, edhe kinemaja është pranë bibliotekës. Do të ktheheni majtas nga biblioteka. Ardit: Faleminderit shumë, ditë të mirë! Selin: Ju lutem, ditë të mirë!",
+    questions: [
+      {
+        questionTurkish: "Kütüphane nerededir?",
+        questionAlbanian: "Ku është biblioteka?",
+        options: ["Marketin karşısında", "Parkın içinde", "Sinemanın çok uzağında", "Evde"],
+        correctIndex: 0
+      },
+      {
+        questionTurkish: "Sinemaya gitmek için kütüphaneden nereye dönmek gerekir?",
+        questionAlbanian: "Nga duhet të kthehesh nga biblioteka për të shkuar në kinema?",
+        options: ["Sağa", "Sola", "Düz", "Geri"],
+        correctIndex: 1
+      }
+    ]
+  }
 };

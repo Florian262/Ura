@@ -3,6 +3,10 @@ import { b1Chapter1 } from '../src/infrastructure/db/lessons/b1_chapter1';
 import { b1Chapter2 } from '../src/infrastructure/db/lessons/b1_chapter2';
 import { b1Chapter3 } from '../src/infrastructure/db/lessons/b1_chapter3';
 import { b1Chapter4 } from '../src/infrastructure/db/lessons/b1_chapter4';
+import { b1Chapter5 } from '../src/infrastructure/db/lessons/b1_chapter5';
+import { b1Chapter6 } from '../src/infrastructure/db/lessons/b1_chapter6';
+import { b1Chapter7 } from '../src/infrastructure/db/lessons/b1_chapter7';
+import { b1Chapter8 } from '../src/infrastructure/db/lessons/b1_chapter8';
 
 describe('B1 Level Chapter 1 (Haberin Var Mı?) Content Integrity', () => {
   it('has valid metadata and order index', () => {
@@ -164,5 +168,173 @@ describe('B1 Level Chapter 4 (Gelin Tanış Olalım) Content Integrity', () => {
     expect(b1Chapter4.exercises.filter(e => e.type === 'MULTIPLE_CHOICE').length).toBe(2);
     expect(b1Chapter4.exercises.filter(e => e.type === 'WORD_SORT').length).toBe(2);
     expect(b1Chapter4.exercises.filter(e => e.type === 'SUFFIX_BUILDER').length).toBe(2);
+  });
+});
+
+describe('B1 Level Chapter 5 (Engelleri Kaldıralım) Content Integrity', () => {
+  it('has valid metadata and order index', () => {
+    expect(b1Chapter5.id).toBe(25);
+    expect(b1Chapter5.level).toBe('B1');
+    expect(b1Chapter5.orderIndex).toBe(5);
+    expect(b1Chapter5.title.turkish).toBe('Engelleri Kaldıralım');
+    expect(b1Chapter5.title.albanian).toBe('Të heqim pengesat');
+  });
+
+  it('has expanded reading blog post with 5 paragraphs and 6 questions', () => {
+    expect(b1Chapter5.reading.layoutStyle).toBe('blog_post');
+    expect(b1Chapter5.reading.content.length).toBe(5);
+    expect(b1Chapter5.reading.questions.length).toBe(6);
+    b1Chapter5.reading.questions.forEach(q => {
+      expect(q.options.length).toBeGreaterThanOrEqual(4);
+      expect(q.correctIndex).toBeLessThan(q.options.length);
+    });
+  });
+
+  it('has exactly 20 vocabulary items', () => {
+    expect(b1Chapter5.vocabulary.length).toBe(20);
+    b1Chapter5.vocabulary.forEach(v => {
+      expect(v.turkishWord).toBeTruthy();
+      expect(v.albanianWord).toBeTruthy();
+      expect(v.category).toBeTruthy();
+    });
+  });
+
+  it('has 3 grammar cards with interactive example for reflexive voice', () => {
+    expect(b1Chapter5.grammar.length).toBe(3);
+    expect(b1Chapter5.grammar[1].interactiveExample?.strategy).toBe('reflexive');
+    expect(b1Chapter5.grammar[1].interactiveExample?.root).toBe('hazırla');
+  });
+
+  it('has exactly 6 interactive exercises', () => {
+    expect(b1Chapter5.exercises.length).toBe(6);
+    expect(b1Chapter5.exercises.filter(e => e.type === 'MULTIPLE_CHOICE').length).toBe(2);
+    expect(b1Chapter5.exercises.filter(e => e.type === 'WORD_SORT').length).toBe(2);
+    expect(b1Chapter5.exercises.filter(e => e.type === 'SUFFIX_BUILDER').length).toBe(2);
+  });
+});
+
+describe('B1 Level Chapter 6 (Kurgu) Content Integrity', () => {
+  it('has valid metadata and order index', () => {
+    expect(b1Chapter6.id).toBe(26);
+    expect(b1Chapter6.level).toBe('B1');
+    expect(b1Chapter6.orderIndex).toBe(6);
+    expect(b1Chapter6.title.turkish).toBe('Kurgu');
+    expect(b1Chapter6.title.albanian).toBe('Fiksioni / Trillimi');
+  });
+
+  it('has expanded reading blog post with 5 paragraphs and 6 questions', () => {
+    expect(b1Chapter6.reading.layoutStyle).toBe('blog_post');
+    expect(b1Chapter6.reading.content.length).toBe(5);
+    expect(b1Chapter6.reading.questions.length).toBe(6);
+    b1Chapter6.reading.questions.forEach(q => {
+      expect(q.options.length).toBeGreaterThanOrEqual(4);
+      expect(q.correctIndex).toBeLessThan(q.options.length);
+    });
+  });
+
+  it('has exactly 20 vocabulary items', () => {
+    expect(b1Chapter6.vocabulary.length).toBe(20);
+    b1Chapter6.vocabulary.forEach(v => {
+      expect(v.turkishWord).toBeTruthy();
+      expect(v.albanianWord).toBeTruthy();
+      expect(v.category).toBeTruthy();
+    });
+  });
+
+  it('has 3 grammar cards with interactive example for passive voice', () => {
+    expect(b1Chapter6.grammar.length).toBe(3);
+    expect(b1Chapter6.grammar[1].interactiveExample?.strategy).toBe('passive');
+    expect(b1Chapter6.grammar[1].interactiveExample?.root).toBe('oku');
+  });
+
+  it('has exactly 6 interactive exercises', () => {
+    expect(b1Chapter6.exercises.length).toBe(6);
+    expect(b1Chapter6.exercises.filter(e => e.type === 'MULTIPLE_CHOICE').length).toBe(2);
+    expect(b1Chapter6.exercises.filter(e => e.type === 'WORD_SORT').length).toBe(2);
+    expect(b1Chapter6.exercises.filter(e => e.type === 'SUFFIX_BUILDER').length).toBe(2);
+  });
+});
+
+describe('B1 Level Chapter 7 (Kutlama) Content Integrity', () => {
+  it('has valid metadata and order index', () => {
+    expect(b1Chapter7.id).toBe(27);
+    expect(b1Chapter7.level).toBe('B1');
+    expect(b1Chapter7.orderIndex).toBe(7);
+    expect(b1Chapter7.title.turkish).toBe('Kutlama');
+    expect(b1Chapter7.title.albanian).toBe('Festimet');
+  });
+
+  it('has expanded reading blog post with 5 paragraphs and 6 questions', () => {
+    expect(b1Chapter7.reading.layoutStyle).toBe('blog_post');
+    expect(b1Chapter7.reading.content.length).toBe(5);
+    expect(b1Chapter7.reading.questions.length).toBe(6);
+    b1Chapter7.reading.questions.forEach(q => {
+      expect(q.options.length).toBeGreaterThanOrEqual(4);
+      expect(q.correctIndex).toBeLessThan(q.options.length);
+    });
+  });
+
+  it('has exactly 20 vocabulary items', () => {
+    expect(b1Chapter7.vocabulary.length).toBe(20);
+    b1Chapter7.vocabulary.forEach(v => {
+      expect(v.turkishWord).toBeTruthy();
+      expect(v.albanianWord).toBeTruthy();
+      expect(v.category).toBeTruthy();
+    });
+  });
+
+  it('has 3 grammar cards with interactive example for relative participle', () => {
+    expect(b1Chapter7.grammar.length).toBe(3);
+    expect(b1Chapter7.grammar[1].interactiveExample?.strategy).toBe('participle');
+    expect(b1Chapter7.grammar[1].interactiveExample?.root).toBe('oku');
+  });
+
+  it('has exactly 6 interactive exercises', () => {
+    expect(b1Chapter7.exercises.length).toBe(6);
+    expect(b1Chapter7.exercises.filter(e => e.type === 'MULTIPLE_CHOICE').length).toBe(2);
+    expect(b1Chapter7.exercises.filter(e => e.type === 'WORD_SORT').length).toBe(2);
+    expect(b1Chapter7.exercises.filter(e => e.type === 'SUFFIX_BUILDER').length).toBe(2);
+  });
+});
+
+describe('B1 Level Chapter 8 (Ömür Dediğin) Content Integrity', () => {
+  it('has valid metadata and order index', () => {
+    expect(b1Chapter8.id).toBe(28);
+    expect(b1Chapter8.level).toBe('B1');
+    expect(b1Chapter8.orderIndex).toBe(8);
+    expect(b1Chapter8.title.turkish).toBe('Ömür Dediğin');
+    expect(b1Chapter8.title.albanian).toBe('Kjo që quhet jetë');
+  });
+
+  it('has expanded reading blog post with 5 paragraphs and 6 questions', () => {
+    expect(b1Chapter8.reading.layoutStyle).toBe('blog_post');
+    expect(b1Chapter8.reading.content.length).toBe(5);
+    expect(b1Chapter8.reading.questions.length).toBe(6);
+    b1Chapter8.reading.questions.forEach(q => {
+      expect(q.options.length).toBeGreaterThanOrEqual(4);
+      expect(q.correctIndex).toBeLessThan(q.options.length);
+    });
+  });
+
+  it('has exactly 20 vocabulary items', () => {
+    expect(b1Chapter8.vocabulary.length).toBe(20);
+    b1Chapter8.vocabulary.forEach(v => {
+      expect(v.turkishWord).toBeTruthy();
+      expect(v.albanianWord).toBeTruthy();
+      expect(v.category).toBeTruthy();
+    });
+  });
+
+  it('has 3 grammar cards with interactive example for relative participle review', () => {
+    expect(b1Chapter8.grammar.length).toBe(3);
+    expect(b1Chapter8.grammar[2].interactiveExample?.strategy).toBe('participle');
+    expect(b1Chapter8.grammar[2].interactiveExample?.root).toBe('oku');
+  });
+
+  it('has exactly 6 interactive exercises', () => {
+    expect(b1Chapter8.exercises.length).toBe(6);
+    expect(b1Chapter8.exercises.filter(e => e.type === 'MULTIPLE_CHOICE').length).toBe(2);
+    expect(b1Chapter8.exercises.filter(e => e.type === 'WORD_SORT').length).toBe(2);
+    expect(b1Chapter8.exercises.filter(e => e.type === 'SUFFIX_BUILDER').length).toBe(2);
   });
 });

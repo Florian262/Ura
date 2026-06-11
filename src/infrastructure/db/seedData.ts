@@ -26,6 +26,24 @@ export interface ReadingQuestion {
   correct_index: number;
 }
 
+export interface ListeningBlock {
+  id: number;
+  chapter_id: number;
+  audio_asset_stub: string | null;
+  text: string;
+  translation: string;
+}
+
+export interface ListeningQuestion {
+  id: number;
+  listening_block_id: number;
+  question_turkish: string;
+  question_albanian: string;
+  options: string[];
+  correct_index: number;
+}
+
+
 export interface Vocabulary {
   id: number;
   chapter_id: number;
@@ -88,6 +106,30 @@ export const SEED_READING_QUESTIONS: ReadingQuestion[] = ALL_UNIFIED_LESSONS.fla
     correct_index: q.correctIndex
   }))
 );
+
+export const SEED_LISTENING_BLOCKS: ListeningBlock[] = ALL_UNIFIED_LESSONS
+  .filter(l => l.listening)
+  .map(l => ({
+    id: l.id,
+    chapter_id: l.id,
+    audio_asset_stub: l.listening!.audioAssetStub,
+    text: l.listening!.text,
+    translation: l.listening!.translation
+  }));
+
+export const SEED_LISTENING_QUESTIONS: ListeningQuestion[] = ALL_UNIFIED_LESSONS
+  .filter(l => l.listening)
+  .flatMap(l => 
+    l.listening!.questions.map((q, index) => ({
+      id: l.id * 100 + index + 1,
+      listening_block_id: l.id,
+      question_turkish: q.questionTurkish,
+      question_albanian: q.questionAlbanian,
+      options: q.options,
+      correct_index: q.correctIndex
+    }))
+  );
+
 
 export const SEED_VOCABULARY: Vocabulary[] = ALL_UNIFIED_LESSONS.flatMap(l => 
   l.vocabulary.map((v, index) => ({

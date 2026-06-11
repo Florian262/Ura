@@ -171,5 +171,24 @@ export const a1Chapter3: UnifiedLesson = {
         msg_failure: 'E pasaktë. Kujdes: Rrënja mbaron me zanore, prandaj ju nevojitet shkronja ndërmjetësuese "y".'
       }
     }
-  ]
+  ],
+  listening: {
+    audioAssetStub: null,
+    text: "Benim adım Elif. Ben Arnavut'um ve Tiran'da yaşıyorum. Ben bir hemşireyim. Bu benim arkadaşım Mehmet. Mehmet Türk'tür ve İstanbul'da yaşıyor. Mehmet bir mühendis. Biz şimdi sınıftayız ve Türkçe öğreniyoruz. Türkçe çok güzel bir dil!",
+    translation: "Emri im është Elif. Unë jam shqiptare dhe jetoj në Tiranë. Unë jam infermiere. Ky është shoku im Mehmeti. Mehmeti është turk dhe jeton në Stamboll. Mehmeti është inxhinier. Ne tani jemi në klasë dhe po mësojmë turqisht. Turqishtja është një gjuhë shumë e bukur!",
+    questions: [
+      {
+        questionTurkish: "Elif'in mesleği nedir?",
+        questionAlbanian: "Cili është profesioni i Elifit?",
+        options: ["Doktor", "Hemşire", "Mühendis", "Öğretmen"],
+        correctIndex: 1
+      },
+      {
+        questionTurkish: "Mehmet nerede yaşıyor?",
+        questionAlbanian: "Ku jeton Mehmeti?",
+        options: ["Tiran'da", "Ankara'da", "İstanbul'da", "Kosova'da"],
+        correctIndex: 2
+      }
+    ]
+  }
 };

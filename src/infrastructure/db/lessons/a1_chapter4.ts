@@ -170,5 +170,24 @@ export const a1Chapter4: UnifiedLesson = {
         msg_failure: 'E pasaktë. Rishikoni harmoninë vokalore 4-she për zanoren "e".'
       }
     }
-  ]
+  ],
+  listening: {
+    audioAssetStub: null,
+    text: "Can: Merhaba Murat! Hafta sonu ne yapıyorsun? Murat: Genellikle sabahları erken kalkıyorum. Parkta koşuyorum ve kahvaltı yapıyorum. Can: Harika! Öğleden sonra ne yapıyorsun? Murat: Türkçe çalışıyorum ve kitap okuyorum. Akşamları ise arkadaşlarımla buluşuyorum veya sinemaya gidiyorum. Sen ne yapıyorsun? Can: Ben de evde dinleniyorum ve müzik dinliyorum.",
+    translation: "Can: Përshëndetje Murat! Çfarë bën gjatë fundjavës? Murat: Zakonisht zgjohem herët në mëngjes. Vrapoj në park dhe ha mëngjes. Can: Shkëlqyeshëm! Çfarë bën pasdite? Murat: Studioj turqisht dhe lexoj libra. Kurse mbrëmjeve takohem me miqtë ose shkoj në kinema. Po ti çfarë bën? Can: Edhe unë po çlodhem në shtëpi dhe po dëgjoj muzikë.",
+    questions: [
+      {
+        questionTurkish: "Murat hafta sonu sabahları ne yapıyor?",
+        questionAlbanian: "Çfarë bën Murati në mëngjeset e fundjavës?",
+        options: ["Müzik dinliyor", "Parkta koşuyor ve kahvaltı yapıyor", "Türkçe çalışıyor", "Uyumaya devam ediyor"],
+        correctIndex: 1
+      },
+      {
+        questionTurkish: "Can hafta sonu ne yapıyor?",
+        questionAlbanian: "Çfarë bën Xhani gjatë fundjavës?",
+        options: ["Sinemaya gidiyor", "Evde dinleniyor ve müzik dinliyor", "Koşuyor", "İşe gidiyor"],
+        correctIndex: 1
+      }
+    ]
+  }
 };

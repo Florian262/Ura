@@ -3,6 +3,7 @@ import { useLesson } from '../../../application/state/LessonContext';
 import { StickyNavbar } from './StickyNavbar';
 import { useScrollSpy } from '../../../application/hooks/useScrollSpy';
 import { ReadingModule } from '../modules/ReadingModule';
+import { ListeningModule } from '../modules/ListeningModule';
 import { VocabularyModule } from '../modules/VocabularyModule';
 import { GrammarModule } from '../modules/GrammarModule';
 import { WritingModule } from '../modules/WritingModule';
@@ -17,11 +18,13 @@ export const ChapterContainer: React.FC = () => {
     userName,
     chapters,
     loadChapter,
-    exitToDashboard
+    exitToDashboard,
+    listeningBlock
   } = useLesson();
 
   const [completions, setCompletions] = React.useState<Record<string, boolean>>({
     reading: false,
+    listening: false,
     vocab: false,
     grammar: false,
     writing: false,
@@ -46,6 +49,7 @@ export const ChapterContainer: React.FC = () => {
       } else {
         const initial = {
           reading: readingCompleted,
+          listening: readingCompleted,
           vocab: readingCompleted,
           grammar: readingCompleted,
           writing: readingCompleted,
@@ -80,7 +84,14 @@ export const ChapterContainer: React.FC = () => {
     }
   }, [readingCompleted, markSectionComplete]);
 
-  const sectionsList = ['reading', 'vocab', 'grammar', 'writing', 'exercises'];
+  const sectionsList = [
+    'reading',
+    ...(listeningBlock ? ['listening'] : []),
+    'vocab',
+    'grammar',
+    'writing',
+    'exercises'
+  ];
 
   // Instantiate our scroll spy
   const { setManualScroll } = useScrollSpy(sectionsList, (id) => {
@@ -144,6 +155,13 @@ export const ChapterContainer: React.FC = () => {
         <section id="reading" className="scroll-mt-28 md:scroll-mt-24">
           <ReadingModule />
         </section>
+
+        {/* SECTION 1.5: LISTENING COMPREHENSION */}
+        {listeningBlock && (
+          <section id="listening" className="scroll-mt-28 md:scroll-mt-24">
+            <ListeningModule onComplete={() => markSectionComplete('listening')} />
+          </section>
+        )}
 
         {/* SECTION 2: VOCABULARY ACQUISITION */}
         {currentChapter.id !== 21 && (

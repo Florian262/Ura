@@ -45,6 +45,17 @@ export interface UnifiedLesson {
     payload: any;
     validation: any;
   }>;
+  listening?: {
+    audioAssetStub: string | null;
+    text: string;
+    translation: string;
+    questions: Array<{
+      questionTurkish: string;
+      questionAlbanian: string;
+      options: string[];
+      correctIndex: number;
+    }>;
+  };
 }
 
 export const a1Chapter1: UnifiedLesson = {
@@ -255,8 +266,28 @@ export const a1Chapter1: UnifiedLesson = {
         correct_suffix: 'ler',
         result: 'gözler',
         msg_success: "E saktë! Fjala 'göz' përmban zanorën e përparme 'ö', prandaj merr prapashtesën '-ler' për shumësin: 'gözler' (sy - sytë).",
-        msg_failure: "E pasaktë. Kontrolloni zanorën 'ö' (të përparme) të rrënjës 'göz' dhe rregullin e harmonisë 2-she."
+        msg_failure: "E pasaktë. Kontrolloni zanorën 'ö' (të përparme) të rrënjës 'göz' veçanërisht rregullin e harmonisë 2-she."
       }
     }
-  ]
+  ],
+  listening: {
+    audioAssetStub: null,
+    text: "Selin: Merhaba! Benim adım Selin. Senin adın ne? Ardit: Merhaba Selin! Benim adım Ardit. Tanıştığımıza memnun oldum. Selin: Ben de memnun oldum. Nerelisin Ardit? Ardit: Arnavut’um, Tiranlıyım. Sen nerelisin? Selin: Ben de Türk’üm, Ankaralıyım. Bu sınıfta yeni misin? Ardit: Evet, bugün benim ilk günüm. Kitaplar nerede? Selin: Kitaplar masada. Görüşürüz!",
+    translation: "Selin: Tungjatjeta! Emri im është Selin. Si është emri yt? Ardit: Tungjatjeta Selin! Emri im është Ardit. Kënaqem që u njohëm. Selin: Edhe unë kënaqem që u njohëm. Nga je Ardit? Ardit: Jam shqiptar, jam nga Tirana. Po ti nga je? Selin: Edhe unë jam turke, jam nga Ankara. A je i ri në këtë klasë? Ardit: Po, sot është dita ime e parë. Ku janë librat? Selin: Librat janë mbi tavolinë. Shihemi!",
+    questions: [
+      {
+        questionTurkish: "Ardit nerelidir?",
+        questionAlbanian: "Nga është Arditi?",
+        options: ["Tiranlıdır", "Ankaralıdır", "İstanbulludur", "İzmirlidir"],
+        correctIndex: 0
+      },
+      {
+        questionTurkish: "Kitaplar nerededir?",
+        questionAlbanian: "Ku janë librat?",
+        options: ["Sınıfta yok", "Çantada", "Masada", "Kutuda"],
+        correctIndex: 2
+      }
+    ]
+  }
 };
+

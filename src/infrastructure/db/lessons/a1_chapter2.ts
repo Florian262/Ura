@@ -184,5 +184,24 @@ export const a1Chapter2: UnifiedLesson = {
         msg_failure: "E pasaktë. Zanorja 'u' është e prapme, prandaj prapashtesa duhet të ketë zanoren 'a'."
       }
     }
-  ]
+  ],
+  listening: {
+    audioAssetStub: null,
+    text: "Öğretmen: Günaydın öğrenciler! Bugün sınıfta kimler var? Öğrenciler: Günaydın öğretmenim! Sınıfta on öğrenci var. Öğretmen: Güzel. Sınıfta bilgisayar var mı? Öğrenci: Hayır, bilgisayar yok ama televizyon var. Öğretmen: Harika. Kitaplar ve defterler nerede? Öğrenci: Kitaplar masada, defterler ise çantalarda.",
+    translation: "Mësuesi: Mirëmëngjes nxënës! Kush është në klasë sot? Nxënësit: Mirëmëngjes mësues! Në klasë janë dhjetë nxënës. Mësuesi: Bukur. A ka kompjuter në klasë? Nxënësi: Jo, kompjuter nuk ka por ka televizor. Mësuesi: Shkëlqyeshëm. Ku janë librat dhe fletoret? Nxënësi: Librat janë mbi tavolinë, kurse fletoret janë në çanta.",
+    questions: [
+      {
+        questionTurkish: "Sınıfta kaç öğrenci var?",
+        questionAlbanian: "Sa nxënës ka në klasë?",
+        options: ["Beş öğrenci", "On öğrenci", "İki öğrenci", "Hiç öğrenci yok"],
+        correctIndex: 1
+      },
+      {
+        questionTurkish: "Sınıfta ne yok?",
+        questionAlbanian: "Çfarë nuk ka në klasë?",
+        options: ["Televizyon", "Kitap", "Bilgisayar", "Defter"],
+        correctIndex: 2
+      }
+    ]
+  }
 };

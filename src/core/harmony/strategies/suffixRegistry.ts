@@ -17,6 +17,9 @@ import { PastContinuousStrategy } from './PastContinuousStrategy';
 import { AdverbialIpStrategy } from './AdverbialIpStrategy';
 import { ConditionalStrategy } from './ConditionalStrategy';
 import { SinceStrategy } from './SinceStrategy';
+import { ReflexiveStrategy } from './ReflexiveStrategy';
+import { PassiveStrategy } from './PassiveStrategy';
+import { ParticipleStrategy } from './ParticipleStrategy';
 import type { SuffixStrategy } from './suffixStrategy';
 
 /**
@@ -42,5 +45,8 @@ export const SuffixRegistry: Record<string, new () => SuffixStrategy> = {
   past_continuous: PastContinuousStrategy,
   adverbial_ip: AdverbialIpStrategy,
   conditional: ConditionalStrategy,
-  since: SinceStrategy
+  since: SinceStrategy,
+  reflexive: ReflexiveStrategy,
+  passive: PassiveStrategy,
+  participle: ParticipleStrategy
 };

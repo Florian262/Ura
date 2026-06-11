@@ -180,5 +180,24 @@ export const a1Chapter8: UnifiedLesson = {
         msg_failure: 'E pasaktë. Rishikoni harmoninë 4-she për zanoren "u".'
       }
     }
-  ]
+  ],
+  listening: {
+    audioAssetStub: null,
+    text: "Mert: Leyla, masada ne var? Leyla: Masada üç kitap ve iki defter var. Mert: Çantada kalem var mı? Leyla: Evet, çantada beş kalem ve bir silgi var. Mert: Sınıfta cetvel var mı? Leyla: Hayır, sınıfta cetvel yok. Mert: Teşekkürler Leyla.",
+    translation: "Mert: Leyla, çfarë ka mbi tavolinë? Leyla: Mbi tavolinë ka tre libra dhe dy fletore. Mert: A ka lapsa në çantë? Leyla: Po, në çantë ka pesë lapsa dhe një gomë. Mert: A ka vizore në klasë? Leyla: Jo, në klasë nuk ka vizore. Mert: Faleminderit Leyla.",
+    questions: [
+      {
+        questionTurkish: "Masada kaç kitap var?",
+        questionAlbanian: "Sa libra ka mbi tavolinë?",
+        options: ["İki kitap", "Üç kitap", "Beş kitap", "On kitap"],
+        correctIndex: 1
+      },
+      {
+        questionTurkish: "Sınıfta ne yok?",
+        questionAlbanian: "Çfarë nuk ka në klasë?",
+        options: ["Kitap", "Defter", "Kalem", "Cetvel"],
+        correctIndex: 3
+      }
+    ]
+  }
 };

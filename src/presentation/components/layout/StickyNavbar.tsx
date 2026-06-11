@@ -7,7 +7,7 @@ interface StickyNavbarProps {
 }
 
 export const StickyNavbar: React.FC<StickyNavbarProps> = ({ onTabClick, completions }) => {
-  const { currentChapter, activeSection, exitToDashboard } = useLesson();
+  const { currentChapter, activeSection, exitToDashboard, listeningBlock } = useLesson();
   const activeTabRef = React.useRef<HTMLButtonElement | null>(null);
 
   React.useEffect(() => {
@@ -22,13 +22,22 @@ export const StickyNavbar: React.FC<StickyNavbarProps> = ({ onTabClick, completi
 
   if (!currentChapter) return null;
 
-  const sections = [
-    { id: 'reading', label: '1. Leximi', icon: '📖', locked: false },
-    { id: 'vocab', label: '2. Fjalori', icon: '📚', locked: false },
-    { id: 'grammar', label: '3. Gramatika', icon: '✍️', locked: false },
-    { id: 'writing', label: '4. Shkrimi', icon: '📝', locked: false },
-    { id: 'exercises', label: '5. Ushtrime', icon: '🧩', locked: false }
-  ].filter(sec => currentChapter.id !== 21 || sec.id === 'reading');
+  const rawSections = [
+    { id: 'reading', label: 'Leximi', icon: '📖' },
+    ...(listeningBlock ? [{ id: 'listening', label: 'Dëgjimi', icon: '🎧' }] : []),
+    { id: 'vocab', label: 'Fjalori', icon: '📚' },
+    { id: 'grammar', label: 'Gramatika', icon: '✍️' },
+    { id: 'writing', label: 'Shkrimi', icon: '📝' },
+    { id: 'exercises', label: 'Ushtrime', icon: '🧩' }
+  ];
+
+  const sections = rawSections
+    .filter(sec => currentChapter.id !== 21 || sec.id === 'reading')
+    .map((sec, index) => ({
+      ...sec,
+      label: `${index + 1}. ${sec.label}`,
+      locked: false
+    }));
 
   const handleTabClick = (sectionId: string) => {
     onTabClick(sectionId);

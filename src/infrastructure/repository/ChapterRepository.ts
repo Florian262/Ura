@@ -4,7 +4,9 @@ import {
   SEED_READING_QUESTIONS,
   SEED_VOCABULARY,
   SEED_GRAMMAR_CARDS,
-  SEED_EXERCISES
+  SEED_EXERCISES,
+  SEED_LISTENING_BLOCKS,
+  SEED_LISTENING_QUESTIONS
 } from '../db/seedData';
 import type {
   Chapter,
@@ -12,7 +14,9 @@ import type {
   ReadingQuestion,
   Vocabulary,
   GrammarCard,
-  Exercise
+  Exercise,
+  ListeningBlock,
+  ListeningQuestion
 } from '../db/seedData';
 
 
@@ -83,5 +87,21 @@ export class ChapterRepository {
   static getExercisesForChapter(chapterId: number): Exercise[] {
     return SEED_EXERCISES.filter(e => e.chapter_id === chapterId)
       .map(e => ({ ...e }));
+  }
+
+  /**
+   * Fetch listening block associated with a chapter.
+   */
+  static getListeningBlockForChapter(chapterId: number): ListeningBlock | null {
+    const block = SEED_LISTENING_BLOCKS.find(lb => lb.chapter_id === chapterId);
+    return block ? { ...block } : null;
+  }
+
+  /**
+   * Fetch listening comprehension questions for a specific listening block.
+   */
+  static getListeningQuestions(listeningBlockId: number): ListeningQuestion[] {
+    return SEED_LISTENING_QUESTIONS.filter(lq => lq.listening_block_id === listeningBlockId)
+      .map(lq => ({ ...lq }));
   }
 }

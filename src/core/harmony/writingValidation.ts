@@ -560,6 +560,91 @@ export const WRITING_PROMPTS: Record<number, WritingPrompt> = {
         feedback: "Gabim Harmonie te prapashtesa '-diğinden beri': Kontrolloni zbutjen ose harmoninë vokalore."
       }
     ]
+  },
+  25: {
+    chapterId: 25,
+    type: 'guided',
+    promptAlbanian: "Shkruani një paragraf të shkurtër në turqisht (të paktën 60 karaktere) rreth një sfide ose qëllimi jetësor, duke treguar se si i kapërceni pengesat. Përdorni përemrin vetvetor 'kendi' (p.sh., kendim, kendisi) ose një folje vetvetore (si hazırlanmak, giyinmek, sevinmek) Edhe të paktën një strukturë detyrimi si '-mak zorunda kalmak' ose '-mak lazım'.",
+    grammarTipAlbanian: "Përdorni përemrin 'kendi' të zgjedhuar për vetën përkatëse (p.sh., 'kendim' - unë vetë, 'kendimiz' - ne vetë) ose foljet vetvetore me prapashtesën '-n / -ın / -in / -un / -ün' (p.sh., 'hazırlanmak' - përgatitem, 'sevinmek' - gëzohem). Kombinoni këto me struktura detyrimi si 'çalışmak zorunda kaldım' (u detyrova të punoj) ose 'pes etmemek lazım' (nuk duhet të dorëzohemi).",
+    sampleAnswers: [
+      "Hayatta başarılı olmak için kendime güveniyorum. Engelleri aşmak için her gün çok çalışmak lazım.",
+      "Zor zamanlarda pes etmemek ve kendi yolunu çizmek gerekir. Bazen çok sabretmek zorunda kalıyorum.",
+      "Sınava hazırlanmak için kendime yeni bir plan yaptım. Başarılı olmak için bu kurallara uymak lazım."
+    ],
+    grammarLabel: "Vetvetorja & Zinxhiri i Detyrimit",
+    validationRules: [
+      {
+        type: 'required_pattern',
+        regex: '\\b(kendi|hazırlan|giyin|sevin|yıkan|taran|süslen|görün|bulun|korun)',
+        feedback: "Gabim: Duhet të përdorni përemrin vetvetor 'kendi' (p.sh., kendim, kendi) ose të paktën një folje vetvetore (p.sh., hazırlanmak, giyinmek, sevinmek)."
+      },
+      {
+        type: 'required_pattern',
+        regex: '\\b[a-zçğışöü]+(mak|mek)\\s+(lazım|zorunda)',
+        feedback: "Gabim: Duhet të përdorni të paktën një strukturë detyrimi si '-mak lazım' ose '-mak zorunda kalmak'."
+      }
+    ]
+  },
+  26: {
+    chapterId: 26,
+    type: 'guided',
+    promptAlbanian: "Shkruani një paragraf të shkurtër në turqisht (të paktën 60 karaktere) rreth një filmi, libri ose raporti lajmesh. Përdorni të paktën ty folje në formën pasive (si yazılmak, yapılmak, çekilmek, yayınlanmak, izlenmek, seçilmek).",
+    grammarTipAlbanian: "Foljet pasive në turqisht formohen me prapashtesat '-il' ose '-in' (p.sh., 'yazıldı' - u shkrua, 'yapıldı' - u bë, 'çekildi' - u xhirua, 'izlendi' - u ndoq/shikua, 'yayınlandı' - u transmetua). Përdorni të paktën dy folje në këtë formë.",
+    sampleAnswers: [
+      "Geçen yıl harika bir film çekildi ve televizyonda yayınlandı. Bu yapım çok beğenildi.",
+      "Bu roman ünlü bir yazar tarafından yazıldı. Kitap çok izlenen bir film haline getirildi.",
+      "Festivalde en iyi filmler seçildi ve ödüller kazanan sanatçılara törenle verildi."
+    ],
+    grammarLabel: "Trajta Pasive (-il / -in)",
+    validationRules: [
+      {
+        type: 'required_pattern',
+        regex: '(?:^|\\s)(yazıl|yapıl|çekil|yayınlan|izlen|seçil|bilin|okun|söylen|kazanıl|hazırlan|sunul)[a-zçğışöü]*\\s+.*(?:^|\\s)(yazıl|yapıl|çekil|yayınlan|izlen|seçil|bilin|okun|söylen|kazanıl|hazırlan|sunul)[a-zçğışöü]*(?=$|[\\s.,!?])',
+        feedback: "Gabim: Duhet të përdorni të paktën dy folje në formën pasive (p.sh., 'yazıldı', 'yapıldı', 'çekildi', 'yayınlandı', 'izlendi', 'seçildi')."
+      }
+    ]
+  },
+  27: {
+    chapterId: 27,
+    type: 'guided',
+    promptAlbanian: "Shkruani një paragraf të shkurtër në turqisht (të paktën 60 karaktere) rreth një festimi, feste ose tradite dasme që keni marrë pjesë ose e njihni. Përdorni të paktën dy pjesore relative (si -an/-en, -dığım/-diğim, ose -acağımı/-eceğimi).",
+    grammarTipAlbanian: "Pjesoret relative (Sıfat-Fiil) në turqisht formohen me prapashtesat '-an/-en' (p.sh., 'katılan' - që merr pjesë), '-dık' (p.sh., 'katıldığım' - ku unë morra pjesë), ose '-acak' (p.sh., 'yapacağımız' - që ne do të bëjmë). Përdorni të paktën dy të tilla.",
+    sampleAnswers: [
+      "Dün katıldığım düğün çok güzeldi. Evlenen çift çok mutlu görünüyordu.",
+      "Gelecek hafta yapacağımız kutlama için hazırlıklar tamamlandı. Gelen misafirler çok eğlenecek.",
+      "En sevdiğim bayram Cumhuriyet Bayramı'dır. Bu özel günde yapılan törenleri izlemeyi çok severim."
+    ],
+    grammarLabel: "Pjesoret Relative (Sıfat-Fiiller)",
+    validationRules: [
+      {
+        type: 'required_pattern',
+        regex: '(?:^|\\s)(?:katıl|evlen|yapıl|düzenlen|gel|git|oyna|giy|izle|oku|yap|ol|gör|sev|kutla|eğlen|başla|söyle|bağla|ver|ye|çek|yaşa|hatırla|sağla|tüket|düzenle|paylaş|hazırla)(?:an|en|yan|yen|dığ|diğ|duğ|düğ|tığ|tiğ|tuğ|tüğ|acağ|eceğ|yacağ|yeceğ)[a-zçğışöü]*\\s+.*(?:^|\\s)(?:katıl|evlen|yapıl|düzenlen|gel|git|oyna|giy|izle|oku|yap|ol|gör|sev|kutla|eğlen|başla|söyle|bağla|ver|ye|çek|yaşa|hatırla|sağla|tüket|düzenle|paylaş|hazırla)(?:an|en|yan|yen|dığ|diğ|duğ|düğ|tığ|tiğ|tuğ|tüğ|acağ|eceğ|yacağ|yeceğ)[a-zçğışöü]*(?=$|[\\s.,!?])',
+        feedback: "Gabim: Duhet të përdorni të paktën dy pjesore relative (p.sh., 'katılan', 'gittiğim', 'yapacağımız', 'evlenen')."
+      }
+    ]
+  },
+  28: {
+    chapterId: 28,
+    type: 'guided',
+    promptAlbanian: "Shkruani një paragraf të shkurtër në turqisht (të paktën 60 karaktere) rreth jetës suaj (autobiografi) ose rreth përvojës suaj të mësimit të turqishtes. Përdorni të paktën një pjesore relative (si -an/-en, -dığım/-diğim) DHE të paktën një formë pasive, vetvetore (si kendi, hazırlanmak, yazılmak) ose kushtore (-se/-seydi).",
+    grammarTipAlbanian: "Ky është një kapitull përmbledhës. Ju duhet të përdorni të paktën një pjesore relative (p.sh., 'öğrendiğim Türkçe' - turqishtja që kam mësuar, 'çalışan insan' - njeriu që punon) dhe të paktën një formë tjetër si përemri vetvetor 'kendi' / folje pasive (p.sh., 'hazırlandım', 'yazıldı') ose kushtore (p.sh., 'çalışırsam' - nëse punoj, 'öğrenseydim' - sikur të kisha mësuar).",
+    sampleAnswers: [
+      "Benim yazdığım otobiyografi çok ilginçti çünkü kendi hayatımı ve başarılarımı anlattım. Eğer çalışırsam Türkçe'yi daha iyi konuşacağım.",
+      "Türkçe öğrenmek için başladığım bu yolculukta kendimi çok geliştirdim. Kurs boyunca çok güzel şeyler öğrendiğimi düşünüyorum."
+    ],
+    grammarLabel: "Përmbledhje B1 & Autoportreti",
+    validationRules: [
+      {
+        type: 'required_pattern',
+        regex: '(?:^|\\s)(?:katıl|evlen|yapıl|düzenlen|gel|git|oyna|giy|izle|oku|yap|ol|gör|sev|kutla|eğlen|başla|söyle|bağla|ver|ye|çek|yaşa|hatırla|sağla|tüket|düzenle|paylaş|hazırla|çalış|başar|öğren)(?:an|en|yan|yen|dığ|diğ|duğ|düğ|tığ|tiğ|tuğ|tüğ|acağ|eceğ|yacağ|yeceğ)[a-zçğışöü]*(?=$|[\\s.,!?])',
+        feedback: "Gabim: Duhet të përdorni të paktën një pjesore relative (p.sh., 'öğrendiğim', 'başardığım', 'giden', 'yapan')."
+      },
+      {
+        type: 'required_pattern',
+        regex: '(?:^|\\s)(?:kendi|yazıl|yapıl|yayınlan|seçil|izlen|giyin|hazırlan|sevin|okun|bilin|denil)[a-zçğışöü]*(?=$|[\\s.,!?])|(?:^|\\s)[a-zçğışöü]+s(?:a|e)(?:m|n|k|niz|ler|yd[ıi][a-zçğışöü]*)?(?=$|[\\s.,!?])',
+        feedback: "Gabim: Duhet të përdorni të paktën një përemër vetvetor ('kendi'), folje pasive/vetvetore (p.sh., 'hazırlanmak', 'yazılmak'), ose një strukturë kushtore/dëshirore (p.sh., '-se', '-seydi')."
+      }
+    ]
   }
 };
 
@@ -983,7 +1068,7 @@ export function evaluateWriting(chapterId: number, input: string): EvaluationRes
   }
 
   const cleanInput = input.trim();
-  const b1Chapters = [4, 22, 23, 24];
+  const b1Chapters = [4, 22, 23, 24, 25, 26, 27, 28];
   const minLength = b1Chapters.includes(chapterId) ? 60 : 10;
   if (cleanInput.length < minLength) {
     return { 
@@ -1085,6 +1170,14 @@ export function evaluateWriting(chapterId: number, input: string): EvaluationRes
     successFeedback = 'Shkëlqyeshëm! Keni shkruar një paragraf të saktë duke përdorur strukturën kushtore ose dëshirore për të përshkruar rëndësinë e edukimit.';
   } else if (chapterId === 24) {
     successFeedback = 'Shkëlqyeshëm! Keni shkruar një paragraf të saktë duke përdorur prapashtesat e detyrimit dhe kohëzgjatjes për të përshkruar shtëpinë ose mësimin e gjuhës.';
+  } else if (chapterId === 25) {
+    successFeedback = 'Shkëlqyeshëm! Keni shkruar një paragraf të saktë duke përdorur përemrin ose foljen vetvetore dhe strukturat e detyrimit për të përshkruar qëllimet tuaja.';
+  } else if (chapterId === 26) {
+    successFeedback = 'Shkëlqyeshëm! Keni shkruar një paragraf të saktë duke përdorur foljet pasive në kohën e duhur.';
+  } else if (chapterId === 27) {
+    successFeedback = 'Shkëlqyeshëm! Keni shkruar një paragraf të saktë duke përdorur pjesoret relative (sıfat-fiil) në formën duhur.';
+  } else if (chapterId === 28) {
+    successFeedback = 'Shkëlqyeshëm! Keni shkruar një autobiografi ose përmbledhje të saktë duke kombinuar pjesoret relative dhe strukturat e tjera të nivelit B1.';
   } else if (chapterId === 5) {
     successFeedback = 'Shkëlqyeshëm! Fjali kushtore e saktë me përdorim të rregullt të prapashtesës së kushtit (-se/-sa).';
   } else if (chapterId === 6) {

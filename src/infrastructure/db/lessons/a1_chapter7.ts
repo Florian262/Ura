@@ -171,8 +171,27 @@ export const a1Chapter7: UnifiedLesson = {
         correct_suffix: "'i",
         result: "Ahmet'i",
         msg_success: 'E saktë! "Ahmet" është emër i përveçëm, prandaj merr apostrofin pa ndryshuar shkronjën "t" në shkrim, duke u plotësuar me prapashtesën e harmonisë 4-she "-i".',
-        msg_failure: 'E pasaktë. Mos harroni apostrofin dhe rregullin se emrat e përveçëm nuk ndryshojnë në shkrim.'
+        msg_failure: 'E pasaktë. Mos harroni apostrofin... shkronja "t" nuk ndryshon.'
       }
     }
-  ]
+  ],
+  listening: {
+    audioAssetStub: null,
+    text: "Pazarcı: Merhaba, hoş geldiniz! Taze elma ve çilek var. Müşteri: Merhaba, hoş bulduk. Elmanın kilosu ne kadar? Pazarcı: Elmanın kilosu yirmi lira, çileğin kilosu otuz lira. Müşteri: İki kilo elma ve bir kilo çilek istiyorum. Toplam ne kadar? Pazarcı: Toplam yetmiş lira efendim. Buyurun. Müşteri: Teşekkürler, iyi çalışmalar.",
+    translation: "Shitësi: Tungjatjeta, mirë se vini! Ka mollë dhe luleshtrydhe të freskëta. Klienti: Tungjatjeta, mirë se ju gjetëm. Sa kushton një kilogram mollë? Shitësi: Një kilogram mollë kushton njëzet lira, një kilogram luleshtrydhe tridhjetë lira. Klienti: Dua dy kilogramë mollë dhe një kilogram luleshtrydhe. Sa bëjnë gjithsej? Shitësi: Gjithsej shtatëdhjetë lira zotëri. Urdhëroni. Klienti: Faleminderit, punë të mbarë.",
+    questions: [
+      {
+        questionTurkish: "Elmanın kilosu ne kadardır?",
+        questionAlbanian: "Sa kushton një kilogram mollë?",
+        options: ["On lira", "Yirmi lira", "Otuz lira", "Yetmiş lira"],
+        correctIndex: 1
+      },
+      {
+        questionTurkish: "Müşteri ne kadar çilek istiyor?",
+        questionAlbanian: "Sa luleshtrydhe dëshiron klienti?",
+        options: ["İki kilo", "Üç kilo", "Bir kilo", "Yarım kilo"],
+        correctIndex: 2
+      }
+    ]
+  }
 };

@@ -172,5 +172,24 @@ export const a1Chapter6: UnifiedLesson = {
         msg_failure: 'E pasaktë. Kur rrënja mbaron me zanore, nuk ka nevojë për zanore lidhëse, vetëm shtohet "-m".'
       }
     }
-  ]
+  ],
+  listening: {
+    audioAssetStub: null,
+    text: "Can: Valbona, bu fotoğraftaki insanlar kim? Valbona: Bu benim ailem. Bu adam benim babam. Onun adı Ilir. Babam bir doktor. Can: Çok güzel. Peki, yanındaki kadın senin annen mi? Valbona: Evet, o benim annem Leyla. Annem bir öğretmen. Can: Peki, bu küçük çocuk kim? Valbona: O benim erkek kardeşim Besnik. Besnik çok çalışkan bir öğrencidir.",
+    translation: "Can: Valbona, kush janë këta njerëz në këtë foto? Valbona: Kjo është familja ime. Ky burrë është babai im. Emri i tij është Ilir. Babai im është mjek. Can: Shumë bukur. Po gruaja pranë tij, a është nëna jote? Valbona: Po, ajo është nëna ime Leyla. Nëna ime është mësuese. Can: Po ky djalë i vogël kush është? Valbona: Ai është vëllai im Besniku. Besniku është një nxënës shumë i zellshëm.",
+    questions: [
+      {
+        questionTurkish: "Valbona'nın babasının adı nedir?",
+        questionAlbanian: "Si quhet babai i Valbonës?",
+        options: ["Ahmet", "Ilir", "Besnik", "Mehmet"],
+        correctIndex: 1
+      },
+      {
+        questionTurkish: "Valbona'nın annesinin mesleği nedir?",
+        questionAlbanian: "Cili është profesioni i nënës së Valbonës?",
+        options: ["Doktor", "Hemşire", "Öğretmen", "Mühendis"],
+        correctIndex: 2
+      }
+    ]
+  }
 };

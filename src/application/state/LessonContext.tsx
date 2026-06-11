@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import type { Chapter, ReadingBlock, ReadingQuestion, Vocabulary, GrammarCard, Exercise } from '../../infrastructure/db/seedData';
+import type { Chapter, ReadingBlock, ReadingQuestion, Vocabulary, GrammarCard, Exercise, ListeningBlock, ListeningQuestion } from '../../infrastructure/db/seedData';
 import { ChapterRepository } from '../../infrastructure/repository/ChapterRepository';
 import { ProgressRepository } from '../../infrastructure/repository/ProgressRepository';
 
@@ -9,6 +9,8 @@ interface LessonContextType {
   currentChapter: Chapter | null;
   readingBlock: ReadingBlock | null;
   readingQuestions: ReadingQuestion[];
+  listeningBlock: ListeningBlock | null;
+  listeningQuestions: ListeningQuestion[];
   vocabulary: Vocabulary[];
   grammarCards: GrammarCard[];
   exercises: Exercise[];
@@ -51,6 +53,8 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   // Chapter Content Relational States
   const [readingBlock, setReadingBlock] = useState<ReadingBlock | null>(null);
   const [readingQuestions, setReadingQuestions] = useState<ReadingQuestion[]>([]);
+  const [listeningBlock, setListeningBlock] = useState<ListeningBlock | null>(null);
+  const [listeningQuestions, setListeningQuestions] = useState<ListeningQuestion[]>([]);
   const [vocabulary, setVocabulary] = useState<Vocabulary[]>([]);
   const [grammarCards, setGrammarCards] = useState<GrammarCard[]>([]);
   const [exercises, setExercises] = useState<Exercise[]>([]);
@@ -118,6 +122,8 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     // Load Relational Content Rows
     const rb = ChapterRepository.getReadingBlockForChapter(chapterId);
     const rq = rb ? ChapterRepository.getReadingQuestions(rb.id) : [];
+    const lb = ChapterRepository.getListeningBlockForChapter(chapterId);
+    const lq = lb ? ChapterRepository.getListeningQuestions(lb.id) : [];
     const voc = ChapterRepository.getVocabularyForChapter(chapterId);
     const gc = ChapterRepository.getGrammarCardsForChapter(chapterId);
     const ex = ChapterRepository.getExercisesForChapter(chapterId);
@@ -126,6 +132,8 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     setCurrentChapter(ch);
     setReadingBlock(rb);
     setReadingQuestions(rq);
+    setListeningBlock(lb);
+    setListeningQuestions(lq);
     setVocabulary(voc);
     setGrammarCards(gc);
     setExercises(ex);
@@ -219,6 +227,8 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     setCurrentChapter(null);
     setReadingBlock(null);
     setReadingQuestions([]);
+    setListeningBlock(null);
+    setListeningQuestions([]);
     setVocabulary([]);
     setGrammarCards([]);
     setExercises([]);
@@ -250,6 +260,8 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       setCurrentChapter(null);
       setReadingBlock(null);
       setReadingQuestions([]);
+      setListeningBlock(null);
+      setListeningQuestions([]);
       setVocabulary([]);
       setGrammarCards([]);
       setExercises([]);
@@ -269,6 +281,8 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       currentChapter,
       readingBlock,
       readingQuestions,
+      listeningBlock,
+      listeningQuestions,
       vocabulary,
       grammarCards,
       exercises,
