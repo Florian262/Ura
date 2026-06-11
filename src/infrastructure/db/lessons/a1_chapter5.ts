@@ -10,7 +10,7 @@ export const a1Chapter5: UnifiedLesson = {
   },
   reading: {
     layoutStyle: 'dialogue',
-    audioAssetStub: 'audio/chapter5_reading.mp3',
+    audioAssetStub: 'audio/chapter5_reading.wav',
     content: [
       { speaker: 'Valbona', text: 'Ahmet, bugün nereye gidiyorsun?', translation: 'Ahmet, ku po shkon sot?' },
       { speaker: 'Ahmet', text: 'Bugün kütüphaneye gidiyorum. Oradan da markete geçeceğim. Sen nereye gidiyorsun?', translation: 'Sot po shkoj në bibliotekë. Prej aty do të kaloj në market. Po ti ku po shkon?' },
@@ -176,7 +176,7 @@ export const a1Chapter5: UnifiedLesson = {
     }
   ],
   listening: {
-    audioAssetStub: null,
+    audioAssetStub: 'audio/chapter5_listening.wav',
     text: "Ardit: Afedersiniz, kütüphane nerede? Selin: Kütüphane çok yakın. Bu caddeden düz gidin, sonra sağa dönün. Kütüphane marketin karşısında. Ardit: Anladım. Peki, sinema da kütüphaneye yakın mı? Selin: Evet, sinema da kütüphanenin yanındadır. Kütüphaneden sola döneceksiniz. Ardit: Çok teşekkür ederim, iyi günler! Selin: Rica ederim, iyi günler!",
     translation: "Ardit: Më falni, ku është biblioteka? Selin: Biblioteka është shumë afër. Shkoni drejt në këtë rrugë, pastaj kthehuni djathtas. Biblioteka është përballë marketit. Ardit: E kuptova. Po kinemaja, a është gjithashtu afër bibliotekës? Selin: Po, edhe kinemaja është pranë bibliotekës. Do të ktheheni majtas nga biblioteka. Ardit: Faleminderit shumë, ditë të mirë! Selin: Ju lutem, ditë të mirë!",
     questions: [

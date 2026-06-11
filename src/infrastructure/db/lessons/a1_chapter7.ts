@@ -10,7 +10,7 @@ export const a1Chapter7: UnifiedLesson = {
   },
   reading: {
     layoutStyle: 'dialogue',
-    audioAssetStub: 'audio/chapter7_reading.mp3',
+    audioAssetStub: 'audio/chapter7_reading.wav',
     content: [
       { speaker: 'Leyla', text: 'Ahmet, pazardan ne alıyorsun?', translation: 'Ahmet, çfarë po blen nga pazari?' },
       { speaker: 'Ahmet', text: 'Bir kilo çilek ve iki kilo elma alıyorum. Sen ne alıyorsun?', translation: 'Po blej një kilogram luleshtrydhe dhe dy kilogramë mollë. Po ti çfarë po blen?' },
@@ -176,7 +176,7 @@ export const a1Chapter7: UnifiedLesson = {
     }
   ],
   listening: {
-    audioAssetStub: null,
+    audioAssetStub: 'audio/chapter7_listening.wav',
     text: "Pazarcı: Merhaba, hoş geldiniz! Taze elma ve çilek var. Müşteri: Merhaba, hoş bulduk. Elmanın kilosu ne kadar? Pazarcı: Elmanın kilosu yirmi lira, çileğin kilosu otuz lira. Müşteri: İki kilo elma ve bir kilo çilek istiyorum. Toplam ne kadar? Pazarcı: Toplam yetmiş lira efendim. Buyurun. Müşteri: Teşekkürler, iyi çalışmalar.",
     translation: "Shitësi: Tungjatjeta, mirë se vini! Ka mollë dhe luleshtrydhe të freskëta. Klienti: Tungjatjeta, mirë se ju gjetëm. Sa kushton një kilogram mollë? Shitësi: Një kilogram mollë kushton njëzet lira, një kilogram luleshtrydhe tridhjetë lira. Klienti: Dua dy kilogramë mollë dhe një kilogram luleshtrydhe. Sa bëjnë gjithsej? Shitësi: Gjithsej shtatëdhjetë lira zotëri. Urdhëroni. Klienti: Faleminderit, punë të mbarë.",
     questions: [

@@ -8,7 +8,7 @@ interface ListeningModuleProps {
 
 export const ListeningModule: React.FC<ListeningModuleProps> = ({ onComplete }) => {
   const { listeningBlock, listeningQuestions } = useLesson();
-  const { playText, stop, isPlaying } = useAudioPlayer();
+  const { play, playText, stop, isPlaying } = useAudioPlayer();
   
   const [playbackRate, setPlaybackRate] = useState<number>(1.0);
   const [showText, setShowText] = useState<boolean>(false);
@@ -29,7 +29,11 @@ export const ListeningModule: React.FC<ListeningModuleProps> = ({ onComplete }) 
     if (isPlaying) {
       stop();
     } else {
-      playText(listeningBlock.text, 'tr', undefined, playbackRate);
+      if (listeningBlock.audio_asset_stub) {
+        play(listeningBlock.audio_asset_stub, listeningBlock.text, playbackRate);
+      } else {
+        playText(listeningBlock.text, 'tr', undefined, playbackRate);
+      }
     }
   };
 
@@ -37,7 +41,11 @@ export const ListeningModule: React.FC<ListeningModuleProps> = ({ onComplete }) 
     setPlaybackRate(speed);
     if (isPlaying) {
       // Re-play with new speed
-      playText(listeningBlock.text, 'tr', undefined, speed);
+      if (listeningBlock.audio_asset_stub) {
+        play(listeningBlock.audio_asset_stub, listeningBlock.text, speed);
+      } else {
+        playText(listeningBlock.text, 'tr', undefined, speed);
+      }
     }
   };
 

@@ -10,7 +10,7 @@ export const a1Chapter2: UnifiedLesson = {
   },
   reading: {
     layoutStyle: 'dialogue',
-    audioAssetStub: 'audio/chapter2_reading.mp3',
+    audioAssetStub: 'audio/chapter2_reading.wav',
     content: [
       { speaker: 'Valbona', text: 'Ahmet, merhaba! Benim küçük kalemim nerede?', translation: 'Ahmet, tungjatjeta! Ku është lapsi im i vogël?' },
       { speaker: 'Ahmet', text: 'Merhaba Valbona! Kalem masada.', translation: 'Tungjatjeta Valbona! Lapsi është mbi tavolinë.' },
@@ -186,7 +186,7 @@ export const a1Chapter2: UnifiedLesson = {
     }
   ],
   listening: {
-    audioAssetStub: null,
+    audioAssetStub: 'audio/chapter2_listening.wav',
     text: "Öğretmen: Günaydın öğrenciler! Bugün sınıfta kimler var? Öğrenciler: Günaydın öğretmenim! Sınıfta on öğrenci var. Öğretmen: Güzel. Sınıfta bilgisayar var mı? Öğrenci: Hayır, bilgisayar yok ama televizyon var. Öğretmen: Harika. Kitaplar ve defterler nerede? Öğrenci: Kitaplar masada, defterler ise çantalarda.",
     translation: "Mësuesi: Mirëmëngjes nxënës! Kush është në klasë sot? Nxënësit: Mirëmëngjes mësues! Në klasë janë dhjetë nxënës. Mësuesi: Bukur. A ka kompjuter në klasë? Nxënësi: Jo, kompjuter nuk ka por ka televizor. Mësuesi: Shkëlqyeshëm. Ku janë librat dhe fletoret? Nxënësi: Librat janë mbi tavolinë, kurse fletoret janë në çanta.",
     questions: [

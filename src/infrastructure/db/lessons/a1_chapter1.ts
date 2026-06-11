@@ -68,7 +68,7 @@ export const a1Chapter1: UnifiedLesson = {
   },
   reading: {
     layoutStyle: 'dialogue',
-    audioAssetStub: 'audio/chapter1_reading.mp3',
+    audioAssetStub: 'audio/chapter1_reading.wav',
     content: [
       { speaker: 'Ahmet', text: 'Merhaba! Benim adım Ahmet. Senin adın ne?', translation: 'Tungjatjeta! Emri im është Ahmet. Si është emri yt?' },
       { speaker: 'Valbona', text: 'Merhaba Ahmet! Benim adım Valbona.', translation: 'Tungjatjeta Ahmet! Emri im është Valbona.' },
@@ -271,7 +271,7 @@ export const a1Chapter1: UnifiedLesson = {
     }
   ],
   listening: {
-    audioAssetStub: null,
+    audioAssetStub: 'audio/chapter1_listening.wav',
     text: "Selin: Merhaba! Benim adım Selin. Senin adın ne? Ardit: Merhaba Selin! Benim adım Ardit. Tanıştığımıza memnun oldum. Selin: Ben de memnun oldum. Nerelisin Ardit? Ardit: Arnavut’um, Tiranlıyım. Sen nerelisin? Selin: Ben de Türk’üm, Ankaralıyım. Bu sınıfta yeni misin? Ardit: Evet, bugün benim ilk günüm. Kitaplar nerede? Selin: Kitaplar masada. Görüşürüz!",
     translation: "Selin: Tungjatjeta! Emri im është Selin. Si është emri yt? Ardit: Tungjatjeta Selin! Emri im është Ardit. Kënaqem që u njohëm. Selin: Edhe unë kënaqem që u njohëm. Nga je Ardit? Ardit: Jam shqiptar, jam nga Tirana. Po ti nga je? Selin: Edhe unë jam turke, jam nga Ankara. A je i ri në këtë klasë? Ardit: Po, sot është dita ime e parë. Ku janë librat? Selin: Librat janë mbi tavolinë. Shihemi!",
     questions: [

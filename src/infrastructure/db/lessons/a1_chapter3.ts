@@ -10,7 +10,7 @@ export const a1Chapter3: UnifiedLesson = {
   },
   reading: {
     layoutStyle: 'narrative',
-    audioAssetStub: 'audio/chapter3_reading.mp3',
+    audioAssetStub: 'audio/chapter3_reading.wav',
     content: [
       { text: 'Benim adım Valbona. Ben Arnavut\'um ve Tiran\'da yaşıyorum. Ben bir hemşireyim.', translation: 'Emri im është Valbona. Unë jam shqiptare dhe jetoj në Tiranë. Unë jam infermiere.' },
       { text: 'Bu benim arkadaşım Ahmet. Ahmet Türk\'tür ve İstanbul\'da yaşıyor. Ahmet bir mühendis.', translation: 'Ky është shoku im Ahmeti. Ahmeti është turk dhe jeton në Stamboll. Ahmeti është inxhinier.' },
@@ -173,7 +173,7 @@ export const a1Chapter3: UnifiedLesson = {
     }
   ],
   listening: {
-    audioAssetStub: null,
+    audioAssetStub: 'audio/chapter3_listening.wav',
     text: "Benim adım Elif. Ben Arnavut'um ve Tiran'da yaşıyorum. Ben bir hemşireyim. Bu benim arkadaşım Mehmet. Mehmet Türk'tür ve İstanbul'da yaşıyor. Mehmet bir mühendis. Biz şimdi sınıftayız ve Türkçe öğreniyoruz. Türkçe çok güzel bir dil!",
     translation: "Emri im është Elif. Unë jam shqiptare dhe jetoj në Tiranë. Unë jam infermiere. Ky është shoku im Mehmeti. Mehmeti është turk dhe jeton në Stamboll. Mehmeti është inxhinier. Ne tani jemi në klasë dhe po mësojmë turqisht. Turqishtja është një gjuhë shumë e bukur!",
     questions: [

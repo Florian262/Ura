@@ -277,7 +277,7 @@ export function useAudioPlayer() {
   }, [stop, playTextInternal]);
 
   // Backwards compatibility/hybrid loader with the play(src) signature
-  const play = useCallback((src: string, textFallback?: string) => {
+  const play = useCallback((src: string, textFallback?: string, rate: number = 1.0) => {
     console.log(`[Audio Play] Trigeruar skedari: ${src}`);
     stop();
 
@@ -287,6 +287,8 @@ export function useAudioPlayer() {
     setCurrentSrc(fallbackWord);
 
     const audio = new Audio(src);
+    audio.defaultPlaybackRate = rate;
+    audio.playbackRate = rate;
     activeAudioRef.current = audio;
 
     audio.onended = () => {
@@ -298,14 +300,14 @@ export function useAudioPlayer() {
     audio.onerror = () => {
       console.log(`[Audio Play] Asset not found at ${src}, playing fallback TTS...`);
       activeAudioRef.current = null;
-      playText(fallbackWord, 'tr');
+      playText(fallbackWord, 'tr', undefined, rate);
     };
 
     audio.play().catch((err) => {
       if (activeAudioRef.current === audio) {
         console.log(`[Audio Play] play() promise rejected for ${src}, playing fallback TTS...`, err);
         activeAudioRef.current = null;
-        playText(fallbackWord, 'tr');
+        playText(fallbackWord, 'tr', undefined, rate);
       }
     });
   }, [stop, playText]);

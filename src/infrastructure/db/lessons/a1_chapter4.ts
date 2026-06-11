@@ -10,7 +10,7 @@ export const a1Chapter4: UnifiedLesson = {
   },
   reading: {
     layoutStyle: 'narrative',
-    audioAssetStub: 'audio/chapter4_reading.mp3',
+    audioAssetStub: 'audio/chapter4_reading.wav',
     content: [
       { text: 'Her sabah erken uyanıyorum. Kahvaltı yapıyorum ve okula gidiyorum. Okulda arkadaşlarımla Türkçe konuşuyorum.', translation: 'Çdo mëngjes zgjohem herët. Ha mëngjes dhe shkoj në shkollë. Në shkollë flas turqisht me miqtë e mi.' },
       { text: 'Öğleden sonra eve dönüyorum ve kitap okuyorum. Akşamları müzik dinliyorum. Günüm çok güzel geçiyor!', translation: 'Pasdite kthehem në shtëpi dhe lexoj një libër. Mbrëmjeve dëgjoj muzikë. Dita ime kalon shumë bukur!' }
@@ -172,7 +172,7 @@ export const a1Chapter4: UnifiedLesson = {
     }
   ],
   listening: {
-    audioAssetStub: null,
+    audioAssetStub: 'audio/chapter4_listening.wav',
     text: "Can: Merhaba Murat! Hafta sonu ne yapıyorsun? Murat: Genellikle sabahları erken kalkıyorum. Parkta koşuyorum ve kahvaltı yapıyorum. Can: Harika! Öğleden sonra ne yapıyorsun? Murat: Türkçe çalışıyorum ve kitap okuyorum. Akşamları ise arkadaşlarımla buluşuyorum veya sinemaya gidiyorum. Sen ne yapıyorsun? Can: Ben de evde dinleniyorum ve müzik dinliyorum.",
     translation: "Can: Përshëndetje Murat! Çfarë bën gjatë fundjavës? Murat: Zakonisht zgjohem herët në mëngjes. Vrapoj në park dhe ha mëngjes. Can: Shkëlqyeshëm! Çfarë bën pasdite? Murat: Studioj turqisht dhe lexoj libra. Kurse mbrëmjeve takohem me miqtë ose shkoj në kinema. Po ti çfarë bën? Can: Edhe unë po çlodhem në shtëpi dhe po dëgjoj muzikë.",
     questions: [

@@ -10,7 +10,7 @@ export const a1Chapter8: UnifiedLesson = {
   },
   reading: {
     layoutStyle: 'dialogue',
-    audioAssetStub: 'audio/chapter8_reading.mp3',
+    audioAssetStub: 'audio/chapter8_reading.wav',
     content: [
       { speaker: 'Valbona', text: 'Ahmet, bu sınıfta kaç öğrenci var?', translation: 'Ahmet, sa nxënës ka në këtë klasë?' },
       { speaker: 'Ahmet', text: 'Bu sınıfta on öğrenci var. Masa da var mı?', translation: 'Në këtë klasë ka dhjetë nxënës. A ka edhe tavolinë?' },
@@ -182,7 +182,7 @@ export const a1Chapter8: UnifiedLesson = {
     }
   ],
   listening: {
-    audioAssetStub: null,
+    audioAssetStub: 'audio/chapter8_listening.wav',
     text: "Mert: Leyla, masada ne var? Leyla: Masada üç kitap ve iki defter var. Mert: Çantada kalem var mı? Leyla: Evet, çantada beş kalem ve bir silgi var. Mert: Sınıfta cetvel var mı? Leyla: Hayır, sınıfta cetvel yok. Mert: Teşekkürler Leyla.",
     translation: "Mert: Leyla, çfarë ka mbi tavolinë? Leyla: Mbi tavolinë ka tre libra dhe dy fletore. Mert: A ka lapsa në çantë? Leyla: Po, në çantë ka pesë lapsa dhe një gomë. Mert: A ka vizore në klasë? Leyla: Jo, në klasë nuk ka vizore. Mert: Faleminderit Leyla.",
     questions: [

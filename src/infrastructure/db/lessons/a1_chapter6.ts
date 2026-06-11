@@ -10,7 +10,7 @@ export const a1Chapter6: UnifiedLesson = {
   },
   reading: {
     layoutStyle: 'narrative',
-    audioAssetStub: 'audio/chapter6_reading.mp3',
+    audioAssetStub: 'audio/chapter6_reading.wav',
     content: [
       { text: 'Benim adım Valbona. Bu benim ailem. Benim babamın adı Ilir. Babam bir doktor.', translation: 'Emri im është Valbona. Kjo është familja ime. Emri i babait tim është Ilir. Babai im është mjek.' },
       { text: 'Benim annemin adı Leyla. Annem bir öğretmen. Benim bir erkek kardeşim var. Onun adı Besnik.', translation: 'Emri i nënës sime është Leyla. Nëna ime është mësuese. Unë kam një vëlla. Emri i tij është Besnik.' },
@@ -174,7 +174,7 @@ export const a1Chapter6: UnifiedLesson = {
     }
   ],
   listening: {
-    audioAssetStub: null,
+    audioAssetStub: 'audio/chapter6_listening.wav',
     text: "Can: Valbona, bu fotoğraftaki insanlar kim? Valbona: Bu benim ailem. Bu adam benim babam. Onun adı Ilir. Babam bir doktor. Can: Çok güzel. Peki, yanındaki kadın senin annen mi? Valbona: Evet, o benim annem Leyla. Annem bir öğretmen. Can: Peki, bu küçük çocuk kim? Valbona: O benim erkek kardeşim Besnik. Besnik çok çalışkan bir öğrencidir.",
     translation: "Can: Valbona, kush janë këta njerëz në këtë foto? Valbona: Kjo është familja ime. Ky burrë është babai im. Emri i tij është Ilir. Babai im është mjek. Can: Shumë bukur. Po gruaja pranë tij, a është nëna jote? Valbona: Po, ajo është nëna ime Leyla. Nëna ime është mësuese. Can: Po ky djalë i vogël kush është? Valbona: Ai është vëllai im Besniku. Besniku është një nxënës shumë i zellshëm.",
     questions: [
