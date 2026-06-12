@@ -1,0 +1,816 @@
+Ju jeni një përkthyes profesionist turqisht-shqip dhe ekspert gjuhësor.
+Detyra juaj është të përktheni hyrjet e fjalorit turqisht në shqip sipas të dhënave të mëposhtme.
+Ju lutem ktheni VETËM një kod JSON të pastër (pa formatim markdown, pa komente dhe pa hyrje komunikuese). Outputi duhet të jetë një Array JSON i thjeshtë që përmban objekte me çelësat e mëposhtëm:
+- "id": (kopjoni ID-në e dhënë)
+- "sq": (përkthimi i fjalës në shqip. Nëse jepet 'sq_base', përdoreni si pikënisje por përmirësojeni nëse ka gabime)
+- "sq_def": (përkthe shpjegimin turk 'tdk_def' në shqip të rrjedhshme dhe natyrale)
+- "sq_ex": (përkthe shembullin turk 'tdk_ex' në shqip, ose null nëse nuk ka shembull)
+
+Rregullat:
+1. Përkthimet duhet të jenë sa më natyrale dhe të sakta për nivelin e nxënësve të gjuhës.
+2. Përkthejeni fjalën në 'sq' në mënyrë të thjeshtë (p.sh. "përvojë" ose "shok, mik").
+3. Ktheni vetëm formatin e kërkuar JSON, pa asnjë tekst tjetër përpara ose pas tij.
+
+Të dhënat për t'u përkthyer:
+[
+  {
+    "id": "dict-tr-10800",
+    "tr": "hedef",
+    "pos": "emër",
+    "tdk_def": "Nişan alınacak yer; nişangâh",
+    "tdk_ex": "Asıl önemlisi devlet büyük hedefler dikmişti; milletin benimsediği, övündüğü hedeflerdi bunlar.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10801",
+    "tr": "spor",
+    "pos": "emër",
+    "tdk_def": "Çiçeksiz bitkilerde üreme organı",
+    "tdk_ex": null,
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10802",
+    "tr": "şüyu",
+    "pos": "emër",
+    "tdk_def": "Herkesçe duyulma, yayılma",
+    "tdk_ex": "Firarın şüyusuyla beraber Yunanlılık aleyhine dönenler hâlâ hayrettedirler.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10803",
+    "tr": "saldırı",
+    "pos": "emër",
+    "tdk_def": "Kötülük yapmak, yıpratmak amacıyla doğrudan doğruya silahlı veya silahsız bir eylemde bulunma; hücum, taarruz, tecavüz",
+    "tdk_ex": "Ancak delikanlı, kargının sapını yere gömüp ucunu ata doğrultarak hasmının saldırısını engelliyordu.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10804",
+    "tr": "fırsat",
+    "pos": "emër",
+    "tdk_def": "Herhangi bir şey için en uygun zaman, uygun durum veya şart; vesile, okazyon",
+    "tdk_ex": "Önce istemedim, sonra düşününce bunun evden kurtulmam için bir fırsat olduğunu anladım.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10805",
+    "tr": "ayrı",
+    "pos": "mbiemër",
+    "tdk_def": "Birbirine benzemeyen, diğerlerinden farklı",
+    "tdk_ex": "Sonraları herkes kondusuna ayrı bir işaret koydu.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10806",
+    "tr": "bilgisayar",
+    "pos": "emër",
+    "tdk_def": "Belleğine yüklenmiş program uyarınca aritmetik ve mantık işlemleri yapabilen, sonuca göre karar verip programdaki akışı değiştirebilen, çevresiyle etkileşimde bulunabilen, girdi ve sonuç verilerini belleğinde tutabilen aygıt; elektronik beyin",
+    "tdk_ex": "Bir tümcenin bilgisayar tarafından ögelerine ayrılabilmesi için bilgisayarın o dilin söz dizimsel özelliklerini bilmesi gerekir.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10807",
+    "tr": "araştırma",
+    "pos": "emër",
+    "tdk_def": "Araştırmak işi; araştırı, tetkik",
+    "tdk_ex": "Sosyal ve bilimsel konuda araştırmalar, makaleler yayımlar.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10808",
+    "tr": "askerî",
+    "pos": "mbiemër",
+    "tdk_def": "Askerlikle ilgili, askere özgü",
+    "tdk_ex": "Sonra subay salonunda, askerî sorgu yargıcının karşısına çıkardılar.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10809",
+    "tr": "hanım",
+    "pos": "emër",
+    "tdk_def": "Kız ve kadınlara verilen ünvan; bayan, hatun, leydi",
+    "tdk_ex": "Nermin Hanım, razı gelmiş gibi göründü ama hiçbir zaman istemedi...",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10810",
+    "tr": "iyice",
+    "pos": "mbiemër",
+    "tdk_def": "İyiye yakın",
+    "tdk_ex": "İyice bir ev.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10811",
+    "tr": "sorumlu",
+    "pos": "mbiemër",
+    "tdk_def": "Üstüne aldığı veya yaptığı işlerden dolayı hesap vermek zorunda olan, sorumluluk taşıyan (kimse); mesul, mesuliyetli",
+    "tdk_ex": "Hekim hastasına ve çevresine karşı sorumludur, mesleğe ancak and içerek girebilir.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10812",
+    "tr": "domuz",
+    "pos": "emër",
+    "tdk_def": "Çift parmaklılardan, eti, yağı, derisi veya kılı için beslenen, evcil hayvan; hınzır (Susacrofa domestica)",
+    "tdk_ex": "Domuzun malı için can tüketmeye mi geldik dünyaya?",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10813",
+    "tr": "ortada",
+    "pos": "mbiemër",
+    "tdk_def": "Sonucu belli olmayan (karşılaşma)",
+    "tdk_ex": "Moralinin, inadının, zaman zaman da aşırı ataklığının nedeni ortadadır.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10814",
+    "tr": "engel",
+    "pos": "emër",
+    "tdk_def": "Bir şeyin gerçekleşmesini önleyen sebep; duvar, köstek, mâni (I), mahzur, pürüz, mânia, hail, handikap, kasis, ket",
+    "tdk_ex": "Seçme ve aracılık işlevini yerine getiren dünyanın önünde ise öyle aşılması güç engeller yok gibi.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10815",
+    "tr": "ters",
+    "pos": "emër",
+    "tdk_def": "Hayvan pisliği",
+    "tdk_ex": null,
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10816",
+    "tr": "düğün",
+    "pos": "emër",
+    "tdk_def": "Evlenme veya sünnet dolayısıyla yapılan tören, eğlence; toy (II), cemiyet",
+    "tdk_ex": "Babam düğünün savaştan sonraya kalmasını uygun görmüş.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10817",
+    "tr": "numaralı",
+    "pos": "mbiemër",
+    "tdk_def": "Belli bir numarası olan",
+    "tdk_ex": "Tokatlıyan'ın sırasındaki yirmi beş numaralı apartmanı arıyorum.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10818",
+    "tr": "kocaman",
+    "pos": "mbiemër",
+    "tdk_def": "Çok iri; koca (II), cesim, kazulet",
+    "tdk_ex": "O gece mahalleye kocaman kamyonlar geldi.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10819",
+    "tr": "problem",
+    "pos": "emër",
+    "tdk_def": "Teoremler veya kurallar yardımıyla çözülmesi istenen soru; mesele",
+    "tdk_ex": "Problem çocuk.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10820",
+    "tr": "konuşu",
+    "pos": "emër",
+    "tdk_def": "Bilimsel bir sorunu incelemek veya siyasi, ekonomik, diplomatik sorunları tartışmak için yapılan akademik toplantı; kolokyum",
+    "tdk_ex": null,
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10821",
+    "tr": "işaret",
+    "pos": "emër",
+    "tdk_def": "Bir anlam yükletilen ve bir şeyi bildirmeye, anlatmaya yarayan şekil, anlamlı iz; bel (I), im, delalet",
+    "tdk_ex": "Noktalama işaretleri.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10822",
+    "tr": "kuş",
+    "pos": "emër",
+    "tdk_def": "Yumurtlayan omurgalılardan, akciğerli, sıcakkanlı, vücudu tüylerle örtülü, gagalı, iki ayaklı, iki kanatlı uçucu hayvanların ortak adı",
+    "tdk_ex": "Çalıların üstünde kuşlar cıvıldayarak uçuşuyordu.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10823",
+    "tr": "şükür",
+    "pos": "emër",
+    "tdk_def": "Allah’a duyulan minneti dile getirme",
+    "tdk_ex": "Hava kapanık geçti ama yağış olmadı şükür Allah’a!",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10824",
+    "tr": "girmek",
+    "pos": "emër",
+    "tdk_def": "Dışarıdan içeriye geçmek; kaçmak",
+    "tdk_ex": "Birlikte kiliseden içeri giriyoruz, ben topallıyorum.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10825",
+    "tr": "dokuz",
+    "pos": "emër",
+    "tdk_def": "Sekizden sonra gelen sayının adı",
+    "tdk_ex": null,
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10826",
+    "tr": "uçak",
+    "pos": "emër",
+    "tdk_def": "Kanatlarının altındaki havanın yaptığı basınç yardımıyla yükselip ilerleyebilen motorlu hava taşıtı; tayyare",
+    "tdk_ex": "Uçakta uzun süre hareketsiz kalmaktan Şükran’ın beli, sırtı tutulmuştu.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10827",
+    "tr": "tamir",
+    "pos": "emër",
+    "tdk_def": "► onarım",
+    "tdk_ex": "Mademki bir münasebetsizlik etmişsin, bunu tamire imkân yok muydu?",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10828",
+    "tr": "çılgın",
+    "pos": "mbiemër",
+    "tdk_def": "Aşırı davranışlarda bulunan",
+    "tdk_ex": "Bazı anneler, çocukları olduğunda bir çılgın gibi davranırlar.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10829",
+    "tr": "nasılsınız",
+    "pos": "emër",
+    "tdk_def": "bir kimsenin sağlığını ve durumunu öğrenmek için sorulan nezaket sorusu",
+    "tdk_ex": null,
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10830",
+    "tr": "binlerce",
+    "pos": "mbiemër",
+    "tdk_def": "Pek çok, çok sayıda",
+    "tdk_ex": "Yüzlerce, binlerce gün, ötekinden hiç farklı olmayarak geçmeyecek miydi sanki?",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10831",
+    "tr": "bölge",
+    "pos": "emër",
+    "tdk_def": "Sınırları idari, ekonomik birliğe, toprak, iklim ve bitki özelliklerinin benzerliğine veya üzerinde yaşayan insanların aynı soydan gelmiş olmalarına göre belirlenen toprak parçası; havza, mıntıka, zon",
+    "tdk_ex": "Maddeden mi nereden geldiği belirsiz olan bu kıymet son tahminime göre bazı bölgelerin toprak mahsulündendir.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10832",
+    "tr": "martin",
+    "pos": "emër",
+    "tdk_def": "Tek kurşun atan bir tür tüfek",
+    "tdk_ex": "At martini Debreli Hasan, dağlar inlesin / Drama mahpusunda, aman dostlar dinlesin",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10833",
+    "tr": "tutmak",
+    "pos": "emër",
+    "tdk_def": "Elde bulundurmak, ele almak",
+    "tdk_ex": "Kucağında kundaklı bir çocuk tutuyordu.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10834",
+    "tr": "bol",
+    "pos": "emër",
+    "tdk_def": "Özel bir cam içinde likör, şarap, meyve ve maden suyu karıştırılarak hazırlanan içki",
+    "tdk_ex": null,
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10835",
+    "tr": "karın",
+    "pos": "emër",
+    "tdk_def": "İnsan ve hayvanlarda gövdenin kaburga kenarlarından kasıklara kadar olan ön bölgesi; batın",
+    "tdk_ex": "Şuursuz bir acele ile mahmuzlarını atının karnına vurdu.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10836",
+    "tr": "hariç",
+    "pos": "emër",
+    "tdk_def": "► dış",
+    "tdk_ex": "Bu kitapların haricinde herhangi bir menfaat ummak, seraptan su ummak gibi olur.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10837",
+    "tr": "birer",
+    "pos": "mbiemër",
+    "tdk_def": "Bir sayısının üleştirme sayı sıfatı",
+    "tdk_ex": "Birer kalp bıraktılar bize kırık / Ömrümüzce gözyaşı döktürecek",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10838",
+    "tr": "ceset",
+    "pos": "emër",
+    "tdk_def": "Ölen insanın vücudu; naaş",
+    "tdk_ex": "Gece sabaha karşı, balıkçılar denizde bir ceset bulmuşlardı.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10839",
+    "tr": "çıplak",
+    "pos": "mbiemër",
+    "tdk_def": "Üstünde bulunması gereken giysi, örtü vb. bulunmayan; ari, üryan, nü, cıbıl, cıbıldak, cılcıbık, şallak, yalıncak",
+    "tdk_ex": "Kız, çıplak tabanlarını bozuk yolda şaplata şaplata köyün içerisine doğru uzaklaştı.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10840",
+    "tr": "derken",
+    "pos": "ndajfolje",
+    "tdk_def": "Dendiği hâlde",
+    "tdk_ex": "Bitti bitiyor derken hâlâ bitmeyen havaalanı.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10841",
+    "tr": "rapor",
+    "pos": "emër",
+    "tdk_def": "Herhangi bir işte, bir konuda yapılan inceleme, araştırma sonucunu, düşünceleri veya tespit edilenleri bildiren yazı; yazanak",
+    "tdk_ex": "Baştakilere, bir kere daha uyarmak için zehir zemberek bir rapor gönderdi.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10842",
+    "tr": "ihtiyaç",
+    "pos": "emër",
+    "tdk_def": "► gereksinim",
+    "tdk_ex": "Ama unutmayalım ki tecessüslerimize yön veren ihtiyaçlarımızdır.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10843",
+    "tr": "ilaç",
+    "pos": "emër",
+    "tdk_def": "Bir hastalığı iyi etmek veya önlemek için türlü yollarla kullanılan madde; daru, em, ot",
+    "tdk_ex": "Doktorlar da soğuk algınlığı teşhisi koymuşlar ve ilaçlar vermişler ancak iki gün geçmesine rağmen durumunda hiç düzelme olmamış, hatta geceleri de dâhil uyumamaya başlamış.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10844",
+    "tr": "sır",
+    "pos": "emër",
+    "tdk_def": "Varlığı veya bazı yönleri açığa vurulmak istenmeyen, gizli kalan, gizli tutulan şey",
+    "tdk_ex": "Bu bahçede açılan her gonca / Sırlar açıyor yerden gökten",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10845",
+    "tr": "benzer",
+    "pos": "mbiemër",
+    "tdk_def": "Nitelik, görünüş ve yapı bakımından bir başkasına benzeyen veya ona eş olan; benzeri, benzeş, emsal, menent, misal, mümasil, müşabih, nazir, analog, model",
+    "tdk_ex": "Kadınların yerlerde sürüklenirken çıkardıkları seslere benzer sesler çıkardı.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10846",
+    "tr": "Pazar",
+    "pos": "emër",
+    "tdk_def": "Rize iline bağlı ilçelerden biri",
+    "tdk_ex": null,
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10847",
+    "tr": "top",
+    "pos": "emër",
+    "tdk_def": "Birçok spor oyununda kullanılan, türlü büyüklükte, genellikle kauçuktan yapılmış yuvarlak nesne",
+    "tdk_ex": "Havası boşalmış bir futbol topu...",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10848",
+    "tr": "Orta",
+    "pos": "emër",
+    "tdk_def": "Çankırı iline bağlı ilçelerden biri",
+    "tdk_ex": null,
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10849",
+    "tr": "kör",
+    "pos": "mbiemër",
+    "tdk_def": "► görme engelli",
+    "tdk_ex": "Günün birinde ihtiyar çoban koyunun birini kör bir makasla kırkıyordu.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10850",
+    "tr": "yarı",
+    "pos": "mbiemër",
+    "tdk_def": "Bir bütünü oluşturan iki eşit parçadan her biri; nısıf, nim",
+    "tdk_ex": "Arkasından yarı şaka, yarı sitem ilave ediyor.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10851",
+    "tr": "sormak",
+    "pos": "emër",
+    "tdk_def": "Dudakları uzatıp soluğu kuvvetle çekerek emmek",
+    "tdk_ex": null,
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10852",
+    "tr": "kedi",
+    "pos": "emër",
+    "tdk_def": "Kedigillerden, memeli, köpek dişleri iyi gelişmiş, çevik ve kuvvetli, evcil, küçük hayvan; pisik (Felis domesticus)",
+    "tdk_ex": "Evcil kedi. Ankara kedisi. Van kedisi.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10853",
+    "tr": "tütün",
+    "pos": "emër",
+    "tdk_def": "Patlıcangillerden, birleşiminde nikotin bulunan otsu bir bitki (Nicotiana tabacum)",
+    "tdk_ex": "Zeytinliklerin arasında bağcılık ederler, biraz alçaklarda da tütün ekerlerdi.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10854",
+    "tr": "oynamak",
+    "pos": "emër",
+    "tdk_def": "Vakit geçirme, eğlenme, oyalanma vb. amaçlarla bir şeyle uğraşmak",
+    "tdk_ex": "Çimenler üzerinde çocuklar oynuyor, kuzular otluyor.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10855",
+    "tr": "taş",
+    "pos": "emër",
+    "tdk_def": "Kimyasal veya fiziksel durumu değişiklikler gösteren, rengini içindeki maden, tuz ve oksitlerden alan sert ve katı madde",
+    "tdk_ex": "Kireç taşı. Oltu taşı.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10856",
+    "tr": "tavsiye",
+    "pos": "emër",
+    "tdk_def": "Öğütleme, öğüt verme, yol gösterme",
+    "tdk_ex": "Doktorların tavsiyesini yerine getirmek için de yürüye yürüye evine vaktinde yetişir.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10857",
+    "tr": "kahraman",
+    "pos": "mbiemër",
+    "tdk_def": "Savaşta veya tehlikeli bir durumda yararlık gösteren (kimse); yiğit",
+    "tdk_ex": "Al bayrağa narin eller işliyor zafer / Uzaklarda yaralanır kahraman nefer",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10858",
+    "tr": "Kurt",
+    "pos": "emër",
+    "tdk_def": "Güney gök kürede, Akrep ile Boğa arasında bulunan takımyıldız",
+    "tdk_ex": null,
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10859",
+    "tr": "cuma",
+    "pos": "emër",
+    "tdk_def": "Perşembe ile cumartesi arasındaki gün",
+    "tdk_ex": null,
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10860",
+    "tr": "itibaren",
+    "pos": "pjesëz",
+    "tdk_def": "-den başlayarak, -den beri",
+    "tdk_ex": "İşte o dakikadan itibaren onun boyalı dudaklarından, yapma sarı saçlarından nefret ediyordum.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10861",
+    "tr": "şimdiden",
+    "pos": "ndajfolje",
+    "tdk_def": "İçinde bulunduğumuz zamandan başlayarak",
+    "tdk_ex": "Görülüyor ki atom harbi tehlikesi şimdiden tesirini göstermeye başlamıştır.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10862",
+    "tr": "idare",
+    "pos": "emër",
+    "tdk_def": "Yönetme, çekip çevirme; güdüm, yönetim",
+    "tdk_ex": "Bu zat, propagandayı tertip ve idareye memur imiş.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10863",
+    "tr": "filan",
+    "pos": "përemër",
+    "tdk_def": "► falan",
+    "tdk_ex": null,
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10864",
+    "tr": "topu",
+    "pos": "përemër",
+    "tdk_def": "► hepsi",
+    "tdk_ex": "Sarf edilen gayretlerin topu, halkımıza turizmin önemini, yararlarını belletmeye yönelmiş görünüyor.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10865",
+    "tr": "hangisi",
+    "pos": "përemër",
+    "tdk_def": "\"Kim, hangi şey\" anlamlarında kullanılan bir söz",
+    "tdk_ex": "Bende olmayanın hangisini sonradan edinebilirim?",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10866",
+    "tr": "kayıt",
+    "pos": "emër",
+    "tdk_def": "Pencere çerçevesi",
+    "tdk_ex": null,
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10867",
+    "tr": "bağlantı",
+    "pos": "emër",
+    "tdk_def": "İki veya daha çok şeyin birbiriyle bağlı bulunması; ilişki, irtibat, bağlanak",
+    "tdk_ex": "Kar yüzünden çevre ile bağlantı kesildi.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10868",
+    "tr": "maalesef",
+    "pos": "ndajfolje",
+    "tdk_def": "Üzülerek söylüyorum ki, ne yazık ki; maatteessüf",
+    "tdk_ex": "Hatta maalesef bu sevgide bir çocuk içliliği bile vardır.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10869",
+    "tr": "görüşmek",
+    "pos": "emër",
+    "tdk_def": "Buluşup konuşmak, konuşup sohbet etmek",
+    "tdk_ex": "Ara sıra görüşelim.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10870",
+    "tr": "neymiş",
+    "pos": "emër",
+    "tdk_def": "söylendiğine göre, güya",
+    "tdk_ex": "Neymiş? Projenin sahibi oymuş!",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10871",
+    "tr": "hayalet",
+    "pos": "emër",
+    "tdk_def": "Gerçekte var olmadığı hâlde bazen görüldüğü sanılan peri, hortlak vb. görüntüler; görüntü, fantom",
+    "tdk_ex": "Gözümün önünden durmaksızın geçen bir hayalet var.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10872",
+    "tr": "enerji",
+    "pos": "emër",
+    "tdk_def": "Maddede var olan ve ısı, ışık biçiminde ortaya çıkan güç; erke",
+    "tdk_ex": "Isıl enerji. Elektrik enerjisi. Mekanik enerji.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10873",
+    "tr": "cesur",
+    "pos": "mbiemër",
+    "tdk_def": "► cesaretli",
+    "tdk_ex": "Bu, yeterince cesur olamadığımın bir göstergesi olabilir.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10874",
+    "tr": "bırakmak",
+    "pos": "emër",
+    "tdk_def": "Elde bulunan bir şeyi tutmaktan vazgeçip tutmaz olmak",
+    "tdk_ex": "Mermer masaya bir yirmi beşlik bıraktı.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10875",
+    "tr": "şan",
+    "pos": "emër",
+    "tdk_def": "Nefesi diyaframla kontrol ederek sese hâkimiyeti ve ses alanını genişletmeyi amaçlayan teknik",
+    "tdk_ex": "Konservatuvara devam ediyor. Şan bölümüne geçmiş.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10876",
+    "tr": "sağlık",
+    "pos": "emër",
+    "tdk_def": "Bireyin fiziksel, sosyal ve ruhsal yönden tam bir iyilik durumunda olması, vücut esenliği; keyif, sıhhat",
+    "tdk_ex": "Ayrıca bu dönemde seyircinin haklarını ve sağlığını korumak amacıyla bir de tiyatro yönetmeliği hazırlanmıştır.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10877",
+    "tr": "sizce",
+    "pos": "ndajfolje",
+    "tdk_def": "Size göre, sizin düşüncenizce",
+    "tdk_ex": null,
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10878",
+    "tr": "savunma",
+    "pos": "emër",
+    "tdk_def": "Saldırıya karşı koyma; müdafaa",
+    "tdk_ex": "Mustafa Kemal'in orada seçtiği savunma hattı, Millî Misak'taki Türkiye sınırı idi.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10879",
+    "tr": "Doğu",
+    "pos": "emër",
+    "tdk_def": "Güneşin doğduğu yöndeki ülkeler veya uygarlıklar bölgesi; Şark, Batı karşıtı",
+    "tdk_ex": null,
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10880",
+    "tr": "merkezî",
+    "pos": "mbiemër",
+    "tdk_def": "Merkezde olan, merkezi oluşturan",
+    "tdk_ex": "Dur bakalım, biraz daha merkezî mahallelere yaklaşalım, diyordu.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10881",
+    "tr": "sinir",
+    "pos": "emër",
+    "tdk_def": "Duyu ve hareket uyarılarını beyinden organlara, organlardan beyne ileten beyazımsı teller ve bu tellerin oluşturduğu demet; asap",
+    "tdk_ex": "Koket ruhu artık yüzünün sinirlerini idare etmiyordu.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10882",
+    "tr": "yasal",
+    "pos": "mbiemër",
+    "tdk_def": "Yasanın, dinin ve kamu vicdanının doğru bulduğu, yasalara uygun; kanuni (I), meşru, legal",
+    "tdk_ex": null,
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10883",
+    "tr": "anlaşılan",
+    "pos": "ndajfolje",
+    "tdk_def": "Anlaşıldığına göre",
+    "tdk_ex": "Anlaşılan sen İstanbul'un acemisi olmalısın.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10884",
+    "tr": "canavar",
+    "pos": "emër",
+    "tdk_def": "Masallarda sözü geçen yabani, yırtıcı hayvan",
+    "tdk_ex": "Sen bir ahu gibi dağdan dağa kaçsan da yine / Seni aşkım canavarlar gibi takip edecek",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10885",
+    "tr": "barış",
+    "pos": "emër",
+    "tdk_def": "Barışmak işi",
+    "tdk_ex": "Biz baba kız biliyorduk ki bu gibi kaçışlar, bir barışla biter.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10886",
+    "tr": "ihanet",
+    "pos": "emër",
+    "tdk_def": "Arkadan vurma, hainlik etme",
+    "tdk_ex": "İhanetin böylesini tarih kabul etmez, kusardı.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10887",
+    "tr": "umut",
+    "pos": "emër",
+    "tdk_def": "Ummaktan doğan duygu; umu, ümit",
+    "tdk_ex": "Bu umudum şimdi yavaş yavaş ölüyor.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10888",
+    "tr": "bunca",
+    "pos": "mbiemër",
+    "tdk_def": "Bu kadar çok",
+    "tdk_ex": "Bunca zamandan sonra bu ziyaret de nereden çıkmıştı?",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10889",
+    "tr": "iz",
+    "pos": "emër",
+    "tdk_def": "Bir şeyin geçtiği veya önce bulunduğu yerde bıraktığı belirti; çığır, nişan, nişane",
+    "tdk_ex": "Nihayet bir dönemeçte izlerin sahibini gördüm.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10890",
+    "tr": "mücadele",
+    "pos": "emër",
+    "tdk_def": "Birbirlerine isteklerini kabul ettirmek için iki taraf arasında yapılan zorlu çaba; savaş, kavga",
+    "tdk_ex": "Bu İslam merkezinde içten içe bir yığın mücadele vardı.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10891",
+    "tr": "yıllık",
+    "pos": "mbiemër",
+    "tdk_def": "Bir yıl için; senelik, senevi",
+    "tdk_ex": "Evi yıllık tuttular.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10892",
+    "tr": "kilo",
+    "pos": "emër",
+    "tdk_def": "► kilogram",
+    "tdk_ex": "İki kilo şeker.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10893",
+    "tr": "lös",
+    "pos": "emër",
+    "tdk_def": "En çok vadilerde, yamaçlarda bulunan, kil ve kum karışımı, sarı renkli verimli balçık",
+    "tdk_ex": null,
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10894",
+    "tr": "ödeme",
+    "pos": "emër",
+    "tdk_def": "Ödemek işi; ifa, tediye",
+    "tdk_ex": "Aradan yedi sekiz ay geçmiş, hiç aksama olmamıştı ödemelerde.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10895",
+    "tr": "kâr",
+    "pos": "emër",
+    "tdk_def": "Alışveriş işlerinin sağladığı para kazancı; getiri",
+    "tdk_ex": "Bundan benim hiçbir kârım yok.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10896",
+    "tr": "kazanmak",
+    "pos": "emër",
+    "tdk_def": "Kazanç sağlamak",
+    "tdk_ex": "Bu beş lirayı bitirmeden ben para kazanmalıyım.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10897",
+    "tr": "baskı",
+    "pos": "emër",
+    "tdk_def": "Bir eserin basılış biçimi veya durumu",
+    "tdk_ex": "Baskı yanlışlıkları yüzünden kapatılan gazeteler vardı.",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10898",
+    "tr": "binbaşı",
+    "pos": "emër",
+    "tdk_def": "Orduda rütbesi yüzbaşı ile yarbay arasında bulunan ve asıl görevi tabur komutanlığı olan subay",
+    "tdk_ex": null,
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-10899",
+    "tr": "mahkeme",
+    "pos": "emër",
+    "tdk_def": "Bir yargıçtan veya bazen savcı ve yargıçlardan oluşan bir kurulun, yargı görevini yerine getirdikleri yer; yargı yeri, yargıevi, mahkeme kapısı",
+    "tdk_ex": "Mahkemenin elinde bu iddiaları yalanlayacak bir belge yoktu.",
+    "sq_base": null
+  }
+]

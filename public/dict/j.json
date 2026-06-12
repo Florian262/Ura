@@ -1,1 +1,103 @@
-[]
+[
+  {
+    "id": "dict-tr-15168",
+    "source": "tr",
+    "word": "jaguar",
+    "translation": "jaguari",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'jaguar'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13907",
+    "source": "tr",
+    "word": "jambon",
+    "translation": "proshutë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'jambon'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18254",
+    "source": "tr",
+    "word": "jandarma",
+    "translation": "Xhandarmëria",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'jandarma'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11312",
+    "source": "tr",
+    "word": "Japon",
+    "translation": "japonez, japoneze",
+    "pos": "emër",
+    "senses": [
+      "Populli që jeton në Japoni ose personi që rrjedh nga ky popull"
+    ],
+    "examples": [
+      {
+        "source": "Ejderha motifli Japon feneri uydurulmuştu.",
+        "target": "Ishte përshtatur një fener japonez me motive dragoi."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11897",
+    "source": "tr",
+    "word": "jersey",
+    "translation": "xhersi (racë lope)",
+    "pos": "emër",
+    "senses": [
+      "Racë gjedhi kulture me ngjyrë që ndryshon nga e verdha dhe kafenetë e deri te të errëtat, që nuk mban mish dhe i dallohen kockat qartë"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14835",
+    "source": "tr",
+    "word": "jimnastik",
+    "translation": "Gjimnastika",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'jimnastik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17994",
+    "source": "tr",
+    "word": "judo",
+    "translation": "xhudo",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'judo'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11492",
+    "source": "tr",
+    "word": "jüri",
+    "translation": "juri, komision përzgjedhës",
+    "pos": "emër",
+    "senses": [
+      "Komisioni i përzgjedhësve (seciciler kurulu)"
+    ],
+    "examples": [],
+    "derivatives": []
+  }
+]

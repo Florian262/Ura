@@ -1,44 +1,496 @@
 [
   {
-    "id": "dict-tr-51",
+    "id": "dict-tr-10218",
     "source": "tr",
-    "word": "limon",
-    "translation": "limon",
+    "word": "la",
+    "translation": "la",
     "pos": "emër",
-    "inflection": "-u",
     "senses": [
-      "Frut i verdhë dhe i thartë i pemës së limonit, i pasur me vitaminë C."
+      "Toni midis notasve sol dhe si në shkallën muzikore"
     ],
-    "examples": [
-      {
-        "source": "Limon suyu",
-        "target": "Lëng limoni"
-      }
-    ],
-    "derivatives": [
-      {
-        "word": "limonata",
-        "translation": "limonatë",
-        "pos": "emër"
-      }
-    ]
+    "examples": [],
+    "derivatives": []
   },
   {
-    "id": "dict-tr-52",
+    "id": "dict-tr-12887",
     "source": "tr",
-    "word": "lokum",
-    "translation": "llokum",
+    "word": "laboratuvar",
+    "translation": "laborator",
     "pos": "emër",
-    "inflection": "-u",
-    "is_balkan": true,
     "senses": [
-      "Ëmbëlsirë e butë xhelatinoze, e mbuluar me sheqer pluhur."
+      "Përkthim për fjalën 'laboratuvar'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11302",
+    "source": "tr",
+    "word": "laf",
+    "translation": "fjalë, muhabet",
+    "pos": "emër",
+    "senses": [
+      "Fjalë"
     ],
     "examples": [
       {
-        "source": "Türk lokumu",
-        "target": "Llokum turk"
+        "source": "Galiba ızdırabın ne olduğunu tecrübe edenler için saadet boş laf.",
+        "target": "Siç duket, për ata që përjetojnë se çfarë është vuajtja, lumturia është thjesht një fjalë e kotë."
       }
-    ]
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18361",
+    "source": "tr",
+    "word": "lala",
+    "translation": "Lala",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'lala'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10482",
+    "source": "tr",
+    "word": "lan",
+    "translation": "ore, mor",
+    "pos": "pasthirrmë",
+    "senses": [
+      "Fjalë thirrëse në kuptimet 'ore, ulan'"
+    ],
+    "examples": [
+      {
+        "source": "İte bak lan, dedi, nasıl da horozlanıyor?",
+        "target": "Shikoje atë qen mor, tha, si po krekoset?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10156",
+    "source": "tr",
+    "word": "lanet",
+    "translation": "mallkim",
+    "pos": "emër",
+    "senses": [
+      "Mungesa e mëshirës së Zotit, dëbim nga mëshira hyjnore"
+    ],
+    "examples": [
+      {
+        "source": "Başıma yağan bu ana laneti beni ürpertiyor.",
+        "target": "Ky mallkim nëne që po bie mbi kokën time më rëndon."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18712",
+    "source": "tr",
+    "word": "langırt",
+    "translation": "Futboll tavoline",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'langırt'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12098",
+    "source": "tr",
+    "word": "lastik",
+    "translation": "Goma",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'lastik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15026",
+    "source": "tr",
+    "word": "lav",
+    "translation": "Lava",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'lav'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12793",
+    "source": "tr",
+    "word": "lazer",
+    "translation": "lazeri",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'lazer'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10136",
+    "source": "tr",
+    "word": "lazım",
+    "translation": "i nevojshëm, duhet",
+    "pos": "mbiemër",
+    "senses": [
+      "Gjë që nevojitet, që duhet"
+    ],
+    "examples": [
+      {
+        "source": "Yaratıcı hamleler yapmak isteyen bir millet için mutlaka bir şeye inanmak lazım.",
+        "target": "Për një komb që dëshiron të bëjë hapa krijues, është absolutisht e nevojshme të besojë në diçka."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14869",
+    "source": "tr",
+    "word": "lağım",
+    "translation": "Lufta në tunele",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'lağım'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10284",
+    "source": "tr",
+    "word": "le",
+    "translation": "l",
+    "pos": "emër",
+    "senses": [
+      "Emri dhe shqiptimi i shkronjës së pesëmbëdhjetë të alfabetit turk"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17152",
+    "source": "tr",
+    "word": "lenf",
+    "translation": "Limfa",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'lenf'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11428",
+    "source": "tr",
+    "word": "leydi",
+    "translation": "lejd, zonjë e lartë",
+    "pos": "emër",
+    "senses": [
+      "Hanım, titull respekti për gratë e shtresës së lartë në Britani"
+    ],
+    "examples": [
+      {
+        "source": "Sonra öteki leydi araya giriyor, o da galiba genç lorda tutkun.",
+        "target": "Pastaj ndërhyn zonja tjetër (leydi), edhe ajo siç duket është e fiksuar pas lordit të ri."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12142",
+    "source": "tr",
+    "word": "lezbiyen",
+    "translation": "lesbike",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'lezbiyen'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11251",
+    "source": "tr",
+    "word": "lezzetli",
+    "translation": "i shijshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka shije të mirë"
+    ],
+    "examples": [
+      {
+        "source": "Bizim yazıcı için bundan daha iyi, bundan daha lezzetli bir ilaç olamaz.",
+        "target": "Për shkrimtarin tonë nuk mund të ketë bar më të mirë e më të shijshëm se ky."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11097",
+    "source": "tr",
+    "word": "Li",
+    "translation": "Li",
+    "pos": "emër",
+    "senses": [
+      "Simboli i elementit të liumit (lithiumit)"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11694",
+    "source": "tr",
+    "word": "lider",
+    "translation": "lider, udhëheqës",
+    "pos": "emër",
+    "senses": [
+      "Onder"
+    ],
+    "examples": [
+      {
+        "source": "İhtilal partisinin liderini yakından ilk defa tanıyacaktım.",
+        "target": "Do ta njihja për herë të parë nga afër udhëheqësin (liderin) e partisë së revolucionit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12665",
+    "source": "tr",
+    "word": "liderlik",
+    "translation": "udhëheqja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'liderlik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13093",
+    "source": "tr",
+    "word": "liman",
+    "translation": "Limani, limani",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'liman'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12909",
+    "source": "tr",
+    "word": "limon",
+    "translation": "limoni",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'limon'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13746",
+    "source": "tr",
+    "word": "limonata",
+    "translation": "limonada",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'limonata'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16475",
+    "source": "tr",
+    "word": "linç",
+    "translation": "Linçimi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'linç'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14337",
+    "source": "tr",
+    "word": "lira",
+    "translation": "lira",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'lira'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14326",
+    "source": "tr",
+    "word": "lisans",
+    "translation": "Licenca, bachelor",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'lisans'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11529",
+    "source": "tr",
+    "word": "lise",
+    "translation": "gjimnaz, shkollë e mesme",
+    "pos": "emër",
+    "senses": [
+      "Institucion arsimor që i përgatit nxënësit për jetën dhe për arsimin e lartë pas shkollës tetëvjeçare (shkollës së mesme të ulët)"
+    ],
+    "examples": [
+      {
+        "source": "İlkokulu, liseyi birlikte okuduk, belki onda nostalji uyandırıyorum.",
+        "target": "Shkollën fillore dhe gjimnazin i kryem bashkë, ndoshta po zgjoj nostalgji tek ai."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11854",
+    "source": "tr",
+    "word": "liste",
+    "translation": "listë",
+    "pos": "emër",
+    "senses": [
+      "Tërësia e gjërave të shkruara njëra pas tjetrës lart e poshtë; dizelge"
+    ],
+    "examples": [
+      {
+        "source": "Elimden geldiği kadar listenizi yerine getirmeye çalışacağım.",
+        "target": "Do të përpiqem ta plotësoj listën tuaj aq sa të kem mundësi (të më vijë nga dora)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12979",
+    "source": "tr",
+    "word": "litre",
+    "translation": "Litri",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'litre'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18235",
+    "source": "tr",
+    "word": "lityum",
+    "translation": "litiumi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'lityum'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18679",
+    "source": "tr",
+    "word": "logo",
+    "translation": "logoja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'logo'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17542",
+    "source": "tr",
+    "word": "lojistik",
+    "translation": "Logjistika",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'lojistik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11441",
+    "source": "tr",
+    "word": "Lu",
+    "translation": "Lu",
+    "pos": "emër",
+    "senses": [
+      "Simboli i elementit të lutesiumit"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18082",
+    "source": "tr",
+    "word": "lunapark",
+    "translation": "door",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'lunapark'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10893",
+    "source": "tr",
+    "word": "lös",
+    "translation": "les, baltë argjilore",
+    "pos": "emër",
+    "senses": [
+      "Baltë pjellore me ngjyrë të verdhë, e përbërë nga përzierja e argjilës dhe rërës, që gjendet kryesisht nëpër lugina e shpate"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16575",
+    "source": "tr",
+    "word": "lösemi",
+    "translation": "leukoza",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'lösemi'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10048",
+    "source": "tr",
+    "word": "lütfen",
+    "translation": "ju lutem",
+    "pos": "ndajfolje",
+    "senses": [
+      "Fjalë që përdoret kur i kërkohet diçka dikujt në kuptimin 'shpresoj, bëj thirrje'"
+    ],
+    "examples": [
+      {
+        "source": "Lütfen yukarıya teşrif buyurun beyefendi!",
+        "target": "Ju lutem, urdhëroni sipër zotëri!"
+      }
+    ],
+    "derivatives": []
   }
 ]

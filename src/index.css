@@ -481,6 +481,37 @@ input:focus, textarea:focus, select:focus {
   border-color: var(--color-border-primary) !important;
 }
 
+/* Global white surface elements to dark surface */
+.dark-theme .bg-white {
+  background-color: var(--color-bg-surface) !important;
+}
+.dark-theme .md\:bg-white {
+  background-color: var(--color-bg-surface) !important;
+}
+
+/* Gray/Stone background elements to dark canvas */
+.dark-theme .bg-stone-50 {
+  background-color: var(--color-bg-canvas) !important;
+}
+.dark-theme .md\:bg-neutral-50 {
+  background-color: var(--color-bg-canvas) !important;
+}
+
+/* Dynamic State background color overrides in dark mode */
+.dark-theme .bg-rose-50\/50 {
+  background-color: var(--color-brand-danger-light) !important;
+}
+.dark-theme .bg-emerald-50\/50 {
+  background-color: var(--color-brand-success-light) !important;
+}
+.dark-theme .bg-\[\#3A5A40\]\/10 {
+  background-color: var(--color-brand-accent-light) !important;
+}
+.dark-theme .bg-\[\#3A5A40\]\/5 {
+  background-color: rgba(59, 130, 246, 0.06) !important;
+}
+
+
 /* Premium 3D Coin Flip Trigger Card Styles */
 .coin-flip-container {
   perspective: 1000px;

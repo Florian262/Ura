@@ -1,0 +1,19 @@
+[
+  {
+    "id": "dict-tr-11494",
+    "source": "tr",
+    "word": "âşık",
+    "translation": "i dashuruar, i rënë në dashuri",
+    "pos": "emër",
+    "senses": [
+      "Personi që ndien një dashuri dhe lidhje të skajshme ndaj diçkaje ose dikujt, i dhënë pas"
+    ],
+    "examples": [
+      {
+        "source": "Güzeller deniz kenarına geldikleri zaman âşıklar da kale burçlarına ve bedenlerine dolarlar.",
+        "target": "Kur të bukurit vijnë në anë të detit, të dashuruarit mbushen madje edhe nëpër kullat e kështjellave dhe trupat e tyre."
+      }
+    ],
+    "derivatives": []
+  }
+]

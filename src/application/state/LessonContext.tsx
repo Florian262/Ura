@@ -141,7 +141,7 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     // Load User Progress Session Coordinates (Pristine Restore Engine)
     const progress = ProgressRepository.getChapterProgress(chapterId);
     if (progress) {
-      setActiveSectionState(progress.last_viewed_section);
+      setActiveSectionState('reading'); // Always start at the reading section (the top) when clicking a lesson
       setReadingCompleted(progress.is_completed || false);
       setCarouselStepState(progress.carousel_grammar_step);
       setWritingPreferenceState(progress.writing_validation_preference);
@@ -162,6 +162,7 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     }
 
     setActivePage('lesson_active');
+    window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
   const saveCurrentProgress = (targetSection?: string) => {

@@ -45,7 +45,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
     };
 
     return (
-      <div className="bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-5 space-y-4 shadow-inner animate-fade-in">
+      <div className="bg-neutral-50/50 md:bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-4 md:p-5 space-y-4 md:shadow-inner animate-fade-in">
         <div>
           <span className="text-[9px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-md uppercase tracking-wider shadow-xs">
             Lloji A: Skuadra e Shumësit (Zgjedhje e Shumëfishtë)
@@ -145,7 +145,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
     };
 
     return (
-      <div className="bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-5 space-y-4 shadow-inner animate-fade-in">
+      <div className="bg-neutral-50/50 md:bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-4 md:p-5 space-y-4 md:shadow-inner animate-fade-in">
         <div>
           <span className="text-[9px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-md uppercase tracking-wider shadow-xs">
             Lloji B: Ndërtuesi i Sintaksës (Radhitja e Fjalëve)
@@ -260,7 +260,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
     };
 
     return (
-      <div className="bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-5 space-y-4 shadow-inner animate-fade-in">
+      <div className="bg-neutral-50/50 md:bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-4 md:p-5 space-y-4 md:shadow-inner animate-fade-in">
         <div>
           <span className="text-[9px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-md uppercase tracking-wider shadow-xs">
             Lloji C: Ndërtuesi i Prapashtesave (Agglutination Builder)
@@ -378,7 +378,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
   };
 
   return (
-    <div className="glass-panel rounded-2xl p-6 md:p-8 bg-white border border-[#E9ECEF] space-y-8 shadow-sm">
+    <div className="glass-panel md:rounded-2xl p-0 md:p-8 bg-transparent md:bg-white border-none md:border md:border-[#E9ECEF] space-y-8 shadow-none md:shadow-sm">
       
       <div className="mb-6 pb-4 border-b border-[#E9ECEF]">
         <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-widest">Sekuenca 5</span>

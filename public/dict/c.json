@@ -1,250 +1,2008 @@
 [
   {
-    "id": "dict-tr-18",
+    "id": "dict-tr-11969",
     "source": "tr",
-    "word": "cevap",
-    "translation": "përgjigje",
+    "word": "cadde",
+    "translation": "bulevard, rrugë e madhe",
     "pos": "emër",
-    "inflection": "-ı",
-    "is_balkan": true,
-    "notes": "Në shqip përdoret si emër femëror: përgjigjja. Trajta e pashquar: përgjigje.",
     "senses": [
-      "Fjalët ose shkrimi që i kthehen dikujt si reagim ndaj një pyetjeje.",
-      "Reagim apo kundërveprim ndaj një sjelljeje."
+      "Ana yol, rrugë kryesore e gjerë"
     ],
     "examples": [
       {
-        "source": "Cevap vermek",
-        "target": "Jap përgjigje (përgjigjem)"
-      },
-      {
-        "source": "Doğru cevap",
-        "target": "Përgjigje e saktë"
+        "source": "O kalabalık caddenin canlılığı çok hoşumuza gidiyor.",
+        "target": "Gjallëria e atij bulevardi plot me njerëz na pëlqen mjaft."
       }
     ],
-    "derivatives": [
-      {
-        "word": "cevaplamak",
-        "translation": "përgjigjem, i kthej përgjigje",
-        "pos": "folje"
-      },
-      {
-        "word": "cevapsız",
-        "translation": "pa përgjigje",
-        "pos": "mbiemër"
-      }
-    ]
+    "derivatives": []
   },
   {
-    "id": "dict-tr-19",
+    "id": "dict-tr-11316",
     "source": "tr",
-    "word": "çalışmak",
-    "translation": "punoj, përpiqem, studioj",
-    "pos": "folje",
-    "inflection": "(-e / -de)",
-    "notes": "Nëse do të thotë \"përpiqem për diçka\", kërkon dhanoren (-e). Nëse do të thotë \"punoj në një vend\", kërkon lokativin (-de).",
-    "senses": [
-      "Kryej një aktivitet fizik ose mendor për të prodhuar diçka apo për të fituar jetesën; punoj.",
-      "Bëj përpjekje të vazhdueshme për të arritur një qëllim; përpiqem.",
-      "Mësoj ose bëj detyrat (p.sh. studioj mësimet)."
-    ],
-    "examples": [
-      {
-        "source": "Fabrikada çalışmak",
-        "target": "Punoj në fabrikë"
-      },
-      {
-        "source": "Kazanmak için çalışmak",
-        "target": "Përpiqem për të fituar"
-      },
-      {
-        "source": "Ders çalışmak",
-        "target": "Studioj mësimet (bëj detyrat)"
-      }
-    ],
-    "derivatives": [
-      {
-        "word": "çalışkan",
-        "translation": "i/e zellshme, punëtor",
-        "pos": "mbiemër"
-      },
-      {
-        "word": "çalışan",
-        "translation": "punonjës, punëtor",
-        "pos": "emër"
-      },
-      {
-        "word": "çalışma",
-        "translation": "studim, punim, proces pune",
-        "pos": "emër"
-      }
-    ]
-  },
-  {
-    "id": "dict-tr-20",
-    "source": "tr",
-    "word": "cam",
-    "translation": "xham",
+    "word": "cadı",
+    "translation": "shtrigë, shtrigë e egër",
     "pos": "emër",
-    "inflection": "-ı",
-    "is_balkan": true,
     "senses": [
-      "Lëndë solide e tejdukshme dhe e thyeshme, që përdoret për dritare, gota etj.",
-      "Dritarja e një dhome apo makine."
+      "Fantazmë ose krijesë që besohet se lëviz netëve dhe u bën keq njerëzve"
     ],
     "examples": [
       {
-        "source": "Cam bardak",
-        "target": "Gotë xhami"
-      },
-      {
-        "source": "Camı açmak",
-        "target": "Hap xhamin (dritaren)"
+        "source": "Mektupta kötü kalpli cadının, prenses Tamara'yı tuzağa düşürüp hapsetmesi gerektiği, eğer bunu yaparsa bu altınlardan kat kat daha fazlasını vereceği yazıyormuş.",
+        "target": "Në letër shkruhej se shtriga me zemër të keqe duhej ta fuste në kurth dhe ta burgoste princeshën Tamara, dhe po ta bënte këtë, ai do t'i jepte shumë më tepër sesa këto ari."
       }
     ],
-    "derivatives": [
-      {
-        "word": "camcı",
-        "translation": "xhamprerës (xhamaxhi)",
-        "pos": "emër"
-      },
-      {
-        "word": "camlı",
-        "translation": "me xhama, i xhamuar",
-        "pos": "mbiemër"
-      }
-    ]
+    "derivatives": []
   },
   {
-    "id": "dict-tr-21",
+    "id": "dict-tr-18524",
+    "source": "tr",
+    "word": "cadılık",
+    "translation": "shtriga",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'cadılık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16082",
+    "source": "tr",
+    "word": "cami",
+    "translation": "xhami",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'cami'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10884",
+    "source": "tr",
+    "word": "canavar",
+    "translation": "përbindësh, kuçedër",
+    "pos": "emër",
+    "senses": [
+      "Kafshë e egër dhe shqetësuese që përmendet nëpër përralla"
+    ],
+    "examples": [
+      {
+        "source": "Sen bir ahu gibi dağdan dağa kaçsan da yine / Seni aşkım canavarlar gibi takip edecek",
+        "target": "Edhe në qoftë se ikën si një gazelë nga mali në mal përsëri / Dashuria ime do të të ndjekë si përbindësh"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10500",
+    "source": "tr",
+    "word": "canlı",
+    "translation": "i gjallë",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që është duke jetuar, që jeton; i palindshëm, i paprekur nga vdekja"
+    ],
+    "examples": [
+      {
+        "source": "Bütün canlıların kendilerini yarı baygın, uykulu, hareketsiz bir tembelliğe bıraktıkları saatler başlamıştı.",
+        "target": "Kishin filluar ato orë kur të gjitha qeniet e gjalla e lëshonin veten në një përtesë gjysmë të zalirosur, të përgjumur dhe të palëvizshme."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10314",
+    "source": "tr",
+    "word": "canım",
+    "translation": "i dashur, shpirti im",
+    "pos": "emër",
+    "senses": [
+      "Ai që e dua shumë"
+    ],
+    "examples": [
+      {
+        "source": "Gitme canım oğul, uyma bu akıllara.",
+        "target": "Mos shko, im bir i dashur, mos u shko pas këtyre mendjeve."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11999",
+    "source": "tr",
+    "word": "casus",
+    "translation": "spiun, agjent",
+    "pos": "emër",
+    "senses": [
+      "Personi që punon për qëllimet e fshehura të një shteti ose të një organizate; agjent"
+    ],
+    "examples": [
+      {
+        "source": "Parmaklarını sayfaların arasına sokup casusun kendisine verdiği parayı aradı ve buldu.",
+        "target": "Futi gishtat mes faqeve dhe kërkoi e gjeti paratë që spiuni i kishte dhënë atij."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13037",
+    "source": "tr",
+    "word": "casusluk",
+    "translation": "Spiunazhi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'casusluk'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13450",
+    "source": "tr",
+    "word": "caz",
+    "translation": "xhaz",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'caz'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17864",
+    "source": "tr",
+    "word": "cehalet",
+    "translation": "injorancë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'cehalet'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11208",
+    "source": "tr",
+    "word": "cehennem",
+    "translation": "ferr, xhehenem",
+    "pos": "emër",
+    "senses": [
+      "Sipas besimeve fetare, vendi ku mëkatarët e kësaj bote do të ndëshkohen pas vdekjes; xhehenem"
+    ],
+    "examples": [
+      {
+        "source": "Cennet, cehennem, ahiret, ebedî hayat hayallerine bir daha dönmesine imkân yoktu.",
+        "target": "Nuk kishte asnjë mundësi që ai t'u kthehej më fantazive të xhenetit, ferrit, botës tjetër dhe jetës së amshueshme."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15378",
+    "source": "tr",
+    "word": "cem",
+    "translation": "Namazi i udhëtarit",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'cem'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16495",
+    "source": "tr",
+    "word": "cemaat",
+    "translation": "Namazi me xhemat",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'cemaat'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11311",
+    "source": "tr",
+    "word": "cenaze",
+    "translation": "xhenaze, kufomë",
+    "pos": "emër",
+    "senses": [
+      "Trupi i një njeriu të vdekur që është mbështjellë me qefin, është vendosur në tabut dhe është bërë gati për t'u varrosur"
+    ],
+    "examples": [
+      {
+        "source": "Evden iki sene içinde üç cenaze çıkmıştı.",
+        "target": "Brenda dy viteve nga shtëpia kishin dalë tre xhenaze."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11486",
+    "source": "tr",
+    "word": "cennet",
+    "translation": "parajsë, xhenet",
+    "pos": "emër",
+    "senses": [
+      "Sipas besimeve fetare, vendi i mbushur plot me të mira dhe bukuri mbi çdo imagjinatë, ku njerëzit besimtarë dhe të mirë do të vendosen nga Allahu si shpërblim pas vdekjes dhe ku do të jetojnë përgjithmonë"
+    ],
+    "examples": [
+      {
+        "source": "Cennet cennet dedikleri birkaç köşkle birkaç huri / İsteyene ver sen anı, bana seni gerek seni",
+        "target": "Ajo që e quajnë parajsë parajsë janë disa vila e disa huri / Jepja atë atij që e kërkon, mua më duhesh ti, vetëm ti"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10783",
     "source": "tr",
     "word": "cep",
     "translation": "xhep",
     "pos": "emër",
-    "inflection": "-i",
-    "is_balkan": true,
     "senses": [
-      "Qese e vogël e qepur brenda ose jashtë një veshjeje për të mbajtur sende të vogla.",
-      "Telefon celular (shkurtim për \"cep telefonu\")."
+      "Pjesë e përgatitur me rreshtim të brendshëm duke hapur një hapësirë të caktuar në rroba, që shërben përgjithësisht për të vendosur gjëra"
     ],
     "examples": [
       {
-        "source": "Cep telefonu",
-        "target": "Telefon xhepi (celular)"
-      },
-      {
-        "source": "Cebimde para yok",
-        "target": "Nuk kam para në xhep"
+        "source": "Bayramın her günü gelirler, ellerini ceplerine sokarak dolaşırlardı.",
+        "target": "Vinin çdo ditë të festës, lëviznin duke futur duart nëpër xhepat e tyre."
       }
     ],
-    "derivatives": [
-      {
-        "word": "cepli",
-        "translation": "me xhep, që ka xhepa",
-        "pos": "mbiemër"
-      },
-      {
-        "word": "cepsiz",
-        "translation": "pa xhepa",
-        "pos": "mbiemër"
-      }
-    ]
+    "derivatives": []
   },
   {
-    "id": "dict-tr-22",
+    "id": "dict-tr-12627",
+    "source": "tr",
+    "word": "cerrah",
+    "translation": "kirurg",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'cerrah'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12633",
+    "source": "tr",
+    "word": "cerrahi",
+    "translation": "kirurgji",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'cerrahi'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10964",
+    "source": "tr",
+    "word": "cesaret",
+    "translation": "guxim, trimëri",
+    "pos": "emër",
+    "senses": [
+      "Besimi që personi gjen te vetvetja kur fillon një punë të vështirë ose të rrezikshme; cüret"
+    ],
+    "examples": [
+      {
+        "source": "Bütün halk türküleri gibi ölenin örnek cesaretini öven türkülerdi bunlar.",
+        "target": "Ashtu si të gjitha këngët popullore, këto ishin këngë që lëvdonin guximin shembullor të të ndjerit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10838",
+    "source": "tr",
+    "word": "ceset",
+    "translation": "kufomë, kufomë njeriu",
+    "pos": "emër",
+    "senses": [
+      "Trupi i një njeriu që ka vdekur; kufomë"
+    ],
+    "examples": [
+      {
+        "source": "Gece sabaha karşı, balıkçılar denizde bir ceset bulmuşlardı.",
+        "target": "Nga mëngjesi i natës, peshkatarët kishin gjetur një kufomë në det."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10873",
+    "source": "tr",
+    "word": "cesur",
+    "translation": "guximtar, trim",
+    "pos": "mbiemër",
+    "senses": [
+      "I guximshëm"
+    ],
+    "examples": [
+      {
+        "source": "Bu, yeterince cesur olamadığımın bir göstergesi olabilir.",
+        "target": "Kjo mund të jetë një tregues i faktit se nuk kam qenë mjaftueshëm guximtar."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10271",
+    "source": "tr",
+    "word": "cevap",
+    "translation": "përgjigje",
+    "pos": "emër",
+    "senses": [
+      "Reagimi që i jepet një pyetjeje, një kërkese, një fjalie, një sjelljeje ose një shkrimi; përgjigje"
+    ],
+    "examples": [
+      {
+        "source": "Çocuklara verecek cevabı her zaman vardı.",
+        "target": "Ai kishte gjithmonë një përgjigje për t'u dhënë fëmijëve."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13894",
+    "source": "tr",
+    "word": "ceviz",
+    "translation": "arra",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'ceviz'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10995",
+    "source": "tr",
+    "word": "ceza",
+    "translation": "dënim, ndëshkim",
+    "pos": "emër",
+    "senses": [
+      "Veprimi ose sanksioni që u shkakton trishtim, vështirësi apo dhimbje atyre që bëjnë sjellje të papërshtatshme; ukubet"
+    ],
+    "examples": [
+      {
+        "source": "Çünkü torunları bir ağızdan, ‘Ne demek, kadın mademki bizimle her hakta eşit, ceza da eşit olmalı’ diye homurdanıyor.",
+        "target": "Sepse nipërit e tyre po murmërijnë me një zë: 'Çfarë do të thotë, masi gruaja është e barabartë me ne në çdo të drejtë, edhe ndëshkimi duhet të jetë i barabartë'."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14548",
+    "source": "tr",
+    "word": "cezaevi",
+    "translation": "burg",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'cezaevi'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10431",
+    "source": "tr",
+    "word": "cidden",
+    "translation": "seriozisht, vërtet",
+    "pos": "ndajfolje",
+    "senses": [
+      "Me të vërtetë"
+    ],
+    "examples": [
+      {
+        "source": "Yazınız beni cidden memnun etti, çok çalışmışsınız, çok güzel buluşlarınız vardır.",
+        "target": "Shkrimi juaj më kënaqi seriozisht, keni punuar shumë dhe keni gjetje shumë të bukura."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10288",
+    "source": "tr",
+    "word": "ciddi",
+    "translation": "serioz",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që nuk është për shaka"
+    ],
+    "examples": [
+      {
+        "source": "İşin şakaya gelmediğini, verdiğim ciddi kararı çoktan öğrendiler şimdi...",
+        "target": "Ata tani e kanë mësuar kohë më parë se kjo punë nuk është për shaka dhe kanë parë vendimin tim serioz..."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18411",
+    "source": "tr",
+    "word": "cihat",
+    "translation": "Xhihadi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'cihat'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13857",
+    "source": "tr",
+    "word": "cilt",
+    "translation": "vëllimi i librit",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'cilt'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10418",
+    "source": "tr",
+    "word": "cinayet",
+    "translation": "krim, cinajet, vrasje",
+    "pos": "emër",
+    "senses": [
+      "Vrasja ose marrja e jetës së një qenieje të gjallë"
+    ],
+    "examples": [
+      {
+        "source": "Sanki iftiraya uğramış, sanki cinayetle suçlanıyor da kendini savunuyor.",
+        "target": "Sikur të ishte viktimë e një shpifjeje, sikur të akuzohej për vrasje e po mbron veten."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15153",
+    "source": "tr",
+    "word": "cins",
+    "translation": "Gjinia (Biologji)",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'cins'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10781",
+    "source": "tr",
+    "word": "cinsel",
+    "translation": "seksual, gjinor",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që lidhet me gjininë ose seksin"
+    ],
+    "examples": [
+      {
+        "source": "Cinsel eğitim doğumla ölüm arasında devam eden bir süreç olmasına karşın bu konudaki eğiticiler yeterince görünür olamamışlardır.",
+        "target": "Ndonëse edukimi seksual është një proces që vazhdon midis lindjes dhe vdekjes, edukuesit në këtë fushë nuk kanë mundur të jenë mjaftueshëm të dukshëm."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14690",
+    "source": "tr",
+    "word": "cinsellik",
+    "translation": "seksualiteti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'cinsellik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14002",
+    "source": "tr",
+    "word": "cinsiyet",
+    "translation": "gjinia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'cinsiyet'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16548",
+    "source": "tr",
+    "word": "coğrafya",
+    "translation": "gjeografi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'coğrafya'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10859",
+    "source": "tr",
+    "word": "cuma",
+    "translation": "e premte",
+    "pos": "emër",
+    "senses": [
+      "Dita midis së enjtes dhe së shtunës"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10923",
+    "source": "tr",
+    "word": "cumartesi",
+    "translation": "e shtunë",
+    "pos": "emër",
+    "senses": [
+      "Dita midis së enjtes dhe së dielës"
+    ],
+    "examples": [
+      {
+        "source": "Hüsrev Paşa tarafından inşa edilmiş olan bu şehirde cumartesiyi geçirdik.",
+        "target": "E kaluam të shtunën në këtë qytet që ishte ndërtuar nga Hüsrev Pasha."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13480",
+    "source": "tr",
+    "word": "cumhuriyet",
+    "translation": "Republika",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'cumhuriyet'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12480",
+    "source": "tr",
+    "word": "cüce",
+    "translation": "xhuxhi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'cüce'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13014",
+    "source": "tr",
+    "word": "cümle",
+    "translation": "fjali",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'cümle'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11637",
+    "source": "tr",
+    "word": "cüret",
+    "translation": "guxim i tepërt, trashësi, cüret",
+    "pos": "emër",
+    "senses": [
+      "Guxim i padyshimtë që kalon kufijtë e mirësjelljes"
+    ],
+    "examples": [
+      {
+        "source": "Bu ne cüret, benimle böyle nasıl konuşursunuz?",
+        "target": "Çfarë trashësie (guximi) është kjo, si mund të flisni kështu me mua?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13927",
+    "source": "tr",
+    "word": "cüzdan",
+    "translation": "portofoli",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'cüzdan'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17285",
+    "source": "tr",
+    "word": "cıva",
+    "translation": "zhiva",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'cıva'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11787",
+    "source": "tr",
+    "word": "çaba",
+    "translation": "përpjekje, mund, angazhim",
+    "pos": "emër",
+    "senses": [
+      "Forca e shfaqur, puna e rreptë dhe e vazhdueshme për të kryer ndonjë punë; gayret"
+    ],
+    "examples": [
+      {
+        "source": "Yoksa başlı başına zafer, boşuna bir çaba olur.",
+        "target": "Përndryshe fitorja më vete, do të ishte thjesht një përpjekje e kotë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11635",
+    "source": "tr",
+    "word": "çabucak",
+    "translation": "shpejt, menjëherë, brenda pak kohe",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në mënyrë mjaft të shpejtë, brenda një kohe të shkurtër; menjëherë"
+    ],
+    "examples": [
+      {
+        "source": "Yatakta çabucak doğruldu.",
+        "target": "U ngrit shpejt (drejt) në shtrat."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10231",
+    "source": "tr",
+    "word": "çabuk",
+    "translation": "i shpejtë, shpejt",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që është i shpejtë, e kundërta e i ngadaltë"
+    ],
+    "examples": [
+      {
+        "source": "Bir an böyle bekledi, sonra birdenbire arkasını dönerek çabuk adımlarla uzaklaştı ve sokağın köşesinde kayboldu.",
+        "target": "Priti kështu për një çast, pastaj papritmas u kthye, u largua me hapa të shpejtë dhe u zhduk në këndin e rrugës."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14105",
+    "source": "tr",
+    "word": "çadır",
+    "translation": "Çadra",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çadır'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11782",
+    "source": "tr",
+    "word": "çalar",
+    "translation": "nuancë, nuancë ngjyre",
+    "pos": "emër",
+    "senses": [
+      "Dallim mjaft i vogël (nuancë) midis ngjyrave"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11546",
+    "source": "tr",
+    "word": "çalmak",
+    "translation": "vjedh, vjedhje",
+    "pos": "emër",
+    "senses": [
+      "Të marrësh fshehurazi pasurinë e dikujt tjetër; të ngresh diçka fshehura"
+    ],
+    "examples": [
+      {
+        "source": "İngiliz cephesinden at kaçırıp bize satan bedeviler dönüşlerinde bizim atlarımızı çalıp İngilizlere satarlardı.",
+        "target": "Beduinët që merrnin kuaj nga fronti anglez dhe na i shitnin neve, gjatë kthimit të tyre na i vdidhnin kuajt tanë e ua shitnin anglezëve."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10733",
+    "source": "tr",
+    "word": "çalış",
+    "translation": "ekzekutim, të rënët (instrumentit)",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të rënit të një instrumenti muzikor"
+    ],
+    "examples": [
+      {
+        "source": "Her muganninin okuyuşu, her çalanın çalışı yine şahsidir ve ayrıdır.",
+        "target": "Mënyra e të kënduarit e çdo këngëtari dhe interpretimi i çdo muzikanti është përsëri personal dhe unik."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10589",
+    "source": "tr",
+    "word": "çalışan",
+    "translation": "punonjës, punëtor",
+    "pos": "emër",
+    "senses": [
+      "Personi që kryen veprimin e punës"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10705",
+    "source": "tr",
+    "word": "çalışma",
+    "translation": "punë, punim",
+    "pos": "emër",
+    "senses": [
+      "Akti ose procesi i të punuarit; veprimtari"
+    ],
+    "examples": [
+      {
+        "source": "Sonradan kapının kaldırılıp yerine takılması için yetmiş kişinin çalışması icap etti.",
+        "target": "Më vonë u desh puna e shtatëdhjetë njerëzve që dera të hiqej dhe të vendosej përsëri në vendin e saj."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10700",
+    "source": "tr",
+    "word": "çalışmak",
+    "translation": "punoj",
+    "pos": "emër",
+    "senses": [
+      "Të harxhosh mund ose përpjekje për të krijuar ose për të nxjerrë në dritë diçka"
+    ],
+    "examples": [
+      {
+        "source": "Aldırma sen hemen çalış ki biraz / Çalışan ilerler, yerinde kalmaz",
+        "target": "Mos u shqetëso ti, puno menjëherë që të përparosh pak / Ai që punon përparon, nuk mbetet në vend"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11188",
+    "source": "tr",
+    "word": "çam",
+    "translation": "pishë",
+    "pos": "emër",
+    "senses": [
+      "Pemë pylli nga familja Pinaceae, me gjethe gjilpërë, që qëndron e gjelbër gjatë të katër stinëve, lloje të shumta të së cilës rriten në vendin tonë"
+    ],
+    "examples": [
+      {
+        "source": "Orada çamlar mis gibi kokarak rüzgârla fısıldaşırlardı.",
+        "target": "Atje pishat pëshpëritnin me erën duke lëshuar një aromë mjaft të këndshme."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11783",
+    "source": "tr",
+    "word": "çamaşır",
+    "translation": "të brendshme, rroba për t'u larë",
+    "pos": "emër",
+    "senses": [
+      "Veshje e brendshme, ose rroba që ndodhen në proces larjeje"
+    ],
+    "examples": [
+      {
+        "source": "Çamaşırlığa çamaşır yıkamaya gitmiştim.",
+        "target": "Kisha shkuar në lavanderi (çamaşırlık) për të larë rrobat."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10719",
+    "source": "tr",
+    "word": "Çan",
+    "translation": "Çan",
+    "pos": "emër",
+    "senses": [
+      "Një nga rretheve që i përket provincës së Çanakalasë, ose kambanë"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11540",
     "source": "tr",
     "word": "çanta",
-    "translation": "çantë",
+    "translation": "çantë, pako",
     "pos": "emër",
-    "inflection": "-yı",
-    "is_balkan": true,
     "senses": [
-      "Mjet prej lëkure, stofi ose plastike që shërben për të mbajtur libra, vegla ose rroba."
+      "Enë e përgatitur prej lëkurës së trashë, pëlhurës apo materialeve të tjera të lehta, që shërben për të mbartur para, dokumente, ushqime etj. sipas madhësisë së saj"
     ],
     "examples": [
       {
-        "source": "Okul çantası",
-        "target": "Çantë shkolle"
-      },
-      {
-        "source": "Sırt çantası",
-        "target": "Çantë shpine"
+        "source": "Yanından hiç ayırmadığı çantasında bir kütüphane bulursunuz.",
+        "target": "Në çantën e tij që nuk e largon asnjëherë nga veta, mund të gjeni një bibliotekë të tërë."
       }
     ],
-    "derivatives": [
-      {
-        "word": "çantacı",
-        "translation": "çantëpunues, shitës çantash",
-        "pos": "emër"
-      }
-    ]
+    "derivatives": []
   },
   {
-    "id": "dict-tr-23",
+    "id": "dict-tr-17288",
+    "source": "tr",
+    "word": "çap",
+    "translation": "Diametri",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'çap'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17819",
+    "source": "tr",
+    "word": "çapa",
+    "translation": "shati",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çapa'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15582",
+    "source": "tr",
+    "word": "çar",
+    "translation": "cari",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çar'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11892",
+    "source": "tr",
+    "word": "çaresiz",
+    "translation": "i pashpresë, i pashërueshëm, pa rrugëdalje",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që nuk ka asnjë rrugëdalje apo zgjidhje, i pashërueshëm"
+    ],
+    "examples": [
+      {
+        "source": "Çaresiz derdimi oğlana anlatıp dükkâna döndüm.",
+        "target": "Ia shpjegova djalit shqetësimin tim të pashpresë (pa zgjidhje) dhe u ktheva në dyqan."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14734",
+    "source": "tr",
+    "word": "çarpma",
+    "translation": "shumëzimi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çarpma'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14980",
+    "source": "tr",
+    "word": "çarşaf",
+    "translation": "Çarçafi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çarşaf'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11740",
+    "source": "tr",
+    "word": "Çarşamba",
+    "translation": "Çarshamba (rajon), e mërkurë (kuptim tjetër)",
+    "pos": "emër",
+    "senses": [
+      "Një nga rretheve që i përket provincës së Samsunit"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13724",
+    "source": "tr",
+    "word": "çatal",
+    "translation": "pirun",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çatal'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11824",
+    "source": "tr",
+    "word": "çatlak",
+    "translation": "i plasaritur, i çarrë",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka pësuar plasaritje"
+    ],
+    "examples": [
+      {
+        "source": "Çatlak bardak.",
+        "target": "Gotë e plasaritur."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11928",
+    "source": "tr",
+    "word": "çatı",
+    "translation": "çati, çatia, strukturë",
+    "pos": "emër",
+    "senses": [
+      "Tërësia e pjesëve që ngrenë çatinë (damin) e një ndërtese ose të një shtëpie"
+    ],
+    "examples": [
+      {
+        "source": "Islak duvarların, rüzgâr vurdukça çatırdayan çatıların altında insanların içi geçti.",
+        "target": "Nën muret e lagura dhe nën çantitë që kërcitnin sa herë që frynte era, njerëzit u përgjumën (u kapërcyen)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16767",
+    "source": "tr",
+    "word": "çavdar",
+    "translation": "Thekra",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çavdar'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10762",
+    "source": "tr",
+    "word": "çavuş",
+    "translation": "rreshter, çaush",
+    "pos": "emër",
+    "senses": [
+      "Personi përgjegjës që ndodhet në krye të një pune ose të punëtorëve dhe që i menaxhon ata"
+    ],
+    "examples": [
+      {
+        "source": "Katanaların birinin üstünde bir topçu çavuşu oturuyor.",
+        "target": "Mbi një prej kuajve të mëdhenj (katanave) ishte ulur një rreshter artilerie."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10682",
+    "source": "tr",
+    "word": "Çay",
+    "translation": "çaj, përrua",
+    "pos": "emër",
+    "senses": [
+      "Një nga rretheve që i përket provincës së Afjonkarahisarit, ose lum i vogël"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18331",
+    "source": "tr",
+    "word": "çaydanlık",
+    "translation": "Çajniku",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çaydanlık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17340",
+    "source": "tr",
+    "word": "çayır",
+    "translation": "Livadhet dhe kullosat",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çayır'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11554",
+    "source": "tr",
+    "word": "çağrı",
+    "translation": "thirrje, ftesë",
+    "pos": "emër",
+    "senses": [
+      "Dëshira ose kërkesa që dikush të vijë në një vend; ftesë"
+    ],
+    "examples": [
+      {
+        "source": "Kale burçlarında cenge çağrı davulları vuruldu.",
+        "target": "Nëpër kullat e kështjellës po rriheshin tupanët e thirrjes për luftim (betejë)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18390",
+    "source": "tr",
+    "word": "çağrışım",
+    "translation": "asociacioni",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çağrışım'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10430",
+    "source": "tr",
+    "word": "çek",
+    "translation": "çek",
+    "pos": "emër",
+    "senses": [
+      "Dokument i shkruar që një person lëshon në vend të parave në këmbim të një shërbimi apo produkti të blerë, vlera e të cilit paguhet nga llogaria bankare"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11501",
+    "source": "tr",
+    "word": "çeker",
+    "translation": "kapacitet peshe",
+    "pos": "emër",
+    "senses": [
+      "Sasia e peshës që mund të mbajë ose të ngrejë një mjet peshimi"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10763",
+    "source": "tr",
+    "word": "çekici",
+    "translation": "karroatrec, makinë tërheqëse",
+    "pos": "emër",
+    "senses": [
+      "Mjet transporti që përdoret për të transportuar në një vend të caktuar mjetet që kanë pësuar aksident, defekt ose që janë parkuar gabim"
+    ],
+    "examples": [
+      {
+        "source": "Necdet için bu, öbüründen daha çekici değildi.",
+        "target": "Për Nexhdetin kjo nuk ishte më tërheqëse sesa tjetra."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18455",
+    "source": "tr",
+    "word": "çekicilik",
+    "translation": "dëshirueshmëri",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çekicilik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11401",
+    "source": "tr",
+    "word": "çekim",
+    "translation": "tërheqje",
+    "pos": "emër",
+    "senses": [
+      "Veprimi ose puna e të tërhequrit të diçkaje"
+    ],
+    "examples": [
+      {
+        "source": "Yer çekimi. Mıknatıs çekimi.",
+        "target": "Tërheqja e tokës (graviteti). Tërheqja e magnetit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13550",
+    "source": "tr",
+    "word": "çekiç",
+    "translation": "çekani",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çekiç'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11007",
+    "source": "tr",
+    "word": "çekmek",
+    "translation": "tërheq, heq",
+    "pos": "emër",
+    "senses": [
+      "Të kapësh diçka dhe ta lëvizësh drejt vetes ose drejt një drejtimi tjetër"
+    ],
+    "examples": [
+      {
+        "source": "Hepsi iskemleleri çekerek masanın etrafında bir halka yapmaya hazırlanıyorlardı.",
+        "target": "Të gjithë po përgatiteshin të bënin një rreth rrotull tryezës duke tërhequr karriget."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11896",
+    "source": "tr",
+    "word": "çelik",
+    "translation": "çelik, bisk (bime)",
+    "pos": "emër",
+    "senses": [
+      "Degë e prerë shkurt, ose metal i fortë (çelik)"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17017",
+    "source": "tr",
+    "word": "çelişki",
+    "translation": "kontradiktë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çelişki'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13924",
+    "source": "tr",
+    "word": "çember",
+    "translation": "rrethi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çember'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15714",
+    "source": "tr",
+    "word": "çerez",
+    "translation": "Cookie (internet)",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çerez'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11606",
+    "source": "tr",
+    "word": "çete",
+    "translation": "çetë, bandë",
+    "pos": "emër",
+    "senses": [
+      "Grup njerëzish të bërë bashkë me qëllim për të kryer punë jashtëligjshme ose për të frikësuar mjedisin rrethues"
+    ],
+    "examples": [
+      {
+        "source": "Feti Bey, piyadece gezen azgın bir çete gibi hareket hâlindeydi.",
+        "target": "Feti Beu ishte në lëvizje si një çetë e egër që bredh nëpër këmbë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10316",
+    "source": "tr",
+    "word": "çeviri",
+    "translation": "përkthim",
+    "pos": "emër",
+    "senses": [
+      "Kalimi ose bartja e një teksti nga një gjuhë në një gjuhë tjetër; tercume"
+    ],
+    "examples": [
+      {
+        "source": "Var olanla her çeşit işlemi bu çevirilerle yürütebiliriz.",
+        "target": "Përmes këtyre përkthimeve mund të kryejmë çdo lloj veprimi me atë që ekziston."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14190",
+    "source": "tr",
+    "word": "çevirme",
+    "translation": "pulë e pjekur",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çevirme'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13408",
+    "source": "tr",
+    "word": "çevirmen",
+    "translation": "përkthyes",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çevirmen'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12273",
+    "source": "tr",
+    "word": "çevre",
+    "translation": "perimetri",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çevre'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10587",
+    "source": "tr",
+    "word": "çeşit",
+    "translation": "lloj, çmos",
+    "pos": "emër",
+    "senses": [
+      "Secili prej grupeve që ndahen me disa veçori brenda të njëjtit lloj objektesh apo gjërash; specie"
+    ],
+    "examples": [
+      {
+        "source": "Güçlüğün hiçbir çeşidinden yılmamak, dil arıtıcısı olmanın vazgeçilmez bir koşuludur.",
+        "target": "Të mos trembesh nga asnjë lloj vështirësie është një kusht i pashmangshëm për të qenit një pastrues i gjuhës."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17871",
+    "source": "tr",
+    "word": "çeşitlilik",
+    "translation": "shumëllojshmëri",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çeşitlilik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16908",
+    "source": "tr",
+    "word": "Çeşme",
+    "translation": "çezma",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'Çeşme'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10599",
+    "source": "tr",
+    "word": "çift",
+    "translation": "çift",
+    "pos": "mbiemër",
+    "senses": [
+      "Objektet që përbëhen nga dy tekë që plotësojnë njëri-tjetrin"
+    ],
+    "examples": [
+      {
+        "source": "Kuyumcu çifti. Saatçi çifti.",
+        "target": "Çifti i argjendarëve. Çifti i rregulluesve të orëve."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11964",
+    "source": "tr",
+    "word": "çifte",
+    "translation": "çift, dy herë, i dyfishtë",
+    "pos": "mbiemër",
+    "senses": [
+      "Ata që ndodhen të dy së bashku ose që shfaqen në dyshe"
+    ],
+    "examples": [
+      {
+        "source": "Güzel sevme derler nasıl sevmeyim / Kaşlar arasında çifte benler var",
+        "target": "Thonë mos i duaj të bukurat, po si të mos i dua / Midis vetullave ka nishane çift (të dyfishtë)"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14931",
+    "source": "tr",
+    "word": "çiftleşme",
+    "translation": "Çiftëzim",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çiftleşme'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12067",
+    "source": "tr",
+    "word": "Çiftlik",
+    "translation": "ferma, Çifligu",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'Çiftlik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12864",
+    "source": "tr",
+    "word": "çiftçi",
+    "translation": "Çifçi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çiftçi'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11386",
+    "source": "tr",
+    "word": "çikolata",
+    "translation": "çokollatë",
+    "pos": "emër",
+    "senses": [
+      "Lloj ushqimi i ëmbël që përgatitet duke i shtuar kakaos sheqer, qumësht, kikirikë, lajthi etj."
+    ],
+    "examples": [
+      {
+        "source": "Doğa, tartışmanın süreceğini fark edince çikolata parçalarını kâğıdın içerisine tekrar yerleştirerek gelişigüzel katladı.",
+        "target": "Doas, masi e dalloi se diskutimi do të vazhdonte, i vendosi copat e çokollatës përsëri brenda letrës dhe e palosi shpejt e shpejt (si të qëllonte)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13760",
+    "source": "tr",
+    "word": "çilek",
+    "translation": "Fragaria, luleshtrydhe",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çilek'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15763",
+    "source": "tr",
+    "word": "çimento",
+    "translation": "çimento",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çimento'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10901",
+    "source": "tr",
+    "word": "çirkin",
+    "translation": "i shëmtuar",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që nuk të pëlqen në sy apo në vesh; e kundërta e 'i bukur'"
+    ],
+    "examples": [
+      {
+        "source": "Kız öyle müstesna bir güzelliğe sahip olmamakla beraber çirkin de değildi.",
+        "target": "Ndonëse vajza nuk kishte ndonjë bukuri të jashtëzakonshme, nuk ishte as e shëmtuar."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11278",
+    "source": "tr",
+    "word": "çizgi",
+    "translation": "vijë, vijëzim, vizë",
+    "pos": "emër",
+    "senses": [
+      "Gjurma e krijuar duke vizuar ose përmes rrugëve të ndryshme; hat"
+    ],
+    "examples": [
+      {
+        "source": "Bu kâğıda üç çizgi çekti.",
+        "target": "Tërhoqi tre vizat (vija) në këtë letër."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13920",
+    "source": "tr",
+    "word": "çizim",
+    "translation": "vizatim",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çizim'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10982",
     "source": "tr",
     "word": "çiçek",
     "translation": "lule",
     "pos": "emër",
-    "inflection": "-i",
     "senses": [
-      "Pjesa shumëngjyrëshe dhe shpesh me aromë e një bime, që prodhon farën.",
-      "Bima që mbillet për zbukurim."
+      "Pjesa me ngjyra dhe përgjithësisht me aromë të mirë e një bime, e cila bart organet e riprodhimit"
     ],
     "examples": [
       {
-        "source": "Çiçek bahçesi",
-        "target": "Kopsht lulesh"
-      },
-      {
-        "source": "Yapay çiçek",
-        "target": "Lule artificiale"
+        "source": "Bir de inceden, arı kokularına karışmış çiçek kokusu geliyordu, yel belli belirsiz efiledikçe başları dönüyordu.",
+        "target": "Po vinte edhe një aromë luleje e përzier hollë me aromat e pastra; sa herë që era frynte lehtë e pa u ndier, atyre u merreshin mendtë."
       }
     ],
-    "derivatives": [
-      {
-        "word": "çiçekçi",
-        "translation": "luleshitës",
-        "pos": "emër"
-      },
-      {
-        "word": "çiçeklenmek",
-        "translation": "lulëzoj, nxjerr lule",
-        "pos": "folje"
-      }
-    ]
+    "derivatives": []
   },
   {
-    "id": "dict-tr-24",
+    "id": "dict-tr-13212",
+    "source": "tr",
+    "word": "çiğ",
+    "translation": "Vesa",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'çiğ'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10148",
     "source": "tr",
     "word": "çocuk",
     "translation": "fëmijë",
     "pos": "emër",
-    "inflection": "-u",
     "senses": [
-      "Njeri në moshë shumë të re, para se të bëhet i rritur; djalë ose vajzë.",
-      "Biri ose bija e dikujt."
+      "Djalë ose vajzë që ndodhet në periudhën e zhvillimit midis foshnjërisë dhe pjekurisë; foshnjë"
     ],
     "examples": [
       {
-        "source": "Çocuk bahçesi",
-        "target": "Kopsht fëmijësh (kënd lojrash)"
-      },
-      {
-        "source": "Erkek çocuk",
-        "target": "Djalë (fëmijë mashkull)"
+        "source": "Çocuk köşeyi dönerken ana arkasından su içmeye gitti.",
+        "target": "Ndërsa fëmija po kthente këndin, nëna shkoi pas tij për të pirë ujë."
       }
     ],
-    "derivatives": [
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12404",
+    "source": "tr",
+    "word": "çocukluk",
+    "translation": "Fëmijëria",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çocukluk'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10008",
+    "source": "tr",
+    "word": "çok",
+    "translation": "shumë",
+    "pos": "mbiemër",
+    "senses": [
+      "Diçka që është e madhe dhe e tepërt nga pikëpamja e numrit, sasisë, vlerës, fuqisë, shkallës etj.; e konsiderueshme, e kundërta e pak"
+    ],
+    "examples": [
       {
-        "word": "çocukluk",
-        "translation": "fëmijëri",
-        "pos": "emër"
-      },
-      {
-        "word": "çocukça",
-        "translation": "fëmijërisht, si fëmijë",
-        "pos": "ndajfolje"
+        "source": "Özellikle Kâbe çevresi çok kalabalık bir yaya trafiğine sahne olduğu için bu çevreye araba giremiyor.",
+        "target": "Meqenëse veçanërisht rrethina e Qabesë është skenë e një trafiku këmbësorësh shumë të ngarkuar, makinat nuk mund të hyjnë në këtë zonë."
       }
-    ]
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10507",
+    "source": "tr",
+    "word": "çoktan",
+    "translation": "kohë më parë, ka kohë që",
+    "pos": "ndajfolje",
+    "senses": [
+      "Shumë kohë më parë, prej shumë kohësh, që prej një periudhe të gjatë"
+    ],
+    "examples": [
+      {
+        "source": "Dışarıda şimşekler çakıp gök gürülderken koyunlar kızarmaya başlamış, kazanlar dolusu hoşaf çoktan kıvama gelmişti.",
+        "target": "Ndërsa jashtë po shkrepëtinin rrufetë dhe po dëgjoheshin bubullimat, mishi i deles kishte filluar të piqej dhe kazanët e mbushur plot me hoshaf kishin marrë valë ka kohë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12511",
+    "source": "tr",
+    "word": "çorap",
+    "translation": "çorape",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çorap'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11890",
+    "source": "tr",
+    "word": "çorba",
+    "translation": "supë, çorbë",
+    "pos": "emër",
+    "senses": [
+      "Lloj ushqimi i lëngshëm që përgatitet me perime, drithëra, mish etj."
+    ],
+    "examples": [
+      {
+        "source": "Hele soğuk günlerde sıcak bir çorba ne kadar makbule geçer.",
+        "target": "Veçanërisht nëpër ditët e ftohta, një supë e nxehtë pritet mjaft mirë (të vjen mjaft mirë)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10495",
+    "source": "tr",
+    "word": "çoğu",
+    "translation": "shumica, pjesa më e madhe",
+    "pos": "përemër",
+    "senses": [
+      "Pjesa më e madhe e diçkaje"
+    ],
+    "examples": [
+      {
+        "source": "Biz o zaman okuduğumuz mısraların çoğunu ezber bilirdik.",
+        "target": "Ne atëherë e dinim përmendësh shumicën e vargjeve që lexonim."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18089",
+    "source": "tr",
+    "word": "çoğul",
+    "translation": "shumës",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çoğul'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11768",
+    "source": "tr",
+    "word": "çoğunlukla",
+    "translation": "shumicën e herëve, kryesisht",
+    "pos": "ndajfolje",
+    "senses": [
+      "Duke u bazuar në shumicën; ekseria"
+    ],
+    "examples": [
+      {
+        "source": "... cemiyet, bütün ülkeye kök salmış durumundan faydalanarak Meşrutiyet’in ilk genel seçimlerini (1908) ezici bir çoğunlukla kazanmıştır.",
+        "target": "... shoqata, duke përfituar nga gjendja e saj e rrenjosur në të gjithë vendin, i fitoi zgjedhjet e para të përgjithshme të Kushtetutës (1908) me një shumicë dërrmuese."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12643",
+    "source": "tr",
+    "word": "çöl",
+    "translation": "shkretëtira",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çöl'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11117",
+    "source": "tr",
+    "word": "çöp",
+    "translation": "fije, fije shkrepëse/shkopi",
+    "pos": "emër",
+    "senses": [
+      "Ndonjë copë e hollë shkopi, dege ose dërrase me trashësinë e kashtës"
+    ],
+    "examples": [
+      {
+        "source": "Köşk o kadar sessizdi ki yere bir kibrit çöpü düşse çıkardığı ses işitilebilirdi.",
+        "target": "Vila ishte aq e qetë saqë po të binte një fije shkrepëse në tokë, zëri që do të nxirrte do të dëgjohej."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12275",
+    "source": "tr",
+    "word": "çörek",
+    "translation": "çörek",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çörek'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11292",
+    "source": "tr",
+    "word": "çözüm",
+    "translation": "zgjidhje",
+    "pos": "emër",
+    "senses": [
+      "Rezultati që merret nga zgjidhja e një problemi; rrugëdalje"
+    ],
+    "examples": [
+      {
+        "source": "Ayrıca olasılıkları azaltmak da bir anlamda çözüme yaklaşmak demektir.",
+        "target": "Gjithashtu, pakësimi i mundësive në një farë kuptimi do të thotë t'i afrohesh zgjidhjes."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10051",
+    "source": "tr",
+    "word": "çünkü",
+    "translation": "sepse, pasi",
+    "pos": "lidhëz",
+    "senses": [
+      "Për këtë arsye; sepse"
+    ],
+    "examples": [
+      {
+        "source": "Ben şimdi sizin fikrinizi tenkit etmeyeceğim çünkü faydasızdır.",
+        "target": "Unë tani nuk do ta kritikoj mendimin tuaj sepse është e kotë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10947",
+    "source": "tr",
+    "word": "çıkacak",
+    "translation": "parashikohet të dalë, i ardhshëm",
+    "pos": "emër",
+    "senses": [
+      "Çıkma"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10786",
+    "source": "tr",
+    "word": "çıkan",
+    "translation": "i zbrituri (matematikë)",
+    "pos": "emër",
+    "senses": [
+      "Numri që merret nga e tëra gjatë procesit të zbritjes"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10366",
+    "source": "tr",
+    "word": "çıkar",
+    "translation": "interes, përfitim",
+    "pos": "emër",
+    "senses": [
+      "Fitimi i realizuar në mënyrë të tërthortë; interes, rëndësi"
+    ],
+    "examples": [
+      {
+        "source": "Mülkiyet toplumun tümüne yayıldığında, üretim araçları sahiplerinin mülkünü korumak, kaçınılmaz olarak, tüm toplumun ortak çıkarına hizmet etmek demektir.",
+        "target": "Kur pronësia shtrihet në tërë shoqërinë, mbrojtja e pronës së pronarëve të mjeteve të prodhimit, në mënyrë të pashmangshme, do të thotë t'i shërbesh interesit të përbashkët të mbarë shoqërisë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11460",
+    "source": "tr",
+    "word": "çıkarma",
+    "translation": "zbarkim, nxjerrje, emision",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të nxjerrurit; zbarkim ushtarak"
+    ],
+    "examples": [
+      {
+        "source": "Anafartalar Çıkarması, etraflı şekilde planlanmış bir tertipti.",
+        "target": "Zbarkimi i Anafartave ishte një plan i organizuar dhe i hartuar gjerësisht."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10937",
+    "source": "tr",
+    "word": "çıkarmak",
+    "translation": "nxjerr, heq",
+    "pos": "emër",
+    "senses": [
+      "Të mundësosh që dikush ose diçka të dalë, të bëhesh shkak për daljen e tij"
+    ],
+    "examples": [
+      {
+        "source": "Hacı Bey, ayazın tükürük dondurduğu bir gün, yakacak sıkıntısından konuşulurken, ‘Eee Ali Emmi, biz bu kışı zor çıkarırız' demişti de...",
+        "target": "Haxhi Beu, në një ditë ku mishi të ngrinte nga të ftohtët e po flitej për vështirësinë e lëndëve djegëse, i pat thënë: 'Ehh Ali Emmi, ne këtë dimër vështirë se e nxjerrim'..."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11067",
+    "source": "tr",
+    "word": "çıkma",
+    "translation": "dalje, të dalët",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të dalit"
+    ],
+    "examples": [
+      {
+        "source": "Bu evden çıkmam, mağlubiyeti kabul ederek mücadeleden kaçmam demekti.",
+        "target": "Të dilja nga kjo shtëpi, do të thoshte të pranoja humbjen e të ikja nga lufta (përpjekja)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10645",
+    "source": "tr",
+    "word": "çıkmak",
+    "translation": "dal, dal jashtë",
+    "pos": "emër",
+    "senses": [
+      "Të arrrish ose të shkosh nga brenda drejt jashtë"
+    ],
+    "examples": [
+      {
+        "source": "Ortalık ağarırken bir arkadaşımla yorgun adımlarla konaktan çıktık.",
+        "target": "Ndërsa po zbardhte dita, dolëm nga konaku me hapa të lodhur bashkë me një shokun tim."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11502",
+    "source": "tr",
+    "word": "çıkmaz",
+    "translation": "rrugë qorre, qorrsokak",
+    "pos": "emër",
+    "senses": [
+      "Rrugë ose rrugicë e mbyllur në fund, që nuk ka dalje dhe nuk të çon asgjëkund"
+    ],
+    "examples": [
+      {
+        "source": "Bu apartmanın olduğu çıkmazda bir garaj, bir eski ahır, üç esrarlı ve daima kapalı depodan başka bir şey yoktur.",
+        "target": "Në qorrsokakun ku ndodhet kjo ndërtesë, nuk ka asgjë tjetër përveç një garazhi, një neni të vjetër dhe tre magazinave misterioze e gjithmonë të mbyllura."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10304",
+    "source": "tr",
+    "word": "çıktı",
+    "translation": "rendiment, produkt",
+    "pos": "emër",
+    "senses": [
+      "Produkti që del si rezultat i prodhimit; e kundërta e 'inputit'"
+    ],
+    "examples": [
+      {
+        "source": "Sanayi çıktısı.",
+        "target": "Produkt industrial."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10908",
+    "source": "tr",
+    "word": "çıkın",
+    "translation": "bohçe e vogël, deng",
+    "pos": "emër",
+    "senses": [
+      "Një bohçe e vogël e krijuar duke lidhur nyjë një copë pëlhure; deng i vogël"
+    ],
+    "examples": [
+      {
+        "source": "Gemiden, sırtında çıkını ve üzerinde paçavralarla kör ve sağır bir adam indi.",
+        "target": "Nga anija zbriti një burrë i verbër dhe i shurdhër, me një bohçe në shpinë dhe me lecka përmbi vete."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10941",
+    "source": "tr",
+    "word": "çıkış",
+    "translation": "dalje, të dalët",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të dalit"
+    ],
+    "examples": [
+      {
+        "source": "Pencerelerden odaya giriş çıkış kolaydı.",
+        "target": "Hyrja dhe dalja në dhomë nga dritaret ishte e lehtë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10828",
+    "source": "tr",
+    "word": "çılgın",
+    "translation": "i çmendur, i kthellët",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që bën veprime ose sjellje të skajshme"
+    ],
+    "examples": [
+      {
+        "source": "Bazı anneler, çocukları olduğunda bir çılgın gibi davranırlar.",
+        "target": "Disa nëna, kur u lindin fëmijët, sillen si të çmendura."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11183",
+    "source": "tr",
+    "word": "çılgınca",
+    "translation": "çmendurisht, në mënyrë të marrë",
+    "pos": "ndajfolje",
+    "senses": [
+      "Si i çmendur; sikur ke humbur mendjen"
+    ],
+    "examples": [
+      {
+        "source": "Mademki Salvotore'yi o derece kıskandım, demek ki kendisine çılgınca âşıktım.",
+        "target": "Masi e xhelozova Salvatoren në atë shkallë, domethënë isha e dashuruar çmendurisht pas tij."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10839",
+    "source": "tr",
+    "word": "çıplak",
+    "translation": "i zhveshur, cullak",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai mbi të cilin nuk ndodhen rrobat apo mbulojat që duhet të ishin; i zbuluar"
+    ],
+    "examples": [
+      {
+        "source": "Kız, çıplak tabanlarını bozuk yolda şaplata şaplata köyün içerisine doğru uzaklaştı.",
+        "target": "Vajza u largua drejt brendësisë së fshatit duke përplasur shputat e saj të zhveshura në rrugën e dëmtuar."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16695",
+    "source": "tr",
+    "word": "çıplaklık",
+    "translation": "Lakuriqësia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çıplaklık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17234",
+    "source": "tr",
+    "word": "çığ",
+    "translation": "Reshpja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'çığ'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11419",
+    "source": "tr",
+    "word": "çığlık",
+    "translation": "ulërimë, britmë, klithmë",
+    "pos": "emër",
+    "senses": [
+      "Zë i mprehtë, i hollë dhe që të dhemb; feryat"
+    ],
+    "examples": [
+      {
+        "source": "Martıların çığlıkları arasında ayıklanmış yığınların çevresinde yeni çöp tepecikleri oluştu.",
+        "target": "Mes klithmave të pulëbardhave, rreth grumbujve të mbledhur u krijuan kodrina të reja plehrash."
+      }
+    ],
+    "derivatives": []
   }
 ]

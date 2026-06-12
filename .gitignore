@@ -19,13 +19,14 @@ playwright-report
 playwright-report/
 
 # Local planning & thought files
-task.md
-implementation_plan.md
-walkthrough.md
-Specifications.txt
+docs/task.md
+docs/implementation_plan.md
+docs/walkthrough.md
+docs/Specifications.txt
+docs/documentation.md
+docs/handover.md
 Thoughts/
 Thoughts
-documentation.md
 scratch/
 
 # Editor directories and files
@@ -38,3 +39,18 @@ scratch/
 *.njsproj
 *.sln
 *.sw?
+
+# Local environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Offline data parsing pipeline & external database sources
+guncel-turkce-sozluk-master/
+Responses/
+
+# Local TTS engines and large neural net voice models (>50MB)
+voices/
+

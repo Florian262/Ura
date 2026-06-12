@@ -30,9 +30,10 @@ export const WordDetailDrawer: React.FC<WordDetailDrawerProps> = ({
   onClose,
   onSpeak,
 }) => {
-  // Prevent body scrolling when the drawer is open
+  // Prevent body scrolling when the drawer is open (only on mobile screens)
   useEffect(() => {
-    if (isOpen) {
+    const isMobile = window.innerWidth < 768;
+    if (isOpen && isMobile) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -59,7 +60,7 @@ export const WordDetailDrawer: React.FC<WordDetailDrawerProps> = ({
         <div className="md:hidden w-12 h-1.5 bg-neutral-200 dark:bg-neutral-700 rounded-full mx-auto mt-4 mb-1 shrink-0" />
 
         {/* Scrollable Container */}
-        <div className="flex-1 overflow-y-auto px-6 py-6 md:py-8 space-y-6">
+        <div className="flex-1 overflow-y-auto min-h-0 px-6 py-6 md:py-8 space-y-6">
           {/* Header */}
           <div className="flex justify-between items-start border-b border-[#E9ECEF] dark:border-neutral-800 pb-4">
             <div>
@@ -117,23 +118,27 @@ export const WordDetailDrawer: React.FC<WordDetailDrawerProps> = ({
           </div>
 
           {/* Meanings */}
-          <div className="space-y-2">
+          <div className="space-y-2.5">
             <span className="text-[10px] font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-widest block">
-              Përkthimi / Kuptimi:
+              Përkthimi:
+            </span>
+            <span className="text-base font-bold text-[#0D9488] dark:text-[#14B8A6] block leading-snug">
+              {entry.translation}
             </span>
 
-            {entry.senses && entry.senses.length > 0 ? (
-              <ol className="list-decimal pl-4 space-y-1.5 text-neutral-800 dark:text-neutral-200">
-                {entry.senses.map((sense, idx) => (
-                  <li key={idx} className="text-sm font-medium">
-                    {sense}
-                  </li>
-                ))}
-              </ol>
-            ) : (
-              <span className="text-base font-semibold text-[#0D9488] dark:text-[#14B8A6] block leading-snug">
-                {entry.translation}
-              </span>
+            {entry.senses && entry.senses.length > 0 && (
+              <div className="space-y-1.5 mt-2.5">
+                <span className="text-[9px] font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-widest block">
+                  Kuptimet e Detajuara:
+                </span>
+                <ol className="list-decimal pl-4 space-y-1 text-neutral-800 dark:text-neutral-200">
+                  {entry.senses.map((sense, idx) => (
+                    <li key={idx} className="text-xs font-medium">
+                      {sense}
+                    </li>
+                  ))}
+                </ol>
+              </div>
             )}
           </div>
 

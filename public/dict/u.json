@@ -1,1 +1,1004 @@
-[]
+[
+  {
+    "id": "dict-tr-10426",
+    "source": "tr",
+    "word": "ufak",
+    "translation": "i vogël, i imët",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai dimensionet e të cilit janë më të vogla se normalja"
+    ],
+    "examples": [
+      {
+        "source": "Mutfakta kahve hazırlarken, ailemin nihayet bana tahsis etmiş olduğu bu ufak ev olmasa her şeyin nasıl daha bir çekilmez hâle geleceğini bir kez daha düşündüm.",
+        "target": "Ndërsa po përgatisja kafe në kuzhinë, mendova edhe një herë se si çdo gjë do të bëhej edhe më e papërballueshme sikur të mos ishte kjo shtëpi e vogël që familja ime më ka caktuar më në fund mua."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11170",
+    "source": "tr",
+    "word": "ufaklık",
+    "translation": "mosha e vogël, vogëlsi",
+    "pos": "emër",
+    "senses": [
+      "Gjendja e të qenit i vogël"
+    ],
+    "examples": [
+      {
+        "source": "Öyle ya, bizim cezamızı yaşımızın ufaklığından çeldiler.",
+        "target": "E po ashtu, ndëshkimin tonë e zbritën (ndryshuan) për shkak të moshës sonë të vogël."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17165",
+    "source": "tr",
+    "word": "ufuk",
+    "translation": "horizont",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'ufuk'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11569",
+    "source": "tr",
+    "word": "ulan",
+    "translation": "ore, more (ofendim/rebelim)",
+    "pos": "pasthirrmë",
+    "senses": [
+      "Fjalë thirrëse që shpreh zemërim, habi ose urrejtje; lan"
+    ],
+    "examples": [
+      {
+        "source": "Uşaktım ulan ne olacak, dediği zaman kimse sesini çıkarmazdı.",
+        "target": "Kur thoshte 'isha shërbëtor ore, çfarë do të bëhet', askush nuk e nxirrte zërin."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11683",
+    "source": "tr",
+    "word": "ulaşmak",
+    "translation": "arritje, të arriturët",
+    "pos": "emër",
+    "senses": [
+      "Të mbërrish ose të arrrish në një destinacion apo vend të caktuar"
+    ],
+    "examples": [
+      {
+        "source": "Doğudan batıya kadar ulaşmış bir zafer bestesi dinliyorum.",
+        "target": "Po dëgjoj një kompozim fitoreje që ka arritur që nga lindja e deri në perëndim."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14235",
+    "source": "tr",
+    "word": "ulaşım",
+    "translation": "transport",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'ulaşım'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10955",
+    "source": "tr",
+    "word": "ulusal",
+    "translation": "kombëtar, nacional",
+    "pos": "mbiemër",
+    "senses": [
+      "Millî"
+    ],
+    "examples": [
+      {
+        "source": "Evrensel değerlendirmede ise en sağlam ölçü, özgünlük, ulusal renkleri taşıma, kişiliği bulunmaktır.",
+        "target": "Në vlerësimin universal, masa më e palëkundur është origjinaliteti, mbartja e ngjyrave kombëtare dhe zotërimi i personalitetit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11556",
+    "source": "tr",
+    "word": "uluslararası",
+    "translation": "ndërkombëtar",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që bëhet bashkë me kombe të ndryshme; ndërshtetëror, enternasyonal"
+    ],
+    "examples": [
+      {
+        "source": "Sadece toplumsal olmakla kalmayıp uluslararası ve evrensel de olan çağdaş şiirin önemi de bence buradadır işte.",
+        "target": "Sipas meje, pikërisht këtu qëndron rëndësia e poezisë bashkëkohore, e cila jo vetëm që mbetet shoqërore, por kthehet edhe në ndërkombëtare dhe universale."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10887",
+    "source": "tr",
+    "word": "umut",
+    "translation": "shpresë",
+    "pos": "emër",
+    "senses": [
+      "Ndjenja që lind nga të shpresuarit e diçkaje; ümit"
+    ],
+    "examples": [
+      {
+        "source": "Bu umudum şimdi yavaş yavaş ölüyor.",
+        "target": "Kjo shpresë imja tani po vdes avash avash."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10498",
+    "source": "tr",
+    "word": "unutma",
+    "translation": "harresë, të harruarit",
+    "pos": "emër",
+    "senses": [
+      "Gjendja e të harruarit; nisyan"
+    ],
+    "examples": [
+      {
+        "source": "Realiteler o kadar korkunçtu ki onları unutmaya ve gizlemeye imkân yoktu.",
+        "target": "Realitetet ishin aq të tmerrshme saqë nuk kishte asnjë mundësi për t'i harruar apo për t'i fshehur ato."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12394",
+    "source": "tr",
+    "word": "unutmak",
+    "translation": "harresa",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'unutmak'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16061",
+    "source": "tr",
+    "word": "uranyum",
+    "translation": "urani",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'uranyum'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11579",
+    "source": "tr",
+    "word": "uslu",
+    "translation": "i urtë, i sjellshëm, i dëgjueshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që nuk e shqetëson shoqërinë apo mjedisin rrethues; i edukuar, e kundërta e 'i prapë/mistrec'"
+    ],
+    "examples": [
+      {
+        "source": "Uslu ve çekingen huyum ne kendimi ne de nafakamı herhangi bir sert hareketle savunmaya asla müsait değildi.",
+        "target": "Natyra ime e urtë dhe e tërhequr nuk ishte asnjëherë e përshtatshme për ta mbrojtur as veten, as ushqimin tim me ndonjë lëvizje të ashpër."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11024",
+    "source": "tr",
+    "word": "usta",
+    "translation": "mjeshtër",
+    "pos": "emër",
+    "senses": [
+      "Personi që ka mësuar si duhet një z शिल्प/zanaat dhe që mund ta kryejë atë vetë pa askënd"
+    ],
+    "examples": [
+      {
+        "source": "Nöbetçi, ustanın anasına ters ters baktı.",
+        "target": "Rojtari (roja në shërbim) e shikoi me vrazhdësi nënën e mjeshtrit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10991",
+    "source": "tr",
+    "word": "utanç",
+    "translation": "turp, turpërim",
+    "pos": "emër",
+    "senses": [
+      "Utanma"
+    ],
+    "examples": [
+      {
+        "source": "O zaman tuhaf bir utanca düşüp şaşırır, başımı önüme eğerdim.",
+        "target": "Atëherë përfshihesha nga një turp i çuditshëm e hutohesha, dhe ulija kokën përpara meje."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11656",
+    "source": "tr",
+    "word": "uyanık",
+    "translation": "zgjuar, i zgjuar (pa fjetur)",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që nuk ka fjetur, që është pa gjumë"
+    ],
+    "examples": [
+      {
+        "source": "Uyuyor mu uyanık mı kestiremiyor, uykuyla uyanıklığın sınırlarını bulamıyordu.",
+        "target": "Nuk po e ndante dot nëse ishte në gjumë apo zgjuar, nuk i gjente dot kufijtë midis gjumit dhe të qenit zgjuar."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11490",
+    "source": "tr",
+    "word": "uyar",
+    "translation": "i përshtatshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "Uygun olan"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11581",
+    "source": "tr",
+    "word": "uyarı",
+    "translation": "paralajmërim, tërheqje vëmendjeje, ihtar",
+    "pos": "emër",
+    "senses": [
+      "Tërheqja e vëmendjes mbi ndonjë temë ose problem; ikaz"
+    ],
+    "examples": [
+      {
+        "source": "Romancının uyarılarından habersiz kaldınız.",
+        "target": "Keni mbetur të panjoftuar ndaj paralajmërimeve të romancierit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11779",
+    "source": "tr",
+    "word": "uydu",
+    "translation": "satelit",
+    "pos": "emër",
+    "senses": [
+      "Trupi qiellor më i vogël që ndodhet nën gravitetin e një planeti dhe rrotullohet rreth tij; peyk"
+    ],
+    "examples": [
+      {
+        "source": "Ay, yerin uydusudur.",
+        "target": "Hëna është sateliti i Tokës."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16597",
+    "source": "tr",
+    "word": "uygarlık",
+    "translation": "Qytetërimi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'uygarlık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13395",
+    "source": "tr",
+    "word": "uygulama",
+    "translation": "Implementimi, praktikë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'uygulama'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10351",
+    "source": "tr",
+    "word": "uygun",
+    "translation": "i përshtatshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "I hijeshëm, që shkon; i harmonizuar, i rregullt"
+    ],
+    "examples": [
+      {
+        "source": "Ne var ki bunları şimdiye kadar kimseye anlatmadığım için uygun ifadeyi bulmakta zorlanıyorum.",
+        "target": "Mirëpo, meqenëse deri më tani nuk ia kam treguar askujt këto, e kam të vështirë të gjej shprehjen e përshtatshme."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11983",
+    "source": "tr",
+    "word": "uygunsuz",
+    "translation": "i pahijshëm, i papërshtatshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që nuk përputhet, që nuk shkon, që nuk i ka hije; i pafytyrë"
+    ],
+    "examples": [
+      {
+        "source": "Onca yıl hapis yattık, uygunsuz, güdümsüz bir işini görmedim.",
+        "target": "Kemi ndenjur aq vite në burg, nuk i kam parë asnjë punë të pahijshme apo të padrejtuar."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11109",
+    "source": "tr",
+    "word": "uyku",
+    "translation": "gjumë",
+    "pos": "emër",
+    "senses": [
+      "Gjendje çlodhjeje gjatë së cilës humbet plotësisht ose pjesërisht vetëdija ndaj ngacmimeve të jashtme, dobësohet fuqia reaguese dhe ulen ndjeshëm aktivitetet trupore"
+    ],
+    "examples": [
+      {
+        "source": "Hiç kimse bir diğerinin yerine karnını doyuramaz, hiç kimse bir başkasının uykusunu uyuyamaz.",
+        "target": "Askush nuk mund ta ngopë barkun në vend të një tjetri, askush nuk mund të bëjë gjumin e një tjetri."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11504",
+    "source": "tr",
+    "word": "uyum",
+    "translation": "përputhje, harmoni",
+    "pos": "emër",
+    "senses": [
+      "Përputhshmëria ose harmonia që ekziston midis pjesëve të një të tëre; aheng"
+    ],
+    "examples": [
+      {
+        "source": "Gerçekten de sonsuz bir sessizlik, bir uyum, bir şiir sarmıştı ortalığı.",
+        "target": "Në të vërtetë, mjedisin e kishte pushtuar një heshtje, një harmoni dhe një poezi e pafundme."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11839",
+    "source": "tr",
+    "word": "uyumak",
+    "translation": "fjetje, të fjeturit",
+    "pos": "emër",
+    "senses": [
+      "Të qenit në gjendje gjumi; fjetje"
+    ],
+    "examples": [
+      {
+        "source": "Hasta uyuyunca ameliyata alınacak.",
+        "target": "Sapo pacienti të bjerë në gjumë, do të merret në operacion."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14031",
+    "source": "tr",
+    "word": "uyuz",
+    "translation": "Zgjebja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'uyuz'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10480",
+    "source": "tr",
+    "word": "uyuşturucu",
+    "translation": "narkotik, uluajtës",
+    "pos": "mbiemër",
+    "senses": [
+      "Lënda që ka veçori mpirëse ose uluajtëse; narkotik"
+    ],
+    "examples": [
+      {
+        "source": "Genci kötü arkadaşa, kötü çevreye ve uyuşturucuya yönlendiren en önemli sebep değersizlik duygusudur.",
+        "target": "Shkaku më i rëndësishëm që e shtyn të riun drejt shokëve të këqij, mjedisit të keq dhe narkotikëve është ndjenja e të qenit i pavlerë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10301",
+    "source": "tr",
+    "word": "uzak",
+    "translation": "i largët",
+    "pos": "mbiemër",
+    "senses": [
+      "Diçka që kërkon shumë kohë për të shkuar, që ndodhet shumë tej; e kundërta e 'i afërt'"
+    ],
+    "examples": [
+      {
+        "source": "Muallâ, uzaklardan bir ses duyar gibi oldu.",
+        "target": "Muallait iu duk sikur dëgjoi një zë nga largësitë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11497",
+    "source": "tr",
+    "word": "uzaktan",
+    "translation": "nga larg, prej larg",
+    "pos": "ndajfolje",
+    "senses": [
+      "Nga një vend i largët; alarga"
+    ],
+    "examples": [
+      {
+        "source": "Merak bu ya, bir gün uzaktan seyredeceğim bizim takımı.",
+        "target": "Meqë është kureshtje, një ditë do ta ndjek skuadrën tonë nga larg."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10911",
+    "source": "tr",
+    "word": "uzay",
+    "translation": "hapësirë, uzaj",
+    "pos": "emër",
+    "senses": [
+      "Hapësira e pafundme ku ndodhen të gjitha qeniet, duke përfshirë edhe trupat qiellorë; qiell, feza"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11626",
+    "source": "tr",
+    "word": "uzaylı",
+    "translation": "jashtëtokësor",
+    "pos": "mbiemër",
+    "senses": [
+      "Krijesë e gjallë që supozohet se jeton në hapësirën kozmike (uzay)"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14649",
+    "source": "tr",
+    "word": "uzlaşma",
+    "translation": "Kompromisi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'uzlaşma'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11466",
+    "source": "tr",
+    "word": "uzman",
+    "translation": "ekspert, specialist",
+    "pos": "mbiemër",
+    "senses": [
+      "Personi që ka mjaft njohuri, mendime dhe aftësi në një punë ose temë të caktuar; mütehassıs"
+    ],
+    "examples": [
+      {
+        "source": "Her gittiğin uzman hekim bir hastalık bulmadan seni salacak değil ya...",
+        "target": "Çdo mjek specialist ku shkon nuk ka për të të lëshuar pa të gjetur një sëmundje..."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10132",
+    "source": "tr",
+    "word": "uzun",
+    "translation": "i gjatë",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka një distancë të madhe midis dy skajeve të tij; e kundërta e i shkurtër"
+    ],
+    "examples": [
+      {
+        "source": "Uzun ince bir yoldayım / Gidiyorum gündüz gece",
+        "target": "Jam në një rrugë të gjatë e të hollë / Po eci ditë e natë"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10826",
+    "source": "tr",
+    "word": "uçak",
+    "translation": "avion, aeroplan",
+    "pos": "emër",
+    "senses": [
+      "Mjet fluturues me motor që ngrihet dhe përparon me ndihmën e presionit që krijon ajri nën krahët e tij"
+    ],
+    "examples": [
+      {
+        "source": "Uçakta uzun süre hareketsiz kalmaktan Şükran’ın beli, sırtı tutulmuştu.",
+        "target": "Nga qëndrimi pa lëvizur për një kohë të gjatë në avion, Shukranit i ishte mpirëmesi dhe shpina."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15923",
+    "source": "tr",
+    "word": "uçma",
+    "translation": "Fluturimi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'uçma'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11265",
+    "source": "tr",
+    "word": "uçuş",
+    "translation": "fluturim, fluturimi",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të fluturuarit"
+    ],
+    "examples": [
+      {
+        "source": "Koca mermi bölüğün siperine doğru istikamet aldı, havadan onun uçuşunu takip eden gözler iri dairelerle açılmıştı.",
+        "target": "Predha e stërmadhe mori drejtimin drejt hendekut të repartit, sytë që po ndiqnin fluturimin e saj nga ajri u hapën me rrathë të mëdhenj."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14438",
+    "source": "tr",
+    "word": "uğraş",
+    "translation": "profesion",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'uğraş'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15514",
+    "source": "tr",
+    "word": "uğur",
+    "translation": "Fati",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'uğur'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11009",
+    "source": "tr",
+    "word": "ülke",
+    "translation": "vend, shtet, krahinë",
+    "pos": "emër",
+    "senses": [
+      "Tërësia e tokave që ndodhen nën sovranitetin e një shteti; memleket, mülk"
+    ],
+    "examples": [
+      {
+        "source": "Artık vatan toprağı, Rumeli'deki hudutlarından Anadolu'daki hudutlarına kadar yekpare bir ülke olmuştur.",
+        "target": "Tashmë toka e atdheut, që nga kufijtë e saj në Rumeli e deri te kufijtë në Anatoli, është bërë një vend i vetëm dhe i pandarë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10158",
+    "source": "tr",
+    "word": "ün",
+    "translation": "famë, emër",
+    "pos": "emër",
+    "senses": [
+      "Gjendja kur njihesh apo kur je i dëgjuar nga të gjithë; shkëlqim, shquarësi"
+    ],
+    "examples": [
+      {
+        "source": "O kadar ünü ve başarıyı yakıştıramamıştı bu yüze.",
+        "target": "Nuk mund t'ia përshtatte kësaj fytyre gjithë atë famë dhe sukses."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11258",
+    "source": "tr",
+    "word": "üniversite",
+    "translation": "universitet",
+    "pos": "emër",
+    "senses": [
+      "Institucion arsimor që ka autonomi shkencore dhe personalitet juridik publik, i cili ofron arsim të nivelit të lartë, mësimdhënie, kërkim shkencor dhe botime, dhe përbëhet nga fakultete, institute, shkolla të larta etj."
+    ],
+    "examples": [
+      {
+        "source": "Avrupa'nın meşhur üniversitelerini sayar mısınız?",
+        "target": "A mund t'i numëroni universitetet e famshme të Europës?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10750",
+    "source": "tr",
+    "word": "ünlü",
+    "translation": "i famshëm, i dëgjuar",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që njihet nga të gjithë, që ka marrë famë; me emër, mezhur"
+    ],
+    "examples": [
+      {
+        "source": "Kimsenin üzerinde durmadığı birkaç ünlü kişiden birisi de kesinlikle o idi.",
+        "target": "Një nga të paktët njerëz të famshëm që askush nuk e vriste mendjen për të, me siguri ishte ai."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14154",
+    "source": "tr",
+    "word": "üreme",
+    "translation": "Riprodhimi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'üreme'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13121",
+    "source": "tr",
+    "word": "üretim",
+    "translation": "Prodhimi (ekonomi)",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'üretim'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11944",
+    "source": "tr",
+    "word": "ürkütücü",
+    "translation": "frikësues, tmerrues, i frikshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që të jep ndjenjën e frikës ose të ngurrimit, që të tremb"
+    ],
+    "examples": [
+      {
+        "source": "Yüzü kemikli, elleri iri, kalın ve ürkütücü kaşlarının altındaki gözleri ise iyice derinlere kaçmış.",
+        "target": "Fytyrën e kishte me kocka të dalura, duart e stërmëdha, ndërsa sytë nën ato vetullat e trashë e frikësues i kishin ikur mjaft në thellësi."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12597",
+    "source": "tr",
+    "word": "ürün",
+    "translation": "prodhim",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'ürün'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10571",
+    "source": "tr",
+    "word": "üst",
+    "translation": "sipër, pjesa e sipërme",
+    "pos": "emër",
+    "senses": [
+      "Ana e diçkaje që është e drejtuar lart apo drejt qiellit; e kundërta e 'poshtë'"
+    ],
+    "examples": [
+      {
+        "source": "Köyün üst tarafında, saman, taş ve yangın arasında, üstü sazlarla örtülmüş bir kulübenin önünde ateş yanıyor.",
+        "target": "Në pjesën e sipërme të fshatit, mes kashtës, gurëve dhe zjarrit, po ndizet një zjarr përpara një kasolleje të mbuluar me kallama."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10929",
+    "source": "tr",
+    "word": "üstelik",
+    "translation": "për më tepër, kusht shtesë",
+    "pos": "emër",
+    "senses": [
+      "Gjëja që jepet përmbi, ajo që jepet ekstra; diferenca"
+    ],
+    "examples": [
+      {
+        "source": "Saatimi bu kalemle değiştirdim, bin lira da üstelik aldım.",
+        "target": "E ndërrova orën tim me këtë laps, dhe mora edhe një mijë lira për më tepër."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11560",
+    "source": "tr",
+    "word": "üstün",
+    "translation": "fetha, shenjë zanore (arabike)",
+    "pos": "emër",
+    "senses": [
+      "Viza e shkurtër dhe e pjerrët që vendoset përmbi një bashkëtingëllore në tekstet me alfabet arab, për të treguar se ajo do të lexohet me zërat a ose e; fetha"
+    ],
+    "examples": [
+      {
+        "source": "Türkçe kelimelerde iç seste ‘a, e’ fonemleri üstün ile harekelendirilerek verilmiştir.",
+        "target": "Në fjalët e turqishtes, fonemat 'a, e' në zërat e brendshëm janë dhënë duke u vokalizuar me fetha (üstün)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10424",
+    "source": "tr",
+    "word": "üstüne",
+    "translation": "mbi, rreth",
+    "pos": "ndajfolje",
+    "senses": [
+      "Rreth një teme, lidhur me diçka, në lidhje me; rreth"
+    ],
+    "examples": [
+      {
+        "source": "Arkadaşım aşk ve evlilik üstüne konuşulacak şeyler bulmuştu.",
+        "target": "Shoku im kishte gjetur gjëra për të folur mbi dashurinë dhe martesën."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11470",
+    "source": "tr",
+    "word": "üvey",
+    "translation": "njerkë, i thjeshtuar (üvey)",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai midis të cilëve nuk ka lidhje gjaku por konsiderohet i afërm vetëm sipas ligjit, jo biologjik"
+    ],
+    "examples": [
+      {
+        "source": "O akşam da müzakere sonunda bu yaşıtım üvey dayımla mutabık kaldık.",
+        "target": "Edhe atë mbrëmje, në përfundim të diskutimit, rëmë dakord me këtë djalin e dajës tim njerk (üvey) që ishte moshatari im."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12519",
+    "source": "tr",
+    "word": "üye",
+    "translation": "anëtar",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'üye'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10383",
+    "source": "tr",
+    "word": "üzere",
+    "translation": "me qëllim që, për të",
+    "pos": "pjesëz",
+    "senses": [
+      "Me synimin për të..."
+    ],
+    "examples": [
+      {
+        "source": "Müzakere bitince üç dört gün sonra gene evde buluşmak üzere ayrıldılar.",
+        "target": "Kur mbaroi diskutimi, u ndanë për t'u takuar përsëri në shtëpi pas tre apo katër ditësh."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10237",
+    "source": "tr",
+    "word": "üzerinde",
+    "translation": "mbi, sipër",
+    "pos": "ndajfolje",
+    "senses": [
+      "Mbi diçka, në pjesën e sipërme të diçkaje"
+    ],
+    "examples": [
+      {
+        "source": "Donanan minareler sanki yolun üzerinde yakılan meşalelerdir.",
+        "target": "Minaretë e ndriçuara sikur janë elektrikë të ndezur mbi rrugë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10334",
+    "source": "tr",
+    "word": "üzerine",
+    "translation": "mbi, sipër",
+    "pos": "ndajfolje",
+    "senses": [
+      "Mbi diçka"
+    ],
+    "examples": [
+      {
+        "source": "Gerinerek kollarını yana doğru açarken başını divanın yastıkları üzerine koyuyor.",
+        "target": "Ndërsa hap krahët anash duke u shtrirë, mbështet kokën mbi jastëqet e divanit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10691",
+    "source": "tr",
+    "word": "üzgün",
+    "translation": "i mërzitur, i pikëlluar",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që është mërzitur apo që ndien trishtim; i vrarë në shpirt"
+    ],
+    "examples": [
+      {
+        "source": "O zamana kadar üzgündü, sesi kısılmış gibiydi.",
+        "target": "Deri në atë kohë ishte i mërzitur, zëri i tij dukej sikur ishte shuar."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11123",
+    "source": "tr",
+    "word": "üzücü",
+    "translation": "i pikëllueshëm, trishtues",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që të shkakton trishtim apo mërzitje; i keq"
+    ],
+    "examples": [
+      {
+        "source": "Üzücü bir durum.",
+        "target": "Një situatë e pikëllueshme."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11699",
+    "source": "tr",
+    "word": "üzülme",
+    "translation": "mërzitje, të mërziturit",
+    "pos": "emër",
+    "senses": [
+      "Gjendja e të qenit i mërzitur apo i pikëlluar"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12882",
+    "source": "tr",
+    "word": "üzüm",
+    "translation": "rrushi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'üzüm'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13219",
+    "source": "tr",
+    "word": "üzüntü",
+    "translation": "trishtim",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'üzüntü'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10137",
+    "source": "tr",
+    "word": "üç",
+    "translation": "tre",
+    "pos": "emër",
+    "senses": [
+      "Emri i numrit që vjen pas numrit dy"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15021",
+    "source": "tr",
+    "word": "üçgen",
+    "translation": "trekëndëshi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'üçgen'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10579",
+    "source": "tr",
+    "word": "üçüncü",
+    "translation": "i tretë",
+    "pos": "mbiemër",
+    "senses": [
+      "Mbiemri rreshtor i numrit tre, ai që vjen pas të dytit në radhë"
+    ],
+    "examples": [
+      {
+        "source": "Gelir vergisinin üçüncü taksitini verdik.",
+        "target": "Paguam këstin e tretë të tatimit mbi të ardhurat."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10999",
+    "source": "tr",
+    "word": "üçüz",
+    "translation": "trine, trenjakë",
+    "pos": "mbiemër",
+    "senses": [
+      "Fëmijët që lindin të tre së bashku"
+    ],
+    "examples": [],
+    "derivatives": []
+  }
+]

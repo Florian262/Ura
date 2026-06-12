@@ -1,53 +1,1539 @@
 [
   {
-    "id": "dict-tr-60",
+    "id": "dict-tr-11013",
     "source": "tr",
-    "word": "para",
-    "translation": "para, lekë",
-    "pos": "emër",
-    "inflection": "-yı",
-    "is_balkan": true,
+    "word": "pahalı",
+    "translation": "i shtrenjtë",
+    "pos": "mbiemër",
     "senses": [
-      "Mjet këmbimi i pranuar përgjithësisht për blerjen e mallrave dhe shërbimeve."
+      "Ai çmimi i të cilit është i lartë; e kundërta e 'i lirë'"
     ],
     "examples": [
       {
-        "source": "Para kazanmak",
-        "target": "Fitoj para"
-      },
-      {
-        "source": "Para harcamak",
-        "target": "Shpenzoj para"
+        "source": "Ana kız ikisini de sevinçlerinden çıldırtacak kadar ağır, pahalı hediyeler getirmişti.",
+        "target": "Kishte sjellë dhurata të rënda e të shtrenjta, aq sa t'i çmendte të dyja, nënë e bijë, nga gëzimi."
       }
     ],
-    "derivatives": [
-      {
-        "word": "paralı",
-        "translation": "i pasur (me para)",
-        "pos": "mbiemër"
-      },
-      {
-        "word": "parasız",
-        "translation": "pa para, falas",
-        "pos": "mbiemër"
-      }
-    ]
+    "derivatives": []
   },
   {
-    "id": "dict-tr-61",
+    "id": "dict-tr-11330",
+    "source": "tr",
+    "word": "paket",
+    "translation": "paketë, pako",
+    "pos": "emër",
+    "senses": [
+      "Objekt me madhësi sa për t'u mbajtur në dorë, brenda të cilit ndodhen një ose disa gjëra, i përgatitur duke u mbështjellë me letër ose duke u futur në kuti e duke u lidhur"
+    ],
+    "examples": [
+      {
+        "source": "Paket fabrikası olacak... Günde tam iki bin paket yapıyormuş!",
+        "target": "Do të bëhet fabrikë paketash... Paska bërë plot dy mijë paketa në ditë!"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12268",
+    "source": "tr",
+    "word": "pamuk",
+    "translation": "Pambuku, Gossypium",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'pamuk'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11589",
+    "source": "tr",
+    "word": "panik",
+    "translation": "panik",
+    "pos": "emër",
+    "senses": [
+      "Ndjenja e tmerrit të papritur, frikë e madhe"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17058",
+    "source": "tr",
+    "word": "pankreas",
+    "translation": "Pankreasi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'pankreas'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11970",
+    "source": "tr",
+    "word": "pantolon",
+    "translation": "pantallona",
+    "pos": "emër",
+    "senses": [
+      "Veshje që fillon nga beli dhe përgjithësisht pjesa e poshtme e këmbëve zbret deri te kyçet"
+    ],
+    "examples": [
+      {
+        "source": "Günde iki kez pantolonunun ütülenmesini istiyordu.",
+        "target": "Kërkonte që pantallonat t'i hekuroseshin dy herë në ditë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15044",
+    "source": "tr",
+    "word": "panzehir",
+    "translation": "Antidoti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'panzehir'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11749",
+    "source": "tr",
+    "word": "papa",
+    "translation": "papë, papa",
+    "pos": "emër",
+    "senses": [
+      "Kreu i kishës katolike të Romës, i cili përzgjidhet nga një këshill, banon në Vatikan dhe konsiderohet si zëvendës i Jezu Krishtit"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11941",
+    "source": "tr",
+    "word": "papaz",
+    "translation": "prift, klerik i krishterë",
+    "pos": "emër",
+    "senses": [
+      "Klerik i krishterë; peder"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15223",
+    "source": "tr",
+    "word": "papağan",
+    "translation": "Papagalli",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'papağan'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10130",
+    "source": "tr",
+    "word": "para",
+    "translation": "para, para të holla",
+    "pos": "emër",
+    "senses": [
+      "Mjet pagese prej letre ose metali, i prerë nga shteti, mbi të cilin është shkruar vlera e tij; nakit"
+    ],
+    "examples": [
+      {
+        "source": "Çıkarken elini göğsüne sokup bir kese çıkardı, keseden alabildiği kadar para alıp delikten attı.",
+        "target": "Gjatë daljes, futi dorën në gjoks dhe nxori një qese, mori sa mundi para nga qesja dhe i hodhi përmes vrimës."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18732",
+    "source": "tr",
+    "word": "paradoks",
+    "translation": "paradoksi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'paradoks'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15286",
+    "source": "tr",
+    "word": "paranoya",
+    "translation": "paranidi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'paranoya'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15018",
+    "source": "tr",
+    "word": "paraşüt",
+    "translation": "parashuta",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'paraşüt'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10395",
+    "source": "tr",
+    "word": "pardon",
+    "translation": "më falni, ndjesë",
+    "pos": "emër",
+    "senses": [
+      "Fjalë që përdoret në kuptimet 'kërkoj ndjesë, më falni'"
+    ],
+    "examples": [
+      {
+        "source": "Haydi in aşağıya da; pardon mu diyorsunuz, ne diyorsunuz, onu söyle!",
+        "target": "Hajde, zbrit poshtë; a thoni ndjesë, apo çfarë thoni, thuaje atë!"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13026",
+    "source": "tr",
+    "word": "parfüm",
+    "translation": "Parfumet",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'parfüm'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10523",
+    "source": "tr",
+    "word": "park",
+    "translation": "park",
+    "pos": "emër",
+    "senses": [
+      "Kopsht i madh me pemë e lule i rregulluar në një qendër banimi që njerëzit të shëtisin dhe të marrin ajër të pastër"
+    ],
+    "examples": [
+      {
+        "source": "Park ismi de güzel ya, millet bahçesi uzunca ama daha güzel.",
+        "target": "Edhe emri park është i bukur, por kopshti i popullit është pak i gjatë si emërtim, por është më i bukur."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10916",
+    "source": "tr",
+    "word": "parlak",
+    "translation": "i shndritshëm, i shkëlqyer",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që shndrit, që lëshon dritë apo shkëlqim"
+    ],
+    "examples": [
+      {
+        "source": "Siyah, çıplak dallarda henüz kuruyamayan su damlaları parlak, mavi birer boncuk gibi parlıyordu.",
+        "target": "Pikat e ujit që ende nuk ishin tharë nëpër degët e zeza e të zhveshura po shkëlqenin si rruaza të kaltra e të ndritshme."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15090",
+    "source": "tr",
+    "word": "parlamento",
+    "translation": "kuvend",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'parlamento'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10670",
+    "source": "tr",
+    "word": "parmak",
+    "translation": "Gishtat e dorës",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'parmak'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10459",
+    "source": "tr",
+    "word": "parti",
+    "translation": "parti, dërgesë malli",
+    "pos": "emër",
+    "senses": [
+      "Një pjesë e një të tëre"
+    ],
+    "examples": [
+      {
+        "source": "Yedi sekiz balyalık bir partiden bir buçuk iki kilo tütün yürütüyordu.",
+        "target": "Nga një parti prej shtatë-tetë balash merrte nja një e gjysmë ose dy kile duhan."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10608",
+    "source": "tr",
+    "word": "parça",
+    "translation": "pjesë, copë",
+    "pos": "emër",
+    "senses": [
+      "Gjëja që ndahet nga një e tërë, që konsiderohet e veçantë ose që tepron; copë"
+    ],
+    "examples": [
+      {
+        "source": "Yolun bu parçası bozuk.",
+        "target": "Kjo pjesë e rrugës është e dëmtuar."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14747",
+    "source": "tr",
+    "word": "parçacık",
+    "translation": "grimca",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'parçacık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18585",
+    "source": "tr",
+    "word": "parşömen",
+    "translation": "Pergamenti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'parşömen'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11823",
+    "source": "tr",
+    "word": "pas",
+    "translation": "pas, pasim (sport)",
+    "pos": "emër",
+    "senses": [
+      "Në disa lojëra me top, veprimi i hedhjes së topit nga një lojtar te shoku i tij i skuadrës"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13154",
+    "source": "tr",
+    "word": "pasaport",
+    "translation": "pasaportë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'pasaport'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11362",
+    "source": "tr",
+    "word": "pasta",
+    "translation": "pastë (për makina), lustrues",
+    "pos": "emër",
+    "senses": [
+      "Përzierje e veçantë që përdoret për të nxjerrë në dritë ngjyrat reale të makinave dhe për t'i lëmuar ato"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11763",
+    "source": "tr",
+    "word": "pat",
+    "translation": "karajfil, karajfil i diamanttë (gjuhësi)",
+    "pos": "emër",
+    "senses": [
+      "Gjilpërë prej diamanti në formën e lules së krizantemës (kasımpatı)"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11322",
+    "source": "tr",
+    "word": "patates",
+    "translation": "patate",
+    "pos": "emër",
+    "senses": [
+      "Bimë nga familja Solanaceae, gjethet dhe kërcejat e së cilës janë të hidhura dhe që bën zhardhokë nën tokë"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16372",
+    "source": "tr",
+    "word": "patent",
+    "translation": "Patenta",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'patent'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11356",
+    "source": "tr",
+    "word": "patlama",
+    "translation": "shpërthim",
+    "pos": "emër",
+    "senses": [
+      "Veprimi ose puna e të shpërthyerit"
+    ],
+    "examples": [
+      {
+        "source": "Alay komutanlığına sonradan verdiği raporda patlamayı şöyle anlatacaktır.",
+        "target": "Në raportin që i dha më vonë komandës së regjimentit, ai do ta shpjegojë shpërthimin kështu."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18279",
+    "source": "tr",
+    "word": "patoloji",
+    "translation": "Patologjia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'patoloji'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10481",
+    "source": "tr",
+    "word": "patron",
+    "translation": "model këtues, kalëp",
+    "pos": "emër",
+    "senses": [
+      "Letër e prerë sipas formës së pjesëve në një model veshjeje, që shërben për prerjen e rrobave; kalëp"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11810",
+    "source": "tr",
+    "word": "paylaşmak",
+    "translation": "ndarje, ndarje (me të tjerët), bashkëndarje",
+    "pos": "emër",
+    "senses": [
+      "Shpërndarja ose ndarja e diçkaje mes dy ose më shumë personave në raporte të caktuara"
+    ],
+    "examples": [
+      {
+        "source": "İçtikleri su ayrı gitmez, her derdini onunla paylaşırdı.",
+        "target": "Uji që pinin nuk u ndahej asnjëherë, çdo shqetësim (hall) e ndante me të."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10846",
+    "source": "tr",
+    "word": "Pazar",
+    "translation": "Pazar",
+    "pos": "emër",
+    "senses": [
+      "Një nga rretheve që i përket provincës së Rizes"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13648",
+    "source": "tr",
+    "word": "pazarlama",
+    "translation": "Marketingu",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'pazarlama'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11725",
+    "source": "tr",
+    "word": "pazarlık",
+    "translation": "pazarllëk",
+    "pos": "emër",
+    "senses": [
+      "Biseda që bëjnë palët gjatë një shitblerjeje me qëllim për t'i bërë tjetrit të pranojë çmimin më të përshtatshëm për vete"
+    ],
+    "examples": [
+      {
+        "source": "Yakından ise biraz acayip pazarlığını giymiş, fazla süslenmiş gibiydi.",
+        "target": "Nga afër, dukej sikur kishte veshur pazarllëkun e saj paksa të çuditshëm, sikur ishte zbukuruar tepër."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11189",
+    "source": "tr",
+    "word": "pazartesi",
+    "translation": "e hënë",
+    "pos": "emër",
+    "senses": [
+      "Dita midis së dielës dhe së martës"
+    ],
+    "examples": [
+      {
+        "source": "Pazartesi gecesi celepleri güçlükle savdı.",
+        "target": "Natën e së hënës i largoi me vështirësi tregtarët e blegtorisë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14743",
+    "source": "tr",
+    "word": "paşa",
+    "translation": "Pasha",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'paşa'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10674",
+    "source": "tr",
+    "word": "peder",
+    "translation": "baba, peder",
+    "pos": "emër",
+    "senses": [
+      "Baba"
+    ],
+    "examples": [
+      {
+        "source": "Ben, rahmetli pederden miras kalan bakkal dükkânını işletirim.",
+        "target": "Unë menaxhoj dyqanin e ushqimeve që më ka mbetur trashëgimi nga im atë (pederi) i ndjerë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10146",
+    "source": "tr",
+    "word": "pek",
+    "translation": "shumë, i fortë",
+    "pos": "mbiemër",
+    "senses": [
+      "I ashpër, i fortë"
+    ],
+    "examples": [
+      {
+        "source": "İnsan gülden nazik, taştan pektir.",
+        "target": "Njeriu është më i brishtë se trëndafili e më i fortë se guri."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10050",
+    "source": "tr",
+    "word": "peki",
+    "translation": "mirë, mirë atëherë",
+    "pos": "pasthirrmë",
+    "senses": [
+      "Fjalë miratimi ose kalimi; po"
+    ],
+    "examples": [
+      {
+        "source": "Peki ama benim ne olduğumu henüz muayene etmediniz.",
+        "target": "Mirë atëherë, por ju ende nuk më keni ekzaminuar se çfarë kam."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10128",
+    "source": "tr",
+    "word": "pekâlâ",
+    "translation": "shumë mirë, i rregullt",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që nuk është më poshtë se të ngjashmit e tij"
+    ],
+    "examples": [
+      {
+        "source": "Pekâlâ bir ev, niçin beğenmediniz?",
+        "target": "Një shtëpi shumë e mirë, pse nuk ju pëlqeu?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11444",
+    "source": "tr",
+    "word": "pembe",
+    "translation": "e rozë, ngjyra rozë",
+    "pos": "emër",
+    "senses": [
+      "Ngjyra që shfaqet nga përzierja e së kuqes me të bardhën"
+    ],
+    "examples": [
+      {
+        "source": "Dantele ve pembeye olan düşkünlüğünü ise mintanında yansıttı.",
+        "target": "Dëshirën e madhe ndaj dantellave dhe ngjyrës rozë e pasqyroi në këmishën (mintanin) e vet."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12010",
     "source": "tr",
     "word": "pencere",
     "translation": "dritare",
     "pos": "emër",
-    "inflection": "-yi",
     "senses": [
-      "Hapësirë me xham në murin e një ndërtese që lejon kalimin e dritës dhe ajrit."
+      "Përkthim për fjalën 'pencere'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12632",
+    "source": "tr",
+    "word": "penis",
+    "translation": "Penisi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'penis'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17347",
+    "source": "tr",
+    "word": "penisilin",
+    "translation": "Penicilina",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'penisilin'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12083",
+    "source": "tr",
+    "word": "peri",
+    "translation": "zana",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'peri'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11951",
+    "source": "tr",
+    "word": "personel",
+    "translation": "personel, staf, punonjës",
+    "pos": "emër",
+    "senses": [
+      "Zyrtarët e një shërbimi apo organizate, tërësia e punonjësve në një vend pune"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16157",
+    "source": "tr",
+    "word": "pervane",
+    "translation": "helika",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'pervane'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11471",
+    "source": "tr",
+    "word": "Perşembe",
+    "translation": "Perashembe (rajon), e enjte (kuptim tjetër)",
+    "pos": "emër",
+    "senses": [
+      "Një nga rretheve që i përket provincës së Ordusë"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11691",
+    "source": "tr",
+    "word": "petrol",
+    "translation": "naftë, nafta",
+    "pos": "emër",
+    "senses": [
+      "Vaj mineral natyror, djegës, me ngjyrë të errët, i papastruar, me erë të veçantë, i përbërë nga hidrokarburet, dendësia e të cilit mund të jetë midis 0.8-0.95"
     ],
     "examples": [
       {
-        "source": "Pencereyi açmak",
-        "target": "Hap dritaren"
+        "source": "Kamyonlar yarı benzin, yarı petrolle çalışmaya uğraşıyor.",
+        "target": "Kamionët po përpiqen të punojnë gjysmë me benzinë e gjysmë me naftë."
       }
-    ]
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13735",
+    "source": "tr",
+    "word": "peygamber",
+    "translation": "profeti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'peygamber'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11469",
+    "source": "tr",
+    "word": "peynir",
+    "translation": "djathë",
+    "pos": "emër",
+    "senses": [
+      "Ushqim që prodhohet nga qumështi duke u ngurtësuar me anë të majasë dhe që ka shumë lloje"
+    ],
+    "examples": [
+      {
+        "source": "Kuru ekmekle bayat peyniri lezzetle yiyen / Çeşmeden her su içerken şükür Allah'a diyen",
+        "target": "Ai që e ha me shije bukën e thatë me djathë të vjetër / Çdo herë që pi ujë nga çezma thotë shyqyr Zotit"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11034",
+    "source": "tr",
+    "word": "peş",
+    "translation": "kind, pjesë shtesë rrobe",
+    "pos": "emër",
+    "senses": [
+      "Copë pëlhure që u shtohet anëve të disa rrobave me qëllim që ato të jenë të gjera"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14128",
+    "source": "tr",
+    "word": "pilav",
+    "translation": "pilaf",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'pilav'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11499",
+    "source": "tr",
+    "word": "pilot",
+    "translation": "pilot, pilotues, pilot (projekt)",
+    "pos": "emër",
+    "senses": [
+      "Personi i ngarkuar për të përdorur dhe drejtuar një mjet fluturues"
+    ],
+    "examples": [
+      {
+        "source": "Yüz milyon lira sermayeli bir pilot şirket kuruldu.",
+        "target": "U ngrit një kompani pilote me një kapital prej njëqind milionë lirash."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15446",
+    "source": "tr",
+    "word": "piramit",
+    "translation": "piramida",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'piramit'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12214",
+    "source": "tr",
+    "word": "pirinç",
+    "translation": "orizi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'pirinç'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10710",
+    "source": "tr",
+    "word": "pis",
+    "translation": "i flliqur, pis",
+    "pos": "mbiemër",
+    "senses": [
+      "I ndotur, me njolla, i papastër"
+    ],
+    "examples": [
+      {
+        "source": "Lağım suları pistir.",
+        "target": "Ujërat e kanaleve të ujërave të zeza janë të flliqura."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10539",
+    "source": "tr",
+    "word": "pislik",
+    "translation": "papastërti, pleh",
+    "pos": "emër",
+    "senses": [
+      "Gjendja e të qenit i ndotur ose i flliqur"
+    ],
+    "examples": [
+      {
+        "source": "Çocuğun yüzü gözü pislik içinde kaldı.",
+        "target": "Fytyra dhe sytë e fëmijës u bënë plot me papastërti."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14416",
+    "source": "tr",
+    "word": "piyade",
+    "translation": "Këmbësoria",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'piyade'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16785",
+    "source": "tr",
+    "word": "piyanist",
+    "translation": "pianist",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'piyanist'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11861",
+    "source": "tr",
+    "word": "piyano",
+    "translation": "piano",
+    "pos": "emër",
+    "senses": [
+      "Vegël muzikore e madhe dhe e rëndë me tastierë dhe tela, e cila luhet duke shtypur tasta të ndryshëm"
+    ],
+    "examples": [
+      {
+        "source": "Köşede bir piyano, piyanonun üstünde yapma çiçekler.",
+        "target": "Në qoshe një piano, mbi piano lule artificiale."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15938",
+    "source": "tr",
+    "word": "piyon",
+    "translation": "ushtari",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'piyon'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11187",
+    "source": "tr",
+    "word": "pizza",
+    "translation": "pica",
+    "pos": "emër",
+    "senses": [
+      "Ushqim brumi i pjekur në furrë, i përgatitur përgjithësisht duke vendosur përmbi domate, ullinj, djathë, kërpudha, lloje të ndryshme mishi dhe perimesh"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10782",
+    "source": "tr",
+    "word": "piç",
+    "translation": "kopil, fëmijë jashtë martese",
+    "pos": "emër",
+    "senses": [
+      "Fëmija që vjen në jetë pa pasur një lidhje martese midis nënës dhe babait; fëmijë i jashtëligjshëm"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11003",
+    "source": "tr",
+    "word": "pişman",
+    "translation": "i pishman bërë, i penduar",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që mërzitet duke parë rezultatin negativ të një pune ose të një sjelljeje që ka bërë; i penduar"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12220",
+    "source": "tr",
+    "word": "pişmanlık",
+    "translation": "Pendimi, Keqardhja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'pişmanlık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14377",
+    "source": "tr",
+    "word": "plaj",
+    "translation": "plazh",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'plaj'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10685",
+    "source": "tr",
+    "word": "plan",
+    "translation": "plan",
+    "pos": "emër",
+    "senses": [
+      "Struktura ose rregulli që mendohet të ndiqet me qëllim që një punë apo një vepër të realizohet ose një çështje të ecur mbarë"
+    ],
+    "examples": [
+      {
+        "source": "Turist akınını karşılamak için şimdiden bir plan yapmışlar.",
+        "target": "Kanë bërë që tani një plan për të pritur rrebeshin e turistëve."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18481",
+    "source": "tr",
+    "word": "plankton",
+    "translation": "Planktoni",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'plankton'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14791",
+    "source": "tr",
+    "word": "planlama",
+    "translation": "planifikim njohës",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'planlama'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11696",
+    "source": "tr",
+    "word": "plastik",
+    "translation": "plastikë, plastik",
+    "pos": "emër",
+    "senses": [
+      "Lëndë organike ose sintetike që formësohet nën efektin e nxehtësisë dhe presionit"
+    ],
+    "examples": [
+      {
+        "source": "Plastikçiler plastikleri eritip on beyaz top yaptılar.",
+        "target": "Punëtorët e plastikës e shkrinë plastikën dhe bënë dhjetë topa të bardhë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17131",
+    "source": "tr",
+    "word": "platform",
+    "translation": "platformë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'platform'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13548",
+    "source": "tr",
+    "word": "plazma",
+    "translation": "plazma",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'plazma'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17942",
+    "source": "tr",
+    "word": "plütonyum",
+    "translation": "Plutoni",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'plütonyum'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10215",
+    "source": "tr",
+    "word": "polis",
+    "translation": "polici, polic",
+    "pos": "emër",
+    "senses": [
+      "Institucioni që siguron rendin publik, qetësinë dhe sigurinë në qytet"
+    ],
+    "examples": [
+      {
+        "source": "İki gün sonra polisler eve giderek annesini götürdüler.",
+        "target": "Pas dy ditësh policët shkuan në shtëpi dhe morën nënën e tij."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11693",
+    "source": "tr",
+    "word": "politik",
+    "translation": "politik, politikore",
+    "pos": "mbiemër",
+    "senses": [
+      "Siyasal"
+    ],
+    "examples": [
+      {
+        "source": "O dönem politik ortam zaten kızışmıştı.",
+        "target": "Mjedisi politik i asaj periudhe sidoqoftë kishte marrë zjarr (ishte nxehur)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18749",
+    "source": "tr",
+    "word": "polyester",
+    "translation": "Poliesteri",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'polyester'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11542",
+    "source": "tr",
+    "word": "popüler",
+    "translation": "popullor, i dëgjuar, i pëlqyer",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që përfshin motive apo elemente që jetojnë mes popullit, që u përgjigjet shijeve të tij dhe që mbështetet (pëlqehet) nga populli"
+    ],
+    "examples": [
+      {
+        "source": "Her şeyden önce, pala bıyıkları ile meşhur kırk, kırk iki yaşlarında popüler bir yazar.",
+        "target": "Para së gjithash, është një shkrimtar popullor (i dëgjuar) i moshës dyzet apo dyzet e dy vjeçare, i famshëm për mustaqet e tij të gjata."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11681",
+    "source": "tr",
+    "word": "porno",
+    "translation": "porno, pornografi",
+    "pos": "emër",
+    "senses": [
+      "Botim, foto etj., që ka si qëllim nxitjen e dëshirave seksuale dhe bie ndesh me vlerat morale; pornografi"
+    ],
+    "examples": [
+      {
+        "source": "Amaç bu tür filmlerde her zaman olduğu gibi bu ilişkiyi nedenlerinden ve eyleme itiş koşullarından soyutlayıp yalnızca pornoya dönüştürmektir.",
+        "target": "Synimi në filma të tillë, siç ndodh gjithmonë, është ta zhveshësh këtë marrëdhënie nga shkaqet dhe kushtet shtytëse të veprimit dhe ta kthesh atë thjesht në porno."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18190",
+    "source": "tr",
+    "word": "pornografi",
+    "translation": "Pornografia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'pornografi'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16299",
+    "source": "tr",
+    "word": "porselen",
+    "translation": "Porcelani",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'porselen'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16704",
+    "source": "tr",
+    "word": "portre",
+    "translation": "portret",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'portre'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11375",
+    "source": "tr",
+    "word": "posta",
+    "translation": "postë, korrier",
+    "pos": "emër",
+    "senses": [
+      "Tërësia e letrave dhe porosive që vijnë në një vend ose dërgohen nga një vend"
+    ],
+    "examples": [
+      {
+        "source": "Ankara’nın hususi postasını gün aşırı bir kurye deri çanta içinde Sebilürreşad idarehanesine getirip bırakıyordu.",
+        "target": "Postën private të Ankarasë e sillte një korrier çdo dy ditë brenda një çante lëkure dhe e linte në zyrën e Sebilürreşad-it."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12423",
+    "source": "tr",
+    "word": "potansiyel",
+    "translation": "Potenciali",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'potansiyel'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15473",
+    "source": "tr",
+    "word": "potasyum",
+    "translation": "Kaliumi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'potasyum'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12972",
+    "source": "tr",
+    "word": "pozisyon",
+    "translation": "pozicion",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'pozisyon'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11943",
+    "source": "tr",
+    "word": "pratik",
+    "translation": "praktik, praktike",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që mund të aplikohet lehtësisht, i dobishëm"
+    ],
+    "examples": [
+      {
+        "source": "Çok görmüş halk adamlarına mahsus pratik bir zekâsı vardı.",
+        "target": "Kishte një inteligjencë praktike specifike për njerëzit e popullit që kishin parë e kaluar shumë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11154",
+    "source": "tr",
+    "word": "prens",
+    "translation": "princ",
+    "pos": "emër",
+    "senses": [
+      "Titull që u jepet meshkujve që bëjnë pjesë në familjen e sundimtarit"
+    ],
+    "examples": [
+      {
+        "source": "Hanedan prenslere dair başka hatıram yoktu.",
+        "target": "Nuk kisha kujtim tjetër në lidhje me princat e dinastisë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10939",
+    "source": "tr",
+    "word": "prenses",
+    "translation": "princeshë",
+    "pos": "emër",
+    "senses": [
+      "Titull që u jepet grave ose vajzave që vijnë nga familja e sundimtarit"
+    ],
+    "examples": [
+      {
+        "source": "Yengem, ağzındaki lokmayla beraber, prensesten hiç de iyi haberler almadığını geveliyor.",
+        "target": "Kunata ime, bashkë me kafshatën në gojë, po mërmërit se nuk ka marrë fare lajme të mira nga princesha."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13247",
+    "source": "tr",
+    "word": "prezervatif",
+    "translation": "Prezervativi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'prezervatif'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10819",
+    "source": "tr",
+    "word": "problem",
+    "translation": "problem, çështje",
+    "pos": "emër",
+    "senses": [
+      "Pyetje ose çështje që kërkohet të zgjidhet me ndihmën e teoremave ose rregullave; problem"
+    ],
+    "examples": [
+      {
+        "source": "Problem çocuk.",
+        "target": "Fëmijë problematik."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11049",
+    "source": "tr",
+    "word": "profesyonel",
+    "translation": "profesionist",
+    "pos": "mbiemër",
+    "senses": [
+      "Personi që kryen një punë me qëllim për të siguruar fitim monetar; e kundërta e 'amatorit'"
+    ],
+    "examples": [
+      {
+        "source": "Profesyonel boksörden, antrenman bahanesiyle senin karşında dayak yemek işime gelmiyor, kızım!",
+        "target": "Nuk më intereson të ha drurin përpara teje nga një boksier profesionist me pretekstin e stërvitjes, imë bijë!"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10728",
+    "source": "tr",
+    "word": "profesör",
+    "translation": "profesor",
+    "pos": "emër",
+    "senses": [
+      "Anëtari i personelit mësimdhënës që ndodhet në shkallën më të lartë në institucionet e arsimit të lartë"
+    ],
+    "examples": [
+      {
+        "source": "Aramızda bir profesör, bir de doçent vardı, hepimiz çoktan pusulayı şaşırmıştık.",
+        "target": "Mes nesh ishte një profesor dhe një docent, të gjithë ne e kishim humbur fillin me kohë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11400",
+    "source": "tr",
+    "word": "program",
+    "translation": "program",
+    "pos": "emër",
+    "senses": [
+      "Tërësia e veprimeve të parashikuara për t'u kryer sipas kushteve dhe një rregulli të caktuar; plan"
+    ],
+    "examples": [
+      {
+        "source": "Ne yapacaksa yapmadan kurar hatta programını yanındakilere de söylerdi.",
+        "target": "Çfarëdo që të kishte ndërmend të bënte, ai e planifikonte përpara se ta kryente, madje ua tregonte programin e tij edhe atyre që kishte pranë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12127",
+    "source": "tr",
+    "word": "proje",
+    "translation": "Projekti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'proje'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15428",
+    "source": "tr",
+    "word": "propaganda",
+    "translation": "propaganda",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'propaganda'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16814",
+    "source": "tr",
+    "word": "prostat",
+    "translation": "Prostati",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'prostat'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13727",
+    "source": "tr",
+    "word": "protein",
+    "translation": "proteinë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'protein'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12950",
+    "source": "tr",
+    "word": "protesto",
+    "translation": "Manifestimi, Protesta",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'protesto'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17312",
+    "source": "tr",
+    "word": "proton",
+    "translation": "protoni",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'proton'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11992",
+    "source": "tr",
+    "word": "prova",
+    "translation": "provë, provat (teatër/muzikë)",
+    "pos": "emër",
+    "senses": [
+      "Eksperimentimi ose prova që bëhet për të kuptuar nëse diçka i përgjigjet qëllimit ose është në nivelin e kërkuar"
+    ],
+    "examples": [
+      {
+        "source": "Saatlerce tatlı tatlı konuştuk, onlar gittikten sonra da türküler çınladı provada.",
+        "target": "Biseduam mjaft këndshëm për orë të tëra, e masi ata ikën, në provë bënë jehonë këngët popullore."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14621",
+    "source": "tr",
+    "word": "psikolog",
+    "translation": "psikolog",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'psikolog'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13659",
+    "source": "tr",
+    "word": "psikoloji",
+    "translation": "psikologji",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'psikoloji'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11967",
+    "source": "tr",
+    "word": "psikolojik",
+    "translation": "psikologjik, psikologjike",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që lidhet me psikologjinë ose shkencën e shpirtit"
+    ],
+    "examples": [
+      {
+        "source": "İnceden inceye tahlil edilmesi lazım gelen psikolojik bir olay gibi görünmektedir.",
+        "target": "Po shfaqet si një ngjarje psikologjike që duhet të ekzaminohet hollësisht."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11638",
+    "source": "tr",
+    "word": "puan",
+    "translation": "pikë, pikët",
+    "pos": "emër",
+    "senses": [
+      "Njësi me vlerë dhe masë të ndryshueshme që përdoret në ndeshje të ndryshme sportive"
+    ],
+    "examples": [
+      {
+        "source": "Şimdiye kadar almış olduğunuz puanları tekrar hatırlatmakta yarar görüyoruz.",
+        "target": "E shohim të dobishme t'ju kujtojmë përsëri pikët që keni marrë deri më tani."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14231",
+    "source": "tr",
+    "word": "puding",
+    "translation": "puding",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'puding'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14261",
+    "source": "tr",
+    "word": "pul",
+    "translation": "Pulla postale",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'pul'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15322",
+    "source": "tr",
+    "word": "pusula",
+    "translation": "kompasi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'pusula'."
+    ],
+    "examples": [],
+    "derivatives": []
   }
 ]

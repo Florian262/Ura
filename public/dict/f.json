@@ -1,1 +1,872 @@
-[]
+[
+  {
+    "id": "dict-tr-15181",
+    "source": "tr",
+    "word": "fa",
+    "translation": "fa",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fa'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12965",
+    "source": "tr",
+    "word": "fabrika",
+    "translation": "fabrikë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fabrika'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11018",
+    "source": "tr",
+    "word": "fahişe",
+    "translation": "prostitutë, lavire",
+    "pos": "emër",
+    "senses": [
+      "Grua në shoqëri që nuk u përgjigjet rregullave morale në lidhje me marrëdhëniet seksuale; fahiishe"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14963",
+    "source": "tr",
+    "word": "fahişelik",
+    "translation": "prostitucion",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fahişelik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14769",
+    "source": "tr",
+    "word": "faiz",
+    "translation": "interesi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'faiz'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10166",
+    "source": "tr",
+    "word": "fakat",
+    "translation": "por, porse",
+    "pos": "lidhëz",
+    "senses": [
+      "Fjalë që përdoret për të lidhur një fjali me fjalinë e mëparshme me qëllim që të shprehë kundërshti"
+    ],
+    "examples": [
+      {
+        "source": "El fenerim de çantanın üstündeymiş sözde fakat göremiyorum.",
+        "target": "Tani, gjoja elektrik dore qenka përmbi çantë, por nuk po mund ta shoh."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11735",
+    "source": "tr",
+    "word": "fakir",
+    "translation": "i varfër",
+    "pos": "mbiemër",
+    "senses": [
+      "Yoksul, e kundërta e 'i pasur/zengin'"
+    ],
+    "examples": [
+      {
+        "source": "En fakir köyler taştandır ve üstü kiremittir.",
+        "target": "Fshatrat më të varfra janë prej guri dhe çatia është me tjegulla."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16903",
+    "source": "tr",
+    "word": "fakülte",
+    "translation": "fakultet",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fakülte'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16430",
+    "source": "tr",
+    "word": "fal",
+    "translation": "fallxhore",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fal'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10187",
+    "source": "tr",
+    "word": "falan",
+    "translation": "filani",
+    "pos": "përemër",
+    "senses": [
+      "Fjalë që zë vendin e një emri të përveçëm që nuk dëshirohet të thuhet ose që nuk shihet i nevojshëm; filani"
+    ],
+    "examples": [
+      {
+        "source": "Bana `falan geldi, falan gitti` diye anlatmaya başladı.",
+        "target": "Filloi të më tregonte duke thënë 'erdhi filani, shkoi filani'."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11320",
+    "source": "tr",
+    "word": "fare",
+    "translation": "mi, mi i vogël",
+    "pos": "emër",
+    "senses": [
+      "Kafshë gjitare brejtëse me trup të vogël nga familja e miut"
+    ],
+    "examples": [
+      {
+        "source": "Tarla faresi. Fındık faresi.",
+        "target": "Mi fushash. Mi shtëpie."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10242",
+    "source": "tr",
+    "word": "fark",
+    "translation": "ndryshim, dallim",
+    "pos": "emër",
+    "senses": [
+      "Ndryshimi që mundëson që një person ose objekt të mos ngatërrohet me një tjetër, veçoria që ndan gjërat e ngjashme nga njëra-tjetra; dallim"
+    ],
+    "examples": [
+      {
+        "source": "Emanete ihanet etmek veya etmemekle insan öteki mahlukattan ayrılır veya onlardan farkı kalmaz.",
+        "target": "Njeriu ndahet nga krijesat e tjera ose nuk i mbetet më dallim prej tyre duke e tradhtuar ose jo besimin (emanetin)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10235",
+    "source": "tr",
+    "word": "farklı",
+    "translation": "i ndryshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka ndryshime apo veçori që e dallojnë; ndryshues"
+    ],
+    "examples": [
+      {
+        "source": "En dipte ikişer ayak merdivenle çıkılan ayrı iki odada farklı aileler otururlardı.",
+        "target": "Në pjesën më të thellë, në dy dhoma të ndara ku nitej me shkallë prej dy këmbësh, banonin familje të ndryshme."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12227",
+    "source": "tr",
+    "word": "farz",
+    "translation": "Farzi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'farz'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10076",
+    "source": "tr",
+    "word": "fazla",
+    "translation": "më shumë, i tepërt",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që është më shumë se sa duhet ose se sa është e zakonshme, i tepërt"
+    ],
+    "examples": [
+      {
+        "source": "Biz ancak Cumhuriyet Devri'nde elli yıldan fazla bir barış devri geçirmişiz.",
+        "target": "Vetëm në periudhën e Republikës ne kemi kaluar një periudhë paqeje prej më shumë se pesëdhjetë vjetësh."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11338",
+    "source": "tr",
+    "word": "fazladan",
+    "translation": "ekstra, si shtesë, për më tepër",
+    "pos": "ndajfolje",
+    "senses": [
+      "Si shtesë ndaj asaj që është e zakonshme, më shumë se e zakonshmja; ekstra"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11378",
+    "source": "tr",
+    "word": "fazlasıyla",
+    "translation": "tepër, jashtë mase, mjaft",
+    "pos": "ndajfolje",
+    "senses": [
+      "Më shumë sesa e zakonshmja ose ajo që nevojitet; mjaft"
+    ],
+    "examples": [
+      {
+        "source": "İçerisi, dışarıdan farklı olarak fazlasıyla sessizdi.",
+        "target": "Brendësia, ndryshe nga jashtë, ishte tepër (jashtë mase) e qetë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11535",
+    "source": "tr",
+    "word": "feda",
+    "translation": "flijim, kurban, sakrificë",
+    "pos": "emër",
+    "senses": [
+      "Heqja dorë nga një vlerë ose pasuri për një qëllim të caktuar, dhënia e diçkaje për hir të një kauze"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11098",
+    "source": "tr",
+    "word": "federal",
+    "translation": "federal",
+    "pos": "mbiemër",
+    "senses": [
+      "I bashkuar në formë federate"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13308",
+    "source": "tr",
+    "word": "federasyon",
+    "translation": "Federata",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'federasyon'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11438",
+    "source": "tr",
+    "word": "felaket",
+    "translation": "fatkeqësi, katastrofë",
+    "pos": "emër",
+    "senses": [
+      "Ngjarja ose situata që sjell dëme të mëdha, trishtim dhe vështirësi; shkatërrim"
+    ],
+    "examples": [
+      {
+        "source": "İnsanların korkması icap eden en büyük felaket, kötü ahlaktır.",
+        "target": "Fatkeqësia më e madhe nga e cila njerëzit duhet të kenë frikë, është morali i keq."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14232",
+    "source": "tr",
+    "word": "felsefe",
+    "translation": "filozofi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'felsefe'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10461",
+    "source": "tr",
+    "word": "fena",
+    "translation": "vdekshmëri",
+    "pos": "emër",
+    "senses": [
+      "Vdekshmëria"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17361",
+    "source": "tr",
+    "word": "fenomen",
+    "translation": "dukuri, fenomen",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fenomen'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14033",
+    "source": "tr",
+    "word": "festival",
+    "translation": "festival",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'festival'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13072",
+    "source": "tr",
+    "word": "fidye",
+    "translation": "Fidja dhe Kefareti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fidye'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10355",
+    "source": "tr",
+    "word": "fikir",
+    "translation": "ide, mendim",
+    "pos": "emër",
+    "senses": [
+      "Mendim"
+    ],
+    "examples": [
+      {
+        "source": "Bir fikrin münazarasıyla kütüphanesinin önünde sabahladığımız geceler olurdu.",
+        "target": "Kishim netë ku gdhiheshim përpara bibliotekës së tij duke diskutuar mbi një ide."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10967",
+    "source": "tr",
+    "word": "fikrî",
+    "translation": "intelektual, mendor",
+    "pos": "mbiemër",
+    "senses": [
+      "Düşünsel, që lidhet me mendimin ose idetë"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12492",
+    "source": "tr",
+    "word": "fil",
+    "translation": "oficeri, elefanti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fil'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10863",
+    "source": "tr",
+    "word": "filan",
+    "translation": "filan, e kështu me radhë",
+    "pos": "përemër",
+    "senses": [
+      "Falan"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16656",
+    "source": "tr",
+    "word": "fildişi",
+    "translation": "fildishi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fildişi'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17482",
+    "source": "tr",
+    "word": "file",
+    "translation": "rrjeta",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'file'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10446",
+    "source": "tr",
+    "word": "film",
+    "translation": "film",
+    "pos": "emër",
+    "senses": [
+      "Shirit i celuloidit, i tejdukshëm dhe i përkulshëm që përdoret në fotografi, radiografi dhe kinematografi për të nxjerrë imazhe"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14392",
+    "source": "tr",
+    "word": "filo",
+    "translation": "flota",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'filo'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14934",
+    "source": "tr",
+    "word": "filozof",
+    "translation": "fiolzof",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'filozof'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13695",
+    "source": "tr",
+    "word": "finans",
+    "translation": "Financa",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'finans'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15030",
+    "source": "tr",
+    "word": "firavun",
+    "translation": "Faraoni",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'firavun'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14489",
+    "source": "tr",
+    "word": "fit",
+    "translation": "Këmba",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fit'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12016",
+    "source": "tr",
+    "word": "fiyat",
+    "translation": "çmimi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fiyat'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12485",
+    "source": "tr",
+    "word": "fizik",
+    "translation": "fizikë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fizik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11078",
+    "source": "tr",
+    "word": "fiziksel",
+    "translation": "fizik, fizikore",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që lidhet me fizikën ose trupin"
+    ],
+    "examples": [
+      {
+        "source": "Fiziksel imkânsızlık.",
+        "target": "Pamundësi fizike."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16094",
+    "source": "tr",
+    "word": "fizikçi",
+    "translation": "fizikan",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fizikçi'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13498",
+    "source": "tr",
+    "word": "fişek",
+    "translation": "fishek",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fişek'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14832",
+    "source": "tr",
+    "word": "flora",
+    "translation": "bota bimore",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'flora'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11893",
+    "source": "tr",
+    "word": "flört",
+    "translation": "flirt, lidhje ndjenjore",
+    "pos": "emër",
+    "senses": [
+      "Marrëdhënia ndjenjore midis burrit dhe gruas"
+    ],
+    "examples": [
+      {
+        "source": "Daha doğrusu, hayatımda flörtlerim olup olmadığını anlamak istiyorsunuz.",
+        "target": "Më saktë, dëshironi të kuptoni nëse kam pasur apo jo flirte në jetën time."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15759",
+    "source": "tr",
+    "word": "flüt",
+    "translation": "Flauti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'flüt'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14301",
+    "source": "tr",
+    "word": "form",
+    "translation": "formë e artit",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'form'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18083",
+    "source": "tr",
+    "word": "fosfor",
+    "translation": "fosfori",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fosfor'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15315",
+    "source": "tr",
+    "word": "fosil",
+    "translation": "fosilet",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fosil'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10768",
+    "source": "tr",
+    "word": "fotoğraf",
+    "translation": "fotografi, foto",
+    "pos": "emër",
+    "senses": [
+      "Fiksimi i imazhit mbi një sipërfaqe të veçantë duke përdorur mjete dhe materiale të ndryshme"
+    ],
+    "examples": [
+      {
+        "source": "Atatürk'ün hemen herkesin gördüğü, mektep kitaplarına kadar geçmiş bir fotoğrafı vardır.",
+        "target": "Ekziston një fotografi e Ataturkut që e ka parë pothuajse kushdo, e cila ka kaluar deri nëpër librat e shkollës."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13380",
+    "source": "tr",
+    "word": "fotoğrafçı",
+    "translation": "fotograf",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fotoğrafçı'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17567",
+    "source": "tr",
+    "word": "fotoğrafçılık",
+    "translation": "fotografi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fotoğrafçılık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10421",
+    "source": "tr",
+    "word": "frank",
+    "translation": "frangë",
+    "pos": "emër",
+    "senses": [
+      "Njësia monetare e Francës, Zvicrës, Belgjikës dhe vendeve të tjera të ngjashme"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10904",
+    "source": "tr",
+    "word": "Fransız",
+    "translation": "francez, franceze",
+    "pos": "emër",
+    "senses": [
+      "Populli që jeton në Francë ose personi që vjen nga ky popull; francez"
+    ],
+    "examples": [
+      {
+        "source": "Dört beş ay uğraşarak papağan gibi tekrarladığım ilk cümleleri duyan Fransızlar gülmeye başladılar.",
+        "target": "Francezët që dëgjuan fjalitë e mia të para, të cilat i përsërisja si papagall pas një përpjekjeje prej katër-pesë muajsh, filluan të qeshnin."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15317",
+    "source": "tr",
+    "word": "frekans",
+    "translation": "frekuencë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'frekans'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10953",
+    "source": "tr",
+    "word": "futbol",
+    "translation": "futboll",
+    "pos": "emër",
+    "senses": [
+      "Lojë me top që luhet midis dy ekipeve me nga njëmbëdhjetë lojtarë, njëri prej të cilëve është portieri, e cila bazohet në rregullin e futjes së topit në portën kundërshtare me goditje të këmbës ose të kokës"
+    ],
+    "examples": [
+      {
+        "source": "Bu sorunun içinde, futbolumuz dâhil, irdelenmesi gerekli pek çok şey var.",
+        "target": "Brenda këtij problemi ka mjaft gjëra që duhen ekzaminuar, duke përfshirë edhe futbollin tonë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15425",
+    "source": "tr",
+    "word": "futbolcu",
+    "translation": "lojtar futbolli",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'futbolcu'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12644",
+    "source": "tr",
+    "word": "füze",
+    "translation": "Raketa",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'füze'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14885",
+    "source": "tr",
+    "word": "fıkra",
+    "translation": "Libra e Barcoletave",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fıkra'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14181",
+    "source": "tr",
+    "word": "fındık",
+    "translation": "lajthi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fındık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10804",
+    "source": "tr",
+    "word": "fırsat",
+    "translation": "mundësi, rast",
+    "pos": "emër",
+    "senses": [
+      "Koha më e përshtatshme, situata ose kushtet e favorshme për të bërë diçka; rast i mirë"
+    ],
+    "examples": [
+      {
+        "source": "Önce istemedim, sonra düşününce bunun evden kurtulmam için bir fırsat olduğunu anladım.",
+        "target": "Në fillim nuk desha, por kur u mendova, e kuptova që kjo ishte një mundësi për t'u larguar nga shtëpia."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11384",
+    "source": "tr",
+    "word": "fırtına",
+    "translation": "stuhi, shtrëngatë",
+    "pos": "emër",
+    "senses": [
+      "Erë mjaft e fortë që ka një shpejtësi prej 34-40 milash detare në tabelën e erërave dhe treguesin e forcës 8, e cila sjell përgjithësisht shi"
+    ],
+    "examples": [
+      {
+        "source": "İnce, uzun sapının, çok ağır başını, o kadar yüksekte taşıyabilmesi, fırtınalarda kırılmaması, içindeki aşktandır.",
+        "target": "Fakti që ai mund ta mbajë atë kokën e vet mjaft të rëndë në një lartësi aq të madhe përmbi kërcellin e hollë e të gjatë, dhe që nuk thyhet nëpër stuhi, vjen nga dashuria që ka brenda."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11831",
+    "source": "tr",
+    "word": "fıstık",
+    "translation": "fëstëk, lajthi toke, gocë e bukur (zhargon)",
+    "pos": "emër",
+    "senses": [
+      "Emri i përgjithshëm i fruteve si fëstëku i Antepit, pisha e butë ose kikiriku, ose vajzë mjaft e re dhe e bukur (në zhargon)"
+    ],
+    "examples": [
+      {
+        "source": "Çok iyi bir akşam yemeği yedi, üstelik yanında da gencecik bir fıstık.",
+        "target": "Hëngri një darkë mjaft të mirë, e për më tepër pranë tij kishte një gocë si fëstëk (mjaft të re e të bukur)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18081",
+    "source": "tr",
+    "word": "fıtık",
+    "translation": "Hernia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fıtık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14527",
+    "source": "tr",
+    "word": "fıçı",
+    "translation": "Fuçia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'fıçı'."
+    ],
+    "examples": [],
+    "derivatives": []
+  }
+]

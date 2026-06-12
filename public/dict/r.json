@@ -1,1 +1,710 @@
-[]
+[
+  {
+    "id": "dict-tr-13880",
+    "source": "tr",
+    "word": "radar",
+    "translation": "radar",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'radar'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11417",
+    "source": "tr",
+    "word": "radyo",
+    "translation": "radio",
+    "pos": "emër",
+    "senses": [
+      "Sistemi i transmetimit të zërave duke shfrytëzuar veçoritë e valëve elektrike"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10313",
+    "source": "tr",
+    "word": "rahat",
+    "translation": "rehati, qetësi",
+    "pos": "emër",
+    "senses": [
+      "Gjendja e të qenit pa mërzitje, vështirësi apo shqetësime te njeriu; paqe"
+    ],
+    "examples": [
+      {
+        "source": "Ben o kadar rahatım, öyle okşayıcı, huzur ve mutluluk verici tatlı rüzgâr karşısındayım ki...",
+        "target": "Unë jam aq i qetë, ndodhem përpara një ere të tillë të ëmbël përkëdhelëse që të fal paqe dhe lumturi, saqë..."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10360",
+    "source": "tr",
+    "word": "rahatsız",
+    "translation": "i pashoqëruar, i shqetësuar",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që nuk ka rehati, i merakosur, i turbulluar"
+    ],
+    "examples": [
+      {
+        "source": "Ömer Ağa rahatsız bir gülümseme ile yüzünü biraz daha buruşturdu.",
+        "target": "Omer Aga e mblodhi fytyrën edhe pak më shumë me një buzëqeshje të shqetësuar."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11282",
+    "source": "tr",
+    "word": "rahibe",
+    "translation": "murgeshë",
+    "pos": "emër",
+    "senses": [
+      "Klerike femër"
+    ],
+    "examples": [
+      {
+        "source": "İşgali müteakip tekmil yabancı kadınları, rahibeler ve hasta bakıcılar da dâhil, alıp götürdüler.",
+        "target": "Pas pushtimit i morën e i dërguan të gjitha gratë e huaja, duke përfshirë edhe murgeshat dhe infermieret."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14730",
+    "source": "tr",
+    "word": "rahim",
+    "translation": "mitër",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'rahim'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11226",
+    "source": "tr",
+    "word": "rahip",
+    "translation": "murg, klerik",
+    "pos": "emër",
+    "senses": [
+      "Prift i pamartuar te të krishterët që jeton përgjithësisht në manastir; klerik"
+    ],
+    "examples": [
+      {
+        "source": "Üstünde nedense rahip giysisi, başında da defne dalından bir çelenk var.",
+        "target": "Mbi vete nuk dihet pse ka rroba murgu, ndërsa në kokë ka një kurorë prej degëve të dafinës."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11149",
+    "source": "tr",
+    "word": "randevu",
+    "translation": "takim, takimi i lënë",
+    "pos": "emër",
+    "senses": [
+      "Takimi i rënë dakord midis dy ose më shumë personave në një orë dhe vend të caktuar"
+    ],
+    "examples": [
+      {
+        "source": "Bunlar bana öyle gelir ki vaktiyle verdikleri bir randevuya o gün canları istememiş de gitmemişler.",
+        "target": "Ata më duken sikur nuk kanë dashur të shkojnë në një takim që kishin lënë kohë më parë, ndaj nuk shkuan."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13854",
+    "source": "tr",
+    "word": "rap",
+    "translation": "Rap",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'rap'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10841",
+    "source": "tr",
+    "word": "rapor",
+    "translation": "raport, relacion",
+    "pos": "emër",
+    "senses": [
+      "Shkrim që njofton rezultatin e një ekzaminimi, kërkimi apo mendimet e konstatuara rreth një pune apo teme të caktuar"
+    ],
+    "examples": [
+      {
+        "source": "Baştakilere, bir kere daha uyarmak için zehir zemberek bir rapor gönderdi.",
+        "target": "U dërgoi një raport mjaft të ashpër e të rëndë krerëve, për t'i paralajmëruar edhe një herë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10624",
+    "source": "tr",
+    "word": "ray",
+    "translation": "shirret, shinë",
+    "pos": "emër",
+    "senses": [
+      "Rruga prej hekuri mbi të cilën lëvizin rrotat te mjetet si treni, tramvaji etj."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11882",
+    "source": "tr",
+    "word": "razı",
+    "translation": "dakord, i pëlqyer, që pranon",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që e sheh të përshtatshme, që pranon, dëshiron ose miraton diçka"
+    ],
+    "examples": [
+      {
+        "source": "Doğrusu ben ne güzelliğimin ne de ilmimin kimsenin ağzına düşmesine razı değilim.",
+        "target": "Të them të vërtetën, unë nuk jam dakord që as bukuria ime, as shkenca ime të bëhen objekt diskutimi në gojën e askujt."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10477",
+    "source": "tr",
+    "word": "rağmen",
+    "translation": "pavarësisht, me gjithë",
+    "pos": "pjesëz",
+    "senses": [
+      "Pavarësisht"
+    ],
+    "examples": [
+      {
+        "source": "Birdenbire nutku tutuldu ve bütün gayretlerine rağmen konuşamadı.",
+        "target": "Papritmas iu mor goja dhe me gjithë përpjekjet e tij nuk mundi dot të fliste."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16920",
+    "source": "tr",
+    "word": "recep",
+    "translation": "Rexheb",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'recep'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15409",
+    "source": "tr",
+    "word": "refah",
+    "translation": "Mirëqenia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'refah'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17039",
+    "source": "tr",
+    "word": "refleks",
+    "translation": "Refleksi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'refleks'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13418",
+    "source": "tr",
+    "word": "rehber",
+    "translation": "Udhërrëfyesi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'rehber'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12436",
+    "source": "tr",
+    "word": "rehine",
+    "translation": "Pengu",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'rehine'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13673",
+    "source": "tr",
+    "word": "reis",
+    "translation": "Reis (gradë ushtarake)",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'reis'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12533",
+    "source": "tr",
+    "word": "rekabet",
+    "translation": "Rivaliteti, konkurs",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'rekabet'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11594",
+    "source": "tr",
+    "word": "reklam",
+    "translation": "reklamë, reklamim",
+    "pos": "emër",
+    "senses": [
+      "Çdo lloj rruge që provohet për ta bërë një gjë të njohur për popullin, për t'ia pëlqyer atë dhe në këtë mënyrë për të siguruar qarkullimin e saj"
+    ],
+    "examples": [
+      {
+        "source": "Şehirde canlı reklam dolaştırmak hiçbirimizin aklına gelmemişti.",
+        "target": "Asnjërit prej nesh nuk i kishte shkuar ndërmend të shëtiste një reklamë të gjallë (njerëzore) nëpër qytet."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11267",
+    "source": "tr",
+    "word": "renk",
+    "translation": "ngjyrë",
+    "pos": "emër",
+    "senses": [
+      "Ndjenja që drita e pasqyruar nga objektet krijon në sy"
+    ],
+    "examples": [
+      {
+        "source": "Birisi sütsüz çikolata renginde, uzun boylu, geniş omuzlu Amerikan boksörlerine benziyordu.",
+        "target": "Njëri prej tyre i ngjante boksierëve amerikanë trupgjatë dhe me shpatulla të gjera, me ngjyrën e çokollatës pa qumësht."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11724",
+    "source": "tr",
+    "word": "renkli",
+    "translation": "me ngjyra, i ngjyrosur",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka ngjyrë"
+    ],
+    "examples": [
+      {
+        "source": "Havaya renkli fişekler atıyordu.",
+        "target": "Po hidhte raketa (fyrsekë) me ngjyra në ajër."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15368",
+    "source": "tr",
+    "word": "resepsiyon",
+    "translation": "pritje",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'resepsiyon'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10776",
+    "source": "tr",
+    "word": "resim",
+    "translation": "pikturë, foto",
+    "pos": "emër",
+    "senses": [
+      "Format e shfaqjes së pamjeve të krijesave apo të natyrës mbi letër, pëlhurë etj., të bëra me mjete si lapsi apo furça"
+    ],
+    "examples": [
+      {
+        "source": "Konulu resim parçaları kendiliğinden ve doğru olarak yan yana gelivermiş, hikâye ortaya çıkmıştı.",
+        "target": "Pjesët e pikturave me tematikë erdhën krah për krah vetvetiu dhe në mënyrë të saktë, dhe doli në dritë tregimi."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10789",
+    "source": "tr",
+    "word": "resmen",
+    "translation": "zyrtarisht",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në mënyrë zyrtare, në emër të shtetit"
+    ],
+    "examples": [
+      {
+        "source": "Bu, resmen harp ilan olunmaksızın savaş kapısını açmak demekti.",
+        "target": "Kjo do të thoshte të hapje derën e luftës pa pasur një shpallje zyrtare të saj."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10557",
+    "source": "tr",
+    "word": "resmî",
+    "translation": "zyrtar, zyrtare",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që i përket shtetit, që lidhet me shtetin; e kundërta e 'privat/personal'"
+    ],
+    "examples": [
+      {
+        "source": "Bulunduğumuz yer resmî bir dairenin bürosudur.",
+        "target": "Vendi ku ndodhemi është zyra e një institucioni zyrtar."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13152",
+    "source": "tr",
+    "word": "ressam",
+    "translation": "piktor",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'ressam'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12177",
+    "source": "tr",
+    "word": "restoran",
+    "translation": "restorant",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'restoran'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11414",
+    "source": "tr",
+    "word": "rezil",
+    "translation": "i poshtër, i poshtër, i turpshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "Personi që bën gjëra të turpshme ose të pahijshme"
+    ],
+    "examples": [
+      {
+        "source": "Ah, seni serseri, rezil, alçak seni! Demek bana başkaldırıyorsun!",
+        "target": "Ah, ti vagabond, i poshtër, i ulët që je! Domethënë po më ngrihesh kundër (po më rebelohesh) mua!"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14993",
+    "source": "tr",
+    "word": "reçel",
+    "translation": "reçel",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'reçel'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10633",
+    "source": "tr",
+    "word": "rica",
+    "translation": "lutje, kërkesë",
+    "pos": "emër",
+    "senses": [
+      "Kërkesa ose dëshira që i bëhet dikujt"
+    ],
+    "examples": [
+      {
+        "source": "İşinden atmışlar, tekrar işe almaları için patronuna ricaya gidiyormuş.",
+        "target": "E kishin dëbuar nga puna, e po shkonte t'i lutej patronit të tij që ta merrte përsëri në punë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11366",
+    "source": "tr",
+    "word": "risk",
+    "translation": "rrezik, risk",
+    "pos": "emër",
+    "senses": [
+      "Rreziku i pësimit të një dëmi; riziko"
+    ],
+    "examples": [
+      {
+        "source": "Böyle bir riske neden atılsınlar ki?",
+        "target": "Pse të hidheshin në një rrezik (risk) të tillë vallë?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11931",
+    "source": "tr",
+    "word": "riskli",
+    "translation": "i rrezikshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që mbart ose përmban rrezik (risk)"
+    ],
+    "examples": [
+      {
+        "source": "Rastgele ve dağınık yeni bir oyun çatısı sunmak elbette riskli bir şeydi.",
+        "target": "Të prezantojë një strukturë të re loje të rastësishme dhe të shpërndarë, natyrisht që ishte gjë e rrezikshme."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11586",
+    "source": "tr",
+    "word": "robot",
+    "translation": "robot",
+    "pos": "emër",
+    "senses": [
+      "Mjet automatik që mund të kryejë punë të ndryshme përmes magnetizmit me qëllim për të përmbushur një detyrë të caktuar"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12535",
+    "source": "tr",
+    "word": "roket",
+    "translation": "Raketë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'roket'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11012",
+    "source": "tr",
+    "word": "rol",
+    "translation": "rol",
+    "pos": "emër",
+    "senses": [
+      "Emri i përgjithshëm i lëvizjeve dhe fjalëve që duhet të bëjë dhe të thotë aktori që interpreton një personazh"
+    ],
+    "examples": [
+      {
+        "source": "Genç bir çocuk yanıma sokuldu, artistliğe hevesliymiş, eğer filmde rol verirsek bedava artistlik yaparmış.",
+        "target": "Një djalë i ri iu afrua anës sime, paska pasur dëshirë të bëhej artist, e po thoshte se po t'i jepnim një rol në film do të aktonte falas."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13818",
+    "source": "tr",
+    "word": "rom",
+    "translation": "Rum",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'rom'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11519",
+    "source": "tr",
+    "word": "Roman",
+    "translation": "rom, romë (popull)",
+    "pos": "emër",
+    "senses": [
+      "Cingene, populli rom"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11037",
+    "source": "tr",
+    "word": "romantik",
+    "translation": "romantik",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka ndikim të skajshëm të ndjenjave dhe të pasionit në sjelljet e veta"
+    ],
+    "examples": [
+      {
+        "source": "Kardeşimin hayatında oynadığınız rol sizi romantik bir insan gibi bana gösterdi.",
+        "target": "Roli që keni luajtur në jetën e vëllait tim ju shfaqi tek unë si një njeri romantik."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14095",
+    "source": "tr",
+    "word": "romantizm",
+    "translation": "Romantizmi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'romantizm'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10797",
+    "source": "tr",
+    "word": "ruh",
+    "translation": "shpirt",
+    "pos": "emër",
+    "senses": [
+      "Can"
+    ],
+    "examples": [
+      {
+        "source": "Lakin oyunun ruhunu anlamak mümkün değil.",
+        "target": "Mirëpo nuk është e mundur të kuptohet shpirti i lojës."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11112",
+    "source": "tr",
+    "word": "Rus",
+    "translation": "rus, ruse",
+    "pos": "emër",
+    "senses": [
+      "Populli që jeton në Federatën Ruse ose personi që rjedh nga ky popull"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15970",
+    "source": "tr",
+    "word": "Rönesans",
+    "translation": "Rilindja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'Rönesans'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11977",
+    "source": "tr",
+    "word": "röportaj",
+    "translation": "reportazh",
+    "pos": "emër",
+    "senses": [
+      "Shkrim në gazetë ose revistë i përgatitur me qëllim për të marrë informacion dhe mësuar mendimin e një ose më shumë personave duke i pyetur rreth një teme"
+    ],
+    "examples": [
+      {
+        "source": "Ben vaktiyle hayata İstanbul gazetelerine röportaj yapan bir genç olarak katılmıştım.",
+        "target": "Unë dikur kisha hyrë në jetë si një i ri që bënte reportazhe për gazetat e Stambollit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10784",
+    "source": "tr",
+    "word": "rüya",
+    "translation": "ëndërr",
+    "pos": "emër",
+    "senses": [
+      "Dësh"
+    ],
+    "examples": [
+      {
+        "source": "Annemi ölmüş gördüm rüyamda / Ağlayarak uyanmışım",
+        "target": "E pashë nënën time të vdekur në ëndërr / Jam zgjuar duke qarë"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12540",
+    "source": "tr",
+    "word": "rüzgâr",
+    "translation": "erë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'rüzgâr'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11741",
+    "source": "tr",
+    "word": "rüşvet",
+    "translation": "ryshfet, ryshfeti",
+    "pos": "emër",
+    "senses": [
+      "Përfitimi i paligjshëm që i ofrohet dikujt në formë parash ose malli me qëllim që të sigurohet lehtësi dhe shpejtësi në një punë që dëshirohet të kryhet; ryshfet"
+    ],
+    "examples": [
+      {
+        "source": "Bu zat rüşvetin, hediyenin korkunç bir düşmanıymış!",
+        "target": "Ky person paska qenë një armik i tmerrshëm i ryshfetit dhe i dhuratave!"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14391",
+    "source": "tr",
+    "word": "rıza",
+    "translation": "Pëlqimi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'rıza'."
+    ],
+    "examples": [],
+    "derivatives": []
+  }
+]

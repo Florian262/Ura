@@ -1,282 +1,3795 @@
 [
   {
-    "id": "dict-tr-10",
+    "id": "dict-tr-13209",
+    "source": "tr",
+    "word": "Ba",
+    "translation": "ᠪ",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'Ba'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10110",
     "source": "tr",
     "word": "baba",
     "translation": "baba",
     "pos": "emër",
-    "inflection": "-yı",
-    "is_balkan": true,
-    "notes": "Gjinia mashkullore, trajta e shquar: babai. Shumës: baballarë.",
     "senses": [
-      "Prindi mashkull i një fëmije.",
-      "Figurë e respektuar që ka themeluar apo udhëhequr një fushë të caktuar (fig. babai i kombit)."
+      "Burri që ka fëmijë; peder"
     ],
     "examples": [
       {
-        "source": "Baba ocağı",
-        "target": "Vatra e babait (shtëpia e prindërve)"
-      },
-      {
-        "source": "Büyükbaba",
-        "target": "Gjysh (baba i madh)"
+        "source": "Baba olmak bir süreç... Yani öyle bebek doğunca baba olunmuyor.",
+        "target": "Të bëhesh baba është një proces... Domethënë, nuk bëhesh baba sapo lind foshnja."
       }
     ],
-    "derivatives": [
-      {
-        "word": "babalık",
-        "translation": "atësi; babaxhan",
-        "pos": "emër"
-      },
-      {
-        "word": "babaca",
-        "translation": "si baba, me dashuri prindërore",
-        "pos": "ndajfolje"
-      }
-    ]
+    "derivatives": []
   },
   {
-    "id": "dict-tr-11",
+    "id": "dict-tr-16065",
+    "source": "tr",
+    "word": "baca",
+    "translation": "Kamishi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'baca'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12326",
+    "source": "tr",
+    "word": "bacak",
+    "translation": "këmba",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bacak'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11771",
+    "source": "tr",
+    "word": "bahane",
+    "translation": "pretekst, arsyetim i rremë",
+    "pos": "emër",
+    "senses": [
+      "Arsyeja e shpikur që nxirret përpara duke fshehur shkakun e vërtetë të diçkaje; mazeret"
+    ],
+    "examples": [
+      {
+        "source": "Birtakım bahanelerle elimden kurtulacağını mı sanıyorsun?",
+        "target": "A mendon se do të shpëtosh nga duart e mia me disa pretekste të tilla?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11809",
+    "source": "tr",
+    "word": "bahar",
+    "translation": "erëza, erëzat",
+    "pos": "emër",
+    "senses": [
+      "Baharat, lëndë aromatike për ushqime"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11875",
+    "source": "tr",
+    "word": "bahis",
+    "translation": "temë, çështje, bast (kuptim tjetër)",
+    "pos": "emër",
+    "senses": [
+      "Tema ose subjekti mbi të cilin flitet"
+    ],
+    "examples": [
+      {
+        "source": "Bu bahisleri bırakalım artık.",
+        "target": "Le t'i lëmë këto tema tashmë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12073",
+    "source": "tr",
+    "word": "Bahçe",
+    "translation": "kopsht",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'Bahçe'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11390",
+    "source": "tr",
+    "word": "bakan",
+    "translation": "ministër",
+    "pos": "emër",
+    "senses": [
+      "Zyrtari i lartë i ngarkuar për të drejtuar një nga ministritë; vekil, nazir"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16096",
+    "source": "tr",
+    "word": "bakanlık",
+    "translation": "ministri",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bakanlık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11817",
+    "source": "tr",
+    "word": "bakarak",
+    "translation": "në krahasim me, sipas",
+    "pos": "pjesëz",
+    "senses": [
+      "Göre, në raport me diçka"
+    ],
+    "examples": [
+      {
+        "source": "Sen onlara bakarak daha anlayışlısın.",
+        "target": "Ti je më mirëkuptues në krahasim me ata (duke i parë ata)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10419",
+    "source": "tr",
+    "word": "bakma",
+    "translation": "shikim, të shikuarit",
+    "pos": "emër",
+    "senses": [
+      "Puna ose veprimi i të shikuarit"
+    ],
+    "examples": [
+      {
+        "source": "Kızlara bakmaya giderken içimde hep beni beğenmeyecekler kaygısını taşıyordum.",
+        "target": "Kur shkoja për të parë vajzat, mbaja gjithmonë me vete brendas shqetësimin se nuk do t'u pëlqeja."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10780",
     "source": "tr",
     "word": "bakmak",
-    "translation": "shikoj, kujdesem",
-    "pos": "folje",
-    "inflection": "(-e)",
-    "notes": "Kërkon rasën dhanore (Dativ, -e) për drejtimin e shikimit ose kujdesit.",
-    "senses": [
-      "Drejtoj sytë drejt diçkaje për ta parë; shikoj.",
-      "Kujdesem për dikë, siguroj jetesën ose ushqimin (p.sh. kujdesem për fëmijën).",
-      "Kontrolloj apo shqyrtoj një dokument (p.sh. shikoj fjalorin)."
-    ],
-    "examples": [
-      {
-        "source": "Televizyona bakmak",
-        "target": "Shikoj televizionin"
-      },
-      {
-        "source": "Çocuğa bakmak",
-        "target": "Kujdesem për fëmijën"
-      },
-      {
-        "source": "Sözlüğe bakmak",
-        "target": "Shikoj në fjalor"
-      }
-    ],
-    "derivatives": [
-      {
-        "word": "bakış",
-        "translation": "shikim, vështrim",
-        "pos": "emër"
-      },
-      {
-        "word": "bakım",
-        "translation": "kujdes, mirëmbajtje",
-        "pos": "emër"
-      },
-      {
-        "word": "bakıcı",
-        "translation": "kujdestar, dadë",
-        "pos": "emër"
-      }
-    ]
-  },
-  {
-    "id": "dict-tr-12",
-    "source": "tr",
-    "word": "başlamak",
-    "translation": "filloj, nis",
-    "pos": "folje",
-    "inflection": "(-e)",
-    "notes": "Kërkon rasën dhanore (Dativ, -e) për veprimin apo gjënë që fillon.",
-    "senses": [
-      "Nis të bëj një punë ose veprim që nuk ishte bërë më parë.",
-      "Hyn në një fazë të re (p.sh. fillon shkolla, fillon dita)."
-    ],
-    "examples": [
-      {
-        "source": "Derse başlamak",
-        "target": "Filloj mësimin"
-      },
-      {
-        "source": "Yeniden başlamak",
-        "target": "Filloj nga e para (rishtazi)"
-      }
-    ],
-    "derivatives": [
-      {
-        "word": "başlangıç",
-        "translation": "fillim, zanafillë",
-        "pos": "emër"
-      },
-      {
-        "word": "başlatmak",
-        "translation": "bëj të fillojë, nicioj",
-        "pos": "folje"
-      }
-    ]
-  },
-  {
-    "id": "dict-tr-13",
-    "source": "tr",
-    "word": "bebek",
-    "translation": "foshnje, bebe",
+    "translation": "shikoj, shoh",
     "pos": "emër",
-    "inflection": "-i",
     "senses": [
-      "Fëmijë shumë i vogël, në muajt e parë të jetës; foshnje.",
-      "Kukull e thjeshtë që imiton një fëmijë (lodër)."
+      "Të kthesh shikimin përmbi diçka"
     ],
     "examples": [
       {
-        "source": "Oyuncak bebek",
-        "target": "Kukull (bebe lodër)"
-      },
-      {
-        "source": "Bebek arabası",
-        "target": "Karrocë fëmijësh"
+        "source": "Zamanla nasıl değişiyor insan / Hangi resmime baksam ben değilim",
+        "target": "Si ndryshon njeriu me kalimin e kohës / Në cilën foto timen të shikoj, nuk jam unë"
       }
     ],
-    "derivatives": [
-      {
-        "word": "bebeklik",
-        "translation": "foshnjëri",
-        "pos": "emër"
-      },
-      {
-        "word": "bebekçe",
-        "translation": "foshnjërisht, si foshnje",
-        "pos": "ndajfolje"
-      }
-    ]
+    "derivatives": []
   },
   {
-    "id": "dict-tr-14",
+    "id": "dict-tr-14468",
     "source": "tr",
-    "word": "büyük",
-    "translation": "i madh, e madhe",
+    "word": "bakteri",
+    "translation": "Bakteret",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bakteri'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11799",
+    "source": "tr",
+    "word": "bakım",
+    "translation": "kujdes, mirëmbajtje",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të shikuarit ose kujdesit ndaj diçkaje"
+    ],
+    "examples": [
+      {
+        "source": "Bahçe bakım ister.",
+        "target": "Kopshti kërkon kujdes (mirëmbajtje)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14025",
+    "source": "tr",
+    "word": "bakır",
+    "translation": "Bakri",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bakır'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11221",
+    "source": "tr",
+    "word": "bakış",
+    "translation": "shikim, të shikuarit",
+    "pos": "emër",
+    "senses": [
+      "Veprimi ose puna e të shikuarit"
+    ],
+    "examples": [
+      {
+        "source": "Görenin kanını kaynatan bir tadı vardı duruşunun, bakışının.",
+        "target": "Qëndrimi dhe shikimi i tij kishin një shije që ia ndizte gjakun atij që e shihte."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12032",
+    "source": "tr",
+    "word": "bal",
+    "translation": "mjalti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bal'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13384",
+    "source": "tr",
+    "word": "balayı",
+    "translation": "Muaji i mjaltit",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'balayı'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13421",
+    "source": "tr",
+    "word": "bale",
+    "translation": "baleti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bale'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12828",
+    "source": "tr",
+    "word": "balina",
+    "translation": "Balena",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'balina'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17546",
+    "source": "tr",
+    "word": "balkon",
+    "translation": "ballkoni",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'balkon'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13872",
+    "source": "tr",
+    "word": "balta",
+    "translation": "sëpata",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'balta'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10619",
+    "source": "tr",
+    "word": "Balık",
+    "translation": "Peshqit (shenjë horoskopi)",
+    "pos": "emër",
+    "senses": [
+      "Shenja e Peshqve në zodiak"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13063",
+    "source": "tr",
+    "word": "balıkçı",
+    "translation": "Peshkatari",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'balıkçı'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10018",
+    "source": "tr",
+    "word": "bana",
+    "translation": "mua",
+    "pos": "përemër",
+    "senses": [
+      "Forma e përemrit 'unë' në rrethanën e dhanores (e pajisur me prapashtesën e drejtimit)"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10935",
+    "source": "tr",
+    "word": "banka",
+    "translation": "bankë",
+    "pos": "emër",
+    "senses": [
+      "Institucion që merr dhe jep para me interes, që kryen veprime krediti, skontimi e këmbimi valutor, që ruan para, dokumente dhe objekte me vlerë në kasat e veta dhe që kryen aktivitete të ndryshme në fushat e tregtisë, industrisë dhe ekonomisë"
+    ],
+    "examples": [
+      {
+        "source": "Hâlbuki o sabah daha bankanın kapısı açılmadan sökün etti.",
+        "target": "Mirëpo atë mëngjes u shfaq përpara se të hpej derë e bankës."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16835",
+    "source": "tr",
+    "word": "banknot",
+    "translation": "kartëmonedha",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'banknot'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11164",
+    "source": "tr",
+    "word": "banyo",
+    "translation": "banjo",
+    "pos": "emër",
+    "senses": [
+      "Sektori ose pjesa brenda ndërtesave ku njeriu lahet"
+    ],
+    "examples": [
+      {
+        "source": "Hatta o hanımın dediğine göre banyoda duş alırken eskisi gibi şarkı bile söylemeye başlamıştı.",
+        "target": "Madje sipas asaj që ajo zonja thoshte, kishte filluar madje edhe të këndonte si më parë ndërsa bënte dush në banjo."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11859",
+    "source": "tr",
+    "word": "bara",
+    "translation": "shufër shpërndarëse (elektrike)",
+    "pos": "emër",
+    "senses": [
+      "Tub, shufër përçuese ose lamë ku mblidhen dhe shpërndahen daljet ose linjat ushqyese me të njëjtin tension elektrik"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15347",
+    "source": "tr",
+    "word": "baraj",
+    "translation": "Diga",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'baraj'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14804",
+    "source": "tr",
+    "word": "barbar",
+    "translation": "barbarët",
     "pos": "mbiemër",
     "senses": [
-      "Që ka dimensione, vëllim ose peshë mbi mesataren.",
-      "I rëndësishëm ose i famshëm (fig. njeri i madh)."
+      "Përkthim për fjalën 'barbar'."
     ],
-    "examples": [
-      {
-        "source": "Büyük ev",
-        "target": "Shtëpi e madhe"
-      },
-      {
-        "source": "Büyükbaba",
-        "target": "Gjysh"
-      }
-    ],
-    "derivatives": [
-      {
-        "word": "büyümek",
-        "translation": "rritem, zmadhohem",
-        "pos": "folje"
-      },
-      {
-        "word": "büyüklük",
-        "translation": "madhësi, madhështia",
-        "pos": "emër"
-      }
-    ]
+    "examples": [],
+    "derivatives": []
   },
   {
-    "id": "dict-tr-15",
+    "id": "dict-tr-11449",
+    "source": "tr",
+    "word": "barda",
+    "translation": "çekiç çatie",
+    "pos": "emër",
+    "senses": [
+      "Çekiçi që përdorin mjeshtrat e çative, njëri skaj i kokës së të cilit është i përkulur në formë rrethi dhe skaji tjetër është i mprehtë"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11115",
     "source": "tr",
     "word": "bardak",
     "translation": "gotë",
     "pos": "emër",
-    "inflection": "-ı",
     "senses": [
-      "Enë e vogël prej qelqi, plastike apo kartoni që shërben për të pirë lëngje."
+      "Enë përgjithësisht prej qelqi që përdoret për të pirë ujë ose lëngje të tjera"
     ],
     "examples": [
       {
-        "source": "Bir bardak su",
-        "target": "Një gotë ujë"
-      },
-      {
-        "source": "Çay bardağı",
-        "target": "Gotë çaji (tradicionale turke)"
+        "source": "Elim titredi, bardağı dudağımda güç tuttum.",
+        "target": "Më drodhi dora, mezi e mbajta gotën te buzët e mia."
       }
     ],
-    "derivatives": [
-      {
-        "word": "bardakçı",
-        "translation": "gotëpunues, shitës gotash",
-        "pos": "emër"
-      }
-    ]
+    "derivatives": []
   },
   {
-    "id": "dict-tr-16",
+    "id": "dict-tr-11076",
+    "source": "tr",
+    "word": "bari",
+    "translation": "të paktën, hiç mos tjetër",
+    "pos": "ndajfolje",
+    "senses": [
+      "Përballë kësaj situate; të paktën, hiç gjë po të mos ndodhte"
+    ],
+    "examples": [
+      {
+        "source": "Hepsini at bir yana / Bari o günlerin bana / Şiirini söyle tatlı su",
+        "target": "Flaki të gjitha në një anë / Të paktën për ato ditë mua / Thuam poezinë e tyre o ujë i ëmbël"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13432",
+    "source": "tr",
+    "word": "barut",
+    "translation": "baruti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'barut'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10885",
+    "source": "tr",
+    "word": "barış",
+    "translation": "paqe, pajtim",
+    "pos": "emër",
+    "senses": [
+      "Akti ose puna e të pajtuarit"
+    ],
+    "examples": [
+      {
+        "source": "Biz baba kız biliyorduk ki bu gibi kaçışlar, bir barışla biter.",
+        "target": "Ne si baba e bijë e dinim mirë se ikje të tilla përfundojnë me një pajtim."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10436",
+    "source": "tr",
+    "word": "basit",
+    "translation": "i thjeshtë",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që është i lehtë për t'u bërë ose për t'u kuptuar, që nuk është i ndërlikuar"
+    ],
+    "examples": [
+      {
+        "source": "İşte en basit bir sebep. Belki sadeliğinden tuhaf geliyor insana.",
+        "target": "Ja një arsye shumë e thjeshtë. Ndoshta njeriu ndihet çuditshëm pikërisht nga thjeshtësia e saj."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12089",
+    "source": "tr",
+    "word": "basketbol",
+    "translation": "Basketbolli",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'basketbol'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10897",
+    "source": "tr",
+    "word": "baskı",
+    "translation": "botim, tirazh, shtyp",
+    "pos": "emër",
+    "senses": [
+      "Forma ose gjendja e shtypjes së një vepre"
+    ],
+    "examples": [
+      {
+        "source": "Baskı yanlışlıkları yüzünden kapatılan gazeteler vardı.",
+        "target": "Kishte gazeta që mbylleshin për shkak të gabimeve të shtypit (botimit)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11147",
+    "source": "tr",
+    "word": "basın",
+    "translation": "shtyp, media, mjetet e informimit",
+    "pos": "emër",
+    "senses": [
+      "Tërësia e botimeve të shkruara si gazetat dhe revistat që dalin në periudha të caktuara; matbuat"
+    ],
+    "examples": [
+      {
+        "source": "Bütün bildiklerimizden öteye İstanbul basını bize ne öğretebilirdi?",
+        "target": "Përveç atyre që dinim, çfarë mund të na mësonte më shumë shtypi i Stambollit?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12194",
+    "source": "tr",
+    "word": "basınç",
+    "translation": "presioni",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'basınç'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13949",
+    "source": "tr",
+    "word": "bataklık",
+    "translation": "këneta",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bataklık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10921",
+    "source": "tr",
+    "word": "Batı",
+    "translation": "perëndim, perëndimi",
+    "pos": "emër",
+    "senses": [
+      "Rajoni i vendeve ose i qytetërimeve që ndodhen në drejtimin ku perëndon dielli; Garp"
+    ],
+    "examples": [
+      {
+        "source": "Batı Avrupa.",
+        "target": "Europa Perëndimore."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10062",
+    "source": "tr",
+    "word": "bay",
+    "translation": "ekip i lirë",
+    "pos": "emër",
+    "senses": [
+      "Në turnetë që luhen me sistem eliminimi, ekipi që e kalon javën pa ndeshje për shkak se numri i ekipeve është tek dhe nuk ka kundërshtar për t'u çiftuar"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10097",
+    "source": "tr",
+    "word": "bayan",
+    "translation": "zonjë",
+    "pos": "emër",
+    "senses": [
+      "Fjalë respekti që vendoset përpara emrit ose mbiemrit të grave"
+    ],
+    "examples": [
+      {
+        "source": "Bayan İnci.",
+        "target": "Zonja Inci."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10640",
+    "source": "tr",
+    "word": "bayağı",
+    "translation": "i thjeshtë, ordiner, i ulët",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ndodhet në një gjendje të thjeshtë, të ulët ose pa ndonjë vlerë"
+    ],
+    "examples": [
+      {
+        "source": "Bütün hareketleri adi, kaba ve bayağı idi.",
+        "target": "Të gjitha lëvizjet dhe sjelljet e tij ishin të rëndomta, të vrazhda dhe ordinere."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12708",
+    "source": "tr",
+    "word": "bayrak",
+    "translation": "flamuri",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bayrak'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13388",
+    "source": "tr",
+    "word": "bayram",
+    "translation": "festa",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bayram'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14878",
+    "source": "tr",
+    "word": "baz",
+    "translation": "Bazat",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'baz'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10262",
+    "source": "tr",
+    "word": "bazen",
+    "translation": "ndonjëherë, herë pas here",
+    "pos": "ndajfolje",
+    "senses": [
+      "Kohë pas kohe, rrallëherë"
+    ],
+    "examples": [
+      {
+        "source": "Bazen bir kelimenin, bir ses tonunun sevdiğimiz bir insanı kırdığını görürüz.",
+        "target": "Ndonjëherë shohim se një fjalë apo një ton zëri lëndon një njeri që e duam."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10201",
+    "source": "tr",
+    "word": "bazı",
+    "translation": "disa, një pjesë",
+    "pos": "emër",
+    "senses": [
+      "(Për objekte) Një pjesë, një sasi"
+    ],
+    "examples": [
+      {
+        "source": "Bazılarını bilmiyordunuz. Fakat bazılarını pek güzel biliyordunuz.",
+        "target": "Disa prej tyre nuk i dinit. Por disa të tjera i dinit shumë mirë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11665",
+    "source": "tr",
+    "word": "bağ",
+    "translation": "vresht, vreshtë",
+    "pos": "emër",
+    "senses": [
+      "Pjesë toke ku janë të mbjella rrënjët e rrushit"
+    ],
+    "examples": [
+      {
+        "source": "Bağın asıl sahibi ölünce ölenin çocukları şehre taşınmış, bağı her yıl birisine yarıya vermeye başlamışlardı.",
+        "target": "Sapo pronari i vërtetë i vreshtit vdiq, fëmijët e të ndjerit u shpërngulën në qytet, dhe filluan t'ia jepnin vreshtin çdo vit dikujt përgjysmë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15175",
+    "source": "tr",
+    "word": "bağlama",
+    "translation": "Bakllama",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bağlama'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10867",
+    "source": "tr",
+    "word": "bağlantı",
+    "translation": "lidhje, ndërlidhje",
+    "pos": "emër",
+    "senses": [
+      "Gjendja e të qenit të lidhura dy ose më shumë gjëra me njëra-tjetrën; kontakt"
+    ],
+    "examples": [
+      {
+        "source": "Kar yüzünden çevre ile bağlantı kesildi.",
+        "target": "Për shkak të dëborës u ndërpre lidhja me mjedisin rrethues."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10511",
+    "source": "tr",
+    "word": "bağlı",
+    "translation": "i lidhur",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që është i mbajtur ose i fiksuar me një lidhje apo litar"
+    ],
+    "examples": [
+      {
+        "source": "Günlerden beri bağlı duran demir, sert bir hırıltıyla denize daldı.",
+        "target": "Spiranca (çallma) që qëndronte e lidhur prej ditësh, u zhyt në det me një kërcitje të ashpër."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14418",
+    "source": "tr",
+    "word": "bağımlılık",
+    "translation": "varshmëri, varësia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bağımlılık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14523",
+    "source": "tr",
+    "word": "bağımsızlık",
+    "translation": "Pavarësia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bağımsızlık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13954",
+    "source": "tr",
+    "word": "bağırsak",
+    "translation": "zorra",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bağırsak'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13842",
+    "source": "tr",
+    "word": "bağışıklık",
+    "translation": "imuniteti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bağışıklık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10401",
+    "source": "tr",
+    "word": "baş",
+    "translation": "krye, majë",
+    "pos": "emër",
+    "senses": [
+      "Pjesa e sipërme e një baceje ose e një qederi"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11698",
+    "source": "tr",
+    "word": "başarı",
+    "translation": "sukses, arritje",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të arriturit me sukses të diçkaje; muvaffakiyet"
+    ],
+    "examples": [
+      {
+        "source": "Bu başarı, onu garip bir yolda boşluk ve yalnızlık içinde bırakmıştı.",
+        "target": "Ky sukses e kishte lënë atë në një rrugë të çuditshme brenda zbrazëtisë dhe vetmisë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10692",
+    "source": "tr",
+    "word": "başarılı",
+    "translation": "i suksesshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që tregon sukses; muvaffak"
+    ],
+    "examples": [
+      {
+        "source": "Oldukça başarılı bir öğrenciymiş, notları ortalamanın üstünde.",
+        "target": "Paska qenë një nxënës mjaft i suksesshëm, notat e tij janë mbi mesataren."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10969",
+    "source": "tr",
+    "word": "başarısız",
+    "translation": "i pasuksesshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që nuk tregon sukses, që nuk është i suksesshëm"
+    ],
+    "examples": [
+      {
+        "source": "Her işin ustasına saygımda, o başarısız ve yorgun günümün etkisi çoktur.",
+        "target": "Në respektin tim ndaj mjeshtrit të çdo pune, ka mjaft efekt ajo dita ime e lodhur dhe e pasuksesshme."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14169",
+    "source": "tr",
+    "word": "başarısızlık",
+    "translation": "dështimi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'başarısızlık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12070",
+    "source": "tr",
+    "word": "başbakan",
+    "translation": "kryeministër",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'başbakan'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10056",
+    "source": "tr",
+    "word": "başka",
+    "translation": "tjetër, ndryshe",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që nuk u ngjan gjërave të tjera; i ndryshëm"
+    ],
+    "examples": [
+      {
+        "source": "Başka bir şeyi daha aklıma iyice sokuyordum.",
+        "target": "Po fusja mirë në kokë edhe një gjë tjetër."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10402",
+    "source": "tr",
+    "word": "başkan",
+    "translation": "kryetar, president",
+    "pos": "emër",
+    "senses": [
+      "Personi që ndodhet në krye të një grupi, të një mbledhjeje ose të një shoqate; kryesues"
+    ],
+    "examples": [
+      {
+        "source": "Çünkü gezi başkanımızın anlatacakları bittiğinde çay molası vereceğini, böylece 1453 yılının ilkbaharındaki Konstantinopolis kuşatmasından İstanbul’un bu soğuk günlerine, zavallı Nüzhet’in ölümüne dönebileceğimizi umuyordum.",
+        "target": "Sepse shpresoja që kur kryetari i udhëtimit tonë të përfundonte tregimin e tij, do të bënim një pushim për çaj, dhe kështu do të mund të ktheheshim nga rrethimi i Konstantinopojës në pranverën e vitit 1453 te këto ditë të ftohta të Stambollit, te vdekja e të mjerit Nüzhet."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11233",
+    "source": "tr",
+    "word": "başkası",
+    "translation": "askush tjetër, tjetri",
+    "pos": "përemër",
+    "senses": [
+      "Një person tjetër, kushdo qoftë"
+    ],
+    "examples": [
+      {
+        "source": "Sana peşin haber vereyim ki onlar kızlarının başkası ile âşıktaşlık yapmasını istemezler.",
+        "target": "Po të njoftoj që më parë se ata nuk dëshirojnë që e bija e tyre të bëjë dashuri me askënd tjetër."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14770",
+    "source": "tr",
+    "word": "başkent",
+    "translation": "kryeqytet",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'başkent'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11795",
+    "source": "tr",
+    "word": "başlama",
+    "translation": "fillim, nisje",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të filluarit; iftitah"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11166",
+    "source": "tr",
+    "word": "başlamak",
+    "translation": "filloj, nis",
+    "pos": "emër",
+    "senses": [
+      "Të hysh në një punë, të kalosh në veprim"
+    ],
+    "examples": [
+      {
+        "source": "Şairliğe on sekiz yaşında gazel ve rubailerle başlamıştı.",
+        "target": "Poezinë e kishte filluar në moshën tetëmbëdhjetë vjeçare me gazele dhe rubairat."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10922",
+    "source": "tr",
+    "word": "başlangıç",
+    "translation": "fillim, nisje",
+    "pos": "emër",
+    "senses": [
+      "Pjesa e parë e një pune, e një periudhe, e një jete etj.; hapi i parë"
+    ],
+    "examples": [
+      {
+        "source": "Hayatın başlangıcı gibi sonu da bir ninni, masal ve uyku ihtiyacını duyuyor.",
+        "target": "Ashtu si fillimi i jetës, edhe fundi i saj ndien nevojën për një ninullë, përrallë dhe gjumë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13841",
+    "source": "tr",
+    "word": "başlık",
+    "translation": "titulli",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'başlık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17860",
+    "source": "tr",
+    "word": "başpiskopos",
+    "translation": "Kryepeshkopi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'başpiskopos'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17977",
+    "source": "tr",
+    "word": "başrahip",
+    "translation": "kryemurg",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'başrahip'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11114",
+    "source": "tr",
+    "word": "başta",
+    "translation": "në krye, së pari",
+    "pos": "ndajfolje",
+    "senses": [
+      "Si fillim, fillimisht"
+    ],
+    "examples": [
+      {
+        "source": "Arabacı mola verdiği zaman başta o büyük kızla büyük oğlan olmak üzere çocuklar aşağı atladı.",
+        "target": "Kur karrocieri bëri pushim, fëmijët u hodhën poshtë, duke filluar në krye me atë vajzën e madhe dhe djalin e madh."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10663",
+    "source": "tr",
+    "word": "baştan",
+    "translation": "nga fillimi, edhe një herë",
+    "pos": "ndajfolje",
+    "senses": [
+      "Duke e marrë që nga fillimi, edhe një herë tjetër"
+    ],
+    "examples": [
+      {
+        "source": "Şimdi sana her şeyi baştan, her şeyi uzun uzun anlatmak isteyişimin sebebi bu mu?",
+        "target": "A është kjo arsyeja pse tani dëshiroj të t'i tregoj çdo gjë nga fillimi, çdo gjë gjerë e gjatë?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10259",
+    "source": "tr",
+    "word": "be",
+    "translation": "bre, o",
+    "pos": "pasthirrmë",
+    "senses": [
+      "Fjalë thirrëse në kuptimet 'ej, hej'"
+    ],
+    "examples": [
+      {
+        "source": "Namluna dayanır, yola dalarsın / Duruşun bakışın yaman, be Ali!",
+        "target": "Mbështetesh mbi tyten tënde, vështron rrugën / Qëndrimi dhe shikimi yt është i rreptë, bre Ali!"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10323",
+    "source": "tr",
+    "word": "bebek",
+    "translation": "foshnjë, kukull",
+    "pos": "emër",
+    "senses": [
+      "Fëmijë që është ende në moshën e gjiudhënies ose që mbahet në krahë"
+    ],
+    "examples": [
+      {
+        "source": "Yarın seni bonmarşeye götüreceğim, beğendiğin bebeği alacağım.",
+        "target": "Nesër do të të çoj në 'Bonmarşe' dhe do të të blej kukullën që të pëlqen."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15924",
+    "source": "tr",
+    "word": "beceri",
+    "translation": "aftësi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'beceri'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11157",
+    "source": "tr",
+    "word": "bedava",
+    "translation": "falas, pa pagesë",
+    "pos": "mbiemër",
+    "senses": [
+      "Pa para"
+    ],
+    "examples": [
+      {
+        "source": "Özellikle bu bedava lokantalar konusundan göğüslerini kabarta kabarta bahsetmişlerdi.",
+        "target": "Veçanërisht për këtë temën e restoranteve falas kishin folur duke u krekosur mjaft."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11807",
+    "source": "tr",
+    "word": "beden",
+    "translation": "trup, trupi (pa gjymtyrët)",
+    "pos": "emër",
+    "senses": [
+      "Pjesa që mbetet jashtë kokës, krahëve dhe këmbëve në trupin e njeriut dhe të kafshëve; gëvde"
+    ],
+    "examples": [
+      {
+        "source": "Yemen halkı yaz günlerinde bedenlerini serinletmek için kabuğu kaynatıp içerler.",
+        "target": "Populli i Jemenit, me qëllim për të freskuar trupat e tyre gjatë ditëve të verës, e ziejnë lëvozhgën dhe e pinë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11713",
+    "source": "tr",
+    "word": "bekleme",
+    "translation": "pritje",
+    "pos": "emër",
+    "senses": [
+      "Veprimi ose puna e të priturit"
+    ],
+    "examples": [
+      {
+        "source": "Gelince beklememi sıkı sıkı tembih etmişler.",
+        "target": "Më kanë porositur rreptësisht që të pres (që të bëj pritje) kur të vijë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11246",
+    "source": "tr",
+    "word": "beklemek",
+    "translation": "pres, pres dikë/diçka",
+    "pos": "emër",
+    "senses": [
+      "Të qëndrosh ose të mbetesh në një vend derisa një punë të ndodhë ose derisa dikush të vijë"
+    ],
+    "examples": [
+      {
+        "source": "Ben de seni bekliyordum zaten.",
+        "target": "Sidoqoftë edhe unë po të prisja ty."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11870",
+    "source": "tr",
+    "word": "bekâr",
+    "translation": "i pamartuar, beqar",
+    "pos": "emër",
+    "senses": [
+      "Personi që nuk është martuar"
+    ],
+    "examples": [
+      {
+        "source": "Bekârdı, evlenmeye vakit bulamamıştı.",
+        "target": "Ishte beqar, nuk kishte gjetur kohë për t'u martuar."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12312",
+    "source": "tr",
+    "word": "bel",
+    "translation": "Beli",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bel'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11263",
+    "source": "tr",
+    "word": "bela",
+    "translation": "telash, fatkeqësi, bela",
+    "pos": "emër",
+    "senses": [
+      "Situatë e vështirë dhe e papërshtatshme nga e cila dalja është e ndërlikuar"
+    ],
+    "examples": [
+      {
+        "source": "Kumar, toplum için büyük bir beladır.",
+        "target": "Kumari është një telash (bela) i madh për shoqërinë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11869",
+    "source": "tr",
+    "word": "belası",
+    "translation": "për shkak të, nga belaja e",
+    "pos": "emër",
+    "senses": [
+      "Për shkak të diçkaje, si pasojë e"
+    ],
+    "examples": [
+      {
+        "source": "İlme karşı saygı belası olarak dinlemek zaruridir.",
+        "target": "Është e domosdoshme ta dëgjosh si një lloj detyrimi (për shkak të) respekti ndaj shkencës."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11152",
+    "source": "tr",
+    "word": "belediye",
+    "translation": "bashki, komunë",
+    "pos": "emër",
+    "senses": [
+      "Organizatë me personalitet juridik, krerët dhe anëtarët e së cilës zgjidhen nga populli, që merret me shërbime publike si pastrimi, ndriçimi, uji e transporti në qendra banimi"
+    ],
+    "examples": [
+      {
+        "source": "Daha belediyeyi dönmüş dönmemiştim ki beynimden vurulmuşa döndüm.",
+        "target": "Sapo pa kthyer këndin e bashkisë, u ndjeva si i goditur në kokë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12548",
+    "source": "tr",
+    "word": "belge",
+    "translation": "dokument",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'belge'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11904",
+    "source": "tr",
+    "word": "belirli",
+    "translation": "i caktuar, i specifikuar",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që është kufizuar ose vendosur në mënyrë të qartë dhe të prerë; i ditur"
+    ],
+    "examples": [
+      {
+        "source": "Öteki arkadaşımız da belirli saatte nöbetinin başında olacaktı.",
+        "target": "Edhe shoku ynë tjetër do të ishte në krye të rojës (shërbimit) në orën e caktuar."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11802",
+    "source": "tr",
+    "word": "belirsiz",
+    "translation": "i papërcaktuar, i paqartë",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që nuk është i përcaktuar, i paqartë apo i turbullt"
+    ],
+    "examples": [
+      {
+        "source": "Şimdi galiba belirsiz bir yerde bir esere çalışıyor.",
+        "target": "Tani siç duket po punon mbi një vepër në një vend të paqartë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16108",
+    "source": "tr",
+    "word": "belirsizlik",
+    "translation": "Pasiguria",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'belirsizlik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14673",
+    "source": "tr",
+    "word": "belirti",
+    "translation": "Simptoma",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'belirti'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10057",
+    "source": "tr",
+    "word": "belki",
+    "translation": "ndoshta, mbase",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në mënyrë të mundshme; ndoshta"
+    ],
+    "examples": [
+      {
+        "source": "İşte en basit bir sebep. Belki sadeliğinden tuhaf geliyor insana.",
+        "target": "Ja një arsye shumë e thjeshtë. Ndoshta njeriu ndihet çuditshëm pikërisht nga thjeshtësia e saj."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15589",
+    "source": "tr",
+    "word": "bellek",
+    "translation": "kujtesë, kujtesa kompjuterike",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bellek'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10373",
+    "source": "tr",
+    "word": "belli",
+    "translation": "i qartë, i ditur",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që nuk ka asnjë anë të panjohur"
+    ],
+    "examples": [
+      {
+        "source": "Hâlimiz, vaktimiz sizce belli.",
+        "target": "Gjendja dhe mundësia jonë është e qartë për ju."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10007",
+    "source": "tr",
+    "word": "ben",
+    "translation": "unë",
+    "pos": "përemër",
+    "senses": [
+      "Fjalë që tregon vetën e parë njëjës"
+    ],
+    "examples": [
+      {
+        "source": "Bütün sevgileri atıp içimden / Varlığımı yalnız ona verdim ben",
+        "target": "Duke i larguar të gjitha dashuritë nga vetja ime / Unë ia dhashë qenien time vetëm asaj"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10124",
+    "source": "tr",
+    "word": "bence",
+    "translation": "sipas meje",
+    "pos": "ndajfolje",
+    "senses": [
+      "Sipas meje, sipas mendimit tim"
+    ],
+    "examples": [
+      {
+        "source": "Bence büyük bir hizmet görmüş oldu.",
+        "target": "Sipas meje, ai kreu një shërbim të madh."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11836",
+    "source": "tr",
+    "word": "bencil",
+    "translation": "egoist, vetëmvetësor",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që mendon vetëm për veten, që i mban interesat e veta përmbi të gjithë të tjerëve; hodbin"
+    ],
+    "examples": [
+      {
+        "source": "Bencildir insanoğlu, bencil olduğu için de yalnız kendi dertlerini düşünür, yalnız onlara inanır.",
+        "target": "Egoist është bir i Adamit, meqenëse është egoist mendon vetëm për shqetësimet e veta, dhe beson vetëm tek ato."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10257",
+    "source": "tr",
+    "word": "bende",
+    "translation": "shërbëtor, skllav",
+    "pos": "emër",
+    "senses": [
+      "Skllav"
+    ],
+    "examples": [
+      {
+        "source": "Aynı zamanda, bu has ve vefakâr bendesine mim koymuştu.",
+        "target": "Në të njëjtën kohë, ai kishte vënë në shenjë këtë shërbëtor të tij besnik dhe të pastër."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10168",
+    "source": "tr",
+    "word": "benden",
+    "translation": "i imi, mbështetësi im",
+    "pos": "emër",
+    "senses": [
+      "Personi që është në anën e dikujt"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11051",
+    "source": "tr",
+    "word": "benimki",
+    "translation": "imi, imja",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që është imi, që lidhet me mua"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11770",
+    "source": "tr",
+    "word": "bensiz",
+    "translation": "pa nishan, pa mua (kuptim tjetër)",
+    "pos": "ndajfolje",
+    "senses": [
+      "Pa nishan (pikë në trup), ose pa mua"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10845",
+    "source": "tr",
+    "word": "benzer",
+    "translation": "i ngjashëm, i ngjashëm me",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që i përngjan ose është i barabartë me një tjetër nga pikëpamja e cilësisë, paraqitjes dhe strukturës; emsal"
+    ],
+    "examples": [
+      {
+        "source": "Kadınların yerlerde sürüklenirken çıkardıkları seslere benzer sesler çıkardı.",
+        "target": "Nxori zëra të ngjashëm me zërat që nxjerrin gratë kur zvarriten nëpër dysheme."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14435",
+    "source": "tr",
+    "word": "benzerlik",
+    "translation": "Ngjajshmëria (gjeometri)",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'benzerlik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16589",
+    "source": "tr",
+    "word": "benzetme",
+    "translation": "krahasimi, Shëmbëlltyra",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'benzetme'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11325",
+    "source": "tr",
+    "word": "benzin",
+    "translation": "benzinë",
+    "pos": "emër",
+    "senses": [
+      "Lëng pa ngjyrë, avullues, me erë të veçantë, me peshë specifike rreth 0.65, i cili përftohet nga distilimi i naftës dhe përdoret si karburant për motorët"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10260",
+    "source": "tr",
+    "word": "beraber",
+    "translation": "bashkë, së bashku",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në një vend, së bashku; një"
+    ],
+    "examples": [
+      {
+        "source": "Hayata beraber başladığımız / Dostlarla da yollar ayrıldı bir bir",
+        "target": "Me miqtë me të cilët e filluam jetën bashkë / Rrugët u ndanë një nga një"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10382",
+    "source": "tr",
+    "word": "berbat",
+    "translation": "i tmerrshëm, berbat",
+    "pos": "mbiemër",
+    "senses": [
+      "I keq"
+    ],
+    "examples": [
+      {
+        "source": "Eskisinden daha berbat, iyileşmek ne gezer.",
+        "target": "Është më berbat se më parë, ku bëhet fjalë për t'u shëruar."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16172",
+    "source": "tr",
+    "word": "bereket",
+    "translation": "Bereqeti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bereket'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10208",
+    "source": "tr",
+    "word": "beri",
+    "translation": "këtej, kjo anë",
+    "pos": "emër",
+    "senses": [
+      "Fjalë që tregon distancën më të afërt me folësin nga dy largësi të mundshme përpara tij; e kundërta e 'andej'"
+    ],
+    "examples": [
+      {
+        "source": "Biraz beriye geliniz.",
+        "target": "Ejani pak më këtej."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13350",
+    "source": "tr",
+    "word": "besin",
+    "translation": "lëndët ushqyese",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'besin'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13289",
+    "source": "tr",
+    "word": "beslenme",
+    "translation": "nutricioni",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'beslenme'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18155",
+    "source": "tr",
+    "word": "besteci",
+    "translation": "kompozitor",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'besteci'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13757",
+    "source": "tr",
+    "word": "beta",
+    "translation": "Beta",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'beta'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14003",
+    "source": "tr",
+    "word": "beton",
+    "translation": "Betoni",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'beton'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10598",
+    "source": "tr",
+    "word": "bey",
+    "translation": "bej, zotëri",
+    "pos": "emër",
+    "senses": [
+      "Shitje (veprimi i të shiturit të diçkaje)"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10371",
+    "source": "tr",
+    "word": "beyaz",
+    "translation": "i bardhë",
+    "pos": "emër",
+    "senses": [
+      "Ngjyra e bardhë, e kundërta e së zezës"
+    ],
+    "examples": [
+      {
+        "source": "Ellerini, omuzlarını silkeledikten sonra cebinden çekip aldığı beyaz mendile sildi.",
+        "target": "Pasi shkundi duart dhe shpatullat, i fshiu ato me një shami të bardhë që nxori nga xhepi."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11008",
+    "source": "tr",
+    "word": "beyefendi",
+    "translation": "zotëri",
+    "pos": "emër",
+    "senses": [
+      "Titull respekti që vendoset në fund të emrave të burrave ose që përdoret në vend të këtyre emrave"
+    ],
+    "examples": [
+      {
+        "source": "Bak beyefendi, seni tanımak istiyorlar.",
+        "target": "Shiko zotëri, dëshirojnë t'ju njohin."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10779",
+    "source": "tr",
+    "word": "beyin",
+    "translation": "tru, dimaq",
+    "pos": "emër",
+    "senses": [
+      "Organi i vendosur brenda kafkës, i mbuluar me cipë truri, i përbërë nga një masë nervore në formën e dy hemisferave, ku ndodhen qendrat e ndjesisë dhe të vetëdijes; dimaq"
+    ],
+    "examples": [
+      {
+        "source": "İnsanın beyin yapısı ve kapasitesi tüm canlıların beyin yapısından daha üstün ve daha sistematiktir.",
+        "target": "Struktura dhe kapaciteti i trurit të njeriut është më sipëror dhe më sistematik se struktura e trurit të të gjitha qenieve të gjalla."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11915",
+    "source": "tr",
+    "word": "beyzbol",
+    "translation": "bejsbol",
+    "pos": "emër",
+    "senses": [
+      "Lojë që luhet midis dy ekipeve me nga nëntë lojtarë, ku në fushë ekipi mbrojtës ka një lojtar si hedhës dhe nëntë lojtarë të tjerë, ndërsa ekipi sulmues ka vetëm një lojtar si goditës, lojë e bazuar në nxjerrjen e pikëve nga goditësit duke goditur me shkop topin që vjen nga hedhësi"
+    ],
+    "examples": [
+      {
+        "source": "Babam bana ucuz bir beyzbol topu bulacağına inanıyor diye düşündü kendi kendine.",
+        "target": "Mendoi me vete se i ati besonte se do t'i gjente një top bejsboli të lirë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12921",
+    "source": "tr",
+    "word": "bez",
+    "translation": "Gland",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bez'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14407",
+    "source": "tr",
+    "word": "bezelye",
+    "translation": "Bizelja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bezelye'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10228",
+    "source": "tr",
+    "word": "beş",
+    "translation": "pesë",
+    "pos": "emër",
+    "senses": [
+      "Emri i numrit që vjen pas numrit katër"
+    ],
+    "examples": [
+      {
+        "source": "Biz okumadık, beşi bitirdik.",
+        "target": "Ne nuk studiuam shumë, përfunduam klasën e pesë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11640",
+    "source": "tr",
+    "word": "beşinci",
+    "translation": "i pestë",
+    "pos": "mbiemër",
+    "senses": [
+      "Mbiemri rreshtor i numrit pesë, ai që vjen pas të katërtit në radhë"
+    ],
+    "examples": [
+      {
+        "source": "Burada azıcık geriye dönmek zorundayız. Çakırcalı’nın eşkıya oluşunun beşinci, altıncı yılına.",
+        "target": "Këtu jemi të detyruar të kthehemi pakëz prapa. Në vitin e pestë apo të gjashtë të kthimit të Çakërxhaliut në cub (kaçak)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10414",
+    "source": "tr",
+    "word": "Bi",
+    "translation": "Bi",
+    "pos": "emër",
+    "senses": [
+      "Simboli i elementit të bizmutit"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12688",
+    "source": "tr",
+    "word": "biber",
+    "translation": "Capsicum",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'biber'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15624",
+    "source": "tr",
+    "word": "bildiri",
+    "translation": "Manifesti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bildiri'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10047",
+    "source": "tr",
+    "word": "bile",
+    "translation": "madje, edhe",
+    "pos": "lidhëz",
+    "senses": [
+      "Fjalë që specifikon ose përforcon elementin paraardhës në fjali; madje"
+    ],
+    "examples": [
+      {
+        "source": "Dayak yemedim, azar bile işitmedim.",
+        "target": "Nuk u rraha, madje as vërejtje nuk dëgjova."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11537",
+    "source": "tr",
+    "word": "bilerek",
+    "translation": "me vetëdije, me qëllim",
+    "pos": "ndajfolje",
+    "senses": [
+      "Duke qenë koshient dhe në dijeni të pasojave që do të sjellë puna që po kryen; kasten"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11222",
+    "source": "tr",
+    "word": "bilet",
+    "translation": "biletë",
+    "pos": "emër",
+    "senses": [
+      "Dokument që blihet me para dhe që të jep mundësinë të hysh në vende argëtimi si koncert, kinema, teatër, muze, ndeshje sportive etj., të hipësh në mjete transporti ose të marrësh pjesë në një lojë fati"
+    ],
+    "examples": [
+      {
+        "source": "Biletini alıncaya kadar vapur da geldi.",
+        "target": "Derisa ai bleu biletën e vet erdhi edhe anija."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18515",
+    "source": "tr",
+    "word": "bileşen",
+    "translation": "Përbërësi, përbërës",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bileşen'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13004",
+    "source": "tr",
+    "word": "bilge",
+    "translation": "Shkollari",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'bilge'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10434",
+    "source": "tr",
+    "word": "bilgi",
+    "translation": "dituri, informacion",
+    "pos": "emër",
+    "senses": [
+      "Tërësia e fakteve, realiteteve dhe parimeve që mund të arrijë mendja e njeriut; malumat"
+    ],
+    "examples": [
+      {
+        "source": "Babası önce ona Mazlume ve ailesi hakkında birçok bilgi vermişti.",
+        "target": "Babai i tij fillimisht i kishte dhënë atij shumë informacione rreth Mazlumes dhe familjes së saj."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10806",
+    "source": "tr",
+    "word": "bilgisayar",
+    "translation": "kompjuter",
+    "pos": "emër",
+    "senses": [
+      "Pajisje që mund të kryejë veprime aritmetike dhe logjike në përputhje me programin e ngarkuar në kujtesën e saj, që mund të marrë vendime dhe të ndryshojë rrjedhën e programit sipas rezultatit, që ndërvepron me mjedisin dhe mban të dhënat e hyrjes dhe të rezultatit"
+    ],
+    "examples": [
+      {
+        "source": "Bir tümcenin bilgisayar tarafından ögelerine ayrılabilmesi için bilgisayarın o dilin söz dizimsel özelliklerini bilmesi gerekir.",
+        "target": "Që një fjali të mund të ndahet në gjymtyrë nga kompjuteri, kompjuteri duhet të njohë veçoritë sintaksore të asaj gjuhe."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10721",
+    "source": "tr",
+    "word": "bilim",
+    "translation": "shkencë",
+    "pos": "emër",
+    "senses": [
+      "Dije e organizuar që zgjedh si subjekt një pjesë të universit ose të ngjarjeve dhe që përpiqet të nxjerrë përfundime duke u bazuar në realitetin dhe metodat eksperimentale; ilim"
+    ],
+    "examples": [
+      {
+        "source": "Benim sizden istediğim Türkçe yardım, bazı eski yazılı bilim ve tarih gibi ciddi eserleri bana okumanızdır.",
+        "target": "Ndihma në turqisht që unë kërkoj prej jush, është që të më lexoni disa vepra serioze si histori dhe shkencë të shkruara në alfabetin e vjetër."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11710",
+    "source": "tr",
+    "word": "bilimsel",
+    "translation": "shkencor",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që lidhet me shkencën, që bazohet mbi shkencën; ilmi"
+    ],
+    "examples": [
+      {
+        "source": "Sosyal ve bilimsel konuda araştırmalar, makaleler yayımlar.",
+        "target": "Boton kërkime dhe artikuj mbi çështje sociale dhe shkencore."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11331",
+    "source": "tr",
+    "word": "bilinen",
+    "translation": "i njohur, e ditur",
+    "pos": "mbiemër",
+    "senses": [
+      "Sasia vlerë e së cilës është e qartë; malum"
+    ],
+    "examples": [
+      {
+        "source": "Bilinenler cebirde alfabenin ilk harfleriyle gösterilir: a, b, c, d...",
+        "target": "Të njohurat në algjebër tregohen me shkronjat e para të alfabetit: a, b, c, d..."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12072",
+    "source": "tr",
+    "word": "bilinmeyen",
+    "translation": "panjohur",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'bilinmeyen'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13798",
+    "source": "tr",
+    "word": "bilinç",
+    "translation": "vetëdija",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bilinç'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17203",
+    "source": "tr",
+    "word": "bilinçaltı",
+    "translation": "Subkoshienca (ndërvetëdija)",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bilinçaltı'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10465",
+    "source": "tr",
+    "word": "bilir",
+    "translation": "njohës, që vlerëson",
+    "pos": "mbiemër",
+    "senses": [
+      "Fjalë që bashkohet me emrat për të formuar mbiemra të përbërë në kuptimet 'kupton, vlerëson, bën'"
+    ],
+    "examples": [
+      {
+        "source": "iyilikbilir.",
+        "target": "mirënjohës (ai që vlerëson të mirën)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10370",
+    "source": "tr",
+    "word": "bilmek",
+    "translation": "di, njoh",
+    "pos": "emër",
+    "senses": [
+      "Të kesh informacion rreth një gjëje, ta kesh mësuar atë"
+    ],
+    "examples": [
+      {
+        "source": "Bunu bilmek içimi kederle dolduruyordu.",
+        "target": "Të njihja këtë gjë ma mbushte shpirtin me pikëllim."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11784",
+    "source": "tr",
+    "word": "bilmez",
+    "translation": "paditës, që nuk di/vlerëson",
+    "pos": "mbiemër",
+    "senses": [
+      "Fjalë që bashkohet me emrat në kuptimet 'nuk kupton, nuk numëron, nuk bën' për të formuar mbiemra të përbërë"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10331",
+    "source": "tr",
+    "word": "bin",
+    "translation": "mijë",
+    "pos": "emër",
+    "senses": [
+      "Emri i numrit që vjen pas numrit nëntëqind e nëntëdhjetë e nëntë"
+    ],
+    "examples": [
+      {
+        "source": "En nihayet bin güçlükle ancak küçük parçalar hâlinde imha edilebilmiş.",
+        "target": "Në fund, me një mijë vështirësi, u arrit të asgjesohej vetëm në pjesë të vogla."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11430",
+    "source": "tr",
+    "word": "bina",
+    "translation": "ndërtesë, strukturë",
+    "pos": "emër",
+    "senses": [
+      "Yapı"
+    ],
+    "examples": [
+      {
+        "source": "Yalı, çok pencereli, iki katlı, yayvan bir binadır.",
+        "target": "Vila pranë detit është një ndërtesë e shtrirë, me dy kate dhe me shumë dritare."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10898",
+    "source": "tr",
+    "word": "binbaşı",
+    "translation": "major",
+    "pos": "emër",
+    "senses": [
+      "Oficer në ushtri, grada e të cilit ndodhet midis kapitenit dhe nënkolonelit, detyra kryesore e të cilit është komandimi i batalionit"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10830",
+    "source": "tr",
+    "word": "binlerce",
+    "translation": "me mijëra",
+    "pos": "mbiemër",
+    "senses": [
+      "Mjaft shumë, në numër shumë të madh"
+    ],
+    "examples": [
+      {
+        "source": "Yüzlerce, binlerce gün, ötekinden hiç farklı olmayarak geçmeyecek miydi sanki?",
+        "target": "Sikur qindra, me mijëra ditë nuk do të kalonin pa pasur asnjë ndryshim nga tjetra?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10000",
+    "source": "tr",
+    "word": "bir",
+    "translation": "një",
+    "pos": "emër",
+    "senses": [
+      "Numri i parë; tek"
+    ],
+    "examples": [
+      {
+        "source": "Bir kalem.",
+        "target": "Një laps."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10566",
+    "source": "tr",
+    "word": "bira",
+    "translation": "birrë",
+    "pos": "emër",
+    "senses": [
+      "Pije alkoolike që prodhohet nga fermentimi i elbit dhe i lupulos"
+    ],
+    "examples": [
+      {
+        "source": "Masadakilerin kimi rakı, kimi de bira içiyordu.",
+        "target": "Disa nga ata që ishin në tryezë po pinin raki, e disa të tjerë birrë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11947",
+    "source": "tr",
+    "word": "birader",
+    "translation": "vëlla, mik, vëllai im (thirrje)",
+    "pos": "emër",
+    "senses": [
+      "Vëlla (mashkull)"
+    ],
+    "examples": [
+      {
+        "source": "Aman birader! Üç sene önce bu bende idi.",
+        "target": "Aman o vëlla! Para tre viteve kjo ndodhej tek unë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10040",
+    "source": "tr",
+    "word": "biraz",
+    "translation": "pak, pakëz",
+    "pos": "mbiemër",
+    "senses": [
+      "Më pak se masa e mjaftueshme; pakëz, në një shkallë të vogël"
+    ],
+    "examples": [
+      {
+        "source": "Biraz yağmur yağdı mı Beyoğlu'nun yaya kaldırımlarında yürüyebilirsen yürü.",
+        "target": "Po ra pak shi, provo të ecësh po munde në troftuaret e Bejollusë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10737",
+    "source": "tr",
+    "word": "birazcık",
+    "translation": "pakëz, fare pak",
+    "pos": "mbiemër",
+    "senses": [
+      "Mjaft pak, në sasi shumë të vogël"
+    ],
+    "examples": [
+      {
+        "source": "İçeride nereden gelirse gelsin, birinin birazcık benimsenmesinden tedirgin.",
+        "target": "Nga brenda, ngado që të vijë, ndihet i shqetësuar nga pranimi pakëz i dikujt."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10614",
+    "source": "tr",
+    "word": "birazdan",
+    "translation": "pas pak, pak më vonë",
+    "pos": "ndajfolje",
+    "senses": [
+      "Pak më vonë"
+    ],
+    "examples": [
+      {
+        "source": "Ben birazdan eve gidip çorba ve bezelye pişireceğim.",
+        "target": "Unë pas pak do të shkoj në shtëpi e do të gatuaj supë dhe bizele."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10467",
+    "source": "tr",
+    "word": "birden",
+    "translation": "papritmas, menjëherë",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në një herë të vetme, menjëherë"
+    ],
+    "examples": [
+      {
+        "source": "Sokakta yürürken birden durup yukarı bakarmışım.",
+        "target": "Thonë se kur ecja në rrugë ndaloja papritmas dhe shikoja lart."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11945",
+    "source": "tr",
+    "word": "birdenbire",
+    "translation": "papritmas, menjëherë, krejt papritur",
+    "pos": "ndajfolje",
+    "senses": [
+      "Ansızın"
+    ],
+    "examples": [
+      {
+        "source": "Bu kelime, birdenbire insana şöyle bir irkilme verir.",
+        "target": "Kjo fjalë, i jep njeriut papritmas një lloj tronditjeje të tillë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10837",
+    "source": "tr",
+    "word": "birer",
+    "translation": "nga një, nga një për secilin",
+    "pos": "mbiemër",
+    "senses": [
+      "Mbiemri numerik shpërndarës i numrit një"
+    ],
+    "examples": [
+      {
+        "source": "Birer kalp bıraktılar bize kırık / Ömrümüzce gözyaşı döktürecek",
+        "target": "Na lanë nga një zemër të thyer / Që do të na bëjë të derdhim lot gjatë gjithë jetës sonë"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14639",
+    "source": "tr",
+    "word": "birey",
+    "translation": "individi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'birey'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10061",
+    "source": "tr",
+    "word": "biri",
+    "translation": "njeri, dikush",
+    "pos": "përemër",
+    "senses": [
+      "Njëri prej tyre, një copë"
+    ],
+    "examples": [
+      {
+        "source": "Kurşun vınlayarak gidip bahçedeki ağaçlardan birine saplanmıştı.",
+        "target": "Plumbi shkoi duke vërshëllyer dhe u ngul në një nga pemët e kopshtit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10564",
+    "source": "tr",
+    "word": "birileri",
+    "translation": "disa njerëz, dikush",
+    "pos": "përemër",
+    "senses": [
+      "Disa persona të pacaktuar"
+    ],
+    "examples": [
+      {
+        "source": "Zarfı birilerinin görmesinden korkarcasına paltosunun cebine tıkıştırıp merdivenlere yöneldiğinde bir ünlem işaretinin hayatını nasıl altüst edeceğinden haberi yoktu.",
+        "target": "Kur e futi zarfin me nxitim në xhepin e palltos sikur kishte frikë se mos e shihte dikush, ai nuk e dinte se si një pikëçuditje do t'ia kthente përmbys jetën."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12236",
+    "source": "tr",
+    "word": "birim",
+    "translation": "njësi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'birim'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10660",
+    "source": "tr",
+    "word": "birinci",
+    "translation": "i parë",
+    "pos": "mbiemër",
+    "senses": [
+      "Mbiemri rreshtor i numrit një"
+    ],
+    "examples": [
+      {
+        "source": "Birincisi ne kadar mağrur ise öbürü o kadar yılışık.",
+        "target": "Sa i përmbajtur dhe kryelartë që është i pari, aq i bezdisshëm dhe llastues është tjetri."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10254",
+    "source": "tr",
+    "word": "birisi",
+    "translation": "dikush, njëri",
+    "pos": "përemër",
+    "senses": [
+      "Çdo person i pacaktuar"
+    ],
+    "examples": [
+      {
+        "source": "Birisi sezecek olsa kim bilir ne dedikodular çıkarılırdı.",
+        "target": "Sikur dikush ta pikaste këtë gjë, kush e di se çfarë thashethemesh do të nxirreshin."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10142",
+    "source": "tr",
+    "word": "birkaç",
+    "translation": "disa, pak",
+    "pos": "mbiemër",
+    "senses": [
+      "Jo shumë, në numër të vogël"
+    ],
+    "examples": [
+      {
+        "source": "Kıyıda kapıları, kepenkleri kapalı, birkaç ev ve depo sıralanıyordu.",
+        "target": "Në breg radhiteshin disa shtëpi dhe depo me dyer e qepena të mbyllura."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11250",
+    "source": "tr",
+    "word": "birleşik",
+    "translation": "i përbërë, i bashkuar",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka ardhur në një vend, që është bashkuar; müttehit"
+    ],
+    "examples": [
+      {
+        "source": "Dilde yerini bulmuş olan ‘konuksever’ Türkçe köklere dayanan kurallı ve anlamlı birleşik bir kelimedir.",
+        "target": "Fjala 'konuksever' (mikpritës) që ka gjetur vendin e vet në gjuhë, është një fjalë e përbërë me rregull dhe me kuptim që bazohet në rrënjët e turqishtes."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13482",
+    "source": "tr",
+    "word": "birleşme",
+    "translation": "Bashkimi (teoria e bashkësive)",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'birleşme'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11682",
+    "source": "tr",
+    "word": "birlik",
+    "translation": "unitet, të qenit një, bashkim",
+    "pos": "emër",
+    "senses": [
+      "Gjendja e të qenit një i vetëm, unitet"
+    ],
+    "examples": [
+      {
+        "source": "Tanrı'nın birliğine inanır.",
+        "target": "Beson në unitetin (të qenit një) e Zotit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10129",
+    "source": "tr",
+    "word": "birlikte",
+    "translation": "së bashku, bashkë",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në një vend, së bashku; të gjithë bashkë"
+    ],
+    "examples": [
+      {
+        "source": "Doğrandı mübarek vatanın bağrı sebepsiz / Birlikte bugün bulmalıyız derdine çare",
+        "target": "U copëtua gjoksi i atdheut të bekuar pa shkak / Sot së bashku duhet t'i gjejmë dërmë hallit të tij"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10440",
+    "source": "tr",
+    "word": "birçok",
+    "translation": "shumë, disa",
+    "pos": "mbiemër",
+    "senses": [
+      "Mjaft shumë, numri i të cilëve nuk është i përcaktuar saktë; i shumtë"
+    ],
+    "examples": [
+      {
+        "source": "Bir insan için güzel olanın, daha birçok insan için de güzel olması pek muhtemeldir.",
+        "target": "Është shumë e mundshme që ajo që është e bukur për një njeri, të jetë e bukur edhe për shumë njerëz të tjerë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12015",
+    "source": "tr",
+    "word": "bisiklet",
+    "translation": "biçikletë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bisiklet'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13340",
+    "source": "tr",
+    "word": "bit",
+    "translation": "bit, morri",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bit'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11660",
+    "source": "tr",
+    "word": "bitirmek",
+    "translation": "përfundim, mbarim",
+    "pos": "emër",
+    "senses": [
+      "Të sigurosh që diçka të mbarojë; ta plotësosh"
+    ],
+    "examples": [
+      {
+        "source": "Bu işi sonuna kadar bitirmek lazım.",
+        "target": "Është e nevojshme ta përfundojmë këtë punë deri në fund."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12114",
+    "source": "tr",
+    "word": "bitki",
+    "translation": "bimë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bitki'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14082",
+    "source": "tr",
+    "word": "biyoloji",
+    "translation": "biologji",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'biyoloji'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11978",
+    "source": "tr",
+    "word": "biyolojik",
+    "translation": "biologjik, biologjike",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që lidhet me biologjinë apo shkencën e jetës"
+    ],
+    "examples": [
+      {
+        "source": "Sınavda öğretmen buğdayı sormuştu. Buğdayın biyolojik özelliklerini anlatmaya başladım.",
+        "target": "Në provim mësuesi kishte pyetur për grurin. Fillova të shpjegoj veçoritë biologjike të grurit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10070",
+    "source": "tr",
+    "word": "biz",
+    "translation": "ship",
+    "pos": "emër",
+    "senses": [
+      "Një lloj peshku bli (Acipenser nudiventris) që jeton në ujërat e vendit tonë"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10512",
+    "source": "tr",
+    "word": "bizden",
+    "translation": "nga tanët, i yni",
+    "pos": "emër",
+    "senses": [
+      "Personi që është në anën tonë"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11328",
+    "source": "tr",
+    "word": "bizzat",
+    "translation": "personalisht, vetë",
+    "pos": "ndajfolje",
+    "senses": [
+      "Şahsen"
+    ],
+    "examples": [
+      {
+        "source": "Vaziyeti yukarıdan ve bizzat takip etmek lazım geldi.",
+        "target": "U desh që situata të ndiqej nga lart dhe personalisht (vetë)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11832",
+    "source": "tr",
+    "word": "biçim",
+    "translation": "korrje, korrje-korrje, format (në kuptim tjetër)",
+    "pos": "emër",
+    "senses": [
+      "Veprimi ose puna e të korrutit të drithërave"
+    ],
+    "examples": [
+      {
+        "source": "Ekim biçim işlerini tamamıyla kadınlara bırakmışlardı.",
+        "target": "Punët e mbjelljes dhe të korrjes (biçim) ua kishin lënë plotësisht gravat."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11919",
+    "source": "tr",
+    "word": "blok",
+    "translation": "bllok, masë e stërmadhe",
+    "pos": "emër",
+    "senses": [
+      "Masë e stërmadhe dhe e rëndë"
+    ],
+    "examples": [
+      {
+        "source": "Blok ders.",
+        "target": "Orë mësimi bllok (radhazi)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12867",
+    "source": "tr",
+    "word": "Bodrum",
+    "translation": "Bodrumi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'Bodrum'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10638",
+    "source": "tr",
+    "word": "bok",
+    "translation": "mut, jashtëqitje",
+    "pos": "emër",
+    "senses": [
+      "Jashtëqitje"
+    ],
+    "examples": [
+      {
+        "source": "Boka batmak. Boka düşmek.",
+        "target": "Të zhytesh në mut. Të biesh në mut."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12478",
+    "source": "tr",
+    "word": "boks",
+    "translation": "Boksi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'boks'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14328",
+    "source": "tr",
+    "word": "boksör",
+    "translation": "bokser",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'boksör'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10946",
+    "source": "tr",
+    "word": "boktan",
+    "translation": "i kotë, pa vlerë, ordiner",
+    "pos": "mbiemër",
+    "senses": [
+      "I pavlerë, i padobishëm"
+    ],
+    "examples": [
+      {
+        "source": "Gerisi hikâye. Boktan bir hikâye hem.",
+        "target": "Pjesa tjetër është histori. Madje një histori krejt e kotë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10834",
+    "source": "tr",
+    "word": "bol",
+    "translation": "bllu, pije me fruta",
+    "pos": "emër",
+    "senses": [
+      "Pije që përgatitet brenda një ene të veçantë qelqi duke përzier liker, verë, fruta dhe ujë mineral"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10755",
+    "source": "tr",
+    "word": "bomba",
+    "translation": "boma, boma e velës",
+    "pos": "emër",
+    "senses": [
+      "Shtizë horizontale që përdoret për të hapur dhe shtrirë pjesën e poshtme të velave anësore"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16538",
+    "source": "tr",
+    "word": "bora",
+    "translation": "Bora",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bora'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14207",
+    "source": "tr",
+    "word": "borsa",
+    "translation": "Bursa",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'borsa'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11357",
+    "source": "tr",
+    "word": "borç",
+    "translation": "borxh, detyrim",
+    "pos": "emër",
+    "senses": [
+      "Paratë ose diçka tjetër që merret me kusht që të kthehet ose që është e detyrueshme të paguhet; takanak"
+    ],
+    "examples": [
+      {
+        "source": "Vaktim yok, bana para bul, şu borcu ödeyeyim, söz verdim.",
+        "target": "Nuk kam kohë, më gjej para që ta paguaj këtë borxh, kam dhënë fjalën."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11729",
+    "source": "tr",
+    "word": "borçlu",
+    "translation": "debitor, borxhli",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka borxh, që ka marrë hua; e kundërta e 'kreditorit/alacaklı'"
+    ],
+    "examples": [
+      {
+        "source": "Hayatımı ona borçluyum doğrusu.",
+        "target": "Në të vërtetë, ia kam borxh jetën time atij."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13477",
+    "source": "tr",
+    "word": "bot",
+    "translation": "çizme",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bot'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11557",
+    "source": "tr",
+    "word": "boy",
+    "translation": "tregim, histori popullore, fis",
+    "pos": "emër",
+    "senses": [
+      "Hikaye, ose ndarje fisi te turqit e vjetër"
+    ],
+    "examples": [
+      {
+        "source": "Diğer taraftan birinci Oğuzname'deki merkezleşmiş il idari sistemli devlet Dede Korkut boylarında biraz zayıflamış, beylerbeyliklere bölünmüştür.",
+        "target": "Nga ana tjetër, shteti me sistem administrimi të centralizuar krahinor te 'Oguznameja' e parë paska pësuar një dobësim në tregimet (boy) e Dede Korkutit, duke u ndarë në bejlerbejllëqe."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11612",
     "source": "tr",
     "word": "boya",
-    "translation": "bojë, ngjyrë",
+    "translation": "ngjyrë, bojë, astar",
     "pos": "emër",
-    "inflection": "-yı",
-    "is_balkan": true,
     "senses": [
-      "Lëndë kimike e lëngët ose në pluhur që përdoret për të ngjyrosur sipërfaqet (mure, rroba, vizatime)."
+      "Lëndë minerale, bimore ose sintetike që përdoret mbi sipërfaqen e objekteve ose shtohet brenda tyre për t'u dhënë ngjyrë apo për t'i mbrojtur nga efektet e jashtme"
     ],
     "examples": [
       {
-        "source": "Duvar boyası",
-        "target": "Bojë muri"
-      },
-      {
-        "source": "Saç boyası",
-        "target": "Bojë flokësh"
+        "source": "Tırnaklarının boyasını beğenmiyorum.",
+        "target": "Nuk më pëlqen boja e thonjve të tu."
       }
     ],
-    "derivatives": [
-      {
-        "word": "boyamak",
-        "translation": "lyej, ngjyros",
-        "pos": "folje"
-      },
-      {
-        "word": "boyacı",
-        "translation": "lyes, bojaxhi",
-        "pos": "emër"
-      }
-    ]
+    "derivatives": []
   },
   {
-    "id": "dict-tr-17",
+    "id": "dict-tr-17995",
+    "source": "tr",
+    "word": "boykot",
+    "translation": "Bojkoti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'boykot'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11652",
+    "source": "tr",
+    "word": "boyun",
+    "translation": "qafë, qafa",
+    "pos": "emër",
+    "senses": [
+      "Zona e trupit që mbetet midis kokës dhe shpatullave"
+    ],
+    "examples": [
+      {
+        "source": "Ellerini bu defa boynuna sıkıştırdığı beyaz peçeteye sildi.",
+        "target": "Këtë herë i fshiu duart në pecetën e bardhë që kishte shtrënguar në qafë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10244",
+    "source": "tr",
+    "word": "boyunca",
+    "translation": "gjatë, përgjatë",
+    "pos": "ndajfolje",
+    "senses": [
+      "Aq sa është gjatësia ose lartësia e diçkaje"
+    ],
+    "examples": [
+      {
+        "source": "Zaten yol boyunca hem lezzetli hem de buzdolabına taş çıkartacak sulardan geçeceğiz.",
+        "target": "Sidoqoftë, përgjatë rrugës do të kalojmë nëpër ujëra që janë edhe të shijshme, edhe që do t'ia kalonin frigoriferit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14050",
+    "source": "tr",
+    "word": "boyut",
+    "translation": "madhësi, përmasa",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'boyut'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11105",
+    "source": "tr",
+    "word": "bozuk",
+    "translation": "bozuk, buzuk",
+    "pos": "emër",
+    "senses": [
+      "Një vegël muzikore popullore turke me nëntë tela, pak më e madhe se sallgaja (bağlama) dhe më e vogël se sazi i sheshit"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14394",
+    "source": "tr",
+    "word": "boğaz",
+    "translation": "Ngushtica",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'boğaz'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14629",
+    "source": "tr",
+    "word": "boğulma",
+    "translation": "mbytja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'boğulma'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10293",
+    "source": "tr",
+    "word": "boş",
+    "translation": "i zbrazët, bosh",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai brenda ose mbi të cilin nuk ndodhet asnjë njeri apo asnjë gjë; e kundërta e i mbushur"
+    ],
+    "examples": [
+      {
+        "source": "Komşular bir şey anlamasın diye ateşte boş tencere kaynattığım zamanları bilirim, yine de babamın koskoca konağını terk etmemiştim.",
+        "target": "Unë mbaj mend kohë kur valoja një tenxhere të zbrazët mbi zjarr që fqinjtë të mos kuptonin gjë, por përsëri nuk e kisha braktisur konakun e madh të babait tim."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18220",
+    "source": "tr",
+    "word": "boşalma",
+    "translation": "Ejakulimi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'boşalma'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11921",
+    "source": "tr",
+    "word": "boşanma",
+    "translation": "divorc, ndarje, zbrazje (gjaku)",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të divorcuarit, ose zbrazja e menjëhershme e një lëngu (në shembull)"
+    ],
+    "examples": [
+      {
+        "source": "Burnundan kanlar boşanmaya başladı.",
+        "target": "Gjakrat filluan t'i zbrazeshin (shpërthenin) nga hunda."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11483",
+    "source": "tr",
+    "word": "boşuna",
+    "translation": "i kotë, pa vlerë, kot",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që nuk hyn në punë, i padobishëm"
+    ],
+    "examples": [
+      {
+        "source": "Ve artık bütün iyi dilekler boşunaydı; bu trenin yolcuları gülmeyi de bahtlarını da topyekûn kaybetmişlerdi.",
+        "target": "Dhe tashmë të gjitha urimet e mira ishin të kota; udhëtarët e këtij treni e kishin humbur plotësisht si të qeshurit ashtu edhe fatin e tyre."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11276",
+    "source": "tr",
+    "word": "bravo",
+    "translation": "bravo, të lumtë",
+    "pos": "pasthirrmë",
+    "senses": [
+      "Fjalë që shpreh pëlqim në kuptimet 'të lumtë, rrofsh'"
+    ],
+    "examples": [
+      {
+        "source": "Arif ayağa kalktı, 'bravo Hurşit ağabey' diyerek alkışlamaya başladı.",
+        "target": "Arifi u ngrit në këmbë, e filloi të duartrokiste duke thënë 'bravo vëlla Hurshit'."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14666",
+    "source": "tr",
+    "word": "bronz",
+    "translation": "bronzi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bronz'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15909",
+    "source": "tr",
+    "word": "broşür",
+    "translation": "Broshura",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'broşür'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10001",
+    "source": "tr",
+    "word": "bu",
+    "translation": "ky, kjo",
+    "pos": "mbiemër",
+    "senses": [
+      "Fjalë që tregon atë që ndodhet më afër në hapësirë, kohë ose në vargun e ligjërimit"
+    ],
+    "examples": [
+      {
+        "source": "Hiçbiri bu çocukların eline su dökemez.",
+        "target": "Asnjëri prej tyre nuk mund t'u afrohet këtyre fëmijëve."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10127",
+    "source": "tr",
+    "word": "bugün",
+    "translation": "sot",
+    "pos": "emër",
+    "senses": [
+      "Dita në të cilën ndodhemi"
+    ],
+    "examples": [
+      {
+        "source": "Yarın bugünden o kadar da farklı olmayacak.",
+        "target": "E nesërmja nuk do të jetë edhe aq ndryshe nga e sotmja."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11365",
+    "source": "tr",
+    "word": "bugünkü",
+    "translation": "i sotëm, i sotme",
+    "pos": "mbiemër",
+    "senses": [
+      "Specifik për të sotmen, që ndodh sot, që bëhet sot"
+    ],
+    "examples": [
+      {
+        "source": "O zaman bugünkü hâlinizi rüyada görmemek için uykudan korkmaya başlarsınız.",
+        "target": "Atëherë filloni të keni frikë nga gjumi me qëllim që të mos e shihni në ëndërr gjendjen tuaj të sotme."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11580",
+    "source": "tr",
+    "word": "bugünlerde",
+    "translation": "këto ditë, së fundmi",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në kohën aktuale, brenda këtyre pak ditëve; tani afër"
+    ],
+    "examples": [
+      {
+        "source": "Bugünlerde hangi yazarlar okunuyor?",
+        "target": "Cilët shkrimtarë po lexohen këto ditë?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13525",
+    "source": "tr",
+    "word": "buhar",
+    "translation": "avulli",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'buhar'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10616",
+    "source": "tr",
+    "word": "bul",
+    "translation": "bllok druri, dërrasë dyfaqëshe",
+    "pos": "emër",
+    "senses": [
+      "Dërrasë e trashë që ka vetëm dy sipërfaqet e gjerë të rrafshuara me sharrë"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11972",
+    "source": "tr",
+    "word": "bulma",
+    "translation": "gjetje, të gjeturit",
+    "pos": "emër",
+    "senses": [
+      "Puna ose veprimi i të gjeturit të diçkaje"
+    ],
+    "examples": [
+      {
+        "source": "Bu genç kadında kendisini büyüleyen şeyin ne olduğunu bulmaya uğraşıyor.",
+        "target": "Po përpiqet të gjejë (po angazhohet për gjetjen) se çfarë është ajo gjë që e magjeps te kjo grua e re."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10448",
     "source": "tr",
     "word": "bulmak",
     "translation": "gjej",
-    "pos": "folje",
-    "inflection": "(-i)",
-    "notes": "Kërkon rasën kallzore (Akuzativ, -i) për gjënë e gjetur.",
+    "pos": "emër",
     "senses": [
-      "Ndesh ose has një objekt ose person që po kërkohej ose ishte i humbur.",
-      "Arrij në një përfundim mendor ose shpik një zgjidhje."
+      "Të ndeshesh me një gjë apo me një person duke kërkuar ose pa kërkuar fare"
     ],
     "examples": [
       {
-        "source": "Çözüm bulmak",
-        "target": "Gjej zgjidhje"
-      },
-      {
-        "source": "İş bulmak",
-        "target": "Gjej punë"
+        "source": "Kafam her an bir konu bulmak için binbir çeşit şeye müracaat ediyor.",
+        "target": "Mendja ime në çdo çast u drejtohet një mijë e një lloj gjërash për të gjetur një temë."
       }
     ],
-    "derivatives": [
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13155",
+    "source": "tr",
+    "word": "bulut",
+    "translation": "re",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bulut'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11657",
+    "source": "tr",
+    "word": "buluşma",
+    "translation": "takim, bashkim",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të takuarit apo i të bashkuarit; telaki"
+    ],
+    "examples": [
       {
-        "word": "buluş",
-        "translation": "shpikje, gjetje shkencore",
-        "pos": "emër"
-      },
-      {
-        "word": "bulunmak",
-        "translation": "ndodhem, gjendem",
-        "pos": "folje"
+        "source": "İşte biz bugün, seninle buluşmaya söz verdiğimiz yerdeyiz.",
+        "target": "Ja, ne sot jemi në atë vend ku ramë dakord të takohemi me ty."
       }
-    ]
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18489",
+    "source": "tr",
+    "word": "bulvar",
+    "translation": "shëtitore",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bulvar'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10888",
+    "source": "tr",
+    "word": "bunca",
+    "translation": "aq shumë, gjithë kjo",
+    "pos": "mbiemër",
+    "senses": [
+      "Në një sasi mjaft të madhe"
+    ],
+    "examples": [
+      {
+        "source": "Bunca zamandan sonra bu ziyaret de nereden çıkmıştı?",
+        "target": "Nga doli kjo vizitë pas gjithë kësaj kohe?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10183",
+    "source": "tr",
+    "word": "bundan",
+    "translation": "prandaj, për këtë arsye",
+    "pos": "ndajfolje",
+    "senses": [
+      "Për këtë arsye"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10175",
+    "source": "tr",
+    "word": "bunlar",
+    "translation": "këta, këto",
+    "pos": "përemër",
+    "senses": [
+      "Forma e shumësit e përemrit dëftor 'ky'"
+    ],
+    "examples": [
+      {
+        "source": "Bunlar, matbaada basılan ve dağıtımı yapılan dergilerdi artık.",
+        "target": "Këto tani ishin revista që shtypeshin në shtypshkronjë dhe shpërndaheshin."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10031",
+    "source": "tr",
+    "word": "burada",
+    "translation": "këtu",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në këtë vend"
+    ],
+    "examples": [
+      {
+        "source": "Bir köylüden burada avlandığınızı duydum.",
+        "target": "Dëgjova nga një fshatar që ju keni gjuajtur këtu."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10159",
+    "source": "tr",
+    "word": "buradan",
+    "translation": "nga këtu",
+    "pos": "ndajfolje",
+    "senses": [
+      "Nga ky vend"
+    ],
+    "examples": [
+      {
+        "source": "Beş yaşımdan başlayarak buradan eve güğümlerle ben de su taşıdım.",
+        "target": "Duke filluar nga mosha pesë vjeçare, edhe unë kam mbartur ujë me broke nga këtu për në shtëpi."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10161",
+    "source": "tr",
+    "word": "burası",
+    "translation": "këtu, ky vend",
+    "pos": "emër",
+    "senses": [
+      "Ky vend këtu"
+    ],
+    "examples": [
+      {
+        "source": "Burası evin mutfağı olarak kullanılıyordu.",
+        "target": "Ky vend përdorej si kuzhina e shtëpisë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13558",
+    "source": "tr",
+    "word": "burs",
+    "translation": "Bursa (financiare)",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'burs'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14156",
+    "source": "tr",
+    "word": "buzdolabı",
+    "translation": "frigoriferi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'buzdolabı'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15498",
+    "source": "tr",
+    "word": "buzul",
+    "translation": "akullnaja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'buzul'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11197",
+    "source": "tr",
+    "word": "buçuk",
+    "translation": "e gjysmë",
+    "pos": "mbiemër",
+    "senses": [
+      "... dhe gjysmë"
+    ],
+    "examples": [
+      {
+        "source": "Üç buçuk senedir ben bu sallantıya şahit oldum.",
+        "target": "Ka tre vite e gjysmë që unë jam dëshmitar i kësaj lëkundjeje."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14086",
+    "source": "tr",
+    "word": "buğday",
+    "translation": "Gruri",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'buğday'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13110",
+    "source": "tr",
+    "word": "böbrek",
+    "translation": "veshka",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'böbrek'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11511",
+    "source": "tr",
+    "word": "böcek",
+    "translation": "insekt, kandërr, krimb",
+    "pos": "emër",
+    "senses": [
+      "Klasë kafshësh gjitare nga gjembat e këmbëve, me gjashtë këmbë, shumica me krahë dhe trupi i të cilave përbëhet nga nyje si koka, kraharori dhe barku; haxsherë"
+    ],
+    "examples": [
+      {
+        "source": "Artık onun yalnızca bir böcek ısırığı olduğunu düşünüyordum.",
+        "target": "Tashmë po mendoja se ai ishte thjesht një kafshim insekti."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10831",
+    "source": "tr",
+    "word": "bölge",
+    "translation": "rajon, zonë",
+    "pos": "emër",
+    "senses": [
+      "Pjesë toke, kufijtë e së cilës përcaktohen nga bashkimi administrativ, ekonomik, ose nga ngjashmëria e tokës, klimës dhe bimësisë, ose nga prejardhja e njëjtë e njerëzve që jetojnë aty; krahinë"
+    ],
+    "examples": [
+      {
+        "source": "Maddeden mi nereden geldiği belirsiz olan bu kıymet son tahminime göre bazı bölgelerin toprak mahsulündendir.",
+        "target": "Kjo vlerë, prejardhja e së cilës është e paqartë nëse vjen nga lënda apo nga ku, sipas vlerësimit tim të fundit vjen nga produktet bujqësore të disa zonave."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14967",
+    "source": "tr",
+    "word": "bölme",
+    "translation": "pjesëtimi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bölme'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13640",
+    "source": "tr",
+    "word": "bölük",
+    "translation": "kompania",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bölük'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10563",
+    "source": "tr",
+    "word": "bölüm",
+    "translation": "pjesë, kapitull",
+    "pos": "emër",
+    "senses": [
+      "Secila prej pjesëve që formojnë një të tërë; sektor"
+    ],
+    "examples": [
+      {
+        "source": "Gelgelelim, hayatın bu masalsı bölümü çok kısa sürüyor.",
+        "target": "Sidoqoftë, kjo pjesë përrallore e jetës zgjat shumë pak."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14870",
+    "source": "tr",
+    "word": "börek",
+    "translation": "Byreku",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'börek'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10046",
+    "source": "tr",
+    "word": "böyle",
+    "translation": "kështu, i tillë",
+    "pos": "mbiemër",
+    "senses": [
+      "Si kjo, i ngjashëm me këtë; në këtë formë, të këtij lloji, në këtë mënyrë"
+    ],
+    "examples": [
+      {
+        "source": "Böyle bir teklifi kabul edeceğini sanmıyorum.",
+        "target": "Nuk mendoj se ai do ta pranojë një propozim të tillë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10327",
+    "source": "tr",
+    "word": "böylece",
+    "translation": "kështu, në këtë mënyrë",
+    "pos": "ndajfolje",
+    "senses": [
+      "Fiks kështu; në këtë formë, në këtë mënyrë"
+    ],
+    "examples": [
+      {
+        "source": "Kadın, böylece ona bir teyze yakınlığı göstermişti.",
+        "target": "Gruaja i kishte treguar kështu një afri si të ishte halla e tij."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11412",
+    "source": "tr",
+    "word": "böylesi",
+    "translation": "një i tillë, kështu lloji",
+    "pos": "përemër",
+    "senses": [
+      "Një gjë e ngjashme me këtë, ai që është në këtë formë"
+    ],
+    "examples": [
+      {
+        "source": "Sessizliğin böylesini ne görmüştü ne de işitmişti.",
+        "target": "Një qetësi të tillë as nuk e kishte parë, as nuk e kishte dëgjuar."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11815",
+    "source": "tr",
+    "word": "böylesine",
+    "translation": "një të tillë, kështu lloji",
+    "pos": "mbiemër",
+    "senses": [
+      "Në këtë stil, në këtë formë"
+    ],
+    "examples": [
+      {
+        "source": "Doğrusu ondan böylesine bir dostluk, böylesine bir özveri beklemiyordum.",
+        "target": "Të them të vërtetën, nuk prisja prej tij një miqësi të tillë, një sakrificë të tillë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15118",
+    "source": "tr",
+    "word": "büfe",
+    "translation": "dollapi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'büfe'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11860",
+    "source": "tr",
+    "word": "bürün",
+    "translation": "elemente prosodike, intonacion gjuhësor",
+    "pos": "emër",
+    "senses": [
+      "Emri që u jepet elementeve specifike të gjuhës së folur si theksi, melodia, pauza, lidhja, toni, gjatësia"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13411",
+    "source": "tr",
+    "word": "bütçe",
+    "translation": "buxhet",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'bütçe'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10088",
+    "source": "tr",
+    "word": "bütün",
+    "translation": "i tërë, gjithë",
+    "pos": "mbiemër",
+    "senses": [
+      "I plotë, pa asnjë mungesë; i plotë"
+    ],
+    "examples": [
+      {
+        "source": "Size bütün bir kış için kuru ot temin edecek.",
+        "target": "Kjo do t'ju sigurojë bar të thatë për gjithë dimrin."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11046",
+    "source": "tr",
+    "word": "büyü",
+    "translation": "magji",
+    "pos": "emër",
+    "senses": [
+      "Emri i përgjithshëm i veprimeve dhe sjelljeve që lidhen me njeriun dhe natyrën, që synojnë të bëjnë ndikime apo të drejtojnë të ardhmen e njeriut përmes disa forcave të fshehura; sihir"
+    ],
+    "examples": [
+      {
+        "source": "Akkız Ana, Hasan'a gönül vermenin bir büyü olduğunu, ne kadar anlatmışsa da kâr etmemiş.",
+        "target": "Nëna Akkız, ndonëse i shpjegoi Hasanit se dhënia e zemrës ishte një magji, nuk bëri fare dobi."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11936",
+    "source": "tr",
+    "word": "büyücü",
+    "translation": "magjistar, shtrigë (mashkull)",
+    "pos": "emër",
+    "senses": [
+      "Personi që bën magji"
+    ],
+    "examples": [
+      {
+        "source": "İlk işi korkunç büyücüyü yakalattırıp cezalandırmak oldu.",
+        "target": "Puna e tij e parë ishte të kapte dhe të ndëshkonte magjistarin e tmerrshëm."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10060",
+    "source": "tr",
+    "word": "büyük",
+    "translation": "i madh",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka përmasa më të mëdha se të ngjashmit e tij (objekt konkret); i përmasave të mëdha, i kundërti i i vogël"
+    ],
+    "examples": [
+      {
+        "source": "Büyük ağaçların altında, gazinoya doğru gidiyoruz.",
+        "target": "Po ecim nën pemët e mëdha drejt kazinosë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11285",
+    "source": "tr",
+    "word": "büyükanne",
+    "translation": "gjyshe",
+    "pos": "emër",
+    "senses": [
+      "Nine"
+    ],
+    "examples": [
+      {
+        "source": "Büyükannem yeni dansları eski kabakçı Arapların oyunu kadar bile güzel bulmuyor.",
+        "target": "Gjyshja ime nuk i sheh vallet e reja të bukura as sa lojërat e çifutëve (Arapëve) të vjetër me kunguj."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11585",
+    "source": "tr",
+    "word": "büyükbaba",
+    "translation": "gjysh",
+    "pos": "emër",
+    "senses": [
+      "Dede"
+    ],
+    "examples": [
+      {
+        "source": "Büyükbabanın zamanında bergüzarmış, ne yapayım, kıramadım.",
+        "target": "Paska qenë një kujtim (amanet) nga koha e gjyshit, çfarë të bëj, nuk mund t'ia prisja hatrin."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13051",
+    "source": "tr",
+    "word": "büyükelçi",
+    "translation": "ambasador",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'büyükelçi'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15236",
+    "source": "tr",
+    "word": "büyüklük",
+    "translation": "madhësi, Madhështia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'büyüklük'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13589",
+    "source": "tr",
+    "word": "büyüme",
+    "translation": "zhvillim",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'büyüme'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10736",
+    "source": "tr",
+    "word": "büz",
+    "translation": "tub prej betoni",
+    "pos": "emër",
+    "senses": [
+      "Tub prej betoni ose qeramike që përdoret në instalimet e kanalizimeve"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11120",
+    "source": "tr",
+    "word": "bırakma",
+    "translation": "lënie, lëshim",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të lënit ose të lëshuarit të diçkaje"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10874",
+    "source": "tr",
+    "word": "bırakmak",
+    "translation": "lë, lëshoj",
+    "pos": "emër",
+    "senses": [
+      "Heqja dorë nga mbajtja e një objekti që ke në dorë"
+    ],
+    "examples": [
+      {
+        "source": "Mermer masaya bir yirmi beşlik bıraktı.",
+        "target": "Lëshoi një njëzet e pesëshe mbi tryezën prej mermeri."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11069",
+    "source": "tr",
+    "word": "bıçak",
+    "translation": "thikë",
+    "pos": "emër",
+    "senses": [
+      "Mjet prerës i përbërë nga një dorezë dhe një pjesë çeliku, që përdoret në punët e prerjes"
+    ],
+    "examples": [
+      {
+        "source": "Bıçağı sürte sürte ipin uzunca bir parçasını kesti.",
+        "target": "Preu një pjesë mjaft të gjatë të litarit duke e fërkuar thikën pas tij."
+      }
+    ],
+    "derivatives": []
   }
 ]

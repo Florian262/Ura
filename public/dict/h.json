@@ -1,88 +1,2034 @@
 [
   {
-    "id": "dict-tr-40",
+    "id": "dict-tr-10221",
     "source": "tr",
-    "word": "hayat",
-    "translation": "jetë",
+    "word": "Ha",
+    "translation": "Ha",
     "pos": "emër",
-    "inflection": "-ı",
     "senses": [
-      "Koha nga lindja deri në vdekjen e një qenieje; ekzistencë.",
-      "Gjendja aktive e organizmave të gjallë."
+      "Simboli i elementit të hahniemit"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10217",
+    "source": "tr",
+    "word": "haber",
+    "translation": "lajm",
+    "pos": "emër",
+    "senses": [
+      "Informatë e marrë rreth një ngjarjeje ose një fakti; njoftim"
     ],
     "examples": [
       {
-        "source": "Hayat hikayesi",
-        "target": "Histori jete (biografi)"
+        "source": "Bir zabit nefes nefese şu haberi getirdi.",
+        "target": "Një oficer solli frymëguxuar këtë lajm."
       }
     ],
-    "derivatives": [
-      {
-        "word": "hayati",
-        "translation": "jetik, shumë i rëndësishëm",
-        "pos": "mbiemër"
-      }
-    ]
+    "derivatives": []
   },
   {
-    "id": "dict-tr-41",
+    "id": "dict-tr-11534",
     "source": "tr",
-    "word": "hava",
-    "translation": "mot, ajër",
-    "pos": "emër",
-    "inflection": "-yı",
-    "senses": [
-      "Gazrat që rrethojnë tokën dhe që thithim; ajër.",
-      "Gjendja e motit në një çast të caktuar (p.sh. mot i ftohtë)."
-    ],
-    "examples": [
-      {
-        "source": "Hava durumu",
-        "target": "Parashikimi i motit"
-      },
-      {
-        "source": "Temiz hava",
-        "target": "Ajër i pastër"
-      }
-    ],
-    "derivatives": [
-      {
-        "word": "havalandırma",
-        "translation": "ajrosje, ventilim",
-        "pos": "emër"
-      }
-    ]
-  },
-  {
-    "id": "dict-tr-42",
-    "source": "tr",
-    "word": "hazır",
-    "translation": "gati",
+    "word": "haberdar",
+    "translation": "i njoftuar, në dijeni",
     "pos": "mbiemër",
     "senses": [
-      "Që është përgatitur plotësisht dhe mund të përdoret apo të veprojë menjëherë."
+      "Haberli, ai që ka marrë lajm ose informacion"
     ],
     "examples": [
       {
-        "source": "Yemek hazır",
-        "target": "Ushqimi është gati"
-      },
-      {
-        "source": "Hazır elbise",
-        "target": "Veshje konfeksion (e gatshme)"
+        "source": "Olup bitenden haberdardır.",
+        "target": "Është në dijeni (i njoftuar) për ato që kanë ndodhur."
       }
     ],
-    "derivatives": [
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10041",
+    "source": "tr",
+    "word": "hadi",
+    "translation": "hajde",
+    "pos": "pasthirrmë",
+    "senses": [
+      "Fjalë nxitëse; hajde"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15145",
+    "source": "tr",
+    "word": "hadım",
+    "translation": "eunuku",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'hadım'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11142",
+    "source": "tr",
+    "word": "hafif",
+    "translation": "i lehtë",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që peshon pak në peshore; e kundërta e 'i rëndë'"
+    ],
+    "examples": [
       {
-        "word": "hazırlamak",
-        "translation": "përgatis, bëj gati",
-        "pos": "folje"
-      },
-      {
-        "word": "hazırlık",
-        "translation": "përgatitje",
-        "pos": "emër"
+        "source": "Mustafa Kemal meraklıdır; dükkânın içini görmek istiyor, giriyor, raflarda birtakım hafif eşya var.",
+        "target": "Ataturku është kureshtar; dëshiron të shohë brendësinë e dyqanit, hyn, dhe nëpër rafte ka disa mallra të lehta."
       }
-    ]
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10193",
+    "source": "tr",
+    "word": "hafta",
+    "translation": "javë",
+    "pos": "emër",
+    "senses": [
+      "Periudhë prej shtatë ditësh që vijnë njëra pas tjetrës"
+    ],
+    "examples": [
+      {
+        "source": "Bir iki haftaya kadar taburcu olacağız.",
+        "target": "Do të dalim nga spitali brenda një ose dy javësh."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11884",
+    "source": "tr",
+    "word": "haftalık",
+    "translation": "pagesë javore, rrogë jave",
+    "pos": "emër",
+    "senses": [
+      "Paratë që paguhen një herë në javë"
+    ],
+    "examples": [
+      {
+        "source": "Bizim uşağa haftalık ne kadar vereceksin ağam?",
+        "target": "Sa para javore do t'i japësh shërbëtorit tonë, o agai im?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11336",
+    "source": "tr",
+    "word": "haftaya",
+    "translation": "javën tjetër, javën që vjen",
+    "pos": "ndajfolje",
+    "senses": [
+      "Java e ardhshme"
+    ],
+    "examples": [
+      {
+        "source": "Özlem hocam, haftaya görüşsek olur mu? Ben bu hafta inanılmaz yoğundum ve verdiğiniz ödevleri yapamadım.",
+        "target": "Profesor Özlem, a bëhet të takohemi javën tjetër? Këtë javë isha jashtëzakonisht i zënë dhe nuk arrita t'i bëja detyrat që më dhatë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14247",
+    "source": "tr",
+    "word": "haham",
+    "translation": "Rabini",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'haham'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11528",
+    "source": "tr",
+    "word": "hain",
+    "translation": "tradhtar, i pabesë",
+    "pos": "mbiemër",
+    "senses": [
+      "Personi që tradhton, ai që bën tradhti; i pabesë nga natyra"
+    ],
+    "examples": [
+      {
+        "source": "Bu anlayışsızlığa ve bu vatan hainlerine vahvahlanır, acır gibiydiler.",
+        "target": "Sikur po ndienin keqardhje e po u vinte mëkat për këtë mungesë mirëkuptimi dhe për këta tradhtarë të atdheut."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10442",
+    "source": "tr",
+    "word": "Hak",
+    "translation": "Zot, e Drejta",
+    "pos": "emër",
+    "senses": [
+      "Allahu"
+    ],
+    "examples": [
+      {
+        "source": "Hakkıdır Hakk'a tapan milletimin istiklal.",
+        "target": "Pavarësia është e drejta e kombit tim që adhuron Zotin (të Vërtetën)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11789",
+    "source": "tr",
+    "word": "hakaret",
+    "translation": "ofendim, fyerje",
+    "pos": "emër",
+    "senses": [
+      "Cenimi i nderit, thyerja e dinjitetit të dikujt; tahkir"
+    ],
+    "examples": [
+      {
+        "source": "Hakaretlerle bağırarak haşlıyor ve onlara ambarda ve güvertedeki yerlerini gösteriyordu.",
+        "target": "Po i qortonte duke bërtitur me ofendime dhe po u tregonte atyre vendet e tyre në magazinë dhe në kuvertë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10099",
+    "source": "tr",
+    "word": "hakkında",
+    "translation": "rreth, mbi",
+    "pos": "pjesëz",
+    "senses": [
+      "Në lidhje me diçka; mbi, për"
+    ],
+    "examples": [
+      {
+        "source": "Her iki eserde de bu suallerin cevapları hakkında uzun uzun tafsilat verilmektedir.",
+        "target": "Në të dyja veprat jepen hollësi të gjata rreth përgjigjeve të këtyre pyetjeve."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10455",
+    "source": "tr",
+    "word": "haklı",
+    "translation": "i thjeshtë, i drejtë",
+    "pos": "mbiemër",
+    "senses": [
+      "I përshtatshëm me të drejtën, i saktë, që ndodhet në vendin e duhur"
+    ],
+    "examples": [
+      {
+        "source": "Fakat aşkta ne hak ne haklı ne haksız ne de bir hakikat vardır.",
+        "target": "Mirëpo në dashuri nuk ka as të drejtë, as të thjeshtë, as të padrejtë e as ndonjë të vërtetë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11506",
+    "source": "tr",
+    "word": "haksız",
+    "translation": "i padrejtë",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që nuk është në përputhje me të drejtën dhe drejtësinë"
+    ],
+    "examples": [
+      {
+        "source": "Arkadaşınız bu işte haksızdır.",
+        "target": "Shoku juaj është i padrejtë në këtë çështje."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11834",
+    "source": "tr",
+    "word": "haksızlık",
+    "translation": "padrejtësi",
+    "pos": "emër",
+    "senses": [
+      "Mospërputhshmëria me të drejtën dhe drejtësinë"
+    ],
+    "examples": [
+      {
+        "source": "Gel gelelim berberlere karşı haksızlığımız şu hafta tatili işinde bile kendini gösteriyor.",
+        "target": "Sidoqoftë, padrejtësia jonë ndaj berberëve shfaqet madje edhe në këtë çështjen e pushimit të javës."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10547",
+    "source": "tr",
+    "word": "hale",
+    "translation": "rreth ndriçues, kurore light",
+    "pos": "emër",
+    "senses": [
+      "Rrethi i gjerë dhe ndriçues që shihet rreth disa yjeve, veçanërisht rreth hënës; ayla"
+    ],
+    "examples": [
+      {
+        "source": "Üstünde gençliğin, masumiyetin, saadetin verdiği bir hale vardı.",
+        "target": "Mbi të kishte një kurore drite që ia jepte rinia, pafajësia dhe lumturia."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11601",
+    "source": "tr",
+    "word": "hali",
+    "translation": "i zbrazët, bosh",
+    "pos": "mbiemër",
+    "senses": [
+      "Boş"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11185",
+    "source": "tr",
+    "word": "halk",
+    "translation": "popull, krijim (historike)",
+    "pos": "emër",
+    "senses": [
+      "Krijim, akti i të krijuarit (në kuptimin e vjetër), ose popullatë"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11454",
+    "source": "tr",
+    "word": "halka",
+    "translation": "rreth, unazë, rrethellë",
+    "pos": "emër",
+    "senses": [
+      "Rreth i përgatitur prej druri ose prej metaleve të ndryshme"
+    ],
+    "examples": [
+      {
+        "source": "Belinde uzun gümüş halkalarla asılı gümüş anahtarları vardı.",
+        "target": "Kishte çelësa argjendi të varur me rrathë të gjatë argjendi në belin e his."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11036",
+    "source": "tr",
+    "word": "halt",
+    "translation": "faj, fjalë/veprim i trashë",
+    "pos": "emër",
+    "senses": [
+      "Thënia e një fjalë të papërshtatshme, ose bërja e një pune të pahijshme"
+    ],
+    "examples": [
+      {
+        "source": "Zehri şurupla, daha bilmem ne haltla karıştırıp yudum yudum içmek, pis şey, iğrenç şey.",
+        "target": "Të përziesh helmin me shurup e me çfarëdolloj veprimi tjetër të trashë e ta pish gllënjkë pas gllënjke, është gjë e flliqur, gjë e shpifur."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13097",
+    "source": "tr",
+    "word": "halı",
+    "translation": "Qilimi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'halı'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14388",
+    "source": "tr",
+    "word": "hamam",
+    "translation": "Hamami",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'hamam'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12444",
+    "source": "tr",
+    "word": "hamburger",
+    "translation": "hamburgeri",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'hamburger'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10690",
+    "source": "tr",
+    "word": "hamile",
+    "translation": "shtatzënë, me barrë",
+    "pos": "mbiemër",
+    "senses": [
+      "Gebe"
+    ],
+    "examples": [
+      {
+        "source": "Şu arkamdaki hamile kadına bir yer arıyorum.",
+        "target": "Po kërkoj një vend për këtë gruan shtatzënë pas meje."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14220",
+    "source": "tr",
+    "word": "Hamur",
+    "translation": "brumi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'Hamur'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11425",
+    "source": "tr",
+    "word": "Han",
+    "translation": "Han",
+    "pos": "emër",
+    "senses": [
+      "Një nga rretheve që i përket provincës së Eskishehirit"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10250",
+    "source": "tr",
+    "word": "hangi",
+    "translation": "cili, cila",
+    "pos": "mbiemër",
+    "senses": [
+      "Mbiemër pyetës që përdoret për të kërkuar një përgjigje që specifikon një nga dy ose më shumë gjëra"
+    ],
+    "examples": [
+      {
+        "source": "Zamanla nasıl değişiyor insan / Hangi resmime baksam ben değilim",
+        "target": "Si ndryshon njeriu me kalimin e kohës / Në cilën foto timen të shikoj, nuk jam unë"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10865",
+    "source": "tr",
+    "word": "hangisi",
+    "translation": "cili prej tyre, cila",
+    "pos": "përemër",
+    "senses": [
+      "Fjalë që përdoret në kuptimet 'kush, cila gjë'"
+    ],
+    "examples": [
+      {
+        "source": "Bende olmayanın hangisini sonradan edinebilirim?",
+        "target": "Cilën prej atyre që nuk e kam, mund ta fitoj (mësoj) më vonë?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10618",
+    "source": "tr",
+    "word": "Hani",
+    "translation": "Hani",
+    "pos": "emër",
+    "senses": [
+      "Një nga rretheve që i përket provincës së Dijarbakirit"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14588",
+    "source": "tr",
+    "word": "hançer",
+    "translation": "Kamë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'hançer'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10809",
+    "source": "tr",
+    "word": "hanım",
+    "translation": "zonjë",
+    "pos": "emër",
+    "senses": [
+      "Titull që u jepet vajzave dhe grave; zonjë"
+    ],
+    "examples": [
+      {
+        "source": "Nermin Hanım, razı gelmiş gibi göründü ama hiçbir zaman istemedi...",
+        "target": "Zonja Nermin u duk sikur ra dakord, por në të vërtetë nuk dëshiroi kurrë..."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10524",
+    "source": "tr",
+    "word": "hanımefendi",
+    "translation": "zonjë",
+    "pos": "emër",
+    "senses": [
+      "Titull që vendoset në fund të emrave të grave ose përdoret në vend të tyre për të treguar respekt"
+    ],
+    "examples": [
+      {
+        "source": "Biz de şimdi hanımefendiyle onu konuşuyorduk.",
+        "target": "Pikërisht tani po diskutonim atë çështje me zonjën."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11653",
+    "source": "tr",
+    "word": "hapis",
+    "translation": "burgim, arrest",
+    "pos": "emër",
+    "senses": [
+      "Mbyllja e dikujt në një vend pa e lëshuar të lirë"
+    ],
+    "examples": [
+      {
+        "source": "Sadakatinin mükâfatını hapiste aç kalmakla görür.",
+        "target": "Shpërblimin e besnikërisë së vet e sheh duke mbetur i uritur në burg."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11541",
+    "source": "tr",
+    "word": "hapishane",
+    "translation": "burg, hapësirë ndëshkimi",
+    "pos": "emër",
+    "senses": [
+      "Cezaevi"
+    ],
+    "examples": [
+      {
+        "source": "Ortada zaptiyesiyle, hapishanesiyle, hâkimleri, duruşmaları ile devlet kuvveti vardı, karşı durulamazdı.",
+        "target": "Në mjedis ndodhej forca e shtetit me xhandarmërinë, burgun, gjykatësit dhe seancat e tij, nuk mund t'i bëhej ballë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18191",
+    "source": "tr",
+    "word": "haram",
+    "translation": "Harami",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'haram'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15184",
+    "source": "tr",
+    "word": "haraç",
+    "translation": "Haraxhi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'haraç'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14419",
+    "source": "tr",
+    "word": "hardal",
+    "translation": "mustardë kuzhine",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'hardal'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10330",
+    "source": "tr",
+    "word": "hareket",
+    "translation": "lëvizje, sjellje",
+    "pos": "emër",
+    "senses": [
+      "Lëvizja ose aktivizimi i trupit apo i një pjese të tij"
+    ],
+    "examples": [
+      {
+        "source": "Her hareketi kamera önünde rol yapıyormuşçasına hesaplı.",
+        "target": "Çdo lëvizje e tij është e llogaritur, sikur po akton përpara kamerës."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18581",
+    "source": "tr",
+    "word": "harem",
+    "translation": "Haremi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'harem'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13761",
+    "source": "tr",
+    "word": "harf",
+    "translation": "shkronja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'harf'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10084",
+    "source": "tr",
+    "word": "harika",
+    "translation": "i mrekullueshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që zgjon admirim te njeriu me cilësitë e tij mbi natyrën dhe mundësitë e zakonshme"
+    ],
+    "examples": [
+      {
+        "source": "Türk tarihi harikalarla doludur.",
+        "target": "Historia turke është e mbushur me mrekulli."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12094",
+    "source": "tr",
+    "word": "harita",
+    "translation": "hartë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'harita'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10836",
+    "source": "tr",
+    "word": "hariç",
+    "translation": "përjashtim, jashtë",
+    "pos": "emër",
+    "senses": [
+      "Jashtë"
+    ],
+    "examples": [
+      {
+        "source": "Bu kitapların haricinde herhangi bir menfaat ummak, seraptan su ummak gibi olur.",
+        "target": "Të presësh ndonjë përfitim përjashto këto libra, do të ishte si të presësh ujë nga fatamorgana."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12601",
+    "source": "tr",
+    "word": "has",
+    "translation": "Has",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'has'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11352",
+    "source": "tr",
+    "word": "hasar",
+    "translation": "dëm, dëmtim structural",
+    "pos": "emër",
+    "senses": [
+      "Dëmi si thyerje, rënie apo shkatërrim i shkaktuar nga një ngjarje e caktuar"
+    ],
+    "examples": [
+      {
+        "source": "Yağmur yollarda hasara yol açtı.",
+        "target": "Shiu shkaktoi dëmtime nëpër rrugë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11160",
+    "source": "tr",
+    "word": "hassas",
+    "translation": "i ndjeshëm, sensitiv",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që percepton ndjenjat dhe shqisat shpejt"
+    ],
+    "examples": [
+      {
+        "source": "Halıda kaybolan ayak seslerini evvela Peregrini'nin hassas kulakları sezdi.",
+        "target": "Hapat e humbur mbi qilim u pikaspën fillimisht nga veshët e ndjeshëm të Peregrinit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10380",
+    "source": "tr",
+    "word": "hasta",
+    "translation": "i sëmurë",
+    "pos": "mbiemër",
+    "senses": [
+      "Personi, kafsha ose organi, shëndeti fizik ose mendor i të cilit është dëmtuar për shkak të një sëmundjeje, aksidenti ose lëndimi dhe që ka nevojë për mjekim"
+    ],
+    "examples": [
+      {
+        "source": "Annem o evin önü sofalı bir odasında hasta yatıyordu.",
+        "target": "Nënë ime po lëngonte e sëmurë në një dhomë me çardak përpara të asaj shtëpie."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11148",
+    "source": "tr",
+    "word": "hastalık",
+    "translation": "sëmundje, lëngatë",
+    "pos": "emër",
+    "senses": [
+      "Gjendja e prishjes së shëndetit për shkak të shfaqjes së disa ndryshimeve në organizëm; rahati i prishur"
+    ],
+    "examples": [
+      {
+        "source": "Filoksera, bağ hastalıklarının en korkuncudur.",
+        "target": "Filoksera është sëmundja më e tmerrshme e vreshtave."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11232",
+    "source": "tr",
+    "word": "hastane",
+    "translation": "spital",
+    "pos": "emër",
+    "senses": [
+      "Institucion shëndetësor ku shërbimet e diagnostikimit, mjekimit dhe kujdesit ndaj pacientëve të shtruar ose ambulantë ofrohen nga mjeku, infermierja dhe punonjësit e tjerë shëndetësorë"
+    ],
+    "examples": [
+      {
+        "source": "Babam hastaneye gidip başhekimle görüştü.",
+        "target": "Im atë shkoi në spital dhe bisedoi me kryemjekun."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10416",
+    "source": "tr",
+    "word": "hata",
+    "translation": "gabim",
+    "pos": "emër",
+    "senses": [
+      "Gabim"
+    ],
+    "examples": [
+      {
+        "source": "Aynı hatayı senin de yapmana yol açmak istemiyorum.",
+        "target": "Nuk dua të bëhem shkak që edhe ti të bësh të njëjtin gabim."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10322",
+    "source": "tr",
+    "word": "hatta",
+    "translation": "madje, madje edhe",
+    "pos": "lidhëz",
+    "senses": [
+      "Fjalë që përdoret për të përforcuar kuptimin në kuptimet 'edhe, dahi, për më tepër, përveç kësaj, gjithashtu'"
+    ],
+    "examples": [
+      {
+        "source": "Bunlar çok sağlam hatta en sağlam devlet eshamından sayılır.",
+        "target": "Këto konsiderohen si letra me vlerë shumë të sigurta, madje si më të sigurtat e shtetit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12097",
+    "source": "tr",
+    "word": "hatun",
+    "translation": "Khatun",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'hatun'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10328",
+    "source": "tr",
+    "word": "hava",
+    "translation": "ajër, mot",
+    "pos": "emër",
+    "senses": [
+      "Përzierje gazesh e rrjedhshme, pa ngjyrë e pa erë, që formon atmosferën dhe që u shërben të gjitha qenieve të gjalla për frymëmarrje"
+    ],
+    "examples": [
+      {
+        "source": "Hava biraz bozukçaydı, dışarıda serin bir yağmur çiseliyordu.",
+        "target": "Moti ishte pak i prishur, jashtë po pikonte një shi i freskët."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15765",
+    "source": "tr",
+    "word": "havacılık",
+    "translation": "Komunikacioni ajror, Aeronautika",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'havacılık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14996",
+    "source": "tr",
+    "word": "havale",
+    "translation": "konvulsioni",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'havale'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17304",
+    "source": "tr",
+    "word": "havalimanı",
+    "translation": "aeroporti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'havalimanı'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11070",
+    "source": "tr",
+    "word": "havalı",
+    "translation": "me ajër (të një lloji të caktuar)",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka ajër të çfarëdolloj karakteristikë"
+    ],
+    "examples": [
+      {
+        "source": "O murdar kokulu, ağır havalı yere...",
+        "target": "Në atë vend me erë të qelbur e me ajër të rëndë..."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15524",
+    "source": "tr",
+    "word": "havan",
+    "translation": "Mortaja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'havan'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12221",
+    "source": "tr",
+    "word": "havlu",
+    "translation": "peshqir",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'havlu'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12364",
+    "source": "tr",
+    "word": "havuz",
+    "translation": "Banjë noti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'havuz'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13668",
+    "source": "tr",
+    "word": "havuç",
+    "translation": "karrotë, Karrota",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'havuç'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10928",
+    "source": "tr",
+    "word": "hay",
+    "translation": "paç, rrofsh",
+    "pos": "pasthirrmë",
+    "senses": [
+      "Fjalë që përdoret për të shprehur urim, qortim, habi, gëzim etj."
+    ],
+    "examples": [
+      {
+        "source": "Hay çok yaşayasınız sizler!",
+        "target": "Paç, rrofsh gjatë ju të gjithë!"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10311",
+    "source": "tr",
+    "word": "hayal",
+    "translation": "imagjinatë, fantazi",
+    "pos": "emër",
+    "senses": [
+      "Gjëja e konceptuar apo e imagjinuar në mendje, realizimi i së cilës dëshirohet me mall; imazh"
+    ],
+    "examples": [
+      {
+        "source": "Mustafa Kemal hayallerin değil hakikatlerin adamı idi.",
+        "target": "Mustafa Kemali ishte njeriu i realiteteve dhe jo i fantazive."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10871",
+    "source": "tr",
+    "word": "hayalet",
+    "translation": "fantazmë, hije",
+    "pos": "emër",
+    "senses": [
+      "Pamje ose imazhe si zana, fantazma etj., që ndonëse nuk ekzistojnë në realitet, mendohet se shihen ndonjëherë"
+    ],
+    "examples": [
+      {
+        "source": "Gözümün önünden durmaksızın geçen bir hayalet var.",
+        "target": "Ekziston një fantazmë që po kalon vazhdimisht përpara syve të mi."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11856",
+    "source": "tr",
+    "word": "hayalî",
+    "translation": "imagjinar, fiktiv",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që nuk ekziston në realitet, jo real; fantastik"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10318",
+    "source": "tr",
+    "word": "hayat",
+    "translation": "çardak",
+    "pos": "emër",
+    "senses": [
+      "Një lloj divani apo ballkoni i mbuluar nga sipër, por i hapur në një ose disa anë, që gjendet zakonisht në shtëpitë e fshatrave dhe të qytezave"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10125",
+    "source": "tr",
+    "word": "haydi",
+    "translation": "hëde, hajde",
+    "pos": "pasthirrmë",
+    "senses": [
+      "Fjalë që përdoret për të nxitur dikë ose për të treguar shpejtësi; hadi"
+    ],
+    "examples": [
+      {
+        "source": "Haydi! Sen git, beni yalnız bırak, bu akşam iyi değilim.",
+        "target": "Hajde! Shko ti, më lini vetëm, sonte nuk jam mirë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11753",
+    "source": "tr",
+    "word": "hayran",
+    "translation": "i mrekulluar, i mahnitur",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që pëlqen shumë diçka, që ndien adhurim ose mrekulli; i magjepsur"
+    ],
+    "examples": [
+      {
+        "source": "El işi olmasına rağmen el değmeden yapılmış hissini veren bu nadide sanat eserine hayrandı.",
+        "target": "Ishte i mrekulluar pas kësaj vepre të rrallë arti, e cila ndonëse ishte punë dore, të falte ndjesinë sikur ishte bërë pa u prekur me dorë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10676",
+    "source": "tr",
+    "word": "hayvan",
+    "translation": "kafshë",
+    "pos": "emër",
+    "senses": [
+      "Krijesë e gjallë që ka aftësi për të ndier e lëvizur dhe që vepron përmes instinkteve të veta"
+    ],
+    "examples": [
+      {
+        "source": "İnce ruhlu insanlar gibi Atatürk de hayvanları severdi.",
+        "target": "Ashtu si njerëzit me shpirt të ndjeshëm, edhe Ataturku i donte kafshët."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10014",
+    "source": "tr",
+    "word": "hayır",
+    "translation": "jo",
+    "pos": "pasthirrmë",
+    "senses": [
+      "Fjalë që shpreh mohim ose mosmiratim në kuptimet 'jo, nuk është ashtu, nuk bëhet'"
+    ],
+    "examples": [
+      {
+        "source": "Para var mı? -Hayır. -Yorgun musunuz? -Hayır.",
+        "target": "A ka para? -Jo. -A jeni i lodhur? -Jo."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15813",
+    "source": "tr",
+    "word": "hayırsever",
+    "translation": "filantrop",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'hayırsever'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11949",
+    "source": "tr",
+    "word": "hazine",
+    "translation": "thesar, pasuri e madhe",
+    "pos": "emër",
+    "senses": [
+      "Grumbull i madh objektesh me vlerë si ari, argjendi, bizhuteritë, pasuri e stërmadh; hazne"
+    ],
+    "examples": [
+      {
+        "source": "Dünyanın hazinelerine başını çevirip bakmazdı.",
+        "target": "Nuk kthente kokën fiks për të shikuar thesaret e botës."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10165",
+    "source": "tr",
+    "word": "hazır",
+    "translation": "gati, i përgatitur",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka plotësuar gjithçka që nevojitet për të kryer një punë; i amaduar"
+    ],
+    "examples": [
+      {
+        "source": "Her şey emre müheyya, hazır bir vaziyette bekliyor.",
+        "target": "Çdo gjë pret në gjendje gatishmërie, e përgatitur për urdhër."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13061",
+    "source": "tr",
+    "word": "haç",
+    "translation": "Kryqi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'haç'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17499",
+    "source": "tr",
+    "word": "haşhaş",
+    "translation": "Papaver somniferum",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'haşhaş'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11381",
+    "source": "tr",
+    "word": "he",
+    "translation": "po, hë (pohim)",
+    "pos": "pasthirrmë",
+    "senses": [
+      "Po"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10800",
+    "source": "tr",
+    "word": "hedef",
+    "translation": "objektivi, shenjestra",
+    "pos": "emër",
+    "senses": [
+      "Vendi ose pika ku merret shenjë; vendi i shënjestrimit"
+    ],
+    "examples": [
+      {
+        "source": "Asıl önemlisi devlet büyük hedefler dikmişti; milletin benimsediği, övündüğü hedeflerdi bunlar.",
+        "target": "Gjëja më e rëndësishme ishte se shteti kishte vendosur objektiva të mëdha; këto ishin objektiva që kombi i përqafoi dhe me të cilat krenohej."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10596",
+    "source": "tr",
+    "word": "hediye",
+    "translation": "dhuratë",
+    "pos": "emër",
+    "senses": [
+      "Armagani"
+    ],
+    "examples": [
+      {
+        "source": "Yengemin düğün hediyesiymiş, hâlâ takıyor.",
+        "target": "Paska qenë dhurata e dasmës së kunatës sime, ende e mban."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14300",
+    "source": "tr",
+    "word": "helal",
+    "translation": "hallall",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'helal'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11107",
+    "source": "tr",
+    "word": "hele",
+    "translation": "sidomos, veçanërisht",
+    "pos": "lidhëz",
+    "senses": [
+      "Veçanërisht"
+    ],
+    "examples": [
+      {
+        "source": "O gün gelsin, neşemiz tazelensin de gör / Dünyayı hele sen bir barış olsun da gör",
+        "target": "Le të vijë ajo ditë, le të përtërihet gëzimi ynë e pastaj shih / Shikoje ti botën sidomos kur të bëhet paqe"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11274",
+    "source": "tr",
+    "word": "Helen",
+    "translation": "helen, grek i vjetër",
+    "pos": "emër",
+    "senses": [
+      "Populli që ka jetuar gjatë periudhës midis viteve 323 para K. dhe 146 para K. të qytetërimit grek"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12023",
+    "source": "tr",
+    "word": "helikopter",
+    "translation": "helikopter",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'helikopter'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10190",
+    "source": "tr",
+    "word": "hem",
+    "translation": "edhe, gjithashtu",
+    "pos": "lidhëz",
+    "senses": [
+      "Fjalë që përdoret për të tërhequr vëmendjen e dikujt, për të shpjeguar diçka ose për të përforcuar kuptimin në kuptimet 'veçanërisht, sidoqoftë, ekziston edhe kjo'"
+    ],
+    "examples": [
+      {
+        "source": "Hem benim oğlan yeni yeni okuyor.",
+        "target": "Edhe djalit tim sapo ka filluar t'i ecë mbarë leximi."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10093",
+    "source": "tr",
+    "word": "hemen",
+    "translation": "menjëherë",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në mënyrë shumë të shpejtë; shpejt e shpejt"
+    ],
+    "examples": [
+      {
+        "source": "Bugün yarın Kayseri'den haber gelir zaten. Hemen gideriz.",
+        "target": "Sidoqoftë, sot ose nesër vjen lajmi nga Kajseri. Shkojmë menjëherë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11116",
+    "source": "tr",
+    "word": "hemşire",
+    "translation": "infermiere, motër mjekësore",
+    "pos": "emër",
+    "senses": [
+      "Punonjës shëndetësor i kualifikuar dhe i autorizuar për mbrojtjen e shëndetit, parandalimin e sëmundjeve dhe kujdesin apo rehabilitimin e pacientëve"
+    ],
+    "examples": [
+      {
+        "source": "Ayağa kalkıp hemşirenin bana uzattığı ameliyat giysisini aldım ve soyunma odasına girip, bu sevimsiz giysiyi üzerime geçirdim.",
+        "target": "U ngrita në këmbë dhe mora rrobën e operacionit që infermierja më zgjati, hyra në dhomën e zhveshjes dhe e vesha këtë rrobë josharmante përmbi vete."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10270",
+    "source": "tr",
+    "word": "henüz",
+    "translation": "sapo, ende",
+    "pos": "ndajfolje",
+    "senses": [
+      "Pak më parë; akoma"
+    ],
+    "examples": [
+      {
+        "source": "Memleketten henüz dönmüş, avlunun duvar dibinden yine mutfağa doğru yürüyordum.",
+        "target": "Sapo isha kthyer nga fshati im, po ecja përsëri drejt kuzhinës nga rrëza e murit të oborrit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10149",
+    "source": "tr",
+    "word": "hep",
+    "translation": "gjithmonë, gjithë",
+    "pos": "ndajfolje",
+    "senses": [
+      "I tërë, në mënyrë të plotë, pa përjashtuar asnjë"
+    ],
+    "examples": [
+      {
+        "source": "Hep Trabzonlular kalabalık bir toplantıda istif hâlindeyiz, aramızda yabancı yok, hep bilişip tanışan hemşehrileriz.",
+        "target": "Të gjithë ne nga Trabzoni jemi të mbledhur në një takim të madh, nuk ka të huaj mes nesh, jemi të gjithë bashkëatdhetarë që njihemi."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10157",
+    "source": "tr",
+    "word": "hepsi",
+    "translation": "të gjithë, mbarë",
+    "pos": "përemër",
+    "senses": [
+      "Tërësia e gjërave apo personave për të cilët flitet"
+    ],
+    "examples": [
+      {
+        "source": "Mücrim onlarmış gibi, baktım, hepsi hüzünde / Çocuk utangaçlığı var hepsinin yüzünde",
+        "target": "Sikur fajtorët të ishin ata, pashë se të gjithë ishin në trishtim / Te fytyra e të gjithëve ka një turp fëminor"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10024",
+    "source": "tr",
+    "word": "her",
+    "translation": "çdo",
+    "pos": "mbiemër",
+    "senses": [
+      "Fjalë që përgjithëson emrin përpara të cilit vendoset, duke përfshirë të ngjashmit e tij në kuptimin 'të gjithë një nga një, të gjithë pa përjashtim'"
+    ],
+    "examples": [
+      {
+        "source": "Bir hafta, her gece çalışmak suretiyle hikâyesini bitirdi.",
+        "target": "Ai e përfundoi tregimin e tij duke punuar çdo natë për një javë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10291",
+    "source": "tr",
+    "word": "herhangi",
+    "translation": "çfarëdo, ndonjë",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai cilësitë e të cilit nuk njihen mirë ose nuk janë plotësisht të qarta"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10464",
+    "source": "tr",
+    "word": "herhâlde",
+    "translation": "ndoshta, me siguri",
+    "pos": "ndajfolje",
+    "senses": [
+      "Me një mundësi të madhe"
+    ],
+    "examples": [
+      {
+        "source": "Bir yerde köfte filan kızartılıyordu herhâlde.",
+        "target": "Në një vend ndoshta po piqeshin qofte apo diçka e ngjashme."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10368",
+    "source": "tr",
+    "word": "herif",
+    "translation": "tip, tip i poshtër",
+    "pos": "emër",
+    "senses": [
+      "Një person që nuk jep besim, që shihet i ulët dhe i thjeshtë"
+    ],
+    "examples": [
+      {
+        "source": "İki herif zavallıya abanıyorlar.",
+        "target": "Dy tipa po i rëndonin të mjerit sipër."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10143",
+    "source": "tr",
+    "word": "herkes",
+    "translation": "të gjithë, kushdo",
+    "pos": "përemër",
+    "senses": [
+      "Tërësia e njerëzve; të gjithë pa përjashtim"
+    ],
+    "examples": [
+      {
+        "source": "Neylersin ölüm herkesin başında / Uyudun uyanmadın olacak",
+        "target": "Çfarë t'i bësh, vdekja është mbi kokën e secilit (të gjithëve) / Do të jetë sikur ke fjetur e nuk je zgjuar"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11206",
+    "source": "tr",
+    "word": "hesap",
+    "translation": "llogari, aritmetikë",
+    "pos": "emër",
+    "senses": [
+      "Aritmetikë"
+    ],
+    "examples": [
+      {
+        "source": "Al eline kalemi, şu benim hesapları görüver.",
+        "target": "Merre lapsin në dorë, e m'i dallo pak këto llogaritë e mia."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17501",
+    "source": "tr",
+    "word": "hesaplama",
+    "translation": "Informatika, llogaritja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'hesaplama'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10068",
+    "source": "tr",
+    "word": "hey",
+    "translation": "hej",
+    "pos": "pasthirrmë",
+    "senses": [
+      "Fjalë që thuhet për t'i thirrur dikujt ose për të tërhequr vëmendjen dhe interesin"
+    ],
+    "examples": [
+      {
+        "source": "Hey, çocuklar! Gelin bakalım. Hey arkadaş! Ayağıma basıyorsun.",
+        "target": "Hey, fëmijë! Ejani këtu të shohim. Hej mik! Po më shkel këmbën."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11019",
+    "source": "tr",
+    "word": "heyecan",
+    "translation": "emocion, ekzaltim",
+    "pos": "emër",
+    "senses": [
+      "Gjendje e fortë dhe e përkohshme ndjenjash që shfaqet për shkak të gëzimit, frikës, zemërimit, trishtimit, xhelozisë, dashurisë etj.; tehejjyç"
+    ],
+    "examples": [
+      {
+        "source": "Çıngırağın her çekilişinde ikisinin de heyecandan yürekleri ağızlarına geliyor.",
+        "target": "Në çdo tërheqje të këmborës, të dyve u vjen zemra në gojë nga emocioni."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11190",
+    "source": "tr",
+    "word": "heyecanlı",
+    "translation": "emocionues, i ndjeshëm, i shqetësuar",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që emocionohet shpejt dhe lehtë; i turbulluar"
+    ],
+    "examples": [
+      {
+        "source": "Herkes tedirgin, kuruntulu ve heyecanlı idi.",
+        "target": "Të gjithë ishin të shqetësuar, me dyshime dhe të emocionuar."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13236",
+    "source": "tr",
+    "word": "heykel",
+    "translation": "statujë, skulpturë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'heykel'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14131",
+    "source": "tr",
+    "word": "hidrojen",
+    "translation": "Hidrogjeni",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'hidrojen'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16563",
+    "source": "tr",
+    "word": "hidrolik",
+    "translation": "Hidraulika",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'hidrolik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10658",
+    "source": "tr",
+    "word": "hikâye",
+    "translation": "tregim, histori",
+    "pos": "emër",
+    "senses": [
+      "Shpjegimi i një ngjarjeje gojarisht ose me shkrim; histori"
+    ],
+    "examples": [
+      {
+        "source": "Salonunda toplanmıştık geçen gece beş on kişi / Vardı onun kendine has bir hikâye söyleyişi",
+        "target": "Isha mbledhur në sallonin e tij mbrëmjen e kaluar nja pesë-dhjetë veta / Ai kishte një mënyrë të vetën të veçantë për të treguar një histori"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11436",
+    "source": "tr",
+    "word": "hile",
+    "translation": "mashtrim, hile, dhelpëri",
+    "pos": "emër",
+    "senses": [
+      "Sistemi ose plani që bëhet për të gënjyer apo mashtruar dikë; lojë"
+    ],
+    "examples": [
+      {
+        "source": "Bu sütte hile var.",
+        "target": "Ka hile në këtë qumësht."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15166",
+    "source": "tr",
+    "word": "hipnoz",
+    "translation": "hipnoza",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'hipnoz'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18563",
+    "source": "tr",
+    "word": "histeri",
+    "translation": "Histeria",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'histeri'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11926",
+    "source": "tr",
+    "word": "hitap",
+    "translation": "drejtim fjalësh, thirrje, diskurs",
+    "pos": "emër",
+    "senses": [
+      "Drejtimi i fjalës ndaj dikujt ose disa personave; thirrje"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10777",
+    "source": "tr",
+    "word": "hizmet",
+    "translation": "shërbim",
+    "pos": "emër",
+    "senses": [
+      "Kryerja e punës së dikujt ose bërja e një pune që i hyjnë në punë dikujt tjetër"
+    ],
+    "examples": [
+      {
+        "source": "Vatan, evladının hizmetini bekliyor.",
+        "target": "Atdheu pret shërbimin e pasardhësit (birit) të vet."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10033",
+    "source": "tr",
+    "word": "hiç",
+    "translation": "asgjë, fare",
+    "pos": "ndajfolje",
+    "senses": [
+      "Fjalë që përforcon kuptimin e foljes në fjalitë me gjykim mohues"
+    ],
+    "examples": [
+      {
+        "source": "Hapishane yarı tımarhanedir, hiç şaşmayın.",
+        "target": "Burgu është gjysëm çmendinë, mos u habitni fare."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10069",
+    "source": "tr",
+    "word": "hiçbir",
+    "translation": "asnjë",
+    "pos": "mbiemër",
+    "senses": [
+      "Fjalë që vendoset përpara një emri dhe tregon se nuk ekziston as edhe një i vetëm nga qeniet ose objektet që shpreh ai emër"
+    ],
+    "examples": [
+      {
+        "source": "Fakat o bir çift gözü hayalinden, rüyasından hiçbir şey silemedi.",
+        "target": "Por asgjë nuk arriti ta fshinte atë çift sysh nga imagjinata dhe ëndrrat e tij."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11030",
+    "source": "tr",
+    "word": "hiçbiri",
+    "translation": "asnjë, asnjëri",
+    "pos": "përemër",
+    "senses": [
+      "Asnjë i vetëm, as edhe një"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18179",
+    "source": "tr",
+    "word": "hiçlik",
+    "translation": "asgjë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'hiçlik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11095",
+    "source": "tr",
+    "word": "hiş",
+    "translation": "pst, kuku (thirrje)",
+    "pos": "pasthirrmë",
+    "senses": [
+      "Hisht, fjalë thirrëse"
+    ],
+    "examples": [
+      {
+        "source": "Hiş, buraya gel!",
+        "target": "Pst, hajde këtu!"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11610",
+    "source": "tr",
+    "word": "Ho",
+    "translation": "Ho",
+    "pos": "emër",
+    "senses": [
+      "Simboli i elementit të holmiumit"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14055",
+    "source": "tr",
+    "word": "hobi",
+    "translation": "hobi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'hobi'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12732",
+    "source": "tr",
+    "word": "hokey",
+    "translation": "Hokej",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'hokey'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11505",
+    "source": "tr",
+    "word": "hop",
+    "translation": "hop, ndalo (pasthirrmë)",
+    "pos": "pasthirrmë",
+    "senses": [
+      "Fjalë që përdoret me qëllim për të paralajmëruar ose tërhequr vëmendjen dikujt"
+    ],
+    "examples": [
+      {
+        "source": "Hop, gelen var!",
+        "target": "Hop, po vjen dikush!"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14459",
+    "source": "tr",
+    "word": "hortum",
+    "translation": "tornadoja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'hortum'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10189",
+    "source": "tr",
+    "word": "hoş",
+    "translation": "i këndshëm, i këndshmit",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që pëlqehet, që të ledhaton ndjenjat, që të jep kënaqësi"
+    ],
+    "examples": [
+      {
+        "source": "Gelmiş o yaylanın baharı / Öter bülbüller hoştur avazı",
+        "target": "Ka ardhur pranvera e asaj rrafshnalte / Këndojnë bilbilat, i këndshëm është zëri i tyre"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16721",
+    "source": "tr",
+    "word": "hoşgörü",
+    "translation": "Toleranca",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'hoşgörü'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10415",
+    "source": "tr",
+    "word": "hoşça",
+    "translation": "këndshëm, mjaft mirë",
+    "pos": "mbiemër",
+    "senses": [
+      "Në një mënyrë të këndshme ose të mirë"
+    ],
+    "examples": [
+      {
+        "source": "Bir hayli seneler hoşça yaşadıktan sonra, böyle bir yerde, güzel bir hava intihap ederek ölmüş.",
+        "target": "Pasi jetoi mjaft mirë për shumë vite, vdiq në një vend të tillë, duke zgjedhur një kohë me mot të bukur."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11442",
+    "source": "tr",
+    "word": "hukuk",
+    "translation": "e drejta, ligjet, jurisprudenca",
+    "pos": "emër",
+    "senses": [
+      "Tërësia e ligjeve që rregullojnë shoqërinë dhe përcaktojnë forcën sanksionuese të shtetit; tüze"
+    ],
+    "examples": [
+      {
+        "source": "Hukuk daima âdetlerin peşinden gider, önüne geçmez.",
+        "target": "E drejta (ligji) shkon gjithmonë pas zakoneve, nuk u del përpara atyre."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18759",
+    "source": "tr",
+    "word": "huy",
+    "translation": "Temperamenti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'huy'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11055",
+    "source": "tr",
+    "word": "huzur",
+    "translation": "paqe, qetësi mendore",
+    "pos": "emër",
+    "senses": [
+      "Rregullsia, qetësia e kokës dhe rehatia e zemrës"
+    ],
+    "examples": [
+      {
+        "source": "Fakat böyle bir zevk ve huzurun devam ve bekası olamaz.",
+        "target": "Mirëpo një shije dhe qetësi e tillë nuk mund të ketë vazhdimësi e jetëgjatësi."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11125",
+    "source": "tr",
+    "word": "hâkim",
+    "translation": "dominues, i plotfuqishëm, gjykatës",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ushtron sovranitetin, që nxjerr urdhra ose që bën t'i dëgjohet fjala"
+    ],
+    "examples": [
+      {
+        "source": "Arkasında yavaş fakat çok hâkim bir ses işitmişti.",
+        "target": "Dëgjoi pas vetes një zë të ngadaltë por mjaft dominues."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11472",
+    "source": "tr",
+    "word": "hâl",
+    "translation": "gjendje, situatë",
+    "pos": "emër",
+    "senses": [
+      "Durum"
+    ],
+    "examples": [
+      {
+        "source": "Herkes hâline göre bir hediye verdi.",
+        "target": "Kushdo dha nga një dhuratë sipas gjendjes (mundësisë) së vet."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11513",
+    "source": "tr",
+    "word": "hâlen",
+    "translation": "aktualisht, ende tani",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në kohën në të cilën ndodhemi"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10118",
+    "source": "tr",
+    "word": "hâlâ",
+    "translation": "ende, akoma",
+    "pos": "ndajfolje",
+    "senses": [
+      "Deri më tani, deri në atë kohë; aktualisht"
+    ],
+    "examples": [
+      {
+        "source": "Annesini yanına aldığı günlerdeki mutsuzluğum hâlâ içimi karartıyor.",
+        "target": "Pakënaqësia ime në ditët kur ai mori nënën e tij pranë vetes, ende ma errëson shpirtin."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11954",
+    "source": "tr",
+    "word": "hücre",
+    "translation": "qelizë, qeli burgu",
+    "pos": "emër",
+    "senses": [
+      "Njësia më e vogël e organizmit që mund ta vazhdojë vetë jetën e vet, që ndahet e shtohet dhe asimilon lëndët e marra nga jashtë, ose dhomë e ngushtë burgu (në shembull)"
+    ],
+    "examples": [
+      {
+        "source": "Hücrenin kapısında delikten bana bakan ere bir pusula uzatıp kumandana götürmesini istiyorum.",
+        "target": "Po i zgjas një pusullë ushtarit të thjeshtë që po më shikon nga vrima tek dera e qelisë, dhe po i kërkoj t'ia dërgojë komandantit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12013",
+    "source": "tr",
+    "word": "hüküm",
+    "translation": "Aktgjykimi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'hüküm'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11122",
+    "source": "tr",
+    "word": "hırsız",
+    "translation": "grep ndihmës, grep hajdut",
+    "pos": "emër",
+    "senses": [
+      "Grep i veçantë që vendoset pranë grepit kryesor në fillin e peshkimit"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11593",
+    "source": "tr",
+    "word": "hırsızlık",
+    "translation": "vjedhje, hajdutëri",
+    "pos": "emër",
+    "senses": [
+      "Krimi i kryer duke vjedhur një gjë që i përket dikujt tjetër; sirkat"
+    ],
+    "examples": [
+      {
+        "source": "Bu hırsızlık yüzünden konakta sanki bir nevi hürriyet, müsavat, uhuvvet ilan edilmişti.",
+        "target": "Për shkak të kësaj vjedhjeje, në konak sikur u shpall një lloj lirie, barazie dhe vëllazërie."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11632",
+    "source": "tr",
+    "word": "hız",
+    "translation": "shpejtësi, ritëm, vrull",
+    "pos": "emër",
+    "senses": [
+      "Shpejtësia në lëvizje; sürat"
+    ],
+    "examples": [
+      {
+        "source": "Hikâyede baştan sona kadar hareket ve hız olmalıdır.",
+        "target": "Në tregim duhet të ketë lëvizje dhe shpejtësi (vrull) që nga fillimi e deri në fund."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11253",
+    "source": "tr",
+    "word": "hızla",
+    "translation": "me shpejtësi, shpejt",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në mënyrë të shpejtë"
+    ],
+    "examples": [
+      {
+        "source": "Dar ve sapa yollardan hızla yürümeye çalışıyorduk.",
+        "target": "Po përpiqeshim të ecnim me shpejtësi nëpër rrugët e ngushta dhe të mbyllura."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10298",
+    "source": "tr",
+    "word": "hızlı",
+    "translation": "i shpejtë, i vrullshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka shumë shpejtësi; i shpejtë, i shpejtuar"
+    ],
+    "examples": [
+      {
+        "source": "Bir akşamüzeri her zamanki hızlı adımlarla geldi.",
+        "target": "Një mbrëmje erdhi me hapat e tij të shpejtë si gjithmonë."
+      }
+    ],
+    "derivatives": []
   }
 ]

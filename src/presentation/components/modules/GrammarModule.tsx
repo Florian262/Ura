@@ -116,7 +116,7 @@ export const GrammarModule: React.FC<GrammarModuleProps> = ({ onComplete }) => {
   if (grammarCards.length === 0) return null;
 
   return (
-    <div className="glass-panel rounded-2xl p-6 md:p-8 bg-white border border-[#E9ECEF] shadow-sm">
+    <div className="glass-panel md:rounded-2xl p-0 md:p-8 bg-transparent md:bg-white border-none md:border md:border-[#E9ECEF] shadow-none md:shadow-sm">
       <div className="mb-6 pb-4 border-b border-[#E9ECEF] flex justify-between items-center">
         <div>
           <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-widest">Sekuenca 3</span>
@@ -128,7 +128,7 @@ export const GrammarModule: React.FC<GrammarModuleProps> = ({ onComplete }) => {
       </div>
 
       {/* Segmented Card Carousel Display */}
-      <div className="grammar-card-bg rounded-2xl p-6 md:p-8 min-h-[300px] flex flex-col justify-between relative overflow-hidden transition-all duration-300 shadow-inner">
+      <div className="grammar-card-bg rounded-2xl p-4 md:p-8 min-h-[300px] flex flex-col justify-between relative overflow-hidden transition-all duration-300 md:shadow-inner">
         
         <div>
           {/* Card Title */}

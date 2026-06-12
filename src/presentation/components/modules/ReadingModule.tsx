@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useLesson } from '../../../application/state/LessonContext';
 import { useAudioPlayer } from '../../../application/hooks/useAudioPlayer';
+import { InteractiveText } from '../common/InteractiveText';
+import { WordDetailDrawer, type DictionaryEntry } from '../common/WordDetailDrawer';
 
 const Avatar: React.FC<{ speakerName: string }> = ({ speakerName }) => {
   const initial = speakerName ? speakerName.charAt(0).toUpperCase() : '?';
@@ -48,6 +51,13 @@ export const ReadingModule: React.FC = () => {
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, number>>({});
   const [showResults, setShowResults] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<'alphabet' | 'pronunciation' | 'pronouns' | 'structure'>('alphabet');
+  const [drawerEntry, setDrawerEntry] = useState<DictionaryEntry | null>(null);
+  const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
+
+  const handleShowDetail = (entry: DictionaryEntry) => {
+    setDrawerEntry(entry);
+    setIsDrawerOpen(true);
+  };
 
   if (!readingBlock) return null;
 
@@ -471,7 +481,7 @@ export const ReadingModule: React.FC = () => {
   };
 
   return (
-    <div className="glass-panel rounded-2xl p-6 md:p-8 bg-white border border-[#E9ECEF] shadow-sm">
+    <div className="glass-panel md:rounded-2xl p-0 md:p-8 bg-transparent md:bg-white border-none md:border md:border-[#E9ECEF] shadow-none md:shadow-sm">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 pb-4 border-b border-[#E9ECEF]">
         <div>
           <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-widest">Sekuenca 1</span>
@@ -529,7 +539,7 @@ export const ReadingModule: React.FC = () => {
       {readingBlock.chapter_id === 21 ? (
         renderIntroGuide()
       ) : (
-        <div className="bg-neutral-50 rounded-2xl p-4 md:p-6 mb-8 max-h-[450px] overflow-y-auto border border-[#E9ECEF] no-scrollbar shadow-inner">
+        <div className="bg-transparent md:bg-neutral-50 md:rounded-2xl p-0 md:p-6 mb-6 md:mb-8 max-h-[450px] overflow-y-auto border-none md:border md:border-[#E9ECEF] no-scrollbar md:shadow-inner">
           {readingBlock.layout_style === 'dialogue' ? (
             /* dialogue bubble conversation layout */
             <div className="space-y-4">
@@ -574,7 +584,7 @@ export const ReadingModule: React.FC = () => {
                         </button>
                       </div>
                       <p className="text-sm font-technical font-medium tracking-wide">
-                        {line.text}
+                        <InteractiveText text={line.text} onShowDetail={handleShowDetail} />
                       </p>
 
                       {/* Albanian translation bubble if toggle enabled - Translation Rule */}
@@ -592,7 +602,7 @@ export const ReadingModule: React.FC = () => {
             </div>
           ) : readingBlock.layout_style === 'blog_post' ? (
             /* premium blog post article layout */
-            <div className="bg-white dark:bg-[#12181F] border border-[#E9ECEF] dark:border-neutral-800 rounded-2xl overflow-hidden shadow-xs text-left max-h-[500px] overflow-y-auto no-scrollbar">
+            <div className="bg-white dark:bg-[#12181F] md:border border-none md:border-[#E9ECEF] dark:md:border-neutral-800 md:rounded-2xl overflow-hidden md:shadow-xs text-left max-h-[500px] overflow-y-auto no-scrollbar">
               {/* Header Image */}
               <div className="w-full h-36 relative bg-stone-900">
                 <img 
@@ -662,7 +672,7 @@ export const ReadingModule: React.FC = () => {
                         </div>
                         
                         <p className="text-sm font-technical font-medium tracking-wide leading-relaxed">
-                          {line.text}
+                          <InteractiveText text={line.text} onShowDetail={handleShowDetail} />
                         </p>
                         
                         {showTranslation && (
@@ -686,10 +696,10 @@ export const ReadingModule: React.FC = () => {
                   (currentChapter && currentSrc === `chapter${currentChapter.order_index}_reading_${idx}`)
                 );
                 return (
-                  <div key={idx} className={`bg-white dark:bg-neutral-900/30 border rounded-2xl p-5 shadow-xs relative group transition-all duration-300 ${
+                  <div key={idx} className={`bg-transparent md:bg-white dark:md:bg-neutral-900/30 border-b md:border border-neutral-200 dark:border-neutral-800 md:rounded-2xl py-3.5 md:p-5 shadow-none md:shadow-xs relative group transition-all duration-300 ${
                     isLinePlaying 
-                      ? 'border-teal-500 ring-2 ring-teal-500/20 shadow-sm' 
-                      : 'border-[#E9ECEF] hover:border-[#3A5A40]/30'
+                      ? 'bg-teal-500/5 dark:bg-teal-950/10 border-teal-500 ring-1 ring-teal-500/20 shadow-sm' 
+                      : 'border-neutral-200 dark:border-neutral-800 hover:border-[#3A5A40]/30'
                   }`}>
                     <div className="flex justify-between items-center gap-4 mb-2">
                       {line.speaker && (
@@ -717,7 +727,7 @@ export const ReadingModule: React.FC = () => {
                       </button>
                     </div>
                     <p className="text-sm font-technical font-medium tracking-wide leading-relaxed">
-                      {line.text}
+                      <InteractiveText text={line.text} onShowDetail={handleShowDetail} />
                     </p>
                     {showTranslation && (
                       <p className="translation-subtitle border-t border-[#E9ECEF]/80 pt-2 mt-2 leading-relaxed">
@@ -744,7 +754,7 @@ export const ReadingModule: React.FC = () => {
               {readingQuestions.map((q, qIdx) => {
                 const selected = selectedAnswers[q.id];
                 return (
-                  <div key={q.id} className="bg-white border border-[#E9ECEF] rounded-xl p-4 shadow-xs">
+                  <div key={q.id} className="bg-transparent md:bg-white border-b md:border border-neutral-200 dark:border-neutral-800 md:rounded-xl py-4 md:p-4 shadow-none md:shadow-xs">
                     <div className="mb-3">
                       <h4 lang="tr" className="text-sm font-bold text-[#1A1D20] font-technical tracking-tight">
                         {qIdx + 1}. {q.question_turkish}
@@ -837,6 +847,17 @@ export const ReadingModule: React.FC = () => {
           </div>
         )}
       </div>
+
+      {/* Detail Drawer */}
+      {isDrawerOpen && drawerEntry && createPortal(
+        <WordDetailDrawer
+          entry={drawerEntry}
+          isOpen={isDrawerOpen}
+          onClose={() => setIsDrawerOpen(false)}
+          onSpeak={(word, lang) => playText(word, lang)}
+        />,
+        document.body
+      )}
     </div>
   );
 };

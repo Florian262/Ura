@@ -1,73 +1,534 @@
 [
   {
-    "id": "dict-tr-69",
+    "id": "dict-tr-11346",
     "source": "tr",
-    "word": "zaman",
-    "translation": "kohë, çast",
+    "word": "zafer",
+    "translation": "fitore",
     "pos": "emër",
-    "inflection": "-ı",
     "senses": [
-      "Rrjedha e pandërprerë e ekzistencës dhe e ngjarjeve në të shkuarën, të tashmen dhe të ardhmen.",
-      "Një moment i caktuar ose kohëzgjatje e kufizuar për të kryer një veprim."
+      "Suksesi i fituar në luftë; utku"
     ],
     "examples": [
       {
-        "source": "Ne zaman?",
-        "target": "Kur? (në çfarë kohe?)"
-      },
-      {
-        "source": "Zaman harcamak",
-        "target": "Shpenzoj kohë"
-      },
-      {
-        "source": "Zaman zaman",
-        "target": "Kohë pas kohe (rrallëherë)"
-      },
-      {
-        "source": "Tam zamanında",
-        "target": "Fiks në kohë (në kohën e duhur)"
+        "source": "Al bir kalpak giymişti al / Al bir ata binmişti al / Zafer ırak mı dedim / Aha diyordu",
+        "target": "Kishte veshur një kapele të kuqe (kalpak) të kuqe / Kishte hipur mbi një kalë të kuq të kuq / A është larg fitorja thashë / Ja tek është po thoshte"
       }
     ],
-    "derivatives": [
-      {
-        "word": "zamanlı",
-        "translation": "i rregullt, me kohë të caktuar",
-        "pos": "mbiemër"
-      },
-      {
-        "word": "zamansız",
-        "translation": "i parakohshëm, i papërshtatshëm",
-        "pos": "mbiemër"
-      }
-    ]
+    "derivatives": []
   },
   {
-    "id": "dict-tr-70",
+    "id": "dict-tr-11548",
     "source": "tr",
-    "word": "zengin",
-    "translation": "i pasur, e pasur",
-    "pos": "mbiemër",
+    "word": "zahmet",
+    "translation": "mundim, vështirësi, barë",
+    "pos": "emër",
     "senses": [
-      "Që ka shumë pasuri, para ose prona.",
-      "Që ka bollëk ose vlerë të madhe (fig. fjalor i pasur)."
+      "Gycluk, lodhje"
     ],
     "examples": [
       {
-        "source": "Zengin adam",
-        "target": "Njeri i pasur"
+        "source": "Yalnız rica ederim, bir an için bir zahmet ve fedakârlık daha yapın.",
+        "target": "Vetëm ju lutem, bëni edhe një herë një mundim dhe sakrificë tjetër për një çast."
       }
     ],
-    "derivatives": [
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10030",
+    "source": "tr",
+    "word": "zaman",
+    "translation": "kohë",
+    "pos": "emër",
+    "senses": [
+      "Kohëzgjatja brenda së cilës kryhet, do të kryhet ose po kryhet një punë apo një ngjarje; vakt"
+    ],
+    "examples": [
       {
-        "word": "zenginlik",
-        "translation": "pasuri, bollëk",
-        "pos": "emër"
-      },
-      {
-        "word": "zenginleşmek",
-        "translation": "pasurohem, bëhem i pasur",
-        "pos": "folje"
+        "source": "Zaman geçtikçe hafifleyecek yerde, daha ziyade ağırlaşan bir vicdan azabı duyarım.",
+        "target": "Me kalimin e kohës, në vend që të lehtësohet, ndiej një vrarje ndërgjegjeje që rëndohet edhe më shumë."
       }
-    ]
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11572",
+    "source": "tr",
+    "word": "zamanla",
+    "translation": "me kalimin e kohës, gradualisht",
+    "pos": "ndajfolje",
+    "senses": [
+      "Me kalimin e kohës, me avancimin e periudhës"
+    ],
+    "examples": [
+      {
+        "source": "Basınımızın gelişmesini gözden geçirirsek görürüz ki zamanla konular uzmanlıklar arasında bölüşülür.",
+        "target": "Po ta rishikojmë zhvillimin e shtypit tonë, do të shohim se me kalimin e kohës temat ndahen mes specializimeve."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10738",
+    "source": "tr",
+    "word": "zamanında",
+    "translation": "në kohën e vet, dikur",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në kohët e shkuara, më parë"
+    ],
+    "examples": [
+      {
+        "source": "Zamanında bir Kasımpaşalı Hayalî Hafız varmış.",
+        "target": "Në kohën e vet paska qenë një Hafiz imagjinar nga Kasëmpasha."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16612",
+    "source": "tr",
+    "word": "zambak",
+    "translation": "Zambaku",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'zambak'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11736",
+    "source": "tr",
+    "word": "zar",
+    "translation": "cipë, membranë, zar bixhozi",
+    "pos": "emër",
+    "senses": [
+      "Cipë e hollë, ose kubi i vogël që përdoret në lojërat e fati"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10350",
+    "source": "tr",
+    "word": "zarar",
+    "translation": "dëm, humbje",
+    "pos": "emër",
+    "senses": [
+      "Humbja financiare ose rezultati i keq dhe negativ që shkakton një gjë apo një ngjarje; ziyan"
+    ],
+    "examples": [
+      {
+        "source": "Aldığı günlerde iyi para getiren oteli zararla kapatmaya başlamışlar.",
+        "target": "Hotelin që u jepte para të mira në ditët kur e blenë, kanë filluar ta mbyllin me dëm."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13975",
+    "source": "tr",
+    "word": "zarf",
+    "translation": "ndajfolje",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'zarf'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10133",
+    "source": "tr",
+    "word": "zaten",
+    "translation": "sidoqoftë, që tani",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në të vërtetë, po të doni të dini të vërtetën; në thelb"
+    ],
+    "examples": [
+      {
+        "source": "Şehir son elli yılda zaten mahşerleşmişti.",
+        "target": "Qyteti sidoqoftë ishte kthyer në një lloj kiameti në pesëdhjetë vitet e fundit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10469",
+    "source": "tr",
+    "word": "zavallı",
+    "translation": "i mjerë, i gjorë",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ndodhet në një gjendje aq të keqe sa për t'u mëshiruar; i pashpresë, fukara"
+    ],
+    "examples": [
+      {
+        "source": "Zavallı hekim kendisine zorla yutturulan afyonların tesiriyle yığıldığı yerden bir daha kalkamadı.",
+        "target": "Mjeku i mjerë nuk u ngrit dot më nga vendi ku u rrëzua nën efektin e opiumit që e detyruan të gëlltiste."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10740",
+    "source": "tr",
+    "word": "zayıf",
+    "translation": "i dobët, i hollë",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka pak mish e dhjamë, që nuk është i shëndoshë (për njerëzit ose kafshët); i hollë"
+    ],
+    "examples": [
+      {
+        "source": "Uzun boylu, zayıf, ellilik bir hanım.",
+        "target": "Një zonjë rreth të pesëdhjetave, e gjatë dhe e dobët."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15355",
+    "source": "tr",
+    "word": "zebra",
+    "translation": "zebra",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'zebra'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11587",
+    "source": "tr",
+    "word": "zehir",
+    "translation": "helm, helmi",
+    "pos": "emër",
+    "senses": [
+      "Lëndë që kur hyn në organizëm prish funksionet fiziologjike me efektin e vet kimik dhe që mund ta vrasë gjallesën sipas sasisë; ağı"
+    ],
+    "examples": [
+      {
+        "source": "Evvela bir yumruk vurdu sersemledim, sonra ağzıma bilmediğim bir zehir tıktı, işte bu zehirle bayıldım.",
+        "target": "Së pari më lëshoi një grusht e u topita, pastaj më futi në gojë një helm që nuk e njihja, ja pikërisht me këtë helm më ra të fikët."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17595",
+    "source": "tr",
+    "word": "zehirlenme",
+    "translation": "helmimi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'zehirlenme'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11720",
+    "source": "tr",
+    "word": "zehirli",
+    "translation": "i helmuar, helmues",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka helm; toksik"
+    ],
+    "examples": [
+      {
+        "source": "Gösterip sivri uzun dişlerini bir daha / Bir zehirli ok gibi attı bana kahkaha",
+        "target": "Pasi më tregoi edhe një herë dhëmbët e saj të gjatë e të mprehtë / Ajo lëshoi drejt meje një të qeshur si shgjetë e helmuar"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10626",
+    "source": "tr",
+    "word": "zeki",
+    "translation": "i zgjuar, zeki",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka aftësi për të kuptuar e konceptuar, që ka inteligjencë; i mprehtë"
+    ],
+    "examples": [
+      {
+        "source": "En zeki hayvan maymundur.",
+        "target": "Kafshë më e zgjuar është majmuni."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11628",
+    "source": "tr",
+    "word": "zekice",
+    "translation": "inteligjente, në mënyrë të zgjuar",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që është inteligjent ose tregon zgjuarsi"
+    ],
+    "examples": [
+      {
+        "source": "Ona göre, Habil'in Kabil'i öldürmesinde zekice bir yan aranmamalıdır.",
+        "target": "Sipas tij, nuk duhet kërkuar ndonjë anë inteligjente (e zgjuar) në vrasjen e Abelit nga Kabili."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16999",
+    "source": "tr",
+    "word": "zencefil",
+    "translation": "Zingiber officinale",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'zencefil'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11207",
+    "source": "tr",
+    "word": "zenci",
+    "translation": "zezak, i zi",
+    "pos": "emër",
+    "senses": [
+      "Personi që bën pjesë në racën e zezë; njeriu i zi"
+    ],
+    "examples": [
+      {
+        "source": "Avrupalılar arasında bizi zenci gibi kara zannedenler varmış.",
+        "target": "Mes europianëve paska nga ata që na mendojnë të zinj si zezakët."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10574",
+    "source": "tr",
+    "word": "zengin",
+    "translation": "i pasur",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka shumë para ose pasuri; i kamur, e kundërta e 'i varfër'"
+    ],
+    "examples": [
+      {
+        "source": "Zengin bir dil. Zengin bir kitaplık. Zengin bir anlatım.",
+        "target": "Një gjuhë e pasur. Një bibliotekë e pasur. Një shprehje e pasur."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10796",
+    "source": "tr",
+    "word": "zevk",
+    "translation": "kënaqësi, shije",
+    "pos": "emër",
+    "senses": [
+      "Ndjenja e këndshme që zgjohet te njeriu kur realizohet apo kur mendohet diçka tërheqëse ose që të pëlqen"
+    ],
+    "examples": [
+      {
+        "source": "İçtik bu nadir içkiyi yıllarca kanmadık / Bir böyle zevke tek bir ömür yetmiyor yazık",
+        "target": "E pimë këtë pije të rrallë për vite me radhë e nuk u ngopëm / Mëkat, një jetë e vetme nuk mjafton për një kënaqësi të tillë"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14192",
+    "source": "tr",
+    "word": "zeytin",
+    "translation": "ulli",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'zeytin'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13108",
+    "source": "tr",
+    "word": "zihin",
+    "translation": "mendje",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'zihin'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14221",
+    "source": "tr",
+    "word": "zina",
+    "translation": "Zina",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'zina'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15119",
+    "source": "tr",
+    "word": "zirve",
+    "translation": "majë, Samiti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'zirve'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10695",
+    "source": "tr",
+    "word": "ziyaret",
+    "translation": "vizitë",
+    "pos": "emër",
+    "senses": [
+      "Shkuarja për të parë ose për t'u takuar me dikë; takim"
+    ],
+    "examples": [
+      {
+        "source": "Haftada iki gece ziyaretine giderdik.",
+        "target": "Shkonim për vizitë tek ai dy netë në javë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10173",
+    "source": "tr",
+    "word": "zor",
+    "translation": "i vështirë",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që bëhet me mundim ose me vështirësi; e kundërta e i lehtë"
+    ],
+    "examples": [
+      {
+        "source": "Sabır güzel, faydalı fakat zor şeydir.",
+        "target": "Durimi është gjë e bukur dhe e dobishme, por e vështirë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10997",
+    "source": "tr",
+    "word": "zorla",
+    "translation": "me zor, me dhunë",
+    "pos": "ndajfolje",
+    "senses": [
+      "Duke përdorur forcën; dhunshëm"
+    ],
+    "examples": [
+      {
+        "source": "Ekrem'i zorla yatıştırıp bizim eve götürdüm.",
+        "target": "E qetësova Ekremin me zor dhe e dërgova te shtëpia jonë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11621",
+    "source": "tr",
+    "word": "zorlu",
+    "translation": "i ashpër, i rreptë, i fortë",
+    "pos": "mbiemër",
+    "senses": [
+      "Şiddetli, i fuqishëm"
+    ],
+    "examples": [
+      {
+        "source": "Sanırım zorlu bir kış yaklaşıyor.",
+        "target": "Mendoj se po afrohet një dimër i ashpër."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16112",
+    "source": "tr",
+    "word": "zulüm",
+    "translation": "shtypje, përndjekje",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'zulüm'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18381",
+    "source": "tr",
+    "word": "zum",
+    "translation": "zum",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'zum'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16182",
+    "source": "tr",
+    "word": "zurna",
+    "translation": "Curla",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'zurna'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16449",
+    "source": "tr",
+    "word": "zümrüt",
+    "translation": "Smeraldi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'zümrüt'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16618",
+    "source": "tr",
+    "word": "zürafa",
+    "translation": "Giraffa",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'zürafa'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14215",
+    "source": "tr",
+    "word": "zırh",
+    "translation": "armatura",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'zırh'."
+    ],
+    "examples": [],
+    "derivatives": []
   }
 ]

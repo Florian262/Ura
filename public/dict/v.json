@@ -1,72 +1,673 @@
 [
   {
-    "id": "dict-tr-67",
+    "id": "dict-tr-14137",
+    "source": "tr",
+    "word": "vadi",
+    "translation": "luginë, Vadi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'vadi'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12024",
+    "source": "tr",
+    "word": "vaftiz",
+    "translation": "Pagëzimi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'vaftiz'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16975",
+    "source": "tr",
+    "word": "vahiy",
+    "translation": "Apokalipsi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'vahiy'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10933",
+    "source": "tr",
+    "word": "vahşi",
+    "translation": "i egër, i jashtëm",
+    "pos": "mbiemër",
+    "senses": [
+      "Yabani"
+    ],
+    "examples": [
+      {
+        "source": "Adada vahşi bir kabile varmış, dikkatli davranalım.",
+        "target": "Paska një fis të egër në ishull, le të silremi me kujdes."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14121",
+    "source": "tr",
+    "word": "vajina",
+    "translation": "Vagina",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'vajina'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10451",
+    "source": "tr",
+    "word": "vakit",
+    "translation": "kohë, vakt",
+    "pos": "emër",
+    "senses": [
+      "Koha"
+    ],
+    "examples": [
+      {
+        "source": "Mevsim mütehayyil, vakit akşamdı Bebek'te.",
+        "target": "Stina ishte melankolike, koha ishte mbrëmje në Bebek."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16247",
+    "source": "tr",
+    "word": "vakum",
+    "translation": "zbrazëti",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'vakum'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15394",
+    "source": "tr",
+    "word": "vakıf",
+    "translation": "Vakëfi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'vakıf'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11524",
+    "source": "tr",
+    "word": "vali",
+    "translation": "vali, guvernator",
+    "pos": "emër",
+    "senses": [
+      "Zyrtari administrativ me autoritetin më të lartë që përfaqëson shtetin në një provincë (prefekturë)"
+    ],
+    "examples": [
+      {
+        "source": "Validen sert bir emir aldım.",
+        "target": "Mora një urdhër të rreptë nga valiu."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11361",
+    "source": "tr",
+    "word": "vampir",
+    "translation": "vampir",
+    "pos": "emër",
+    "senses": [
+      "Krijesë mitologjike që besohet se thith gjakun e njerëzve"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11239",
+    "source": "tr",
+    "word": "Van",
+    "translation": "Van",
+    "pos": "emër",
+    "senses": [
+      "Një nga provincat e Turqisë e vendosur në Rajonin e Anatolisë Lindore"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16051",
+    "source": "tr",
+    "word": "vanilya",
+    "translation": "Vanilja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'vanilya'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10011",
+    "source": "tr",
+    "word": "var",
+    "translation": "ka, ekziston",
+    "pos": "mbiemër",
+    "senses": [
+      "Ajo që ekziston, që ndodhet në univers ose në mendim, e kundërta e 'nuk ka'"
+    ],
+    "examples": [
+      {
+        "source": "Elimizden alınan şeyler bütün varımız ve bütün varlığımızdır.",
+        "target": "Gjërat që na janë marrë janë e gjithë pasuria dhe e gjithë qenia jonë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12721",
+    "source": "tr",
+    "word": "varlık",
+    "translation": "entitet",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'varlık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18115",
+    "source": "tr",
+    "word": "varoluş",
+    "translation": "ekzistencë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'varoluş'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17908",
+    "source": "tr",
+    "word": "varoş",
+    "translation": "Periferia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'varoş'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14849",
+    "source": "tr",
+    "word": "varsayım",
+    "translation": "hipotezë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'varsayım'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15133",
+    "source": "tr",
+    "word": "vasiyet",
+    "translation": "Testamenti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'vasiyet'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13357",
+    "source": "tr",
+    "word": "vatan",
+    "translation": "mëmëdhe",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'vatan'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15265",
+    "source": "tr",
+    "word": "vatandaşlık",
+    "translation": "Shtetësia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'vatandaşlık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10294",
+    "source": "tr",
+    "word": "vay",
+    "translation": "ua, obo",
+    "pos": "pasthirrmë",
+    "senses": [
+      "Fjalë që shpreh habitje ose çudi"
+    ],
+    "examples": [
+      {
+        "source": "Vay gülüm! Nereden bu geliş?",
+        "target": "Ua, o ylli im! Nga po na vjen kështu?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10003",
+    "source": "tr",
+    "word": "ve",
+    "translation": "dhe",
+    "pos": "lidhëz",
+    "senses": [
+      "Fjalë që vendoset midis dy fjalëve ose dy fjalive për të treguar se ka një lidhje mes tyre"
+    ],
+    "examples": [
+      {
+        "source": "Galiba bir vehme kapılıyorum ve galiba bir hastalık beynimi kemiriyor.",
+        "target": "Më duket se po më kap një dyshim dhe sikur një sëmundje po më bren trurin."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13989",
+    "source": "tr",
+    "word": "veba",
+    "translation": "Murtaja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'veba'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11056",
+    "source": "tr",
+    "word": "veda",
+    "translation": "përshëndetje lamtumire, lamtumirë",
+    "pos": "emër",
+    "senses": [
+      "Urimi i shëndetit dhe përshëndetja me njëri-tjetrin gjatë ndarjes (largimit)"
+    ],
+    "examples": [
+      {
+        "source": "Zaten ayrılması sırasında elimi sıkışı, yüzüme bakışı, acelesi ve tuhaflığı bir vedaya benziyordu.",
+        "target": "Sidoqoftë shtrëngimi i dorës sime gjatë largimit të tij, shikimi në fytyrën time, nxitimi dhe çuditëria e tij i përngjanin një lamtumire."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18812",
+    "source": "tr",
+    "word": "vektör",
+    "translation": "vektori",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'vektör'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15558",
+    "source": "tr",
+    "word": "veli",
+    "translation": "Evliatë e allahut",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'veli'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10317",
+    "source": "tr",
+    "word": "verdi",
+    "translation": "prurje",
+    "pos": "emër",
+    "senses": [
+      "Sasia e ujit që kalon nëpër një tub brenda një sekonde"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10653",
+    "source": "tr",
+    "word": "verecek",
+    "translation": "detyrim, para për të dhënë",
+    "pos": "emër",
+    "senses": [
+      "Borxh, e kundërta e 'parave për të marrë'"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11508",
+    "source": "tr",
+    "word": "vergi",
+    "translation": "tatim, taksë",
+    "pos": "emër",
+    "senses": [
+      "Paratë që qeveria ose administratat lokale mbledhin nga kushdo sipas ligjeve, në mënyrë të drejtpërdrejtë ose të tërthortë duke i shtuar mbi çmimet e disa mallrave, për t'u shpenzuar për shërbimet publike"
+    ],
+    "examples": [
+      {
+        "source": "Önce vergiyi kolay tahsil etmenin vesilesini hazırlasınlar.",
+        "target": "Së pari le të përgatisin mundësinë (mjetin) për ta vjelë tatimin lehtësisht."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11614",
+    "source": "tr",
+    "word": "veri",
+    "translation": "të dhëna, datë, done",
+    "pos": "emër",
+    "senses": [
+      "Elementi kryesor që shërben si bazë për një kërkim, një diskutim apo një gjykim; done"
+    ],
+    "examples": [
+      {
+        "source": "Bir romanın verileri.",
+        "target": "Të dhënat e një romani."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10551",
+    "source": "tr",
+    "word": "verici",
+    "translation": "transmetues, dhënës",
+    "pos": "emër",
+    "senses": [
+      "Ai që jep diçka ose që ka prirje për të dhënë"
+    ],
+    "examples": [
+      {
+        "source": "Cahilden kral olur ama tarihe vesika verici olmaz.",
+        "target": "Nga një i paditur mund të bëhet mbret, por nuk mund të bëhet një dokumentues që i jep dëshmi historisë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10636",
+    "source": "tr",
+    "word": "verme",
+    "translation": "dhënie, të dhënit",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të dhënit të diçkaje dikujt"
+    ],
+    "examples": [
+      {
+        "source": "Ay başlarında borçlarımızı vermeye annemle birlikte çıkardık.",
+        "target": "Në fillim të muajve dilnim bashkë me nënën time për të dhënë (paguar) borxhet tona."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10377",
     "source": "tr",
     "word": "vermek",
     "translation": "jap",
-    "pos": "folje",
-    "inflection": "(-i / -e)",
-    "notes": "Kërkon dhanoren (-e) për marrësin dhe kallzoren (-i) për gjënë që jepet.",
+    "pos": "emër",
     "senses": [
-      "Lëshoj ose dorëzoj diçka në duart e dikujt tjetër.",
-      "Paguaj ose shpenzoj një shumë.",
-      "Krijoj ose shkaktoj një rezultat (p.sh. jap vendim, jap provim)."
+      "Të transferosh ose të dërgosh te dikush diçka që e ke mbi vete, në dorë ose pranë vetes; dhuroj"
     ],
     "examples": [
       {
-        "source": "Kitabı ona vermek",
-        "target": "Ia jap atij librin (librin atij jap)"
-      },
-      {
-        "source": "Karar vermek",
-        "target": "Jap vendim (vendos)"
-      },
-      {
-        "source": "Borç vermek",
-        "target": "Jap hua (borxh)"
+        "source": "Okumadığım zaman tavukların bahçesindeyim, yemlerini ben veririm.",
+        "target": "Kur nuk lexoj, ndodhem te kopshti i pulave, ushqimin (kokrrat) ua jap unë."
       }
     ],
-    "derivatives": [
-      {
-        "word": "veri",
-        "translation": "të dhëna (data)",
-        "pos": "emër"
-      },
-      {
-        "word": "verici",
-        "translation": "dhënës, transmetues",
-        "pos": "emër"
-      },
-      {
-        "word": "verimli",
-        "translation": "produktiv, pjellor",
-        "pos": "mbiemër"
-      }
-    ]
+    "derivatives": []
   },
   {
-    "id": "dict-tr-68",
+    "id": "dict-tr-10230",
     "source": "tr",
-    "word": "vatan",
-    "translation": "atdhe, vatan",
-    "pos": "emër",
-    "inflection": "-ı",
-    "is_balkan": true,
+    "word": "veya",
+    "translation": "ose, ose edhe",
+    "pos": "lidhëz",
     "senses": [
-      "Vendi ose shteti ku një person ka lindur dhe ka lidhje qytetare e historike; atdhe."
+      "Fjalë që vendoset përpara opsionit të dytë për të treguar dy gjëra që ndonëse janë të ndara, vlerësohen njësoj; apo"
     ],
     "examples": [
       {
-        "source": "Vatan sevgisi",
-        "target": "Dashuria ndaj atdheut"
+        "source": "Ben Atatürk'le üç veya iki defa karşılaştım.",
+        "target": "Unë u takova me Ataturkun tre ose dy herë."
       }
     ],
-    "derivatives": [
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17126",
+    "source": "tr",
+    "word": "vezir",
+    "translation": "mbretëresha",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'vezir'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12957",
+    "source": "tr",
+    "word": "vicdan",
+    "translation": "ndërgjegjja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'vicdan'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11173",
+    "source": "tr",
+    "word": "video",
+    "translation": "video",
+    "pos": "emër",
+    "senses": [
+      "Varg imazhesh lëvizëse të regjistruara në shirit magnetik ose të përpilesuara në mënyrë dixhitale"
+    ],
+    "examples": [
       {
-        "word": "vatandaş",
-        "translation": "shtetas, bashkëqytetar",
-        "pos": "emër"
+        "source": "Birazdan annem babam yatınca video seyrederiz.",
+        "target": "Pas pak, sapo nëna dhe babai im të biejnë të flenë, ne do të shikojmë video."
       }
-    ]
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14525",
+    "source": "tr",
+    "word": "villa",
+    "translation": "Vila (shtëpi)",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'villa'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16201",
+    "source": "tr",
+    "word": "vinç",
+    "translation": "Vinçi (makinë)",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'vinç'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11743",
+    "source": "tr",
+    "word": "virüs",
+    "translation": "virus",
+    "pos": "emër",
+    "senses": [
+      "Parazit mjaft i vogël shkaktar sëmundjesh, më i vogël se bakteret, i cili është i detyruar të futet brenda një qelize tjetër për të jetuar dhe mund të dallohet vetëm me mikroskop elektronik"
+    ],
+    "examples": [
+      {
+        "source": "Benliğinin bir tarafına sokulup ölü yaşayan bir virüs Seher’in aşkı gibi müsait bir zemin bulunca canlanmış.",
+        "target": "Një virus që qëndronte i fshehur dhe jetonte si i vdekur në një anë të qenies së saj, u gjallërua fiks kur gjeti një terren të përshtatshëm si dashuria e Seherit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11353",
+    "source": "tr",
+    "word": "viski",
+    "translation": "viski",
+    "pos": "emër",
+    "senses": [
+      "Pije alkoolike e përftuar nga distilimi i brumit të fermentuar të drithërave"
+    ],
+    "examples": [
+      {
+        "source": "Baylar yemek salonuna bitişik, kapısı deniz üstündeki balkona açılan Amerikan barında bir taraftan birer viski içiyor, bir taraftan iş konuşuyordu.",
+        "target": "Zotërinjtë po pinin nga një viski dhe nga ana tjetër po diskutonin për biznes në barin amerikan që ishte ngjitur me sallën e ngrënies dhe dera e të cilit hapej në ballkonin përmbi det."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14618",
+    "source": "tr",
+    "word": "vitamin",
+    "translation": "vitaminat",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'vitamin'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15345",
+    "source": "tr",
+    "word": "Vize",
+    "translation": "vizë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'Vize'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17833",
+    "source": "tr",
+    "word": "vişne",
+    "translation": "Vishnja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'vişne'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15964",
+    "source": "tr",
+    "word": "voleybol",
+    "translation": "Volejboll",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'voleybol'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11576",
+    "source": "tr",
+    "word": "vurmak",
+    "translation": "godas, rrah, qëlloj",
+    "pos": "emër",
+    "senses": [
+      "Të përplasësh me shpejtësi dorën ose një objekt që ke në dorë mbi një vend ose mbi një person; çak bëj"
+    ],
+    "examples": [
+      {
+        "source": "Masaya vurmak. Birinin başına vurmak.",
+        "target": "Të godasësh tryezën. Të godasësh dikë në kokë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11963",
+    "source": "tr",
+    "word": "vuruş",
+    "translation": "goditje, rrahje (e zemrës)",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të goditurit"
+    ],
+    "examples": [
+      {
+        "source": "Bazen kalbinin hafif ve sık çarpıntıları arasında ansızın tokmak gibi vuruşlar var.",
+        "target": "Nganjëherë, mes rrahjeve të lehta dhe të shpeshta të zemrës së tij, ka goditje të papritura si tokmak."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11194",
+    "source": "tr",
+    "word": "vücut",
+    "translation": "trup, shtat",
+    "pos": "emër",
+    "senses": [
+      "Tërësia e formuar nga trupi, koka, krahët dhe këmbët te njeriu ose kafshët; ten"
+    ],
+    "examples": [
+      {
+        "source": "Koltukta vücudunu bir yandan bir yana çevirirken âdeta inliyor.",
+        "target": "Pothuajse po stërmundohet (stërstkon) ndërsa kthen trupin e vet nga njëra anë në tjetrën në kolltuk."
+      }
+    ],
+    "derivatives": []
   }
 ]

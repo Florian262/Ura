@@ -100,17 +100,26 @@ export const ChapterContainer: React.FC = () => {
 
   // Load active section on mount (Pristine Session Scroll Recovery Coordinator)
   React.useEffect(() => {
-    if (activeSection && activeSection !== 'reading') {
-      setManualScroll(); // Temporarily suspend the intersection observer
-      const timer = setTimeout(() => {
-        const element = document.getElementById(activeSection);
-        if (element) {
-          const yOffset = window.innerWidth < 768 ? -120 : -80;
-          const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
-          window.scrollTo({ top: y, behavior: 'auto' }); // Instant scroll for seamless coordinate restoration
-        }
-      }, 150); // Small delay to guarantee that DOM elements are fully loaded
-      return () => clearTimeout(timer);
+    if (currentChapter) {
+      if (activeSection && activeSection !== 'reading') {
+        setManualScroll(); // Temporarily suspend the intersection observer
+        const timer = setTimeout(() => {
+          const element = document.getElementById(activeSection);
+          if (element) {
+            const yOffset = window.innerWidth < 768 ? -120 : -80;
+            const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+            window.scrollTo({ top: y, behavior: 'auto' }); // Instant scroll for seamless coordinate restoration
+          }
+        }, 150); // Small delay to guarantee that DOM elements are fully loaded
+        return () => clearTimeout(timer);
+      } else {
+        // Scroll to the absolute top of the page when opening a new chapter
+        setManualScroll(); // Temporarily suspend the intersection observer
+        const timer = setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'auto' });
+        }, 150); // Small delay to guarantee layout is ready
+        return () => clearTimeout(timer);
+      }
     }
   }, [currentChapter?.id]);
 

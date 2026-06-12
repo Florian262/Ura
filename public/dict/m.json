@@ -1,89 +1,2487 @@
 [
   {
-    "id": "dict-al-47",
-    "source": "al",
-    "word": "mik",
-    "translation": "arkadaş, dost",
-    "pos": "emër",
-    "inflection": "-u",
-    "notes": "Gjinia mashkullore. Trajta e shquar: miku. Shumës: miq. Forma femërore: mikeshë.",
-    "senses": [
-      "Njeri që lidhet me një tjetër me ndjenjë dashurie, besimi e respekti të ndërsjellë; shok.",
-      "Njeri që vjen për vizitë në shtëpi; mysafir.",
-      "Mbështetës ose dashamirës i një çështjeje."
-    ],
-    "examples": [
-      {
-        "source": "Mik i ngushtë",
-        "target": "Yakın arkadaş"
-      },
-      {
-        "source": "Bëj mik",
-        "target": "Dost edinmek"
-      },
-      {
-        "source": "Mik shtëpie",
-        "target": "Aile dostu (aile misafiri)"
-      }
-    ],
-    "derivatives": [
-      {
-        "word": "miqësor",
-        "translation": "dostça, cana yakın",
-        "pos": "mbiemër"
-      },
-      {
-        "word": "miqësi",
-        "translation": "dostluk, arkadaşlık",
-        "pos": "emër"
-      },
-      {
-        "word": "miqësisht",
-        "translation": "dostane",
-        "pos": "ndajfolje"
-      }
-    ]
-  },
-  {
-    "id": "dict-tr-53",
+    "id": "dict-tr-10868",
     "source": "tr",
-    "word": "masa",
-    "translation": "tryezë, tavolinë",
-    "pos": "emër",
-    "inflection": "-yı",
+    "word": "maalesef",
+    "translation": "pajto, për fat të keq",
+    "pos": "ndajfolje",
     "senses": [
-      "Mobilie me një sipërfaqe të rrafshët e të mbështetur mbi këmbë, rreth së cilës ulemi."
+      "Po thonë duke ndier keqardhje, mjerisht"
     ],
     "examples": [
       {
-        "source": "Yemek masası",
-        "target": "Tavolinë ngrënieje"
-      },
-      {
-        "source": "Çalışma masası",
-        "target": "Tavolinë pune"
+        "source": "Hatta maalesef bu sevgide bir çocuk içliliği bile vardır.",
+        "target": "Madje, për fat të keq, në këtë dashuri ekziston mjaft ndjeshmëri fëminore."
       }
-    ]
+    ],
+    "derivatives": []
   },
   {
-    "id": "dict-tr-54",
+    "id": "dict-tr-12303",
+    "source": "tr",
+    "word": "macera",
+    "translation": "aventura",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'macera'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12782",
+    "source": "tr",
+    "word": "madalya",
+    "translation": "medalja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'madalya'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10932",
+    "source": "tr",
+    "word": "madam",
+    "translation": "madamë, zonjë",
+    "pos": "emër",
+    "senses": [
+      "Titull që u jepet grave të martuara në Francë"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11298",
+    "source": "tr",
+    "word": "madde",
+    "translation": "lëndë, çështje, nen",
+    "pos": "emër",
+    "senses": [
+      "Objekt që mund të perceptohet me anë të shqisave"
+    ],
+    "examples": [
+      {
+        "source": "Cam yapmak için silisli maddeler kullanılır.",
+        "target": "Për të prodhuar qelq përdoren lëndë me silic."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10764",
+    "source": "tr",
+    "word": "madem",
+    "translation": "madje, masi, masi që",
+    "pos": "lidhëz",
+    "senses": [
+      "Fjalë që vendoset në fillim të fjalisë për të treguar shkak në kuptimet 'pasi që, meqë'"
+    ],
+    "examples": [
+      {
+        "source": "Bakma sen, madem tanıdıkmış bulur bir çaresini.",
+        "target": "Mos shiko ti, masi qenka i njohur, do t'i gjejë një zgjidhje."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12513",
+    "source": "tr",
+    "word": "Maden",
+    "translation": "Miniera",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'Maden'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17291",
+    "source": "tr",
+    "word": "madencilik",
+    "translation": "Miniera",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'madencilik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12916",
+    "source": "tr",
+    "word": "mahalle",
+    "translation": "lagje, Mëhalla",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mahalle'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10899",
+    "source": "tr",
+    "word": "mahkeme",
+    "translation": "gjykatë, gjyqi",
+    "pos": "emër",
+    "senses": [
+      "Vendi ku përmbushet detyra gjyqësore nga një gjykatës ose nga një kolegj i përbërë ndonjëherë nga prokurorë dhe gjykatës"
+    ],
+    "examples": [
+      {
+        "source": "Mahkemenin elinde bu iddiaları yalanlayacak bir belge yoktu.",
+        "target": "Gykata nuk kishte në dorë asnjë dokument që do t'i përgënjeshtronte këto pretendime."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11326",
+    "source": "tr",
+    "word": "mahkûm",
+    "translation": "i dënuar, i pranguar",
+    "pos": "mbiemër",
+    "senses": [
+      "Hükümlü"
+    ],
+    "examples": [
+      {
+        "source": "Müebbet hapse mahkûm bir suçlu.",
+        "target": "Një fajtor i dënuar me burgim të përjetshëm."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17374",
+    "source": "tr",
+    "word": "mahşer",
+    "translation": "Ringjallja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mahşer'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10722",
+    "source": "tr",
+    "word": "majesteleri",
+    "translation": "madhëria e tij/saj",
+    "pos": "emër",
+    "senses": [
+      "Fjalë thirrëse dhe respekti që përdoret ndaj krerëve të shteteve (mbretërve)"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12756",
+    "source": "tr",
+    "word": "makale",
+    "translation": "artikulli, artikull shkencor",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'makale'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18210",
+    "source": "tr",
+    "word": "makam",
+    "translation": "pozitë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'makam'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12880",
+    "source": "tr",
+    "word": "makarna",
+    "translation": "pasta",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'makarna'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13404",
+    "source": "tr",
+    "word": "makas",
+    "translation": "Gërshëra",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'makas'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16936",
+    "source": "tr",
+    "word": "makbuz",
+    "translation": "fatura",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'makbuz'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11382",
+    "source": "tr",
+    "word": "makine",
+    "translation": "makinë, mekanizëm",
+    "pos": "emër",
+    "senses": [
+      "Tërësia e mekanizmave të përbërë nga rrotat, dhëmbëzat dhe pjesë të ndryshme që shërbejnë për të shndërruar çdo lloj energjie në një tjetër, ose për të kryer një punë apo efekt duke shfrytëzuar një forcë të caktuar"
+    ],
+    "examples": [
+      {
+        "source": "Tıraş makineleri ile usturalar çekmecelerde dururdu.",
+        "target": "Makinat e rrojës dhe breshat e rrojës qëndronin nëpër sirtarë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11899",
+    "source": "tr",
+    "word": "makul",
+    "translation": "i arsyeshëm, logjik",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që mund të miratohet ose pranohet nga mendja, që i përgjigjet arsyes"
+    ],
+    "examples": [
+      {
+        "source": "Hissî olan şeyler hissedene, makul olan şeyler akla göre nispidir.",
+        "target": "Gjërat që janë ndjenjore janë relative sipas atij që ndien, ndërsa gjërat e arsyeshme (logjike) janë relative sipas mendjes."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10711",
+    "source": "tr",
+    "word": "mal",
+    "translation": "mall, pasuri",
+    "pos": "emër",
+    "senses": [
+      "Tërësia e pasurive të luajtshme ose të paluajtshme që ndodhen nën pronësinë e një personi fizik ose juridik"
+    ],
+    "examples": [
+      {
+        "source": "Mal vardı, mülk vardı. At vardı, araba vardı.",
+        "target": "Kishte mall, kishte pasuri. Kishte kuaj, kishte makina."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11911",
+    "source": "tr",
+    "word": "malzeme",
+    "translation": "materiale, lëndë e parë",
+    "pos": "emër",
+    "senses": [
+      "Çdo lloj objekti i nevojshëm për kryerjen e një pune"
+    ],
+    "examples": [
+      {
+        "source": "Hemen her sokak başında münakaşalar oluyor, geceleri yarı gizli sevkiyat yapılıyor, malzeme gönderiliyordu.",
+        "target": "Pothuajse në çdo kryqëzim rruge ndodhnin debate, netëve bëheshin dërgesa gjysmë të fshehura, dhe dërgoheshin materiale."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16060",
+    "source": "tr",
+    "word": "manastır",
+    "translation": "Manastiri",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'manastır'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18612",
+    "source": "tr",
+    "word": "mandarin",
+    "translation": "mandarini",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mandarin'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14920",
+    "source": "tr",
+    "word": "manga",
+    "translation": "Manga",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'manga'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14537",
+    "source": "tr",
+    "word": "mangal",
+    "translation": "skarë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mangal'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15975",
+    "source": "tr",
+    "word": "mango",
+    "translation": "mango",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mango'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15795",
+    "source": "tr",
+    "word": "manikür",
+    "translation": "Manikere",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'manikür'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13895",
+    "source": "tr",
+    "word": "manken",
+    "translation": "mannequin",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'manken'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12502",
+    "source": "tr",
+    "word": "mantar",
+    "translation": "Kërpudhat",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mantar'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12971",
+    "source": "tr",
+    "word": "mantık",
+    "translation": "logjikë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mantık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10600",
+    "source": "tr",
+    "word": "mantıklı",
+    "translation": "i logjikshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që u përgjigjet rregullave të logjikës ose të arsyes; logjik"
+    ],
+    "examples": [
+      {
+        "source": "Mantıklı, senin gibi ezilip büzülen şey için bu mantıklı yorum inanılmaz.",
+        "target": "I logjikshëm, për një qenie që dorëzohet e struket si ty, ky interpretim i logjikshëm është i pabesueshëm."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11340",
+    "source": "tr",
+    "word": "manyak",
+    "translation": "manyak, i marrë",
+    "pos": "mbiemër",
+    "senses": [
+      "Personi që vuante nga sëmundja e manisë"
+    ],
+    "examples": [
+      {
+        "source": "Daha çok kır, hadi manyak daha çok kır!..",
+        "target": "Thyej më shumë, hajde manyak thyej edhe më shumë!.."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10718",
+    "source": "tr",
+    "word": "mark",
+    "translation": "markë",
+    "pos": "emër",
+    "senses": [
+      "Ish-njësia monetare gjermane"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12377",
+    "source": "tr",
+    "word": "marka",
+    "translation": "brendi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'marka'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10832",
+    "source": "tr",
+    "word": "martin",
+    "translation": "martinë",
+    "pos": "emër",
+    "senses": [
+      "Një lloj pushke që qëllon me një plumb të vetëm"
+    ],
+    "examples": [
+      {
+        "source": "At martini Debreli Hasan, dağlar inlesin / Drama mahpusunda, aman dostlar dinlesin",
+        "target": "Shtie me martinë o Debreli Hasan, le të bëjnë jehonë malet / Në burgun e Dramës, aman le të dëgjojnë miqtë"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11671",
+    "source": "tr",
+    "word": "maruz",
+    "translation": "i ekspozuar, ballë për ballë",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ndodhet nën efektin e një ngjarjeje ose situate, ose që ndodhet përballë saj"
+    ],
+    "examples": [
+      {
+        "source": "Herkes, her an müthiş bir tehlikeye maruzdur.",
+        "target": "Kushdo, në çdo çast është i ekspozuar ndaj një rreziku të tmerrshëm."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11837",
+    "source": "tr",
+    "word": "marş",
+    "translation": "marsh (muzikë)",
+    "pos": "emër",
+    "senses": [
+      "Pjesë muzikore, ritmi i së cilës të kujton hapat e një personi ose të një grupi që marshon (ecën drejt)"
+    ],
+    "examples": [
+      {
+        "source": "Bu şiir ya da manzumeyi marş biçimine bile sokmuştur.",
+        "target": "Këtë poezi apo manzumë e ka futur madje edhe në formë marshi."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12133",
+    "source": "tr",
+    "word": "masaj",
+    "translation": "Masazhi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'masaj'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13068",
+    "source": "tr",
+    "word": "masal",
+    "translation": "përralla",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'masal'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11801",
+    "source": "tr",
+    "word": "mason",
+    "translation": "mason",
+    "pos": "emër",
+    "senses": [
+      "Anëtar i shoqërisë së masonërisë; farmason"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13033",
+    "source": "tr",
+    "word": "mastürbasyon",
+    "translation": "Masturbim",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mastürbasyon'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10744",
+    "source": "tr",
+    "word": "masum",
+    "translation": "i pafajshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që është pa faj, i pastër nga mëkatet"
+    ],
+    "examples": [
+      {
+        "source": "Melek kadar masum / Yok canım şeytan kadar şirret",
+        "target": "I pafajshëm sa një engjëll / Jo mor, i prapë sa një djall"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11730",
+    "source": "tr",
+    "word": "matematik",
+    "translation": "matematikë",
+    "pos": "emër",
+    "senses": [
+      "Emri i përbashkët i shkencave si aritmetika, algjebra, gjeometria, të cilat ekzaminojnë veçoritë e sasisë duke u bazuar mbi numrat dhe matjet; riyaziye"
+    ],
+    "examples": [
+      {
+        "source": "Eski yorumcular daha ileri gitmiş, evrenin yaratılmasında ve doğanın kurallarında bile matematik bir öz bulmuşlardır.",
+        "target": "Komentuesit e vjetër kanë shkuar më tej, kanë gjetur një thelb matematik madje edhe në krijimin e universit dhe në rregullat e natyrës."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17170",
+    "source": "tr",
+    "word": "matematikçi",
+    "translation": "matematikan",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'matematikçi'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16084",
+    "source": "tr",
+    "word": "matkap",
+    "translation": "makinë shpimi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'matkap'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10613",
+    "source": "tr",
+    "word": "mavi",
+    "translation": "i kaltër, blu",
+    "pos": "emër",
+    "senses": [
+      "Ngjyra midis së gjelbrës dhe vjollcës, ngjyra e qiellit pa re"
+    ],
+    "examples": [
+      {
+        "source": "Düşsün olur mu toprağa göçmüş cihan gibi / Sönsün o mavi gözleri bir asuman gibi",
+        "target": "A është e mundur që ai sy të bjerë në tokë si një botë e shkuar? / Të fiket ai sy i kaltër si të ishte një qiell"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11674",
+    "source": "tr",
+    "word": "maya",
+    "translation": "majá (këngë popullore)",
+    "pos": "emër",
+    "senses": [
+      "Një lloj kënge popullore nga lloji i melodive të gjata"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18360",
+    "source": "tr",
+    "word": "maydanoz",
+    "translation": "Majdanozi, majdanoz",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'maydanoz'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11281",
+    "source": "tr",
+    "word": "maymun",
+    "translation": "majmun",
+    "pos": "emër",
+    "senses": [
+      "Kafshë me bisht, që ka katër këmbë por mund të ecë edhe mbi dy këmbë, e cila jeton në grup nëpër pyje; primat"
+    ],
+    "examples": [
+      {
+        "source": "Bu maymunların tarlalara hiçbir zarar vermedikleri ve şehir hayatına alışık oldukları görülür.",
+        "target": "Po shihet se këta majmunë nuk u shkaktojnë asnjë dëm arrave dhe janë të mësuar me jetën e qytetit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15933",
+    "source": "tr",
+    "word": "mayonez",
+    "translation": "majonezi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mayonez'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14034",
+    "source": "tr",
+    "word": "mayın",
+    "translation": "Mina",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mayın'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11277",
+    "source": "tr",
+    "word": "maç",
+    "translation": "ndeshje, meç",
+    "pos": "emër",
+    "senses": [
+      "Karsılasmak, ndeshje sportive"
+    ],
+    "examples": [
+      {
+        "source": "Paris'te maça gitmek şöyle dursun, stadyumların yerini bile öğrenmek aklımdan geçmedi.",
+        "target": "Ku bëhet fjalë për të shkuar në ndeshje në Paris, as që më kaloi nga mendja të mësoja madje as vendin e stadiumeve."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12566",
+    "source": "tr",
+    "word": "mağara",
+    "translation": "shpella",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mağara'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11231",
+    "source": "tr",
+    "word": "maşa",
+    "translation": "mashë, dana zjarri",
+    "pos": "emër",
+    "senses": [
+      "Mjet metalik me dy krahë që shërben për të mbajtur zjarrin ose një objekt mjaft të nxehtë, apo për të përzier prushin"
+    ],
+    "examples": [
+      {
+        "source": "Kahveci ocaktan maşayı kapmış, o da fırlamıştı dışarı.",
+        "target": "Kafezhiu e rrëmbeu mashën nga vatra, e u hodh edhe ai jashtë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15755",
+    "source": "tr",
+    "word": "maşallah",
+    "translation": "Marshallah",
+    "pos": "pasthirrmë",
+    "senses": [
+      "Përkthim për fjalën 'maşallah'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11566",
+    "source": "tr",
+    "word": "me",
+    "translation": "blegërimë, amë",
+    "pos": "emër",
+    "senses": [
+      "Zëri që nxirret nga kafshët si delja, qengji etj."
+    ],
+    "examples": [
+      {
+        "source": "Kara koyun kuzular kuzulamaz / Me deme",
+        "target": "Sapo delja e zezë të pjellë qengjat / Mos thuaj blegërimë (me)"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11702",
+    "source": "tr",
+    "word": "mecbur",
+    "translation": "i detyruar",
+    "pos": "mbiemër",
+    "senses": [
+      "I ngarkuar me një detyrim në lidhje me një çështje, ai që duhet ta bëjë patjetër diçka; i shtrënguar"
+    ],
+    "examples": [
+      {
+        "source": "Biz toprağımızdan düşmanı atmaya mecburuz.",
+        "target": "Ne jemi të detyruar ta dëbojmë armikun nga toka jonë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13957",
+    "source": "tr",
+    "word": "meditasyon",
+    "translation": "Meditimi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'meditasyon'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13452",
+    "source": "tr",
+    "word": "mekanik",
+    "translation": "Mekaniku, mekanika",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mekanik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10756",
     "source": "tr",
     "word": "mektup",
-    "translation": "letër",
+    "translation": "letër, korrespondencë",
     "pos": "emër",
-    "inflection": "-u",
     "senses": [
-      "Mesazh i shkruar që i dërgohet dikujt me postë ose me dorë."
+      "Fletë letre e shkruar, e vendosur në zarf, që i dërgohet dikujt përgjithësisht përmes postës për të njoftuar, pyetur apo kërkuar diçka ose për të shprehur ndjenjat; name"
     ],
     "examples": [
       {
-        "source": "Mektup yazmak",
-        "target": "Shkruaj letër"
-      },
-      {
-        "source": "Mektup göndermek",
-        "target": "Dërgoj letër"
+        "source": "Mektubunda diyorsun ki gel gayri / Sütler kaymak tutar tutmaz ordayım",
+        "target": "Në letrën tënde thua 'eja tashmë' / Sapo qumështi të zërë kajmak, unë jam atje"
       }
-    ]
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11371",
+    "source": "tr",
+    "word": "melek",
+    "translation": "engjëll",
+    "pos": "emër",
+    "senses": [
+      "Qenie shpirtërore që besohet se ndërmjetëson midis Zotit dhe njeriut dhe që është krijuar nga drita; ferishte"
+    ],
+    "examples": [
+      {
+        "source": "Yanlarındaki kızlar ise sahici birer melekti.",
+        "target": "Ndërsa vajzat pranë tyre ishin secila nga një engjëll i vërtetë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18505",
+    "source": "tr",
+    "word": "meltem",
+    "translation": "Era e detit",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'meltem'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17588",
+    "source": "tr",
+    "word": "memeliler",
+    "translation": "Gjitarët",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'memeliler'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10354",
+    "source": "tr",
+    "word": "memnun",
+    "translation": "i kënaqur",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ndien gëzim, lumturi ose kënaqësi nga një ngjarje apo situatë e caktuar"
+    ],
+    "examples": [
+      {
+        "source": "Ben yine memnunum senden evladım / Sana ben bu bapta kusur bulmadım",
+        "target": "Unë përsëri jam i kënaqur nga ty, im bir / Unë nuk të gjeta ty ndonjë të metë në këtë çështje"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10753",
+    "source": "tr",
+    "word": "memur",
+    "translation": "nëpunës, zyrtar",
+    "pos": "emër",
+    "senses": [
+      "Personi që punon me pagë mujore në shërbimet shtetërore; zyrtar"
+    ],
+    "examples": [
+      {
+        "source": "Kasabaya gelen her yeni memur ilk olarak beni tanır.",
+        "target": "Çdo nëpunës i ri që vjen në qytezë, si fillim më njeh mua."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18310",
+    "source": "tr",
+    "word": "menekşe",
+    "translation": "Manushaqja, ngjyra vjollcë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'menekşe'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18244",
+    "source": "tr",
+    "word": "menenjit",
+    "translation": "meningjiti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'menenjit'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17192",
+    "source": "tr",
+    "word": "meni",
+    "translation": "Sperma",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'meni'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15858",
+    "source": "tr",
+    "word": "menzil",
+    "translation": "Menzili",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'menzil'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10213",
+    "source": "tr",
+    "word": "merak",
+    "translation": "kureshtje, merak",
+    "pos": "emër",
+    "senses": [
+      "Dëshira që ndien njeriu për të kuptuar ose për të mësuar diçka"
+    ],
+    "examples": [
+      {
+        "source": "Biraz sonra yine bazı sesler işittim / Merak ile merdivenin başına gittim",
+        "target": "Pas pak dëgjova përsëri disa zëra / Me kureshtje shkova në krye të shkallëve"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10078",
+    "source": "tr",
+    "word": "merhaba",
+    "translation": "përshëndetje",
+    "pos": "emër",
+    "senses": [
+      "Fjalë përshëndetëse; selam"
+    ],
+    "examples": [
+      {
+        "source": "Sıkı fıkı dostluklarını değil, şöyle uzaktan bile merhabalarını istemiyorum.",
+        "target": "Nuk dua miqësinë e tyre të ngushtë, madje as përshëndetjet e tyre nga larg."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11583",
+    "source": "tr",
+    "word": "merhamet",
+    "translation": "mëshirë, dhembshuri",
+    "pos": "emër",
+    "senses": [
+      "Trishtimi ose keqardhja që ndiehet për shkak të gjendjes së keqe ku ndodhet një person ose një krijesë tjetër"
+    ],
+    "examples": [
+      {
+        "source": "Hâlbuki Türk mazisi, o devirlerin idrakine göre şefkatin, merhametin yüzlerce abidesini vücuda getirmiştir.",
+        "target": "Mirëpo e kaluara turke, sipas konceptit të atyre epokave, ka nxjerrë në dritë me qindra monumente të dhembshurisë dhe të mëshirës."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11343",
+    "source": "tr",
+    "word": "merkez",
+    "translation": "qendër, seli drejtuese",
+    "pos": "emër",
+    "senses": [
+      "Vendi i menaxhimit të një organizate ose të një rajoni"
+    ],
+    "examples": [
+      {
+        "source": "Er eğitim merkezi.",
+        "target": "Qendra e stërvitjes së ushtarëve të thjeshtë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10880",
+    "source": "tr",
+    "word": "merkezî",
+    "translation": "qendror, qendrore",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ndodhet në qendër, që formon qendrën"
+    ],
+    "examples": [
+      {
+        "source": "Dur bakalım, biraz daha merkezî mahallelere yaklaşalım, diyordu.",
+        "target": "Prit pak, le t'u afrohemi edhe pak më shumë lagjeve qendrore, thoshte."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15843",
+    "source": "tr",
+    "word": "mermer",
+    "translation": "mermer",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mermer'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11447",
+    "source": "tr",
+    "word": "mermi",
+    "translation": "predhë, predha, projektil",
+    "pos": "emër",
+    "senses": [
+      "Lënda plasëse ose shpuese që hidhet me anë të armëve të zjarrit"
+    ],
+    "examples": [
+      {
+        "source": "Tarlalara gömülmüş büyük gemi mermilerini, yattıkları yerlerden çıkararak tetkik ettik",
+        "target": "I ekzaminuam predhat e mëdha të anijeve që ishin groposur nëpër ara, duke i nxrrë nga vendet ku qëndronin"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11997",
+    "source": "tr",
+    "word": "mesafe",
+    "translation": "distancë, largësi, hapësirë",
+    "pos": "emër",
+    "senses": [
+      "Ara, distancë"
+    ],
+    "examples": [
+      {
+        "source": "Etrafı görememek, belki gözleri oyalayacak şeyleri bulamamak bu mesafeye sabır tüketen bir uzayış verdi.",
+        "target": "Pamundësia për të parë rrethin, e mbase pamundësia për të gjetur gjërat që do t'i tërhiqnin sytë, i dha kësaj distance një zgjatje që e konsumonte durimin."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10453",
+    "source": "tr",
+    "word": "mesaj",
+    "translation": "mesazh",
+    "pos": "emër",
+    "senses": [
+      "Deklaratë apo njoftim që një udhëheqës shteti ose një zyrtar përgjegjës u dërgon personave përkatës për shkak të një ngjarjeje ose situate të caktuar"
+    ],
+    "examples": [
+      {
+        "source": "Kendisi ile bir mesaj yollamak istiyorum.",
+        "target": "Dëshiroj të dërgoj një mesazh me anë të tij."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10534",
+    "source": "tr",
+    "word": "mesela",
+    "translation": "për shembull",
+    "pos": "lidhëz",
+    "senses": [
+      "Si shembull, për të ilustruar diçka"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10673",
+    "source": "tr",
+    "word": "mesele",
+    "translation": "çështje, problem",
+    "pos": "emër",
+    "senses": [
+      "Sorun, problem"
+    ],
+    "examples": [
+      {
+        "source": "Gazeteler vakit vakit bir meseleyi öne sürerler.",
+        "target": "Gazetat herë pas herë nxjerrin përpara një çështje."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13233",
+    "source": "tr",
+    "word": "Mesih",
+    "translation": "Mesia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'Mesih'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12592",
+    "source": "tr",
+    "word": "meslek",
+    "translation": "profesion, zejtari",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'meslek'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11437",
+    "source": "tr",
+    "word": "metal",
+    "translation": "metal",
+    "pos": "emër",
+    "senses": [
+      "Lëndë që ka përcjellshmëri mjaft të lartë të nxehtësisë dhe elektricitetit, që ka shkëlqim të vetin dhe që kur bashkohet me oksigjenin jep përgjithësisht okside bazike; metal"
+    ],
+    "examples": [
+      {
+        "source": "Çıkardıkları metal kutuları, gazeteleri ve cam şişeleri ayrı ayrı çuvallara doldurup götürüyorlar.",
+        "target": "Kutitë metalike, gazetat dhe shishet e qelqit që nxirrnin po i futnin nëpër thasë të veçantë dhe po i dërgonin."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15579",
+    "source": "tr",
+    "word": "metan",
+    "translation": "Metani",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'metan'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17481",
+    "source": "tr",
+    "word": "meteoroloji",
+    "translation": "meteorologjia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'meteoroloji'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10769",
+    "source": "tr",
+    "word": "metre",
+    "translation": "metër",
+    "pos": "emër",
+    "senses": [
+      "Njësia bazë e matjes së gjatësisë prej 100 cm, e pranuar si një e dyzetmilionta pjesë e rrethit të meridianit të tokës"
+    ],
+    "examples": [
+      {
+        "source": "İskenderun Körfezi'ne sekiz yüz metre yukarıdan bakıyordum.",
+        "target": "Po shikoja Gjirin e Iskenderunit nga tetëqind metra lart."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18450",
+    "source": "tr",
+    "word": "metrekare",
+    "translation": "metër katror",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'metrekare'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11456",
+    "source": "tr",
+    "word": "mevcut",
+    "translation": "ekzistues, i pranishëm",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ekziston, që ndodhet"
+    ],
+    "examples": [
+      {
+        "source": "Dünya güzelliği sendedir mevcut / Hususi özenmiş yaratmış mabut",
+        "target": "Bukuria e botës ndodhet tek ty ekzistuese / Krijuesi (zoti) është kujdesur veçmas e të ka krijuar"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14720",
+    "source": "tr",
+    "word": "mevsim",
+    "translation": "stina",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mevsim'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11398",
+    "source": "tr",
+    "word": "meydan",
+    "translation": "shesh",
+    "pos": "emër",
+    "senses": [
+      "Alan"
+    ],
+    "examples": [
+      {
+        "source": "Yüz binlerce asker sokakları, meydanları, kırları dolduruyordu.",
+        "target": "Me qindra mijëra ushtarë po mbushnin rrugët, sheshet dhe fushat."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11315",
+    "source": "tr",
+    "word": "meyve",
+    "translation": "frut, pemë",
+    "pos": "emër",
+    "senses": [
+      "Organi përgjithësisht i ngrënshëm te bimët që mban farat, i cili formohet nga zhvillimi i vezores pas plonimit të lules; yemiş"
+    ],
+    "examples": [
+      {
+        "source": "Mektebimizin şapirografla basılan haftalık Fidan'ında, en güzel meyve benim imzamdır.",
+        "target": "Në revistën javore të shkollës sonë 'Fidan', e cila shtypej me shapirograf, fruti më i bukur është firma ime."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11990",
+    "source": "tr",
+    "word": "mezar",
+    "translation": "varr, varri",
+    "pos": "emër",
+    "senses": [
+      "Vendi ku varroset i vdekuri; kabir, tyrbe"
+    ],
+    "examples": [
+      {
+        "source": "Yurdumuzun on dört yerinde Yunus'a ait olduğu söylenen türbe ve mezarlar vardır.",
+        "target": "Në katërmbëdhjetë vende të atdheut tonë ka tyrbe dhe varre që thonë se i përkasin Junusit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14206",
+    "source": "tr",
+    "word": "mezarlık",
+    "translation": "Varreza",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mezarlık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17956",
+    "source": "tr",
+    "word": "meze",
+    "translation": "Meze",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'meze'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11446",
+    "source": "tr",
+    "word": "mezun",
+    "translation": "i diplomuar, i sapodiplomuar",
+    "pos": "mbiemër",
+    "senses": [
+      "Personi që ka marrë diplomë duke përfunduar një shkollë"
+    ],
+    "examples": [
+      {
+        "source": "Bu kitabı ilk okuduğumda, çiçeği burnunda bir fakülte mezunuydum.",
+        "target": "Kur e lexova këtë libër për herë të parë, isha një i sapodiplomuar fakulteti (me lulen në hundë)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16622",
+    "source": "tr",
+    "word": "meşale",
+    "translation": "Pishtari",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'meşale'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10793",
+    "source": "tr",
+    "word": "meşgul",
+    "translation": "i zënë, i angazhuar",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që merret me një punë, që është duke kryer një aktivitet"
+    ],
+    "examples": [
+      {
+        "source": "Belediye doktoru, kışın kimya tecrübeleri ile meşguldü.",
+        "target": "Mjeku i bashkisë ishte i angazhuar me eksperimentet e kimisë gjatë dimrit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11642",
+    "source": "tr",
+    "word": "meşhur",
+    "translation": "i famshëm, i dëgjuar",
+    "pos": "mbiemër",
+    "senses": [
+      "Ünlü, mezhur"
+    ],
+    "examples": [
+      {
+        "source": "Yeni Park Gazinosunda kasabanın meşhur karadut şerbetiyle beraber bir parça da içki içilir.",
+        "target": "Në kazinonë e Parkut të Ri pihet një sasi pijeje bashkë me shurupin e famshëm të manit të zi të qytezës."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10005",
+    "source": "tr",
+    "word": "mi",
+    "translation": "mi",
+    "pos": "emër",
+    "senses": [
+      "Toni midis notasve re dhe fa në shkallën muzikore, si dhe shenja e notës që tregon këtë tingull"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12026",
+    "source": "tr",
+    "word": "mide",
+    "translation": "lukthi i njeriut",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mide'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11929",
+    "source": "tr",
+    "word": "miktar",
+    "translation": "sasi, masë",
+    "pos": "emër",
+    "senses": [
+      "Sasi"
+    ],
+    "examples": [
+      {
+        "source": "Onlar ayrılınca Mustafa bana bir zarf uzattı; aldım, açtım ve baktım ki içinde bir miktar para vardı.",
+        "target": "Sapo ata u larguan, Mustafa më zgjati një zarf; e mora, e hapa dhe pashë se brenda kishte një sasi parash."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11103",
+    "source": "tr",
+    "word": "mil",
+    "translation": "milë",
+    "pos": "emër",
+    "senses": [
+      "Njësi matëse e distancës, e pranuar si 1609 metra në tokë dhe 1852 metra në det"
+    ],
+    "examples": [
+      {
+        "source": "Köprü ile Kadıköy arasındaki mesafenin kaç mil olduğunu bilmiyordum.",
+        "target": "Nuk e dija se sa milë ishte distanca midis urës dhe Kadikojit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16011",
+    "source": "tr",
+    "word": "milimetre",
+    "translation": "milimetri",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'milimetre'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17022",
+    "source": "tr",
+    "word": "milis",
+    "translation": "Milicia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'milis'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10406",
+    "source": "tr",
+    "word": "millet",
+    "translation": "komb, popull",
+    "pos": "emër",
+    "senses": [
+      "Bashkësi njerëzish që jetojnë kryesisht në të njëjtën tokë dhe që kanë bashkësi gjuhe, historie, ndjenjash, synimesh, dokesh e zakonesh; ulus"
+    ],
+    "examples": [
+      {
+        "source": "Millet tütün paralarını alınca borcunu öder.",
+        "target": "Populli i paguan borxhet kur merr paratë e duhanit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15102",
+    "source": "tr",
+    "word": "milletvekili",
+    "translation": "anëtar i kuvendit",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'milletvekili'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11500",
+    "source": "tr",
+    "word": "milyar",
+    "translation": "miliard",
+    "pos": "mbiemër",
+    "senses": [
+      "Mijë herë milion, një mijë milionë, numri 1.000.000.000"
+    ],
+    "examples": [
+      {
+        "source": "Dünyanın en zengin 200 kişisinin sahip olduğu toplam servet, yeryüzündeki en yoksul 2,5 milyar insanın toplam gelirinden fazla.",
+        "target": "Pasuria totale e zotëruar nga 200 njerëzit më të pasur të botës është më e madhe se të ardhurat totale të 2.5 miliardë njerëzve më të varfër në tokë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15377",
+    "source": "tr",
+    "word": "milyarder",
+    "translation": "miliarderi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'milyarder'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10387",
+    "source": "tr",
+    "word": "milyon",
+    "translation": "milion",
+    "pos": "mbiemër",
+    "senses": [
+      "Mijë herë mijë, numri 1.000.000"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13865",
+    "source": "tr",
+    "word": "milyoner",
+    "translation": "milioneri",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'milyoner'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11229",
+    "source": "tr",
+    "word": "milyonlarca",
+    "translation": "me miliona",
+    "pos": "mbiemër",
+    "senses": [
+      "Mjaft shumë, në numër mjaft të madh"
+    ],
+    "examples": [
+      {
+        "source": "Her milletten milyonlarca insan kafiyeyi bu gözlerle görür.",
+        "target": "Me miliona njerëz nga çdo komb e shikojnë rimën me këta sy."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14125",
+    "source": "tr",
+    "word": "mimar",
+    "translation": "arkitekt",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mimar'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17384",
+    "source": "tr",
+    "word": "mimarlık",
+    "translation": "arkitekturë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mimarlık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16415",
+    "source": "tr",
+    "word": "mineral",
+    "translation": "mineral",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mineral'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11307",
+    "source": "tr",
+    "word": "minik",
+    "translation": "i vogël, i imët",
+    "pos": "mbiemër",
+    "senses": [
+      "I vogël dhe i këndshëm"
+    ],
+    "examples": [
+      {
+        "source": "“... Burhan, mavi gömleğiyle gidip gelecek ... avluda minik adımlarla gezinen oğlunu kucaklayacak, sonra da bir süre onunla şakalaşıp gülüşecekti.",
+        "target": "... Burhani do të shkonte e do të vinte me këmishën e tij blu... dhe do të përqantë djalin e tij që ecte me hapa të imët në oborr, e pastaj do të bënte pak shaka e do të qeshte me të."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14643",
+    "source": "tr",
+    "word": "minnet",
+    "translation": "mirënjohja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'minnet'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11717",
+    "source": "tr",
+    "word": "minnettar",
+    "translation": "mirënjohës",
+    "pos": "emër",
+    "senses": [
+      "Personi që ndihet i detyruar ndaj një të mire që ka parë prej dikujt, ai që ka detyrim zemre"
+    ],
+    "examples": [
+      {
+        "source": "Çocuklarıma karşı gösterdiğiniz ihtimam ve alakaya bilhassa minnettarım.",
+        "target": "U jam veçanërisht mirënjohës për kujdesin dhe interesin që tregoni ndaj fëmijëve të mi."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12283",
+    "source": "tr",
+    "word": "miras",
+    "translation": "trashëgimi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'miras'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11578",
+    "source": "tr",
+    "word": "misafir",
+    "translation": "mysafir, konuk, i ftuar",
+    "pos": "emër",
+    "senses": [
+      "Konuk"
+    ],
+    "examples": [
+      {
+        "source": "Misafirler aslında bu odada ağırlanır ama biz şimdi rıhtıma çıkacağız.",
+        "target": "Mysafirët në të vërtetë priten në këtë dhomë, mirëpo ne tani do të dalim në shëtitore (moll)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14936",
+    "source": "tr",
+    "word": "mit",
+    "translation": "Miti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mit'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14256",
+    "source": "tr",
+    "word": "mobilya",
+    "translation": "orenditë e shtëpisë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mobilya'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11450",
+    "source": "tr",
+    "word": "moda",
+    "translation": "modë",
+    "pos": "emër",
+    "senses": [
+      "Inovacioni i përkohshëm që hyn në jetën shoqërore për shkak të nevojës për ndryshim ose dëshirës për zbukurim"
+    ],
+    "examples": [
+      {
+        "source": "Erkek pardösüsü olsun. Şimdi moda. Bana da ondan verin bir tane...",
+        "target": "Le të jetë pardesy burrash. Tani është modë. Më jepni edhe mua një të tillë..."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11392",
+    "source": "tr",
+    "word": "model",
+    "translation": "model, mostër",
+    "pos": "emër",
+    "senses": [
+      "Objekti ose personi që vështrohet dhe imitohet ndërsa po bëhet një pikturë, skulpturë etj.; shembull"
+    ],
+    "examples": [
+      {
+        "source": "Başarılı bir yontucu için model ne ise Köy Enstitülü için de köy odur.",
+        "target": "Çfarë është modeli për një skulptor të suksesshëm, fshati është ekzaktësisht e njëjta gjë për ata të Institutit të Fshatit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11395",
+    "source": "tr",
+    "word": "modern",
+    "translation": "modern, bashkëkohor",
+    "pos": "mbiemër",
+    "senses": [
+      "Cagdas"
+    ],
+    "examples": [
+      {
+        "source": "Bilmeyenin elinde en modern aletler bir maden külçesi hâline gelir.",
+        "target": "Në dorën e atij që nuk di, mjetet më moderne kthehen në një bllok (copë) metali."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11573",
+    "source": "tr",
+    "word": "mola",
+    "translation": "pushim, pauzë, mola",
+    "pos": "emër",
+    "senses": [
+      "Ndalesa që bëhet për të hequr lodhjen"
+    ],
+    "examples": [
+      {
+        "source": "Aslında, molaya benim niyetim yoktu.",
+        "target": "Në të vërtetë, unë nuk kisha ndërmend të bëja pushim (mola)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16058",
+    "source": "tr",
+    "word": "motivasyon",
+    "translation": "Motivacioni",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'motivasyon'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11337",
+    "source": "tr",
+    "word": "motor",
+    "translation": "motor",
+    "pos": "emër",
+    "senses": [
+      "Sistem ose mekanizëm që shndërron çdo lloj energjie në energji mekanike"
+    ],
+    "examples": [
+      {
+        "source": "Taşındıkları kamyon önünde durunca motorun patırtısı kesildi.",
+        "target": "Sapo kamioni me të cilin u transportuan ndaloi përpara, zhurma e motorit u ndërpre."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11988",
+    "source": "tr",
+    "word": "muayene",
+    "translation": "ekzaminim, vizitë mjekësore",
+    "pos": "emër",
+    "senses": [
+      "Hetimi ose kontrolli nëse një person është apo jo i sëmurë ose për të gjetur se çfarë sëmundje ka; kontroll shëndetësor"
+    ],
+    "examples": [
+      {
+        "source": "Doktor muayenesine gitmek için aldığı her randevunun ardından korkudan iştahı kesiliyordu.",
+        "target": "Pas çdo takimi (randevuje) që linte për të shkuar në vizitë te mjeku, i ikte oreksi nga frika."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11719",
+    "source": "tr",
+    "word": "muazzam",
+    "translation": "i stërmadh, kolosal",
+    "pos": "mbiemër",
+    "senses": [
+      "Shumë i madh, gjigant"
+    ],
+    "examples": [
+      {
+        "source": "Muazzam, biraz da esrarlı, karanlık, eski bir konaktaydı.",
+        "target": "Ndodhej në një konak të vjetër, të stërmadh, paksa misterioz dhe të errët."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11270",
+    "source": "tr",
+    "word": "mucize",
+    "translation": "mrekulli",
+    "pos": "emër",
+    "senses": [
+      "Ngjarjet e jashtëzakonshme që profetët shfaqnin me lejen e Allahut me qëllim për t'u vërtetuar profetësinë e tyre njerëzve që nuk u besonin"
+    ],
+    "examples": [
+      {
+        "source": "Şırınga nasılsa umduğumdan çok daha iyi bir tesir yaptı ve zavallı Hacı Ömer, bunu benim bir mucizem gibi gördü.",
+        "target": "Shiringa sidoqoftë bëri një efekt shumë më të mirë sesa shpresoja, dhe i gjorë Haxhi Omer e pa këtë si një mrekulli timen."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17083",
+    "source": "tr",
+    "word": "muhallebi",
+    "translation": "Mualebi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'muhallebi'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16880",
+    "source": "tr",
+    "word": "muharebe",
+    "translation": "betejë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'muharebe'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16907",
+    "source": "tr",
+    "word": "muhtar",
+    "translation": "Myftari",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'muhtar'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11912",
+    "source": "tr",
+    "word": "muhtemel",
+    "translation": "i mundshëm, i parashikueshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai realizimi ose mosrealizimi i të cilit ndodhet brenda mundësive, që pritet ose supozohet se do të ndodhë sipas pamjes së jashtme; i gjasave"
+    ],
+    "examples": [
+      {
+        "source": "Her bir gezi ve bu muhtemel sonuçları seçen ve her birine mümkün gözle bakan denekler için 15 muhtemel sonuç belirlendi.",
+        "target": "U përcaktuan 15 rezultate të mundshme për çdo udhëtim dhe për subjektet që përzgjidhnin këto rezultate të mundshme e që e shihnin secilin prej tyre me syrin e mundësisë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10286",
+    "source": "tr",
+    "word": "muhtemelen",
+    "translation": "ndoshta, me gjasa",
+    "pos": "ndajfolje",
+    "senses": [
+      "Sipas asaj që shpresohet, pritet ose duke parë pamjen e jashtme; me mundësi"
+    ],
+    "examples": [
+      {
+        "source": "Ana baba burada muhtemelen, ‘Ben yüzde yüz haklıyım, sen sıfırsın.’ demektedir.",
+        "target": "Prindërit këtu ndoshta po thonë: 'Unë kam qind për qind të drejtë, ti ke zero'."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10452",
+    "source": "tr",
+    "word": "muhteşem",
+    "translation": "i madhërishëm, i shkëlqyer",
+    "pos": "mbiemër",
+    "senses": [
+      "I mrekullueshëm, madhështor"
+    ],
+    "examples": [
+      {
+        "source": "Ne büyümüş, ne koca göbekli muhteşem bir mahluk olmuştu.",
+        "target": "Sa shumë ishte rritur, çfarë krijese e madhërishme me bark të madh ishte bërë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12375",
+    "source": "tr",
+    "word": "mum",
+    "translation": "qiriu",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mum'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18036",
+    "source": "tr",
+    "word": "muson",
+    "translation": "Monsunet",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'muson'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16324",
+    "source": "tr",
+    "word": "mutasyon",
+    "translation": "Mutacioni",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mutasyon'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11765",
+    "source": "tr",
+    "word": "mutfak",
+    "translation": "kuzhinë",
+    "pos": "emër",
+    "senses": [
+      "Vendi ku gatuhet ushqimi; ashane"
+    ],
+    "examples": [
+      {
+        "source": "Bir bütün günü mutfakta harcayıp çeşitli yemekler yapıyor.",
+        "target": "E kalon një ditë të tërë në kuzhinë duke gatuar ushqime të ndryshme."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10961",
+    "source": "tr",
+    "word": "mutlaka",
+    "translation": "patjetër, absolutisht",
+    "pos": "ndajfolje",
+    "senses": [
+      "Keslikle"
+    ],
+    "examples": [
+      {
+        "source": "Ben sözü, her okuyuşumuzda mutlaka gülümseten bir şiirine getirdim.",
+        "target": "Unë e dërgova bisedën te një poezi e tij, e cila na bën patjetër të buzëqeshim në çdo lexim."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10200",
+    "source": "tr",
+    "word": "mutlu",
+    "translation": "i lumtur",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ndodhet në një gjendje kënaqësie për shkak të përjetimeve ose gjërave që i kanë ndodhur; i gëzuar, fatlum, mesut"
+    ],
+    "examples": [
+      {
+        "source": "Beni orada sıcak bir yuva, huzurlu konuklar, mutlu bir kadın bekliyor.",
+        "target": "Atje më pret një vatër e ngrohtë, mysafirë paqësorë dhe një grua e lumtur."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11184",
+    "source": "tr",
+    "word": "mutluluk",
+    "translation": "lumturi",
+    "pos": "emër",
+    "senses": [
+      "Gjendja e të qenit i lumtur; saadet, bahtijarsi"
+    ],
+    "examples": [
+      {
+        "source": "Hele bir de birkaç sünger bulabilse artık mutluluğunun sınırı olmayacaktı.",
+        "target": "Veçanërisht po të mund të gjente edhe disa sfungjerë të tjerë, lumturia e tij nuk do të kishte më kufi."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11755",
+    "source": "tr",
+    "word": "mutsuz",
+    "translation": "i pakënaqur, i palumtur",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që nuk është i lumtur; bedbaht"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12443",
+    "source": "tr",
+    "word": "muz",
+    "translation": "bananja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'muz'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11649",
+    "source": "tr",
+    "word": "mösyö",
+    "translation": "mësy, zotëri (titull francez)",
+    "pos": "emër",
+    "senses": [
+      "Një titull respekti që u jepet burrave"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10890",
+    "source": "tr",
+    "word": "mücadele",
+    "translation": "luftë, përpjekje, luftim",
+    "pos": "emër",
+    "senses": [
+      "Përpjekja e fortë midis dy palëve për t'i bërë tjetrit të pranojë dëshirat e veta; luftë"
+    ],
+    "examples": [
+      {
+        "source": "Bu İslam merkezinde içten içe bir yığın mücadele vardı.",
+        "target": "Në këtë qendër islame kishte një sërë luftimesh (përpjekjesh) të brendshme."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12434",
+    "source": "tr",
+    "word": "mücevher",
+    "translation": "Xhevahiri",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mücevher'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11592",
+    "source": "tr",
+    "word": "müdahale",
+    "translation": "ndërhyrje",
+    "pos": "emër",
+    "senses": [
+      "Karısma, ndërhyrje në një çështje"
+    ],
+    "examples": [
+      {
+        "source": "Sözümü adi bir müdahale zanneder diye korktum.",
+        "target": "Pata frikë se mos e mendonte fjalën time si një ndërhyrje të thjeshtë ordiner."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10799",
+    "source": "tr",
+    "word": "müdür",
+    "translation": "drejtor",
+    "pos": "emër",
+    "senses": [
+      "Personi që menaxhon një institucion ose një organizatë"
+    ],
+    "examples": [
+      {
+        "source": "Bir süre sonra müdürle iki öğretmenin ayrı ayrı yerlere sürüldüklerini öğrendim.",
+        "target": "Pas pak kohe mësova se drejtori dhe dy mësues ishin dëbuar (internuar) në vende të ndryshme."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11317",
+    "source": "tr",
+    "word": "müfettiş",
+    "translation": "inspektor",
+    "pos": "emër",
+    "senses": [
+      "Personi që shkon nëpër institucione përgjithësisht pa njoftuar ose pas ankesave për ngjarje të caktuara, i cili ekzaminon nëse punët bëhen sipas ligjit e rregullave dhe përgatit një raport"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13390",
+    "source": "tr",
+    "word": "mühendis",
+    "translation": "inxhinier",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mühendis'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13713",
+    "source": "tr",
+    "word": "mühendislik",
+    "translation": "inxhinieri",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mühendislik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16002",
+    "source": "tr",
+    "word": "mühimmat",
+    "translation": "municion",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mühimmat'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10287",
+    "source": "tr",
+    "word": "mükemmel",
+    "translation": "i përsosur, i shkëlqyer",
+    "pos": "mbiemër",
+    "senses": [
+      "I pametë, i përsosur"
+    ],
+    "examples": [
+      {
+        "source": "O, köylülerin ağzından girip burnundan çıkmayı mükemmel becerir.",
+        "target": "Ai di mrekullisht se si t'u merret me fshatarët e t'ua mbushë mendjen."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13453",
+    "source": "tr",
+    "word": "mülk",
+    "translation": "pronë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mülk'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16527",
+    "source": "tr",
+    "word": "mülkiyet",
+    "translation": "zotërim",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mülkiyet'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14709",
+    "source": "tr",
+    "word": "mülteci",
+    "translation": "refugjat",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mülteci'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10372",
+    "source": "tr",
+    "word": "mümkün",
+    "translation": "i mundshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka mundësi të realizohet; i realizueshëm"
+    ],
+    "examples": [
+      {
+        "source": "Batı’ya, bu zelil tavırla kabul ettirilmesi mümkün hiçbir şey olamazdı.",
+        "target": "Nuk mund të kishte asgjë që mund t'i bëhej e mundshme Perëndimit ta pranonte me këtë qëndrim të përulur."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16919",
+    "source": "tr",
+    "word": "münazara",
+    "translation": "debati",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'münazara'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17929",
+    "source": "tr",
+    "word": "münzevi",
+    "translation": "Eremiti",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'münzevi'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13342",
+    "source": "tr",
+    "word": "mürekkep",
+    "translation": "bojë shkrimi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mürekkep'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13325",
+    "source": "tr",
+    "word": "mürettebat",
+    "translation": "anëtar i grupit",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mürettebat'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11038",
+    "source": "tr",
+    "word": "müsaade",
+    "translation": "leje, lejueshmëri",
+    "pos": "emër",
+    "senses": [
+      "Leje"
+    ],
+    "examples": [
+      {
+        "source": "Ayrıca Saray Kütüphanesi'ne dilediğim kadar girip çıkma müsaadesi bahşettiler.",
+        "target": "Gjithashtu më dhanë leje për të hapur e mbyllur (hyrë e dalë) sa të dëshiroja në Bibliotekën e Pallatit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17245",
+    "source": "tr",
+    "word": "müsabaka",
+    "translation": "garë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'müsabaka'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11712",
+    "source": "tr",
+    "word": "müsait",
+    "translation": "i përshtatshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "I përshtatshëm, i favorshëm, i lirë"
+    ],
+    "examples": [
+      {
+        "source": "Asla hissîliğe, ılık ve yumuşak duygulara müsait değiliz.",
+        "target": "Nuk jemi asesi të përshtatshëm për sentimentalizëm apo për ndjenja të ëmbla e të buta."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10703",
+    "source": "tr",
+    "word": "müthiş",
+    "translation": "i tmerrshëm, i jashtëzakonshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "I tmerrshëm, i frikshëm"
+    ],
+    "examples": [
+      {
+        "source": "Aradan yıllar geçti. Hâlâ o müthiş uğultu ve çatırdamayı içimden silemedim.",
+        "target": "Kaluan vite që atëherë. Ende nuk kam mundur ta fshij nga brendësia ime atë uturimë dhe krisje të tmerrshme."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15073",
+    "source": "tr",
+    "word": "müzakere",
+    "translation": "Negocimi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'müzakere'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13634",
+    "source": "tr",
+    "word": "müze",
+    "translation": "muze",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'müze'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10513",
+    "source": "tr",
+    "word": "müzik",
+    "translation": "muzikë",
+    "pos": "emër",
+    "senses": [
+      "Arti i shprehjes së ndjenjave dhe mendimeve përmes tingujve harmonikë brenda rregullave të caktuara; musiki"
+    ],
+    "examples": [
+      {
+        "source": "Müzik eğitimi.",
+        "target": "Edukimi muzikor."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13492",
+    "source": "tr",
+    "word": "müzisyen",
+    "translation": "muzikant",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'müzisyen'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11247",
+    "source": "tr",
+    "word": "müşteri",
+    "translation": "klient, blerës",
+    "pos": "emër",
+    "senses": [
+      "Personi që merr një shërbim, mall etj. dhe paguan një tarifë në këmbim të tij"
+    ],
+    "examples": [
+      {
+        "source": "Fırçayı iyice sabunlar, hoş vuruşlarla dolaştırırdı müşterinin yüzünde.",
+        "target": "E sapunonte mirë furçën, dhe me goditje të këndshme e lëvizte atë mbi fytyrën e klientit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11082",
+    "source": "tr",
+    "word": "Mısır",
+    "translation": "Egjipt",
+    "pos": "emër",
+    "senses": [
+      "Fjalë që përmendet në shprehjen popullore 'e dëgjoi edhe sulltani i shurdhër në Egjipt' në kuptimin 'nuk mbeti askush pa e dëgjuar'"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14685",
+    "source": "tr",
+    "word": "mızrak",
+    "translation": "Shtiza",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'mızrak'."
+    ],
+    "examples": [],
+    "derivatives": []
   }
 ]

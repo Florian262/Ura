@@ -1,217 +1,2962 @@
 [
   {
-    "id": "dict-tr-25",
+    "id": "dict-tr-13169",
+    "source": "tr",
+    "word": "dadı",
+    "translation": "Dado",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'dadı'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10015",
+    "source": "tr",
+    "word": "daha",
+    "translation": "ende, akoma",
+    "pos": "ndajfolje",
+    "senses": [
+      "Deri tani; akoma"
+    ],
+    "examples": [
+      {
+        "source": "Anne leylek, bir serseri kurşunla daha o sabah ölmüştü.",
+        "target": "Mëmë lejleku kishte vdekur pikërisht atë mëngjes nga një plumb qorr."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11922",
+    "source": "tr",
+    "word": "dahası",
+    "translation": "për më tepër, veç kësaj, akoma më shumë",
+    "pos": "emër",
+    "senses": [
+      "Më shumë se aq, shtesa e saj"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10677",
+    "source": "tr",
+    "word": "dahil",
+    "translation": "përfshirje, i përfshirë",
+    "pos": "emër",
+    "senses": [
+      "Të qenit i përzier apo i futur në një punë"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10731",
+    "source": "tr",
+    "word": "daima",
+    "translation": "gjithmonë, vazhdimisht",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në çdo kohë, në mënyrë të vazhdueshme; kurdoherë"
+    ],
+    "examples": [
+      {
+        "source": "Onu daima öper ve sefere çıkacakları zaman en sonra ona veda ederlerdi.",
+        "target": "Ata e puthnin atë gjithmonë, dhe kur do të niseshin për udhëtim (fushatë), ndaheshin me të në fund fare."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10389",
+    "source": "tr",
+    "word": "dair",
+    "translation": "rreth, mbi",
+    "pos": "pjesëz",
+    "senses": [
+      "Mbi diçka, rreth një teme"
+    ],
+    "examples": [
+      {
+        "source": "Yarına kadar sarhoşluğu geçer, ben de sarhoş olmadığına dair rapor veririm.",
+        "target": "Deri nesër i kalon dehja, e edhe unë dëshmoj me raport mbi faktin që ai nuk është i dehur."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11440",
+    "source": "tr",
+    "word": "daire",
+    "translation": "apartament, njësi banimi",
+    "pos": "emër",
+    "senses": [
+      "Secila prej pjesëve (ndarrjeve) të një ndërtese që shfrytëzohet si banesë"
+    ],
+    "examples": [
+      {
+        "source": "Bu koskoca binanın, pasajın arka tarafında bir kısım daireleri ayrıca kiraya verilmiş.",
+        "target": "Disa apartamente në pjesën e pasme të kësaj ndërtese të stërmadhe, të këtij kalimi, ishin dhënë gjithashtu me qira veçmas."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10138",
+    "source": "tr",
+    "word": "dakika",
+    "translation": "minutë",
+    "pos": "emër",
+    "senses": [
+      "Një e gjashtëdhjeta pjesë e një ore"
+    ],
+    "examples": [
+      {
+        "source": "Burada, kırk beş dakika kadar, elleri daima kelepçeli, bir koltukta bekleyiş veya bekletiliş.",
+        "target": "Këtu, rreth dyzet e pesë minuta, një pritje ose lënie në pritje në një kolltuk, me duart gjithmonë të pranguara."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15490",
+    "source": "tr",
+    "word": "daktilo",
+    "translation": "makina shkrimit",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'daktilo'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10447",
+    "source": "tr",
+    "word": "dalga",
+    "translation": "dallgë, valë",
+    "pos": "emër",
+    "senses": [
+      "Lëvizje e përkulur që krijohet në sipërfaqet e mëdha të ujit si në det ose liqen, përgjithësisht nën efektin e erës, tërmeteve etj."
+    ],
+    "examples": [
+      {
+        "source": "Dışarıda nemli bir rüzgâr esiyordu, dalgalar durulmamış, yalnız biraz ağırlaşmıştı.",
+        "target": "Jashtë po frynte një erë me lagështi, dallgët nuk ishin qetësuar, vetëm se ishin rënduar pak."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12980",
+    "source": "tr",
+    "word": "damat",
+    "translation": "Damat",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'damat'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11636",
+    "source": "tr",
+    "word": "dana",
+    "translation": "viç",
+    "pos": "emër",
+    "senses": [
+      "I vogli i lopës që nga çasti i ndarjes nga qumështi e deri në moshën një vjeçare"
+    ],
+    "examples": [
+      {
+        "source": "Bu oğlan, Çerçi’nin boz danasını sürmüş, ayrıca sandığını yarıp bir lüver, şu kadar da para aşırmış.",
+        "target": "Ky djalë ka ndjekur viçin e murmë të tregtarit shëtitës, dhe për më tepër ka hapur arkën e tij e ka vjedhur një pistoletë dhe kaq para."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10347",
+    "source": "tr",
+    "word": "dans",
+    "translation": "vallëzim, dans",
+    "pos": "emër",
+    "senses": [
+      "Lëvizje trupore të rregullta me vlerë estetike që bëhen duke ndjekur tempun e muzikës; raks"
+    ],
+    "examples": [
+      {
+        "source": "Herkesin içinde dans öğrenmem şık olur.",
+        "target": "Do të ishte elegante që unë të mësoja vallëzim në sy të të gjithëve."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11633",
+    "source": "tr",
+    "word": "dar",
+    "translation": "atdhe, shtëpi, banesë (historike)",
+    "pos": "emër",
+    "senses": [
+      "Yurt, vendbanim apo shtëpi"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11558",
+    "source": "tr",
+    "word": "darbe",
+    "translation": "goditje, e rënë",
+    "pos": "emër",
+    "senses": [
+      "Goditje e fortë që bëhet me një objekt përmbi trup"
+    ],
+    "examples": [
+      {
+        "source": "Başına şiddetli bir darbe indirerek hayvanı sersemletti.",
+        "target": "E topiti kafshën duke i lëshuar një goditje të fuqishme në kokë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10527",
+    "source": "tr",
+    "word": "dava",
+    "translation": "padi, çështje gjyqësore",
+    "pos": "emër",
+    "senses": [
+      "Aplikimi ose kërkesa që u bëhet organeve gjyqësore me qëllim që mbrojtja e një të drejte të sigurohet përmes një vendimi"
+    ],
+    "examples": [
+      {
+        "source": "Davaların birleştirilebilmesi için mahkemelerin birleştirmeyi uygun bulmaları gerekir.",
+        "target": "Që çështjet gjyqësore të bashkohen, është e nevojshme që gjykatat ta shohin të përshtatshme këtë bashkim."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10515",
+    "source": "tr",
+    "word": "davet",
+    "translation": "ftesë",
+    "pos": "emër",
+    "senses": [
+      "Thirrje që i bëhet dikujt për të marrë pjesë në një ngjarje apo vend"
+    ],
+    "examples": [
+      {
+        "source": "Rüstem’i dünyevi hayata tekrar döndürecek bir davetti bu.",
+        "target": "Kjo ishte një ftesë që do ta kthente Rystemin përsëri në jetën tokësore."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11462",
+    "source": "tr",
+    "word": "davranış",
+    "translation": "sjellje, qëndrim",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të sjellurit; qëndrim, trajtim"
+    ],
+    "examples": [
+      {
+        "source": "Burada hükûmet çevrelerinin de övgüye değer davranışını belirtmek gerekir.",
+        "target": "Këtu është e nevojshme të specifikohet edhe qëndrimi (sjellja) i denjë për lëvdatë i qarqeve qeveritare."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13603",
+    "source": "tr",
+    "word": "davul",
+    "translation": "Daullja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'davul'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11853",
+    "source": "tr",
+    "word": "dayak",
+    "translation": "mbështetje, shtyllë mbështetëse, rrahje (kuptim tjetër)",
+    "pos": "emër",
+    "senses": [
+      "Destek, mbështetëse druri"
+    ],
+    "examples": [
+      {
+        "source": "Evimin dayağı, direğisin kara oğlum.",
+        "target": "Ti je mbështetja, shtylla e shtëpisë sime, o djali im i zi."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16777",
+    "source": "tr",
+    "word": "dayanıklılık",
+    "translation": "Qëndrueshmëria (e produktit)",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'dayanıklılık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13087",
+    "source": "tr",
+    "word": "dayı",
+    "translation": "Daja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'dayı'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11655",
+    "source": "tr",
+    "word": "dağ",
+    "translation": "damgë, shenjë zjarri, mal (kuptim tjetër)",
+    "pos": "emër",
+    "senses": [
+      "Shenja ose damga që lëshohet me një hekur të nxehur fiks mbi trup"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18208",
+    "source": "tr",
+    "word": "dağcı",
+    "translation": "alpinist",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'dağcı'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10006",
+    "source": "tr",
+    "word": "de",
+    "translation": "d",
+    "pos": "emër",
+    "senses": [
+      "Emri dhe shqiptimi i shkronjës së pestë të alfabetit turk"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10475",
+    "source": "tr",
+    "word": "dedektif",
+    "translation": "detektiv",
+    "pos": "emër",
+    "senses": [
+      "Personi i ngarkuar për të zbuluar një vepër që konsiderohet krim ose personin që e ka kryer atë; hafiye"
+    ],
+    "examples": [
+      {
+        "source": "En usta dedektifleri bile şaşkına çevirecek kadar dolaşık ve karışık bir olaydı.",
+        "target": "Ishte një ngjarje aq e ngatërruar dhe e ndërlikuar sa do të çorientonte edhe detektivët më ekspertë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10483",
+    "source": "tr",
+    "word": "defa",
+    "translation": "herë",
+    "pos": "emër",
+    "senses": [
+      "Kez"
+    ],
+    "examples": [
+      {
+        "source": "İlk defa bu fikir, bir fikir olmaktan çıktı.",
+        "target": "Për herë të parë kjo ide pushoi së qeni thjesht një ide."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11842",
+    "source": "tr",
+    "word": "defalarca",
+    "translation": "shumë herë, herë pas herë",
+    "pos": "ndajfolje",
+    "senses": [
+      "Pek çok kez; në mënyrë të përsëritur mjaft herë"
+    ],
+    "examples": [
+      {
+        "source": "Beş vakit abdestinden başka her gün defalarca elini yüzünü yıkardı.",
+        "target": "Përveç abdestit të të pesë vakteve, i lante duart dhe fytyrën shumë herë çdo ditë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13994",
+    "source": "tr",
+    "word": "defter",
+    "translation": "Defter",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'defter'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10432",
+    "source": "tr",
+    "word": "dek",
+    "translation": "intrigë, dhelbëri",
+    "pos": "emër",
+    "senses": [
+      "Intrigë"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13781",
+    "source": "tr",
+    "word": "dekan",
+    "translation": "Dekani",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'dekan'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10388",
+    "source": "tr",
+    "word": "deli",
+    "translation": "i marrë, i çmendur",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka humbur mendjen, personi balanca mendore e të cilit është prishur"
+    ],
+    "examples": [
+      {
+        "source": "Gören bizi sanır deli / Usludan yeğdir delimiz",
+        "target": "Kush na sheh na mendon të çmendur / I çmenduri ynë është më i mirë se i urti"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11976",
+    "source": "tr",
+    "word": "Delice",
+    "translation": "Delixhe",
+    "pos": "emër",
+    "senses": [
+      "Një nga rretheve që i përket provincës së Kërëkkalesë"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11215",
+    "source": "tr",
+    "word": "delik",
+    "translation": "vrimë, vrimë e vogël",
+    "pos": "emër",
+    "senses": [
+      "Hapësirë e ngushtë dhe e vogël"
+    ],
+    "examples": [
+      {
+        "source": "Anahtar deliği karanlıktı, içeriden belli belirsiz sesler geliyordu.",
+        "target": "Vrima e çelësit ishte e errët, po vinin zëra të paqartë nga brenda."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11678",
+    "source": "tr",
+    "word": "delikanlı",
+    "translation": "djalosh, djalë i ri",
+    "pos": "emër",
+    "senses": [
+      "Burrë i ri që ka dalë nga moshë e fëmijërisë"
+    ],
+    "examples": [
+      {
+        "source": "Delikanlı çağımızdaki cevher / Yalvarmak, yakarmak nafile bugün / Gözünün yaşına bakmadan gider",
+        "target": "Thelbi (vlefta) në kohën tonë si djalosh / Sot të lutesh e të përgjërohesh është e kotë / Ikën pa parë fare lotët e syve të tu"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11553",
+    "source": "tr",
+    "word": "delil",
+    "translation": "dëshmi, provë, indicie",
+    "pos": "emër",
+    "senses": [
+      "Gjurma ose shenja që mund ta çojë njeriun drejt realitetit që po kërkon"
+    ],
+    "examples": [
+      {
+        "source": "Milletlerin hürriyet için yaptıkları fedakârlıklardan canlı deliller gösteriyordu.",
+        "target": "Po tregonte prova të gjalla nga sakrificat që kombet kishin bërë për liri."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11369",
+    "source": "tr",
+    "word": "delilik",
+    "translation": "çmenduri, marrëzi",
+    "pos": "emër",
+    "senses": [
+      "Gjendja e të qenit i çmendur; cinnet"
+    ],
+    "examples": [
+      {
+        "source": "Bir delilik, bir çılgınlık, bir hoppalıktır gidiyor.",
+        "target": "Një marrëzi, një çmenduri, një mendjelehtësi po vazhdon pa ndalesë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12767",
+    "source": "tr",
+    "word": "delta",
+    "translation": "Delta lumore",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'delta'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10739",
+    "source": "tr",
+    "word": "deme",
+    "translation": "thënie, të thuash",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të thënit të diçkaje"
+    ],
+    "examples": [
+      {
+        "source": "Çoğumuz hâlâ yazarım demeye çekiniriz.",
+        "target": "Shumica prej nesh ende ngurrojnë të thonë 'unë jam shkrimtar'."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10071",
     "source": "tr",
     "word": "demek",
-    "translation": "them, do të thotë",
-    "pos": "folje",
-    "inflection": "(-i)",
-    "senses": [
-      "Shpreh me fjalë një mendim apo ndjenjë; them.",
-      "Ka kuptimin e diçkaje (p.sh. çfarë do të thotë kjo fjalë?)."
-    ],
-    "examples": [
-      {
-        "source": "Ne demek?",
-        "target": "Çfarë do të thotë?"
-      },
-      {
-        "source": "Öyle demek istemedim",
-        "target": "Nuk desha të them ashtu"
-      }
-    ],
-    "derivatives": [
-      {
-        "word": "deyim",
-        "translation": "shprehje frazeologjike, idiomë",
-        "pos": "emër"
-      },
-      {
-        "word": "değer",
-        "translation": "vlerë, e vlefshme",
-        "pos": "emër"
-      }
-    ]
-  },
-  {
-    "id": "dict-tr-26",
-    "source": "tr",
-    "word": "dönmek",
-    "translation": "kthehem, rrotullohem",
-    "pos": "folje",
-    "inflection": "(-e / -den)",
-    "notes": "Kërkon dhanoren (-e) për destinacionin e kthimit, ose rrjedhoren (-den) për vendin nga nis kthimi.",
-    "senses": [
-      "Shkoj përsëri në vendin nga u nisa; kthehem.",
-      "Lëviz rreth një boshti apo rrethi; rrotullohem.",
-      "Ndryshoj drejtim gjatë lëvizjes."
-    ],
-    "examples": [
-      {
-        "source": "Eve dönmek",
-        "target": "Kthehem në shtëpi"
-      },
-      {
-        "source": "Geri dönmek",
-        "target": "Kthehem mbrapa"
-      },
-      {
-        "source": "Köşeyi dönmek",
-        "target": "Kthehem në qoshe (fig. pasurohem shpejt)"
-      }
-    ],
-    "derivatives": [
-      {
-        "word": "dönüş",
-        "translation": "kthim, rrotullim",
-        "pos": "emër"
-      },
-      {
-        "word": "dönem",
-        "translation": "periudhë, semestër, epokë",
-        "pos": "emër"
-      },
-      {
-        "word": "döndürmek",
-        "translation": "rrotulloj diçka, bëj të kthehet",
-        "pos": "folje"
-      }
-    ]
-  },
-  {
-    "id": "dict-al-27",
-    "source": "al",
-    "word": "dritë",
-    "translation": "ışık",
+    "translation": "do të thotë",
     "pos": "emër",
-    "inflection": "-a",
     "senses": [
-      "Rrezatim fizik që ndriçon objektet dhe i bën të dukshme për syrin.",
-      "Burim ndriçimi (p.sh. llambë)."
+      "Të ketë kuptimin e një gjëje"
     ],
     "examples": [
       {
-        "source": "Drita e diellit",
-        "target": "Güneş ışığı"
-      },
-      {
-        "source": "Dritë jeshile",
-        "target": "Yeşil ışık (fig. leje ose aprovim)"
+        "source": "Okuryazar olmak adam olmak demek değildir.",
+        "target": "Të jesh i arsimuar nuk do të thotë të jesh njeri me vlera."
       }
     ],
-    "derivatives": [
-      {
-        "word": "ndriçoj",
-        "translation": "ışık saçmak, aydınlatmak",
-        "pos": "folje"
-      },
-      {
-        "word": "dritare",
-        "translation": "pencere",
-        "pos": "emër"
-      }
-    ]
+    "derivatives": []
   },
   {
-    "id": "dict-tr-28",
+    "id": "dict-tr-11819",
     "source": "tr",
-    "word": "dede",
-    "translation": "gjysh",
-    "pos": "emër",
-    "inflection": "-yi",
-    "is_balkan": true,
+    "word": "demin",
+    "translation": "pak më parë, sapo",
+    "pos": "ndajfolje",
     "senses": [
-      "Babai i babait ose i nënës; gjysh."
+      "Pak më parë; para pak çastesh"
     ],
     "examples": [
       {
-        "source": "Dede ocağı",
-        "target": "Shtëpia e gjyshit"
+        "source": "Demin aynanın arkasına baktım, bulamadım.",
+        "target": "Sapo (pak më parë) shikova pas pasqyrës, nuk e gjeta dot."
       }
-    ]
+    ],
+    "derivatives": []
   },
   {
-    "id": "dict-tr-29",
+    "id": "dict-tr-11334",
     "source": "tr",
-    "word": "ders",
-    "translation": "mësim, orë mësimi",
+    "word": "demir",
+    "translation": "hekur",
     "pos": "emër",
-    "inflection": "-i",
     "senses": [
-      "Një orë studimi ose mësimdhënieje në shkollë.",
-      "Përvojë jetësore ose këshillë e nxjerrë nga një ngjarje."
+      "Element me numër atomik 26, peshë atomike 55.847, dendësi 7.8, që shkrin në 1510 °C, me ngjyrë hiri në të kaltër, mjaft i përshtatshëm për t'u përdorur në industri veçanërisht në formë çeliku, gize dhe lidhjesh (simboli Fe)"
     ],
     "examples": [
       {
-        "source": "Ders çalışmak",
-        "target": "Studioj mësimet"
-      },
-      {
-        "source": "Ders almak",
-        "target": "Nxjerr mësim (nga një gabim)"
+        "source": "Hemşiresiyle rıhtımın kenarındaki demir kanepeye oturdular.",
+        "target": "U ulën bashkë me infermieren e saj në divanin prej hekuri në anë të shëtitores (mollit)."
       }
     ],
-    "derivatives": [
-      {
-        "word": "derslik",
-        "translation": "klasë, sallë mësimi",
-        "pos": "emër"
-      }
-    ]
+    "derivatives": []
   },
   {
-    "id": "dict-tr-30",
+    "id": "dict-tr-13823",
+    "source": "tr",
+    "word": "demokrasi",
+    "translation": "demokracia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'demokrasi'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11374",
+    "source": "tr",
+    "word": "deneme",
+    "translation": "provë, eksperimentim, ese",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të provuarit të diçkaje"
+    ],
+    "examples": [
+      {
+        "source": "Bu denemeleri yaptığıma hiç pişman değilim. Bugüne kadar yararlıklarını görüyorum.",
+        "target": "Nuk jam fare pishman që i kam bërë këto prova. Deri më sot po i shoh dobitë e tyre."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11242",
+    "source": "tr",
+    "word": "denemek",
+    "translation": "provoj, testoj, eksperimentoj",
+    "pos": "emër",
+    "senses": [
+      "Të provosh ose të testosh një person, një objekt ose një mendim për të kuptuar vlerën e tij ose nëse mbart cilësinë e nevojshme; tebrib bëj"
+    ],
+    "examples": [
+      {
+        "source": "Gelecek ise daha denemediğimiz zaman kesitidir.",
+        "target": "E ardhmja sidoqoftë është një segment kohe që ende nuk e kemi provuar."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10581",
     "source": "tr",
     "word": "deniz",
     "translation": "det",
     "pos": "emër",
-    "inflection": "-i",
     "senses": [
-      "Hapësirë e madhe me ujë të kripur që rrethon kontinentet."
+      "Masë e madhe uji të kripur, e lidhur me masat e tjera, që mbulon pjesët e trasha apo gropat e kores së tokës; derya"
     ],
     "examples": [
       {
-        "source": "Deniz kıyısı",
-        "target": "Bregdet (anë detit)"
-      },
-      {
-        "source": "Deniz ürünleri",
-        "target": "Produkte deti"
+        "source": "Marmara Denizi. Karadeniz.",
+        "target": "Deti Marmara. Deti i Zi."
       }
     ],
-    "derivatives": [
-      {
-        "word": "denizci",
-        "translation": "detar",
-        "pos": "emër"
-      },
-      {
-        "word": "denizaltı",
-        "translation": "nëndetëse",
-        "pos": "emër"
-      }
-    ]
+    "derivatives": []
   },
   {
-    "id": "dict-tr-31",
+    "id": "dict-tr-14000",
     "source": "tr",
-    "word": "dolap",
-    "translation": "dollap",
+    "word": "denizaltı",
+    "translation": "nëndetse",
     "pos": "emër",
-    "inflection": "-ı",
-    "is_balkan": true,
     "senses": [
-      "Mobilie me sirtarë ose derë që shërben për të mbajtur rroba, enë ose libra."
+      "Përkthim për fjalën 'denizaltı'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12132",
+    "source": "tr",
+    "word": "denizci",
+    "translation": "Detari",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'denizci'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17466",
+    "source": "tr",
+    "word": "denklem",
+    "translation": "ekuacioni",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'denklem'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12353",
+    "source": "tr",
+    "word": "depo",
+    "translation": "Depoja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'depo'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13025",
+    "source": "tr",
+    "word": "deprem",
+    "translation": "tërmet",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'deprem'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14195",
+    "source": "tr",
+    "word": "depresyon",
+    "translation": "Depresioni (gjendje emocionale)",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'depresyon'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15306",
+    "source": "tr",
+    "word": "dere",
+    "translation": "Përroi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'dere'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10627",
+    "source": "tr",
+    "word": "derece",
+    "translation": "shkallë, shkallëzim",
+    "pos": "emër",
+    "senses": [
+      "Fazë, etapë"
     ],
     "examples": [
       {
-        "source": "Elbise dolabı",
-        "target": "Dollap rrobash"
-      },
-      {
-        "source": "Mutfak dolabı",
-        "target": "Dollap kuzhine"
+        "source": "Hukuk tahsilini Paris'te bitirmiş, birinci derece diploma almıştı.",
+        "target": "Kishte përfunduar studimet për drejtësi në Paris dhe kishte marrë diplomë të shkallës së parë."
       }
-    ]
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12781",
+    "source": "tr",
+    "word": "dergi",
+    "translation": "revistë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'dergi'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10791",
+    "source": "tr",
+    "word": "derhâl",
+    "translation": "menjëherë, shpejt e shpejt",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në mënyrë të shpejtë"
+    ],
+    "examples": [
+      {
+        "source": "Beklenen cevap gelince derhâl yazılacağı tabiidir.",
+        "target": "Natyrisht që kur të vijë përgjigja e pritshme, do të shkruhet menjëherë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11445",
+    "source": "tr",
+    "word": "deri",
+    "translation": "shoqatë, lëkurë (në kuptim tjetër)",
+    "pos": "emër",
+    "senses": [
+      "Dernek, shoqatë (në kuptimin e vjetër)"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10667",
+    "source": "tr",
+    "word": "derin",
+    "translation": "i thellë",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai fundi i të cilit ndodhet larg nga sipërfaqja ose nga goja e tij"
+    ],
+    "examples": [
+      {
+        "source": "Hatta gelirken otobüste dalmışım, rüyamda da yılanlarla dolu, derin bir kuyuya düştüm.",
+        "target": "Madje gjatë ardhjes më kishte zënë gjumi në autobus, dhe në ëndërr rasha në një pus të thellë, të mbushur plot me gjarpërinj."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16012",
+    "source": "tr",
+    "word": "derinlik",
+    "translation": "thellësia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'derinlik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10840",
+    "source": "tr",
+    "word": "derken",
+    "translation": "ndërkohë që, sapo, kur papritmas",
+    "pos": "ndajfolje",
+    "senses": [
+      "Ndonëse thuhet ashtu"
+    ],
+    "examples": [
+      {
+        "source": "Bitti bitiyor derken hâlâ bitmeyen havaalanı.",
+        "target": "Aeroporti që ende nuk po përfundon, ndonëse thonë fiks po mbaron."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10656",
+    "source": "tr",
+    "word": "ders",
+    "translation": "mësim, klasë",
+    "pos": "emër",
+    "senses": [
+      "Informacioni ose dija që mësuesi i jep nxënësit brenda një kohe të caktuar"
+    ],
+    "examples": [
+      {
+        "source": "Mektepten kaçmıyor, bazı derslerden zevk alıp saatlerce çalıştığım oluyordu.",
+        "target": "Nuk ikja nga shkolla, kishte raste kur gjeja kënaqësi nga disa mësime dhe studioja për orë të tëra."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11022",
+    "source": "tr",
+    "word": "dert",
+    "translation": "shqetësim, hall, brengë",
+    "pos": "emër",
+    "senses": [
+      "Trishtim"
+    ],
+    "examples": [
+      {
+        "source": "Macit Bey’in eşi Nimet Hanım ona dostça davranıyor ve dertlerini paylaşıyordu.",
+        "target": "Bashkëshortja e Macit Beut, Zonja Nimet, silllej në mënyrë miqësore me të dhe i ndante brengat (hallet) e tij."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10647",
+    "source": "tr",
+    "word": "destek",
+    "translation": "mbështetje, mbështetëse",
+    "pos": "emër",
+    "senses": [
+      "Dërrasë ose dru i vendosur horizontalisht ose pjerrët për të ndaluar rrëzimin e diçkaje; payandë"
+    ],
+    "examples": [
+      {
+        "source": "Şamdan, sehpa, sacayak birer destektir.",
+        "target": "Mbajtësja e qirinjve, sehpaja dhe trekëmbëshi janë secili nga një mbështetëse."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18059",
+    "source": "tr",
+    "word": "deterjan",
+    "translation": "Detergjenti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'deterjan'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11014",
+    "source": "tr",
+    "word": "dev",
+    "translation": "gerr, gjigant",
+    "pos": "emër",
+    "senses": [
+      "Krijesë përrallore e tmerrshme, shumë trupmadhe dhe me fuqi të jashtëzakonshme"
+    ],
+    "examples": [
+      {
+        "source": "Abdülhak Hamit Bey, fevkalbeşer bir devden daha güzel bir mahluktur.",
+        "target": "Abdulhak Hamit Beu është një qenie më e bukur sesa një gjigant mbinjerëzor."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17008",
+    "source": "tr",
+    "word": "deva",
+    "translation": "Deva (Hinduizëm)",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'deva'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10104",
+    "source": "tr",
+    "word": "devam",
+    "translation": "vazhdim",
+    "pos": "emër",
+    "senses": [
+      "Zgjatja, vijueshmëria e diçkaje pa u ndërprerë dhe pa përfunduar"
+    ],
+    "examples": [
+      {
+        "source": "Devam zorunludur.",
+        "target": "Pjesëmarrja (vazhdimësia) është e detyrueshme."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11646",
+    "source": "tr",
+    "word": "devamlı",
+    "translation": "i vazhdueshëm, konstant",
+    "pos": "mbiemër",
+    "senses": [
+      "Sürekli, që nuk ndërpritet dhe nuk mbaron"
+    ],
+    "examples": [
+      {
+        "source": "Devamlı öğrenci.",
+        "target": "Student i rregullt (i vazhdueshëm)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11746",
+    "source": "tr",
+    "word": "devasa",
+    "translation": "kolosal, gjigant",
+    "pos": "mbiemër",
+    "senses": [
+      "Si gjigant, shumë i madh në përmasa"
+    ],
+    "examples": [
+      {
+        "source": "Bu devasa kürenin ortasında bir musluk, sağında ve solunda ise iki supap vardı.",
+        "target": "Në mes të kësaj sfere kolosale ndodhej një çezmë, ndërsa në të djathtë e në të majtë të saj ndodheshin dy valvula."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13699",
+    "source": "tr",
+    "word": "deve",
+    "translation": "Deveja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'deve'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14487",
+    "source": "tr",
+    "word": "devir",
+    "translation": "era",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'devir'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11042",
+    "source": "tr",
+    "word": "devlet",
+    "translation": "shtet",
+    "pos": "emër",
+    "senses": [
+      "Qenia juridike që krijohet nga bashkësia e kombit ose e kombeve e organizuar nga pikëpamja politike, e lidhur me tërësinë territoriale; vend"
+    ],
+    "examples": [
+      {
+        "source": "Devlet hizmetinde epeyce ileride sayılanlardan olsa gerek.",
+        "target": "Duhet të jetë nga ata që konsiderohen mjaft të përparuar në shërbimet e shtetit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11567",
+    "source": "tr",
+    "word": "devre",
+    "translation": "mbrapsht, gabim",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në një formë të prapë, mbrapsht ose gabim"
+    ],
+    "examples": [
+      {
+        "source": "Sarıldı boynuma ağlama deyi / Hotozumu devre bağlama deyi",
+        "target": "U hodh në qafën time që të mos qaja / Që të mos ia lidhja mbrapsht fshirësen e kokës (hotozin)"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12281",
+    "source": "tr",
+    "word": "devrim",
+    "translation": "Revolucioni",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'devrim'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14466",
+    "source": "tr",
+    "word": "devrimci",
+    "translation": "Revolucionari",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'devrimci'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12068",
+    "source": "tr",
+    "word": "devriye",
+    "translation": "Patrulla",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'devriye'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13379",
+    "source": "tr",
+    "word": "deyim",
+    "translation": "Idioma",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'deyim'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10590",
+    "source": "tr",
+    "word": "değer",
+    "translation": "vlerë",
+    "pos": "emër",
+    "senses": [
+      "Masa abstrakte që shërben për të përcaktuar rëndësinë e diçkaje, ose vlera që meriton një gjë; çmim"
+    ],
+    "examples": [
+      {
+        "source": "İnsan bir şeyin değerini ondan yoksun kalınca anlıyor.",
+        "target": "Njeriu e kupton vlerën e një gjëje vetëm kur mbetet pa të."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13281",
+    "source": "tr",
+    "word": "değerlendirme",
+    "translation": "vlerësim",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'değerlendirme'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10689",
+    "source": "tr",
+    "word": "değerli",
+    "translation": "i çmuar, me vlerë",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka vlerë ose që ka vlerë të lartë; i shtrenjtë, kymetli"
+    ],
+    "examples": [
+      {
+        "source": "Bu defaki gidişimizde, eşyamızın arasında taç gibi değerli bir parça da vardı.",
+        "target": "Gjatë kësaj shkuarjes sonë, mes gjërave tona kishte edhe një pjesë të çmuar si kurore."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10012",
+    "source": "tr",
+    "word": "değil",
+    "translation": "nuk është",
+    "pos": "pjesëz",
+    "senses": [
+      "Fjalë që përdoret për të bërë mohuese fjalitë emërore"
+    ],
+    "examples": [
+      {
+        "source": "Ben kımıldayacak hâlde değilim.",
+        "target": "Unë nuk jam në gjendje as të lëviz."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11521",
+    "source": "tr",
+    "word": "değişik",
+    "translation": "i ndryshuar, i amenduar",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që është futur në një formë tjetër, i ndryshuar"
+    ],
+    "examples": [
+      {
+        "source": "Yasanın değişik onuncu maddesi gereğince...",
+        "target": "Sipas nenit të dhjetë të ndryshuar të ligjit..."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11174",
+    "source": "tr",
+    "word": "değişiklik",
+    "translation": "ndryshim, modifikim",
+    "pos": "emër",
+    "senses": [
+      "Gjendja e të qenit ndryshe; veçanti"
+    ],
+    "examples": [
+      {
+        "source": "O zaman Ateşoğlu'nun yüzüne bakan tayfası, yüzündeki büyük bir değişikliğin farkına vardılar.",
+        "target": "Atëherë ekuipazhi i tij që shikoi në fytyrë të Atesogllut, dalloi një ndryshim të madh në fytyrën e tij."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11873",
+    "source": "tr",
+    "word": "değişim",
+    "translation": "ndryshim, transformim",
+    "pos": "emër",
+    "senses": [
+      "Tërësia e ndryshimeve brenda një segmenti kohor; ndryshim"
+    ],
+    "examples": [
+      {
+        "source": "Bu müsamere günündeki selamlama süresince bedenimde bir değişim olmuştu.",
+        "target": "Përgjatë kohës së përshëndetjes në këtë ditë shfaqjeje, kishte ndodhur një ndryshim në trupin tim."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13950",
+    "source": "tr",
+    "word": "değişken",
+    "translation": "Ndryshorja (matematikë)",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'değişken'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11305",
+    "source": "tr",
+    "word": "değiştirmek",
+    "translation": "ndryshim, ndërrim",
+    "pos": "emër",
+    "senses": [
+      "Të futësh diçka në një formë tjetër, ta bësh të pësojë ndryshime"
+    ],
+    "examples": [
+      {
+        "source": "Rüzgâr gibi çarçabuk esiş istikametlerini değiştiriyorlar, ağaç kurdu gibi renkten renge giriyorlar.",
+        "target": "Sikur era, ata ndryshojnë drejtimin e frymës së tyre shumë shpejt dhe ndërrojnë ngjyrat si krimbi i drurit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11280",
+    "source": "tr",
+    "word": "dik",
+    "translation": "vertikal, i drejtë",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ndodhet në drejtimin e gravitetit në raport me një rrafsh horizontal, që nuk është i pjerrët"
+    ],
+    "examples": [
+      {
+        "source": "Dik saç.",
+        "target": "Flokë të ngritura (drejt)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10227",
+    "source": "tr",
+    "word": "dikkat",
+    "translation": "vëmendje, kujdes",
+    "pos": "emër",
+    "senses": [
+      "Përqendrimi i mendimit dhe i ndjenjave mbi një gjë"
+    ],
+    "examples": [
+      {
+        "source": "Onun kalbini, haysiyetini kıracak sözler söylenmeden bu zarif hareketle her şeyin anlatılmış olması dikkate şayandır.",
+        "target": "Është e denjë për vëmendje që çdo gjë u shpjegua me këtë lëvizje elegante, pa thënë fjalë që do t'i lëndonin zemrën apo dinjitetin e tij."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10385",
+    "source": "tr",
+    "word": "dikkatli",
+    "translation": "i kujdesshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "Personi që tregon kujdes ose vëmendje"
+    ],
+    "examples": [
+      {
+        "source": "Biz o koltuklara dikkatli otururduk.",
+        "target": "Ne uleshim me kujdes në ato kolltuke."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16688",
+    "source": "tr",
+    "word": "diktatör",
+    "translation": "Diktatori, diktatori",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'diktatör'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18755",
+    "source": "tr",
+    "word": "diktatörlük",
+    "translation": "diktatura",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'diktatörlük'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11654",
+    "source": "tr",
+    "word": "dil",
+    "translation": "gjuhë, gjuha",
+    "pos": "emër",
+    "senses": [
+      "Organi i shijimit në gojë, ose sistemi i komunikimit midis njerëzve përmes fjalëve"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11605",
+    "source": "tr",
+    "word": "dilemek",
+    "translation": "lutje, kërkesë, dëshirim",
+    "pos": "emër",
+    "senses": [
+      "Të kërkosh prej dikujt që të bëhet diçka; t'i lutesh dikujt"
+    ],
+    "examples": [
+      {
+        "source": "Yalnız bu hususta beni bağışlamanızı dilerim.",
+        "target": "Vetëm se kërkoj (lutem) që të më falni në këtë çështje."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12065",
+    "source": "tr",
+    "word": "din",
+    "translation": "feja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'din'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15734",
+    "source": "tr",
+    "word": "dinamik",
+    "translation": "dinamika",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'dinamik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14161",
+    "source": "tr",
+    "word": "dinamit",
+    "translation": "dinamiti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'dinamit'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11757",
+    "source": "tr",
+    "word": "dinleme",
+    "translation": "dëgjim, përgjim",
+    "pos": "emër",
+    "senses": [
+      "Veprimi ose puna e të dëgjuarit"
+    ],
+    "examples": [
+      {
+        "source": "Bir süredir günün değişik saatlerinde aşağıyı dinlemeyi huy edinmişti.",
+        "target": "Prej një kohe e kishte bërë zakon që në orë të ndryshme të ditës të dëgjonte (përgjonte) pjesën e poshtme."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11126",
+    "source": "tr",
+    "word": "dinlemek",
+    "translation": "dëgjoj",
+    "pos": "emër",
+    "senses": [
+      "Të vesh veshin me qëllim për të dëgjuar diçka"
+    ],
+    "examples": [
+      {
+        "source": "Konağın hesabını sen söylersin, ben de dinlerim.",
+        "target": "Ti thuaj llogarinë e konakut, e unë po dëgjoj."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14219",
+    "source": "tr",
+    "word": "dinozor",
+    "translation": "Dinozaurët",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'dinozor'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17869",
+    "source": "tr",
+    "word": "diplomasi",
+    "translation": "diplomacia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'diplomasi'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16677",
+    "source": "tr",
+    "word": "diplomat",
+    "translation": "diplomat",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'diplomat'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11491",
+    "source": "tr",
+    "word": "direk",
+    "translation": "shtyllë, shtyllë druri/hekuri",
+    "pos": "emër",
+    "senses": [
+      "Mbështetëse e trashë dhe e gjatë e bërë prej druri ose hekuri"
+    ],
+    "examples": [
+      {
+        "source": "Kayıkçı yelkeni açmak için ilkin direği yerine oturtmalıdır.",
+        "target": "Varkëtar duhet ta vendosë së pari shtyllën në vendin e vet me qëllim që të hapë velën."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11616",
+    "source": "tr",
+    "word": "direkt",
+    "translation": "drejtpërdrejt, direkt",
+    "pos": "mbiemër",
+    "senses": [
+      "Aracısız, pa ndërmjetësues"
+    ],
+    "examples": [
+      {
+        "source": "İki devlet arasında direkt ilişki yok.",
+        "target": "Nuk ka marrëdhënie të drejtpërdrejtë midis dy shteteve."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16734",
+    "source": "tr",
+    "word": "direnç",
+    "translation": "rezistorët, rezistenca elektrike",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'direnç'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17476",
+    "source": "tr",
+    "word": "diyabet",
+    "translation": "Diabetes mellitus",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'diyabet'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16644",
+    "source": "tr",
+    "word": "diyalog",
+    "translation": "Dialogu",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'diyalog'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10092",
+    "source": "tr",
+    "word": "diye",
+    "translation": "duke thënë, me mendimin se",
+    "pos": "pjesëz",
+    "senses": [
+      "Me emrin, me thirrjen"
+    ],
+    "examples": [
+      {
+        "source": "İki yıldır buraya Süleyman diye biri gelmedi.",
+        "target": "Prej dy vitesh këtu nuk ka ardhur dikush me emrin Süleyman."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11509",
+    "source": "tr",
+    "word": "diz",
+    "translation": "gju, gjuri",
+    "pos": "emër",
+    "senses": [
+      "Vendi ku bashkohen kockat e kofshës, kofshës së poshtme dhe kaurit"
+    ],
+    "examples": [
+      {
+        "source": "Bir iskemlede ellerini dizlerine sermiş, sessizce oturuyordu.",
+        "target": "Rrinte i ulur në qetësi mbi një karrige, duke i mbajtur duart përmbi gjunjë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11766",
+    "source": "tr",
+    "word": "dizi",
+    "translation": "radhë, varg",
+    "pos": "emër",
+    "senses": [
+      "Sıra, varg"
+    ],
+    "examples": [
+      {
+        "source": "İki dizi inci.",
+        "target": "Dy vargje margaritarësh."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16460",
+    "source": "tr",
+    "word": "dizin",
+    "translation": "Kartoteka",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'dizin'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10174",
+    "source": "tr",
+    "word": "diğer",
+    "translation": "tjetër, i tjetërpari",
+    "pos": "mbiemër",
+    "senses": [
+      "Tjetri"
+    ],
+    "examples": [
+      {
+        "source": "Diğer misafirlerimle meşgul olamadım.",
+        "target": "Nuk pata mundësi të merrem me mysafirët e mi të tjerë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11130",
+    "source": "tr",
+    "word": "diğeri",
+    "translation": "tjetri, tjetra",
+    "pos": "përemër",
+    "senses": [
+      "Tjetri"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11059",
+    "source": "tr",
+    "word": "diş",
+    "translation": "dhëmb",
+    "pos": "emër",
+    "senses": [
+      "Secili prej organeve të bardha dhe të forta të rreshtuara përmbi kockat e nofullës, që shërbejnë për të kafshuar, këputur dhe përtypur"
+    ],
+    "examples": [
+      {
+        "source": "Çarkın dişleri tebessüm eder gibi tatlı bir ses çıkardı.",
+        "target": "Dhëmbët e rrotës nxorën një zë të ëmbël sikur po buzëqeshnin."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11479",
+    "source": "tr",
+    "word": "dişi",
+    "translation": "femër",
+    "pos": "mbiemër",
+    "senses": [
+      "Individi që formon vezë ose që lind të vegjël"
+    ],
+    "examples": [
+      {
+        "source": "Dişi kedi.",
+        "target": "Mace femër."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11792",
+    "source": "tr",
+    "word": "do",
+    "translation": "do (notë)",
+    "pos": "emër",
+    "senses": [
+      "Tingulli midis notave si dhe re në shkallën muzikore"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10192",
+    "source": "tr",
+    "word": "doktor",
+    "translation": "mjek, doktor",
+    "pos": "emër",
+    "senses": [
+      "Mjek"
+    ],
+    "examples": [
+      {
+        "source": "Suzinak faslının eski yeni şarkıları birbirini takip ederken bu hâle gülen doktor gezinmeye başladı.",
+        "target": "Ndërsa këngët e vjetra dhe të reja të periudhës Suzinak pasonin njëra-tjetrën, doktori që qeshte me këtë gjendje filloi të ecte."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11196",
+    "source": "tr",
+    "word": "doktora",
+    "translation": "doktoratë",
+    "pos": "emër",
+    "senses": [
+      "Shkalla ose niveli akademik që arrihet në një degë shkencore përmes një provimi dhe një vepre shkencore pasi ke përfunduar fakultetin"
+    ],
+    "examples": [
+      {
+        "source": "Gezdiricimiz, büyük romancı üstüne doktora tezini hazırlayan bir genç.",
+        "target": "Udhërrëfyesi ynë është një i ri që po përgatit tezën e tij të doktoratës mbi shkrimtarin e madh."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12811",
+    "source": "tr",
+    "word": "doku",
+    "translation": "ind",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'doku'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10917",
+    "source": "tr",
+    "word": "dokunma",
+    "translation": "të prekurit, prekje",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të prekurit të diçkaje"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10825",
+    "source": "tr",
+    "word": "dokuz",
+    "translation": "nëntë",
+    "pos": "emër",
+    "senses": [
+      "Emri i numrit që vjen pas numrit tetë"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14139",
+    "source": "tr",
+    "word": "dolandırıcılık",
+    "translation": "Mashtrimi (vepër penale)",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'dolandırıcılık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10252",
+    "source": "tr",
+    "word": "dolar",
+    "translation": "dollar",
+    "pos": "emër",
+    "senses": [
+      "Njësia monetare e Shteteve të Bashkuara të Amerikës, Kanadasë dhe vendeve të tjera të ngjashme"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10492",
+    "source": "tr",
+    "word": "dolayı",
+    "translation": "për shkak të, nga",
+    "pos": "pjesëz",
+    "senses": [
+      "Për shkak të, si rrjedhojë e"
+    ],
+    "examples": [
+      {
+        "source": "Ona böylesi kararlarından dolayı soru sorulmazdı.",
+        "target": "Nuk i bëheshin pyetje atij për shkak të vendimeve të tilla të tij."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11979",
+    "source": "tr",
+    "word": "dolayısıyla",
+    "translation": "rrjedhimisht, prandaj, për këtë arsye",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në mënyrë të tërthortë, pa pasur lidhje të drejtpërdrejtë"
+    ],
+    "examples": [
+      {
+        "source": "Dolayısıyla onun da ne düşündüğünü anlamış olduk.",
+        "target": "Për këtë arsye (rrjedhimisht) arritëm të kuptojmë edhe se çfarë mendonte ai."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16761",
+    "source": "tr",
+    "word": "dolma",
+    "translation": "Dollma me lakėr",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'dolma'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14145",
+    "source": "tr",
+    "word": "dolmuş",
+    "translation": "Dollmus",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'dolmuş'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10369",
+    "source": "tr",
+    "word": "dolu",
+    "translation": "i mbushur, plot",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që nuk e ka pjesën e brendshme të zbrazët; plot, e kundërta e 'i zbrazët'"
+    ],
+    "examples": [
+      {
+        "source": "Su ile dolu bir şişe.",
+        "target": "Një shishe e mbushur plot me ujë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11680",
+    "source": "tr",
+    "word": "dolusu",
+    "translation": "plot me, një (shportë) plot",
+    "pos": "mbiemër",
+    "senses": [
+      "Në një sasi aq sa për ta mbushur plot diçka"
+    ],
+    "examples": [
+      {
+        "source": "Aç ve susuzuz düşüncesiyle bir sepet dolusu şeftali de almışlar getirmişler.",
+        "target": "Me mendimin se jemi të uritur e të etur, kishin blerë e kishin sjellë edhe një shportë plot me pjeshkë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12928",
+    "source": "tr",
+    "word": "domates",
+    "translation": "domate",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'domates'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15586",
+    "source": "tr",
+    "word": "domino",
+    "translation": "Dominoja",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'domino'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10812",
+    "source": "tr",
+    "word": "domuz",
+    "translation": "derr",
+    "pos": "emër",
+    "senses": [
+      "Kafshë shtëpiake dythundrake që mbarështohet për mishin, dhjamin, lëkurën ose qimet e saj"
+    ],
+    "examples": [
+      {
+        "source": "Domuzun malı için can tüketmeye mi geldik dünyaya?",
+        "target": "A për të konsumuar jetën për pasurinë e derrit kemi ardhur në këtë botë?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10774",
+    "source": "tr",
+    "word": "don",
+    "translation": "ngjyrë qimeje e kalit",
+    "pos": "emër",
+    "senses": [
+      "Ngjyra e qimeve të kalit"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11286",
+    "source": "tr",
+    "word": "dondurma",
+    "translation": "akullore, ngrirje",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të ngririt, ose ëmbëlsirë e ngrirë qumështi"
+    ],
+    "examples": [
+      {
+        "source": "Dondurmalarını yalaya yalaya dolaşmaya başladılar.",
+        "target": "Filluan të shëtisnin duke lëpirë akulloret e tyre."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11108",
+    "source": "tr",
+    "word": "dost",
+    "translation": "mik, mik i ngushtë",
+    "pos": "emër",
+    "senses": [
+      "Personi që duhet, që i besohet, me të cilin njeriu merret vesh mirë dhe ka afrimitet zemre; i kundërti i armikut"
+    ],
+    "examples": [
+      {
+        "source": "Ben giderim adım kalır / Dostlar beni hatırlasın",
+        "target": "Unë do të shkoj e do të më mbetet emri / Shpresoj që miqtë të më kujtojnë"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11568",
+    "source": "tr",
+    "word": "dosya",
+    "translation": "dosje, fashikull",
+    "pos": "emër",
+    "senses": [
+      "Tërësia e dokumenteve që lidhen me të njëjtën temë, të njëjtin person ose të njëjtën punë"
+    ],
+    "examples": [
+      {
+        "source": "Dosyaları koltuğunun altına yerleştirirken hırsından tiril tiril titriyordu.",
+        "target": "Ndërsa po i vendoste dosjet nën sqetull, po dridhej mjaft (tiril tiril) nga zemërimi i tij."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11975",
+    "source": "tr",
+    "word": "doğa",
+    "translation": "natyrë, natyra",
+    "pos": "emër",
+    "senses": [
+      "Tërësia e qenieve të gjalla dhe të vdekura që ndryshojnë dhe zhvillohen vazhdimisht brenda rregullave të veta; tabiat"
+    ],
+    "examples": [
+      {
+        "source": "En çok yurdumdan söz ettim / Doğayla, insanla içli dışlı",
+        "target": "Më së shumti fola për vendin tim / Bashkëjetesë e ngushtë me natyrën e me njeriun"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10683",
+    "source": "tr",
+    "word": "doğal",
+    "translation": "natyror, i natyrshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ndodh ose ndodhet në natyrë"
+    ],
+    "examples": [
+      {
+        "source": "Doğal güzellikler artık eskisi gibi turist çekmiyor.",
+        "target": "Bukuriitë natyrore tashmë nuk tërheqin turistë si më parë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13656",
+    "source": "tr",
+    "word": "doğaçlama",
+    "translation": "Improvizim",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'doğaçlama'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13643",
+    "source": "tr",
+    "word": "doğaüstü",
+    "translation": "e mbinatyrshmja",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'doğaüstü'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10059",
+    "source": "tr",
+    "word": "doğru",
+    "translation": "i drejtë",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që nuk ndryshon drejtim nga njëri skaj në tjetrin, i kundërti i i përkulur ose i shtrembëruar"
+    ],
+    "examples": [
+      {
+        "source": "Doğru haber.",
+        "target": "Lajm i vërtetë (i saktë)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11701",
+    "source": "tr",
+    "word": "doğruca",
+    "translation": "i drejtpërdrejtë",
+    "pos": "mbiemër",
+    "senses": [
+      "I afërt me të drejtën ose që shkon fill e në qëllim"
+    ],
+    "examples": [
+      {
+        "source": "Belki doğruca Ankara'ya dönersin, değil mi?",
+        "target": "Ndoshta kthehesh drejtpërdrejt në Ankara, apo jo?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11159",
+    "source": "tr",
+    "word": "doğrudan",
+    "translation": "drejtpërdrejt, pa ndërmjetës",
+    "pos": "mbiemër",
+    "senses": [
+      "Pa ndërmjetësimin e askujt"
+    ],
+    "examples": [
+      {
+        "source": "Doğrudan pazarlık.",
+        "target": "Pazarllëk i drejtpërdrejtë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13630",
+    "source": "tr",
+    "word": "doğruluk",
+    "translation": "Siddiq",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'doğruluk'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10913",
+    "source": "tr",
+    "word": "doğrusu",
+    "translation": "në të vërtetë, vërtet",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në qoftë se është e nevojshme të thuhet e vërteta, realiteti është se"
+    ],
+    "examples": [
+      {
+        "source": "Böyle akıntıya kürek çektiğine çok acıdım doğrusu.",
+        "target": "Në të vërtetë, më erdhi shumë keq që ai po harxhonte mund më kot (po lundronte kundër rrymës)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10879",
+    "source": "tr",
+    "word": "Doğu",
+    "translation": "lindje, lindja",
+    "pos": "emër",
+    "senses": [
+      "Rajoni i vendeve ose i qytetërimeve që ndodhen në drejtimin ku lind dielli; Shark"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10408",
+    "source": "tr",
+    "word": "doğum",
+    "translation": "lindje",
+    "pos": "emër",
+    "senses": [
+      "Akti ose procesi i të lindurit; lindja"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18139",
+    "source": "tr",
+    "word": "doğurganlık",
+    "translation": "fertiliteti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'doğurganlık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13018",
+    "source": "tr",
+    "word": "drama",
+    "translation": "dramë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'drama'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10588",
+    "source": "tr",
+    "word": "dua",
+    "translation": "lutje, dua",
+    "pos": "emër",
+    "senses": [
+      "Lutja drejtuar Allahut, dëshira që një gjë të ndodhë ose të mos ndodhë"
+    ],
+    "examples": [
+      {
+        "source": "Pazartesi, perşembe geceleri yatağında gizli gizli Arapça dua okurdu.",
+        "target": "Netëve të së hënës dhe të së enjtes lexonte fshehurazi lutje në arabisht në shtratin e tij."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13191",
+    "source": "tr",
+    "word": "dudak",
+    "translation": "buza",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'dudak'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12075",
+    "source": "tr",
+    "word": "dul",
+    "translation": "Vejusha",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'dul'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11742",
+    "source": "tr",
+    "word": "duman",
+    "translation": "tym, avull",
+    "pos": "emër",
+    "senses": [
+      "Gaz në ngjyra të ndryshme që përmban avull dhe grimca të forta, i cili del nga djegia e një lënde"
+    ],
+    "examples": [
+      {
+        "source": "Köyünün üstüne boz bir duman çökmüştü.",
+        "target": "Mbi fshat kishte rënë një tym i murmë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11455",
+    "source": "tr",
+    "word": "durdurmak",
+    "translation": "ndalim, ndaloj",
+    "pos": "emër",
+    "senses": [
+      "Të sigurosh që diçka të ndalojë; të mposhtsh diçka"
+    ],
+    "examples": [
+      {
+        "source": "Sızıntıları durdurmadan, bir önlem almadan ne diye bütün kitapları, eşyaları taşıdık ki!",
+        "target": "Pse i mbartëm të gjitha librat dhe sendet pa i ndaluar rrjedhjet (pikat e shiut) dhe pa marrë asnjë masë!"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10981",
+    "source": "tr",
+    "word": "durma",
+    "translation": "ndalimi, të ndaluarit",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të ndaluarit; pushim"
+    ],
+    "examples": [
+      {
+        "source": "Bu rakkasın durmasına hiçbirimiz alışık değilizdir bu evde, o hep aynı ahenkle sallanmalı.",
+        "target": "Asnjëri prej nesh në këtë shtëpi nuk është i mësuar me ndalimin e këtij vallëtari, ai duhet të lëkundet gjithmonë me të njëjtën harmoni."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11800",
+    "source": "tr",
+    "word": "durmadan",
+    "translation": "pa pushim",
+    "pos": "ndajfolje",
+    "senses": [
+      "Pa bërë ndalesë, në mënyrë të vazhdueshme, pa ndërprerje"
+    ],
+    "examples": [
+      {
+        "source": "İnce, ürkek bir sesle durmadan inliyordu.",
+        "target": "Po stërmundohej (stërstkonte) pa pushim me një zë të hollë e të trembur."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11865",
+    "source": "tr",
+    "word": "durmak",
+    "translation": "qëndrim, të qëndruarit pa lëvizur",
+    "pos": "emër",
+    "senses": [
+      "Të qenit në gjendje të palëvizshme"
+    ],
+    "examples": [
+      {
+        "source": "Motorlu su taşıtlarından biri de kanal rıhtımının tam bizim önümüze düşen bir noktasında demir atmış duruyordu.",
+        "target": "Një nga mjetet motorike të ujit kishte hedhur spirancën e po qëndronte fiks në një pikë të rrafshët të mollit të kanalit që binte fiks përpara nesh."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11493",
+    "source": "tr",
+    "word": "duvar",
+    "translation": "mur, muri",
+    "pos": "emër",
+    "senses": [
+      "Rrafsh vertikal i ndërtuar ose i bërë prej lëndëve si guri, tulla etj., që mbron anët e një ndërtese ndaj mjedisit të jashtëm ose ndan pjesët e brendshme nga njëra-tjetra; cidar"
+    ],
+    "examples": [
+      {
+        "source": "Bir duvar onarılır öteki çöker, ardından dam akardı.",
+        "target": "Një mur riparohej e tjetri rrëzohej, e pas tij rridhte çatia."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11443",
+    "source": "tr",
+    "word": "duygu",
+    "translation": "ndjenjë, emocion, ndijim",
+    "pos": "emër",
+    "senses": [
+      "Perceptimi përmes shqisave; his"
+    ],
+    "examples": [
+      {
+        "source": "Bitkilerde duygu var mı?",
+        "target": "A ka ndjenjë (ndijim) te bimët?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10959",
+    "source": "tr",
+    "word": "duygusal",
+    "translation": "emocional, ndjenjor",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që lidhet me ndjenjat ose bazohet mbi ndjenjat; hissî"
+    ],
+    "examples": [
+      {
+        "source": "Bu duygusal atmosferden etkileniyorum.",
+        "target": "Po ndikohem nga kjo atmosferë emocionale."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10592",
+    "source": "tr",
+    "word": "duymak",
+    "translation": "dëgjoj, marr vesh",
+    "pos": "emër",
+    "senses": [
+      "Të marrësh informacion, të mësosh diçka, të marrësh lajm"
+    ],
+    "examples": [
+      {
+        "source": "Bir köylüden burada avlandığınızı duydum.",
+        "target": "Dëgjova nga një fshatar që ju keni gjuajtur këtu."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17556",
+    "source": "tr",
+    "word": "duyu",
+    "translation": "kuptim",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'duyu'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11201",
+    "source": "tr",
+    "word": "duş",
+    "translation": "dush",
+    "pos": "emër",
+    "senses": [
+      "Larja e trupit duke spërkatur ujin nga lart për qëllime pastrimi ose mjekimi"
+    ],
+    "examples": [
+      {
+        "source": "Soğuk bir duş, sonra da deliksiz bir uyku!",
+        "target": "Një dush i ftohtë, e pastaj një gjumë i rëndë pa u zgjuar!"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10963",
+    "source": "tr",
+    "word": "dâhi",
+    "translation": "gjeni",
+    "pos": "emër",
+    "senses": [
+      "Personi që ka aftësi të jashtëzakonshme dhe fuqi krijuese; deha"
+    ],
+    "examples": [
+      {
+        "source": "Atatürk, bilmek için öğrenmiş olmaya ihtiyacı olmayan dâhiler soyundandı.",
+        "target": "Ataturku rridhte nga raca e gjenive që nuk kishin nevojë të mësonin për të ditur."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11759",
+    "source": "tr",
+    "word": "dönem",
+    "translation": "periudhë, fazë",
+    "pos": "emër",
+    "senses": [
+      "Segment kohor që ka karakteristika të caktuara; period"
+    ],
+    "examples": [
+      {
+        "source": "Otuz yedi yaş bana bitmez tükenmez bir dönem gibi geldi.",
+        "target": "Mosha tridhjetë e shtatë vjeç më erdhi si një periudhë e pafundme dhe që nuk mbaronte dot."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11323",
+    "source": "tr",
+    "word": "döner",
+    "translation": "rrotullues, xhirues",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që është duke u rrotulluar, që rrotullohet ose që është dizajnuar për t'u rrotulluar"
+    ],
+    "examples": [
+      {
+        "source": "Döner dolap",
+        "target": "Dolap rrotullues"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11906",
+    "source": "tr",
+    "word": "dönme",
+    "translation": "kthim, të kthyerit",
+    "pos": "emër",
+    "senses": [
+      "Veprimi ose puna e të kthyerit; rrotullim"
+    ],
+    "examples": [
+      {
+        "source": "Dönmeyi kararlaştırmış da olsa bir aksilik, mutlaka bir aksilik, benim saadetime engel olacaktı.",
+        "target": "Edhe në qoftë se kishte vendosur të kthehej, një prapësi, patjetër një prapësi, do të bëhej pengesë për lumturinë time."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10773",
+    "source": "tr",
+    "word": "dönmek",
+    "translation": "rrotullohem, kthehem",
+    "pos": "emër",
+    "senses": [
+      "Të lëvizësh rreth akstit të vet ose rreth një gjëje tjetër"
+    ],
+    "examples": [
+      {
+        "source": "İçeride anahtarın acı bir gıcırtıyla döndüğünü duydum.",
+        "target": "Dëgjova çelësin tek kthehej brenda me një kërcitje të ashpër."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13177",
+    "source": "tr",
+    "word": "dönüm",
+    "translation": "Dynym",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'dönüm'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11235",
+    "source": "tr",
+    "word": "dönüş",
+    "translation": "kthim, të kthyerit",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të kthyerit"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13352",
+    "source": "tr",
+    "word": "dönüşüm",
+    "translation": "transformimi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'dönüşüm'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11319",
+    "source": "tr",
+    "word": "dördüncü",
+    "translation": "i katërt",
+    "pos": "mbiemër",
+    "senses": [
+      "Mbiemri rreshtor i numrit katër, ai që vjen pas të tretit në radhë"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10251",
+    "source": "tr",
+    "word": "dört",
+    "translation": "katër",
+    "pos": "emër",
+    "senses": [
+      "Emri i numrit që vjen pas numrit tre"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12229",
+    "source": "tr",
+    "word": "dövme",
+    "translation": "Tatuazhi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'dövme'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11218",
+    "source": "tr",
+    "word": "dövüş",
+    "translation": "rrahje, përleshje, dyluftim",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të rrahurit ose të përleshurit"
+    ],
+    "examples": [
+      {
+        "source": "Mektep çıkışlarında canavarca dövüşler olurdu.",
+        "target": "Gjatë daljes nga shkolla ndodhnin rrahje (përleshje) mizore."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13559",
+    "source": "tr",
+    "word": "dük",
+    "translation": "dukë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'dük'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14741",
+    "source": "tr",
+    "word": "dükkân",
+    "translation": "dyqan",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'dükkân'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10216",
+    "source": "tr",
+    "word": "dün",
+    "translation": "dje",
+    "pos": "emër",
+    "senses": [
+      "Dita menjëherë përpara së sotmes"
+    ],
+    "examples": [
+      {
+        "source": "Dün gece uyuyamadım da biraz başım ağrıyor.",
+        "target": "Mbrëmë nuk mundesha të flija ndaj më dhemb pak koka."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10249",
+    "source": "tr",
+    "word": "Dünya",
+    "translation": "Tokë, Botë",
+    "pos": "emër",
+    "senses": [
+      "Planeti i tretë nga pikëpamja e afërsisë me Diellin"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10576",
+    "source": "tr",
+    "word": "dünyada",
+    "translation": "asnjëherë në botë, kurrsesi",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në asnjë kohë, në asnjë mënyrë"
+    ],
+    "examples": [
+      {
+        "source": "Bu kitabı dünyada kimseye vermem.",
+        "target": "Këtë libër nuk ia jap askujt në botë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10280",
+    "source": "tr",
+    "word": "dürüm",
+    "translation": "dyner, cilindër",
+    "pos": "emër",
+    "senses": [
+      "Puna e palosjes apo e rrotullimit të diçkaje"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10494",
+    "source": "tr",
+    "word": "dürüst",
+    "translation": "i ndershëm, i drejtë",
+    "pos": "mbiemër",
+    "senses": [
+      "Personi i drejtë që nuk ndahet nga e vërteta në fjalët dhe sjelljet e tij"
+    ],
+    "examples": [
+      {
+        "source": "Dürüst bir insan, inansa da inanmasa da mefhumları yerli yerinde kullanmak borcundadır.",
+        "target": "Një njeri i ndershëm, qoftë se beson apo jo, është i detyruar t'i përdorë konceptet në vendin e tyre të duhur."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13268",
+    "source": "tr",
+    "word": "dürüstlük",
+    "translation": "Ndershmëria",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'dürüstlük'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11379",
+    "source": "tr",
+    "word": "düz",
+    "translation": "raki e thjeshtë (pa anason)",
+    "pos": "emër",
+    "senses": [
+      "Raki e thjeshtë pa përzierje të lëndëve të tjera"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11805",
+    "source": "tr",
+    "word": "düzen",
+    "translation": "rregull, sistem, strukturë",
+    "pos": "emër",
+    "senses": [
+      "Gjendja e ngritur sipas rregullave, ligjeve ose metodave të caktuara; nizam"
+    ],
+    "examples": [
+      {
+        "source": "Bilhassa toprak ve silah meselelerinin bir düzene konmasını, hem de tezelden istediler.",
+        "target": "Kërkuan veçanërisht që çështjet e tokës dhe të armëve të viheshin në një rregull, madje shpejt e shpejt."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11480",
+    "source": "tr",
+    "word": "düzenli",
+    "translation": "i rregullt, i sistemuar",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që është në vendin e duhur, i qëndrueshëm, i organizuar; muntazam"
+    ],
+    "examples": [
+      {
+        "source": "Hele, düzenli giyim diye bir dertleri hiç yoktur.",
+        "target": "Sidoqoftë, nuk kanë asnjë shqetësim (merak) të quajtur veshje e rregullt."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10699",
+    "source": "tr",
+    "word": "düzgün",
+    "translation": "i rregullt, i drejtë",
+    "pos": "mbiemër",
+    "senses": [
+      "I drejtë dhe pa pabarazi; i sistemuar"
+    ],
+    "examples": [
+      {
+        "source": "Ayşe çayı demlemiş, düzgün dilimlerle francala kesiyordu.",
+        "target": "Ajsheja kishte përgatitur çajin, e po mprehte bukën në feta të rregullta."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11825",
+    "source": "tr",
+    "word": "düzine",
+    "translation": "gjashtëmbëdhjetëshe, düzine (komplet prej 12)",
+    "pos": "emër",
+    "senses": [
+      "Komplet i formuar nga dymbëdhjetë pjesë të të njëjtit lloj"
+    ],
+    "examples": [
+      {
+        "source": "Bundan sonra en kibar adamların bile düzineyle çocuklarını taşımalarına onların gürültüsü, cıvıltısı arasında yaşamalarına şaşmadım.",
+        "target": "Pas kësaj, nuk u habita që madje edhe njerëzit më fisnikë t'i mbytnin (mbartnin) fëmijët e tyre me düzine (me dymbëdhjetëshe) e të jetonin mes zhurmës dhe cicërimave të tyre."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14446",
+    "source": "tr",
+    "word": "düğüm",
+    "translation": "Kulmi (teoria e grafeve), nyjë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'düğüm'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10816",
+    "source": "tr",
+    "word": "düğün",
+    "translation": "dasmë, festë",
+    "pos": "emër",
+    "senses": [
+      "Ceremonia ose festa që bëhet me rastin e martesës ose të synetit"
+    ],
+    "examples": [
+      {
+        "source": "Babam düğünün savaştan sonraya kalmasını uygun görmüş.",
+        "target": "Im atë e kishte parë të rregullt që dasma të lihej për pas lufte."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10931",
+    "source": "tr",
+    "word": "düşman",
+    "translation": "armik",
+    "pos": "emër",
+    "senses": [
+      "Personi që dëshiron të keqen e dikujt, që e urren atë dhe përpiqet t'i bëjë dëm; e kundërta e 'mikut'"
+    ],
+    "examples": [
+      {
+        "source": "Ben ki dans salonlarına, barlara düşman bir adamımdır.",
+        "target": "Unë që jam një njeri armik i salloneve të vallëzimit dhe i bareve."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15434",
+    "source": "tr",
+    "word": "düşmanlık",
+    "translation": "Armiqësia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'düşmanlık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10973",
+    "source": "tr",
+    "word": "düşük",
+    "translation": "dështim (foshnje), i rënë",
+    "pos": "emër",
+    "senses": [
+      "Foshnja ose djalit që lind përpara se të vijë në gjendje për të jetuar; ceninisakıt"
+    ],
+    "examples": [
+      {
+        "source": "Düşük mide. Düşük omuz.",
+        "target": "Stomak i rënë. Shpatulla të rëna."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10470",
+    "source": "tr",
+    "word": "düşün",
+    "translation": "mendim, ide",
+    "pos": "emër",
+    "senses": [
+      "Objekti ose ngjarja që konceptohet, formësohet dhe imagjinohet në mendje dhe jo përmes shqisave; ide"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11458",
+    "source": "tr",
+    "word": "düşünce",
+    "translation": "mendim, ide, koncept",
+    "pos": "emër",
+    "senses": [
+      "Realiteti thelbësor që ekziston vetvetiu jashtë subjektit dhe përtej hapësirës e kohës, i cili nuk konceptohet me shqisat por vetëm në mënyrë shpirtërore; mendim"
+    ],
+    "examples": [
+      {
+        "source": "Bu düşünce ona epeyce azap verdi.",
+        "target": "Ky mendim i shkaktoi atij mjaft vuajtje."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11393",
+    "source": "tr",
+    "word": "düşünme",
+    "translation": "mendim, të menduarit",
+    "pos": "emër",
+    "senses": [
+      "Veprimi ose puna e të menduarit; tefekkur"
+    ],
+    "examples": [
+      {
+        "source": "Yedi yıl önceki o ayları düşünmeme zaman kalmıyor.",
+        "target": "Nuk po mbetet kohë që unë t'i mendoj ato muajt e para shtatë viteve."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10987",
+    "source": "tr",
+    "word": "düşünmek",
+    "translation": "mendoj, kujtoj",
+    "pos": "emër",
+    "senses": [
+      "Të kalosh nga mendja, ta marrësh parasysh; planifikoj"
+    ],
+    "examples": [
+      {
+        "source": "Ben şimdi o güzel çehreden başka / Ne bir yüz düşünür ne hatırlarım",
+        "target": "Unë tani përveç asaj çehreje të bukur / As nuk mendoj një fytyrë, as nuk e kujtoj"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11706",
+    "source": "tr",
+    "word": "düşünür",
+    "translation": "mendimtar",
+    "pos": "emër",
+    "senses": [
+      "Personi që ka mendime të reja dhe origjinale rreth problemeve të përgjithshme; filozof, mütefekkir"
+    ],
+    "examples": [
+      {
+        "source": "Bu ülkenin düşünürleri az değil.",
+        "target": "Mendimtarët e këtij vendi nuk janë të paktë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11186",
+    "source": "tr",
+    "word": "dış",
+    "translation": "jashtë, pjesa e jashtme",
+    "pos": "emër",
+    "senses": [
+      "Vendi që nuk ndodhet brenda kufijve të ndonjë objekti ose hapësire; e kundërta e 'brenda'"
+    ],
+    "examples": [
+      {
+        "source": "Hafta sonunda şehrin dışına çıkıyoruz.",
+        "target": "Në fundjavë po dalim jashtë qytetit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10205",
+    "source": "tr",
+    "word": "dışarı",
+    "translation": "jashtë",
+    "pos": "emër",
+    "senses": [
+      "Mjedisi i jashtëm, hapësira e jashtme; e kundërta e 'brenda'"
+    ],
+    "examples": [
+      {
+        "source": "Dışarıda karlar erimeye başlamış.",
+        "target": "Jashtë dëbora ka filluar të shkrijë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10352",
+    "source": "tr",
+    "word": "dışında",
+    "translation": "përveç, jashtë",
+    "pos": "emër",
+    "senses": [
+      "Përveç ..., po qe se nuk numërohet"
+    ],
+    "examples": [
+      {
+        "source": "Size hiç bu mektupların dışında 'Muhterem Yusuf Ziya Beyefendi' diyen oluyor mu?",
+        "target": "A ka ndonjë që ju thotë 'I nderuari Yusuf Ziya Beyefendi' jashtë këtyre letrave?"
+      }
+    ],
+    "derivatives": []
   }
 ]

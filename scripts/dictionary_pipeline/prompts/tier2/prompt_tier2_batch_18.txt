@@ -1,0 +1,105 @@
+Ju jeni një përkthyes profesionist turqisht-shqip dhe ekspert gjuhësor.
+Detyra juaj është të përktheni hyrjet e fjalorit turqisht në shqip sipas të dhënave të mëposhtme.
+Ju lutem ktheni VETËM një kod JSON të pastër (pa formatim markdown, pa komente dhe pa hyrje komunikuese). Outputi duhet të jetë një Array JSON i thjeshtë që përmban objekte me çelësat e mëposhtëm:
+- "id": (kopjoni ID-në e dhënë)
+- "sq": (përkthimi i fjalës në shqip. Nëse jepet 'sq_base', përdoreni si pikënisje por përmirësojeni ose zgjerojeni nëse ka gabime)
+- "sq_def": (përkthe shpjegimin turk 'tdk_def' në një fjali të vetme të thjeshtë dhe të qartë në shqip)
+
+Rregullat:
+1. Mbajeni shpjegimin 'sq_def' të thjeshtë, të shkurtër dhe të qartë (1 fjali e shkurtër).
+2. Ktheni vetëm formatin e kërkuar JSON, pa asnjë tekst tjetër përpara ose pas tij.
+
+Të dhënat për t'u përkthyer:
+[
+  {
+    "id": "dict-tr-18800",
+    "tr": "afrodizyak",
+    "pos": "emër",
+    "tdk_def": "Cinsel duyguları veya isteği uyaran veya artıran madde",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-18801",
+    "tr": "sınırlama",
+    "pos": "emër",
+    "tdk_def": "Sınırlamak işi; hudutlandırma, kota",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-18802",
+    "tr": "vekâlet",
+    "pos": "emër",
+    "tdk_def": "► vekillik",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-18803",
+    "tr": "jinekolog",
+    "pos": "emër",
+    "tdk_def": "Kadın hastalıkları hekimi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-18804",
+    "tr": "bitli",
+    "pos": "mbiemër",
+    "tdk_def": "Üstünde bit bulunan, bitlenmiş olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-18805",
+    "tr": "süet",
+    "pos": "emër",
+    "tdk_def": "Yumuşak, yüzü ince havlı bir deri türü; podösüet",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-18806",
+    "tr": "çekiliş",
+    "pos": "emër",
+    "tdk_def": "Çekilmek işi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-18807",
+    "tr": "şantajcı",
+    "pos": "mbiemër",
+    "tdk_def": "Şantaj yapan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-18808",
+    "tr": "uyutmak",
+    "pos": "emër",
+    "tdk_def": "Uyumasını sağlamak, uyur duruma getirmek; yatırmak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-18809",
+    "tr": "obez",
+    "pos": "mbiemër",
+    "tdk_def": "Çok şişman, aşırı kilolu",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-18810",
+    "tr": "altyapı",
+    "pos": "emër",
+    "tdk_def": "Bir yerleşim yeri veya bir yapı için gerekli olan yol, kanalizasyon, su, elektrik vb. tesisatın tümü",
+    "sq_base": "infrastrukturë"
+  },
+  {
+    "id": "dict-tr-18811",
+    "tr": "avokado",
+    "pos": "emër",
+    "tdk_def": "Defnegillerden, tropik iklime sahip bölgeler yanında, subtropikal iklime veya Akdeniz iklimine sahip çeşitli bölgelerde yetiştirilen, sıralı yapraklı, çiçekleri yeşilimsi sarı renkte olan bir ağaç; Amerikan armudu (Persea americana)",
+    "sq_base": "avokado"
+  },
+  {
+    "id": "dict-tr-18812",
+    "tr": "vektör",
+    "pos": "emër",
+    "tdk_def": "Doğrultusu, yönü, uzunluğu belirli olan ve bir ok işaretiyle gösterilen doğru çizgi; yöney",
+    "sq_base": "vektori"
+  }
+]

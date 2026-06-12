@@ -1,121 +1,1677 @@
 [
   {
-    "id": "dict-tr-32",
+    "id": "dict-tr-15936",
     "source": "tr",
-    "word": "ev",
-    "translation": "shtëpi, banesë",
+    "word": "ebe",
+    "translation": "Mamitë xherahe",
     "pos": "emër",
-    "inflection": "-i",
     "senses": [
-      "Ndërtesë ose ambient ku banon një njeri ose një familje.",
-      "Vatra familjare (fig. shtëpia ime)."
+      "Përkthim për fjalën 'ebe'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12915",
+    "source": "tr",
+    "word": "ebeveyn",
+    "translation": "prindi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'ebeveyn'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17081",
+    "source": "tr",
+    "word": "eczacı",
+    "translation": "Farmacisti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'eczacı'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18098",
+    "source": "tr",
+    "word": "eczacılık",
+    "translation": "Farmacia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'eczacılık'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15690",
+    "source": "tr",
+    "word": "eczane",
+    "translation": "barnatore",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'eczane'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13714",
+    "source": "tr",
+    "word": "edebiyat",
+    "translation": "letërsi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'edebiyat'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10283",
+    "source": "tr",
+    "word": "eder",
+    "translation": "vlerë, çmim",
+    "pos": "emër",
+    "senses": [
+      "Çmim"
     ],
     "examples": [
       {
-        "source": "Eve gitmek",
-        "target": "Shkoj në shtëpi"
-      },
-      {
-        "source": "Ev sahibi",
-        "target": "Zoti i shtëpisë (pronari)"
-      },
-      {
-        "source": "Ev yapımı",
-        "target": "E bërë në shtëpi (artizanale)"
+        "source": "Aleyna, elinde durdukça ağırlaşan iki lokum ve bir parfümün ederini kasada öderken Jak Sarfati, gümrüksüz mağazanın çıkışında Anna Maria Vernier ile sohbet ediyordu.",
+        "target": "Ndërsa Alejna po paguante në arkë çmimin e dy llokumeve dhe të një parfumi që i rëndoheshin në dorë sa më shumë që i mbante, Zhak Sarfati po bisedonte me Ana Maria Vernier në daljen e dyqanit pa taksa."
       }
     ],
-    "derivatives": [
-      {
-        "word": "evli",
-        "translation": "i/e martuar (që ka krijuar familje)",
-        "pos": "mbiemër"
-      },
-      {
-        "word": "evlenmek",
-        "translation": "martohem",
-        "pos": "folje"
-      },
-      {
-        "word": "evsiz",
-        "translation": "i pastrehë",
-        "pos": "mbiemër"
-      }
-    ]
+    "derivatives": []
   },
   {
-    "id": "dict-tr-33",
+    "id": "dict-tr-10617",
     "source": "tr",
-    "word": "elma",
-    "translation": "mollë",
+    "word": "edip",
+    "translation": "shkrimtar, letrar",
     "pos": "emër",
-    "inflection": "-yı",
     "senses": [
-      "Frut i rrumbullakët e i shijshëm (i ëmbël ose i thartë) i pemës së mollës."
+      "Personi që merret me letërsi, që nxjerr në dritë vepra letrare; autor"
     ],
     "examples": [
       {
-        "source": "Elma ağacı",
-        "target": "Pemë molle"
-      },
-      {
-        "source": "Yeşil elma",
-        "target": "Mollë e gjelbër"
+        "source": "Pek az hoşlandıklarım muhabirler, ediplerdir.",
+        "target": "Ata që më pëlqejnë shumë pak janë korrespondentët dhe shkrimtarët."
       }
     ],
-    "derivatives": [
-      {
-        "word": "elmalı",
-        "translation": "me mollë (p.sh. kek)",
-        "pos": "mbiemër"
-      }
-    ]
+    "derivatives": []
   },
   {
-    "id": "dict-tr-34",
+    "id": "dict-tr-14975",
+    "source": "tr",
+    "word": "editör",
+    "translation": "redaktor",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'editör'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11135",
+    "source": "tr",
+    "word": "efendi",
+    "translation": "efendi, zotëri",
+    "pos": "emër",
+    "senses": [
+      "Në ditët e sotme, një titull i shkallës së dytë që përdoret pas emrave të përveçëm, ndryshe nga titulli bej"
+    ],
+    "examples": [
+      {
+        "source": "Yeni ev, Rüstem Efendi'ye kiraya verildi.",
+        "target": "Shtëpia e re iu dha me qira Rystem Efendiut."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10079",
+    "source": "tr",
+    "word": "efendim",
+    "translation": "zotëri, urdhëroni",
+    "pos": "pasthirrmë",
+    "senses": [
+      "Fjalë që përdoret si përgjigje ndaj një thirrjeje në kuptimin 'këtu jam, urdhëroni'"
+    ],
+    "examples": [
+      {
+        "source": "Hasan! -Efendim!",
+        "target": "Hasan! -Urdhëroni!"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12066",
+    "source": "tr",
+    "word": "efsane",
+    "translation": "legjenda",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'efsane'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10988",
+    "source": "tr",
+    "word": "eh",
+    "translation": "e po, mirë",
+    "pos": "pasthirrmë",
+    "senses": [
+      "Fjalë që përdoret në kuptimet 'u bë, rregull ose jo keq'"
+    ],
+    "examples": [
+      {
+        "source": "Eh! Bize gerekli olan da o; bütçemizi doğrultur, pansiyoner olmaktan vazgeçeriz.",
+        "target": "E po! Ajo na nevojitet edhe neve; drejtojmë bütçen tonë, dhe heqim dorë nga të qenit pensionarë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12162",
+    "source": "tr",
+    "word": "ejderha",
+    "translation": "dragoi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'ejderha'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11764",
+    "source": "tr",
+    "word": "ek",
+    "translation": "shtesë, prapashtesë, aneks",
+    "pos": "emër",
+    "senses": [
+      "Pjesa që i shtohet diçkaje për të plotësuar mungesën e saj; aneks shtesë"
+    ],
+    "examples": [
+      {
+        "source": "Yazının ekleri.",
+        "target": "Shtesat (anekset) e shkrimit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11026",
+    "source": "tr",
+    "word": "ekip",
+    "translation": "ekip, skuadër",
+    "pos": "emër",
+    "senses": [
+      "Bashkësi njerëzish që plotësojnë njëri-tjetrin nga pikëpamja e detyrës; skuadër, grup"
+    ],
+    "examples": [
+      {
+        "source": "Aramızda ekipler kuracağız, maçlar yapacağız, oyunlar oynayacağız.",
+        "target": "Do të ngremë ekipe mes nesh, do të bëjmë ndeshje, e do të luajmë lojëra."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15148",
+    "source": "tr",
+    "word": "ekipman",
+    "translation": "pajisje",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'ekipman'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17915",
+    "source": "tr",
+    "word": "ekler",
+    "translation": "Pastashuta",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'ekler'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11131",
     "source": "tr",
     "word": "ekmek",
     "translation": "bukë",
     "pos": "emër",
-    "inflection": "-i",
     "senses": [
-      "Ushqim bazë i gatuar nga pjekja e brumit të miellit me ujë e maja.",
-      "Veprimi i mbjelljes së farave në tokë (si folje: ekmek)."
+      "Ushqim i përgatitur nga pjekja në furrë, në saç ose në tandur e brumit të bërë nga mielli i drithërave"
     ],
     "examples": [
       {
-        "source": "Taze ekmek",
-        "target": "Bukë e freskët"
-      },
-      {
-        "source": "Ekmek fırını",
-        "target": "Furra e bukës"
+        "source": "Odayı, tatlı, sıcak bir kızarmış ekmek kokusu bürümüş.",
+        "target": "Dhomën e kishte pushtuar një aromë e ëmbël dhe e ngrohtë e bukës së pjekur."
       }
     ],
-    "derivatives": [
-      {
-        "word": "ekmekçi",
-        "translation": "bukëpjekës (furrtar)",
-        "pos": "emër"
-      }
-    ]
+    "derivatives": []
   },
   {
-    "id": "dict-tr-35",
+    "id": "dict-tr-13166",
     "source": "tr",
-    "word": "esnaf",
-    "translation": "esnaf, tregtar",
+    "word": "ekonomi",
+    "translation": "ekonomi",
     "pos": "emër",
-    "inflection": "-ı",
-    "is_balkan": true,
     "senses": [
-      "Tregtar i vogël ose zanatçi që punon në mënyrë të pavarur.",
-      "Njeri i ndershëm dhe me përvojë në punë (fig. esnaf)."
+      "Përkthim për fjalën 'ekonomi'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13723",
+    "source": "tr",
+    "word": "ekran",
+    "translation": "Ekrani",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'ekran'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11064",
+    "source": "tr",
+    "word": "eksik",
+    "translation": "i mangët, me mungesë",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që nuk e ka një pjesë; noksan"
     ],
     "examples": [
       {
-        "source": "Esnaf lokantası",
-        "target": "Restorant tradicional (me ushqime të lira)"
+        "source": "Bu kitap eksik, baş tarafı yok.",
+        "target": "Ky libër është i mangët, nuk e ka pjesën e fillimit."
       }
-    ]
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11777",
+    "source": "tr",
+    "word": "ekstra",
+    "translation": "ekstra, i cilësisë së lartë",
+    "pos": "mbiemër",
+    "senses": [
+      "I cilësisë më të mirë, sipëror"
+    ],
+    "examples": [
+      {
+        "source": "Ekstra un.",
+        "target": "Miell ekstra."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10342",
+    "source": "tr",
+    "word": "el",
+    "translation": "tjetri, i huaji",
+    "pos": "emër",
+    "senses": [
+      "I huaj"
+    ],
+    "examples": [
+      {
+        "source": "Kâtip benim ben kâtibin, el ne karışır!",
+        "target": "Sekretari është imi, unë jam e sekretarit, çfarë pëzihet bota (i huaji)!"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10186",
+    "source": "tr",
+    "word": "elbette",
+    "translation": "natyrisht, sigurisht",
+    "pos": "ndajfolje",
+    "senses": [
+      "Sigurisht"
+    ],
+    "examples": [
+      {
+        "source": "Siz isterseniz elbette gelirim.",
+        "target": "Nëse dëshironi ju, natyrisht që do të vij."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10993",
+    "source": "tr",
+    "word": "elbise",
+    "translation": "rrobë, fustan, veshje",
+    "pos": "emër",
+    "senses": [
+      "Giysi"
+    ],
+    "examples": [
+      {
+        "source": "Üzerinde hafif elbiseler vardı, başı kavuksuzdu.",
+        "target": "Mbi vete kishte rroba të lehta, ishte pa qeleshe (kavuk) në kokë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10611",
+    "source": "tr",
+    "word": "elde",
+    "translation": "në mendje (gjatë mbledhjes)",
+    "pos": "emër",
+    "senses": [
+      "Numri që mbetet gjatë veprimeve të mbledhjes apo shumëzimit për t'u shtuar te shifrat e radhës pasuese"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11900",
+    "source": "tr",
+    "word": "elden",
+    "translation": "dorazi, personalisht",
+    "pos": "ndajfolje",
+    "senses": [
+      "Drejtpërdrejt, pa ndërmjetës"
+    ],
+    "examples": [
+      {
+        "source": "Zarfı elden verdim.",
+        "target": "Zarfin ua dhashë dorazi."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12827",
+    "source": "tr",
+    "word": "eldiven",
+    "translation": "Doreza",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'eldiven'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10943",
+    "source": "tr",
+    "word": "elektrik",
+    "translation": "energji elektrike, elektricitet",
+    "pos": "emër",
+    "senses": [
+      "Lloji i energjisë që shfaqet me lëvizjet e grimcave të lëndës si elektronet, pozitronet, protonet etj."
+    ],
+    "examples": [
+      {
+        "source": "Ufak tefek ama şimdiden elektriği öbürkülerden başka, yırtıkça bir kız var içlerinde.",
+        "target": "Mes tyre ka një vajzë shtatshkurtër, por që që tani ka një energji (elektricitet) më ndryshe dhe më të gjallë se të tjerat."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17060",
+    "source": "tr",
+    "word": "elektron",
+    "translation": "elektroni",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'elektron'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12157",
+    "source": "tr",
+    "word": "elektronik",
+    "translation": "Elektronika",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'elektronik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11905",
+    "source": "tr",
+    "word": "eleman",
+    "translation": "element, gjymtyrë",
+    "pos": "emër",
+    "senses": [
+      "Element, pjesë përbërëse"
+    ],
+    "examples": [
+      {
+        "source": "Eskilerin şiirde pek bol kullanmaktan hoşlandıkları elemanlardan birisi de teşbihti.",
+        "target": "Një nga elementet që të vjetërit kishin mjaft qejf ta përdornin me bollëk në poezi ishte krahasimi."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15893",
+    "source": "tr",
+    "word": "element",
+    "translation": "elementi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'element'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14719",
+    "source": "tr",
+    "word": "eleştiri",
+    "translation": "kritika",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'eleştiri'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17514",
+    "source": "tr",
+    "word": "eleştirmen",
+    "translation": "kritiku",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'eleştirmen'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10771",
+    "source": "tr",
+    "word": "elinden",
+    "translation": "për shkak të, nga dora e",
+    "pos": "emër",
+    "senses": [
+      "Për shkak të, si rrjedhojë e"
+    ],
+    "examples": [
+      {
+        "source": "Yandım çavuş yandım senin elinden",
+        "target": "U dogja o rreshter, u dogja nga dora jote (për shkakun tënd)"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15361",
+    "source": "tr",
+    "word": "elit",
+    "translation": "Elita",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'elit'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11751",
+    "source": "tr",
+    "word": "elli",
+    "translation": "pesëdhjetë, me duar (në kuptim tjetër)",
+    "pos": "mbiemër",
+    "senses": [
+      "Numri pesëdhjetë, ose personi që ka duar (në shembull)"
+    ],
+    "examples": [
+      {
+        "source": "Bu kocaman elli, muhteşem babadan bile korkmuyordu.",
+        "target": "Nuk kishte frikë madje as nga ky baba i madhërishëm, me ato duart e tij të stërmëdha."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11722",
+    "source": "tr",
+    "word": "elma",
+    "translation": "mollë",
+    "pos": "emër",
+    "senses": [
+      "Pemë nga familja Rosaceae, me lule rozë ose të bardha, që bën fruta të rrumbullakëta"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11966",
+    "source": "tr",
+    "word": "elmas",
+    "translation": "diamant",
+    "pos": "emër",
+    "senses": [
+      "Karbon i pastër i kristalizuar, që ndodhet në thellësitë e tokës"
+    ],
+    "examples": [
+      {
+        "source": "Bazı nadir inciler, elmaslar vardır ki onların biri yalnız saltanat tacı olabilir.",
+        "target": "Ekzistojnë disa margaritarë dhe diamantë të rrallë, ku vetëm një prej tyre mund të bëhet kurora e mbretërisë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11345",
+    "source": "tr",
+    "word": "elveda",
+    "translation": "lamtumirë",
+    "pos": "pasthirrmë",
+    "senses": [
+      "Fjalë që përdoret kur ndahesh nga një gjë apo person nga i cili mendohet se nuk do të bashkohesh më"
+    ],
+    "examples": [
+      {
+        "source": "Elveda ey güzel günler!",
+        "target": "Lamtumirë o ju ditë të bukura!"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16352",
+    "source": "tr",
+    "word": "elçilik",
+    "translation": "ambasadë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'elçilik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14143",
+    "source": "tr",
+    "word": "emek",
+    "translation": "punë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'emek'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11287",
+    "source": "tr",
+    "word": "emekli",
+    "translation": "i pensionuar, në pension",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që është fituar duke harxhuar mund (në kuptimin literal), ose që ka dalë në pension"
+    ],
+    "examples": [
+      {
+        "source": "Buraya gelenler hep asker emeklileridir.",
+        "target": "Ata që vijnë këtu janë të gjithë ushtarakë në pension."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13171",
+    "source": "tr",
+    "word": "emeklilik",
+    "translation": "Pensionimi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'emeklilik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10141",
+    "source": "tr",
+    "word": "emin",
+    "translation": "i sigurt",
+    "pos": "mbiemër",
+    "senses": [
+      "I sigurt, i besueshëm"
+    ],
+    "examples": [
+      {
+        "source": "Bebesini emin ellere mi bırakmıştı acaba?",
+        "target": "Vallë a e kishte lënë foshnjën e saj në duar të sigurta?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11769",
+    "source": "tr",
+    "word": "emniyet",
+    "translation": "siguri, emniat",
+    "pos": "emër",
+    "senses": [
+      "Güvenlik, gjendje sigurie"
+    ],
+    "examples": [
+      {
+        "source": "Kendi vatandaşlarının ırz, mal, can emniyeti hakkında teminat istiyorlar.",
+        "target": "Kërkojnë garanci rreth sigurisë së nderit, pasurisë dhe jetës së shtetasve të vet."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15919",
+    "source": "tr",
+    "word": "empati",
+    "translation": "Empatia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'empati'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10906",
+    "source": "tr",
+    "word": "emîr",
+    "translation": "emir",
+    "pos": "emër",
+    "senses": [
+      "Udhëheqësi i një fisit, qyteti ose vendi te arabët dhe në disa vende myslimane"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10036",
+    "source": "tr",
+    "word": "en",
+    "translation": "më",
+    "pos": "ndajfolje",
+    "senses": [
+      "Fjalë që vendoset përpara mbiemrave për të treguar shkallën sipërore të tyre"
+    ],
+    "examples": [
+      {
+        "source": "En iyi adamını yollamış buraya.",
+        "target": "Ai ka dërguar njeriun e tij më të mirë këtu."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11032",
+    "source": "tr",
+    "word": "endişe",
+    "translation": "shqetësim, ankth, merak",
+    "pos": "emër",
+    "senses": [
+      "Kaygı"
+    ],
+    "examples": [
+      {
+        "source": "Bir kayıkta boş kalan son yere atlayıp Galata'ya geçerken kafası hem umut hem de endişeyle doluydu.",
+        "target": "Ndërsa po kthehej në Galata duke u hedhur në vendin e fundit të mbetur bosh në një varkë, koka e tij ishte e mbushur plot si me shpresë ashtu edhe me ankth."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10622",
+    "source": "tr",
+    "word": "endişelenme",
+    "translation": "shqetësim, mërzi",
+    "pos": "emër",
+    "senses": [
+      "Të ndierit meraku apo ankthi për diçka"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11914",
+    "source": "tr",
+    "word": "endişeli",
+    "translation": "i shqetësuar, i merakosur, në ankth",
+    "pos": "mbiemër",
+    "senses": [
+      "I shqetësuar, me dyshime"
+    ],
+    "examples": [
+      {
+        "source": "Sıkıntılı, heyecanlı günler yaşıyoruz fakat endişeli değiliz, korkmuyoruz.",
+        "target": "Po jetojmë ditë me shqetësime dhe emocione, mirëpo nuk jemi në ankth (të shqetësuar) dhe nuk kemi frikë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10872",
+    "source": "tr",
+    "word": "enerji",
+    "translation": "energji",
+    "pos": "emër",
+    "senses": [
+      "Forca që ekziston në lëndë dhe që shfaqet në formë nxehtësie ose drite"
+    ],
+    "examples": [
+      {
+        "source": "Isıl enerji. Elektrik enerjisi. Mekanik enerji.",
+        "target": "Energji termike. Energji elektrike. Energji mekanike."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12663",
+    "source": "tr",
+    "word": "enfeksiyon",
+    "translation": "infeksioni",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'enfeksiyon'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10814",
+    "source": "tr",
+    "word": "engel",
+    "translation": "pengesë",
+    "pos": "emër",
+    "senses": [
+      "Arsyeja që parandalon realizimin e diçkaje; vështirësi, pengesë"
+    ],
+    "examples": [
+      {
+        "source": "Seçme ve aracılık işlevini yerine getiren dünyanın önünde ise öyle aşılması güç engeller yok gibi.",
+        "target": "Përpara botës që kryen funksionin e përzgjedhjes dhe ndërmjetësimit, sikur nuk ekzistojnë pengesa të tilla të vështira për t'u kaluar."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18204",
+    "source": "tr",
+    "word": "engizisyon",
+    "translation": "Inkuizicioni",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'engizisyon'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17240",
+    "source": "tr",
+    "word": "ensest",
+    "translation": "incesti",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'ensest'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15084",
+    "source": "tr",
+    "word": "entelektüel",
+    "translation": "intelektuali",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'entelektüel'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17117",
+    "source": "tr",
+    "word": "envanter",
+    "translation": "inventari",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'envanter'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10671",
+    "source": "tr",
+    "word": "epey",
+    "translation": "mjaft, mjaftueshëm",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në një masë që nuk mund të quhet e vogël; goxha"
+    ],
+    "examples": [
+      {
+        "source": "Epey yürüdü ve üç sokak daha değiştirdi.",
+        "target": "Eci mjaft dhe ndryshoi edhe tre rrugë të tjera."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11209",
+    "source": "tr",
+    "word": "er",
+    "translation": "herët",
+    "pos": "ndajfolje",
+    "senses": [
+      "Herët"
+    ],
+    "examples": [
+      {
+        "source": "Er sabah kalktım ki sular çağlıyor",
+        "target": "U ngrita pa gdhirë (herët në mëngjes) që ujërat po uturijnë"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16477",
+    "source": "tr",
+    "word": "erdem",
+    "translation": "virtyt",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'erdem'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12569",
+    "source": "tr",
+    "word": "erik",
+    "translation": "Kumbulla",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'erik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14612",
+    "source": "tr",
+    "word": "erişte",
+    "translation": "noodle",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'erişte'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10211",
+    "source": "tr",
+    "word": "erkek",
+    "translation": "mashkull, burrë",
+    "pos": "emër",
+    "senses": [
+      "Burrë i rritur; person i gjinisë mashkullore"
+    ],
+    "examples": [
+      {
+        "source": "Erkekler tekaüt olunca çocuğa dönüyorlar.",
+        "target": "Burrat kur dalin në pension kthehen si fëmijë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10422",
+    "source": "tr",
+    "word": "erken",
+    "translation": "herët",
+    "pos": "ndajfolje",
+    "senses": [
+      "Përpara kohës së duhur, përpara kohës së zakonshme; e kundërta e 'vonë'"
+    ],
+    "examples": [
+      {
+        "source": "Sakın geç kalma, erken gel.",
+        "target": "Mos u vono asesi, hajde herët."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11821",
+    "source": "tr",
+    "word": "erkenden",
+    "translation": "mjaft herët, pa gdhirë",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në mënyrë mjaft të herët, shumë herët"
+    ],
+    "examples": [
+      {
+        "source": "Kısmet olursa erkenden yola düzüleceğiz.",
+        "target": "Po qe kismet, do të nisemi për rrugë mjaft herët."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12252",
+    "source": "tr",
+    "word": "eroin",
+    "translation": "Heroina",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'eroin'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11367",
+    "source": "tr",
+    "word": "ertesi",
+    "translation": "i nesërm, pasues",
+    "pos": "mbiemër",
+    "senses": [
+      "Dita, java, muaji, stina apo viti që vjen menjëherë pas një tjetri; ferda"
+    ],
+    "examples": [
+      {
+        "source": "Yine ömründe bir kez bile tiyatroya gitmemiş olan babamı ertesi hafta annem hazırladı.",
+        "target": "Nënën time e përgatiti javën e nesërme im atë, i cili asnjë herë të vetme në jetën e tij nuk kishte shkuar në teatër."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11531",
+    "source": "tr",
+    "word": "esas",
+    "translation": "thelb, bazë, parim",
+    "pos": "emër",
+    "senses": [
+      "Elementi kryesor që përbën thelbin e diçkaje; gur themeli"
+    ],
+    "examples": [
+      {
+        "source": "Bu işin esası böyle değil.",
+        "target": "Thelbi i kësaj pune nuk është kështu."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10164",
+    "source": "tr",
+    "word": "eski",
+    "translation": "i vjetër",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ekziston prej kohësh, mbi të cilin ka kaluar shumë kohë; e kundërta e i ri"
+    ],
+    "examples": [
+      {
+        "source": "Ey benim eski duygularım, eski düşüncelerim. Neden böyle uzaksınız benden?",
+        "target": "O ndjenjat e mia të vjetra, mendimet e mia të vjetra. Pse jeni aq larg meje?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10502",
+    "source": "tr",
+    "word": "eskiden",
+    "translation": "më parë, eskidën",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në kohët e shkuara, në epokat e kaluara; në të kaluarën"
+    ],
+    "examples": [
+      {
+        "source": "Aynı şeyi eskiden de görmemiş miydim?",
+        "target": "A nuk e kisha parë të njëjtën gjë edhe më parë?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11850",
+    "source": "tr",
+    "word": "espri",
+    "translation": "shaka, barsoletë, batutë",
+    "pos": "emër",
+    "senses": [
+      "Fjalë me kuptim të hollë që të bën të qeshësh ndërsa të vendos në mendime"
+    ],
+    "examples": [
+      {
+        "source": "Espri, kıtlıkta bolluk arz eden bir cevherdir.",
+        "target": "Batuta (shakaja e hollë) është një thelb që shfaq bollëk në kohë varfërie."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12346",
+    "source": "tr",
+    "word": "esrar",
+    "translation": "Marihuana",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'esrar'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13244",
+    "source": "tr",
+    "word": "estetik",
+    "translation": "estetika",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'estetik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10087",
+    "source": "tr",
+    "word": "et",
+    "translation": "mish",
+    "pos": "emër",
+    "senses": [
+      "Shtresa e përbërë nga muskujt dhe dhjami midis lëkurës dhe kockave te njerëzit dhe kafshët"
+    ],
+    "examples": [
+      {
+        "source": "Bu koyunda hiç et yok, pek zayıf.",
+        "target": "Kjo dele nuk ka fare mish, është shumë e dobët."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11690",
+    "source": "tr",
+    "word": "Eti",
+    "translation": "hitit, hetit (popull historik)",
+    "pos": "emër",
+    "senses": [
+      "Hitit, popullata antike e Anatolisë"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13412",
+    "source": "tr",
+    "word": "etik",
+    "translation": "etika",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'etik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11622",
+    "source": "tr",
+    "word": "etki",
+    "translation": "ndikim, efekt, mbresë",
+    "pos": "emër",
+    "senses": [
+      "Forca ndikuese e një personi ose objekti përmbi një person ose gjë tjetër; tesir"
+    ],
+    "examples": [
+      {
+        "source": "Yaşadıklarını yazmanın böylesine bir etki yapabileceğinden hiç haberim yoktu.",
+        "target": "Nuk e dija fare se shkrimi i përjetimeve të veta mund të bënte një ndikim (efekt) të tillë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10996",
+    "source": "tr",
+    "word": "etkileyici",
+    "translation": "mbresëlënës, prekës",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka veçorinë për të ndikuar ose prekur; goditës"
+    ],
+    "examples": [
+      {
+        "source": "Oyunun biçimi yalın. Özellikle bu yalınlık etkileyici.",
+        "target": "Forma e shfaqjes është e thjeshtë. Veçanërisht kjo thjeshtësi është mbresëlënëse."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16884",
+    "source": "tr",
+    "word": "etkileşim",
+    "translation": "bashkëveprim",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'etkileşim'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11517",
+    "source": "tr",
+    "word": "etkili",
+    "translation": "mbresëlënës, efektiv, ndikues",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka efekt ose ndikim; tesirli"
+    ],
+    "examples": [
+      {
+        "source": "Hayli etkili bir yer altı çalışması yapılıyormuş.",
+        "target": "Po bëhej një punë mjaft efektive nëntokësore."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14565",
+    "source": "tr",
+    "word": "etkinlik",
+    "translation": "ngjarje, aktivitet",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'etkinlik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11935",
+    "source": "tr",
+    "word": "etkisiz",
+    "translation": "pa efekt, joefektiv, neutral",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që nuk ka asnjë efekt apo ndikim; i pafuqishëm"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10232",
+    "source": "tr",
+    "word": "etme",
+    "translation": "bërje, kryerje",
+    "pos": "emër",
+    "senses": [
+      "Puna e të bërit të diçkaje"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10153",
+    "source": "tr",
+    "word": "etmek",
+    "translation": "bëj",
+    "pos": "emër",
+    "senses": [
+      "Të kryesh një punë; veproj"
+    ],
+    "examples": [
+      {
+        "source": "Şemsi, sıra düştükçe emlak komisyonculuğu ediyordu.",
+        "target": "Shemsiu, kur i jepjej rasti, bënte agjentin e pasurive të paluajtshme."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11179",
+    "source": "tr",
+    "word": "etmen",
+    "translation": "faktor, element shtytës",
+    "pos": "emër",
+    "senses": [
+      "Secili prej kushteve, elementeve ose forcave që shfaqin ndikimin e tyre bashkë ose veçmas dhe të çojnë në një rezultat të caktuar; faktor"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10290",
+    "source": "tr",
+    "word": "ev",
+    "translation": "shtëpi",
+    "pos": "emër",
+    "senses": [
+      "Vendi ku jeton një person ose një familje; hane, banesë"
+    ],
+    "examples": [
+      {
+        "source": "Evine bağlı bir adam.",
+        "target": "Një burrë i lidhur pas shtëpisë së tij."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10010",
+    "source": "tr",
+    "word": "evet",
+    "translation": "po",
+    "pos": "pasthirrmë",
+    "senses": [
+      "Fjalë pohimi ose miratimi që përdoret në kuptimin 'ashtu është'; u bë, rregull, dakord"
+    ],
+    "examples": [
+      {
+        "source": "Evet, bu bahsin en canlı noktası buradadır.",
+        "target": "Po, pika më e gjallë e kësaj çështjeje ndodhet pikërisht këtu."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10620",
+    "source": "tr",
+    "word": "evin",
+    "translation": "thelb, palcë",
+    "pos": "emër",
+    "senses": [
+      "Thelbi ose pjesa e brendshme e pastër e diçkaje"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10349",
+    "source": "tr",
+    "word": "evlat",
+    "translation": "fëmijë, pasardhës",
+    "pos": "emër",
+    "senses": [
+      "Fëmijë"
+    ],
+    "examples": [
+      {
+        "source": "Zengin adamlarda evlat muhabbeti daha fazla mı oluyor?",
+        "target": "A është më e madhe dashuria për fëmijën te njerëzit e pasur?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11663",
+    "source": "tr",
+    "word": "evlenme",
+    "translation": "martesë, të martuarit",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të martuarit; izdivaç"
+    ],
+    "examples": [
+      {
+        "source": "Annesi, askerliğini yapıncaya kadar evlenmesine razı değildi.",
+        "target": "Nëna e tij nuk binte dakord për martesën e tij derisa ai të kryente shërbimin ushtarak."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11083",
+    "source": "tr",
+    "word": "evlenmek",
+    "translation": "martohem",
+    "pos": "emër",
+    "senses": [
+      "Burri dhe gruaja të bashkohen në përputhje me ligjin për të ngritur një familje; bëj izdivaç"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10704",
+    "source": "tr",
+    "word": "evli",
+    "translation": "i martuar",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai ose ajo që është martuar (grua ose burrë)"
+    ],
+    "examples": [
+      {
+        "source": "İlk tanıştığı adamlara derhâl evli olup olmadıklarını sorar.",
+        "target": "Njerëzit e parë që takon i pyet menjëherë nëse janë të martuar apo jo."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10757",
+    "source": "tr",
+    "word": "evlilik",
+    "translation": "martesë, martesë",
+    "pos": "emër",
+    "senses": [
+      "Gjendja e të qenit i martuar; izdivaç"
+    ],
+    "examples": [
+      {
+        "source": "Demek bu bile bizi önünde sonunda evliliğe götürecekti?",
+        "target": "Domethënë edhe kjo në fund të fundit do të na çonte drejt martesës?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12131",
+    "source": "tr",
+    "word": "Evren",
+    "translation": "gjithësi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'Evren'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13413",
+    "source": "tr",
+    "word": "evrim",
+    "translation": "evolucioni",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'evrim'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11677",
+    "source": "tr",
+    "word": "evvel",
+    "translation": "përpara, para",
+    "pos": "ndajfolje",
+    "senses": [
+      "Once, më parë"
+    ],
+    "examples": [
+      {
+        "source": "Emeklilik maaşına ne oldu? Üç aylığını, on, on beş gün evvel almadın mı?",
+        "target": "Çfarë ndodhi me pagën e pensionit? A nuk i more të tre muajt nja dhjetë apo pesëmbëdhjetë ditë përpara?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11264",
+    "source": "tr",
+    "word": "eyalet",
+    "translation": "vilajet, krahinë federale",
+    "pos": "emër",
+    "senses": [
+      "Zonë administrative e drejtuar kryesisht nga guvernatorët (valinjtë), e cila ka një lloj pavarësie nga pikëpamja e menaxhimit"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13610",
+    "source": "tr",
+    "word": "eylem",
+    "translation": "veprim",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'eylem'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11767",
+    "source": "tr",
+    "word": "eylül",
+    "translation": "shtator",
+    "pos": "emër",
+    "senses": [
+      "Muaji i nëntë i vitit"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11989",
+    "source": "tr",
+    "word": "ezik",
+    "translation": "nxirje, tregues goditjeje, i shtypur",
+    "pos": "emër",
+    "senses": [
+      "Mbresa apo dëmtimi që krijohet në trup për shkak të goditjes, rrahjes etj."
+    ],
+    "examples": [
+      {
+        "source": "Vücudu eziklerle dolu idi.",
+        "target": "Trupi i tij ishte plot me nxirje (gjurmë goditjesh)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10049",
+    "source": "tr",
+    "word": "eğer",
+    "translation": "nëse, po qe se",
+    "pos": "lidhëz",
+    "senses": [
+      "Fjalë që vendoset në fillim të fjalive kushtore për të përforcuar kuptimin e kushtit; nëse"
+    ],
+    "examples": [
+      {
+        "source": "O zaman inandığım gibi / Sahiden bir öbür dünya varsa eğer",
+        "target": "Ashtu siç besoja atëherë / Nëse vërtet ekziston një botë tjetër"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11998",
+    "source": "tr",
+    "word": "Eğil",
+    "translation": "Eill",
+    "pos": "emër",
+    "senses": [
+      "Një nga rretheve që i përket provincës së Dijarbakirit"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18345",
+    "source": "tr",
+    "word": "eğim",
+    "translation": "Pjerrësia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'eğim'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10956",
+    "source": "tr",
+    "word": "eğitim",
+    "translation": "arsim, edukim",
+    "pos": "emër",
+    "senses": [
+      "Ndihma e drejtpërdrejtë ose e tërthortë, brenda ose jashtë shkollës, që u jepet fëmijëve dhe të rinjve për të fituar njohuritë, aftësitë dhe mirëkuptimin e nevojshëm për të zënë vendin e tyre në jetën shoqërore dhe për të zhvilluar personalitetin e tyre; terbiye"
+    ],
+    "examples": [
+      {
+        "source": "Sadece kolejinizde değil eğitim işlerinin tümünde güvenilir bir danışman olabilirim.",
+        "target": "Mund të bëhem një këshilltar i besueshëm jo vetëm në kolegjin tuaj, por në të gjitha çështjet e arsimit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10977",
+    "source": "tr",
+    "word": "eğlence",
+    "translation": "argëtim, dëfrim",
+    "pos": "emër",
+    "senses": [
+      "Veprimi i të argëtuarit; qejf, cymbush"
+    ],
+    "examples": [
+      {
+        "source": "Eli pek açık ve eğlenceye biraz fazla düşkündü.",
+        "target": "Ishte mjaft dorëlëshuar dhe i dhënë pak si shumë pas dëfrimit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10471",
+    "source": "tr",
+    "word": "eğlenceli",
+    "translation": "argëtues",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që të argëton, që të pëlqen"
+    ],
+    "examples": [
+      {
+        "source": "Yolculuğumuzun en eğlenceli gecesini orada geçirdik.",
+        "target": "Natën më argëtuese të udhëtimit tonë e kaluam atje."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11318",
+    "source": "tr",
+    "word": "eş",
+    "translation": "tek (i një çifti), shok",
+    "pos": "emër",
+    "senses": [
+      "Secila prej dy gjërave që janë krejtësisht të njëjta ose që i përngjajnë mjaft njëra-tjetrës"
+    ],
+    "examples": [
+      {
+        "source": "Çorabın öbür eşini yerden almak için sol ayağını uzatıyordun.",
+        "target": "Po zgjatje këmbën e majtë për të marrë nga toka tekun tjetër të çorapit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11845",
+    "source": "tr",
+    "word": "eşek",
+    "translation": "gomar",
+    "pos": "emër",
+    "senses": [
+      "Kafshë shërbimi dhe kalërimi me veshë të gjatë nga familja e kuajve; merkep"
+    ],
+    "examples": [
+      {
+        "source": "Arkadaşını böyle dar vakit eşeğin üstünde görünce koştu.",
+        "target": "Sapo e pa shokun e tij përmbi gomar në një kohë mjaft të ngushtë, vrapoi."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11661",
+    "source": "tr",
+    "word": "eşit",
+    "translation": "i barabartë",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që nuk është as më shumë, as më pak se një tjetër nga pikëpamja e strukturës, vlerës, sasisë apo cilësisë; mysavi"
+    ],
+    "examples": [
+      {
+        "source": "Bunlar bastonlarına dayanarak hep eşit adımlarla yürürler.",
+        "target": "Këta ecin gjithmonë me hapa të barabartë duke u mbështetur mbi shkopinjtë e tyre."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15615",
+    "source": "tr",
+    "word": "eşitlik",
+    "translation": "barazi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'eşitlik'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11040",
+    "source": "tr",
+    "word": "eşlik",
+    "translation": "shoqërim",
+    "pos": "emër",
+    "senses": [
+      "Gjendja e të qenit shoqërues ose shok"
+    ],
+    "examples": [
+      {
+        "source": "Mesela hoca eşliğinde yapılan çift kişilik uçuşa tandem uçuş deniliyormuş.",
+        "target": "Për shembull, fluturimi për dy veta që bëhet nën shoqërimin e mësuesit quhej fluturim tandem."
+      }
+    ],
+    "derivatives": []
   }
 ]

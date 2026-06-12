@@ -1,42 +1,807 @@
 [
   {
-    "id": "dict-tr-55",
+    "id": "dict-tr-10594",
     "source": "tr",
-    "word": "ne",
-    "translation": "çfarë",
-    "pos": "përemër",
+    "word": "Na",
+    "translation": "Na",
+    "pos": "emër",
     "senses": [
-      "Përdoret për të pyetur rreth një sendi, veprimi ose koncepti."
+      "Simboli i elementit të sodiumit (natriumit)"
     ],
-    "examples": [
-      {
-        "source": "Ne yapıyorsun?",
-        "target": "Çfarë po bën?"
-      },
-      {
-        "source": "Bu ne?",
-        "target": "Çfarë është kjo?"
-      }
-    ]
+    "examples": [],
+    "derivatives": []
   },
   {
-    "id": "dict-tr-56",
+    "id": "dict-tr-11641",
     "source": "tr",
-    "word": "nasıl",
-    "translation": "si",
-    "pos": "ndajfolje",
+    "word": "nadir",
+    "translation": "i rrallë",
+    "pos": "mbiemër",
     "senses": [
-      "Përdoret për të pyetur rreth mënyrës, gjendjes ose cilësisë së diçkaje."
+      "Ai që gjendet mjaft pak"
     ],
     "examples": [
       {
-        "source": "Nasılsın?",
-        "target": "Si je?"
-      },
-      {
-        "source": "Nasıl gidiyor?",
-        "target": "Si po shkon?"
+        "source": "Bazı nadir inciler, elmaslar vardır ki onların biri yalnız saltanat tacı olabilir.",
+        "target": "Ekzistojnë disa margaritarë dhe diamantë të rrallë, ku vetëm një prej tyre mund të bëhet kurora e mbretërisë."
       }
-    ]
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16904",
+    "source": "tr",
+    "word": "nafile",
+    "translation": "Namazet nafile",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'nafile'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11153",
+    "source": "tr",
+    "word": "nakit",
+    "translation": "kesh, para në dorë",
+    "pos": "emër",
+    "senses": [
+      "Para"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10032",
+    "source": "tr",
+    "word": "nasıl",
+    "translation": "si, si në ç'mënyrë",
+    "pos": "ndajfolje",
+    "senses": [
+      "Fjalë që përdoret për të treguar se në ç'formë ose me cilën rrugë kryhet një punë"
+    ],
+    "examples": [
+      {
+        "source": "Nasıl sevebilirse üç gönül bir tek gülü / Sen de güzelliğine kul edersin üç gönlü",
+        "target": "Ashtu si tri zemra mund të duan një trëndafil të vetëm / Edhe ti i bën tri zemra skllevër të bukurisë sate"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11731",
+    "source": "tr",
+    "word": "nasılsa",
+    "translation": "për ndonjë arsye, rastësisht",
+    "pos": "ndajfolje",
+    "senses": [
+      "Për një arsye të panjohur ose për çfarëdolloj arsyeje"
+    ],
+    "examples": [
+      {
+        "source": "Araba tam duracağı sırada nasılsa sol tekerlekler küçük bir hendeğin içine kaydı.",
+        "target": "Pikërisht kur makina po ndalonte plotësisht, rrotat e majta rrëshqitën rastësisht brenda një hendeku të vogël."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10829",
+    "source": "tr",
+    "word": "nasılsınız",
+    "translation": "si jeni, si jeni me shëndet",
+    "pos": "emër",
+    "senses": [
+      "Pyetje mirësjelljeje që bëhet për të mësuar shëndetin dhe gjendjen e dikujt"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10920",
+    "source": "tr",
+    "word": "nazik",
+    "translation": "i sjellshëm, i brishtë",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që sillet me respekt ndaj të tjerëve"
+    ],
+    "examples": [
+      {
+        "source": "Vesime, hakikaten talihli kızmış, Remzi Bey biraz fazla saf olmakla beraber çok temiz ve nazik bir çocuk...",
+        "target": "Vesimja paska qenë vërtet një vajzë me fat, ndonëse Remzi Beu është pak si shumë naiv, është një djalë shumë i pastër dhe i sjellshëm..."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10002",
+    "source": "tr",
+    "word": "Ne",
+    "translation": "Ne",
+    "pos": "emër",
+    "senses": [
+      "Simboli i elementit të neonit"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10027",
+    "source": "tr",
+    "word": "neden",
+    "translation": "pse, përse",
+    "pos": "ndajfolje",
+    "senses": [
+      "Fjalë që përdoret për të pyetur rreth një ngjarjeje që ka sjellë si pasojë një ngjarje tjetër; pse"
+    ],
+    "examples": [
+      {
+        "source": "Biz Şarklılar neden ille her şeyi büyütüp efsaneleştiririz?",
+        "target": "Pse ne orientalët patjetër duhet ta zmadhojmë dhe ta kthejmë në legjendë çdo gjë?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11520",
+    "source": "tr",
+    "word": "nedeniyle",
+    "translation": "për shkak të, nga arsyeja e",
+    "pos": "pjesëz",
+    "senses": [
+      "Sebebiyle, për shkak të diçkaje"
+    ],
+    "examples": [
+      {
+        "source": "Bu arada büyük bir içtenlikle ve kendi etiğim nedeniyle sormak istiyorum: Kayıt aletini kapatmamı ister misiniz?",
+        "target": "Ndërkohë, dëshiroj t'ju pyes me një sinqeritet të madh dhe për shkak të etikës sime personale: A dëshironi ta fik mjetin e regjistrimit?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10441",
+    "source": "tr",
+    "word": "nefes",
+    "translation": "frymë, frymëmarrje",
+    "pos": "emër",
+    "senses": [
+      "Frymëmarrje"
+    ],
+    "examples": [
+      {
+        "source": "İhtiyar kadınlar ilaç yapar, nefesi olanlar okur, tütsü yakılır, tedavi yolları gösterilir.",
+        "target": "Gratë e plakura përgatisin ilaçe, ata që kanë frymë (shëruese) lexojnë lutje, ndizet kemzë dhe tregohen rrugë mjekimi."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10225",
+    "source": "tr",
+    "word": "nefret",
+    "translation": "urrejtje",
+    "pos": "emër",
+    "senses": [
+      "Ndjenjë që synon të dëshirojë të keqen ose fatkeqësinë e dikujt"
+    ],
+    "examples": [
+      {
+        "source": "Şimdi bu satırlarımı hiddetle, nefretle, iç bulantısı ile yazıyorum.",
+        "target": "Tani po i shkruaj këto rreshta të mi me zemërim, urrejtje dhe me përzierje stomaku."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11806",
+    "source": "tr",
+    "word": "nehir",
+    "translation": "lumë",
+    "pos": "emër",
+    "senses": [
+      "Irmak, rjedhë e madhe uji"
+    ],
+    "examples": [
+      {
+        "source": "Bir nehre benzeyen tarihte hiçbir an tekrarlanmaz.",
+        "target": "Në histori, e cila i përngjan një lumi, asnjë çast nuk përsëritet."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10150",
+    "source": "tr",
+    "word": "neler",
+    "translation": "çfarë gjërash",
+    "pos": "emër",
+    "senses": [
+      "Gjëra të shumta dhe të ndryshme"
+    ],
+    "examples": [
+      {
+        "source": "Bugün neler gördük.",
+        "target": "Çfarë gjërash pamë sot."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15354",
+    "source": "tr",
+    "word": "nem",
+    "translation": "Lagështia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'nem'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10077",
+    "source": "tr",
+    "word": "nerede",
+    "translation": "ku, ku ndodhet",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në cilin vend?"
+    ],
+    "examples": [
+      {
+        "source": "Şimdi sen, kızın nerede olduğunu bilmiyor musun?",
+        "target": "Tani ti nuk e di se ku ndodhet vajza?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10206",
+    "source": "tr",
+    "word": "nereden",
+    "translation": "nga ku",
+    "pos": "ndajfolje",
+    "senses": [
+      "Nga cili vend?"
+    ],
+    "examples": [
+      {
+        "source": "Neriman’a bu yeni hevesler nereden geliyor?",
+        "target": "Nga i vijnë Nerimanit këto dëshira të reja?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10285",
+    "source": "tr",
+    "word": "neredeyse",
+    "translation": "pothuajse, gati sa",
+    "pos": "ndajfolje",
+    "senses": [
+      "Fjalë që tregon se çasti i ndodhjes së një pune, lëvizjeje apo ngjarjeje po afrohet; për pak"
+    ],
+    "examples": [
+      {
+        "source": "Arabacım neredeyse donmak üzereydi.",
+        "target": "Karrocieri im pothuajse ishte duke ngrirë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11066",
+    "source": "tr",
+    "word": "neresi",
+    "translation": "ku, cila pjesë",
+    "pos": "përemër",
+    "senses": [
+      "Cili drejtim, cila anë?"
+    ],
+    "examples": [
+      {
+        "source": "Bunun neresi güzel?",
+        "target": "Ku është e bukur kjo gjë?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10155",
+    "source": "tr",
+    "word": "nereye",
+    "translation": "ku, drejt ku",
+    "pos": "ndajfolje",
+    "senses": [
+      "Në cilin vend? (me drejtim)"
+    ],
+    "examples": [
+      {
+        "source": "Bu kadar insan bir anda nereye kaybolabilir.",
+        "target": "Ku mund të zhduken gjithë këta njerëz në një çast."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10681",
+    "source": "tr",
+    "word": "nesi",
+    "translation": "çfarë e ka, ç'lidhje ka",
+    "pos": "përemër",
+    "senses": [
+      "A është i afërm apo person i afërt i tij?"
+    ],
+    "examples": [
+      {
+        "source": "Ali, Ahmet'in nesidir?",
+        "target": "Çfarë e ka Aliu Ahmetin?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13642",
+    "source": "tr",
+    "word": "nesne",
+    "translation": "kundrinori, objekt",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'nesne'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11293",
+    "source": "tr",
+    "word": "net",
+    "translation": "rrjetë, prekje rrjete (tenis)",
+    "pos": "emër",
+    "senses": [
+      "Fjalë që përdoret në lojëra si tenisi apo tenisi i tryezës gjatë shërbimit për të treguar se topi ka prekur rrjetën (filen) duke kaluar në fushën kundërshtare"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10450",
+    "source": "tr",
+    "word": "neye",
+    "translation": "përse, pse",
+    "pos": "ndajfolje",
+    "senses": [
+      "Përse"
+    ],
+    "examples": [
+      {
+        "source": "Ecdadının dilini neye beğenmiyorsun?",
+        "target": "Pse nuk të pëlqen gjuha e të parëve të tu?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10870",
+    "source": "tr",
+    "word": "neymiş",
+    "translation": "çfarë qenka, gjoja çfarë",
+    "pos": "emër",
+    "senses": [
+      "Sipas asaj që thuhet, gjoja"
+    ],
+    "examples": [
+      {
+        "source": "Neymiş? Projenin sahibi oymuş!",
+        "target": "Çfarë qenka? Pronari i projektit qenka ai!"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10247",
+    "source": "tr",
+    "word": "neyse",
+    "translation": "sidoqoftë, nejse",
+    "pos": "lidhëz",
+    "senses": [
+      "Fjalë që përdoret në kuptimin 'nuk ka rëndësi, ajo që ndodhi ndodhi'"
+    ],
+    "examples": [
+      {
+        "source": "Neyse, çok geç sayılmaz...",
+        "target": "Nejse, nuk është edhe aq shumë vonë..."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13227",
+    "source": "tr",
+    "word": "nezaket",
+    "translation": "Mirësia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'nezaket'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-15745",
+    "source": "tr",
+    "word": "nezle",
+    "translation": "I ftohti i zakonshëm",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'nezle'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11952",
+    "source": "tr",
+    "word": "neşeli",
+    "translation": "i gëzuar, pëlqyes, plot gëzim",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka gëzim; i këndshëm"
+    ],
+    "examples": [
+      {
+        "source": "Yaşadığımızın önemini ve yapıp ettiklerimizde ölçüyü gözeterek yani edebe riayet ederek hem ciddi hem neşeli olabiliriz.",
+        "target": "Duke marrë parasysh rëndësinë e të qenit gjallë dhe masën në gjërat që bëjmë, domethënë duke respektuar etikën, mund të jemi si seriozë ashtu edhe të gëzuar."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14913",
+    "source": "tr",
+    "word": "neşter",
+    "translation": "Bisturi",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'neşter'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11091",
+    "source": "tr",
+    "word": "Ni",
+    "translation": "Ni",
+    "pos": "emër",
+    "senses": [
+      "Simboli i elementit të nikelit"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10938",
+    "source": "tr",
+    "word": "nihayet",
+    "translation": "përfundim, fund",
+    "pos": "emër",
+    "senses": [
+      "Fund"
+    ],
+    "examples": [
+      {
+        "source": "Ben nihayete doğru yanımdaki çocuğu dürterek kalktım.",
+        "target": "Rreth përfundimit u ngrita duke e prekë fëmijën pranë meje."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16892",
+    "source": "tr",
+    "word": "nikotin",
+    "translation": "nikotina",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'nikotin'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16444",
+    "source": "tr",
+    "word": "ninni",
+    "translation": "ninulla",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'ninni'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-17580",
+    "source": "tr",
+    "word": "nitrat",
+    "translation": "nitrati",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'nitrat'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10178",
+    "source": "tr",
+    "word": "niye",
+    "translation": "pse, përse",
+    "pos": "ndajfolje",
+    "senses": [
+      "Përse"
+    ],
+    "examples": [
+      {
+        "source": "Böyle hiddetlenecektin, niye razı oldun?",
+        "target": "Nëse do të zemëroheshe kështu, pse prabove?"
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13813",
+    "source": "tr",
+    "word": "niyet",
+    "translation": "Nijeti, qëllim",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'niyet'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10573",
+    "source": "tr",
+    "word": "niçin",
+    "translation": "pse, përse",
+    "pos": "ndajfolje",
+    "senses": [
+      "Me cilin qëllim, për cilën arsye; përse"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11550",
+    "source": "tr",
+    "word": "nişan",
+    "translation": "shenjë, gjurmë, dekoratë",
+    "pos": "emër",
+    "senses": [
+      "Iz"
+    ],
+    "examples": [
+      {
+        "source": "Nişanı bozmuşlar.",
+        "target": "E kanë prishur shenjën (gjurmën)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-12730",
+    "source": "tr",
+    "word": "nişancı",
+    "translation": "Nishanxhiu",
+    "pos": "mbiemër",
+    "senses": [
+      "Përkthim për fjalën 'nişancı'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11240",
+    "source": "tr",
+    "word": "No",
+    "translation": "No",
+    "pos": "emër",
+    "senses": [
+      "Simboli i elementit të nobeliut"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10445",
+    "source": "tr",
+    "word": "Noel",
+    "translation": "Krishtlindje",
+    "pos": "emër",
+    "senses": [
+      "Festa e krishterë ku çdo vit më 25 dhjetor festohet ditëlindja e Jezu Krishtit"
+    ],
+    "examples": [
+      {
+        "source": "Bizim çocukluğumuzda Noel ve yılbaşı gâvur bayramları idi.",
+        "target": "Në fëmijërinë tonë Krishtlindjet dhe viti i ri konsideroheshin festa të të huajve (jomuslimanëve)."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11088",
+    "source": "tr",
+    "word": "nokta",
+    "translation": "pikë",
+    "pos": "emër",
+    "senses": [
+      "Formë e vogël si nishan që krijohet me prekjen e lapsit një herë mbi letër"
+    ],
+    "examples": [
+      {
+        "source": "Köşkten çıktık ve bahçenin her noktasını uzun uzun durup konuşarak dolaştık.",
+        "target": "Dolëm nga kumpania (vila) dhe e shëtitëm çdo pikë të kopshtit duke ndaluar e duke folur gjatë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-14574",
+    "source": "tr",
+    "word": "norm",
+    "translation": "normë",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'norm'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10391",
+    "source": "tr",
+    "word": "normal",
+    "translation": "normal, i zakonshëm",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që është i zakonshëm, i rregullt"
+    ],
+    "examples": [
+      {
+        "source": "Atatürk'ün normal zamanlarda insana okşamak arzusunu veren ipek gibi saçları birdenbire yelelenirdi.",
+        "target": "Flokët si mëndafsh të Ataturkut, që në kohë normale të zgjonin dëshirën për t'i përkëdhelur, papritmas ngriheshin si krifë."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18435",
+    "source": "tr",
+    "word": "nostalji",
+    "translation": "Nostalgjia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'nostalji'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10743",
+    "source": "tr",
+    "word": "not",
+    "translation": "shënim, notë",
+    "pos": "emër",
+    "senses": [
+      "Shkrim i shkurtër që shkruhet për të kujtuar diçka"
+    ],
+    "examples": [
+      {
+        "source": "Kitaplardan birinin kenarına bir not yazmışsın.",
+        "target": "Ke shkruar një shënim në anë të një prej librave."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10488",
+    "source": "tr",
+    "word": "numara",
+    "translation": "numër",
+    "pos": "emër",
+    "senses": [
+      "Numri ose shifra që tregon vendin e një gjëje brenda një serie"
+    ],
+    "examples": [
+      {
+        "source": "Tüm duyularım uyanık olarak trenimin rengini ve numarasını bulmaya çalışırdım.",
+        "target": "Me të gjitha shqisat e mia të zgjuara, përpiqesha të gjeja ngjyrën dhe numrin e trenit tim."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-10817",
+    "source": "tr",
+    "word": "numaralı",
+    "translation": "me numër",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që ka një numër të caktuar"
+    ],
+    "examples": [
+      {
+        "source": "Tokatlıyan'ın sırasındaki yirmi beş numaralı apartmanı arıyorum.",
+        "target": "Po kërkoj apartamentin me numër njëzet e pesë në radhën e Tokatlijanit."
+      }
+    ],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-18032",
+    "source": "tr",
+    "word": "nöroloji",
+    "translation": "neurologjia",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'nöroloji'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-16564",
+    "source": "tr",
+    "word": "nötron",
+    "translation": "neutroni",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'nötron'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11333",
+    "source": "tr",
+    "word": "nü",
+    "translation": "nudo, i zhveshur",
+    "pos": "mbiemër",
+    "senses": [
+      "Çıplak"
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-13888",
+    "source": "tr",
+    "word": "nüfus",
+    "translation": "popullsia, popullsi njerëzore",
+    "pos": "emër",
+    "senses": [
+      "Përkthim për fjalën 'nüfus'."
+    ],
+    "examples": [],
+    "derivatives": []
+  },
+  {
+    "id": "dict-tr-11296",
+    "source": "tr",
+    "word": "nükleer",
+    "translation": "bërthamor, nuklear",
+    "pos": "mbiemër",
+    "senses": [
+      "Ai që lidhet me bërthamën e atomit"
+    ],
+    "examples": [],
+    "derivatives": []
   }
 ]

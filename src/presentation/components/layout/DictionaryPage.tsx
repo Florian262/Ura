@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useRef, useCallback, useDeferredValue } from 'react';
 import { ChapterRepository } from '../../../infrastructure/repository/ChapterRepository';
 import { a1VocabularyData } from '../../../infrastructure/db/a1Vocabulary';
 import { a2VocabularyData } from '../../../infrastructure/db/a2Vocabulary';
@@ -26,6 +26,7 @@ export const DictionaryPage: React.FC = () => {
   const { playText } = useAudioPlayer();
   // States
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const deferredSearchQuery = useDeferredValue(searchQuery);
   const [selectedPOS, setSelectedPOS] = useState<string>('ALL');
   const [showBalkanOnly, setShowBalkanOnly] = useState<boolean>(false);
   const [loadedEntries, setLoadedEntries] = useState<DictionaryEntry[]>([]);
@@ -191,52 +192,94 @@ export const DictionaryPage: React.FC = () => {
   const allEntries = useMemo(() => {
     const map = new Map<string, DictionaryEntry>();
     
-    // Add loaded entries first
-    loadedEntries.forEach(item => {
-      map.set(`${item.word.toLowerCase()}-${item.translation.toLowerCase()}`, item);
-    });
-
-    // Merge curriculum (overwriting or complementing)
-    curriculumEntries.forEach(item => {
-      const key = `${item.word.toLowerCase()}-${item.translation.toLowerCase()}`;
+    const mergeIntoMap = (item: DictionaryEntry) => {
+      const key = item.word.toLowerCase().trim();
       if (!map.has(key)) {
-        map.set(key, item);
-      }
-    });
-
-    // Merge A1 thematic vocabulary
-    a1VocabEntries.forEach(item => {
-      const key = `${item.word.toLowerCase()}-${item.translation.toLowerCase()}`;
-      if (!map.has(key)) {
-        map.set(key, item);
+        // Deep copy key properties to avoid mutating state
+        map.set(key, { 
+          ...item,
+          senses: item.senses ? [...item.senses] : [],
+          examples: item.examples ? [...item.examples] : [],
+          derivatives: item.derivatives ? [...item.derivatives] : []
+        });
       } else {
         const existing = map.get(key)!;
-        map.set(key, {
-          ...existing,
-          is_a1_vocab: true,
-          notes: existing.notes || item.notes,
-          examples: existing.examples || item.examples,
-          derivatives: existing.derivatives || item.derivatives
-        });
-      }
-    });
+        
+        // 1. Merge translations (comma separated, unique)
+        const t1 = existing.translation.split(',').map(x => x.trim()).filter(Boolean);
+        const t2 = item.translation.split(',').map(x => x.trim()).filter(Boolean);
+        existing.translation = Array.from(new Set([...t1, ...t2])).join(', ');
 
-    // Merge A2 thematic vocabulary
-    a2VocabEntries.forEach(item => {
-      const key = `${item.word.toLowerCase()}-${item.translation.toLowerCase()}`;
-      if (!map.has(key)) {
-        map.set(key, item);
-      } else {
-        const existing = map.get(key)!;
-        map.set(key, {
-          ...existing,
-          is_a2_vocab: true,
-          notes: existing.notes || item.notes,
-          examples: existing.examples || item.examples,
-          derivatives: existing.derivatives || item.derivatives
+        // 2. Merge parts of speech
+        const p1 = existing.pos.split(',').map(x => x.trim()).filter(Boolean);
+        const p2 = item.pos.split(',').map(x => x.trim()).filter(Boolean);
+        existing.pos = Array.from(new Set([...p1, ...p2])).join(', ');
+
+        // 3. Merge senses (definitions)
+        const s1 = existing.senses || [];
+        const s2 = item.senses || [];
+        existing.senses = Array.from(new Set([...s1, ...s2])).filter(Boolean);
+
+        // 4. Merge example sentences (deduplicated by source text)
+        const ex1 = existing.examples || [];
+        const ex2 = item.examples || [];
+        const seenSources = new Set(ex1.map(x => x.source.toLowerCase().trim()));
+        const uniqueExamples = [...ex1];
+        ex2.forEach(x => {
+          const srcClean = x.source.toLowerCase().trim();
+          if (!seenSources.has(srcClean)) {
+            seenSources.add(srcClean);
+            uniqueExamples.push(x);
+          }
         });
+        existing.examples = uniqueExamples;
+
+        // 5. Merge derivatives (deduplicated by word)
+        const d1 = existing.derivatives || [];
+        const d2 = item.derivatives || [];
+        const seenDerivs = new Set(d1.map(x => x.word.toLowerCase().trim()));
+        const uniqueDerivs = [...d1];
+        d2.forEach(x => {
+          const wClean = x.word.toLowerCase().trim();
+          if (!seenDerivs.has(wClean)) {
+            seenDerivs.add(wClean);
+            uniqueDerivs.push(x);
+          }
+        });
+        existing.derivatives = uniqueDerivs;
+
+        // 6. Merge grammatical notes
+        if (item.notes && existing.notes) {
+          if (!existing.notes.toLowerCase().includes(item.notes.toLowerCase())) {
+            existing.notes = `${existing.notes} | ${item.notes}`;
+          }
+        } else if (item.notes) {
+          existing.notes = item.notes;
+        }
+
+        // 7. Merge badges & source info
+        if (item.is_balkan) existing.is_balkan = true;
+        if (item.is_a1_vocab) existing.is_a1_vocab = true;
+        if (item.is_a2_vocab) existing.is_a2_vocab = true;
+        if (item.chapterTitle) {
+          if (existing.chapterTitle) {
+            if (!existing.chapterTitle.toLowerCase().includes(item.chapterTitle.toLowerCase())) {
+              existing.chapterTitle = `${existing.chapterTitle} • ${item.chapterTitle}`;
+            }
+          } else {
+            existing.chapterTitle = item.chapterTitle;
+          }
+        }
+        if (item.inflection && !existing.inflection) {
+          existing.inflection = item.inflection;
+        }
       }
-    });
+    };
+
+    loadedEntries.forEach(mergeIntoMap);
+    curriculumEntries.forEach(mergeIntoMap);
+    a1VocabEntries.forEach(mergeIntoMap);
+    a2VocabEntries.forEach(mergeIntoMap);
 
     return Array.from(map.values());
   }, [loadedEntries, curriculumEntries, a1VocabEntries, a2VocabEntries]);
@@ -246,9 +289,9 @@ export const DictionaryPage: React.FC = () => {
     return allEntries.filter(entry => {
       // 1. Search Query Match
       const matchesSearch = 
-        entry.word.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        entry.translation.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (entry.notes && entry.notes.toLowerCase().includes(searchQuery.toLowerCase()));
+        entry.word.toLowerCase().includes(deferredSearchQuery.toLowerCase()) ||
+        entry.translation.toLowerCase().includes(deferredSearchQuery.toLowerCase()) ||
+        (entry.notes && entry.notes.toLowerCase().includes(deferredSearchQuery.toLowerCase()));
 
       // 2. Balkan Filter
       const matchesBalkan = !showBalkanOnly || entry.is_balkan === true;
@@ -258,7 +301,12 @@ export const DictionaryPage: React.FC = () => {
 
       return matchesSearch && matchesBalkan && matchesPOS;
     }).sort((a, b) => a.word.localeCompare(b.word));
-  }, [allEntries, searchQuery, showBalkanOnly, selectedPOS]);
+  }, [allEntries, deferredSearchQuery, showBalkanOnly, selectedPOS]);
+
+  // Clamped visible results to prevent rendering lag on massive word counts
+  const visibleEntries = useMemo(() => {
+    return filteredEntries.slice(0, 40);
+  }, [filteredEntries]);
 
   // Automatically select first entry in results on desktop when list changes
   useEffect(() => {
@@ -311,7 +359,7 @@ export const DictionaryPage: React.FC = () => {
             Arkiva e Fjalëve (Sözlük Portal)
           </span>
           <h2 className="text-2xl font-black text-[#1A1D20] dark:text-white uppercase tracking-tight font-display leading-tight">
-            Fjalori i Plotë Shqip-Turqisht
+            Fjalori i Plotë Turqisht-Shqip
           </h2>
           <p className="text-xs text-[#565E64] dark:text-neutral-400 font-light max-w-2xl leading-relaxed">
             Kërkoni fjalë, përkthime dhe shprehje. Përdorni kolonat për analizë gramatikore, rregulla përdorimi, shembuj dhe shqiptim zanor offline.
@@ -396,59 +444,66 @@ export const DictionaryPage: React.FC = () => {
         {/* LEFT COLUMN: Results Scroll Pane */}
         <div className="col-span-1 md:col-span-5 flex flex-col gap-3">
           <div className="text-[10px] font-bold text-[#565E64] uppercase tracking-wider flex justify-between">
-            <span>Rezultatet ({filteredEntries.length})</span>
+            <span>Rezultatet</span>
             {searchQuery.trim().length > 0 && <span className="text-[#0D9488] animate-pulse">Lajmërohet kërkimi...</span>}
           </div>
           
           <div className="glass-panel border border-[#E9ECEF] rounded-2xl bg-white max-h-[500px] overflow-y-auto p-2 space-y-1 divide-y divide-neutral-50 shadow-xs no-scrollbar">
-            {filteredEntries.length > 0 ? (
-              filteredEntries.map(entry => {
-                const isSelected = selectedEntry?.id === entry.id;
-                return (
-                  <button
-                    key={entry.id}
-                    onClick={() => handleSelectEntry(entry)}
-                    className={`w-full flex items-center justify-between text-left p-3 rounded-xl transition duration-150 border cursor-pointer outline-none ${
-                      isSelected
-                        ? 'bg-[#3A5A40]/5 border-[#3A5A40]/20'
-                        : 'border-transparent hover:bg-neutral-50/50'
-                    }`}
-                  >
-                    <div className="space-y-0.5">
-                      <span lang="tr" className="text-xs font-bold text-[#1C1917] font-technical flex items-center gap-1.5">
-                        {entry.word}
-                        {entry.inflection && (
-                          <span className="text-[10px] font-light text-neutral-400 normal-case">{entry.inflection}</span>
+            {visibleEntries.length > 0 ? (
+              <>
+                {visibleEntries.map(entry => {
+                  const isSelected = selectedEntry?.id === entry.id;
+                  return (
+                    <button
+                      key={entry.id}
+                      onClick={() => handleSelectEntry(entry)}
+                      className={`w-full flex items-center justify-between text-left p-3 rounded-xl transition duration-150 border cursor-pointer outline-none ${
+                        isSelected
+                          ? 'bg-[#3A5A40]/5 border-[#3A5A40]/20'
+                          : 'border-transparent hover:bg-neutral-50/50'
+                      }`}
+                    >
+                      <div className="space-y-0.5">
+                        <span lang="tr" className="text-xs font-bold text-[#1C1917] font-technical flex items-center gap-1.5">
+                          {entry.word}
+                          {entry.inflection && (
+                            <span className="text-[10px] font-light text-neutral-400 normal-case">{entry.inflection}</span>
+                          )}
+                        </span>
+                        <span className="block text-[11px] text-[#565E64] font-medium leading-tight">
+                          {entry.translation}
+                        </span>
+                      </div>
+                      
+                      <div className="flex items-center gap-1.5">
+                        {entry.is_balkan && (
+                          <span className="text-[8px] font-extrabold text-[#D97706] bg-[#D97706]/10 border border-[#D97706]/20 px-1 rounded-md">
+                            🤝
+                          </span>
                         )}
-                      </span>
-                      <span className="block text-[11px] text-[#565E64] font-medium leading-tight">
-                        {entry.translation}
-                      </span>
-                    </div>
-                    
-                    <div className="flex items-center gap-1.5">
-                      {entry.is_balkan && (
-                        <span className="text-[8px] font-extrabold text-[#D97706] bg-[#D97706]/10 border border-[#D97706]/20 px-1 rounded-md">
-                          🤝
+                        {entry.is_a1_vocab && (
+                          <span className="text-[8px] font-extrabold text-[#0D9488] bg-[#0D9488]/10 border border-[#0D9488]/20 px-1 rounded-md" title="Fjalorthi Tematik A1">
+                            A1
+                          </span>
+                        )}
+                        {entry.is_a2_vocab && (
+                          <span className="text-[8px] font-extrabold text-[#3B82F6] bg-[#3B82F6]/10 border border-[#3B82F6]/20 px-1 rounded-md" title="Fjalorthi Tematik A2">
+                            A2
+                          </span>
+                        )}
+                        <span className="text-[9px] font-bold text-[#565E64] capitalize bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-1.5 py-0.5 rounded-md">
+                          {entry.pos}
                         </span>
-                      )}
-                      {entry.is_a1_vocab && (
-                        <span className="text-[8px] font-extrabold text-[#0D9488] bg-[#0D9488]/10 border border-[#0D9488]/20 px-1 rounded-md" title="Fjalorthi Tematik A1">
-                          A1
-                        </span>
-                      )}
-                      {entry.is_a2_vocab && (
-                        <span className="text-[8px] font-extrabold text-[#3B82F6] bg-[#3B82F6]/10 border border-[#3B82F6]/20 px-1 rounded-md" title="Fjalorthi Tematik A2">
-                          A2
-                        </span>
-                      )}
-                      <span className="text-[9px] font-bold text-[#565E64] capitalize bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-1.5 py-0.5 rounded-md">
-                        {entry.pos}
-                      </span>
-                    </div>
-                  </button>
-                );
-              })
+                      </div>
+                    </button>
+                  );
+                })}
+                {filteredEntries.length > visibleEntries.length && (
+                  <div className="text-center py-3 text-[10px] text-neutral-400 dark:text-neutral-500 italic font-light">
+                    Po shfaqen 40 fjalët e para. Shkruani më shumë shkronja për të ngushtuar kërkimin...
+                  </div>
+                )}
+              </>
             ) : (
               <div className="text-center py-16 text-[#565E64] space-y-1.5">
                 <span className="text-2xl">🔍</span>
@@ -463,7 +518,7 @@ export const DictionaryPage: React.FC = () => {
           <div className="text-[10px] font-bold text-[#565E64] uppercase tracking-wider mb-3">Analiza e Fjalës</div>
           
           {selectedEntry ? (
-            <div className="glass-panel border border-[#E9ECEF] rounded-2xl bg-white p-6 shadow-sm space-y-5 animate-fade-in min-h-[300px] flex flex-col justify-between">
+            <div className="glass-panel border border-[#E9ECEF] rounded-2xl bg-white p-6 shadow-sm space-y-5 animate-fade-in min-h-[300px] flex flex-col justify-between max-h-[calc(100vh-160px)] overflow-y-auto">
               
               {/* Header section */}
               <div className="space-y-3">
@@ -516,20 +571,22 @@ export const DictionaryPage: React.FC = () => {
 
                 {/* Meanings / Senses List */}
                 <div className="space-y-2.5 pt-1">
-                  <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block">Përkthimi / Kuptimi:</span>
+                  <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block">Përkthimi:</span>
+                  <span className="text-base font-bold text-[#0D9488] block leading-snug">
+                    {selectedEntry.translation}
+                  </span>
                   
-                  {selectedEntry.senses && selectedEntry.senses.length > 0 ? (
-                    <ol className="list-decimal pl-4 space-y-1.5">
-                      {selectedEntry.senses.map((sense, idx) => (
-                        <li key={idx} className="text-xs font-medium text-[#1C1917]">
-                          {sense}
-                        </li>
-                      ))}
-                    </ol>
-                  ) : (
-                    <span className="text-sm font-semibold text-[#0D9488] block">
-                      {selectedEntry.translation}
-                    </span>
+                  {selectedEntry.senses && selectedEntry.senses.length > 0 && (
+                    <div className="space-y-1.5 mt-2.5">
+                      <span className="text-[9px] font-bold text-neutral-400 uppercase tracking-widest block">Kuptimet e Detajuara:</span>
+                      <ol className="list-decimal pl-4 space-y-1">
+                        {selectedEntry.senses.map((sense, idx) => (
+                          <li key={idx} className="text-xs font-medium text-[#1C1917]">
+                            {sense}
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
                   )}
                 </div>
 

@@ -1,0 +1,2814 @@
+Ju jeni një përkthyes profesionist turqisht-shqip dhe ekspert gjuhësor.
+Detyra juaj është të përktheni hyrjet e fjalorit turqisht në shqip sipas të dhënave të mëposhtme.
+Ju lutem ktheni VETËM një kod JSON të pastër (pa formatim markdown, pa komente dhe pa hyrje komunikuese). Outputi duhet të jetë një Array JSON i thjeshtë që përmban objekte me çelësat e mëposhtëm:
+- "id": (kopjoni ID-në e dhënë)
+- "sq": (përkthimi i fjalës në shqip. Nëse jepet 'sq_base', përdoreni si pikënisje por përmirësojeni ose zgjerojeni nëse ka gabime)
+- "sq_def": (përkthe shpjegimin turk 'tdk_def' në një fjali të vetme të thjeshtë dhe të qartë në shqip)
+
+Rregullat:
+1. Mbajeni shpjegimin 'sq_def' të thjeshtë, të shkurtër dhe të qartë (1 fjali e shkurtër).
+2. Ktheni vetëm formatin e kërkuar JSON, pa asnjë tekst tjetër përpara ose pas tij.
+
+Të dhënat për t'u përkthyer:
+[
+  {
+    "id": "dict-tr-12800",
+    "tr": "yaygın",
+    "pos": "mbiemër",
+    "tdk_def": "Çoğu kimselerce duyulmuş, öğrenilmiş, kullanılmış veya benimsenmiş olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12801",
+    "tr": "yalnızlık",
+    "pos": "emër",
+    "tdk_def": "Yalnız olma durumu",
+    "sq_base": "vetmia"
+  },
+  {
+    "id": "dict-tr-12802",
+    "tr": "jet",
+    "pos": "emër",
+    "tdk_def": "Tepkili motorlarla çalışan, özel cihazların çıkardığı gazla basınç sağlanan, hızı çok olan uçak; tepkili uçak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12803",
+    "tr": "isyan",
+    "pos": "emër",
+    "tdk_def": "► başkaldırı",
+    "sq_base": "Rebelimi"
+  },
+  {
+    "id": "dict-tr-12804",
+    "tr": "göbek",
+    "pos": "emër",
+    "tdk_def": "İnsan ve memeli hayvanlarda göbek bağının düşmesinden sonra karnın ortasında bulunan çukurluk",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12805",
+    "tr": "striptiz",
+    "pos": "emër",
+    "tdk_def": "Genellikle gece kulüplerinde, pavyonlarda müzik eşliğinde dans edip soyunarak yapılan gösteri",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12806",
+    "tr": "tanıştırmak",
+    "pos": "emër",
+    "tdk_def": "Birbirini tanımayanların tanışmasını sağlamak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12807",
+    "tr": "edilmek",
+    "pos": "emër",
+    "tdk_def": "Etme işine konu olmak; yapılmak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12808",
+    "tr": "şövalye",
+    "pos": "emër",
+    "tdk_def": "Eski Roma'da üç sınıftan ikincisinin üyesi olan yurttaş",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12809",
+    "tr": "tır",
+    "pos": "emër",
+    "tdk_def": "Genellikle uluslararası kara yolu taşımacılığında kullanılan, dingil sayısı fazla olan uzun kamyon",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12810",
+    "tr": "kesme",
+    "pos": "emër",
+    "tdk_def": "Kesmek işi; kat (II)",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12811",
+    "tr": "doku",
+    "pos": "emër",
+    "tdk_def": "Bir vücudun veya bir organın yapı ögelerinden birini oluşturan hücreler bütünü; nesiç",
+    "sq_base": "ind"
+  },
+  {
+    "id": "dict-tr-12812",
+    "tr": "yüzyıl",
+    "pos": "emër",
+    "tdk_def": "Yüzyıllık süre; asır",
+    "sq_base": "shekulli"
+  },
+  {
+    "id": "dict-tr-12813",
+    "tr": "sopa",
+    "pos": "emër",
+    "tdk_def": "Kalın değnek",
+    "sq_base": "shkopi (armë)"
+  },
+  {
+    "id": "dict-tr-12814",
+    "tr": "acemi",
+    "pos": "mbiemër",
+    "tdk_def": "Bir işin yabancısı olan, eli işe alışmamış, bir işi beceremeyen",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12815",
+    "tr": "fasulye",
+    "pos": "emër",
+    "tdk_def": "Fasulyegillerden, barbunya, çalı, ayşekadın, horoz vb. türleri bulunan bitki (Phaseolus vulgaris)",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12816",
+    "tr": "yakmak",
+    "pos": "emër",
+    "tdk_def": "Kına, yakı vb.ni koymak, sürmek",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12817",
+    "tr": "görkemli",
+    "pos": "mbiemër",
+    "tdk_def": "Büyüklüğü, görünüşü ve güzelliğiyle görenleri etkileyen; anıtsal, debdebeli, haşmetli, ihtişamlı, muhteşem, mutantan, şaşaalı, şatafatlı, tantanalı, alayişli",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12818",
+    "tr": "Mo",
+    "pos": "emër",
+    "tdk_def": "Molibden elementinin simgesi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12819",
+    "tr": "jön",
+    "pos": "emër",
+    "tdk_def": "Önemli rollerde oynayan genç erkek oyuncu; jönprömiye",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12820",
+    "tr": "ihmal",
+    "pos": "emër",
+    "tdk_def": "Gereken ilgiyi göstermeme, önem vermeme; boşlama, savsaklama, savsama",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12821",
+    "tr": "kargaşa",
+    "pos": "emër",
+    "tdk_def": "Kışkırtma ve karışıklık yoluyla toplumda ortaya çıkan düzen bozukluğu; anarşi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12822",
+    "tr": "velet",
+    "pos": "emër",
+    "tdk_def": "► çocuk",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12823",
+    "tr": "zorunlu",
+    "pos": "mbiemër",
+    "tdk_def": "Kesin olarak gereksinim duyulan; zaruri, mecburi, ıztırari",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12824",
+    "tr": "kelebek",
+    "pos": "emër",
+    "tdk_def": "Pul kanatlılardan, vücudu, kanatları ince pullarla ve türlü renklerle örtülü, dört kanatlı, çok sayıda türleri olan böceklere verilen genel ad",
+    "sq_base": "flutura"
+  },
+  {
+    "id": "dict-tr-12825",
+    "tr": "battaniye",
+    "pos": "emër",
+    "tdk_def": "Yorgan yerine veya yorgan üstünde kullanılan, çoğu yünden dokunmuş kalınca örtü",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12826",
+    "tr": "ticari",
+    "pos": "mbiemër",
+    "tdk_def": "Ticaretle ilgili, ticarete ilişkin",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12827",
+    "tr": "eldiven",
+    "pos": "emër",
+    "tdk_def": "Elleri dış etkilerden korumak, temizlik, süs vb. için örgü, kumaş, deri, kauçuk gibi malzemelerden yapılan el giysisi; ellik",
+    "sq_base": "Doreza"
+  },
+  {
+    "id": "dict-tr-12828",
+    "tr": "balina",
+    "pos": "emër",
+    "tdk_def": "Balinalardan, yaklaşık uzunluğu 20 metre, ağırlığı 200 ton olan memeli hayvan (Balaena mistycetus)",
+    "sq_base": "Balena"
+  },
+  {
+    "id": "dict-tr-12829",
+    "tr": "dayanıklı",
+    "pos": "mbiemër",
+    "tdk_def": "Dayanabilen; pek canlı, metîn, mukavemetli, mukavim, stabil",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12830",
+    "tr": "tablo",
+    "pos": "emër",
+    "tdk_def": "Bez, tahta, kâğıt vb. maddeler üzerine yapılmış yağlı boya, sulu boya, pastel veya kara kalem resim; levha",
+    "sq_base": "pikturë"
+  },
+  {
+    "id": "dict-tr-12831",
+    "tr": "yapı",
+    "pos": "emër",
+    "tdk_def": "Barınmak veya başka amaçlarla kullanılmak için yapılmış her türlü mimarlık eseri; bina, mimari",
+    "sq_base": "strukturë"
+  },
+  {
+    "id": "dict-tr-12832",
+    "tr": "yönelik",
+    "pos": "mbiemër",
+    "tdk_def": "Belli bir yöne çevrilmiş olan; müteveccih",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12833",
+    "tr": "balon",
+    "pos": "emër",
+    "tdk_def": "Isıtılmış hava veya havadan daha hafif bir gazla doldurulan, atmosferde uçabilen, küre biçiminde araç",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12834",
+    "tr": "utangaç",
+    "pos": "mbiemër",
+    "tdk_def": "Bir topluluk içinde gereken güven ve cesareti kendinde bulamayan, rahat konuşamayan ve rahat davranamayan; sıkılgan, utangan, mahcup",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12835",
+    "tr": "tümüyle",
+    "pos": "ndajfolje",
+    "tdk_def": "► tamamen",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12836",
+    "tr": "konsey",
+    "pos": "emër",
+    "tdk_def": "► kurul",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12837",
+    "tr": "havaalanı",
+    "pos": "emër",
+    "tdk_def": "İçerisindeki bina, tesis ve donatımlar dâhil uçakların iniş, kalkış ve yer hareketlerini yaparken kullanabilmeleri amacıyla belirlenmiş, ülke içindeki uçuşların yapıldığı saha",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12838",
+    "tr": "kravat",
+    "pos": "emër",
+    "tdk_def": "Bir ucu ince, diğer ucu daha geniş, gömlek yakasının altından geçirilerek önde üçgen biçiminde bağlanan, özel kumaştan yapılan giysi aksesuarı; boyun bağı, medeniyet yuları",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12839",
+    "tr": "kast",
+    "pos": "emër",
+    "tdk_def": "Ayrıcalıklar bakımından yukarıdan aşağıya doğru kesin ölçülerle sınırlanmış bulunan, en koyu biçimiyle Hindistan'da görülen toplumsal sınıfların her biri",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12840",
+    "tr": "gizlilik",
+    "pos": "emër",
+    "tdk_def": "Gizli olma durumu; mahremiyet",
+    "sq_base": "Fshehtësia"
+  },
+  {
+    "id": "dict-tr-12841",
+    "tr": "kültür",
+    "pos": "emër",
+    "tdk_def": "Tarihsel, toplumsal gelişme süreci içinde yaratılan bütün maddi ve manevi değerler ile bunları yaratmada, sonraki nesillere iletmede kullanılan, insanın doğal ve toplumsal çevresine egemenliğinin ölçüsünü gösteren araçların bütünü; hars, ekin",
+    "sq_base": "kultura, kulturë"
+  },
+  {
+    "id": "dict-tr-12842",
+    "tr": "vaat",
+    "pos": "emër",
+    "tdk_def": "Bir işi yerine getirmek için verilen söz",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12843",
+    "tr": "sekreter",
+    "pos": "emër",
+    "tdk_def": "Özel veya kamu kuruluşlarında belli bir makama, kişiye yardımcı olmak amacıyla haberleşmeyi sağlayan, yazışma yapabilen görevli; yazman, kâtip",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12844",
+    "tr": "sunmak",
+    "pos": "emër",
+    "tdk_def": "Bir büyüğe veya nezaket gereğince bir kimseye bir şeyi vermek; arz etmek, takdim etmek",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12845",
+    "tr": "şurası",
+    "pos": "emër",
+    "tdk_def": "► şura",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12846",
+    "tr": "Meksikalı",
+    "pos": "emër",
+    "tdk_def": "Meksika’da yaşayan halk veya bu halkın soyundan olan kimse",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12847",
+    "tr": "şarj",
+    "pos": "emër",
+    "tdk_def": "► yükleme",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12848",
+    "tr": "sinsi",
+    "pos": "mbiemër",
+    "tdk_def": "Gizli ve kurnazca kötülük yapan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12849",
+    "tr": "indirim",
+    "pos": "emër",
+    "tdk_def": "Fiyatta yapılan değer düşürümü; tenzilat, iskonto",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12850",
+    "tr": "detaylı",
+    "pos": "mbiemër",
+    "tdk_def": "► ayrıntılı",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12851",
+    "tr": "kabalık",
+    "pos": "emër",
+    "tdk_def": "Kaba olma durumu",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12852",
+    "tr": "daim",
+    "pos": "mbiemër",
+    "tdk_def": "Sürekli, sonsuz olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12853",
+    "tr": "zevkli",
+    "pos": "mbiemër",
+    "tdk_def": "Beğenilen, hoşa giden",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12854",
+    "tr": "duyarlı",
+    "pos": "mbiemër",
+    "tdk_def": "Dış etkenlere karşı duyarlığı olan; duygun, hassas",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12855",
+    "tr": "pos",
+    "pos": "mbiemër",
+    "tdk_def": "Gür ve uzun (bıyık)",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12856",
+    "tr": "eyvah",
+    "pos": "pasthirrmë",
+    "tdk_def": "Beklenmedik, kötü, hoşa gitmeyen bir haber veya olay karşısında duyulan acınma, üzülme, telaş bildiren söz",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12857",
+    "tr": "gözyaşı",
+    "pos": "emër",
+    "tdk_def": "Gözyaşı bezlerinin salgıladığı, bazı etkilerle akan duru sıvı damlacıklarından her biri; yaş (II)",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12858",
+    "tr": "Latin",
+    "pos": "emër",
+    "tdk_def": "İtalya’nın orta kesimindeki Latium bölgesinde yaşamış olan halk veya bu halkın soyundan olan kimse",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12859",
+    "tr": "seçmek",
+    "pos": "emër",
+    "tdk_def": "Benzerleri arasında hoşa gideni seçip almak veya yararlanmak için ayırmak; saylamak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12860",
+    "tr": "kumanda",
+    "pos": "emër",
+    "tdk_def": "► komuta",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12861",
+    "tr": "gürültülü",
+    "pos": "mbiemër",
+    "tdk_def": "Gürültüsü olan; tangırtılı",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12862",
+    "tr": "soyadı",
+    "pos": "emër",
+    "tdk_def": "Herkesin ailece anılmasına yarayan öz adından sonraki adı; aile adı, soy ismi",
+    "sq_base": "mbiemri, mbiemër"
+  },
+  {
+    "id": "dict-tr-12863",
+    "tr": "kare",
+    "pos": "emër",
+    "tdk_def": "Kenarları ve açıları birbirine eşit olan dörtgen; dördül, murabba (I)",
+    "sq_base": "katrori"
+  },
+  {
+    "id": "dict-tr-12864",
+    "tr": "çiftçi",
+    "pos": "emër",
+    "tdk_def": "Geçimini toprağı ekerek sağlayan kimse; fellah",
+    "sq_base": "Çifçi"
+  },
+  {
+    "id": "dict-tr-12865",
+    "tr": "ahlaksız",
+    "pos": "mbiemër",
+    "tdk_def": "Ahlak kurallarına uymayan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12866",
+    "tr": "haydut",
+    "pos": "emër",
+    "tdk_def": "Silahlı soygun yapan, yol kesen kimse; harami, şaki",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12867",
+    "tr": "Bodrum",
+    "pos": "emër",
+    "tdk_def": "Muğla iline bağlı ilçelerden biri",
+    "sq_base": "Bodrumi"
+  },
+  {
+    "id": "dict-tr-12868",
+    "tr": "seyirci",
+    "pos": "emër",
+    "tdk_def": "Bir olayı gören, izleyen kimse; izleyici",
+    "sq_base": "Audienca"
+  },
+  {
+    "id": "dict-tr-12869",
+    "tr": "leziz",
+    "pos": "mbiemër",
+    "tdk_def": "Tadı güzel, lezzetli",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12870",
+    "tr": "yanlışlık",
+    "pos": "emër",
+    "tdk_def": "Yanlış davranış, yanlış iş, yanlış sanı; hata, sakamet, falso",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12871",
+    "tr": "yatma",
+    "pos": "emër",
+    "tdk_def": "Yatmak işi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12872",
+    "tr": "organ",
+    "pos": "emër",
+    "tdk_def": "Vücudun, belirli bir görev yapan ve sınırları kesin olarak belirlenmiş bölümü; aza, örgen, uzuv",
+    "sq_base": "organ"
+  },
+  {
+    "id": "dict-tr-12873",
+    "tr": "kaçar",
+    "pos": "mbiemër",
+    "tdk_def": "Kaç soru sıfatının üleştirme biçimi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12874",
+    "tr": "mahvetmek",
+    "pos": "emër",
+    "tdk_def": "Yok etmek",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12875",
+    "tr": "gibisi",
+    "pos": "emër",
+    "tdk_def": "► benzeri",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12876",
+    "tr": "harap",
+    "pos": "mbiemër",
+    "tdk_def": "Bayındırlığı kalmamış, yıkılacak duruma gelmiş; yıkkın, viran",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12877",
+    "tr": "se",
+    "pos": "emër",
+    "tdk_def": "► üç",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12878",
+    "tr": "baron",
+    "pos": "emër",
+    "tdk_def": "Batı ülkelerinde vikont ile şövalye arasında soyluluk ünvanı",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12879",
+    "tr": "nadiren",
+    "pos": "ndajfolje",
+    "tdk_def": "► seyrek",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12880",
+    "tr": "makarna",
+    "pos": "emër",
+    "tdk_def": "İrmik veya una yumurta karıştırılarak hazırlanmış türlü biçimlerdeki kuru hamur",
+    "sq_base": "pasta"
+  },
+  {
+    "id": "dict-tr-12881",
+    "tr": "kayak",
+    "pos": "emër",
+    "tdk_def": "Kar, su veya çim üzerinde kaymak için ayağa takılan araç; ski",
+    "sq_base": "Skijimi"
+  },
+  {
+    "id": "dict-tr-12882",
+    "tr": "üzüm",
+    "pos": "emër",
+    "tdk_def": "Asmanın taze veya kuru olarak yenilen ve salkım durumunda bulunan meyvesi",
+    "sq_base": "rrushi"
+  },
+  {
+    "id": "dict-tr-12883",
+    "tr": "azgın",
+    "pos": "mbiemër",
+    "tdk_def": "Azmış olan; kudurgan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12884",
+    "tr": "eziyet",
+    "pos": "emër",
+    "tdk_def": "Yersiz ve gereksiz olarak çektirilen üzüntü, işkence, sıkıntı veya zorluk; üzgü, cevir, eza cefa, sıklet, ukubet",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12885",
+    "tr": "açlık",
+    "pos": "emër",
+    "tdk_def": "Aç olma durumu",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12886",
+    "tr": "halletmek",
+    "pos": "emër",
+    "tdk_def": "Güç görünen bir olay veya duruma çözüm yolu bulmak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12887",
+    "tr": "laboratuvar",
+    "pos": "emër",
+    "tdk_def": "Ayrıştırma, birleştirme yoluyla bir sonuca ulaşmak veya teşhis koymak için çeşitli araçlar kullanılarak tıp, eczacılık, fizik, kimya gibi bilim dallarıyla ilgili araştırmaların, deneylerin yapıldığı özel donanımlı yer",
+    "sq_base": "laborator"
+  },
+  {
+    "id": "dict-tr-12888",
+    "tr": "ila",
+    "pos": "lidhëz",
+    "tdk_def": "Belirtilen sayıların da dâhil edildiği aralığı anlatan söz",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12889",
+    "tr": "içim",
+    "pos": "emër",
+    "tdk_def": "İçmek işi; içiş",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12890",
+    "tr": "habersiz",
+    "pos": "mbiemër",
+    "tdk_def": "Haberi olmayan, haber almamış, hiçbir bilgisi olmayan; bihaber",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12891",
+    "tr": "dövüşmek",
+    "pos": "emër",
+    "tdk_def": "Karşılıklı birbirini dövmek",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12892",
+    "tr": "başkanlık",
+    "pos": "emër",
+    "tdk_def": "Başkan olma durumu; reislik, riyaset",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12893",
+    "tr": "ağ",
+    "pos": "emër",
+    "tdk_def": "Pantolon veya külotun apış arasına gelen yeri; apışlık",
+    "sq_base": "rrjet"
+  },
+  {
+    "id": "dict-tr-12894",
+    "tr": "tilki",
+    "pos": "emër",
+    "tdk_def": "Köpekgillerden, uzunluğu 90, kuyruğu 30 santimetre kadar, ırklarına göre çeşitli renklerde olan, ağız ve burnu uzun ve sivri, kümes hayvanlarına zarar veren, kürkü beğenilen bir tür memeli (Vulpes)",
+    "sq_base": "Dhelpra"
+  },
+  {
+    "id": "dict-tr-12895",
+    "tr": "kömür",
+    "pos": "emër",
+    "tdk_def": "Karbonlu maddelerin kapalı ve havasız yerlerde için için yanmasından veya çok uzun süre derin toprak katmanları altında kalıp birtakım kimyasal değişmelere uğramasından oluşan, siyah renkli, bitkisel kaynaklı, içinde yüksek oranda karbon bulunan katı yakıt; kara elmas",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12896",
+    "tr": "anlatma",
+    "pos": "emër",
+    "tdk_def": "Anlatmak işi; ifham, tefhim",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12897",
+    "tr": "art",
+    "pos": "emër",
+    "tdk_def": "► arka",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12898",
+    "tr": "sorgulama",
+    "pos": "emër",
+    "tdk_def": "Sorgulamak işi; isticvap",
+    "sq_base": "Marrja në pyetje"
+  },
+  {
+    "id": "dict-tr-12899",
+    "tr": "olabilmek",
+    "pos": "emër",
+    "tdk_def": "Olma, gerçekleşme ihtimali veya imkânı bulunmak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12900",
+    "tr": "amir",
+    "pos": "emër",
+    "tdk_def": "Bir işte emir verme yetkisi bulunan kimse",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12901",
+    "tr": "sığır",
+    "pos": "emër",
+    "tdk_def": "Geviş getirenlerden, boynuzlu büyükbaş evcil hayvanların genel adı",
+    "sq_base": "lopa"
+  },
+  {
+    "id": "dict-tr-12902",
+    "tr": "satılık",
+    "pos": "mbiemër",
+    "tdk_def": "Satışa çıkarılmış olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12903",
+    "tr": "öncelikli",
+    "pos": "mbiemër",
+    "tdk_def": "Önceliği olan, öncelik tanınan, önce yapılması gereken",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12904",
+    "tr": "sperm",
+    "pos": "emër",
+    "tdk_def": "► meni",
+    "sq_base": "Spermatozoidi"
+  },
+  {
+    "id": "dict-tr-12905",
+    "tr": "dengesiz",
+    "pos": "mbiemër",
+    "tdk_def": "Dengesi olmayan; kararsız, muvazenesiz",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12906",
+    "tr": "basitçe",
+    "pos": "ndajfolje",
+    "tdk_def": "Basit olarak, kolay tarafından",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12907",
+    "tr": "leş",
+    "pos": "emër",
+    "tdk_def": "Kokmuş hayvan ölüsü; laşe",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12908",
+    "tr": "harcamak",
+    "pos": "emër",
+    "tdk_def": "Bir iş görmek veya bir şey satın almak için parayı elden çıkarmak; ezmek, sarf etmek",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12909",
+    "tr": "limon",
+    "pos": "emër",
+    "tdk_def": "Turunçgillerden, 3-5 metre yüksekliğinde, kışın yapraklarını dökmeyen, beyaz çiçekli bir ağaç (Citrus limonum)",
+    "sq_base": "limoni"
+  },
+  {
+    "id": "dict-tr-12910",
+    "tr": "göçmen",
+    "pos": "mbiemër",
+    "tdk_def": "Kendi ülkesinden ayrılarak yerleşmek için başka ülkeye giden (kimse, aile veya topluluk); muhacir",
+    "sq_base": "imigrim"
+  },
+  {
+    "id": "dict-tr-12911",
+    "tr": "hüzünlü",
+    "pos": "mbiemër",
+    "tdk_def": "Gönle üzgünlük veren, iç kapanıklığına yol açan; hazin",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12912",
+    "tr": "tanı",
+    "pos": "emër",
+    "tdk_def": "Hastalığın ne olduğunu araştırıp ortaya koyma; tanılama, teşhis",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12913",
+    "tr": "uçmak",
+    "pos": "emër",
+    "tdk_def": "► cennet",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12914",
+    "tr": "olasılık",
+    "pos": "emër",
+    "tdk_def": "Bir şeyin olabilmesi durumu, olabilirlik; ihtimal",
+    "sq_base": "probabilitet"
+  },
+  {
+    "id": "dict-tr-12915",
+    "tr": "ebeveyn",
+    "pos": "emër",
+    "tdk_def": "Anne ve baba",
+    "sq_base": "prindi"
+  },
+  {
+    "id": "dict-tr-12916",
+    "tr": "mahalle",
+    "pos": "emër",
+    "tdk_def": "Bir şehrin bir kasabanın, büyükçe bir köyün en az beş yüz nüfusa sahip parçalarından her biri",
+    "sq_base": "lagje, Mëhalla"
+  },
+  {
+    "id": "dict-tr-12917",
+    "tr": "ad",
+    "pos": "emër",
+    "tdk_def": "► sayma",
+    "sq_base": "emri"
+  },
+  {
+    "id": "dict-tr-12918",
+    "tr": "kurnaz",
+    "pos": "mbiemër",
+    "tdk_def": "Kolay kanmayan, başkalarını kandırmasını ve ufak tefek oyunlarla amacına erişmesini beceren; hin, hinoğlu",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12919",
+    "tr": "alışkanlık",
+    "pos": "emër",
+    "tdk_def": "Bir şeye alışmış olma durumu; alışkı, alışkınlık, alışmışlık, yordam, itiyat, huy",
+    "sq_base": "shprehi"
+  },
+  {
+    "id": "dict-tr-12920",
+    "tr": "bariz",
+    "pos": "mbiemër",
+    "tdk_def": "► belirgin",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12921",
+    "tr": "bez",
+    "pos": "emër",
+    "tdk_def": "İçinden geçen kandan veya öz sudan bazı maddeler ayırarak salgı oluşturan organ",
+    "sq_base": "Gland"
+  },
+  {
+    "id": "dict-tr-12922",
+    "tr": "kın",
+    "pos": "emër",
+    "tdk_def": "Bıçak, kılıç vb. kesici araçların kabı",
+    "sq_base": "Këllëf"
+  },
+  {
+    "id": "dict-tr-12923",
+    "tr": "aracılığıyla",
+    "pos": "ndajfolje",
+    "tdk_def": "-le bağlantı kurularak, -nın yardımıyla; vasıtasıyla, eliyle, marifetiyle, kanalıyla, sayesinde, tarafından",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12924",
+    "tr": "kardinal",
+    "pos": "emër",
+    "tdk_def": "Papayı seçen, danışmanlığını yapan başpapazlardan her biri",
+    "sq_base": "Kardinali"
+  },
+  {
+    "id": "dict-tr-12925",
+    "tr": "kazık",
+    "pos": "emër",
+    "tdk_def": "Toprağa çakılmak için hazırlanmış, ucu sivri demir veya ağaç",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12926",
+    "tr": "çapraz",
+    "pos": "mbiemër",
+    "tdk_def": "Eğik olarak birbiriyle kesişen",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12927",
+    "tr": "antika",
+    "pos": "mbiemër",
+    "tdk_def": "Tarihsel bir döneme ait olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12928",
+    "tr": "domates",
+    "pos": "emër",
+    "tdk_def": "Patlıcangillerden, yaprakları tüylü, çiçekleri salkım durumunda, vitamince zengin bir bitki (Lycopersion esculentum)",
+    "sq_base": "domate"
+  },
+  {
+    "id": "dict-tr-12929",
+    "tr": "değiş",
+    "pos": "emër",
+    "tdk_def": "Değmek işi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12930",
+    "tr": "hücum",
+    "pos": "emër",
+    "tdk_def": "► saldırı",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12931",
+    "tr": "dağınık",
+    "pos": "mbiemër",
+    "tdk_def": "Geniş bir alana yayılmış olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12932",
+    "tr": "grip",
+    "pos": "emër",
+    "tdk_def": "Yorgunluk, kırıklık, kas ağrıları, ateş vb. belirtileri olan, bulaşıcı, salgın hastalık; paçavra hastalığı, İspanyol nezlesi, enflüanza",
+    "sq_base": "Gripi"
+  },
+  {
+    "id": "dict-tr-12933",
+    "tr": "bizimki",
+    "pos": "mbiemër",
+    "tdk_def": "Bizim olan, bizimle ilgili olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12934",
+    "tr": "amatör",
+    "pos": "mbiemër",
+    "tdk_def": "Bir işi para kazanmak için değil, yalnız zevki için yapan, hevesli, meraklı (kimse); özengen, profesyonel karşıtı",
+    "sq_base": "Amatori"
+  },
+  {
+    "id": "dict-tr-12935",
+    "tr": "kolye",
+    "pos": "emër",
+    "tdk_def": "Ucuna süs eşyaları konularak boyna takılan takı",
+    "sq_base": "Gjerdani"
+  },
+  {
+    "id": "dict-tr-12936",
+    "tr": "koşu",
+    "pos": "emër",
+    "tdk_def": "► koşma",
+    "sq_base": "vrapimi"
+  },
+  {
+    "id": "dict-tr-12937",
+    "tr": "telgraf",
+    "pos": "emër",
+    "tdk_def": "İki merkez arasında, kararlaştırılmış işaretlerin yardımıyla yazılı haberlerin veya belgelerin iletimini sağlayan bir telekomünikasyon düzeni; tel (II)",
+    "sq_base": "Telegrafi"
+  },
+  {
+    "id": "dict-tr-12938",
+    "tr": "beceriksiz",
+    "pos": "mbiemër",
+    "tdk_def": "Becerisi olmayan, usta olmayan; becerisiz, maharetsiz, gıygıycı",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12939",
+    "tr": "kaplumbağa",
+    "pos": "emër",
+    "tdk_def": "Kaplumbağalardan, çok sert ve kemiksi bir kabuk içinde yaşayan, ağır ağır yürüyen, dört ayaklı, sürüngen hayvan; bağa, tosbağa (Testudo)",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12940",
+    "tr": "disiplin",
+    "pos": "emër",
+    "tdk_def": "Bir topluluğun, yasalarına ve düzenle ilgili yazılı veya yazısız kurallarına titizlik ve özenle uyması durumu; sıkı düzen, düzence, düzen bağı, inzibat, zapturapt",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12941",
+    "tr": "bağırma",
+    "pos": "emër",
+    "tdk_def": "Bağırmak işi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12942",
+    "tr": "sayısız",
+    "pos": "mbiemër",
+    "tdk_def": "Sayılmayacak kadar çok; sayımsız",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12943",
+    "tr": "puşt",
+    "pos": "emër",
+    "tdk_def": "Eş cinsel erkeklerin cinsel zevklerine hizmet eden erkek",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12944",
+    "tr": "turuncu",
+    "pos": "emër",
+    "tdk_def": "Sarı ve kırmızının karışımından ortaya çıkan renk, turunç meyvesinin rengi",
+    "sq_base": "ngjyra portokalle"
+  },
+  {
+    "id": "dict-tr-12945",
+    "tr": "aşama",
+    "pos": "emër",
+    "tdk_def": "Kendi içinde derecelendirilmiş bir bütünün basamaklarından her biri; derece, kademe, mertebe, rütbe, paye",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12946",
+    "tr": "barmen",
+    "pos": "emër",
+    "tdk_def": "Barda içki hazırlayıp sunan kimse",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12947",
+    "tr": "ti",
+    "pos": "emër",
+    "tdk_def": "Bir tören sırasında, askerleri bir araya toplamak, törenin başladığını bildirmek vb. amaçlarla çalınan borazanın çıkardığı tiz ses",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12948",
+    "tr": "yudum",
+    "pos": "emër",
+    "tdk_def": "Sıvı içiminde ağza alınan miktar; höpürdek",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12949",
+    "tr": "kısmen",
+    "pos": "ndajfolje",
+    "tdk_def": "Bazı bakımdan, bazı yönden",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12950",
+    "tr": "protesto",
+    "pos": "emër",
+    "tdk_def": "Bir davranışı, bir düşünceyi, bir uygulamayı haksız, yersiz, gereksiz bularak karşı çıkma, kabul etmeme",
+    "sq_base": "Manifestimi, Protesta"
+  },
+  {
+    "id": "dict-tr-12951",
+    "tr": "çevirmek",
+    "pos": "emër",
+    "tdk_def": "Bir şeyin yönünü değiştirmek",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12952",
+    "tr": "harikulade",
+    "pos": "mbiemër",
+    "tdk_def": "► olağanüstü",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12953",
+    "tr": "neşe",
+    "pos": "emër",
+    "tdk_def": "Mutlu olmaktan doğan ve dışa vurulan sevinç; şetaret",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12954",
+    "tr": "çürük",
+    "pos": "mbiemër",
+    "tdk_def": "Çürümüş olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12955",
+    "tr": "oral",
+    "pos": "mbiemër",
+    "tdk_def": "► ağızcıl",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12956",
+    "tr": "Sovyet",
+    "pos": "emër",
+    "tdk_def": "1990 öncesi SSCB'ye özgü, sosyalist toplumun siyasal örgütlenme biçimlerinden biri olan danışma kurulu",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12957",
+    "tr": "vicdan",
+    "pos": "emër",
+    "tdk_def": "Kişiyi kendi davranışları hakkında bir yargıda bulunmaya iten, kişinin kendi ahlak değerleri üzerine dolaysız ve kendiliğinden yargılama yapmasını sağlayan duygu",
+    "sq_base": "ndërgjegjja"
+  },
+  {
+    "id": "dict-tr-12958",
+    "tr": "hevesli",
+    "pos": "mbiemër",
+    "tdk_def": "► istekli",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12959",
+    "tr": "ayık",
+    "pos": "mbiemër",
+    "tdk_def": "Sarhoşluğu veya baygınlığı geçmiş olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12960",
+    "tr": "kala",
+    "pos": "ndajfolje",
+    "tdk_def": "Kaldığında",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12961",
+    "tr": "alışık",
+    "pos": "mbiemër",
+    "tdk_def": "Herhangi bir duruma alışmış olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12962",
+    "tr": "iris",
+    "pos": "emër",
+    "tdk_def": "Saydam tabaka ile göz merceği arasında bulunan, ince, kasılabilen bir zardan oluşan, gözün renkli bölümü",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12963",
+    "tr": "çıkartmak",
+    "pos": "emër",
+    "tdk_def": "Çıkarma işini yapmak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12964",
+    "tr": "suikast",
+    "pos": "emër",
+    "tdk_def": "Gizlice cana kıyma ve kötülük etmeye kalkışma",
+    "sq_base": "Vrasja e planifikuar"
+  },
+  {
+    "id": "dict-tr-12965",
+    "tr": "fabrika",
+    "pos": "emër",
+    "tdk_def": "İşlenmemiş veya yarı işlenmiş maddelerin makine, araç vb. ile işlenerek tüketime hazır duruma getirildiği sanayi kuruluşu; üretimevi, üretimlik",
+    "sq_base": "fabrikë"
+  },
+  {
+    "id": "dict-tr-12966",
+    "tr": "dramatik",
+    "pos": "mbiemër",
+    "tdk_def": "Sahne oyununa özgü olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12967",
+    "tr": "öldürücü",
+    "pos": "mbiemër",
+    "tdk_def": "Öldüren, ölüme sebep olan, ölüme yol açan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12968",
+    "tr": "sirk",
+    "pos": "emër",
+    "tdk_def": "Cambazların ve eğitilmiş hayvanların gösteri yaptıkları, genellikle kapalı yer",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12969",
+    "tr": "gömülü",
+    "pos": "mbiemër",
+    "tdk_def": "Gömülmüş olan, toprak altında saklanmış olan; metfun",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12970",
+    "tr": "karma",
+    "pos": "emër",
+    "tdk_def": "Karmak işi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12971",
+    "tr": "mantık",
+    "pos": "emër",
+    "tdk_def": "Doğru düşünme sanatı ve bilimi",
+    "sq_base": "logjikë"
+  },
+  {
+    "id": "dict-tr-12972",
+    "tr": "pozisyon",
+    "pos": "emër",
+    "tdk_def": "► konum",
+    "sq_base": "pozicion"
+  },
+  {
+    "id": "dict-tr-12973",
+    "tr": "parasız",
+    "pos": "mbiemër",
+    "tdk_def": "Parası olmayan; zil (II)",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12974",
+    "tr": "poz",
+    "pos": "emër",
+    "tdk_def": "Resim ve fotoğrafta duruş",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12975",
+    "tr": "klinik",
+    "pos": "emër",
+    "tdk_def": "Hastanın bakıldığı, muayene edildiği yer; seririyat",
+    "sq_base": "klinika"
+  },
+  {
+    "id": "dict-tr-12976",
+    "tr": "tuzlu",
+    "pos": "mbiemër",
+    "tdk_def": "Tuzu olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12977",
+    "tr": "bastı",
+    "pos": "emër",
+    "tdk_def": "Kıyma ile pişirilmiş sebze",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12978",
+    "tr": "kimya",
+    "pos": "emër",
+    "tdk_def": "Maddelerin temel yapılarını, birleşimlerini, dönüşümlerini, çözümleme, birleşim ve üretim yöntemlerini inceleyen bilim",
+    "sq_base": "kimia"
+  },
+  {
+    "id": "dict-tr-12979",
+    "tr": "litre",
+    "pos": "emër",
+    "tdk_def": "Sıvıları ölçmede kullanılan, bir desimetreküp hacminde ölçü birimi",
+    "sq_base": "Litri"
+  },
+  {
+    "id": "dict-tr-12980",
+    "tr": "damat",
+    "pos": "emër",
+    "tdk_def": "Evlenmekte olan bir erkeğe, evlenme töreni sırasında verilen ad; güvey, güveyi, eloğlu",
+    "sq_base": "Damat"
+  },
+  {
+    "id": "dict-tr-12981",
+    "tr": "havadan",
+    "pos": "mbiemër",
+    "tdk_def": "Boş, değersiz",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12982",
+    "tr": "sivri",
+    "pos": "mbiemër",
+    "tdk_def": "Ucu keskin ve batıcı olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12983",
+    "tr": "belirgin",
+    "pos": "mbiemër",
+    "tdk_def": "Belirmiş durumda olan, göze çarpan; bariz, sarih",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12984",
+    "tr": "vaz",
+    "pos": "emër",
+    "tdk_def": "► konma",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12985",
+    "tr": "kazanma",
+    "pos": "emër",
+    "tdk_def": "Kazanmak işi; kesp",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12986",
+    "tr": "sadakat",
+    "pos": "emër",
+    "tdk_def": "İçten bağlılık",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12987",
+    "tr": "satıcı",
+    "pos": "emër",
+    "tdk_def": "Alıcıya mal satan kimse; vandöz",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12988",
+    "tr": "karşın",
+    "pos": "pjesëz",
+    "tdk_def": "Bir şeyin gerekenin veya mantığın tersine olarak yapıldığını anlatan bir söz; rağmen, mukabil",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12989",
+    "tr": "okur",
+    "pos": "emër",
+    "tdk_def": "► okuyucu",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12990",
+    "tr": "kuzu",
+    "pos": "emër",
+    "tdk_def": "Koyun yavrusu",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12991",
+    "tr": "sandık",
+    "pos": "emër",
+    "tdk_def": "İçine çeşitli şeyler konulan, tahtadan yapılmış, kapaklı ev eşyası",
+    "sq_base": "sënduku"
+  },
+  {
+    "id": "dict-tr-12992",
+    "tr": "sulu",
+    "pos": "mbiemër",
+    "tdk_def": "Suyu olan, içinde su bulunan, koyu karşıtı",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12993",
+    "tr": "alkış",
+    "pos": "emër",
+    "tdk_def": "Bir şeyin beğenildiğini, onaylandığını anlatmak için iki eli ses çıkaracak şekilde birbirine vurma hareketi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12994",
+    "tr": "çak",
+    "pos": "pasthirrmë",
+    "tdk_def": "Söylenen sözü, yapılan davranışı onayladığını göstermek veya sevinci paylaşmak üzere karşısındaki kişinin elini kendi eline havada vurmasını istemek için söylenen bir söz",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12995",
+    "tr": "dimi",
+    "pos": "emër",
+    "tdk_def": "Sıkı dokunmuş bir tür pamuklu kumaş",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12996",
+    "tr": "maddi",
+    "pos": "mbiemër",
+    "tdk_def": "Madde ile ilgili; maddesel, özdeksel, manevi karşıtı",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12997",
+    "tr": "büro",
+    "pos": "emër",
+    "tdk_def": "İş yerlerinde bulunan çalışma odası; ofis",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12998",
+    "tr": "parka",
+    "pos": "emër",
+    "tdk_def": "Genellikle askerin açık hava eğitimi ve manevra sırasında giydiği soğuğa karşı koruyucu, başlıklı bir tür üstlük",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-12999",
+    "tr": "kukla",
+    "pos": "emër",
+    "tdk_def": "Hareketli yerleri iplikle sanatçının parmaklarına bağlanarak veya eldiven gibi bir kesiti kullanarak bir perdenin üzerinden oynatılan, bez, karton vb. hafif nesnelerden yapılmış insan ve hayvan figürleri",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13000",
+    "tr": "muhabir",
+    "pos": "emër",
+    "tdk_def": "Basın ve yayın organlarına haber toplayan, bildiren veya yazan kimse",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13001",
+    "tr": "tost",
+    "pos": "emër",
+    "tdk_def": "İçine peynir, sucuk vb. konularak özel makinesiyle gevretilip kızartılmış ekmek",
+    "sq_base": "tosti"
+  },
+  {
+    "id": "dict-tr-13002",
+    "tr": "sıska",
+    "pos": "mbiemër",
+    "tdk_def": "Karın boşluğuna su dolmuş olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13003",
+    "tr": "kaos",
+    "pos": "emër",
+    "tdk_def": "Evrenin düzene girmeden önceki biçimden yoksun, uyumsuz ve karışık durumu",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13004",
+    "tr": "bilge",
+    "pos": "mbiemër",
+    "tdk_def": "Geniş ve derin bilgi sahibi olan, bunu en doğru ve yararlı biçimde kullanan, iyi ahlaklı, olgun ve örnek (kimse); hakim",
+    "sq_base": "Shkollari"
+  },
+  {
+    "id": "dict-tr-13005",
+    "tr": "süreli",
+    "pos": "mbiemër",
+    "tdk_def": "Süresi belli olan; müddetli",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13006",
+    "tr": "alışılmadık",
+    "pos": "mbiemër",
+    "tdk_def": "Alışılmamış, az görülen, olağanüstü olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13007",
+    "tr": "karides",
+    "pos": "emër",
+    "tdk_def": "Denizlerde veya tatlı sularda yaşayan, yüzücü, orta büyüklükte kabuklu, eti yenir bir deniz hayvanı",
+    "sq_base": "Caridea"
+  },
+  {
+    "id": "dict-tr-13008",
+    "tr": "tişört",
+    "pos": "emër",
+    "tdk_def": "Genellikle kısa kollu, pamuklu spor giysi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13009",
+    "tr": "karaya",
+    "pos": "emër",
+    "tdk_def": "Eczacılıkta kullanılan ve çürümeyen bir bitki",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13010",
+    "tr": "giysi",
+    "pos": "emër",
+    "tdk_def": "Her türlü giyim eşyası; giyecek, giyim, giyit, don (I), çul, üst, elbise, kılık kıyafet, kıyafet, esvap, libas, ruba, urba",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13011",
+    "tr": "yengeç",
+    "pos": "emër",
+    "tdk_def": "Eklem bacaklılardan, kabuklu, birinci ayak çifti iki kıskaç olarak gelişmiş, suda yaşayan bir böcek; seretan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13012",
+    "tr": "köylü",
+    "pos": "mbiemër",
+    "tdk_def": "Köyde yaşayan veya köyde doğmuş olan; rustai",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13013",
+    "tr": "sorgu",
+    "pos": "emër",
+    "tdk_def": "Sormak işi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13014",
+    "tr": "cümle",
+    "pos": "emër",
+    "tdk_def": "Bir fikri, duyguyu, düşünceyi, oluşu veya kılışı bir yargı hâlinde anlatmak için çekimli fiille kullanılan kelimeler dizisi veya tek başına kullanılan çekimli fiil; tümce",
+    "sq_base": "fjali"
+  },
+  {
+    "id": "dict-tr-13015",
+    "tr": "dijital",
+    "pos": "mbiemër",
+    "tdk_def": "► sayısal",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13016",
+    "tr": "moral",
+    "pos": "emër",
+    "tdk_def": "Bir insanın ruhsal gücü, manevi güç; maneviyat",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13017",
+    "tr": "önlemek",
+    "pos": "emër",
+    "tdk_def": "Bir şeyin olmasına veya yapılmasına engel olmak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13018",
+    "tr": "drama",
+    "pos": "emër",
+    "tdk_def": "► dram",
+    "sq_base": "dramë"
+  },
+  {
+    "id": "dict-tr-13019",
+    "tr": "tarafsız",
+    "pos": "mbiemër",
+    "tdk_def": "Birinden yana olmayan veya bir düşünceye, bir isteğe katılmayan, onu desteklemeyen, yan tutmayan; yansız, bitaraf, nötr",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13020",
+    "tr": "köstebek",
+    "pos": "emër",
+    "tdk_def": "Köstebekgillerden, toprak altında oyduğu yuvalarda yaşayan, gözleri hemen hiç görmeyen, küçük bir hayvan; sokur, yer sıçanı, kör sıçan (Talpa)",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13021",
+    "tr": "hayırlı",
+    "pos": "mbiemër",
+    "tdk_def": "Yararı, hayrı olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13022",
+    "tr": "ispat",
+    "pos": "emër",
+    "tdk_def": "► kanıt",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13023",
+    "tr": "gıda",
+    "pos": "emër",
+    "tdk_def": "► besin",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13024",
+    "tr": "dal",
+    "pos": "mbiemër",
+    "tdk_def": "Çıplak, yalın olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13025",
+    "tr": "deprem",
+    "pos": "emër",
+    "tdk_def": "Yer kabuğundaki hareketlerin meydana getirdiği enerjinin boşalması sonucunda oluşan sarsıntı; yer sarsıntısı, hareket, zelzele",
+    "sq_base": "tërmet"
+  },
+  {
+    "id": "dict-tr-13026",
+    "tr": "parfüm",
+    "pos": "emër",
+    "tdk_def": "Güzel koku",
+    "sq_base": "Parfumet"
+  },
+  {
+    "id": "dict-tr-13027",
+    "tr": "performans",
+    "pos": "emër",
+    "tdk_def": "Herhangi bir eseri, oyunu, işi vb.ni gerçekleştirme",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13028",
+    "tr": "am",
+    "pos": "emër",
+    "tdk_def": "► dişilik organı",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13029",
+    "tr": "seyir",
+    "pos": "emër",
+    "tdk_def": "Gidiş, yürüyüş, ilerleyiş",
+    "sq_base": "lundrimi"
+  },
+  {
+    "id": "dict-tr-13030",
+    "tr": "şafak",
+    "pos": "emër",
+    "tdk_def": "Güneş doğmadan az önce beliren aydınlık",
+    "sq_base": "agimi"
+  },
+  {
+    "id": "dict-tr-13031",
+    "tr": "tümör",
+    "pos": "emër",
+    "tdk_def": "► ur",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13032",
+    "tr": "naklî",
+    "pos": "mbiemër",
+    "tdk_def": "Taşıma ile ilgili olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13033",
+    "tr": "mastürbasyon",
+    "pos": "emër",
+    "tdk_def": "Cinsel bölgelere dokunarak orgazm sağlama; istimna, onanizm",
+    "sq_base": "Masturbim"
+  },
+  {
+    "id": "dict-tr-13034",
+    "tr": "maskeli",
+    "pos": "mbiemër",
+    "tdk_def": "Maskesi olan, maskelenmiş",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13035",
+    "tr": "verimli",
+    "pos": "mbiemër",
+    "tdk_def": "Verimi iyi ve bol olan; bitek, vergili, randımanlı, mahsuldar, mümbit, müsmir, verimkâr, velut",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13036",
+    "tr": "moruk",
+    "pos": "emër",
+    "tdk_def": "Gençlere göre yaşlı anne, baba",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13037",
+    "tr": "casusluk",
+    "pos": "emër",
+    "tdk_def": "Casus olma durumu; çaşıtlık, ajanlık, espiyonaj",
+    "sq_base": "Spiunazhi"
+  },
+  {
+    "id": "dict-tr-13038",
+    "tr": "şekerleme",
+    "pos": "emër",
+    "tdk_def": "Şekerlemek işi",
+    "sq_base": "ëmbëlsira"
+  },
+  {
+    "id": "dict-tr-13039",
+    "tr": "kutup",
+    "pos": "emër",
+    "tdk_def": "Yer yuvarlağının, Ekvator'dan en uzak olan yer ekseninin geçtiği varsayılan iki noktasından her biri",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13040",
+    "tr": "acıklı",
+    "pos": "mbiemër",
+    "tdk_def": "Acındıracak, acı verecek nitelikte olan; elim, koygun, dramatik",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13041",
+    "tr": "apaçık",
+    "pos": "mbiemër",
+    "tdk_def": "Çok açık, çok belirgin",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13042",
+    "tr": "alabilmek",
+    "pos": "emër",
+    "tdk_def": "Alma ihtimali veya imkânı bulunmak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13043",
+    "tr": "hazırlamak",
+    "pos": "emër",
+    "tdk_def": "Bir şeyi kullanılacak, yararlanılacak duruma getirmek; anıklamak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13044",
+    "tr": "tutuklu",
+    "pos": "mbiemër",
+    "tdk_def": "Kanun yoluyla hürriyetlerinden alıkonularak bir yere kapatılan (kimse); tutuk, mevkuf",
+    "sq_base": "I Burgosuri"
+  },
+  {
+    "id": "dict-tr-13045",
+    "tr": "böcekler",
+    "pos": "emër",
+    "tdk_def": "Vücutları baş, göğüs ve karın olarak üç bölgeye ayrılan, duyargaları birer, kanatları ikişer, ayaklarıyla ağız parçaları üçer çift olan eklem bacaklılar sınıfı; haşerat",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13046",
+    "tr": "şundan",
+    "pos": "emër",
+    "tdk_def": "şu nedenle",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13047",
+    "tr": "zararlı",
+    "pos": "mbiemër",
+    "tdk_def": "Zarar veren, zararı dokunan; dokuncalı, muzır",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13048",
+    "tr": "kafatası",
+    "pos": "emër",
+    "tdk_def": "İnsanda ve omurgalılarda içinde beyin bulunan, başın kemik bölümü",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13049",
+    "tr": "yastık",
+    "pos": "emër",
+    "tdk_def": "Başın altına koymak veya sırtı dayamak için kullanılan, içi yün, pamuk, kuş tüyü, ot vb. malzemeyle doldurulmuş küçük minder",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13050",
+    "tr": "Çat",
+    "pos": "emër",
+    "tdk_def": "Erzurum iline bağlı ilçelerden biri",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13051",
+    "tr": "büyükelçi",
+    "pos": "emër",
+    "tdk_def": "Bir devletin başka bir devletteki en üst düzey temsilcisi; sefirikebir",
+    "sq_base": "ambasador"
+  },
+  {
+    "id": "dict-tr-13052",
+    "tr": "enjekte",
+    "pos": "mbiemër",
+    "tdk_def": "İç itilmiş",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13053",
+    "tr": "şikâyet",
+    "pos": "emër",
+    "tdk_def": "Hoşnutsuzluk belirten söz veya yazı; yakınma (II), yakıntı, ağlantı, şekva",
+    "sq_base": "Ankesa"
+  },
+  {
+    "id": "dict-tr-13054",
+    "tr": "sterlin",
+    "pos": "emër",
+    "tdk_def": "Yüz peniden oluşan Birleşik Krallık’ın para birimi; paunt",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13055",
+    "tr": "muhtaç",
+    "pos": "mbiemër",
+    "tdk_def": "Bir şeye gereksinim duyan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13056",
+    "tr": "anormal",
+    "pos": "mbiemër",
+    "tdk_def": "Genele, alışılmışa ve kurala aykırı olan, normal olmayan; düzgüsüz",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13057",
+    "tr": "kuyruk",
+    "pos": "emër",
+    "tdk_def": "Hayvanların çoğunda, gövdenin sonunda bulunan, omurganın uzantısı olan uzun ve esnek organ",
+    "sq_base": "Radha (lloji abstrakt i të dhënave)"
+  },
+  {
+    "id": "dict-tr-13058",
+    "tr": "sığınak",
+    "pos": "emër",
+    "tdk_def": "Yağmur, güneş veya çeşitli tehlikelerden korunmak için sığınılacak yer; melce",
+    "sq_base": "Bunkeri, streha"
+  },
+  {
+    "id": "dict-tr-13059",
+    "tr": "gerçeklik",
+    "pos": "emër",
+    "tdk_def": "Gerçek olan, var olan şeylerin tümü; gerçek, asıl, hakikat, hakikilik, sahihlik, şeniyet, realite, reellik",
+    "sq_base": "realiteti"
+  },
+  {
+    "id": "dict-tr-13060",
+    "tr": "hadisene",
+    "pos": "pasthirrmë",
+    "tdk_def": "► haydisene",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13061",
+    "tr": "haç",
+    "pos": "emër",
+    "tdk_def": "Doksan derecelik açılarla birbirini kesen iki doğru parçasından oluşarak Hz. İsa’nın çarmıhtaki duruşunu temsil eden Hristiyanlık sembolü; istavroz, put (I), salip",
+    "sq_base": "Kryqi"
+  },
+  {
+    "id": "dict-tr-13062",
+    "tr": "anlayış",
+    "pos": "emër",
+    "tdk_def": "Anlamak işi; idrak, telakki",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13063",
+    "tr": "balıkçı",
+    "pos": "emër",
+    "tdk_def": "Balık tutan veya satan kimse",
+    "sq_base": "Peshkatari"
+  },
+  {
+    "id": "dict-tr-13064",
+    "tr": "taraflı",
+    "pos": "mbiemër",
+    "tdk_def": "Yanı ve yönü olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13065",
+    "tr": "cihaz",
+    "pos": "emër",
+    "tdk_def": "► aygıt",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13066",
+    "tr": "bozmak",
+    "pos": "emër",
+    "tdk_def": "Bir şeyi kendisinden beklenilen işi yapamayacak duruma getirmek",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13067",
+    "tr": "gözlük",
+    "pos": "emër",
+    "tdk_def": "Görme bozukluğu olan gözlerin daha iyi görmesine veya gözleri korumaya yarayan, bir çerçeveye yerleştirilmiş çift camdan oluşan araç; camekân",
+    "sq_base": "Syzet"
+  },
+  {
+    "id": "dict-tr-13068",
+    "tr": "masal",
+    "pos": "emër",
+    "tdk_def": "Genellikle halkın yarattığı, hayale dayanan, sözlü gelenekte yaşayan, çoğunlukla insanlar, hayvanlar ile cadı, cin, dev, peri vb. varlıkların başından geçen olağanüstü olayları anlatan edebî tür",
+    "sq_base": "përralla"
+  },
+  {
+    "id": "dict-tr-13069",
+    "tr": "alış",
+    "pos": "emër",
+    "tdk_def": "Almak işi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13070",
+    "tr": "taşınmak",
+    "pos": "emër",
+    "tdk_def": "Taşıma işi yapılmak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13071",
+    "tr": "plak",
+    "pos": "emër",
+    "tdk_def": "Sesleri kaydetmek ve kaydedilen sesleri yeniden pikap veya gramofonda dinlemek amacıyla hazırlanan plastik daire biçiminde yaprak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13072",
+    "tr": "fidye",
+    "pos": "emër",
+    "tdk_def": "Tutsak edilen veya rehin alınan bir kimsenin serbest bırakılması için istenen para; kurtulmalık, fidyeinecat",
+    "sq_base": "Fidja dhe Kefareti"
+  },
+  {
+    "id": "dict-tr-13073",
+    "tr": "geçenlerde",
+    "pos": "ndajfolje",
+    "tdk_def": "Yakın bir geçmişte; yakında; geçende",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13074",
+    "tr": "şat",
+    "pos": "emër",
+    "tdk_def": "Sığ sularda ağır yükleri taşımak için kullanılan, altı düz bir çeşit tekne",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13075",
+    "tr": "tarama",
+    "pos": "emër",
+    "tdk_def": "Taramak işi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13076",
+    "tr": "hâliyle",
+    "pos": "ndajfolje",
+    "tdk_def": "Olduğu gibi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13077",
+    "tr": "tüp",
+    "pos": "emër",
+    "tdk_def": "Laboratuvarlarda türlü işlerde kullanılan, bir ucu kapalı cam boru",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13078",
+    "tr": "hatırlatmak",
+    "pos": "emër",
+    "tdk_def": "► anımsatmak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13079",
+    "tr": "geçmez",
+    "pos": "mbiemër",
+    "tdk_def": "Kullanımı olmayan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13080",
+    "tr": "küstah",
+    "pos": "mbiemër",
+    "tdk_def": "Saygısız, kaba, terbiyesiz (kimse)",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13081",
+    "tr": "uzmanlık",
+    "pos": "emër",
+    "tdk_def": "Uzman olma durumu, uzmanın görevi; eksperlik, mütehassıslık, ihtisas (II), kompetanlık",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13082",
+    "tr": "yenmek",
+    "pos": "emër",
+    "tdk_def": "Yemek işine konu olmak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13083",
+    "tr": "edebilmek",
+    "pos": "emër",
+    "tdk_def": "Etme ihtimali veya imkânı bulunmak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13084",
+    "tr": "sebebiyle",
+    "pos": "pjesëz",
+    "tdk_def": "-den ötürü, -den dolayı; dolayısıyla, nedeniyle, hasebiyle, haysiyetiyle",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13085",
+    "tr": "albüm",
+    "pos": "emër",
+    "tdk_def": "Fotoğraf, pul vb.ni dizip saklamaya yarayan bir defter türü; resimlik",
+    "sq_base": "album"
+  },
+  {
+    "id": "dict-tr-13086",
+    "tr": "ettirmek",
+    "pos": "emër",
+    "tdk_def": "Etme işini yaptırmak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13087",
+    "tr": "dayı",
+    "pos": "emër",
+    "tdk_def": "Annenin erkek kardeşi",
+    "sq_base": "Daja"
+  },
+  {
+    "id": "dict-tr-13088",
+    "tr": "taburcu",
+    "pos": "mbiemër",
+    "tdk_def": "Hastaneden çıkması kararlaştırılmış (hasta)",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13089",
+    "tr": "varmak",
+    "pos": "emër",
+    "tdk_def": "Erişilmek istenen yere ayak basmak, ulaşmak; vasıl olmak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13090",
+    "tr": "anlık",
+    "pos": "emër",
+    "tdk_def": "Duyu ve iradeden ayrı olarak düşünülen bilme yetisi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13091",
+    "tr": "alıntı",
+    "pos": "emër",
+    "tdk_def": "Bir yazıya başka bir yazarın yazısından alınmış parça; aktarma, iktibas",
+    "sq_base": "citim"
+  },
+  {
+    "id": "dict-tr-13092",
+    "tr": "herkül",
+    "pos": "emër",
+    "tdk_def": "Güçlü, kuvvetli kimse",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13093",
+    "tr": "liman",
+    "pos": "emër",
+    "tdk_def": "Gemilerin barınmalarına, yük alıp boşaltmalarına, yolcu indirip bindirmelerine yarayan doğal veya yapay sığınak",
+    "sq_base": "Limani, limani"
+  },
+  {
+    "id": "dict-tr-13094",
+    "tr": "ısı",
+    "pos": "emër",
+    "tdk_def": "Bir cismin uzamasına, genleşmesine, buharlaşmasına, erimesine, sıcaklığının artmasına yol açan fiziksel enerji",
+    "sq_base": "temperatura"
+  },
+  {
+    "id": "dict-tr-13095",
+    "tr": "fatura",
+    "pos": "emër",
+    "tdk_def": "Satılan bir malın cinsini, miktarını ve fiyatını bildirmek için satıcının alıcıya verdiği hesap pusulası",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13096",
+    "tr": "damar",
+    "pos": "emër",
+    "tdk_def": "Canlı varlıklarda kanın veya besleyici sıvıların dolaştığı kanal",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13097",
+    "tr": "halı",
+    "pos": "emër",
+    "tdk_def": "Yere veya mobilya üstüne serilmek, duvara gerilmek için, genellikle yünden dokunan, kısa ve sık tüylü, nakışlı, kalın yaygı",
+    "sq_base": "Qilimi"
+  },
+  {
+    "id": "dict-tr-13098",
+    "tr": "taşıma",
+    "pos": "emër",
+    "tdk_def": "Taşımak işi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13099",
+    "tr": "rehberlik",
+    "pos": "emër",
+    "tdk_def": "► kılavuzluk",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13100",
+    "tr": "Babalar",
+    "pos": "emër",
+    "tdk_def": "► Babayan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13101",
+    "tr": "akşamdan",
+    "pos": "ndajfolje",
+    "tdk_def": "Henüz akşam iken",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13102",
+    "tr": "trajedi",
+    "pos": "emër",
+    "tdk_def": "Konusunu efsanelerden veya tarihsel olaylardan alan, acıklı sonuçlarla bağlanan bir tür tiyatro eseri;  ağlatı, facia, tragedya",
+    "sq_base": "tragjedia"
+  },
+  {
+    "id": "dict-tr-13103",
+    "tr": "karaciğer",
+    "pos": "emër",
+    "tdk_def": "Karın boşluğunun sağ üst bölgesinde bulunan, öd salgılayan, şeker depolayan, iri, açık kahverengi organ",
+    "sq_base": "mëlçia"
+  },
+  {
+    "id": "dict-tr-13104",
+    "tr": "ıssız",
+    "pos": "mbiemër",
+    "tdk_def": "Kimse bulunmayan veya az kimse bulunan; yaban, kûhi, tenha",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13105",
+    "tr": "ağı",
+    "pos": "emër",
+    "tdk_def": "► zehir",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13106",
+    "tr": "tüh",
+    "pos": "pasthirrmë",
+    "tdk_def": "\"Vah vah\" anlamında pişmanlık bildiren bir seslenme sözü; tü",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13107",
+    "tr": "sabun",
+    "pos": "emër",
+    "tdk_def": "Kirli ve yağlı şeyleri temizlemekte kullanılan, türlü yağlarla alkaliler birleştirilerek yapılan madde",
+    "sq_base": "Sapun"
+  },
+  {
+    "id": "dict-tr-13108",
+    "tr": "zihin",
+    "pos": "emër",
+    "tdk_def": "Canlının duygu ve davranışlar dışındaki ruhsal süreç ve etkinliklerinin bütünü",
+    "sq_base": "mendje"
+  },
+  {
+    "id": "dict-tr-13109",
+    "tr": "ödlek",
+    "pos": "mbiemër",
+    "tdk_def": "► korkak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13110",
+    "tr": "böbrek",
+    "pos": "emër",
+    "tdk_def": "Kandaki zararlı maddeleri süzüp idrar olarak salan, omurganın sağ ve sol yanında bulunan çift organdan her biri",
+    "sq_base": "veshka"
+  },
+  {
+    "id": "dict-tr-13111",
+    "tr": "gülme",
+    "pos": "emër",
+    "tdk_def": "Gülmek işi; hande",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13112",
+    "tr": "tat",
+    "pos": "emër",
+    "tdk_def": "Dilsiz",
+    "sq_base": "shqisa e shijes"
+  },
+  {
+    "id": "dict-tr-13113",
+    "tr": "davetsiz",
+    "pos": "mbiemër",
+    "tdk_def": "Çağrılmayan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13114",
+    "tr": "yoga",
+    "pos": "emër",
+    "tdk_def": "Ruhsal yaşama ve bedene egemen olmayı amaçlayan Hint felsefe sistemi",
+    "sq_base": "Joga"
+  },
+  {
+    "id": "dict-tr-13115",
+    "tr": "hoca",
+    "pos": "emër",
+    "tdk_def": "Müslümanlıkta din görevlisi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13116",
+    "tr": "ilgilenmek",
+    "pos": "emër",
+    "tdk_def": "İlgi göstermek; alakalanmak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13117",
+    "tr": "yazma",
+    "pos": "emër",
+    "tdk_def": "Bohça, yemeni, başörtüsü, yorgan vb. şeyler yapmakta kullanılan, üstüne boya ve fırça ile veya tahta kalıplarla desen yapılmış bez",
+    "sq_base": "vepër e shkruar"
+  },
+  {
+    "id": "dict-tr-13118",
+    "tr": "cesurca",
+    "pos": "mbiemër",
+    "tdk_def": "Cesura yakışan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13119",
+    "tr": "kokulu",
+    "pos": "mbiemër",
+    "tdk_def": "Kokusu olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13120",
+    "tr": "taç",
+    "pos": "emër",
+    "tdk_def": "Takımla oynanan top oyunlarında oyun alanının yan taraflarında kalan ve çizgiyle ayrılan kısım; yan",
+    "sq_base": "Kurora"
+  },
+  {
+    "id": "dict-tr-13121",
+    "tr": "üretim",
+    "pos": "emër",
+    "tdk_def": "Belirli faaliyet ve işlemler sonucu yeni bir mal veya hizmet meydana getirme; istihsal, prodüksiyon, tüketim karşıtı",
+    "sq_base": "Prodhimi (ekonomi)"
+  },
+  {
+    "id": "dict-tr-13122",
+    "tr": "bedavaya",
+    "pos": "ndajfolje",
+    "tdk_def": "► bedava",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13123",
+    "tr": "üniforma",
+    "pos": "emër",
+    "tdk_def": "Aynı işi yapanların giydikleri, tüzükle belirtilmiş, bir örnek giysi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13124",
+    "tr": "vesaire",
+    "pos": "emër",
+    "tdk_def": "► ve benzeri",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13125",
+    "tr": "fevkalade",
+    "pos": "mbiemër",
+    "tdk_def": "Alışılmış olandan ayrı",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13126",
+    "tr": "ayni",
+    "pos": "mbiemër",
+    "tdk_def": "Nakit para dışında belirlenmiş bir mal veya eşya olarak verilen",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13127",
+    "tr": "pop",
+    "pos": "mbiemër",
+    "tdk_def": "► pop müzik",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13128",
+    "tr": "güya",
+    "pos": "ndajfolje",
+    "tdk_def": "► sözde",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13129",
+    "tr": "cahil",
+    "pos": "mbiemër",
+    "tdk_def": "Öğrenim görmemiş, okumamış",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13130",
+    "tr": "kıt",
+    "pos": "mbiemër",
+    "tdk_def": "İhtiyaca yetmeyecek kadar az, bol (II) karşıtı",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13131",
+    "tr": "derinden",
+    "pos": "ndajfolje",
+    "tdk_def": "En ince ayrıntısına kadar",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13132",
+    "tr": "tesadüfen",
+    "pos": "ndajfolje",
+    "tdk_def": "Rast gelerek, rastlantı sonucu olarak; kazara",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13133",
+    "tr": "diyet",
+    "pos": "emër",
+    "tdk_def": "Sağlığı korumak veya düzeltmek amacıyla uygulanan beslenme düzeni; perhiz, rejim",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13134",
+    "tr": "anlayışlı",
+    "pos": "mbiemër",
+    "tdk_def": "Anlayışı olan; ferasetli, izanlı",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13135",
+    "tr": "düşünceli",
+    "pos": "mbiemër",
+    "tdk_def": "Düşüncesi olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13136",
+    "tr": "dümdüz",
+    "pos": "mbiemër",
+    "tdk_def": "Çok düz",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13137",
+    "tr": "istek",
+    "pos": "emër",
+    "tdk_def": "Bir şeye karşı içten gelen yönelme duygusu; gönül, arzu, heves, kasıt",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13138",
+    "tr": "hıyar",
+    "pos": "emër",
+    "tdk_def": "Bir şeyi seçmekte veya yapıp yapmamakta özgürlük",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13139",
+    "tr": "gösterişli",
+    "pos": "mbiemër",
+    "tdk_def": "Gösterişi olan; cafcaflı, cakalı, hökelekli, fiyakalı, sunturlu, tumturaklı, müşekkel",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13140",
+    "tr": "martini",
+    "pos": "emër",
+    "tdk_def": "Portakal kabuğu, cin ve vermutla yapılan içki",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13141",
+    "tr": "dindar",
+    "pos": "mbiemër",
+    "tdk_def": "Din inancı güçlü, din kurallarına bağlı, dinin emirlerini yerine getiren (kimse); mütedeyyin",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13142",
+    "tr": "infaz",
+    "pos": "emër",
+    "tdk_def": "Bir kararı, bir yargıyı yerine getirme; uygulama, yürütüm",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13143",
+    "tr": "inci",
+    "pos": "emër",
+    "tdk_def": "İstiridye gibi bazı kavkılı deniz hayvanlarının içerisinde oluşan, değerli, küçük, sert, sedef renginde süs tanesi",
+    "sq_base": "perla"
+  },
+  {
+    "id": "dict-tr-13144",
+    "tr": "oyunculuk",
+    "pos": "emër",
+    "tdk_def": "Oyun oynama işi",
+    "sq_base": "Aktrimi"
+  },
+  {
+    "id": "dict-tr-13145",
+    "tr": "sahtekâr",
+    "pos": "mbiemër",
+    "tdk_def": "Sahte işler yapan; düzmeci, sahteci, yezit",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13146",
+    "tr": "denli",
+    "pos": "mbiemër",
+    "tdk_def": "Ağırbaşlı, sözleri ve davranışları ölçülü olan (kimse)",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13147",
+    "tr": "yaptırmak",
+    "pos": "emër",
+    "tdk_def": "Yapmasını sağlamak, yapmasına imkân vermek",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13148",
+    "tr": "suçsuz",
+    "pos": "mbiemër",
+    "tdk_def": "Suçu olmayan, suç işlememiş olan; masum",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13149",
+    "tr": "mahrum",
+    "pos": "mbiemër",
+    "tdk_def": "► yoksun",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13150",
+    "tr": "ikiz",
+    "pos": "mbiemër",
+    "tdk_def": "İkisi bir arada doğan (çocuk)",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13151",
+    "tr": "kurtuluş",
+    "pos": "emër",
+    "tdk_def": "Bir şeyden, bir yerden kurtulma; felah, halas, necat, reha",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13152",
+    "tr": "ressam",
+    "pos": "emër",
+    "tdk_def": "Resim yapan sanatçı",
+    "sq_base": "piktor"
+  },
+  {
+    "id": "dict-tr-13153",
+    "tr": "timsah",
+    "pos": "emër",
+    "tdk_def": "Sürüngenlerden, sıcak bölgelerin akarsularında yaşayan, kalın derili, uzun kuyruklu, iri bir hayvan (Crocodilus)",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13154",
+    "tr": "pasaport",
+    "pos": "emër",
+    "tdk_def": "Yabancı ülkelere gidecek olanlara yetkili kuruluşça verilen, yabancı ülke yetkililerinin kimlik incelemesinde geçerli olan belge",
+    "sq_base": "pasaportë"
+  },
+  {
+    "id": "dict-tr-13155",
+    "tr": "bulut",
+    "pos": "emër",
+    "tdk_def": "Atmosferdeki su damlacıkları ve buz taneciklerinin görülebilir yoğunluk kazanmasıyla oluşan, biçimleri, yükseklikleri ve yol açtıkları hava olaylarıyla birbirinden ayrılan yığın",
+    "sq_base": "re"
+  },
+  {
+    "id": "dict-tr-13156",
+    "tr": "şimşek",
+    "pos": "emër",
+    "tdk_def": "Bir bulutun tabanı ile yer arasında, iki bulut arasında veya bir bulut içinde elektrik boşalırken oluşan kırık çizgi biçimindeki geçici ışık; balkır, çakım, çakın, yalabık, yıldırak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13157",
+    "tr": "başvuru",
+    "pos": "emër",
+    "tdk_def": "Başvurmak işi; müracaat",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13158",
+    "tr": "süreç",
+    "pos": "emër",
+    "tdk_def": "Aralarında birlik olan veya belli bir düzen veya zaman içinde tekrarlanan, ilerleyen, gelişen olay ve hareketler dizisi; vetire, proses",
+    "sq_base": "proces, Procesi"
+  },
+  {
+    "id": "dict-tr-13159",
+    "tr": "anlaşılma",
+    "pos": "emër",
+    "tdk_def": "Anlaşılmak işi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13160",
+    "tr": "huzursuz",
+    "pos": "mbiemër",
+    "tdk_def": "Huzuru olmayan, tedirgin; rahatsız",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13161",
+    "tr": "palavra",
+    "pos": "emër",
+    "tdk_def": "Herhangi bir konuda gerçeğe aykırı, uydurma söz veya haber; balon, mavra",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13162",
+    "tr": "sabır",
+    "pos": "emër",
+    "tdk_def": "Acı, yoksulluk, haksızlık vb. üzücü durumlar karşısında ses çıkarmadan onların geçmesini bekleme erdemi; dayanç, çıdam",
+    "sq_base": "durimi"
+  },
+  {
+    "id": "dict-tr-13163",
+    "tr": "bakıcı",
+    "pos": "emër",
+    "tdk_def": "Bakma işiyle görevlendirilen kimse",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13164",
+    "tr": "tüy",
+    "pos": "emër",
+    "tdk_def": "İnsan ve hayvan derisi üzerinde bulunan ince, kısa, yumuşak ve sık uzantılar",
+    "sq_base": "pupla"
+  },
+  {
+    "id": "dict-tr-13165",
+    "tr": "işsiz",
+    "pos": "mbiemër",
+    "tdk_def": "İşi olmayan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13166",
+    "tr": "ekonomi",
+    "pos": "emër",
+    "tdk_def": "İnsanların yaşayabilmek için üretme, ürettiklerini bölüşme biçimlerinin ve bu faaliyetlerden doğan ilişkilerin bütünü; iktisat",
+    "sq_base": "ekonomi"
+  },
+  {
+    "id": "dict-tr-13167",
+    "tr": "gözetleme",
+    "pos": "emër",
+    "tdk_def": "Gözetlemek işi; dikiz, dikizleme, erkete",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13168",
+    "tr": "kısacası",
+    "pos": "ndajfolje",
+    "tdk_def": "Kısa söylemek gerekirse; sözün kısası, elhasıl, velhasıl, hasılı, hasılıkelam, velhasılıkelam, vesselam",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13169",
+    "tr": "dadı",
+    "pos": "emër",
+    "tdk_def": "Evlerde çocuğa bakan kimse; daye, taya",
+    "sq_base": "Dado"
+  },
+  {
+    "id": "dict-tr-13170",
+    "tr": "kasap",
+    "pos": "emër",
+    "tdk_def": "Sığır, koyun gibi eti yenecek hayvanları kesen veya dükkânında perakende olarak satan kimse; etçi",
+    "sq_base": "Mishtari"
+  },
+  {
+    "id": "dict-tr-13171",
+    "tr": "emeklilik",
+    "pos": "emër",
+    "tdk_def": "Emekli olma durumu; tekaütlük",
+    "sq_base": "Pensionimi"
+  },
+  {
+    "id": "dict-tr-13172",
+    "tr": "ideal",
+    "pos": "emër",
+    "tdk_def": "► ülkü",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13173",
+    "tr": "kuyruklu",
+    "pos": "mbiemër",
+    "tdk_def": "Kuyruğu olan",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13174",
+    "tr": "motosiklet",
+    "pos": "emër",
+    "tdk_def": "Motor silindirinin hacmi 125 santimetreküpten büyük olan, iki tekerlekli motorlu taşıt; motor",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13175",
+    "tr": "tank",
+    "pos": "emër",
+    "tdk_def": "Zırhlı ve silahlı, tekerlekleri paletli, motorlu savaş taşıtı",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13176",
+    "tr": "nakliye",
+    "pos": "emër",
+    "tdk_def": "Taşımak işi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13177",
+    "tr": "dönüm",
+    "pos": "emër",
+    "tdk_def": "Dönmek işi",
+    "sq_base": "Dynym"
+  },
+  {
+    "id": "dict-tr-13178",
+    "tr": "nesil",
+    "pos": "emër",
+    "tdk_def": "► kuşak",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13179",
+    "tr": "kibarca",
+    "pos": "ndajfolje",
+    "tdk_def": "Kibar bir insana yakışacak biçimde; kibarcasına",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13180",
+    "tr": "manuel",
+    "pos": "mbiemër",
+    "tdk_def": "Elle işletilen",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13181",
+    "tr": "harbî",
+    "pos": "mbiemër",
+    "tdk_def": "Savaşla ilgili",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13182",
+    "tr": "paranoyak",
+    "pos": "emër",
+    "tdk_def": "Paranoyaya tutulmuş kimse",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13183",
+    "tr": "rakam",
+    "pos": "emër",
+    "tdk_def": "Sayıları göstermek için kullanılan işaretlerden her biri",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13184",
+    "tr": "onlarca",
+    "pos": "ndajfolje",
+    "tdk_def": "Onlara göre, onların düşüncesince",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13185",
+    "tr": "but",
+    "pos": "emër",
+    "tdk_def": "İnsan vücudunun kalça ile diz arasındaki bölümü",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13186",
+    "tr": "göç",
+    "pos": "emër",
+    "tdk_def": "Ekonomik, toplumsal, siyasi sebeplerle bireylerin veya toplulukların bir ülkeden başka bir ülkeye, bir yerleşim yerinden başka bir yerleşim yerine gitme işi; taşınma, hicret, muhaceret",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13187",
+    "tr": "temizleme",
+    "pos": "emër",
+    "tdk_def": "Temizlemek işi; paklama",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13188",
+    "tr": "kamyonet",
+    "pos": "emër",
+    "tdk_def": "Yük taşıyan küçük kamyon; pikap",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13189",
+    "tr": "savunmak",
+    "pos": "emër",
+    "tdk_def": "Herhangi bir saldırıya karşı koymak, birini veya bir yeri saldırıya karşı korumak; müdafaa etmek",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13190",
+    "tr": "kıskançlık",
+    "pos": "emër",
+    "tdk_def": "Bir kimse bir üstünlük gösterdiğinde veya sevilen birisinin, başkası ile ilgilendiği kanısına varıldığında takınılan olumsuz tutum; günü, günücülük, haset, hasetçilik, hasetlik, hasutluk",
+    "sq_base": "Zilia, Xhelozia"
+  },
+  {
+    "id": "dict-tr-13191",
+    "tr": "dudak",
+    "pos": "emër",
+    "tdk_def": "Ağzın, dişleri örten ve dışarıya doğru az veya çok kıvrılan üst ve alt kenarlarından her biri; lep",
+    "sq_base": "buza"
+  },
+  {
+    "id": "dict-tr-13192",
+    "tr": "dinlenme",
+    "pos": "emër",
+    "tdk_def": "Dinlenmek (II) işi",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13193",
+    "tr": "ilkel",
+    "pos": "mbiemër",
+    "tdk_def": "İlk durumunda kalmış olan, gelişmesinin başında bulunan; ilkelce, iptidai, primitif",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13194",
+    "tr": "gururlu",
+    "pos": "mbiemër",
+    "tdk_def": "Kendi kişiliğine önem veren; azametli",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13195",
+    "tr": "hazretleri",
+    "pos": "emër",
+    "tdk_def": "saygı duyulan kişilerin adlarını veya makamlarını gösteren söze başka ünvanlarla birlikte getirilen bir söz",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13196",
+    "tr": "siyahi",
+    "pos": "emër",
+    "tdk_def": "► zenci",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13197",
+    "tr": "araştırmak",
+    "pos": "emër",
+    "tdk_def": "Birini veya bir şeyi bulmak için bir yeri gözden geçirmek",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13198",
+    "tr": "ayrıntılı",
+    "pos": "mbiemër",
+    "tdk_def": "Ayrıntısı olan; detaylı, ince, derin, teferruatlı, tafsilatlı, mufassal",
+    "sq_base": null
+  },
+  {
+    "id": "dict-tr-13199",
+    "tr": "emlak",
+    "pos": "emër",
+    "tdk_def": "Ev, arsa, bahçe vb. taşınamayan mal ve mülklerin ortak adı; gayrimenkul",
+    "sq_base": null
+  }
+]

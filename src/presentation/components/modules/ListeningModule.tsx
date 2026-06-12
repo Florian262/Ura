@@ -81,7 +81,7 @@ export const ListeningModule: React.FC<ListeningModuleProps> = ({ onComplete }) 
   };
 
   return (
-    <div className="glass-panel rounded-2xl p-6 md:p-8 bg-white border border-[#E9ECEF] shadow-sm">
+    <div className="glass-panel md:rounded-2xl p-0 md:p-8 bg-transparent md:bg-white border-none md:border md:border-[#E9ECEF] shadow-none md:shadow-sm">
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 pb-4 border-b border-[#E9ECEF]">
         <div>
@@ -91,7 +91,7 @@ export const ListeningModule: React.FC<ListeningModuleProps> = ({ onComplete }) 
       </div>
 
       {/* Custom Audio Player Card */}
-      <div className="bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-5 md:p-6 mb-6 shadow-inner flex flex-col md:flex-row items-center gap-6 justify-between">
+      <div className="bg-neutral-50/50 md:bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-4 md:p-6 mb-6 md:shadow-inner flex flex-col md:flex-row items-center gap-4 md:gap-6 justify-between">
         <div className="flex items-center gap-4 w-full md:w-auto">
           {/* Play/Pause Button */}
           <button
@@ -150,7 +150,7 @@ export const ListeningModule: React.FC<ListeningModuleProps> = ({ onComplete }) 
 
       {/* Transcript Text panel */}
       {showText && (
-        <div className="bg-neutral-50 rounded-2xl p-5 md:p-6 mb-8 border border-[#E9ECEF] animate-fade-in shadow-inner max-h-[350px] overflow-y-auto no-scrollbar">
+        <div className="bg-transparent md:bg-neutral-50 md:rounded-2xl p-0 md:p-6 mb-8 border-none md:border md:border-[#E9ECEF] animate-fade-in md:shadow-inner max-h-[350px] overflow-y-auto no-scrollbar">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Turkish Text */}
             <div className="space-y-2">
@@ -181,7 +181,7 @@ export const ListeningModule: React.FC<ListeningModuleProps> = ({ onComplete }) 
           {listeningQuestions.map((q, qIdx) => {
             const selected = selectedAnswers[q.id];
             return (
-              <div key={q.id} className="bg-white border border-[#E9ECEF] rounded-xl p-4 shadow-xs">
+              <div key={q.id} className="bg-transparent md:bg-white border-b md:border border-neutral-200 dark:border-neutral-800 md:rounded-xl py-4 md:p-4 shadow-none md:shadow-xs">
                 <div className="mb-3">
                   <h4 lang="tr" className="text-sm font-bold text-[#1A1D20] font-technical tracking-tight">
                     {qIdx + 1}. {q.question_turkish}

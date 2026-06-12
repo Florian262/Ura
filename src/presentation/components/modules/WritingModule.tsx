@@ -82,7 +82,7 @@ export const WritingModule: React.FC<WritingModuleProps> = ({ onComplete }) => {
   };
 
   return (
-    <div className="glass-panel rounded-2xl p-6 md:p-8 bg-white dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800 shadow-sm transition duration-300">
+    <div className="glass-panel md:rounded-2xl p-0 md:p-8 bg-transparent md:bg-white dark:md:bg-neutral-900/40 border-none md:border md:border-neutral-200 dark:md:border-neutral-800 shadow-none md:shadow-sm transition duration-300">
       
       <div className="mb-6 pb-4 border-b border-neutral-200 dark:border-neutral-800 flex justify-between items-center">
         <div>
@@ -99,7 +99,7 @@ export const WritingModule: React.FC<WritingModuleProps> = ({ onComplete }) => {
 
       {/* 1. Modal overlay selector preference choice */}
       {showPreferenceModal ? (
-        <div className="bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 text-center z-10 space-y-6 animate-fade-in">
+        <div className="bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-4 md:p-6 text-center z-10 space-y-6 animate-fade-in">
           <span className="text-4xl block">⚙️</span>
           <div>
             <h3 className="text-base font-bold text-neutral-800 dark:text-neutral-100 uppercase tracking-tight">Zgjidhni mënyrën e vlerësimit të shkrimit</h3>
@@ -140,7 +140,7 @@ export const WritingModule: React.FC<WritingModuleProps> = ({ onComplete }) => {
         /* 2. Main console panel view */
         <div className="space-y-6 animate-fade-in">
           {/* Prompt */}
-          <div className="bg-neutral-50 dark:bg-neutral-900/30 border border-neutral-200 dark:border-neutral-800 rounded-xl p-4 shadow-inner">
+          <div className="bg-neutral-50 dark:bg-neutral-900/30 border border-neutral-200 dark:border-neutral-800 rounded-xl p-4 md:shadow-inner">
             <span className="text-[10px] font-bold text-teal-600 dark:text-teal-400 uppercase tracking-widest block mb-1">
               Detyra e Shkrimit ({activePrompt.grammarLabel || 'Kapitulli ' + chapterId}):
             </span>
@@ -181,7 +181,7 @@ export const WritingModule: React.FC<WritingModuleProps> = ({ onComplete }) => {
             )}
 
             {/* Restyled Premium Virtual Keyboard Helper Dock */}
-            <div className="border-l-4 border-teal-500 bg-gradient-to-r from-neutral-50/80 to-neutral-100/80 dark:from-neutral-900/40 dark:to-neutral-850/40 backdrop-blur-md p-3 rounded-r-xl border-y border-r border-neutral-200 dark:border-neutral-800 flex flex-wrap items-center gap-2 justify-start shadow-sm transition duration-200">
+            <div className="border-l-4 border-teal-500 bg-gradient-to-r from-neutral-50/80 to-neutral-100/80 dark:from-neutral-900/40 dark:to-neutral-850/40 backdrop-blur-md p-3 rounded-r-xl md:border-y md:border-r border-neutral-200 dark:border-neutral-800 flex flex-wrap items-center gap-2 justify-start md:shadow-sm transition duration-200">
               <span className="text-[10px] text-neutral-500 dark:text-neutral-400 font-bold uppercase tracking-wider mr-2">Zanoret/Bashkëtingëlloret Turke:</span>
               <div className="flex flex-wrap gap-1.5">
                 {['ç', 'ğ', 'ı', 'ö', 'ş', 'ü', 'Ç', 'Ğ', 'İ', 'Ö', 'Ş', 'Ü'].map(char => (
@@ -333,7 +333,7 @@ export const WritingModule: React.FC<WritingModuleProps> = ({ onComplete }) => {
                 </div>
               ) : (
                 /* MODEL ANSWER / SELF CHECK VIEW */
-                <div className="bg-neutral-50 dark:bg-neutral-900/30 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-5 space-y-4 shadow-inner">
+                <div className="bg-neutral-50/50 dark:bg-neutral-900/30 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-4 md:p-5 space-y-4 md:shadow-inner">
                   {activePrompt.sampleAnswers && activePrompt.sampleAnswers.length > 0 && (
                     <div>
                       <span className="text-[10px] font-bold text-teal-600 dark:text-teal-400 uppercase tracking-wider mb-2 block">✓ Shembuj të Paragrafëve Model:</span>
