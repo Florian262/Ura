@@ -113,15 +113,6 @@ export const LessonDashboard: React.FC = () => {
   // State for active expanded accordion card
   const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
 
-  // Initialize selectedLevel to activeLevelKey on mount when chapters are ready
-  const initialMountRef = useRef<boolean>(false);
-  useEffect(() => {
-    if (!initialMountRef.current && chapters.length > 0) {
-      setSelectedLevel(getActiveLevelKey());
-      initialMountRef.current = true;
-    }
-  }, [chapters]);
-
   // Refs to accordion containers and cards
   const containerRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const cardRefs = useRef<Record<string, HTMLElement | null>>({});
@@ -457,41 +448,20 @@ export const LessonDashboard: React.FC = () => {
             Rruga e Ndërtimit të Urave (Learning Path)
           </h2>
           
-          <div className="relative border-l-2 border-dashed border-[#DDE1E5] dark:border-neutral-800 ml-4 md:ml-12 pl-6 md:pl-10 space-y-8 py-2 levels-perspective">
-            {['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((level, index) => {
+          <div className="relative px-4 md:px-8 space-y-8 py-2 levels-perspective">
+            {['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((level) => {
               const syllabus = levelSyllabus[level];
               const { completed, total, percentage } = getLevelProgress(level);
               
-              const isActive = level === activeLevelKey;
               const isCompleted = percentage === 100;
               const isCurrentExpanded = selectedLevel === level;
               const locked = (levels[level] || []).length === 0;
               
-              const offsets = [
-                'stagger-step-0',
-                'stagger-step-1',
-                'stagger-step-2',
-                'stagger-step-3',
-                'stagger-step-4',
-                'stagger-step-5'
-              ];
-              const offsetClass = offsets[index];
-
-              const nodeColor = isCompleted 
-                ? 'bg-[var(--color-brand-success)] border-[var(--color-brand-success)]' 
-                : isActive 
-                  ? 'bg-[var(--color-brand-accent)] border-[var(--color-brand-accent)] animate-pulse' 
-                  : 'bg-[var(--color-bg-surface)] border-[var(--color-border-primary)]';
-
               return (
                 <div key={level} className="relative">
                   
-                  {/* The timeline node dot */}
-                  <div className={`absolute w-3.5 h-3.5 rounded-full border-2 -left-[31px] md:-left-[49px] top-6 z-20 ${nodeColor}`} />
-
                   {/* Staggered container wrapper */}
-                  <div className={`transition-all duration-500 transform ${offsetClass}`}>
-                    <div className="stagger-connector" />
+                  <div className="transition-all duration-500 transform">
 
                     <article
                       id={`card-${level}`}
