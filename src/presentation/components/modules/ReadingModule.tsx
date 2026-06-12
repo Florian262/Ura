@@ -42,8 +42,8 @@ const Avatar: React.FC<{ speakerName: string }> = ({ speakerName }) => {
 };
 
 export const ReadingModule: React.FC = () => {
-  const { readingBlock, readingQuestions, setReadingCompleted, readingCompleted } = useLesson();
-  const { playDialogue, playText, stop, isPlaying, currentSrc, activeDialogueIndex } = useAudioPlayer();
+  const { currentChapter, readingBlock, readingQuestions, setReadingCompleted, readingCompleted } = useLesson();
+  const { play, playDialogue, playText, stop, isPlaying, currentSrc, activeDialogueIndex } = useAudioPlayer();
   const [showTranslation, setShowTranslation] = useState<boolean>(false);
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, number>>({});
   const [showResults, setShowResults] = useState<boolean>(false);
@@ -483,20 +483,25 @@ export const ReadingModule: React.FC = () => {
             {dialogueTurkish.length > 0 && (
               <button
                 onClick={() => {
-                  if (isPlaying && currentSrc === 'dialogue') {
+                  const isMainPlaying = isPlaying && (currentSrc === 'dialogue' || (currentSrc && currentSrc.includes('reading')));
+                  if (isMainPlaying) {
                     stop();
                   } else {
-                    playDialogue(dialogueTurkish);
+                    if (readingBlock.audio_asset_stub) {
+                      play(readingBlock.audio_asset_stub, 'reading');
+                    } else {
+                      playDialogue(dialogueTurkish);
+                    }
                   }
                 }}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-bold transition duration-200 cursor-pointer shadow-xs ${
-                  isPlaying && currentSrc === 'dialogue'
+                  isPlaying && (currentSrc === 'dialogue' || (currentSrc && currentSrc.includes('reading')))
                     ? 'bg-[#3A5A40]/15 text-[#3A5A40] border-[#3A5A40]/35 animate-pulse'
                     : 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50 hover:text-[#1A1D20]'
                 }`}
               >
                 <span>
-                  {isPlaying && currentSrc === 'dialogue'
+                  {isPlaying && (currentSrc === 'dialogue' || (currentSrc && currentSrc.includes('reading')))
                     ? '⏸ Ndalo'
                     : readingBlock.layout_style === 'dialogue'
                     ? '🔈 Dëgjo Dialogun'
@@ -530,7 +535,11 @@ export const ReadingModule: React.FC = () => {
             <div className="space-y-4">
               {dialogueTurkish.map((line: any, idx: number) => {
                 const isLeft = idx % 2 === 0;
-                const isLinePlaying = isPlaying && (currentSrc === line.text || (currentSrc === 'dialogue' && activeDialogueIndex === idx));
+                const isLinePlaying = isPlaying && (
+                  currentSrc === line.text || 
+                  (currentSrc === 'dialogue' && activeDialogueIndex === idx) ||
+                  (currentChapter && currentSrc === `chapter${currentChapter.order_index}_reading_${idx}`)
+                );
                 return (
                   <div key={idx} className={`flex items-end gap-3 w-full ${isLeft ? 'justify-start' : 'justify-end'}`}>
                     {isLeft && <Avatar speakerName={line.speaker} />}
@@ -550,7 +559,11 @@ export const ReadingModule: React.FC = () => {
                             if (isLinePlaying) {
                               stop();
                             } else {
-                              playText(line.text, 'tr');
+                              if (currentChapter && readingBlock.audio_asset_stub) {
+                                play(`audio/chapter${currentChapter.order_index}_reading_${idx}.wav`, `chapter${currentChapter.order_index}_reading_${idx}`);
+                              } else {
+                                playText(line.text, 'tr');
+                              }
                             }
                           }}
                           className={`text-[9px] font-bold hover:text-[#3A5A40] border-b border-transparent hover:border-[#3A5A40] transition cursor-pointer select-none ${
@@ -611,7 +624,11 @@ export const ReadingModule: React.FC = () => {
                 
                 <div className="space-y-6 text-[#1A1D20] dark:text-neutral-200">
                   {dialogueTurkish.map((line: any, idx: number) => {
-                    const isLinePlaying = isPlaying && (currentSrc === line.text || (currentSrc === 'dialogue' && activeDialogueIndex === idx));
+                    const isLinePlaying = isPlaying && (
+                      currentSrc === line.text || 
+                      (currentSrc === 'dialogue' && activeDialogueIndex === idx) ||
+                      (currentChapter && currentSrc === `chapter${currentChapter.order_index}_reading_${idx}`)
+                    );
                     return (
                       <div key={idx} className={`relative pl-4 border-l-2 transition-all duration-300 ${
                         isLinePlaying 
@@ -629,7 +646,11 @@ export const ReadingModule: React.FC = () => {
                               if (isLinePlaying) {
                                 stop();
                               } else {
-                                playText(line.text, 'tr');
+                                if (currentChapter && readingBlock.audio_asset_stub) {
+                                  play(`audio/chapter${currentChapter.order_index}_reading_${idx}.wav`, `chapter${currentChapter.order_index}_reading_${idx}`);
+                                } else {
+                                  playText(line.text, 'tr');
+                                }
                               }
                             }}
                             className={`text-[9px] font-bold hover:text-[var(--color-brand-accent)] border-b border-transparent hover:border-[var(--color-brand-accent)] transition cursor-pointer select-none ml-auto ${
@@ -659,7 +680,11 @@ export const ReadingModule: React.FC = () => {
             /* standard paragraph narrative prose layout */
             <div className="space-y-6 text-left">
               {dialogueTurkish.map((line: any, idx: number) => {
-                const isLinePlaying = isPlaying && (currentSrc === line.text || (currentSrc === 'dialogue' && activeDialogueIndex === idx));
+                const isLinePlaying = isPlaying && (
+                  currentSrc === line.text || 
+                  (currentSrc === 'dialogue' && activeDialogueIndex === idx) ||
+                  (currentChapter && currentSrc === `chapter${currentChapter.order_index}_reading_${idx}`)
+                );
                 return (
                   <div key={idx} className={`bg-white dark:bg-neutral-900/30 border rounded-2xl p-5 shadow-xs relative group transition-all duration-300 ${
                     isLinePlaying 
@@ -677,7 +702,11 @@ export const ReadingModule: React.FC = () => {
                           if (isLinePlaying) {
                             stop();
                           } else {
-                            playText(line.text, 'tr');
+                            if (currentChapter && readingBlock.audio_asset_stub) {
+                              play(`audio/chapter${currentChapter.order_index}_reading_${idx}.wav`, `chapter${currentChapter.order_index}_reading_${idx}`);
+                            } else {
+                              playText(line.text, 'tr');
+                            }
                           }
                         }}
                         className={`text-[9px] font-bold hover:text-[#3A5A40] border-b border-transparent hover:border-[#3A5A40] transition cursor-pointer select-none ml-auto ${

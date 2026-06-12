@@ -95,6 +95,24 @@ are extracted to:
       } catch (err) {
         console.error(`❌ Failed to generate reading audio for Chapter ${lesson.orderIndex}:`, err);
       }
+
+      // 1.5 Generate Individual Reading Sentence Audio Files
+      console.log(`Generating individual reading sentence audios...`);
+      for (let i = 0; i < lesson.reading.content.length; i++) {
+        const line = lesson.reading.content[i];
+        const sentenceFilename = `chapter${lesson.orderIndex}_reading_${i}.wav`;
+        const sentenceOutputPath = path.join(OUTPUT_DIR, sentenceFilename);
+        
+        try {
+          execSync(`"${piperPath}" --model "${MODEL_PATH}" --output_file "${sentenceOutputPath}"`, {
+            input: line.text,
+            encoding: 'utf-8'
+          });
+        } catch (err) {
+          console.error(`❌ Failed to generate individual reading audio at index ${i} for Chapter ${lesson.orderIndex}:`, err);
+        }
+      }
+      console.log(`✅ Generated all individual reading sentences for Chapter ${lesson.orderIndex}`);
     }
 
     // 2. Generate Listening Dialogue Audio
