@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
-import { lookupWord } from '../../../core/harmony/stemmer';
+import { lookupWord, cleanTurkishWord } from '../../../core/harmony/stemmer';
 import { useAudioPlayer } from '../../../application/hooks/useAudioPlayer';
+import { readingGlossary } from '../../../infrastructure/db/readingGlossary';
 import type { DictionaryEntry } from './WordDetailDrawer';
 
 interface InteractiveTextProps {
   text: string;
   onShowDetail: (entry: DictionaryEntry) => void;
+  chapterId?: number;
   className?: string;
 }
 
 export const InteractiveText: React.FC<InteractiveTextProps> = ({
   text,
   onShowDetail,
+  chapterId,
   className = ""
 }) => {
   const [activeEntry, setActiveEntry] = useState<DictionaryEntry | null>(null);
@@ -22,6 +25,47 @@ export const InteractiveText: React.FC<InteractiveTextProps> = ({
 
   const handleWordClick = (e: React.MouseEvent<HTMLSpanElement>, token: string) => {
     e.stopPropagation();
+    
+    const cleanToken = cleanTurkishWord(token);
+
+    // 1. Try local contextual glossary mapping for the current chapter
+    const localGlossary = chapterId ? readingGlossary[chapterId] : null;
+    const contextualEntry = localGlossary ? localGlossary[cleanToken] : null;
+
+    if (contextualEntry) {
+      // Find full entry of root in dictionary (if it exists) to get notes/examples/etc.
+      const rootEntry = lookupWord(contextualEntry.root);
+      
+      const mergedEntry: DictionaryEntry = {
+        id: rootEntry?.id || `glossary-${cleanToken}`,
+        source: 'tr',
+        word: token, // show clicked word with suffixes
+        translation: contextualEntry.translation, // show contextual meaning
+        pos: rootEntry?.pos || 'shprehje',
+        notes: contextualEntry.explanation || rootEntry?.notes,
+        examples: rootEntry?.examples,
+        derivatives: rootEntry?.derivatives,
+        chapterTitle: rootEntry?.chapterTitle,
+        is_balkan: rootEntry?.is_balkan,
+        // Carry over the root word so we can link to it in "More details"
+        inflection: contextualEntry.root
+      };
+
+      setActiveEntry(mergedEntry);
+      setClickedWord(token);
+
+      const rect = e.currentTarget.getBoundingClientRect();
+      const popupWidth = 256; // w-64 is 16rem = 256px
+      const leftPos = rect.left + (rect.width / 2) - (popupWidth / 2);
+
+      setPopupPos({
+        top: rect.bottom + 8,
+        left: Math.max(12, Math.min(window.innerWidth - popupWidth - 12, leftPos))
+      });
+      return;
+    }
+
+    // 2. Fallback to general stemmer lookup
     const entry = lookupWord(token);
     if (entry) {
       setActiveEntry(entry);
@@ -43,8 +87,8 @@ export const InteractiveText: React.FC<InteractiveTextProps> = ({
     setClickedWord(null);
   };
 
-  // Split text by whitespace and common punctuation, but keep punctuation as distinct tokens
-  const tokens = text.split(/(\s+|[.,!?;:()""'’]+)/);
+  // Split text by whitespace and common punctuation, keeping punctuation as distinct tokens (preserving apostrophes within words)
+  const tokens = text.split(/(\s+|[.,!?;:()"]+)/);
 
   return (
     <span className={`inline-wrap leading-relaxed ${className}`}>
@@ -125,6 +169,13 @@ export const InteractiveText: React.FC<InteractiveTextProps> = ({
               <button
                 onClick={() => {
                   closePopup();
+                  if (activeEntry.inflection) {
+                    const rootEntry = lookupWord(activeEntry.inflection);
+                    if (rootEntry) {
+                      onShowDetail(rootEntry);
+                      return;
+                    }
+                  }
                   onShowDetail(activeEntry);
                 }}
                 className="text-[#3A5A40] dark:text-[#14B8A6] font-bold hover:underline bg-transparent border-none p-0 cursor-pointer"

@@ -21,8 +21,63 @@ const UraIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) =>
 );
 
 export const LessonDashboard: React.FC = () => {
-  const { chapters, loadChapter, userName, setActivePage } = useLesson();
+  const { 
+    chapters, 
+    loadChapter, 
+    userName, 
+    setActivePage,
+    sessionSeconds,
+    lifetimeSeconds,
+    isSessionRunning,
+    hasSavedSession,
+    resumeSession,
+    resetSession,
+    toggleSession
+  } = useLesson();
   
+  const [isTimerExpanded, setIsTimerExpanded] = useState<boolean>(false);
+  
+  // Ref for the Timer card to handle click outside
+  const timerCardRef = useRef<HTMLDivElement | null>(null);
+  
+  // Static state to freeze the display when the card is collapsed/closed
+  const [staticSessionSeconds, setStaticSessionSeconds] = useState<number>(sessionSeconds);
+  const prevExpandedRef = useRef<boolean>(false);
+  const initialSyncRef = useRef<boolean>(false);
+
+  // Sync static session seconds when collapsed or on initial load
+  useEffect(() => {
+    if (!initialSyncRef.current && sessionSeconds > 0) {
+      setStaticSessionSeconds(sessionSeconds);
+      initialSyncRef.current = true;
+    }
+  }, [sessionSeconds]);
+
+  useEffect(() => {
+    // If transitioning from open (true) to closed (false), capture the final value to freeze the display
+    if (prevExpandedRef.current && !isTimerExpanded) {
+      setStaticSessionSeconds(sessionSeconds);
+    }
+    prevExpandedRef.current = isTimerExpanded;
+  }, [isTimerExpanded, sessionSeconds]);
+
+  // Click outside listener for the timer card
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (timerCardRef.current && !timerCardRef.current.contains(event.target as Node)) {
+        setIsTimerExpanded(false);
+      }
+    };
+
+    if (isTimerExpanded) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isTimerExpanded]);
+
   // Group chapters by level
   const levels: Record<string, Chapter[]> = {
     A1: [],
@@ -280,6 +335,28 @@ export const LessonDashboard: React.FC = () => {
     prevSelectedLevel.current = selectedLevel;
   }, [selectedLevel]);
 
+  const formatSessionTime = (totalSeconds: number) => {
+    const hrs = Math.floor(totalSeconds / 3600);
+    const mins = Math.floor((totalSeconds % 3600) / 60);
+    const secs = totalSeconds % 60;
+    const pad = (num: number) => num.toString().padStart(2, '0');
+    if (hrs > 0) {
+      return `${pad(hrs)}:${pad(mins)}:${pad(secs)}`;
+    }
+    return `${pad(mins)}:${pad(secs)}`;
+  };
+
+  const formatLifetimeTime = (totalSeconds: number) => {
+    const hrs = Math.floor(totalSeconds / 3600);
+    const mins = Math.floor((totalSeconds % 3600) / 60);
+    const secs = totalSeconds % 60;
+    let result = '';
+    if (hrs > 0) result += `${hrs} ${hrs === 1 ? 'Orë' : 'Orë'} `;
+    if (mins > 0 || hrs > 0) result += `${mins} ${mins === 1 ? 'Min' : 'Min'} `;
+    result += `${secs} Sek`;
+    return result;
+  };
+
   const stats = useMemo(() => {
     const progressMap = ProgressRepository.getProgressMap();
     const progressItems = Object.values(progressMap);
@@ -301,6 +378,38 @@ export const LessonDashboard: React.FC = () => {
       balkanWordsMastered,
       completedChapters
     };
+  }, [chapters]);
+
+  const weeklyActivity = useMemo(() => {
+    const progressMap = ProgressRepository.getProgressMap();
+    const progressItems = Object.values(progressMap);
+    
+    const days = [];
+    const today = new Date();
+    
+    for (let i = 6; i >= 0; i--) {
+      const d = new Date();
+      d.setDate(today.getDate() - i);
+      d.setHours(0, 0, 0, 0);
+      
+      const dayStart = d.getTime();
+      const dayEnd = dayStart + 24 * 60 * 60 * 1000;
+      
+      const isActive = progressItems.some(item => {
+        const ts = item.last_accessed_timestamp;
+        return ts >= dayStart && ts < dayEnd;
+      });
+      
+      const dayOfWeek = d.getDay();
+      const abrvLabels = ['Die', 'Hën', 'Mar', 'Mër', 'Enj', 'Pre', 'Sht'];
+      
+      days.push({
+        dateString: d.toLocaleDateString(),
+        label: abrvLabels[dayOfWeek],
+        isActive
+      });
+    }
+    return days;
   }, [chapters]);
 
   const getChapterStatus = (chapterId: number) => {
@@ -386,8 +495,32 @@ export const LessonDashboard: React.FC = () => {
             </div>
           </div>
 
+          {/* Weekly Activity Grid */}
+          <div className="mt-6 glass-panel p-4 flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white/30 dark:bg-neutral-900/30 border border-[#DDE1E5] dark:border-neutral-855/40 rounded-2xl select-none">
+            <div className="space-y-1 text-left">
+              <span className="text-[9px] font-bold text-teal-600 dark:text-teal-400 uppercase tracking-widest block font-mono">AKTIVITETI JAVOR</span>
+              <h4 className="text-xs font-black text-[#111315] dark:text-stone-300 uppercase tracking-tight">Vazhdimësia e Studimit</h4>
+            </div>
+            <div className="flex items-center gap-2.5">
+              {weeklyActivity.map((day, idx) => (
+                <div key={idx} className="flex flex-col items-center gap-1.5">
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center border text-[10px] font-bold transition-all duration-300 ${
+                    day.isActive 
+                      ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-600 dark:text-emerald-400 font-extrabold shadow-xs shadow-emerald-500/10 scale-105' 
+                      : 'bg-white/40 dark:bg-neutral-900/40 border-neutral-200 dark:border-neutral-800/80 text-neutral-400 dark:text-neutral-500'
+                  }`} title={day.dateString}>
+                    {day.isActive ? '✓' : day.label.charAt(0)}
+                  </div>
+                  <span className="text-[8px] font-bold uppercase tracking-wider text-neutral-400 dark:text-neutral-500 font-mono">
+                    {day.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Frosted Stats Pedestal Row */}
-          <div className="grid grid-cols-3 gap-4 mt-6">
+          <div className="grid grid-cols-3 gap-4 mt-6 items-start">
             <div className="glass-panel p-4 flex flex-col justify-between select-none relative overflow-hidden bg-white/40 dark:bg-neutral-900/40 stat-card-anim">
               <div className="flex items-center gap-2 mb-2">
                 <svg className="w-4 h-4 text-[var(--color-brand-accent)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -404,21 +537,157 @@ export const LessonDashboard: React.FC = () => {
               </p>
             </div>
 
-            <div className="glass-panel p-4 flex flex-col justify-between select-none relative overflow-hidden bg-white/40 dark:bg-neutral-900/40 stat-card-anim">
-              <div className="flex items-center gap-2 mb-2">
-                <svg className="w-4 h-4 text-emerald-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-                </svg>
-                <span className="text-[9px] font-bold text-[var(--color-text-secondary)] uppercase tracking-wider">Cognates</span>
+            {/* Session Timer Card (Option 4) */}
+            <div 
+              ref={timerCardRef}
+              onClick={() => setIsTimerExpanded(!isTimerExpanded)}
+              className={`glass-panel p-4 flex flex-col justify-between select-none relative overflow-hidden bg-white/40 dark:bg-neutral-900/40 stat-card-anim cursor-pointer transition-all duration-300 ${
+                isTimerExpanded ? 'ring-2 ring-[#3A5A40] border-[#3A5A40] shadow-md scale-[1.01]' : 'hover:shadow-md'
+              }`}
+            >
+              <div>
+                <div className="flex justify-between items-start mb-2">
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-2">
+                      <svg className={`w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 ${isSessionRunning ? 'animate-spin' : ''}`} style={{ animationDuration: '4s' }} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                      </svg>
+                      <span className="text-[9px] font-bold text-[var(--color-text-secondary)] uppercase tracking-wider">Koha e Mësimit</span>
+                      {/* Status badge */}
+                      <span className={`w-1.5 h-1.5 rounded-full ${
+                        hasSavedSession 
+                          ? 'bg-amber-500 animate-pulse' 
+                          : isSessionRunning 
+                            ? 'bg-emerald-500 animate-pulse' 
+                            : 'bg-neutral-400'
+                      }`} />
+                    </div>
+                    
+                    <div className="flex items-baseline gap-1 mt-1">
+                      <span className="text-xl font-extrabold text-[var(--color-text-primary)] font-technical tracking-wide">
+                        {formatSessionTime(isTimerExpanded ? sessionSeconds : staticSessionSeconds)}
+                      </span>
+                      <span className="text-[9px] font-bold text-[var(--color-text-secondary)] uppercase">Sesioni</span>
+                    </div>
+                  </div>
+
+                  {/* Circular progress track */}
+                  <div className="relative w-10 h-10 shrink-0 ml-2">
+                    <svg className="w-full h-full transform -rotate-90" viewBox="0 0 40 40">
+                      <circle
+                        cx="20"
+                        cy="20"
+                        r="16"
+                        className="stroke-neutral-200/50 dark:stroke-neutral-800"
+                        strokeWidth="3.5"
+                        fill="transparent"
+                      />
+                      <circle
+                        cx="20"
+                        cy="20"
+                        r="16"
+                        className="stroke-emerald-500 dark:stroke-emerald-400"
+                        strokeWidth="3.5"
+                        fill="transparent"
+                        strokeDasharray={100.53} // 2 * Math.PI * 16
+                        strokeDashoffset={100.53 - (Math.min(((isTimerExpanded ? sessionSeconds : staticSessionSeconds) / 1800) * 100, 100) / 100) * 100.53}
+                        style={{ transition: 'stroke-dashoffset 0.5s ease-out' }}
+                      />
+                    </svg>
+                    <div className="absolute inset-0 flex items-center justify-center text-[8px] font-black text-emerald-600 dark:text-emerald-400 font-mono">
+                      {Math.min(Math.round(((isTimerExpanded ? sessionSeconds : staticSessionSeconds) / 1800) * 100), 100)}%
+                    </div>
+                  </div>
+                </div>
+                
+                <p className="text-[9px] text-[var(--color-text-secondary)] font-light mt-0.5">
+                  {hasSavedSession ? 'Sesion i pezulluar' : isSessionRunning ? 'Duke numëruar kohën...' : 'Kohëmatësi i ndaluar'}
+                </p>
               </div>
-              <div className="flex items-baseline gap-1">
-                <span className="text-xl font-extrabold text-[var(--color-text-primary)]">{stats.balkanWordsMastered}</span>
-                <span className="text-[9px] font-bold text-[var(--color-text-secondary)] uppercase">Fjalë</span>
-              </div>
-              <p className="text-[9px] text-[var(--color-text-secondary)] font-light mt-1">
-                Huazime të përbashkëta
-              </p>
+
+              {/* Expandable part */}
+              {isTimerExpanded && (
+                <div 
+                  className="mt-4 pt-4 border-t border-[#DDE1E5] dark:border-neutral-800 space-y-4 text-left cursor-default animate-fade-in"
+                  onClick={(e) => e.stopPropagation()} // Prevent card closing when clicking buttons
+                >
+                  <div className="space-y-1">
+                    <span className="text-[8px] font-bold text-neutral-400 uppercase tracking-widest block">Koha e Plotë e Kaluar</span>
+                    <span className="text-xs font-black text-[#3A5A40] dark:text-[#52B788] block font-sans">
+                      {formatLifetimeTime(lifetimeSeconds)}
+                    </span>
+                  </div>
+
+                  <p className="text-[10px] text-neutral-500 leading-relaxed font-light">
+                    Ky panel regjistron kohën tuaj të studimit. Ndalohet automatikisht kur dilni nga aplikacioni.
+                  </p>
+
+                  {/* Actions / Prompts */}
+                  {hasSavedSession ? (
+                    <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-3 space-y-2">
+                      <span className="text-[9px] font-bold text-amber-800 dark:text-amber-300 block">Keni një sesion të pambaruar!</span>
+                      <div className="flex flex-col gap-1.5">
+                        <button
+                          onClick={() => {
+                            resumeSession();
+                          }}
+                          className="w-full py-1.5 bg-[#3A5A40] hover:bg-[#2C4430] active:scale-95 transition text-white font-bold text-[9px] uppercase tracking-wider rounded-lg cursor-pointer text-center"
+                        >
+                          Vazhdo Sesionin
+                        </button>
+                        <button
+                          onClick={() => {
+                            resetSession();
+                          }}
+                          className="w-full py-1.5 bg-neutral-200 dark:bg-neutral-800 hover:bg-neutral-300 dark:hover:bg-neutral-700 active:scale-95 transition text-neutral-700 dark:text-neutral-300 font-bold text-[9px] uppercase tracking-wider rounded-lg cursor-pointer text-center"
+                        >
+                          Fillo nga e para
+                        </button>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="flex gap-2">
+                      <button
+                        onClick={toggleSession}
+                        className={`flex-grow flex items-center justify-center gap-1 py-2 font-bold text-[9px] uppercase tracking-wider rounded-lg transition active:scale-95 cursor-pointer ${
+                          isSessionRunning 
+                            ? 'bg-amber-600 hover:bg-amber-700 text-white' 
+                            : 'bg-[#3A5A40] hover:bg-[#2C4430] text-white'
+                        }`}
+                      >
+                        {isSessionRunning ? (
+                          <>
+                            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                              <rect x="6" y="4" width="4" height="16" rx="1" />
+                              <rect x="14" y="4" width="4" height="16" rx="1" />
+                            </svg>
+                            Pezullo
+                          </>
+                        ) : (
+                          <>
+                            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                              <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            Fillo
+                          </>
+                        )}
+                      </button>
+                      
+                      <button
+                        onClick={resetSession}
+                        className="flex-grow flex items-center justify-center gap-1 py-2 bg-neutral-150 hover:bg-neutral-250 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 font-bold text-[9px] uppercase tracking-wider rounded-lg transition active:scale-95 cursor-pointer"
+                      >
+                        <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M21.5 2v6h-6" />
+                          <path d="M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
+                        </svg>
+                        Rikujto
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
 
             <div className="glass-panel p-4 flex flex-col justify-between select-none relative overflow-hidden bg-white/40 dark:bg-neutral-900/40 stat-card-anim">
@@ -512,20 +781,33 @@ export const LessonDashboard: React.FC = () => {
                             {syllabus.index}. NIVELI {level} — {syllabus.desc}
                           </span>
                           {isCurrentExpanded ? (
-                            <span className="px-2.5 py-1 text-[10px] uppercase font-mono tracking-wider font-bold bg-[var(--color-brand-accent)] text-white select-none rounded-lg">
-                              [ MBYLL ]
+                            <span className="px-2.5 py-1 text-[9px] uppercase font-mono tracking-wider font-black bg-[var(--color-brand-accent)] text-white select-none rounded-lg flex items-center gap-1 shadow-sm">
+                              Mbyll
+                              <svg className="w-3 h-3 stroke-white fill-none" viewBox="0 0 24 24" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                <polyline points="18 15 12 9 6 15" />
+                              </svg>
                             </span>
                           ) : isCompleted ? (
-                            <span className="text-[9px] uppercase font-mono tracking-wider font-bold px-2 py-0.5 border border-[var(--color-brand-success)]/40 text-[var(--color-brand-success)] bg-[var(--color-brand-success-light)] select-none rounded-lg">
-                              [ PËRFUNDUAR ]
+                            <span className="text-[9px] uppercase font-mono tracking-wider font-black px-2.5 py-1 border border-emerald-500/20 text-emerald-600 bg-emerald-500/10 dark:text-emerald-400 dark:bg-emerald-500/10 select-none rounded-lg flex items-center gap-1 shadow-xs">
+                              Kryer
+                              <svg className="w-3 h-3 text-emerald-600 dark:text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                              </svg>
                             </span>
                           ) : locked ? (
-                            <span className="text-[9px] uppercase font-mono tracking-wider font-bold px-2 py-0.5 border border-[var(--color-border-primary-glass)] text-[var(--color-text-secondary)] bg-neutral-100/50 dark:bg-stone-900/40 select-none rounded-lg">
-                              [ I mbyllur ]
+                            <span className="text-[9px] uppercase font-mono tracking-wider font-black px-2.5 py-1 border border-neutral-200 dark:border-neutral-800 text-neutral-400 dark:text-neutral-500 bg-neutral-100/50 dark:bg-neutral-900/40 select-none rounded-lg flex items-center gap-1">
+                              Kyçur
+                              <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                              </svg>
                             </span>
                           ) : (
-                            <span className="text-[9px] uppercase font-mono tracking-wider font-bold px-2 py-0.5 border border-[var(--color-brand-accent)]/40 text-[var(--color-brand-accent)] bg-[var(--color-brand-accent-light)] select-none rounded-lg">
-                              [ SHFAQ ]
+                            <span className="text-[9px] uppercase font-mono tracking-wider font-black px-2.5 py-1 border border-[var(--color-brand-accent)]/20 text-[var(--color-brand-accent)] bg-[var(--color-brand-accent-light)] select-none rounded-lg flex items-center gap-1 shadow-xs hover:border-[var(--color-brand-accent)] transition-colors">
+                              Hap
+                              <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                <polyline points="6 9 12 15 18 9" />
+                              </svg>
                             </span>
                           )}
                         </div>
@@ -611,26 +893,32 @@ export const LessonDashboard: React.FC = () => {
                                       e.stopPropagation();
                                       setActivePage('a2_test');
                                     }}
-                                    className="w-full text-left p-6 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 transition-all duration-300 relative outline-hidden border bg-gradient-to-r from-amber-500/10 to-[#3A5A40]/10 border-[#3A5A40]/30 hover:border-[#3A5A40] cursor-pointer shadow-xs hover:shadow-md hover:-translate-y-0.5"
+                                    className={`w-full text-left p-6 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 transition-all duration-300 relative outline-hidden border cursor-pointer shadow-xs hover:shadow-md hover:-translate-y-0.5 ${
+                                      hasPassed 
+                                        ? 'bg-gradient-to-r from-emerald-500/10 to-teal-500/5 border-emerald-500/30 dark:border-emerald-500/20' 
+                                        : completedAll 
+                                          ? 'bg-gradient-to-r from-amber-500/10 to-yellow-500/5 border-amber-500/40 dark:border-amber-500/30'
+                                          : 'bg-neutral-50/50 dark:bg-neutral-900/30 border-neutral-200 dark:border-neutral-800'
+                                    }`}
                                   >
                                     <div className="flex-1 space-y-2">
                                       <div className="flex items-center gap-2 flex-wrap">
-                                        <span className="text-[10px] font-mono font-bold tracking-wider px-2.5 py-0.5 bg-amber-500 text-white rounded-lg select-none">
+                                        <span className="text-[9px] font-mono font-bold tracking-wider px-2.5 py-0.5 bg-[#111315] dark:bg-neutral-900 text-stone-300 border border-neutral-700 rounded-md select-none">
                                           PROVIMI PËRFUNDIMTAR A2
                                         </span>
                                         {!completedAll && (
-                                          <span className="text-[9px] uppercase font-mono tracking-wider font-bold px-2 py-0.5 border border-amber-500/30 text-amber-700 bg-amber-50 select-none rounded-lg">
-                                            [ HAPUR PËR TESTIM ]
+                                          <span className="text-[9px] uppercase font-mono tracking-wider font-black px-2 py-0.5 border border-amber-500/20 text-amber-600 bg-amber-500/10 rounded-md select-none">
+                                            Sfidë e Hapur
                                           </span>
                                         )}
                                         {completedAll && !hasPassed && (
-                                          <span className="text-[9px] uppercase font-mono tracking-wider font-bold px-2 py-0.5 border border-[#3A5A40]/40 text-[#3A5A40] bg-white select-none rounded-lg">
-                                            [ E Zhbllokuar ]
+                                          <span className="text-[9px] uppercase font-mono tracking-wider font-black px-2 py-0.5 border border-emerald-500/20 text-emerald-600 bg-emerald-500/10 rounded-md select-none animate-pulse">
+                                            Gati për Test
                                           </span>
                                         )}
                                         {hasPassed && (
-                                          <span className="text-[9px] uppercase font-mono tracking-wider font-bold px-2 py-0.5 border border-emerald-500/40 text-emerald-700 bg-emerald-50 select-none rounded-lg">
-                                            [ PËRFUNDUAR — {testScore}% ]
+                                          <span className="text-[9px] uppercase font-mono tracking-wider font-black px-2 py-0.5 border border-emerald-500/30 text-white bg-emerald-600 rounded-md select-none">
+                                            Kaluar — {testScore}%
                                           </span>
                                         )}
                                       </div>
@@ -646,8 +934,29 @@ export const LessonDashboard: React.FC = () => {
                                     </div>
 
                                     <div className="flex items-center gap-3 shrink-0">
-                                      <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-[#3A5A40] text-white flex items-center justify-center rounded-2xl shadow-md animate-pulse">
-                                        <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                                      <div className={`w-12 h-12 flex items-center justify-center rounded-2xl shadow-sm ${
+                                        hasPassed 
+                                          ? 'bg-emerald-500/10 border border-emerald-500/20' 
+                                          : completedAll 
+                                            ? 'bg-amber-500/15 border border-amber-500/30' 
+                                            : 'bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700'
+                                      }`}>
+                                        <svg 
+                                          className={`w-6 h-6 ${
+                                            hasPassed 
+                                              ? 'text-emerald-500 drop-shadow-[0_2px_4px_rgba(16,185,129,0.3)]' 
+                                              : completedAll 
+                                                ? 'text-amber-500 animate-bounce drop-shadow-[0_2px_4px_rgba(245,158,11,0.3)]' 
+                                                : 'text-neutral-400'
+                                          }`} 
+                                          style={completedAll && !hasPassed ? { animationDuration: '2.5s' } : undefined}
+                                          viewBox="0 0 24 24" 
+                                          fill="none" 
+                                          stroke="currentColor" 
+                                          strokeWidth="2.2" 
+                                          strokeLinecap="round" 
+                                          strokeLinejoin="round"
+                                        >
                                           <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
                                           <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
                                           <path d="M4 22h16" />

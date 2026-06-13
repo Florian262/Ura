@@ -15,6 +15,7 @@ export interface DictionaryEntry {
   chapterTitle?: string;
   is_a1_vocab?: boolean; // Badge flag for A1 Thematic Vocab items
   is_a2_vocab?: boolean; // Badge flag for A2 Thematic Vocab items
+  is_b1_vocab?: boolean; // Badge flag for B1 Thematic Vocab items
 }
 
 interface WordDetailDrawerProps {
@@ -93,6 +94,11 @@ export const WordDetailDrawer: React.FC<WordDetailDrawerProps> = ({
                 {entry.is_a2_vocab && (
                   <span className="text-[9px] font-bold uppercase tracking-wider text-[#3B82F6] bg-[#3B82F6]/10 border border-[#3B82F6]/30 px-1.5 py-0.5 rounded-md leading-none">
                     Fjalorth A2 📚
+                  </span>
+                )}
+                {entry.is_b1_vocab && (
+                  <span className="text-[9px] font-bold uppercase tracking-wider text-purple-500 bg-purple-500/10 border border-purple-500/30 px-1.5 py-0.5 rounded-md leading-none">
+                    Fjalorth B1 📚
                   </span>
                 )}
               </div>

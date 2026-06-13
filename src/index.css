@@ -770,6 +770,27 @@ input:focus, textarea:focus, select:focus {
   user-select: none;
 }
 
+/* Aurora backing glow that shifts on hover */
+.level-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle 220px at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--glow-color, rgba(99, 102, 241, 0.12)), transparent 80%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.level-card:hover:not(.locked)::before {
+  opacity: 0.15;
+}
+
+.level-inner {
+  position: relative;
+  z-index: 1;
+}
+
 /* Glass shine on card hover */
 .level-card::after {
   content: '';
@@ -949,4 +970,11 @@ input:focus, textarea:focus, select:focus {
   top: 0;
   bottom: 0;
   width: 4px;
+}
+
+/* Mount animation initial state to prevent split-second flash */
+.hero-banner-anim,
+.stat-card-anim,
+.level-card-anim {
+  opacity: 0;
 }

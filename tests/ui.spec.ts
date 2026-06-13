@@ -47,7 +47,7 @@ test.describe('Ura Language Portal E2E UI Automation Flows', () => {
     await expect(mainHeader).toContainText('UDHËTIMI I DIJES SATE');
 
     // Locate the Active Level Card
-    const activeLevelCard = page.locator('button:has-text("NIVELI A1")');
+    const activeLevelCard = page.locator('[role="button"]:has-text("NIVELI A1")');
     await expect(activeLevelCard).toBeVisible();
 
     // Verify visual progress tracker exists
@@ -57,18 +57,15 @@ test.describe('Ura Language Portal E2E UI Automation Flows', () => {
     // Click active level card to enter chapters sub-grid
     await activeLevelCard.click();
 
-    // Verify back button and lesson titles
-    const backButton = page.locator('button:has-text("Kthehu te Nivelet")');
-    await expect(backButton).toBeVisible();
+    // Verify the card is expanded
+    await expect(activeLevelCard).toContainText('Mbyll');
+    await expect(activeLevelCard).toContainText('FILLESTAR');
 
-    const levelHeader = page.locator('h2');
-    await expect(levelHeader).toContainText('FILLESTAR');
-
-    const firstChapter = page.locator('button:has-text("Mësimi 1")');
+    const firstChapter = page.locator('#chapters-A1 button:has-text("Mësimi 1")');
     await expect(firstChapter).toBeVisible();
     await expect(firstChapter).toContainText('Tanışma ve Çoğul Eki');
 
-    const secondChapter = page.locator('button:has-text("Mësimi 2")');
+    const secondChapter = page.locator('#chapters-A1 button:has-text("Mësimi 2")');
     await expect(secondChapter).toBeVisible();
     await expect(secondChapter).toContainText('Sınıfta ve Evde');
 

@@ -584,7 +584,7 @@ export const ReadingModule: React.FC = () => {
                         </button>
                       </div>
                       <p className="text-sm font-technical font-medium tracking-wide">
-                        <InteractiveText text={line.text} onShowDetail={handleShowDetail} />
+                        <InteractiveText text={line.text} onShowDetail={handleShowDetail} chapterId={currentChapter?.id} />
                       </p>
 
                       {/* Albanian translation bubble if toggle enabled - Translation Rule */}
@@ -672,7 +672,7 @@ export const ReadingModule: React.FC = () => {
                         </div>
                         
                         <p className="text-sm font-technical font-medium tracking-wide leading-relaxed">
-                          <InteractiveText text={line.text} onShowDetail={handleShowDetail} />
+                          <InteractiveText text={line.text} onShowDetail={handleShowDetail} chapterId={currentChapter?.id} />
                         </p>
                         
                         {showTranslation && (
@@ -727,7 +727,7 @@ export const ReadingModule: React.FC = () => {
                       </button>
                     </div>
                     <p className="text-sm font-technical font-medium tracking-wide leading-relaxed">
-                      <InteractiveText text={line.text} onShowDetail={handleShowDetail} />
+                      <InteractiveText text={line.text} onShowDetail={handleShowDetail} chapterId={currentChapter?.id} />
                     </p>
                     {showTranslation && (
                       <p className="translation-subtitle border-t border-[#E9ECEF]/80 pt-2 mt-2 leading-relaxed">

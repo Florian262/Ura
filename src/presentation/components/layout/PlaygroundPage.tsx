@@ -4,6 +4,8 @@ import { HabitoreStrategy } from '../../../core/harmony/strategies/habitoreStrat
 import { applyConsonantMutation, endsWithKetcap } from '../../../core/harmony/consonantMutation';
 import { getLastVowel, getVowelHarmony2, getVowelHarmony4 } from '../../../core/harmony/vowelHarmony';
 
+const TURKISH_CHARS_REGEX = /[^a-zA-ZçğıöşüÇĞİÖŞÜ]/g;
+
 export const PlaygroundPage: React.FC = () => {
   const [customWord, setCustomWord] = useState<string>('kitap');
   const [activeStrategy, setActiveStrategy] = useState<'plural' | 'habitore'>('plural');
@@ -80,7 +82,7 @@ export const PlaygroundPage: React.FC = () => {
               <input
                 type="text"
                 value={customWord}
-                onChange={(e) => setCustomWord(e.target.value.replace(/[^a-zA-ZçğıöşüÇĞİÖŞÜ]/g, ''))}
+                onChange={(e) => setCustomWord(e.target.value.replace(TURKISH_CHARS_REGEX, ''))}
                 placeholder="Shkruaj fjalën..."
                 maxLength={20}
                 className="w-full rounded-xl border border-[#E9ECEF] bg-white px-4 py-2.5 text-sm text-[#1A1D20] placeholder-neutral-400 focus:border-[#565E64] focus:outline-none font-technical tracking-wide shadow-sm"
@@ -89,27 +91,27 @@ export const PlaygroundPage: React.FC = () => {
 
             {/* Strategy Selectors */}
             <div className="space-y-2">
-              <label className="text-[10px] uppercase font-bold tracking-widest text-[#565E64] block">Zgjidhni Prapashtesën:</label>
+              <label className="text-[10px] uppercase font-bold tracking-widest text-[#565E64] block">Zgjidhni Prapashtesën (Bllokun):</label>
               <div className="grid grid-cols-2 gap-2">
                 <button
                   onClick={() => setActiveStrategy('plural')}
-                  className={`px-3 py-2.5 rounded-xl border text-xs font-bold transition duration-200 cursor-pointer shadow-xs ${
+                  className={`px-3 py-2.5 rounded-xl border-2 text-xs font-black transition duration-200 cursor-pointer shadow-xs active:scale-95 flex items-center justify-center gap-1.5 ${
                     activeStrategy === 'plural'
-                      ? 'bg-[#3A5A40] text-white border-[#3A5A40]'
-                      : 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50'
+                      ? 'bg-[#3A5A40] text-white border-[#3A5A40] shadow-md -translate-y-0.5'
+                      : 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50 hover:border-neutral-350'
                   }`}
                 >
-                  Shumësi (-lar / -ler)
+                  🧩 Shumësi (-lar/-ler)
                 </button>
                 <button
                   onClick={() => setActiveStrategy('habitore')}
-                  className={`px-3 py-2.5 rounded-xl border text-xs font-bold transition duration-200 cursor-pointer shadow-xs ${
+                  className={`px-3 py-2.5 rounded-xl border-2 text-xs font-black transition duration-200 cursor-pointer shadow-xs active:scale-95 flex items-center justify-center gap-1.5 ${
                     activeStrategy === 'habitore'
-                      ? 'bg-[#3A5A40] text-white border-[#3A5A40]'
-                      : 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50'
+                      ? 'bg-[#3A5A40] text-white border-[#3A5A40] shadow-md -translate-y-0.5'
+                      : 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50 hover:border-neutral-350'
                   }`}
                 >
-                  Habitori (-miş)
+                  🧩 Habitori (-miş)
                 </button>
               </div>
             </div>

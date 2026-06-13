@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 import type { Chapter, ReadingBlock, ReadingQuestion, Vocabulary, GrammarCard, Exercise, ListeningBlock, ListeningQuestion } from '../../infrastructure/db/seedData';
 import { ChapterRepository } from '../../infrastructure/repository/ChapterRepository';
 import { ProgressRepository } from '../../infrastructure/repository/ProgressRepository';
@@ -24,6 +24,12 @@ interface LessonContextType {
   userName: string;
   theme: 'light' | 'dark';
   
+  // Timer State
+  sessionSeconds: number;
+  lifetimeSeconds: number;
+  isSessionRunning: boolean;
+  hasSavedSession: boolean;
+  
   // Actions
   setActivePage: (page: string) => void;
   loadChapter: (chapterId: number) => void;
@@ -37,6 +43,9 @@ interface LessonContextType {
   completeWelcome: (name: string) => void;
   resetAllData: () => void;
   toggleTheme: () => void;
+  resumeSession: () => void;
+  resetSession: () => void;
+  toggleSession: () => void;
 }
 
 const LessonContext = createContext<LessonContextType | undefined>(undefined);
@@ -64,6 +73,80 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const [readingCompleted, setReadingCompleted] = useState<boolean>(false);
   const [carouselStep, setCarouselStepState] = useState<number>(0);
   const [writingPreference, setWritingPreferenceState] = useState<'self_check' | 'strict'>('self_check');
+
+  // Timer States
+  const [sessionSeconds, setSessionSeconds] = useState<number>(0);
+  const [lifetimeSeconds, setLifetimeSeconds] = useState<number>(0);
+  const [isSessionRunning, setIsSessionRunning] = useState<boolean>(false);
+  const [hasSavedSession, setHasSavedSession] = useState<boolean>(false);
+
+  const sessionSecondsRef = useRef<number>(0);
+  const lifetimeSecondsRef = useRef<number>(0);
+
+  // Sync refs with state to prevent stale closures in unload event listeners
+  useEffect(() => {
+    sessionSecondsRef.current = sessionSeconds;
+  }, [sessionSeconds]);
+
+  useEffect(() => {
+    lifetimeSecondsRef.current = lifetimeSeconds;
+  }, [lifetimeSeconds]);
+
+  // Load timer values from localStorage on mount
+  useEffect(() => {
+    const savedLifetime = parseInt(localStorage.getItem('ura_lifetime_seconds') || '0', 10);
+    const savedSession = parseInt(localStorage.getItem('ura_session_seconds') || '0', 10);
+    setLifetimeSeconds(savedLifetime);
+    setSessionSeconds(savedSession);
+
+    if (savedSession > 0) {
+      setHasSavedSession(true);
+      setIsSessionRunning(false); // Kept paused until the user decides to continue or reset
+    } else {
+      setHasSavedSession(false);
+      setIsSessionRunning(true); // Start session immediately
+    }
+  }, []);
+
+  // Background clock interval (runs every second)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Accumulate time only if the page/tab is currently active in the foreground
+      if (document.visibilityState === 'visible') {
+        setLifetimeSeconds(prev => {
+          const next = prev + 1;
+          localStorage.setItem('ura_lifetime_seconds', next.toString());
+          return next;
+        });
+
+        if (isSessionRunning) {
+          setSessionSeconds(prev => {
+            const next = prev + 1;
+            localStorage.setItem('ura_session_seconds', next.toString());
+            return next;
+          });
+        }
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [isSessionRunning]);
+
+  // Unload and visibility change emergency saving mechanisms
+  useEffect(() => {
+    const handleSave = () => {
+      localStorage.setItem('ura_lifetime_seconds', lifetimeSecondsRef.current.toString());
+      localStorage.setItem('ura_session_seconds', sessionSecondsRef.current.toString());
+    };
+
+    window.addEventListener('beforeunload', handleSave);
+    document.addEventListener('visibilitychange', handleSave);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleSave);
+      document.removeEventListener('visibilitychange', handleSave);
+    };
+  }, []);
 
   // Load all chapters initially
   useEffect(() => {
@@ -244,6 +327,22 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     setActivePage('lessons');
   };
 
+  const resumeSession = () => {
+    setIsSessionRunning(true);
+    setHasSavedSession(false);
+  };
+
+  const resetSession = () => {
+    setSessionSeconds(0);
+    localStorage.setItem('ura_session_seconds', '0');
+    setIsSessionRunning(true);
+    setHasSavedSession(false);
+  };
+
+  const toggleSession = () => {
+    setIsSessionRunning(prev => !prev);
+  };
+
   const resetAllData = () => {
     const confirmation = window.confirm(
       "KUJDES: RIVENDOSJA E TË DHËNAVE\n\n" +
@@ -272,6 +371,13 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       setCarouselStepState(0);
       setWritingPreferenceState('self_check');
       setActivePage('welcome');
+
+      // Reset timer states
+      setSessionSeconds(0);
+      setLifetimeSeconds(0);
+      setIsSessionRunning(true);
+      setHasSavedSession(false);
+
       alert('Të dhënat tuaja u fshinë me sukses! Aplikacioni u rivendos në gjendjen fillestare.');
     }
   };
@@ -294,6 +400,10 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       writingPreference,
       userName,
       theme,
+      sessionSeconds,
+      lifetimeSeconds,
+      isSessionRunning,
+      hasSavedSession,
       loadChapter,
       exitToDashboard,
       setActivePage,
@@ -305,7 +415,10 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       markChapterCompleted,
       completeWelcome,
       resetAllData,
-      toggleTheme
+      toggleTheme,
+      resumeSession,
+      resetSession,
+      toggleSession
     }}>
       {children}
     </LessonContext.Provider>

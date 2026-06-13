@@ -183,12 +183,12 @@ export const WritingModule: React.FC<WritingModuleProps> = ({ onComplete }) => {
             {/* Restyled Premium Virtual Keyboard Helper Dock */}
             <div className="border-l-4 border-teal-500 bg-gradient-to-r from-neutral-50/80 to-neutral-100/80 dark:from-neutral-900/40 dark:to-neutral-850/40 backdrop-blur-md p-3 rounded-r-xl md:border-y md:border-r border-neutral-200 dark:border-neutral-800 flex flex-wrap items-center gap-2 justify-start md:shadow-sm transition duration-200">
               <span className="text-[10px] text-neutral-500 dark:text-neutral-400 font-bold uppercase tracking-wider mr-2">Zanoret/Bashkëtingëlloret Turke:</span>
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex flex-wrap gap-2">
                 {['ç', 'ğ', 'ı', 'ö', 'ş', 'ü', 'Ç', 'Ğ', 'İ', 'Ö', 'Ş', 'Ü'].map(char => (
                   <button
                     key={char}
                     onClick={() => insertSpecialCharacter(char)}
-                    className="w-9 h-9 rounded-lg border border-neutral-200 dark:border-neutral-850 bg-white dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 hover:bg-teal-500/10 hover:text-teal-600 dark:hover:text-teal-400 hover:border-teal-500 text-xs font-bold font-technical flex items-center justify-center transition-all duration-150 active:scale-90 shadow-xs cursor-pointer"
+                    className="w-11 h-11 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 hover:bg-teal-500/10 hover:text-teal-600 dark:hover:text-teal-400 hover:border-teal-500 text-xs font-bold font-technical flex items-center justify-center transition-all duration-150 active:scale-90 shadow-sm cursor-pointer"
                   >
                     {char}
                   </button>

@@ -2,6 +2,8 @@ import React, { useState, useEffect, useMemo, useRef, useCallback, useDeferredVa
 import { ChapterRepository } from '../../../infrastructure/repository/ChapterRepository';
 import { a1VocabularyData } from '../../../infrastructure/db/a1Vocabulary';
 import { a2VocabularyData } from '../../../infrastructure/db/a2Vocabulary';
+import { b1VocabularyData } from '../../../infrastructure/db/b1Vocabulary';
+import { basicGrammarVocabularyData } from '../../../infrastructure/db/basicGrammarVocabulary';
 import { WordDetailDrawer } from '../common/WordDetailDrawer';
 import { useAudioPlayer } from '../../../application/hooks/useAudioPlayer';
 
@@ -20,6 +22,7 @@ export interface DictionaryEntry {
   chapterTitle?: string;    // If derived from curriculum
   is_a1_vocab?: boolean;    // Badge flag for A1 Thematic Vocab items
   is_a2_vocab?: boolean;    // Badge flag for A2 Thematic Vocab items
+  is_b1_vocab?: boolean;    // Badge flag for B1 Thematic Vocab items
 }
 
 export const DictionaryPage: React.FC = () => {
@@ -129,6 +132,50 @@ export const DictionaryPage: React.FC = () => {
     }));
   }, []);
 
+  // Compile static B1 thematic vocabulary
+  const b1VocabEntries = useMemo(() => {
+    const getCategoryLabel = (cat: string): string => {
+      const mapping: Record<string, string> = {
+        workplace: 'Punë & Profesione B1 💼',
+        media: 'Media & Komunikim B1 📰',
+        social: 'Jeta Shoqërore B1 👥',
+        idioms: 'Shprehje & Lidhëza B1 🗣️',
+        academic: 'Akademike & Hulumtim B1 🎓'
+      };
+      return mapping[cat] || cat;
+    };
+
+    return b1VocabularyData.map((item): DictionaryEntry => ({
+      id: `b1-vocab-${item.id}`,
+      source: 'tr',
+      word: item.word,
+      translation: item.translation,
+      pos: item.pos,
+      notes: item.notes,
+      examples: item.examples,
+      derivatives: item.derivatives,
+      is_balkan: item.is_balkan,
+      is_b1_vocab: true,
+      chapterTitle: `Fjalorthi Tematik B1 • ${getCategoryLabel(item.category)}`
+    }));
+  }, []);
+
+  // Compile static Basic Grammar & Pronouns vocabulary
+  const basicGrammarEntries = useMemo(() => {
+    return basicGrammarVocabularyData.map((item): DictionaryEntry => ({
+      id: `grammar-vocab-${item.id}`,
+      source: 'tr',
+      word: item.word,
+      translation: item.translation,
+      pos: item.pos,
+      notes: item.notes,
+      examples: item.examples,
+      derivatives: item.derivatives,
+      is_balkan: item.is_balkan,
+      chapterTitle: `Gramatikë & Bazat`
+    }));
+  }, []);
+
   // Map letters to normalized JSON files
   const getLetterFile = (query: string): string => {
     if (!query) return '';
@@ -150,7 +197,7 @@ export const DictionaryPage: React.FC = () => {
 
   // Asynchronous split-json loader effect
   useEffect(() => {
-    const letter = getLetterFile(searchQuery);
+    const letter = getLetterFile(deferredSearchQuery);
     if (!letter) return;
 
     // Check cache first
@@ -186,7 +233,7 @@ export const DictionaryPage: React.FC = () => {
       .finally(() => {
         setIsLoading(false);
       });
-  }, [searchQuery]);
+  }, [deferredSearchQuery]);
 
   // Combine curriculum, a1 thematic vocabulary, and dynamically fetched entries
   const allEntries = useMemo(() => {
@@ -261,6 +308,7 @@ export const DictionaryPage: React.FC = () => {
         if (item.is_balkan) existing.is_balkan = true;
         if (item.is_a1_vocab) existing.is_a1_vocab = true;
         if (item.is_a2_vocab) existing.is_a2_vocab = true;
+        if (item.is_b1_vocab) existing.is_b1_vocab = true;
         if (item.chapterTitle) {
           if (existing.chapterTitle) {
             if (!existing.chapterTitle.toLowerCase().includes(item.chapterTitle.toLowerCase())) {
@@ -280,9 +328,11 @@ export const DictionaryPage: React.FC = () => {
     curriculumEntries.forEach(mergeIntoMap);
     a1VocabEntries.forEach(mergeIntoMap);
     a2VocabEntries.forEach(mergeIntoMap);
+    b1VocabEntries.forEach(mergeIntoMap);
+    basicGrammarEntries.forEach(mergeIntoMap);
 
     return Array.from(map.values());
-  }, [loadedEntries, curriculumEntries, a1VocabEntries, a2VocabEntries]);
+  }, [loadedEntries, curriculumEntries, a1VocabEntries, a2VocabEntries, b1VocabEntries, basicGrammarEntries]);
 
   // Filter entries based on queries & POS tags
   const filteredEntries = useMemo(() => {
@@ -305,7 +355,7 @@ export const DictionaryPage: React.FC = () => {
 
   // Clamped visible results to prevent rendering lag on massive word counts
   const visibleEntries = useMemo(() => {
-    return filteredEntries.slice(0, 40);
+    return filteredEntries.slice(0, 50);
   }, [filteredEntries]);
 
   // Automatically select first entry in results on desktop when list changes
@@ -491,6 +541,11 @@ export const DictionaryPage: React.FC = () => {
                             A2
                           </span>
                         )}
+                        {entry.is_b1_vocab && (
+                          <span className="text-[8px] font-extrabold text-[#A855F7] bg-[#A855F7]/10 border border-[#A855F7]/20 px-1 rounded-md" title="Fjalorthi Tematik B1">
+                            B1
+                          </span>
+                        )}
                         <span className="text-[9px] font-bold text-[#565E64] capitalize bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-1.5 py-0.5 rounded-md">
                           {entry.pos}
                         </span>
@@ -500,7 +555,7 @@ export const DictionaryPage: React.FC = () => {
                 })}
                 {filteredEntries.length > visibleEntries.length && (
                   <div className="text-center py-3 text-[10px] text-neutral-400 dark:text-neutral-500 italic font-light">
-                    Po shfaqen 40 fjalët e para. Shkruani më shumë shkronja për të ngushtuar kërkimin...
+                    Po shfaqen 50 fjalët e para. Shkruani më shumë shkronja për të ngushtuar kërkimin...
                   </div>
                 )}
               </>
@@ -554,6 +609,11 @@ export const DictionaryPage: React.FC = () => {
                       {selectedEntry.is_a2_vocab && (
                         <span className="text-[9px] font-bold uppercase tracking-wider text-[#3B82F6] bg-[#3B82F6]/10 border border-[#3B82F6]/30 px-1.5 py-0.5 rounded-md leading-none">
                           Fjalorth A2 📚
+                        </span>
+                      )}
+                      {selectedEntry.is_b1_vocab && (
+                        <span className="text-[9px] font-bold uppercase tracking-wider text-purple-500 bg-purple-500/10 border border-purple-500/30 px-1.5 py-0.5 rounded-md leading-none">
+                          Fjalorth B1 📚
                         </span>
                       )}
                     </div>

@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import { a1VocabularyData } from '../../../infrastructure/db/a1Vocabulary';
 import { a2VocabularyData } from '../../../infrastructure/db/a2Vocabulary';
+import { b1VocabularyData } from '../../../infrastructure/db/b1Vocabulary';
 import { WordDetailDrawer } from '../common/WordDetailDrawer';
 import type { DictionaryEntry } from '../common/WordDetailDrawer';
 import { useAudioPlayer } from '../../../application/hooks/useAudioPlayer';
@@ -38,9 +39,17 @@ const A2_CATEGORIES: CategoryConfig[] = [
   { id: 'adverbs', label: 'Ndajfolje & Lidhëza', emoji: '🔗', desc: 'Lidhëzat dhe ndajfoljet për të strukturuar fjali të gjata.' }
 ];
 
+const B1_CATEGORIES: CategoryConfig[] = [
+  { id: 'workplace', label: 'Punë & Karrierë', emoji: '💼', desc: 'Profesioni, intervistat, CV dhe terminologjia e karrierës.' },
+  { id: 'media', label: 'Media & Lajmet', emoji: '📰', desc: 'Shtypi, lajmet, mediat sociale dhe komunikimi publik.' },
+  { id: 'social', label: 'Shoqëria & Kultura', emoji: '🎭', desc: 'Traditat, ligjet, jeta sociale dhe qytetare.' },
+  { id: 'idioms', label: 'Shprehje & Balkanizma', emoji: '🤝', desc: 'Shprehje dhe struktura frazeologjike të nivelit B1.' },
+  { id: 'academic', label: 'Kërkimi & Shkenca', emoji: '🔬', desc: 'Hulumtimi, arsimi akademik dhe diskutimet logjike.' }
+];
+
 export const VocabularyBuilderPage: React.FC = () => {
   const { playText } = useAudioPlayer();
-  const [activeLevel, setActiveLevel] = useState<'A1' | 'A2'>('A1');
+  const [activeLevel, setActiveLevel] = useState<'A1' | 'A2' | 'B1'>('A1');
   const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedEntry, setSelectedEntry] = useState<DictionaryEntry | null>(null);
@@ -48,7 +57,9 @@ export const VocabularyBuilderPage: React.FC = () => {
 
   // Categories config dependent on active level
   const categoriesList = useMemo(() => {
-    return activeLevel === 'A1' ? A1_CATEGORIES : A2_CATEGORIES;
+    if (activeLevel === 'A1') return A1_CATEGORIES;
+    if (activeLevel === 'A2') return A2_CATEGORIES;
+    return B1_CATEGORIES;
   }, [activeLevel]);
 
   // Active Category configuration
@@ -59,7 +70,12 @@ export const VocabularyBuilderPage: React.FC = () => {
   // Words in the active category
   const categoryWords = useMemo(() => {
     if (!selectedCategoryId) return [];
-    const sourceData = activeLevel === 'A1' ? a1VocabularyData : a2VocabularyData;
+    const sourceData = 
+      activeLevel === 'A1' 
+        ? a1VocabularyData 
+        : activeLevel === 'A2' 
+          ? a2VocabularyData 
+          : b1VocabularyData;
     return sourceData.filter(w => w.category === selectedCategoryId);
   }, [selectedCategoryId, activeLevel]);
 
@@ -77,7 +93,12 @@ export const VocabularyBuilderPage: React.FC = () => {
 
   // Total statistics
   const stats = useMemo(() => {
-    const sourceData = activeLevel === 'A1' ? a1VocabularyData : a2VocabularyData;
+    const sourceData = 
+      activeLevel === 'A1' 
+        ? a1VocabularyData 
+        : activeLevel === 'A2' 
+          ? a2VocabularyData 
+          : b1VocabularyData;
     const total = sourceData.length;
     const balkan = sourceData.filter(w => w.is_balkan).length;
     const posCounts = sourceData.reduce((acc, w) => {
@@ -106,6 +127,7 @@ export const VocabularyBuilderPage: React.FC = () => {
       is_balkan: item.is_balkan,
       is_a1_vocab: activeLevel === 'A1',
       is_a2_vocab: activeLevel === 'A2',
+      is_b1_vocab: activeLevel === 'B1',
       chapterTitle: `Fjalorthi Tematik ${activeLevel} • ${categoryLabel}`
     };
     setSelectedEntry(mapped);
@@ -167,6 +189,20 @@ export const VocabularyBuilderPage: React.FC = () => {
               }`}
             >
               Niveli A2 (500 Fjalë)
+            </button>
+            <button
+              onClick={() => {
+                setActiveLevel('B1');
+                setSelectedCategoryId(null);
+                setSearchQuery('');
+              }}
+              className={`px-4 py-2 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer ${
+                activeLevel === 'B1'
+                  ? 'bg-white dark:bg-neutral-800 text-purple-500 shadow-sm'
+                  : 'text-neutral-500 hover:text-neutral-800 dark:hover:text-neutral-200'
+              }`}
+            >
+              Niveli B1 (Kryesor)
             </button>
           </div>
         </div>

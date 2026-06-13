@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Logo } from '../common/Logo';
 
 interface SplashScreenProps {
@@ -27,13 +27,21 @@ const SPLASH_FACTS = [
 export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
   const [progress, setProgress] = useState<number>(0);
   const [isFading, setIsFading] = useState<boolean>(false);
-  const [activeFact, setActiveFact] = useState<string>('');
+  
+  // Select a random fact exactly once upon mount using lazy initialization
+  const [activeFact] = useState<string>(() => {
+    const randomIdx = Math.floor(Math.random() * SPLASH_FACTS.length);
+    return SPLASH_FACTS[randomIdx];
+  });
+
+  const onCompleteRef = useRef(onComplete);
+  
+  // Keep the ref updated with the latest onComplete callback
+  useEffect(() => {
+    onCompleteRef.current = onComplete;
+  }, [onComplete]);
 
   useEffect(() => {
-    // Select a random fact on mount
-    const randomIdx = Math.floor(Math.random() * SPLASH_FACTS.length);
-    setActiveFact(SPLASH_FACTS[randomIdx]);
-
     // Fill the progress bar over 4.7 seconds (4700ms)
     // 4700ms / 100 ticks = 47ms per tick
     const interval = setInterval(() => {
@@ -53,7 +61,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
 
     // End splash lifecycle at 5 seconds
     const completeTimer = setTimeout(() => {
-      onComplete();
+      onCompleteRef.current();
     }, 5000);
 
     return () => {
@@ -61,7 +69,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
       clearTimeout(fadeTimer);
       clearTimeout(completeTimer);
     };
-  }, [onComplete]);
+  }, []);
 
   return (
     <div
