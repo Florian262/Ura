@@ -51,6 +51,9 @@ scratch/
 guncel-turkce-sozluk-master/
 Responses/
 
+# Skill planning documents (local only)
+Skill/
+
 # Local TTS engines and large neural net voice models (>50MB)
 voices/
 
