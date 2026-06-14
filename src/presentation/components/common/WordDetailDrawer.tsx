@@ -7,6 +7,7 @@ export interface DictionaryEntry {
   translation: string;
   pos: string;
   inflection?: string;
+  rootTranslation?: string;
   notes?: string;
   senses?: string[];
   examples?: { source: string; target: string }[];

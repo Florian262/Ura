@@ -8,9 +8,10 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "vitest run",
+    "test": "vitest run tests",
     "test:watch": "vitest",
     "test:ui": "playwright test",
+    "generate-glossary": "vitest run scripts/generateGlossary.test.ts",
     "prepare": "npx simple-git-hooks"
   },
   "dependencies": {

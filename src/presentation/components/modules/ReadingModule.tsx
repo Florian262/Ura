@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { useLesson } from '../../../application/state/LessonContext';
 import { useAudioPlayer } from '../../../application/hooks/useAudioPlayer';
 import { InteractiveText } from '../common/InteractiveText';
 import { WordDetailDrawer, type DictionaryEntry } from '../common/WordDetailDrawer';
+import { lookupWord } from '../../../core/harmony/stemmer';
 
 const Avatar: React.FC<{ speakerName: string }> = ({ speakerName }) => {
   const initial = speakerName ? speakerName.charAt(0).toUpperCase() : '?';
@@ -53,6 +54,115 @@ export const ReadingModule: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'alphabet' | 'pronunciation' | 'pronouns' | 'structure'>('alphabet');
   const [drawerEntry, setDrawerEntry] = useState<DictionaryEntry | null>(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
+
+  // Global popup state for words touched in InteractiveText
+  const [activeWordPopup, setActiveWordPopup] = useState<{
+    entry: DictionaryEntry;
+    pos: { top: number; left: number };
+    renderAbove: boolean;
+    key: string;
+  } | null>(null);
+
+  const handleWordClick = (
+    entry: DictionaryEntry,
+    pos: { top: number; left: number },
+    renderAbove: boolean,
+    key: string
+  ) => {
+    setActiveWordPopup({ entry, pos, renderAbove, key });
+  };
+
+  const closeWordPopup = () => {
+    setActiveWordPopup(null);
+  };
+
+  useEffect(() => {
+    if (!activeWordPopup) return;
+
+    const handleOutsideClick = () => {
+      closeWordPopup();
+    };
+
+    const timer = setTimeout(() => {
+      window.addEventListener('click', handleOutsideClick);
+      window.addEventListener('touchstart', handleOutsideClick);
+    }, 50);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('click', handleOutsideClick);
+      window.removeEventListener('touchstart', handleOutsideClick);
+    };
+  }, [activeWordPopup]);
+
+  useEffect(() => {
+    if (!activeWordPopup) return;
+
+    const updatePosition = () => {
+      const element = document.getElementById(`word-span-${activeWordPopup.key}`);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        
+        // 1. Close popup if the word scrolls completely out of the viewport
+        const isOutOfViewport = rect.bottom < 0 || rect.top > window.innerHeight;
+        if (isOutOfViewport) {
+          closeWordPopup();
+          return;
+        }
+
+        // 2. Close popup if the word scrolls outside its scrollable parent container's visible bounds
+        let parent = element.parentElement;
+        while (parent && parent !== document.body) {
+          const style = window.getComputedStyle(parent);
+          const hasScroll = style.overflow === 'auto' || style.overflow === 'scroll' || 
+                            style.overflowY === 'auto' || style.overflowY === 'scroll' || 
+                            style.overflowX === 'auto' || style.overflowX === 'scroll';
+          if (hasScroll) {
+            const parentRect = parent.getBoundingClientRect();
+            const isOutOfParent = rect.bottom < parentRect.top || rect.top > parentRect.bottom ||
+                                  rect.right < parentRect.left || rect.left > parentRect.right;
+            if (isOutOfParent) {
+              closeWordPopup();
+              return;
+            }
+          }
+          parent = parent.parentElement;
+        }
+
+        // 3. Recalculate positions
+        const popupWidth = 256;
+        const leftPos = rect.left + (rect.width / 2) - (popupWidth / 2);
+        
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const shouldRenderAbove = spaceBelow < 180;
+        
+        const popupTop = shouldRenderAbove ? rect.top - 8 : rect.bottom + 8;
+        const popupLeft = Math.max(12, Math.min(window.innerWidth - popupWidth - 12, leftPos));
+
+        setActiveWordPopup(prev => {
+          if (!prev) return null;
+          // Avoid triggering rerenders if values did not change
+          if (prev.pos.top === popupTop && prev.pos.left === popupLeft && prev.renderAbove === shouldRenderAbove) {
+            return prev;
+          }
+          return {
+            ...prev,
+            pos: { top: popupTop, left: popupLeft },
+            renderAbove: shouldRenderAbove
+          };
+        });
+      }
+    };
+
+    // Use capturing (true) to intercept scrolls on any scrollable child container on the page
+    window.addEventListener('scroll', updatePosition, true);
+    window.addEventListener('resize', updatePosition);
+
+    return () => {
+      window.removeEventListener('scroll', updatePosition, true);
+      window.removeEventListener('resize', updatePosition);
+    };
+  }, [activeWordPopup]);
 
   const handleShowDetail = (entry: DictionaryEntry) => {
     setDrawerEntry(entry);
@@ -584,7 +694,13 @@ export const ReadingModule: React.FC = () => {
                         </button>
                       </div>
                       <p className="text-sm font-technical font-medium tracking-wide">
-                        <InteractiveText text={line.text} onShowDetail={handleShowDetail} chapterId={currentChapter?.id} />
+                        <InteractiveText
+                          text={line.text}
+                          chapterId={currentChapter?.id}
+                          activeWordKey={activeWordPopup?.key || null}
+                          onWordClick={handleWordClick}
+                          lineId={`dialogue-${idx}`}
+                        />
                       </p>
 
                       {/* Albanian translation bubble if toggle enabled - Translation Rule */}
@@ -672,7 +788,13 @@ export const ReadingModule: React.FC = () => {
                         </div>
                         
                         <p className="text-sm font-technical font-medium tracking-wide leading-relaxed">
-                          <InteractiveText text={line.text} onShowDetail={handleShowDetail} chapterId={currentChapter?.id} />
+                          <InteractiveText
+                            text={line.text}
+                            chapterId={currentChapter?.id}
+                            activeWordKey={activeWordPopup?.key || null}
+                            onWordClick={handleWordClick}
+                            lineId={`blog-${idx}`}
+                          />
                         </p>
                         
                         {showTranslation && (
@@ -727,7 +849,13 @@ export const ReadingModule: React.FC = () => {
                       </button>
                     </div>
                     <p className="text-sm font-technical font-medium tracking-wide leading-relaxed">
-                      <InteractiveText text={line.text} onShowDetail={handleShowDetail} chapterId={currentChapter?.id} />
+                      <InteractiveText
+                        text={line.text}
+                        chapterId={currentChapter?.id}
+                        activeWordKey={activeWordPopup?.key || null}
+                        onWordClick={handleWordClick}
+                        lineId={`narrative-${idx}`}
+                      />
                     </p>
                     {showTranslation && (
                       <p className="translation-subtitle border-t border-[#E9ECEF]/80 pt-2 mt-2 leading-relaxed">
@@ -847,6 +975,100 @@ export const ReadingModule: React.FC = () => {
           </div>
         )}
       </div>
+
+      {/* Global Word Popover Bubble */}
+      {activeWordPopup && createPortal(
+        <div
+          style={{ 
+            top: `${activeWordPopup.pos.top}px`, 
+            left: `${activeWordPopup.pos.left}px`,
+            width: '256px',
+            transform: activeWordPopup.renderAbove ? 'translateY(-100%)' : 'none'
+          }}
+          className="fixed z-55 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-850 rounded-2xl shadow-lg p-4 animate-fade-in text-left pointer-events-auto flex flex-col gap-2.5"
+        >
+          {/* Header */}
+          <div className="flex justify-between items-start border-b border-neutral-100 dark:border-neutral-800 pb-1.5">
+            <div>
+              <h4 lang="tr" className="text-sm font-black text-neutral-800 dark:text-neutral-100 font-technical">
+                {activeWordPopup.entry.word}
+              </h4>
+              <span className="text-[8px] font-bold uppercase tracking-wider text-neutral-450 dark:text-neutral-500 block">
+                {activeWordPopup.entry.pos}
+              </span>
+            </div>
+            
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                playText(activeWordPopup.entry.word, 'tr');
+              }}
+              className="w-7 h-7 rounded-lg border border-neutral-200 dark:border-neutral-800 hover:bg-[#3A5A40]/10 hover:text-[#3A5A40] flex items-center justify-center text-xs transition bg-white dark:bg-neutral-850 cursor-pointer text-neutral-500 dark:text-neutral-400"
+              title="Dëgjo fjalën"
+            >
+              🔊
+            </button>
+          </div>
+
+          {/* Translation content */}
+          <div className="text-xs">
+            <span className="text-[9px] font-bold uppercase tracking-wider text-neutral-450 dark:text-neutral-500 block mb-0.5">
+              {activeWordPopup.entry.rootTranslation && activeWordPopup.entry.rootTranslation !== activeWordPopup.entry.translation ? 'Në këtë fjali:' : 'Shqip:'}
+            </span>
+            <p className="font-semibold text-[#0D9488] dark:text-[#14B8A6] leading-tight">
+              {activeWordPopup.entry.translation}
+            </p>
+          </div>
+
+          {/* Root/Normal Translation content if it differs */}
+          {activeWordPopup.entry.rootTranslation && activeWordPopup.entry.rootTranslation !== activeWordPopup.entry.translation && (
+            <div className="text-xs border-t border-neutral-100 dark:border-neutral-850 pt-1">
+              <span className="text-[9px] font-bold uppercase tracking-wider text-neutral-450 block mb-0.5">
+                Kuptimi bazë (rrënja {activeWordPopup.entry.inflection}):
+              </span>
+              <p className="font-medium text-neutral-700 dark:text-neutral-300 leading-tight">
+                {activeWordPopup.entry.rootTranslation}
+              </p>
+            </div>
+          )}
+
+          {/* Contextual Grammar Explanation/Notes */}
+          {activeWordPopup.entry.notes && (
+            <div className="text-[10px] text-neutral-600 dark:text-neutral-400 bg-neutral-50 dark:bg-neutral-850 p-2 rounded-lg leading-normal italic border-l-2 border-teal-500/50">
+              {activeWordPopup.entry.notes}
+            </div>
+          )}
+
+          {/* Link to detail drawer */}
+          <div className="flex justify-between items-center mt-1 pt-1.5 border-t border-neutral-100 dark:border-neutral-800 text-[10px]">
+            <button
+              onClick={() => {
+                const entryToUse = activeWordPopup.entry;
+                closeWordPopup();
+                if (entryToUse.inflection) {
+                  const rootEntry = lookupWord(entryToUse.inflection);
+                  if (rootEntry) {
+                    handleShowDetail(rootEntry);
+                    return;
+                  }
+                }
+                handleShowDetail(entryToUse);
+              }}
+              className="text-[#3A5A40] dark:text-[#14B8A6] font-bold hover:underline bg-transparent border-none p-0 cursor-pointer"
+            >
+              Më shumë detaje...
+            </button>
+            
+            <button
+              onClick={closeWordPopup}
+              className="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200 bg-transparent border-none p-0 cursor-pointer"
+            >
+              Mbyll
+            </button>
+          </div>
+        </div>,
+        document.body
+      )}
 
       {/* Detail Drawer */}
       {isDrawerOpen && drawerEntry && createPortal(
