@@ -19,7 +19,7 @@ describe('NecessityStrategy Gereklilik Kipi Conjugation', () => {
 
 describe('A2 Chapter 5 Lesson Blueprint (ID 17)', () => {
   it('conforms to lesson schema constraints', () => {
-    expect(a2Chapter5.id).toBe(17);
+    expect(a2Chapter5.id).toBe(13);
     expect(a2Chapter5.level).toBe('A2');
     expect(a2Chapter5.orderIndex).toBe(5);
     expect(a2Chapter5.title.turkish).toBe('Gereklilik Kipi ve İhtiyaç');
@@ -39,25 +39,25 @@ describe('A2 Chapter 5 Lesson Blueprint (ID 17)', () => {
 
 describe('Writing Validation for A2 Chapter 5 (ID 17)', () => {
   it('passes valid necessity descriptions (verb form)', () => {
-    const res = evaluateWriting(17, "Sağlıklı olmak için her gün spor yapmalıyım ve sebze yemeliyim.");
+    const res = evaluateWriting(13, "Sağlıklı olmak için her gün spor yapmalıyım ve sebze yemeliyim.");
     expect(res.status).toBe('success');
     expect(res.feedback).toContain('Keni shkruar saktë për detyrimet');
   });
 
   it('passes valid necessity descriptions (nominal gerek form)', () => {
-    const res = evaluateWriting(17, "Erken uyumam gerek çünkü sabah erken kalkmalıyım.");
+    const res = evaluateWriting(13, "Erken uyumam gerek çünkü sabah erken kalkmalıyım.");
     expect(res.status).toBe('success');
     expect(res.feedback).toContain('Keni shkruar saktë për detyrimet');
   });
 
   it('fails inputs that are under 10 characters', () => {
-    const res = evaluateWriting(17, "Gerek");
+    const res = evaluateWriting(13, "Gerek");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain('shumë i shkurtër');
   });
 
   it('fails inputs missing obligation indicators', () => {
-    const res = evaluateWriting(17, "Ben Türkçe konuşabilirim ve araba sürebilirim.");
+    const res = evaluateWriting(13, "Ben Türkçe konuşabilirim ve araba sürebilirim.");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain('Sigurohuni që të përdorni mënyrën detyrore');
   });

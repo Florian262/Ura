@@ -30,7 +30,7 @@ describe('PastContinuousStrategy Şimdiki Zamanın Hikayesi Conjugation', () => 
 
 describe('A2 Chapter 7 Lesson Blueprint (ID 19)', () => {
   it('conforms to lesson schema constraints', () => {
-    expect(a2Chapter7.id).toBe(19);
+    expect(a2Chapter7.id).toBe(15);
     expect(a2Chapter7.level).toBe('A2');
     expect(a2Chapter7.orderIndex).toBe(7);
     expect(a2Chapter7.title.turkish).toBe('Şimdiki Zamanın Hikayesi');
@@ -50,31 +50,31 @@ describe('A2 Chapter 7 Lesson Blueprint (ID 19)', () => {
 
 describe('Writing Validation for A2 Chapter 7 (ID 19)', () => {
   it('passes valid childhood and past habit descriptions', () => {
-    const res = evaluateWriting(19, "Eskiden çok kitap okuyordum.");
+    const res = evaluateWriting(15, "Eskiden çok kitap okuyordum.");
     expect(res.status).toBe('success');
     expect(res.feedback).toContain('Keni përshkruar saktë fëmijërinë');
   });
 
   it('passes plural past continuous descriptions', () => {
-    const res = evaluateWriting(19, "Çocukken her gün sokakta arkadaşlarımla oynuyorduk.");
+    const res = evaluateWriting(15, "Çocukken her gün sokakta arkadaşlarımla oynuyorduk.");
     expect(res.status).toBe('success');
     expect(res.feedback).toContain('Keni përshkruar saktë fëmijërinë');
   });
 
   it('fails inputs that are under 10 characters', () => {
-    const res = evaluateWriting(19, "Okuyordum");
+    const res = evaluateWriting(15, "Okuyordum");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain('shumë i shkurtër');
   });
 
   it('fails inputs missing past indicators', () => {
-    const res = evaluateWriting(19, "Her gün Türkçe çalışıyorum.");
+    const res = evaluateWriting(15, "Her gün Türkçe çalışıyorum.");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain("Mungon një tregues i fëmijërisë");
   });
 
   it('fails inputs missing past continuous verb forms', () => {
-    const res = evaluateWriting(19, "Eskiden her gün Türkçe çalıştım.");
+    const res = evaluateWriting(15, "Eskiden her gün Türkçe çalıştım.");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain("Nuk u gjet asnjë folje e zgjedhuar saktë në kohën e shkuar të vazhdueshme");
   });

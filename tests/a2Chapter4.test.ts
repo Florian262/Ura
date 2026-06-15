@@ -30,7 +30,7 @@ describe('PotentialStrategy Yeterlilik Fiili Conjugation', () => {
 
 describe('A2 Chapter 4 Lesson Blueprint (ID 16)', () => {
   it('conforms to lesson schema constraints', () => {
-    expect(a2Chapter4.id).toBe(16);
+    expect(a2Chapter4.id).toBe(12);
     expect(a2Chapter4.level).toBe('A2');
     expect(a2Chapter4.orderIndex).toBe(4);
     expect(a2Chapter4.title.turkish).toBe('Yeterlilik Fiili (-abil / -ebil)');
@@ -50,25 +50,25 @@ describe('A2 Chapter 4 Lesson Blueprint (ID 16)', () => {
 
 describe('Writing Validation for A2 Chapter 4 (ID 16)', () => {
   it('passes valid potential ability descriptions (positive)', () => {
-    const res = evaluateWriting(16, "Ben Türkçe konuşabilirim ve araba sürebilirim.");
+    const res = evaluateWriting(12, "Ben Türkçe konuşabilirim ve araba sürebilirim.");
     expect(res.status).toBe('success');
     expect(res.feedback).toContain('Keni përshkruar saktë aftësitë tuaja');
   });
 
   it('passes valid potential ability descriptions (negative)', () => {
-    const res = evaluateWriting(16, "Çok iyi gitar çalabilirim ama yüzemem.");
+    const res = evaluateWriting(12, "Çok iyi gitar çalabilirim ama yüzemem.");
     expect(res.status).toBe('success');
     expect(res.feedback).toContain('Keni përshkruar saktë aftësitë tuaja');
   });
 
   it('fails inputs that are under 10 characters', () => {
-    const res = evaluateWriting(16, "Yaparım");
+    const res = evaluateWriting(12, "Yaparım");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain('shumë i shkurtër');
   });
 
   it('fails inputs missing ability/potential verbs', () => {
-    const res = evaluateWriting(16, "Dün okula gittim ve bir kitap okudum.");
+    const res = evaluateWriting(12, "Dün okula gittim ve bir kitap okudum.");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain('Nuk u gjet asnjë folje e zgjedhuar saktë në formën e mundësisë');
   });

@@ -170,7 +170,7 @@ export function findMatchInDictionary(stem: string, allowConjunctions = true): D
   return null;
 }
 
-interface StrippedSuffix {
+export interface StrippedSuffix {
   suffix: string;
   label: string;
   meaning: string;
@@ -178,6 +178,8 @@ interface StrippedSuffix {
 }
 
 const SUFFIX_DETAILS: Array<{ pattern: RegExp; type: string; label: string; meaning: string }> = [
+  // Since suffix (spaces removed in clean word)
+  { pattern: /(?:d|t)[ıiuü]ğ[ıiuü](?:m|n|miz|niz)?(?:dan|den)beri$/i, type: 'since', label: 'diğinden beri (që kur)', meaning: 'që kur' },
   // Plural
   { pattern: /(?:lar|ler)$/i, type: 'plural', label: 'ler/lar (shumës)', meaning: 'shumës' },
   // Person Copula / Verb person - Split optional 'y' to prevent greedy root collision
@@ -199,6 +201,9 @@ const SUFFIX_DETAILS: Array<{ pattern: RegExp; type: string; label: string; mean
   { pattern: /(?:nın|nin|nun|nün)$/i, type: 'case', label: 'in (e/i)', meaning: 'i/e (gjini)' },
   { pattern: /(?:ın|in|un|ün)$/i, type: 'case', label: 'in (e/i)', meaning: 'i/e (gjini)' },
   { pattern: /(?:ye|ya)$/i, type: 'case', label: 'e (drejt/te)', meaning: 'drejt / te' },
+  // Active participle (placed here so it is checked before e/a and n, but after dan/den/ta/te/etc. to avoid masking them)
+  { pattern: /(?:yan|yen)$/i, type: 'participle', label: 'en (që)', meaning: 'që' },
+  { pattern: /(?:an|en)$/i, type: 'participle', label: 'en (që)', meaning: 'që' },
   { pattern: /(?:e|a)$/i, type: 'case', label: 'e (drejt/te)', meaning: 'drejt / te' },
   { pattern: /(?:yı|yi|yu|yü)$/i, type: 'case', label: 'i (kallëzore)', meaning: '(kallëzore)' },
   { pattern: /(?:ı|i|u|ü)$/i, type: 'case', label: 'i (kallëzore)', meaning: '(kallëzore)' },
@@ -228,12 +233,16 @@ const SUFFIX_DETAILS: Array<{ pattern: RegExp; type: string; label: string; mean
   { pattern: /(?:ıp|ip|up|üp)$/i, type: 'gerund', label: 'ip (duke)', meaning: 'duke' },
   { pattern: /(?:yınca|yince|yunca|yünce)$/i, type: 'gerund', label: 'ince (kur)', meaning: 'kur' },
   { pattern: /(?:ınca|ince|unca|ünce)$/i, type: 'gerund', label: 'ince (kur)', meaning: 'kur' },
-  { pattern: /(?:yan|yen)$/i, type: 'participle', label: 'en (që)', meaning: 'që' },
-  { pattern: /(?:an|en)$/i, type: 'participle', label: 'en (që)', meaning: 'që' },
   { pattern: /(?:dik|dık|duk|dük|tik|tık|tuk|tük|diğ|dığ|duğ|düğ|tiğ|tığ|tuğ|tüğ)$/i, type: 'participle', label: 'dik (pjesore)', meaning: 'që ka' },
   { pattern: /(?<=[aeıioöuüâîû])r$/i, type: 'tense', label: 'ar (kohë e gjerë)', meaning: 'zakonisht' },
   { pattern: /(?<=[bcçdfgğhjklmnprsştvyz])(?:ar|er|ır|ir|ur|ür)$/i, type: 'tense', label: 'ar (kohë e gjerë)', meaning: 'zakonisht' },
   { pattern: /(?:malı|meli)$/i, type: 'tense', label: 'meli (detyrim)', meaning: 'duhet të' },
+  { pattern: /(?:saydılar|seydiler)$/i, type: 'conditional', label: 'seydi (sikur ata të)', meaning: 'sikur të' },
+  { pattern: /(?:saydık|seydik)$/i, type: 'conditional', label: 'seydi (sikur ne të)', meaning: 'sikur të' },
+  { pattern: /(?:saydınız|seydiniz)$/i, type: 'conditional', label: 'seydi (sikur ju të)', meaning: 'sikur të' },
+  { pattern: /(?:saydım|seydim)$/i, type: 'conditional', label: 'seydi (sikur unë të)', meaning: 'sikur të' },
+  { pattern: /(?:saydın|seydin)$/i, type: 'conditional', label: 'seydi (sikur ti të)', meaning: 'sikur të' },
+  { pattern: /(?:saydı|seydi)$/i, type: 'conditional', label: 'seydi (sikur të)', meaning: 'sikur të' },
   { pattern: /(?:salar|seler)$/i, type: 'conditional', label: 'seler (nëse ata)', meaning: 'nëse ata' },
   { pattern: /(?:sak|sek)$/i, type: 'conditional', label: 'sek (nëse ne)', meaning: 'nëse ne' },
   { pattern: /(?:sa|se)$/i, type: 'conditional', label: 'se (nëse)', meaning: 'nëse' },
@@ -296,14 +305,46 @@ export const compoundFirstWords: Set<string> = new Set(
     .filter(Boolean)
 );
 
-export function lookupWord(rawWord: string): DictionaryEntry | null {
+export interface WordAnalysis {
+  entry: DictionaryEntry;
+  suffixes: StrippedSuffix[];
+  rootWord: string;
+  cleanWord: string;
+}
+
+const stemmerCache = new Map<string, WordAnalysis | null>();
+
+export function analyzeWord(rawWord: string): WordAnalysis | null {
   const clean = cleanTurkishWord(rawWord);
   if (!clean) return null;
 
+  if (stemmerCache.has(clean)) {
+    return stemmerCache.get(clean) || null;
+  }
+
   const result = recursiveLookupWithSuffixes(clean);
-  if (!result) return null;
+  if (!result) {
+    stemmerCache.set(clean, null);
+    return null;
+  }
 
   const { entry, suffixes } = result;
+  const analysis: WordAnalysis = {
+    entry,
+    suffixes,
+    rootWord: entry.word,
+    cleanWord: clean
+  };
+
+  stemmerCache.set(clean, analysis);
+  return analysis;
+}
+
+export function lookupWord(rawWord: string): DictionaryEntry | null {
+  const analysis = analyzeWord(rawWord);
+  if (!analysis) return null;
+
+  const { entry, suffixes } = analysis;
 
   // If no suffixes were stripped, return the entry as is
   if (suffixes.length === 0) {

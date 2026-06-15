@@ -1,7 +1,7 @@
 import type { UnifiedLesson } from './a1_chapter1';
 
 export const b1Chapter4: UnifiedLesson = {
-  id: 24,
+  id: 20,
   level: 'B1',
   orderIndex: 4,
   title: {

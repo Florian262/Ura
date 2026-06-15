@@ -4,7 +4,7 @@ import { evaluateWriting } from '../src/core/harmony/writingValidation';
 
 describe('A1 Chapter 0 Lesson Blueprint (ID 21)', () => {
   it('conforms to lesson schema constraints', () => {
-    expect(a1Chapter0.id).toBe(21);
+    expect(a1Chapter0.id).toBe(0);
     expect(a1Chapter0.level).toBe('A1');
     expect(a1Chapter0.orderIndex).toBe(0);
     expect(a1Chapter0.title.turkish).toBe('Türk Alfabesi ve Telaffuz');
@@ -24,42 +24,42 @@ describe('A1 Chapter 0 Lesson Blueprint (ID 21)', () => {
 
 describe('Writing Validation for A1 Chapter 0 (ID 21)', () => {
   it('passes perfect translation of "Mirëdita, si jeni?"', () => {
-    const res = evaluateWriting(21, "İyi günler, nasılsınız?");
+    const res = evaluateWriting(0, "İyi günler, nasılsınız?");
     expect(res.status).toBe('success');
     expect(res.feedback).toContain('Urime! Përkthimi juaj është krejtësisht i saktë');
   });
 
   it('passes translation without punctuation', () => {
-    const res = evaluateWriting(21, "İyi günler nasılsınız");
+    const res = evaluateWriting(0, "İyi günler nasılsınız");
     expect(res.status).toBe('success');
   });
 
   it('fails inputs that are under 10 characters', () => {
-    const res = evaluateWriting(21, "İyi");
+    const res = evaluateWriting(0, "İyi");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain('shumë i shkurtër');
   });
 
   it('fails inputs missing the greeting "İyi"', () => {
-    const res = evaluateWriting(21, "Güzel günler nasılsınız?");
+    const res = evaluateWriting(0, "Güzel günler nasılsınız?");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain('Mungon fjala \'İyi\'');
   });
 
   it('fails inputs missing the word "günler"', () => {
-    const res = evaluateWriting(21, "İyi akşamlar nasılsınız?");
+    const res = evaluateWriting(0, "İyi akşamlar nasılsınız?");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain('Mungon fjala \'günler\'');
   });
 
   it('fails inputs missing the pyetje "nasılsınız"', () => {
-    const res = evaluateWriting(21, "İyi günler nasılsın?");
+    const res = evaluateWriting(0, "İyi günler nasılsın?");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain('Mungon fjala \'nasılsınız\'');
   });
 
   it('fails inputs missing proper pattern matching', () => {
-    const res = evaluateWriting(21, "İyi nasılsınız günler?");
+    const res = evaluateWriting(0, "İyi nasılsınız günler?");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain('Sigurohuni që keni shkruar \'İyi günler\'');
   });

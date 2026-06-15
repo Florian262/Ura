@@ -9,7 +9,7 @@ describe('Unified Lesson Blueprints Content Integrity', () => {
     ALL_UNIFIED_LESSONS.forEach((lesson) => {
       // Root metadata
       expect(lesson.id).toBeTypeOf('number');
-      expect(lesson.id).toBeGreaterThan(0);
+      expect(lesson.id).toBeGreaterThanOrEqual(0);
       expect(['A1', 'A2', 'B1', 'B2', 'C1', 'C2']).toContain(lesson.level);
       expect(lesson.orderIndex).toBeTypeOf('number');
       expect(lesson.orderIndex).toBeGreaterThanOrEqual(0);

@@ -32,7 +32,7 @@ describe('A2 Level Chapter 1 Suffix Strategy', () => {
 
 describe('A2 Level Chapter 1 Seed Data Validation', () => {
   it('has valid metadata and order index', () => {
-    expect(a2Chapter1.id).toBe(3);
+    expect(a2Chapter1.id).toBe(9);
     expect(a2Chapter1.level).toBe('A2');
     expect(a2Chapter1.orderIndex).toBe(1);
     expect(a2Chapter1.title.turkish).toBe('Geçmiş Zaman ve Hafta Sonu');

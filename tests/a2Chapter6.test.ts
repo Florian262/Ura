@@ -25,7 +25,7 @@ describe('AblativeStrategy Rasa Rrjedhore Conjugation', () => {
 
 describe('A2 Chapter 6 Lesson Blueprint (ID 18)', () => {
   it('conforms to lesson schema constraints', () => {
-    expect(a2Chapter6.id).toBe(18);
+    expect(a2Chapter6.id).toBe(14);
     expect(a2Chapter6.level).toBe('A2');
     expect(a2Chapter6.orderIndex).toBe(6);
     expect(a2Chapter6.title.turkish).toBe('Karşılaştırma ve Özellikler');
@@ -45,31 +45,31 @@ describe('A2 Chapter 6 Lesson Blueprint (ID 18)', () => {
 
 describe('Writing Validation for A2 Chapter 6 (ID 18)', () => {
   it('passes valid comparative descriptions', () => {
-    const res = evaluateWriting(18, "Tiran İstanbul'dan daha sakin.");
+    const res = evaluateWriting(14, "Tiran İstanbul'dan daha sakin.");
     expect(res.status).toBe('success');
     expect(res.feedback).toContain('Keni shkruar saktë krahasimin');
   });
 
   it('passes valid common noun comparative descriptions', () => {
-    const res = evaluateWriting(18, "Masa sandalyeden daha büyük.");
+    const res = evaluateWriting(14, "Masa sandalyeden daha büyük.");
     expect(res.status).toBe('success');
     expect(res.feedback).toContain('Keni shkruar saktë krahasimin');
   });
 
   it('fails inputs that are under 10 characters', () => {
-    const res = evaluateWriting(18, "Daha");
+    const res = evaluateWriting(14, "Daha");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain('shumë i shkurtër');
   });
 
   it('fails inputs missing comparative keyword daha', () => {
-    const res = evaluateWriting(18, "Tiran İstanbul'dan sakin.");
+    const res = evaluateWriting(14, "Tiran İstanbul'dan sakin.");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain("Mungon fjala krahasuese 'daha'");
   });
 
   it('fails inputs missing ablative suffix', () => {
-    const res = evaluateWriting(18, "Tiran İstanbul daha sakin.");
+    const res = evaluateWriting(14, "Tiran İstanbul daha sakin.");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain('Nuk u gjet asnjë emër i zgjedhuar saktë në rasën rrjedhore');
   });

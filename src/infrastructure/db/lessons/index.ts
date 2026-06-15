@@ -26,7 +26,7 @@ import { b1Chapter8 } from './b1_chapter8';
 import type { UnifiedLesson } from './a1_chapter1';
 
 const b2Chapter1: UnifiedLesson = {
-  id: 5,
+  id: 25,
   level: 'B2',
   orderIndex: 1,
   title: {
@@ -45,7 +45,7 @@ const b2Chapter1: UnifiedLesson = {
 };
 
 const c1Chapter1: UnifiedLesson = {
-  id: 6,
+  id: 26,
   level: 'C1',
   orderIndex: 1,
   title: {
@@ -64,7 +64,7 @@ const c1Chapter1: UnifiedLesson = {
 };
 
 const c2Chapter1: UnifiedLesson = {
-  id: 7,
+  id: 27,
   level: 'C2',
   orderIndex: 1,
   title: {

@@ -2,16 +2,16 @@ import { describe, it, expect } from 'vitest';
 import { ALL_UNIFIED_LESSONS } from '../src/infrastructure/db/lessons';
 
 describe('Level A1 Listening Comprehension Seeds Integrity', () => {
-  it('should verify listening section for A1 chapters 1 to 8, excluding chapter 0 (id 21)', () => {
+  it('should verify listening section for A1 chapters 1 to 8, excluding chapter 0 (id 0)', () => {
     const a1Lessons = ALL_UNIFIED_LESSONS.filter(l => l.level === 'A1');
     
-    // Check chapter 0 (id 21) has no listening
-    const ch0 = a1Lessons.find(l => l.id === 21);
+    // Check chapter 0 (id 0) has no listening
+    const ch0 = a1Lessons.find(l => l.id === 0);
     expect(ch0).toBeDefined();
     expect(ch0?.listening).toBeUndefined();
 
     // Check chapters 1 to 8 have listening
-    const activeLessons = a1Lessons.filter(l => l.id !== 21);
+    const activeLessons = a1Lessons.filter(l => l.id !== 0);
     expect(activeLessons.length).toBe(8);
 
     activeLessons.forEach((lesson) => {

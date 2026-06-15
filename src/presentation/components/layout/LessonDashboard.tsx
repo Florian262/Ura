@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import anime from 'animejs';
 import { useLesson } from '../../../application/state/LessonContext';
 import type { Chapter } from '../../../infrastructure/db/seedData';
-import { ProgressRepository } from '../../../infrastructure/repository/ProgressRepository';
+
 import { ChapterRepository } from '../../../infrastructure/repository/ChapterRepository';
 
 const UraIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
@@ -32,7 +32,8 @@ export const LessonDashboard: React.FC = () => {
     hasSavedSession,
     resumeSession,
     resetSession,
-    toggleSession
+    toggleSession,
+    progressMap
   } = useLesson();
   
   const [isTimerExpanded, setIsTimerExpanded] = useState<boolean>(false);
@@ -144,7 +145,7 @@ export const LessonDashboard: React.FC = () => {
     const chapterList = levels[level] || [];
     if (chapterList.length === 0) return { completed: 0, total: 0, percentage: 0 };
     const completedCount = chapterList.filter(ch => {
-      const progress = ProgressRepository.getChapterProgress(ch.id);
+      const progress = progressMap[ch.id];
       return progress?.is_completed === true;
     }).length;
     const percentage = Math.round((completedCount / chapterList.length) * 100);
@@ -358,7 +359,6 @@ export const LessonDashboard: React.FC = () => {
   };
 
   const stats = useMemo(() => {
-    const progressMap = ProgressRepository.getProgressMap();
     const progressItems = Object.values(progressMap);
     const completedChapters = progressItems.filter(p => p.is_completed).length;
     const completionPercentage = chapters.length > 0 
@@ -378,10 +378,9 @@ export const LessonDashboard: React.FC = () => {
       balkanWordsMastered,
       completedChapters
     };
-  }, [chapters]);
+  }, [chapters, progressMap]);
 
   const weeklyActivity = useMemo(() => {
-    const progressMap = ProgressRepository.getProgressMap();
     const progressItems = Object.values(progressMap);
     
     const days = [];
@@ -410,10 +409,10 @@ export const LessonDashboard: React.FC = () => {
       });
     }
     return days;
-  }, [chapters]);
+  }, [chapters, progressMap]);
 
   const getChapterStatus = (chapterId: number) => {
-    const progress = ProgressRepository.getChapterProgress(chapterId);
+    const progress = progressMap[chapterId];
     if (!progress) {
       return { 
         label: 'E paprekur', 
@@ -436,7 +435,7 @@ export const LessonDashboard: React.FC = () => {
     const a2Chapters = levels['A2'] || [];
     if (a2Chapters.length === 0) return false;
     return a2Chapters.every(ch => {
-      const progress = ProgressRepository.getChapterProgress(ch.id);
+      const progress = progressMap[ch.id];
       return progress?.is_completed === true;
     });
   };

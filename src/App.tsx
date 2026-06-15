@@ -11,6 +11,7 @@ import { SplashScreen } from './presentation/components/layout/SplashScreen';
 import { VocabularyBuilderPage } from './presentation/components/layout/VocabularyBuilderPage';
 import { A2FinishingTestPage } from './presentation/components/layout/A2FinishingTestPage';
 import JourneyDashboard from './presentation/components/layout/JourneyDashboard';
+import { EverydayPracticePage } from './presentation/components/layout/EverydayPracticePage';
 const HomeIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
     <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -62,6 +63,12 @@ const BridgeIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" })
   </svg>
 );
 
+const ChatIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+  </svg>
+);
+
 
 const MainLayout: React.FC = () => {
   const [showSplash, setShowSplash] = useState<boolean>(true);
@@ -73,7 +80,8 @@ const MainLayout: React.FC = () => {
     theme, 
     toggleTheme, 
     activeSection, 
-    setActiveSection 
+    setActiveSection,
+    triggerScrollToSection
   } = useLesson();
 
   
@@ -85,6 +93,7 @@ const MainLayout: React.FC = () => {
     { id: 'lessons', label: 'Dashboard', icon: <HomeIcon className="w-5 h-5" />, desc: 'Kapitujt e Studimit' },
     { id: 'journey', label: 'Udhëtimi', icon: <BridgeIcon className="w-5 h-5" />, desc: 'Udhëtimi Parallaks' },
     { id: 'lesson_active', label: 'Kapitulli Aktiv', icon: <BookOpenIcon className="w-5 h-5" />, desc: 'Mësimi aktual', disabled: !currentChapter },
+    { id: 'everyday_practice', label: 'Praktikë Ditore', icon: <ChatIcon className="w-5 h-5" />, desc: 'Dialogje & Tregime Praktike' },
     { id: 'dictionary', label: 'Fjalori', icon: <SearchIcon className="w-5 h-5" />, desc: 'Balkanizmat e përbashkët' },
     { id: 'vocab_builder', label: 'Fjalorthi Tematik', icon: <BooksIcon className="w-5 h-5" />, desc: 'Fjalët A1 & A2' },
     { id: 'playground', label: 'Playground', icon: <LightningIcon className="w-5 h-5" />, desc: 'Motorri Aglutinues' },
@@ -106,8 +115,7 @@ const MainLayout: React.FC = () => {
 
   const handleSectionClick = (sectionId: string) => {
     setActiveSection(sectionId);
-    const event = new CustomEvent('navigate-to-section', { detail: sectionId });
-    window.dispatchEvent(event);
+    triggerScrollToSection(sectionId);
     setMobileMenuOpen(false);
   };
 
@@ -119,6 +127,8 @@ const MainLayout: React.FC = () => {
         return <JourneyDashboard />;
       case 'lesson_active':
         return <ChapterContainer />;
+      case 'everyday_practice':
+        return <EverydayPracticePage />;
       case 'dictionary':
         return <DictionaryPage />;
       case 'vocab_builder':

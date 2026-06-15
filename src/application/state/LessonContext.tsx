@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 import type { Chapter, ReadingBlock, ReadingQuestion, Vocabulary, GrammarCard, Exercise, ListeningBlock, ListeningQuestion } from '../../infrastructure/db/seedData';
 import { ChapterRepository } from '../../infrastructure/repository/ChapterRepository';
-import { ProgressRepository } from '../../infrastructure/repository/ProgressRepository';
+import { ProgressRepository, type UserProgress } from '../../infrastructure/repository/ProgressRepository';
 
 
 interface LessonContextType {
@@ -23,6 +23,9 @@ interface LessonContextType {
   writingPreference: 'self_check' | 'strict';
   userName: string;
   theme: 'light' | 'dark';
+  progressMap: Record<number, UserProgress>;
+  scrollTarget: { sectionId: string; timestamp: number } | null;
+  triggerScrollToSection: (sectionId: string) => void;
   
   // Timer State
   sessionSeconds: number;
@@ -58,6 +61,12 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const [activePage, setActivePage] = useState<string>('lessons');
   const [userName, setUserNameState] = useState<string>('');
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [progressMap, setProgressMap] = useState<Record<number, UserProgress>>({});
+  const [scrollTarget, setScrollTarget] = useState<{ sectionId: string; timestamp: number } | null>(null);
+
+  const triggerScrollToSection = (sectionId: string) => {
+    setScrollTarget({ sectionId, timestamp: Date.now() });
+  };
   
   // Chapter Content Relational States
   const [readingBlock, setReadingBlock] = useState<ReadingBlock | null>(null);
@@ -157,6 +166,10 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     const savedName = localStorage.getItem('ura_user_name') || '';
     setUserNameState(savedName);
 
+    // Load progress map
+    const pMap = ProgressRepository.getProgressMap();
+    setProgressMap(pMap);
+
     // Load saved theme
     const savedTheme = (localStorage.getItem('ura_theme') as 'light' | 'dark') || 'light';
     setTheme(savedTheme);
@@ -235,13 +248,14 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       setCarouselStepState(0);
       setWritingPreferenceState('self_check');
       
-      ProgressRepository.saveChapterProgress({
+      const updated = ProgressRepository.saveChapterProgress({
         chapter_id: chapterId,
         is_completed: false,
         last_viewed_section: 'reading',
         carousel_grammar_step: 0,
         writing_validation_preference: 'self_check'
       });
+      setProgressMap(prev => ({ ...prev, [chapterId]: updated }));
     }
 
     setActivePage('lesson_active');
@@ -250,51 +264,55 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
   const saveCurrentProgress = (targetSection?: string) => {
     if (!currentChapter) return;
-    ProgressRepository.saveChapterProgress({
+    const updated = ProgressRepository.saveChapterProgress({
       chapter_id: currentChapter.id,
       is_completed: readingCompleted,
       last_viewed_section: targetSection || activeSection,
       carousel_grammar_step: carouselStep,
       writing_validation_preference: writingPreference
     });
+    setProgressMap(prev => ({ ...prev, [currentChapter.id]: updated }));
   };
 
   const setActiveSection = (sectionId: string) => {
     setActiveSectionState(sectionId);
     if (currentChapter) {
-      ProgressRepository.saveChapterProgress({
+      const updated = ProgressRepository.saveChapterProgress({
         chapter_id: currentChapter.id,
         is_completed: readingCompleted,
         last_viewed_section: sectionId,
         carousel_grammar_step: carouselStep,
         writing_validation_preference: writingPreference
       });
+      setProgressMap(prev => ({ ...prev, [currentChapter.id]: updated }));
     }
   };
 
   const setCarouselStep = (step: number) => {
     setCarouselStepState(step);
     if (currentChapter) {
-      ProgressRepository.saveChapterProgress({
+      const updated = ProgressRepository.saveChapterProgress({
         chapter_id: currentChapter.id,
         is_completed: readingCompleted,
         last_viewed_section: activeSection,
         carousel_grammar_step: step,
         writing_validation_preference: writingPreference
       });
+      setProgressMap(prev => ({ ...prev, [currentChapter.id]: updated }));
     }
   };
 
   const setWritingPreference = (pref: 'self_check' | 'strict') => {
     setWritingPreferenceState(pref);
     if (currentChapter) {
-      ProgressRepository.saveChapterProgress({
+      const updated = ProgressRepository.saveChapterProgress({
         chapter_id: currentChapter.id,
         is_completed: readingCompleted,
         last_viewed_section: activeSection,
         carousel_grammar_step: carouselStep,
         writing_validation_preference: pref
       });
+      setProgressMap(prev => ({ ...prev, [currentChapter.id]: updated }));
     }
   };
 
@@ -302,6 +320,7 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     if (!currentChapter) return;
     ProgressRepository.markChapterCompleted(currentChapter.id);
     setReadingCompleted(true);
+    setProgressMap(ProgressRepository.getProgressMap());
   };
 
   const exitToDashboard = () => {
@@ -357,6 +376,7 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     if (confirmation) {
       localStorage.clear();
       setChapters(ChapterRepository.getAllChapters());
+      setProgressMap({});
       setCurrentChapter(null);
       setReadingBlock(null);
       setReadingQuestions([]);
@@ -400,6 +420,9 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       writingPreference,
       userName,
       theme,
+      progressMap,
+      scrollTarget,
+      triggerScrollToSection,
       sessionSeconds,
       lifetimeSeconds,
       isSessionRunning,

@@ -28,7 +28,7 @@ describe('AdverbialIpStrategy Conjugation (-ip / -ıp / -up / -üp)', () => {
 
 describe('A2 Chapter 8 Lesson Blueprint (ID 20)', () => {
   it('conforms to lesson schema constraints', () => {
-    expect(a2Chapter8.id).toBe(20);
+    expect(a2Chapter8.id).toBe(16);
     expect(a2Chapter8.level).toBe('A2');
     expect(a2Chapter8.orderIndex).toBe(8);
     expect(a2Chapter8.title.turkish).toBe('Bağlaçlar ve Kolay Zarf-Fiiller');
@@ -48,37 +48,37 @@ describe('A2 Chapter 8 Lesson Blueprint (ID 20)', () => {
 
 describe('Writing Validation for A2 Chapter 8 (ID 20)', () => {
   it('passes valid sentences containing connectors', () => {
-    const res = evaluateWriting(20, "Sabah uyanıp kahvaltı yaptım çünkü çok açtım.");
+    const res = evaluateWriting(16, "Sabah uyanıp kahvaltı yaptım çünkü çok açtım.");
     expect(res.status).toBe('success');
     expect(res.feedback).toContain('Keni përshkruar saktë veprimet dhe arsyet');
   });
 
   it('passes valid sentences using -ip adverbials and other connectors', () => {
-    const res = evaluateWriting(20, "Kütüphaneye gidip ders çalıştım, bu yüzden yoruldum.");
+    const res = evaluateWriting(16, "Kütüphaneye gidip ders çalıştım, bu yüzden yoruldum.");
     expect(res.status).toBe('success');
     expect(res.feedback).toContain('Keni përshkruar saktë veprimet dhe arsyet');
   });
 
   it('fails inputs that are under 10 characters', () => {
-    const res = evaluateWriting(20, "Gidip");
+    const res = evaluateWriting(16, "Gidip");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain('shumë i shkurtër');
   });
 
   it('fails inputs missing both connectors and -ip forms', () => {
-    const res = evaluateWriting(20, "Ben bugün evde ders çalıştım.");
+    const res = evaluateWriting(16, "Ben bugün evde ders çalıştım.");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain("Sigurohuni që të përdorni të paktën një lidhëz");
   });
 
   it('fails inputs with voicing violations (gitip instead of gidip)', () => {
-    const res = evaluateWriting(20, "Dün markete gitip meyve aldım.");
+    const res = evaluateWriting(16, "Dün markete gitip meyve aldım.");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain("Gabim Zbutjeje: Bashkëtingëllorja 't' e foljes 'git' duhet të zbutet në 'd'");
   });
 
   it('fails inputs with vowel harmony violations in the -ip suffix', () => {
-    const res = evaluateWriting(20, "Bugün eve gelıp dinlendim.");
+    const res = evaluateWriting(16, "Bugün eve gelıp dinlendim.");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain("Gabim Harmonie: Rrënja 'gel' kërkon prapashtesën '-ip'");
   });

@@ -69,7 +69,17 @@ export const ReadingModule: React.FC = () => {
     renderAbove: boolean,
     key: string
   ) => {
-    setActiveWordPopup({ entry, pos, renderAbove, key });
+    const scrollTop = window.scrollY || window.pageYOffset;
+    const scrollLeft = window.scrollX || window.pageXOffset;
+    setActiveWordPopup({
+      entry,
+      pos: {
+        top: pos.top + scrollTop,
+        left: pos.left + scrollLeft
+      },
+      renderAbove,
+      key
+    });
   };
 
   const closeWordPopup = () => {
@@ -98,50 +108,44 @@ export const ReadingModule: React.FC = () => {
   useEffect(() => {
     if (!activeWordPopup) return;
 
-    const updatePosition = () => {
+    const handleScroll = (e: Event) => {
+      // If the scroll event comes from a nested container (not the window/document), close the popup immediately to avoid drift
+      if (e.target !== window && e.target !== document) {
+        closeWordPopup();
+        return;
+      }
+
       const element = document.getElementById(`word-span-${activeWordPopup.key}`);
       if (element) {
         const rect = element.getBoundingClientRect();
         
-        // 1. Close popup if the word scrolls completely out of the viewport
+        // Close popup if the word scrolls completely out of the viewport
         const isOutOfViewport = rect.bottom < 0 || rect.top > window.innerHeight;
         if (isOutOfViewport) {
           closeWordPopup();
           return;
         }
+      }
+    };
 
-        // 2. Close popup if the word scrolls outside its scrollable parent container's visible bounds
-        let parent = element.parentElement;
-        while (parent && parent !== document.body) {
-          const style = window.getComputedStyle(parent);
-          const hasScroll = style.overflow === 'auto' || style.overflow === 'scroll' || 
-                            style.overflowY === 'auto' || style.overflowY === 'scroll' || 
-                            style.overflowX === 'auto' || style.overflowX === 'scroll';
-          if (hasScroll) {
-            const parentRect = parent.getBoundingClientRect();
-            const isOutOfParent = rect.bottom < parentRect.top || rect.top > parentRect.bottom ||
-                                  rect.right < parentRect.left || rect.left > parentRect.right;
-            if (isOutOfParent) {
-              closeWordPopup();
-              return;
-            }
-          }
-          parent = parent.parentElement;
-        }
-
-        // 3. Recalculate positions
+    const handleResize = () => {
+      const element = document.getElementById(`word-span-${activeWordPopup.key}`);
+      if (element) {
+        const rect = element.getBoundingClientRect();
         const popupWidth = 256;
         const leftPos = rect.left + (rect.width / 2) - (popupWidth / 2);
         
         const spaceBelow = window.innerHeight - rect.bottom;
         const shouldRenderAbove = spaceBelow < 180;
         
-        const popupTop = shouldRenderAbove ? rect.top - 8 : rect.bottom + 8;
-        const popupLeft = Math.max(12, Math.min(window.innerWidth - popupWidth - 12, leftPos));
+        const scrollTop = window.scrollY || window.pageYOffset;
+        const scrollLeft = window.scrollX || window.pageXOffset;
+        
+        const popupTop = shouldRenderAbove ? rect.top + scrollTop - 8 : rect.bottom + scrollTop + 8;
+        const popupLeft = Math.max(12, Math.min(window.innerWidth - popupWidth - 12, leftPos + scrollLeft));
 
         setActiveWordPopup(prev => {
           if (!prev) return null;
-          // Avoid triggering rerenders if values did not change
           if (prev.pos.top === popupTop && prev.pos.left === popupLeft && prev.renderAbove === shouldRenderAbove) {
             return prev;
           }
@@ -154,13 +158,12 @@ export const ReadingModule: React.FC = () => {
       }
     };
 
-    // Use capturing (true) to intercept scrolls on any scrollable child container on the page
-    window.addEventListener('scroll', updatePosition, true);
-    window.addEventListener('resize', updatePosition);
+    window.addEventListener('scroll', handleScroll, true);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener('scroll', updatePosition, true);
-      window.removeEventListener('resize', updatePosition);
+      window.removeEventListener('scroll', handleScroll, true);
+      window.removeEventListener('resize', handleResize);
     };
   }, [activeWordPopup]);
 
@@ -985,8 +988,9 @@ export const ReadingModule: React.FC = () => {
             width: '256px',
             transform: activeWordPopup.renderAbove ? 'translateY(-100%)' : 'none'
           }}
-          className="fixed z-55 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-850 rounded-2xl shadow-lg p-4 animate-fade-in text-left pointer-events-auto flex flex-col gap-2.5"
+          className="absolute z-55 pointer-events-auto"
         >
+          <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-850 rounded-2xl shadow-lg p-4 animate-fade-in text-left flex flex-col gap-2.5">
           {/* Header */}
           <div className="flex justify-between items-start border-b border-neutral-100 dark:border-neutral-800 pb-1.5">
             <div>
@@ -1066,9 +1070,10 @@ export const ReadingModule: React.FC = () => {
               Mbyll
             </button>
           </div>
-        </div>,
-        document.body
-      )}
+        </div>
+      </div>,
+      document.body
+    )}
 
       {/* Detail Drawer */}
       {isDrawerOpen && drawerEntry && createPortal(

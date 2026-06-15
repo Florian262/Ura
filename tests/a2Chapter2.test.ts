@@ -42,7 +42,7 @@ describe('FutureTenseStrategy Suffix Conjugation', () => {
 
 describe('A2 Chapter 2 Lesson Blueprint (ID 14)', () => {
   it('conforms to lesson schema constraints', () => {
-    expect(a2Chapter2.id).toBe(14);
+    expect(a2Chapter2.id).toBe(10);
     expect(a2Chapter2.level).toBe('A2');
     expect(a2Chapter2.orderIndex).toBe(2);
     expect(a2Chapter2.title.turkish).toBe('Tatil Planları ve Gelecek Zaman');
@@ -56,25 +56,25 @@ describe('A2 Chapter 2 Lesson Blueprint (ID 14)', () => {
 
 describe('Writing Validation for A2 Chapter 2 (ID 14)', () => {
   it('passes valid future tense descriptions with proper indicators', () => {
-    const res = evaluateWriting(14, "Gelecek yaz Antalya'ya gideceğim ve otelde kalacağım.");
+    const res = evaluateWriting(10, "Gelecek yaz Antalya'ya gideceğim ve otelde kalacağım.");
     expect(res.status).toBe('success');
     expect(res.feedback).toContain('Keni përshkruar saktë planet tuaja');
   });
 
   it('fails inputs that are under 10 characters', () => {
-    const res = evaluateWriting(14, "Gideceğim");
+    const res = evaluateWriting(10, "Gideceğim");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain('shumë i shkurtër');
   });
 
   it('fails inputs missing a future temporal indicator', () => {
-    const res = evaluateWriting(14, "Bugün kütüphanede ders çalışacağım.");
+    const res = evaluateWriting(10, "Bugün kütüphanede ders çalışacağım.");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain('Mungon një tregues i së ardhshmes');
   });
 
   it('fails inputs missing a future-tense conjugated verb', () => {
-    const res = evaluateWriting(14, "Gelecek yaz Antalya'ya gidiyorum.");
+    const res = evaluateWriting(10, "Gelecek yaz Antalya'ya gidiyorum.");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain('Nuk u gjet asnjë folje e zgjedhuar saktë');
   });

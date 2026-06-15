@@ -36,7 +36,7 @@ describe('AoristStrategy Geniş Zaman Conjugation', () => {
 
 describe('A2 Chapter 3 Lesson Blueprint (ID 15)', () => {
   it('conforms to lesson schema constraints', () => {
-    expect(a2Chapter3.id).toBe(15);
+    expect(a2Chapter3.id).toBe(11);
     expect(a2Chapter3.level).toBe('A2');
     expect(a2Chapter3.orderIndex).toBe(3);
     expect(a2Chapter3.title.turkish).toBe('Zakonet dhe Koha e Gjerë');
@@ -56,25 +56,25 @@ describe('A2 Chapter 3 Lesson Blueprint (ID 15)', () => {
 
 describe('Writing Validation for A2 Chapter 3 (ID 15)', () => {
   it('passes valid Geniş Zaman routine descriptions with proper indicators', () => {
-    const res = evaluateWriting(15, "Genellikle sabah erken uyanırım ve taze çay içerim.");
+    const res = evaluateWriting(11, "Genellikle sabah erken uyanırım ve taze çay içerim.");
     expect(res.status).toBe('success');
     expect(res.feedback).toContain('Keni përshkruar saktë rutinën tuaj');
   });
 
   it('fails inputs that are under 10 characters', () => {
-    const res = evaluateWriting(15, "Uyanırım");
+    const res = evaluateWriting(11, "Uyanırım");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain('shumë i shkurtër');
   });
 
   it('fails inputs missing a frequency or routine indicator', () => {
-    const res = evaluateWriting(15, "Sabah yataktan kalkarım ve yüzümü yıkarım.");
+    const res = evaluateWriting(11, "Sabah yataktan kalkarım ve yüzümü yıkarım.");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain('Mungon një tregues i rutinës');
   });
 
   it('fails inputs missing a Geniş Zaman conjugated verb', () => {
-    const res = evaluateWriting(15, "Genellikle sabah erken uyanıyorum.");
+    const res = evaluateWriting(11, "Genellikle sabah erken uyanıyorum.");
     expect(res.status).toBe('error');
     expect(res.feedback).toContain('Nuk u gjet asnjë folje e zgjedhuar saktë');
   });

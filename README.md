@@ -114,3 +114,21 @@ Ura/
 1. **Vowel Harmony**: Turkish suffixes dynamically shift vowels depending on the root word's vowels (e.g. 2-way harmony `a/ı/o/u` → `-lar` vs `e/i/ö/ü` → `-ler`).
 2. **Verb Equivalence Rules**: Maps complex concepts like the Albanian Habitores mood (admirative e.g., *paska*) directly to the Turkish indirect hearsay past tense (`-miş` e.g., *varmış*).
 3. **Phonetic Mutations**: Consonant shifts mapping grammatical transitions.
+
+---
+
+## 🔧 Local Troubleshooting & Developer Setup
+
+### Running Playwright UI/Browser Tests
+If you want to run the Playwright browser/UI tests (`npm run test:ui`), you need to install the required Playwright browser binaries first. Run:
+```bash
+npx playwright install
+```
+
+### Running the Dictionary Pipeline Scripts
+If you are modifying or updating the dictionaries inside `scripts/dictionary_pipeline`, you will need to set up the Python environment:
+1. Ensure Python 3 is installed.
+2. Install dependencies:
+   ```bash
+   pip install requests
+   ```

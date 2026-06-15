@@ -2,12 +2,12 @@ import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useLesson } from '../../../application/state/LessonContext';
 import type { Chapter } from '../../../infrastructure/db/seedData';
-import { ProgressRepository } from '../../../infrastructure/repository/ProgressRepository';
+
 
 
 
 export default function JourneyDashboard() {
-  const { chapters, loadChapter, userName, setActivePage } = useLesson();
+  const { chapters, loadChapter, userName, setActivePage, progressMap } = useLesson();
   const containerRef = useRef<HTMLDivElement>(null);
   const [expandedLevel, setExpandedLevel] = useState<string | null>(null);
 
@@ -57,7 +57,7 @@ export default function JourneyDashboard() {
     const chapterList = levels[level] || [];
     if (chapterList.length === 0) return { completed: 0, total: 0, percentage: 0 };
     const completedCount = chapterList.filter(ch => {
-      const progress = ProgressRepository.getChapterProgress(ch.id);
+      const progress = progressMap[ch.id];
       return progress?.is_completed === true;
     }).length;
     const percentage = Math.round((completedCount / chapterList.length) * 100);
@@ -65,7 +65,7 @@ export default function JourneyDashboard() {
   };
 
   const getChapterStatus = (chapterId: number) => {
-    const progress = ProgressRepository.getChapterProgress(chapterId);
+    const progress = progressMap[chapterId];
     if (!progress) {
       return { 
         label: 'E paprekur', 

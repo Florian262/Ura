@@ -1,4 +1,9 @@
 import { getVowelHarmony2, getVowelHarmony4, getLastVowel } from './vowelHarmony';
+import { analyzeWord, cleanTurkishWord } from './stemmer';
+import type { WordAnalysis } from './stemmer';
+import { WRITING_PROMPTS } from '../../infrastructure/db/writingPrompts';
+
+export { WRITING_PROMPTS };
 
 export interface EvaluationResult {
   status: 'success' | 'typo' | 'error';
@@ -25,628 +30,16 @@ export interface WritingPrompt {
   validationRules?: ValidationRule[];
 }
 
-// Prompt Configurations for all 7 chapters
-export const WRITING_PROMPTS: Record<number, WritingPrompt> = {
-  1: {
-    chapterId: 1,
-    type: 'guided', // Chapter 1 uses guided to allow names and various cities
-    promptAlbanian: "Shkruani një përshëndetje dhe prezantim të thjeshtë në turqisht (p.sh. përshëndetni, tregoni emrin tuaj dhe nga cili qytet jeni, ashtu si Ahmeti dhe Valbona në dialog).",
-    grammarTipAlbanian: "Rrjeti i fjalive duhet të përmbajë: një përshëndetje ('Merhaba' ose 'Selam'), strukturën e emrit ('Benim adım...' ose 'İsmim...'), dhe prapashtesën e prejardhjes/kombësisë '-lı/-li/-lu/-lü' + '-yım/-yim/-yum/-yüm' të bashkangjitur me emrin e qytetit tuaj (p.sh., Tiran + lı + yım = Tiranlıyım).",
-    sampleAnswers: [
-      "Merhaba! Benim adım Valbona. Tiranlıyım.",
-      "Merhaba! Benim adım Ahmet. İstanbulluyum.",
-      "Merhaba, benim adım Leyla. Kosovalıyım."
-    ],
-    grammarLabel: "Prezantimi & Origjina (-lı/yim)",
-    validationRules: [
-      {
-        type: 'required_pattern',
-        regex: 'merhaba|selam|iyi günler|iyi akşamlar|günaydın',
-        feedback: "Mungon përshëndetja në fillim të fjalisë (p.sh., 'Merhaba' ose 'Selam')."
-      },
-      {
-        type: 'required_pattern',
-        regex: 'adım|ismim|adımın|ben\\s+[a-zA-ZçğışöüÇĞİŞÖÜ]+(y[ıi])?m',
-        feedback: "Mungon struktura e prezantimit të emrit tuaj (p.sh., 'Benim adım ...' ose 'İsmim ...')."
-      },
-      {
-        type: 'origin_harmony',
-        feedback: "Mungon prapashtesa e origjinës ose kombësisë (p.sh., 'Tiranlıyım' ose 'Kosovalıyım'). Sigurohuni që keni shkruar emrin e vendit, të ndjekur nga '-lı/-li/-lu/-lü' dhe prapashtesa vetanake '-yım/-yim/-yum/-yüm'."
-      }
-    ]
-  },
-  2: {
-    chapterId: 2,
-    type: 'translation',
-    promptAlbanian: "Përktheni fjalinë në turqisht: 'Libri është në tavolinë, fletorja është në çantë.'",
-    grammarTipAlbanian: "Përdorni emrat 'kitap' (libër) dhe 'defter' (fletore). Për vendndodhjen 'në tavolinë' dhe 'në çantë', shtoni prapashtesën e rasës vendore '-da/-de' pas fjalëve 'masa' (tavolinë) dhe 'çanta' (çantë). Kujdes: masa + da = masada, çanta + da = çantada.",
-    sampleAnswers: [
-      "Kitap masada, defter çantada.",
-      "Kitap masada ve defter çantada.",
-      "Kitap masada, defter ise çantada.",
-      "Kitap masadadır, defter çantadadır."
-    ],
-    grammarLabel: "Rasa Vendore (-da/-de)",
-    validationRules: [
-      {
-        type: 'required_keywords',
-        keywords: ['kitap'],
-        feedback: "Mungon fjala 'kitap' (libër)."
-      },
-      {
-        type: 'required_keywords',
-        keywords: ['defter'],
-        feedback: "Mungon fjala 'defter' (fletore)."
-      },
-      {
-        type: 'forbidden_pattern',
-        regex: 'masade',
-        feedback: "Gabim Harmonie Vokalore: Fjala 'masa' ka zanore të prapme (a), prandaj prapashtesa duhet të jetë '-da' (masada, jo 'masade')."
-      },
-      {
-        type: 'required_pattern',
-        regex: 'masad[ae]',
-        feedback: "Mungon rasa vendore për tavolinën ('masada')."
-      },
-      {
-        type: 'forbidden_pattern',
-        regex: 'çantade',
-        feedback: "Gabim Harmonie Vokalore: Fjala 'çanta' ka zanore të prapme (a), prandaj prapashtesa duhet të jetë '-da' (çantada, jo 'çantade')."
-      },
-      {
-        type: 'required_pattern',
-        regex: '[çc]antad[ae]',
-        feedback: "Mungon rasa vendore për çantën ('çantada')."
-      }
-    ]
-  },
-  3: {
-    chapterId: 3,
-    type: 'guided',
-    promptAlbanian: "Shkruani 2-3 fjali në turqisht për fundjavën tuaj të kaluar duke përdorur kohën e shkuar (p.sh., tregoni ku shkuat, çfarë hëngrët, ose cilin takuat).",
-    grammarTipAlbanian: "Fjalitë duhet të përdorin kohën e shkuar të drejtpërdrejtë ('-di/-ti' etj.) dhe tregues të kohës si 'dün' (dje) ose 'hafta sonu' (fundjavë). Përdorni folje si 'gittim' (shkova), 'yedim' (hëngra), 'okudum' (lexova) ose 'buluştuk' (u takuam).",
-    sampleAnswers: [
-      "Dün okula gittim ve kitap okudum.",
-      "Hafta sonu arkadaşımla buluştum ve kahve içtim.",
-      "Dün erken uyandım, güzel bir kahvaltı yaptım."
-    ],
-    grammarLabel: "Ditar i së Shkuarës (-dı)",
-    validationRules: [
-      {
-        type: 'required_pattern',
-        regex: 'dün|hafta sonu|geçen|sabah|akşam',
-        feedback: "Mungon një tregues i kohës së shkuar ose pjesë e ditës (p.sh., 'dün', 'hafta sonu', 'geçen hafta', 'sabah', 'akşam')."
-      },
-      {
-        type: 'required_pattern',
-        regex: '(?:^|\\s)[a-zçğışöü]+(d[ıiuü]|t[ıiuü])(m|k)?(?=$|[\\s.,!?])',
-        feedback: "Nuk u gjet asnjë folje e zgjedhuar saktë në kohën e shkuar të drejtpërdrejtë (p.sh., 'gittim', 'okudum', 'buluştuk', 'yedim')."
-      }
-    ]
-  },
-  8: {
-    chapterId: 8,
-    type: 'translation',
-    promptAlbanian: "Përktheni fjalinë në turqisht: 'Dje shkova në shkollë dhe lexova një libër.'",
-    grammarTipAlbanian: "Përdorni treguesin e kohës 'dün' (dje). Folja 'shkova' përkthehet si 'gittim' (nga gitmek, me prapashtesën e kohës së shkuar -di dhe vetës së parë -m) dhe kërkon drejtimin '-e/-a' te vendi (okula gittim). Folja 'lexova' përkthehet si 'okudum' (okumak + du + m).",
-    sampleAnswers: [
-      "Dün okula gittim ve bir kitap okudum.",
-      "Dün okula gittim ve kitap okudum.",
-      "Dün okula gidip bir kitap okudum.",
-      "Dün okuluma gittim ve bir kitap okudum."
-    ],
-    grammarLabel: "Koha e Shkuar (-dı) & Drejtimi (-a)",
-    validationRules: [
-      {
-        type: 'required_keywords',
-        keywords: ['dün'],
-        feedback: "Mungon treguesi i kohës së shkuar 'dün' (dje)."
-      },
-      {
-        type: 'forbidden_pattern',
-        regex: 'okule',
-        feedback: "Gabim Harmonie: Fjala 'okul' ka zanoren e prapme 'u', prandaj drejtimi duhet të jetë '-a' (okula, jo 'okule')."
-      },
-      {
-        type: 'required_pattern',
-        regex: 'okul[ae]',
-        feedback: "Mungon rasa e drejtimit për shkollën. Folja 'gitmek' kërkon prapashtesën '-a' (okula gittim)."
-      },
-      {
-        type: 'gittim_check',
-        feedback: ""
-      },
-      {
-        type: 'okudum_check',
-        feedback: ""
-      }
-    ]
-  },
-  9: {
-    chapterId: 9,
-    type: 'guided',
-    promptAlbanian: "Shkruani një fjali në turqisht duke përdorur kohën e shkuar të pacaktuar (Mënyra Habitore '-miş / -mış / -muş / -müş') për të treguar një ngjarje që e keni dëgjuar nga të tjerët ose e keni kuptuar më vonë.",
-    grammarTipAlbanian: "Prapashtesa e habitores është '-miş/-mış/-muş/-müş' dhe vendoset pas rrënjës së foljes sipas harmonisë vokalore 4-she (p.sh., gel -> gelmiş, yaz -> yazmış, oku -> okumuş, gör -> görmüş). Ju mund të shtoni edhe prapashtesa të vetës (p.sh., gelmişim, gitmişsin).",
-    sampleAnswers: [
-      "Dün Ankara'ya kar yağmış.",
-      "Ahmet dün sinemaya gitmiş.",
-      "O kitabı çok beğenmişsin."
-    ],
-    grammarLabel: "Mënyra Habitore (-miş)",
-    validationRules: [
-      {
-        type: 'reported_past_harmony',
-        feedback: "Gabim: Nuk u gjet asnjë folje e zgjedhuar në Mënyrën Habitore. Duhet të përdorni prapashtesën '-miş/-mış/-muş/-müş' pas rrënjës së foljes (p.sh., 'gitmiş', 'gelmiş', 'yağmış')."
-      }
-    ]
-  },
-  10: {
-    chapterId: 10,
-    type: 'guided',
-    promptAlbanian: "Shkruani një fjali kushtore në turqisht duke përdorur prapashtesën e kushtit '-se / -sa' (p.sh., 'nëse shkon...', 'nëse bie shi...', 'nëse ka...').",
-    grammarTipAlbanian: "Prapashtesa e kushtit është '-se/-sa' dhe ndjek harmoninë vokalore 2-she. Ajo mund të ngjitet pas një rrënje foljore (p.sh., gelse, yazsa) ose pas një kohe tjetër (p.sh., yağ-ar-sa -> nëse bie shi, git-er-se-m -> nëse unë shkoj). Mund ta përdorni edhe me 'var/yok' (p.sh., varsa -> nëse ka).",
-    sampleAnswers: [
-      "Eğer vaktim olursa geleceğim.",
-      "Yağmur yağarsa evde kalacağız.",
-      "Paran varsa bunu alabilirsin."
-    ],
-    grammarLabel: "Mënyra Kushtore (-se/-sa)",
-    validationRules: [
-      {
-        type: 'conditional_harmony',
-        feedback: "Gabim: Nuk u gjet asnjë strukturë kushtore në fjali. Duhet të përdorni prapashtesën e kushtit '-se/-sa' (p.sh., 'gidersen', 'yağarsa', 'varsa')."
-      }
-    ]
-  },
-  11: {
-    chapterId: 11,
-    type: 'guided',
-    promptAlbanian: "Shkruani një fjali në turqisht duke përdorur një pjesore (sıfat-fiil) aktive me '-an / -en' (p.sh., 'njeriu që vjen') ose pasive me '-dık / -dik' + përemër pronor (p.sh., 'libri që kam lexuar').",
-    grammarTipAlbanian: "Pjesorja aktive formohet me rrënjën e foljes + '-an/-en' (p.sh., gelen adam -> njeriu që vjen/erdhi). Pjesorja pasive/përcaktuese formohet me rrënjën + '-dık/-dik/-duk/-dük' + prapashtesën pronore (p.sh., okuduğum kitap -> libri që lexoj/kam lexuar, dëgjoni ndryshimin e k/ğ te 'okuduğum').",
-    sampleAnswers: [
-      "Dün gelen misafirleri gördün mü?",
-      "En sevdiğim yemek köftedir.",
-      "Yazdığın mektubu okudum."
-    ],
-    grammarLabel: "Pjesoret (Sıfat-Fiiller)",
-    validationRules: [
-      {
-        type: 'participle_harmony',
-        feedback: "Gabim: Nuk u gjet asnjë pjesore (sıfat-fiil) në fjali. Përdorni një folje me prapashtesën '-an/-en' (p.sh., 'gelen adam') ose '-dık/-dik' me prapashtesë pronore (p.sh., 'sevdiğim yemek')."
-      }
-    ]
-  },
-  12: {
-    chapterId: 12,
-    type: 'guided',
-    promptAlbanian: "Shkruani një fjali në turqisht që përdor një idiomë turke (deyim) të cilën e ndajmë në kuptim ose strukturë edhe me gjuhën shqipe (p.sh., 'gözden düşmek', 'can atmak', 'kulak asmak', ose 'kafayı takmak').",
-    grammarTipAlbanian: "Përdorimi i një idiome të përbashkët Ballkanike. Shembuj: 'Gözden düşmek' (të biesh nga sytë), 'Can atmak' (të dëshirosh me shpirt), 'Kulak asmak' (të vësh veshin/të dëgjosh), ose 'Kafayı takmak' (të fiksohesh pas diçkaje). Sigurohuni që idiomën ta integroni në një fjali të plotë.",
-    sampleAnswers: [
-      "O yaptığı hata yüzünden gözden düştü.",
-      "Tatile gitmek için can atıyorum.",
-      "Bu küçük soruna kafayı takma."
-    ],
-    grammarLabel: "Idiomat e Përbashkëta (Deyimler)",
-    validationRules: [
-      {
-        type: 'idiom_presence',
-        idioms: [
-          { name: "gözden düşmek", keywords: ["göz", "düş"] },
-          { name: "can atmak", keywords: ["can", "at"] },
-          { name: "kulak asmak", keywords: ["kulak", "as"] },
-          { name: "kafayı takmak", keywords: ["kafa", "tak"] }
-        ],
-        feedback: "Gabim: Nuk u gjet asnjë nga idiomat e kërkuara të përbashkëta (si 'gözden düşmek', 'can atmak', 'kulak asmak', ose 'kafayı takmak'). Sigurohuni që t'i shkruani saktë fjalët e idiomës."
-      }
-    ]
-  },
-  13: {
-    chapterId: 13,
-    type: 'translation',
-    promptAlbanian: "Përktheni fjalinë në turqisht: 'A ka tre lapsa në çantë?'",
-    grammarTipAlbanian: "Përdorni emrat 'çanta' (çantë) në rasën vendore ('çantada'), numrin 'üç' (tre), dhe emrin 'kalem' (laps) në njëjës. Për pyetjen 'A ka...?', përdorni fjalën 'var' dhe pjesëzën pyetëse 'mı' të shkruar veç: 'var mı?'.",
-    sampleAnswers: [
-      "Çantada üç kalem var mı?",
-      "Çantada 3 kalem var mı?",
-      "Çantanın içinde üç kalem var mı?"
-    ],
-    grammarLabel: "Ekzistencialet & Pyetjet",
-    validationRules: [
-      {
-        type: 'required_keywords',
-        keywords: ['var'],
-        feedback: "Mungon fjala 'var' (ka)."
-      },
-      {
-        type: 'required_keywords',
-        keywords: ['kalem'],
-        feedback: "Mungon fjala 'kalem' (laps)."
-      },
-      {
-        type: 'required_pattern',
-        regex: 'üç|3',
-        feedback: "Mungon numri 'üç' ose '3' (tre)."
-      },
-      {
-        type: 'required_pattern',
-        regex: '[çc]antada',
-        feedback: "Mungon rasa vendore për çantën ('çantada')."
-      },
-      {
-        type: 'required_pattern',
-        regex: 'var\\s+mı',
-        feedback: "Mungon pjesëza pyetëse e harmonizuar saktë ('var mı?'). Kujdes: pjesëza duhet të shkruhet e ndarë me hapësirë pas fjalës 'var'."
-      },
-      {
-        type: 'forbidden_pattern',
-        regex: 'var\\s+mi|varmı|varmi',
-        feedback: "Gabim Harmonie Vokalore ose Shkrimi: Fjala 'var' ka zanoren e prapme (a), prandaj kërkon pjesëzën pyetëse 'mı?' të shkruar veç ('var mı?', jo 'var mi?' ose 'varmı')."
-      }
-    ]
-  },
-  14: {
-    chapterId: 14,
-    type: 'guided',
-    promptAlbanian: "Shkruani 2-3 fjali në turqisht për planet tuaja për verën e ardhshme duke përdorur kohën e ardhshme (p.sh., ku do të shkoni, çfarë do të vizitoni, ku do të qëndroni).",
-    grammarTipAlbanian: "Fjalitë duhet të përdorin kohën e ardhshme të drejtpërdrejtë ('-acak/-ecek') të zgjedhuar për vetën e parë njëjës (p.sh., 'gideceğim', 'kalacağım', 'gezeceğim') dhe tregues si 'tatil' (pushime) ose 'yaz' (verë).",
-    sampleAnswers: [
-      "Gelecek yaz Antalya'ya gideceğim ve otelde kalacağım.",
-      "Tatilde birçok müze gezeceğim ve fotoğraf çekeceğim."
-    ],
-    grammarLabel: "Koha e Ardhshme (-acak)",
-    validationRules: [
-      {
-        type: 'required_pattern',
-        regex: 'tatil|yaz|gelecek|haftaya|plan',
-        feedback: "Mungon një tregues i së ardhshmes ose pushimeve (p.sh., 'tatil', 'yaz', 'gelecek yaz', 'haftaya', 'plan')."
-      },
-      {
-        type: 'required_pattern',
-        regex: '(?:^|\\s)[a-zçğışöü]+(ac|ec)a[ğg]ı[m].*(?=$|[\\s.,!?])',
-        feedback: "Nuk u gjet asnjë folje e zgjedhuar saktë në kohën e ardhshme për vetën e parë njëjës (p.sh., 'gideceğim', 'kalacağım', 'okuyacağım')."
-      }
-    ]
-  },
-  15: {
-    chapterId: 15,
-    type: 'guided',
-    promptAlbanian: "Shkruani 2-3 fjali në turqisht për rutinën tuaj të përditshme duke përdorur kohën e gjerë (Geniş Zaman, p.sh., tregoni kur zgjoheni, çfarë hani për mëngjes, ose si shkoni në punë/shkollë).",
-    grammarTipAlbanian: "Fjalitë duhet të përdorin kohën e gjerë të zgjedhuar për vetën e parë njëjës (p.sh., 'uyanırım', 'yaparım', 'giderim') dhe tregues të frekuencës si 'genellikle' (zakonisht) ose 'her sabah' (çdo mëngjes).",
-    sampleAnswers: [
-      "Her sabah erken uyanırım ve kahve içerim.",
-      "Genellikle saat sekizde işe giderim."
-    ],
-    grammarLabel: "Koha e Gjerë (-r)",
-    validationRules: [
-      {
-        type: 'required_pattern',
-        regex: 'genellikle|her sabah|her gün|bazen|her zaman|rutin',
-        feedback: "Mungon një tregues i rutinës ose frekuencës (p.sh., 'genellikle', 'her sabah', 'her gün', 'bazen', 'her zaman', 'rutin')."
-      },
-      {
-        type: 'required_pattern',
-        regex: '(?:^|\\s)[a-zçğışöü]+(ı|i|u|ü|a|e)?r(ı|i)m.*(?=$|[\\s.,!?])',
-        feedback: "Nuk u gjet asnjë folje e zgjedhuar saktë në kohën e gjerë për vetën e parë njëjës (p.sh., 'uyanırım', 'yaparım', 'giderim')."
-      }
-    ]
-  },
-  16: {
-    chapterId: 16,
-    type: 'guided',
-    promptAlbanian: "Shkruani 2-3 fjali në turqisht për aftësitë tuaja (p.sh. çfarë mund të bëni ose cilat gjuhë mund të flisni) duke përdorur foljen e mundësisë (Yeterlilik Fiili, p.sh., tregoni nëse mund të flisni turqisht, të ngisni makinën ose të luani ndonjë instrument).",
-    grammarTipAlbanian: "Fjalitë duhet të përdorin foljen e mundësisë në vetën e parë njëjës (p.sh., 'konuşabilirim', 'sürebilirim', 'çalabilirim' ose trajta negative si 'yapamam', 'yüzemem').",
-    sampleAnswers: [
-      "Ben Türkçe konuşabilirim ve araba sürebilirim.",
-      "Çok iyi gitar çalabilirim ama piyano çalamam."
-    ],
-    grammarLabel: "Folja e Mundësisë (-abil)",
-    validationRules: [
-      {
-        type: 'required_pattern',
-        regex: 'konuş|sür|çal|yüz|yap|git|gel|oku|yaz|öğren|başar',
-        feedback: "Sigurohuni që të përshkruani të paktën një aftësi ose veprim që mund të bëni (p.sh. duke përdorur folje si 'konuşmak', 'sürmek', 'çalmak', 'yüzmek' ose 'yapmak')."
-      },
-      {
-        type: 'required_pattern',
-        regex: '(?:\\s|^)[a-zçğışöü]+((a|e)bil(i)?r(i)?m|(a|e)m[ae]m)(?=$|[\\s.,!?])',
-        feedback: "Nuk u gjet asnjë folje e zgjedhuar saktë në formën e mundësisë (Yeterlilik Fiili) për vetën e parë njëjës (p.sh., 'konuşabilirim', 'sürebilirim', ose trajta negative 'yapamam', 'yüzemem')."
-      }
-    ]
-  },
-  17: {
-    chapterId: 17,
-    type: 'guided',
-    promptAlbanian: "Shkruani 2-3 fjali në turqisht për rregullat ose detyrimet tuaja të përditshme ose këshilla shëndetësore duke përdorur mënyrën detyrore (Gereklilik Kipi, p.sh., tregoni çfarë duhet të bëni për të qenë të shëndetshëm ose rregulla që duhet të ndiqni).",
-    grammarTipAlbanian: "Fjalitë duhet të përdorin mënyrën detyrore me prapashtesën '-malı / -meli' (p.sh., 'yapmalıyım', 'yemeliyiz') ose strukturat nominale të nevojës si 'gerek', 'lazım' ose 'zorundayım'.",
-    sampleAnswers: [
-      "Sağlıklı olmak için her gün spor yapmalıyım.",
-      "Erken uyumam gerek çünkü sabah erken kalkmalıyım."
-    ],
-    grammarLabel: "Mënyra Detyrore (-malı)",
-    validationRules: [
-      {
-        type: 'required_pattern',
-        regex: 'meli|malı|gerek|lazım|zorund',
-        feedback: "Sigurohuni që të përdorni mënyrën detyrore (p.sh., me prapashtesat '-meli/-malı') ose strukturat nominale të nevojës si 'gerek' / 'lazım' ose 'zorunda olmak'."
-      },
-      {
-        type: 'required_pattern',
-        regex: '(?:\\s|^)[a-zçğışöü]+(mal|mel)[ıi][a-zçğışöü]*(?=$|[\\s.,!?])|gerek|lazım|zorund',
-        feedback: "Nuk u gjet asnjë folje e zgjedhuar saktë në mënyrën detyrore (Gereklilik Kipi) ose strukturë e nevojës (p.sh., 'yapmalıyım', 'yemeliyiz', 'uyumam gerek', ose 'zorundayım')."
-      }
-    ]
-  },
-  18: {
-    chapterId: 18,
-    type: 'guided',
-    promptAlbanian: "Shkruani 2-3 fjali në turqisht duke krahasuar dy qytete (p.sh., Tiranën dhe Stambollin, ose dy vende të tjera) ose dy produkte, duke përdorur fjalën krahasuese 'daha' dhe prapashtesën e rasës rrjedhore (-dan/-den).",
-    grammarTipAlbanian: "Fjalitë e krahasimit duhet të përdorin strukturën: [Emri 1] + [Emri 2 në rasën rrjedhore '-dan/-den/-tan/-ten'] + 'daha' + [Mbiemër]. P.sh., 'Tiran İstanbul'dan daha sakin' (Tirana është më e qetë se Stambolli).",
-    sampleAnswers: [
-      "Tiran İstanbul'dan daha küçük.",
-      "Masa sandalyeden daha büyük."
-    ],
-    grammarLabel: "Krahasimi & Rasa Rrjedhore",
-    validationRules: [
-      {
-        type: 'required_pattern',
-        regex: 'daha',
-        feedback: "Mungon fjala krahasuese 'daha' (më)."
-      },
-      {
-        type: 'required_pattern',
-        regex: '[a-zçğışöüA-ZÇĞİÖŞÜ]+(?:\'|)?(dan|den|tan|ten)(?=$|[\\s.,!?])',
-        feedback: "Nuk u gjet asnjë emër i zgjedhuar saktë në rasën rrjedhore (Ablative, p.sh., 'İstanbul'dan', 'Tiran'dan', ose 'sandalyeden')."
-      }
-    ]
-  },
-  19: {
-    chapterId: 19,
-    type: 'guided',
-    promptAlbanian: "Shkruani 2-3 fjali në turqisht për fëmijërinë tuaj ose zakonet e vjetra duke përdorur kohën e shkuar të vazhdueshme (Şimdiki Zamanın Hikayesi, p.sh., tregoni ku jetonit, çfarë lojërash luanit ose çfarë bënit shpesh).",
-    grammarTipAlbanian: "Fjalitë duhet të përdorin kohën e shkuar të vazhdueshme në vetën e parë (p.sh., 'yaşıyordum' - jetoja, 'oynuyorduk' - luanim) dhe tregues si 'eskiden' (dikur) ose 'çocukken' (kur isha fëmijë).",
-    sampleAnswers: [
-      "Eskiden çok kitap okuyordum.",
-      "Çocukken her gün sokakta arkadaşlarımla oynuyordum."
-    ],
-    grammarLabel: "Koha e Shkuar e Vazhdueshme",
-    validationRules: [
-      {
-        type: 'required_pattern',
-        regex: 'eskiden|çocuk|küçük|yıllar|zaman',
-        feedback: "Mungon një tregues i fëmijërisë ose i së shkuarës (p.sh., 'eskiden', 'çocukken', 'küçükken')."
-      },
-      {
-        type: 'required_pattern',
-        regex: '[a-zçğışöü]+(iyor|ıyor|uyor|üyor)du(m|k)?(?=$|[\\s.,!?])',
-        feedback: "Nuk u gjet asnjë folje e zgjedhuar saktë në kohën e shkuar të vazhdueshme (p.sh., 'okuyordum', 'oynuyorduk', 'yaşıyordum')."
-      }
-    ]
-  },
-  20: {
-    chapterId: 20,
-    type: 'guided',
-    promptAlbanian: "Shkruani 2-3 fjali në turqisht për ditën tuaj duke treguar veprime të lidhura me zarf-foljen '-ip' (p.sh., duke shkuar në një vend dhe duke bërë diçka) ose duke përdorur lidhëza si 'çünkü' ose 'bu yüzden' për të shpjeguar arsyet.",
-    grammarTipAlbanian: "Fjalitë duhet të përdorin zarf-foljen me prapashtesën '-ip / -ıp / -up / -üp' (p.sh., 'gidip', 'yapıp') ose lidhëza si 'çünkü' (sepse), 'bu yüzden' (prandaj), 'ama' (por) për të lidhur mendimet.",
-    sampleAnswers: [
-      "Sabah uyanıp kahvaltı yaptım çünkü çok açtım.",
-      "Kütüphaneye gidip ders çalıştım, bu yüzden çok yoruldum."
-    ],
-    grammarLabel: "Lidhëzat & Zarf-Foljet",
-    validationRules: [
-      {
-        type: 'required_pattern',
-        regex: 'çünkü|bu yüzden|veya|ama|ve|[a-zçğışöü]+(ıp|ip|up|üp)(?=$|[\\s.,!?])',
-        feedback: "Sigurohuni që të përdorni të paktën një lidhëz (si 'çünkü', 'bu yüzden', 'ama') ose një folje me zarf-foljen '-ip' (si 'gidip', 'yapıp', 'okuyup')."
-      },
-      {
-        type: 'adverbial_ip_harmony',
-        feedback: "Gabim Harmonie: Zarf-folja e përdorur me prapashtesën '-ip' nuk respekton rregullat e harmonisë vokalore turke."
-      }
-    ]
-  },
-  21: {
-    chapterId: 21,
-    type: 'translation',
-    promptAlbanian: "Përktheni në turqisht fjalinë e përshëndetjes: 'Mirëdita, si jeni?'",
-    grammarTipAlbanian: "Përdorni 'İyi günler' (Mirëdita) dhe 'nasılsınız?' (si jeni?). Sigurohuni që t'i shkruani saktë shkronjat turke (ı, ü).",
-    sampleAnswers: [
-      "İyi günler, nasılsınız?",
-      "İyi günler nasılsınız?",
-      "İyi günler, nasılsınız"
-    ],
-    grammarLabel: "Përshëndetja & Alfabeti",
-    validationRules: [
-      {
-        type: 'required_keywords',
-        keywords: ['iyi'],
-        feedback: "Mungon fjala 'İyi'."
-      },
-      {
-        type: 'required_keywords',
-        keywords: ['günler'],
-        feedback: "Mungon fjala 'günler'."
-      },
-      {
-        type: 'required_keywords',
-        keywords: ['nasılsınız'],
-        feedback: "Mungon fjala 'nasılsınız'."
-      },
-      {
-        type: 'required_pattern',
-        regex: 'iyi\\s+günler',
-        feedback: "Sigurohuni që keni shkruar 'İyi günler' për përshëndetjen 'Mirëdita'."
-      }
-    ]
-  },
-  4: {
-    chapterId: 4,
-    type: 'guided',
-    promptAlbanian: "Shkruani një paragraf të shkurtër në turqisht (të paktën 60 karaktere) ku përshkruani se si ndryshoi dita juaj kur ishit duke bërë diçka dhe morët një lajm (p.sh., 'Unë isha duke lexuar një libër kur erdhi një njoftim...'). Përdorni të paktën një lidhëz si 'fakat' ose 'oysa' dhe prapashtesën e së shkuarës së vazhdueshme '-iyordu' ose gerundin '-ken'.",
-    grammarTipAlbanian: "Përdorni prapashtesat e kohës së shkuar të vazhdueshme '-iyordu' ose zarf-foljes '-ken' (p.sh., okuyorken, yapıyordum) dhe lidhëzat si 'fakat', 'oysa', 'ancak' ose 'bununla birlikte' për të lidhur fjalitë.",
-    sampleAnswers: [
-      "Ben kitap okuyorken telefonuma bir bildirim geldi. Çok heyecanlandım, fakat hemen cevap yazamadım.",
-      "Yolda yürüyorken eski bir arkadaşımla karşılaştım. Oysa onu dün aramayı düşünüyordum.",
-      "Kahve içiyorken haberleri televizyondan takip ediyordum. Birden elektrikler kesildi."
-    ],
-    grammarLabel: "E Shkuara e Vazhdueshme & Gerundi -ken",
-    validationRules: [
-      {
-        type: 'required_pattern',
-        regex: '(iyor|üyor|ıyor|eyor)du|(y)?ken',
-        feedback: "Mungon përdorimi i kohës së shkuar të vazhdueshme (-iyordu) ose zarf-foljes (-ken)."
-      },
-      {
-        type: 'required_pattern',
-        regex: '\\b(fakat|oysa|ancak|bununla birlikte|ama)\\b',
-        feedback: "Mungon një nga lidhëzat e B1 (p.sh., 'fakat', 'oysa', 'ancak', 'bununla birlikte')."
-      }
-    ]
-  },
-  22: {
-    chapterId: 22,
-    type: 'guided',
-    promptAlbanian: "Shkruani një paragraf të shkurtër në turqisht (të paktën 60 karaktere) duke përshkruar një takim ose komunikim pune apo studimi me një mik ose koleg. Përdorni të paktën dy folje reciproke (si buluşmak, görüşmek, yazışmak, anlaşmak, paylaşmak).",
-    grammarTipAlbanian: "Përdorni prapashtesën reciproke '-(I)ş' për të formuar folje si 'buluşmak', 'görüşmek', 'yazışmak', 'anlaşmak' ose 'paylaşmak' për të treguar veprime të ndërsjella ose të përbashkëta.",
-    sampleAnswers: [
-      "Biz dün kafede buluştuk ve yeni projeyi görüştük. Her konuda anlaştık ve fikirlerimizi paylaştık.",
-      "Arkadaşımla her gün e-posta ile yazışıyoruz. Hafta sonu buluşmak için karar verdik.",
-      "Mülakattan sonra müdürle görüştüm. İş detaylarını paylaştık ve ortak bir noktada anlaştık."
-    ],
-    grammarLabel: "Foljet Reciproke (-(I)ş)",
-    validationRules: [
-      {
-        type: 'required_pattern',
-        regex: 'buluş|görüş|yazış|anlaş|paylaş|tanış|tartış',
-        feedback: "Mungon përdorimi i foljeve reciproke me prapashtesën '-(I)ş' (si buluşmak, görüşmek, yazışmak, anlaşmak, paylaşmak)."
-      }
-    ]
-  },
-  23: {
-    chapterId: 23,
-    type: 'guided',
-    promptAlbanian: "Shkruani një paragraf të shkurtër në turqisht (të paktën 60 karaktere) rreth rëndësisë së edukimit, librave ose mësimit të gjuhëve të huaja. Përdorni të paktën një strukturë kushtore me '-se/-sa' ose formën e së shkuarës dëshirore '-seydi/-saydı' (p.sh. 'eğer kitap okursak...', 'keşke Türkçe öğrenseydim...').",
-    grammarTipAlbanian: "Përdorni prapashtesën kushtore '-se / -sa' (p.sh. 'varsa' - nëse ka, 'okursak' - nëse lexojmë) ose dëshiroren e së shkuarës '-seydi / -saydı' (p.sh. 'öğrenseydim' - sikur të kisha mësuar). Mund të përdorni fjalët 'eğer' (nëse) ose 'keşke' (sikur/ah sikur) për të përforcuar fjalinë.",
-    sampleAnswers: [
-      "Eğer her gün yeni kelimeler öğrenirsem, Türkçe konuşmam kolaylaşır. Kitap okumak da çok faydalıdır.",
-      "Keşke gençken daha fazla yabancı dil öğrenseydim. Dil öğrenmek insanı geliştirir ve yeni kapılar açar.",
-      "Kitap okursak ufkumuz genişler. Eğer vaktim olursa her gün en az otuz sayfa kitap okumak isterim."
-    ],
-    grammarLabel: "Kushtorja & Dëshirorja (-se / -seydi)",
-    validationRules: [
-      {
-        type: 'conditional_harmony',
-        feedback: "Gabim: Nuk u gjet asnjë strukturë kushtore ose dëshirore në fjali. Duhet të përdorni prapashtesën e kushtit ose dëshirës '-se/-sa' ose '-seydi/-saydı' (p.sh., 'varsa', 'okursak', 'öğrenseydim')."
-      }
-    ]
-  },
-  24: {
-    chapterId: 24,
-    type: 'guided',
-    promptAlbanian: "Shkruani një paragraf të shkurtër në turqisht (të paktën 60 karaktere) ku përshkruani përvojën tuaj të mësimit të turqishtes ose rregullat në shtëpinë tuaj të re. Përdorni të paktën një folje me prapashtesën e detyrimit '-malı/-meli' ose prapashtesën e kohëzgjatjes '-diğinden beri' (p.sh., 'Türkçe çalıştığımdan beri...', 'daha çok pratik yapmalıyım').",
-    grammarTipAlbanian: "Përdorni prapashtesën detyrore '-malı / -meli' (p.sh. 'yapmalıyım' - duhet të bëj) ose strukturën e kohëzgjatjes '-diğinden beri / -dığından beri' (p.sh. 'öğrenmeye başladığımdan beri' - që kur fillova të mësoj).",
-    sampleAnswers: [
-      "Türkçe öğrenmeye başladığımdan beri her gün yeni kelimeler çalışıyorum. Daha çok pratik yapmalıyım.",
-      "Yeni evime geçen hafta taşındım. Evde çok gürültü yapmamalıyız çünkü komşular rahatsız olabilir."
-    ],
-    grammarLabel: "Detyrimi (-malı) & Që kur (-diğinden beri)",
-    validationRules: [
-      {
-        type: 'required_pattern',
-        regex: '(malı|meli|[a-zçğışöü]+(d|t)(ı|i|u|ü)ğ(ı|i|u|ü)(m|n|miz|niz)?(dan|den)\\s+beri)',
-        feedback: "Gabim: Duhet të përdorni të paktën një prapashtesë detyrimi '-malı/-meli' (p.sh., 'yapmalıyım') ose prapashtesën e kohëzgjatjes '-diğinden beri' (p.sh., 'başladığımdan beri')."
-      },
-      {
-        type: 'since_harmony',
-        feedback: "Gabim Harmonie te prapashtesa '-diğinden beri': Kontrolloni zbutjen ose harmoninë vokalore."
-      }
-    ]
-  },
-  25: {
-    chapterId: 25,
-    type: 'guided',
-    promptAlbanian: "Shkruani një paragraf të shkurtër në turqisht (të paktën 60 karaktere) rreth një sfide ose qëllimi jetësor, duke treguar se si i kapërceni pengesat. Përdorni përemrin vetvetor 'kendi' (p.sh., kendim, kendisi) ose një folje vetvetore (si hazırlanmak, giyinmek, sevinmek) Edhe të paktën një strukturë detyrimi si '-mak zorunda kalmak' ose '-mak lazım'.",
-    grammarTipAlbanian: "Përdorni përemrin 'kendi' të zgjedhuar për vetën përkatëse (p.sh., 'kendim' - unë vetë, 'kendimiz' - ne vetë) ose foljet vetvetore me prapashtesën '-n / -ın / -in / -un / -ün' (p.sh., 'hazırlanmak' - përgatitem, 'sevinmek' - gëzohem). Kombinoni këto me struktura detyrimi si 'çalışmak zorunda kaldım' (u detyrova të punoj) ose 'pes etmemek lazım' (nuk duhet të dorëzohemi).",
-    sampleAnswers: [
-      "Hayatta başarılı olmak için kendime güveniyorum. Engelleri aşmak için her gün çok çalışmak lazım.",
-      "Zor zamanlarda pes etmemek ve kendi yolunu çizmek gerekir. Bazen çok sabretmek zorunda kalıyorum.",
-      "Sınava hazırlanmak için kendime yeni bir plan yaptım. Başarılı olmak için bu kurallara uymak lazım."
-    ],
-    grammarLabel: "Vetvetorja & Zinxhiri i Detyrimit",
-    validationRules: [
-      {
-        type: 'required_pattern',
-        regex: '\\b(kendi|hazırlan|giyin|sevin|yıkan|taran|süslen|görün|bulun|korun)',
-        feedback: "Gabim: Duhet të përdorni përemrin vetvetor 'kendi' (p.sh., kendim, kendi) ose të paktën një folje vetvetore (p.sh., hazırlanmak, giyinmek, sevinmek)."
-      },
-      {
-        type: 'required_pattern',
-        regex: '\\b[a-zçğışöü]+(mak|mek)\\s+(lazım|zorunda)',
-        feedback: "Gabim: Duhet të përdorni të paktën një strukturë detyrimi si '-mak lazım' ose '-mak zorunda kalmak'."
-      }
-    ]
-  },
-  26: {
-    chapterId: 26,
-    type: 'guided',
-    promptAlbanian: "Shkruani një paragraf të shkurtër në turqisht (të paktën 60 karaktere) rreth një filmi, libri ose raporti lajmesh. Përdorni të paktën ty folje në formën pasive (si yazılmak, yapılmak, çekilmek, yayınlanmak, izlenmek, seçilmek).",
-    grammarTipAlbanian: "Foljet pasive në turqisht formohen me prapashtesat '-il' ose '-in' (p.sh., 'yazıldı' - u shkrua, 'yapıldı' - u bë, 'çekildi' - u xhirua, 'izlendi' - u ndoq/shikua, 'yayınlandı' - u transmetua). Përdorni të paktën dy folje në këtë formë.",
-    sampleAnswers: [
-      "Geçen yıl harika bir film çekildi ve televizyonda yayınlandı. Bu yapım çok beğenildi.",
-      "Bu roman ünlü bir yazar tarafından yazıldı. Kitap çok izlenen bir film haline getirildi.",
-      "Festivalde en iyi filmler seçildi ve ödüller kazanan sanatçılara törenle verildi."
-    ],
-    grammarLabel: "Trajta Pasive (-il / -in)",
-    validationRules: [
-      {
-        type: 'required_pattern',
-        regex: '(?:^|\\s)(yazıl|yapıl|çekil|yayınlan|izlen|seçil|bilin|okun|söylen|kazanıl|hazırlan|sunul)[a-zçğışöü]*\\s+.*(?:^|\\s)(yazıl|yapıl|çekil|yayınlan|izlen|seçil|bilin|okun|söylen|kazanıl|hazırlan|sunul)[a-zçğışöü]*(?=$|[\\s.,!?])',
-        feedback: "Gabim: Duhet të përdorni të paktën dy folje në formën pasive (p.sh., 'yazıldı', 'yapıldı', 'çekildi', 'yayınlandı', 'izlendi', 'seçildi')."
-      }
-    ]
-  },
-  27: {
-    chapterId: 27,
-    type: 'guided',
-    promptAlbanian: "Shkruani një paragraf të shkurtër në turqisht (të paktën 60 karaktere) rreth një festimi, feste ose tradite dasme që keni marrë pjesë ose e njihni. Përdorni të paktën dy pjesore relative (si -an/-en, -dığım/-diğim, ose -acağımı/-eceğimi).",
-    grammarTipAlbanian: "Pjesoret relative (Sıfat-Fiil) në turqisht formohen me prapashtesat '-an/-en' (p.sh., 'katılan' - që merr pjesë), '-dık' (p.sh., 'katıldığım' - ku unë morra pjesë), ose '-acak' (p.sh., 'yapacağımız' - që ne do të bëjmë). Përdorni të paktën dy të tilla.",
-    sampleAnswers: [
-      "Dün katıldığım düğün çok güzeldi. Evlenen çift çok mutlu görünüyordu.",
-      "Gelecek hafta yapacağımız kutlama için hazırlıklar tamamlandı. Gelen misafirler çok eğlenecek.",
-      "En sevdiğim bayram Cumhuriyet Bayramı'dır. Bu özel günde yapılan törenleri izlemeyi çok severim."
-    ],
-    grammarLabel: "Pjesoret Relative (Sıfat-Fiiller)",
-    validationRules: [
-      {
-        type: 'required_pattern',
-        regex: '(?:^|\\s)(?:katıl|evlen|yapıl|düzenlen|gel|git|oyna|giy|izle|oku|yap|ol|gör|sev|kutla|eğlen|başla|söyle|bağla|ver|ye|çek|yaşa|hatırla|sağla|tüket|düzenle|paylaş|hazırla)(?:an|en|yan|yen|dığ|diğ|duğ|düğ|tığ|tiğ|tuğ|tüğ|acağ|eceğ|yacağ|yeceğ)[a-zçğışöü]*\\s+.*(?:^|\\s)(?:katıl|evlen|yapıl|düzenlen|gel|git|oyna|giy|izle|oku|yap|ol|gör|sev|kutla|eğlen|başla|söyle|bağla|ver|ye|çek|yaşa|hatırla|sağla|tüket|düzenle|paylaş|hazırla)(?:an|en|yan|yen|dığ|diğ|duğ|düğ|tığ|tiğ|tuğ|tüğ|acağ|eceğ|yacağ|yeceğ)[a-zçğışöü]*(?=$|[\\s.,!?])',
-        feedback: "Gabim: Duhet të përdorni të paktën dy pjesore relative (p.sh., 'katılan', 'gittiğim', 'yapacağımız', 'evlenen')."
-      }
-    ]
-  },
-  28: {
-    chapterId: 28,
-    type: 'guided',
-    promptAlbanian: "Shkruani një paragraf të shkurtër në turqisht (të paktën 60 karaktere) rreth jetës suaj (autobiografi) ose rreth përvojës suaj të mësimit të turqishtes. Përdorni të paktën një pjesore relative (si -an/-en, -dığım/-diğim) DHE të paktën një formë pasive, vetvetore (si kendi, hazırlanmak, yazılmak) ose kushtore (-se/-seydi).",
-    grammarTipAlbanian: "Ky është një kapitull përmbledhës. Ju duhet të përdorni të paktën një pjesore relative (p.sh., 'öğrendiğim Türkçe' - turqishtja që kam mësuar, 'çalışan insan' - njeriu që punon) dhe të paktën një formë tjetër si përemri vetvetor 'kendi' / folje pasive (p.sh., 'hazırlandım', 'yazıldı') ose kushtore (p.sh., 'çalışırsam' - nëse punoj, 'öğrenseydim' - sikur të kisha mësuar).",
-    sampleAnswers: [
-      "Benim yazdığım otobiyografi çok ilginçti çünkü kendi hayatımı ve başarılarımı anlattım. Eğer çalışırsam Türkçe'yi daha iyi konuşacağım.",
-      "Türkçe öğrenmek için başladığım bu yolculukta kendimi çok geliştirdim. Kurs boyunca çok güzel şeyler öğrendiğimi düşünüyorum."
-    ],
-    grammarLabel: "Përmbledhje B1 & Autoportreti",
-    validationRules: [
-      {
-        type: 'required_pattern',
-        regex: '(?:^|\\s)(?:katıl|evlen|yapıl|düzenlen|gel|git|oyna|giy|izle|oku|yap|ol|gör|sev|kutla|eğlen|başla|söyle|bağla|ver|ye|çek|yaşa|hatırla|sağla|tüket|düzenle|paylaş|hazırla|çalış|başar|öğren)(?:an|en|yan|yen|dığ|diğ|duğ|düğ|tığ|tiğ|tuğ|tüğ|acağ|eceğ|yacağ|yeceğ)[a-zçğışöü]*(?=$|[\\s.,!?])',
-        feedback: "Gabim: Duhet të përdorni të paktën një pjesore relative (p.sh., 'öğrendiğim', 'başardığım', 'giden', 'yapan')."
-      },
-      {
-        type: 'required_pattern',
-        regex: '(?:^|\\s)(?:kendi|yazıl|yapıl|yayınlan|seçil|izlen|giyin|hazırlan|sevin|okun|bilin|denil)[a-zçğışöü]*(?=$|[\\s.,!?])|(?:^|\\s)[a-zçğışöü]+s(?:a|e)(?:m|n|k|niz|ler|yd[ıi][a-zçğışöü]*)?(?=$|[\\s.,!?])',
-        feedback: "Gabim: Duhet të përdorni të paktën një përemër vetvetor ('kendi'), folje pasive/vetvetore (p.sh., 'hazırlanmak', 'yazılmak'), ose një strukturë kushtore/dëshirore (p.sh., '-se', '-seydi')."
-      }
-    ]
+function getStemBeforeSuffix(analysis: WordAnalysis, suffixIndex: number): string {
+  let stem = cleanTurkishWord(analysis.entry.word);
+  if (analysis.entry.pos === 'folje') {
+    stem = stem.replace(/m[ae]k$/, '');
   }
-};
+  for (let j = 0; j < suffixIndex; j++) {
+    stem += analysis.suffixes[j].suffix;
+  }
+  return stem;
+}
 
 // Computes the Levenshtein Distance between two strings
 export function getLevenshteinDistance(a: string, b: string): number {
@@ -801,134 +194,127 @@ function runRule(rule: ValidationRule, normalizedInput: string): string | null {
     }
     case 'reported_past_harmony': {
       const words = normalizedInput.split(' ');
-      let habitoreMatch = null;
-      let verbRoot = '';
-      let misSuffix = '';
+      let foundAnalysis: WordAnalysis | null = null;
+      let suffixIndex = -1;
 
       for (const w of words) {
-        const match = w.match(/^([a-zçğışöü]+)(miş|mış|muş|müş)(im|sin|miş|ik|iniz|ler)?$/);
-        if (match) {
-          habitoreMatch = match;
-          verbRoot = match[1];
-          misSuffix = match[2];
-          break;
+        const analysis = analyzeWord(w);
+        if (analysis) {
+          const idx = analysis.suffixes.findIndex(s => s.type === 'tense' && /m[ıiuü]ş/i.test(s.suffix));
+          if (idx !== -1) {
+            foundAnalysis = analysis;
+            suffixIndex = idx;
+            break;
+          }
         }
       }
 
-      if (!habitoreMatch) {
+      if (!foundAnalysis || suffixIndex === -1) {
         return rule.feedback;
       }
 
-      if (!isValidVerbBase(verbRoot)) {
-        return `Gabim: Baza ose rrënja e foljes '${verbRoot}' ka gabim të harmonisë vokalike (kombinim i pasaktë i zanoreve para prapashtesës).`;
+      const suffix = foundAnalysis.suffixes[suffixIndex];
+      const stem = getStemBeforeSuffix(foundAnalysis, suffixIndex);
+
+      if (!isValidVerbBase(stem)) {
+        return `Gabim: Baza ose rrënja e foljes '${stem}' ka gabim të harmonisë vokalike (kombinim i pasaktë i zanoreve para prapashtesës).`;
       }
 
-      const expectedVowel = getVowelHarmony4(verbRoot);
+      const expectedVowel = getVowelHarmony4(stem);
       const expectedSuffix = `m${expectedVowel}ş`;
 
-      if (misSuffix !== expectedSuffix) {
-        return `Gabim Harmonie Vokalore: Rrënja e foljes '${verbRoot}' ka zanoren e fundit '${getLastVowel(verbRoot)}', prandaj prapashtesa e habitores duhet të jetë '-${expectedSuffix}' → '${verbRoot}${expectedSuffix}' (ju keni shkruar '${verbRoot}${misSuffix}').`;
+      if (suffix.suffix.toLowerCase() !== expectedSuffix) {
+        return `Gabim Harmonie Vokalore: Rrënja e foljes '${stem}' ka zanoren e fundit '${getLastVowel(stem)}', prandaj prapashtesa e habitores duhet të jetë '-${expectedSuffix}' → '${stem}${expectedSuffix}' (ju keni shkruar '${stem}${suffix.suffix}').`;
       }
       return null;
     }
     case 'conditional_harmony': {
       const words = normalizedInput.split(' ');
-      let condMatch = null;
-      let base = '';
-      let suffix = '';
+      let foundAnalysis: WordAnalysis | null = null;
+      let suffixIndex = -1;
       const hasVarYokCond = /\b(varsa|yoksa)\b/.test(normalizedInput);
 
-      const EXCLUDED_PREFIXES = ['herkes', 'kimse', 'elbise', 'lise', 'kilise', 'hadise', 'masa', 'kasa', 'yasa', 'arsa', 'bursa', 'pırasa'];
-      const EXCLUDED_EXACT = new Set(['tas', 'yas', 'pas', 'has', 'tasa', 'kese', 'kase']);
-
       for (const w of words) {
-        if (EXCLUDED_EXACT.has(w) || EXCLUDED_PREFIXES.some(p => w.startsWith(p))) {
-          continue;
-        }
-        const match = w.match(/^([a-zçğışöü]+)(se|sa)(?:yd[ıi])?(m|n|k|niz|ler)?$/);
-        if (match) {
-          condMatch = match;
-          base = match[1];
-          suffix = match[2];
-          break;
+        const analysis = analyzeWord(w);
+        if (analysis) {
+          const idx = analysis.suffixes.findIndex(s => s.type === 'conditional');
+          if (idx !== -1) {
+            foundAnalysis = analysis;
+            suffixIndex = idx;
+            break;
+          }
         }
       }
 
-      if (!condMatch && !hasVarYokCond) {
+      if (!foundAnalysis && !hasVarYokCond) {
         return rule.feedback;
       }
 
-      if (condMatch && !hasVarYokCond) {
-        if (!isValidVerbBase(base)) {
-          return `Gabim: Baza e foljes '${base}' ka gabim të harmonisë vokalike (kombinim i pasaktë i zanoreve para prapashtesës).`;
+      if (foundAnalysis && !hasVarYokCond) {
+        const suffix = foundAnalysis.suffixes[suffixIndex];
+        const stem = getStemBeforeSuffix(foundAnalysis, suffixIndex);
+
+        if (!isValidVerbBase(stem)) {
+          return `Gabim: Baza e foljes '${stem}' ka gabim të harmonisë vokalike (kombinim i pasaktë i zanoreve para prapashtesës).`;
         }
 
-        const expectedHarmony = getVowelHarmony2(base);
-        const expectedSuffix = `s${expectedHarmony}`;
+        const expectedHarmony = getVowelHarmony2(stem);
+        const expectedSuffixStart = `s${expectedHarmony}`;
 
-        if (suffix !== expectedSuffix) {
-          return `Gabim Harmonie Vokalore: Rrënja/baza '${base}' kërkon prapashtesën e kushtit '-${expectedSuffix}' (2-she), por keni shkruar '-${suffix}' → '${base}${expectedSuffix}' (jo '${base}${suffix}').`;
+        if (!suffix.suffix.toLowerCase().startsWith(expectedSuffixStart)) {
+          return `Gabim Harmonie Vokalore: Rrënja/baza '${stem}' kërkon prapashtesën e kushtit që fillon me '-${expectedSuffixStart}' (2-she), por keni shkruar '-${suffix.suffix}' → '${stem}${expectedSuffixStart}...'.`;
         }
       }
       return null;
     }
     case 'participle_harmony': {
       const words = normalizedInput.split(' ');
-      let activeMatch = null;
-      let passiveMatch = null;
+      let foundAnalysis: WordAnalysis | null = null;
+      let suffixIndex = -1;
 
       for (const w of words) {
-        const matchA = w.match(/^([a-zçğışöü]+)(en|an)$/);
-        if (matchA) {
-          const root = matchA[1];
-          if (root.length >= 2 && !['b', 's', 'o'].includes(root)) {
-            activeMatch = matchA;
+        const analysis = analyzeWord(w);
+        if (analysis) {
+          const idx = analysis.suffixes.findIndex(s => s.type === 'participle');
+          if (idx !== -1) {
+            foundAnalysis = analysis;
+            suffixIndex = idx;
             break;
           }
         }
-        const matchP = w.match(/^([a-zçğışöü]+)(diğ|dığ|duğ|düğ|dik|dık|duk|dük)(i|im|in|imiz|iniz|i|leri)?$/);
-        if (matchP) {
-          passiveMatch = matchP;
-          break;
-        }
       }
 
-      if (!activeMatch && !passiveMatch) {
+      if (!foundAnalysis || suffixIndex === -1) {
         return rule.feedback;
       }
 
-      if (activeMatch) {
-        const root = activeMatch[1];
-        const suffix = activeMatch[2];
-        
-        if (!isValidVerbBase(root)) {
-          return `Gabim: Rrënja e foljes '${root}' ka gabim të harmonisë vokalike.`;
-        }
+      const suffix = foundAnalysis.suffixes[suffixIndex];
+      const stem = getStemBeforeSuffix(foundAnalysis, suffixIndex);
 
-        const expected = getVowelHarmony2(root);
-        const expectedSuffix = `${expected}n`;
-
-        if (suffix !== expectedSuffix) {
-          return `Gabim Harmonie te pjesorja: Rrënja '${root}' duhet të ketë prapashtesën '-${expectedSuffix}' → '${root}${expectedSuffix}' (ju shkruat '${root}${suffix}').`;
-        }
+      if (!isValidVerbBase(stem)) {
+        return `Gabim: Rrënja e foljes '${stem}' ka gabim të harmonisë vokalike.`;
       }
 
-      if (passiveMatch) {
-        const root = passiveMatch[1];
-        const suffix = passiveMatch[2];
+      const isPassiveParticiple = /(?:dik|dık|duk|dük|tik|tık|tuk|tük|diğ|dığ|duğ|düğ|tiğ|tığ|tuğ|tüğ)$/i.test(suffix.suffix);
 
-        if (!isValidVerbBase(root)) {
-          return `Gabim: Rrënja e foljes '${root}' ka gabim të harmonisë vokalike.`;
-        }
-
-        const expectedVowel = getVowelHarmony4(root);
-        const lastChar = root.slice(-1);
+      if (isPassiveParticiple) {
+        const expectedVowel = getVowelHarmony4(stem);
+        const lastChar = stem.slice(-1);
         const isVoiceless = 'çfhkpsştÇFHKPSŞT'.includes(lastChar);
         const expectedD = isVoiceless ? 't' : 'd';
         const expectedSuffixStart = `${expectedD}${expectedVowel}`;
         
-        if (!suffix.startsWith(expectedSuffixStart)) {
-          return `Gabim Harmonie/Mutacioni: Pjesorja pasive për '${root}' kërkon prapashtesën që fillon me '${expectedSuffixStart}' (p.sh., '${root}${expectedSuffixStart}ğ...'), por ju shkruat '${root}${suffix}'.`;
+        if (!suffix.suffix.toLowerCase().startsWith(expectedSuffixStart)) {
+          return `Gabim Harmonie/Mutacioni: Pjesorja pasive për '${stem}' kërkon prapashtesën që fillon me '${expectedSuffixStart}' (p.sh., '${stem}${expectedSuffixStart}ğ...'), por ju shkruat '${stem}${suffix.suffix}'.`;
+        }
+      } else {
+        const expected = getVowelHarmony2(stem);
+        const lastChar = stem.slice(-1);
+        const endsWithVowel = new Set(['a', 'ı', 'o', 'u', 'e', 'i', 'ö', 'ü']).has(lastChar);
+        const finalExpectedSuffix = endsWithVowel ? `y${expected}n` : `${expected}n`;
+
+        if (suffix.suffix.toLowerCase() !== finalExpectedSuffix) {
+          return `Gabim Harmonie te pjesorja: Rrënja '${stem}' duhet të ketë prapashtesën '-${finalExpectedSuffix}' → '${stem}${finalExpectedSuffix}' (ju shkruat '${stem}${suffix.suffix}').`;
         }
       }
       return null;
@@ -1020,37 +406,54 @@ function runRule(rule: ValidationRule, normalizedInput: string): string | null {
       return null;
     }
     case 'since_harmony': {
-      const match = normalizedInput.match(/\b([a-zçğışöü]+)(d|t)(ı|i|u|ü)ğ(ı|i|u|ü)(m|n|miz|niz)?(dan|den)\s+beri\b/);
-      if (!match) {
+      const words = normalizedInput.split(' ');
+      const beriIndex = words.indexOf('beri');
+      if (beriIndex <= 0) {
         return null;
       }
 
-      const base = match[1];
-      const dt = match[2];
-      const v1 = match[3];
-      const v2 = match[4];
-      const danden = match[6];
-
-      if (!isValidVerbBase(base)) {
-        return `Gabim: Rrënja e foljes '${base}' ka gabim të harmonisë vokalike.`;
+      const precedingWord = words[beriIndex - 1];
+      const analysis = analyzeWord(precedingWord);
+      if (!analysis) {
+        return null;
       }
 
-      const lastChar = base.slice(-1);
+      const participleSuffix = analysis.suffixes.find(s => s.type === 'participle' && /(?:dik|dık|duk|dük|tiğ|tığ|tuğ|tüğ|diğ|dığ|duğ|düğ)$/i.test(s.suffix));
+      const caseSuffix = analysis.suffixes.find(s => s.type === 'case' && /dan|den/i.test(s.suffix));
+
+      if (!participleSuffix || !caseSuffix) {
+        return null;
+      }
+
+      const participleSuffixIndex = analysis.suffixes.indexOf(participleSuffix);
+      const stem = getStemBeforeSuffix(analysis, participleSuffixIndex);
+
+      if (!isValidVerbBase(stem)) {
+        return `Gabim: Rrënja e foljes '${stem}' ka gabim të harmonisë vokalike.`;
+      }
+
+      const lastChar = stem.slice(-1);
       const isVoiceless = 'çfhkpsştÇFHKPSŞT'.includes(lastChar);
       const expectedDt = isVoiceless ? 't' : 'd';
-      if (dt !== expectedDt) {
-        return `Gabim Mutacioni: Rrënja '${base}' përfundon me bashkëtingëllore ${isVoiceless ? 'të shurdhët' : 'të zëshme'}, prandaj prapashtesa duhet të fillojë me '${expectedDt}' (jo '${dt}').`;
+      const actualDt = participleSuffix.suffix.charAt(0).toLowerCase();
+      if (actualDt !== expectedDt) {
+        return `Gabim Mutacioni: Rrënja '${stem}' përfundon me bashkëtingëllore ${isVoiceless ? 'të shurdhët' : 'të zëshme'}, prandaj prapashtesa duhet të fillojë me '${expectedDt}' (jo '${actualDt}').`;
       }
 
-      const expectedV4 = getVowelHarmony4(base);
-      if (v1 !== expectedV4 || v2 !== expectedV4) {
-        return `Gabim Harmonie Vokalore: Rrënja '${base}' kërkon zanoren e harmonizuar 4-she '${expectedV4}' te prapashtesa (ju shkruat '${v1}' dhe '${v2}').`;
+      const expectedVowel = getVowelHarmony4(stem);
+      if (!participleSuffix.suffix.toLowerCase().includes(expectedVowel)) {
+        return `Gabim Harmonie Vokalore: Rrënja '${stem}' kërkon zanoren e harmonizuar 4-she '${expectedVowel}' te prapashtesa.`;
       }
 
-      const expectedV2 = getVowelHarmony2(base);
+      const possessiveSuffix = analysis.suffixes.find(s => s.type === 'possessive');
+      if (possessiveSuffix && /[aıoueiöü]/i.test(possessiveSuffix.suffix) && !possessiveSuffix.suffix.toLowerCase().includes(expectedVowel)) {
+        return `Gabim Harmonie Vokalore: Rrënja '${stem}' kërkon zanoren e harmonizuar 4-she '${expectedVowel}' te prapashtesa.`;
+      }
+
+      const expectedV2 = getVowelHarmony2(stem);
       const expectedDanden = expectedV2 === 'a' ? 'dan' : 'den';
-      if (danden !== expectedDanden) {
-        return `Gabim Harmonie Vokalore: Rasa rrjedhore pas '${base}' duhet të jetë '-${expectedDanden}' (jo '-${danden}').`;
+      if (caseSuffix.suffix.toLowerCase() !== expectedDanden) {
+        return `Gabim Harmonie Vokalore: Rasa rrjedhore pas '${precedingWord.slice(0, -caseSuffix.suffix.length)}' duhet të jetë '-${expectedDanden}' (jo '-${caseSuffix.suffix}').`;
       }
 
       return null;
@@ -1068,7 +471,7 @@ export function evaluateWriting(chapterId: number, input: string): EvaluationRes
   }
 
   const cleanInput = input.trim();
-  const b1Chapters = [4, 22, 23, 24, 25, 26, 27, 28];
+  const b1Chapters = [17, 18, 19, 20, 21, 22, 23, 24];
   const minLength = b1Chapters.includes(chapterId) ? 60 : 10;
   if (cleanInput.length < minLength) {
     return { 
@@ -1144,45 +547,45 @@ export function evaluateWriting(chapterId: number, input: string): EvaluationRes
   let successFeedback = 'Shkëlqyeshëm! Detyra e shkrimit u përfundua me sukses.';
   if (chapterId === 1) {
     successFeedback = 'Shkëlqyeshëm! Keni shkruar një përshëndetje të saktë, keni prezantuar emrin tuaj dhe keni vendosur prapashtesat e duhura të harmonizuara për origjinën.';
-  } else if (chapterId === 3) {
+  } else if (chapterId === 9) {
     successFeedback = 'Shkëlqyeshëm! Keni përshkruar fundjavën tuaj duke përdorur saktë kohën e shkuar të drejtpërdrejtë dhe treguesit kohorë.';
-  } else if (chapterId === 14) {
+  } else if (chapterId === 10) {
     successFeedback = 'Shkëlqyeshëm! Keni përshkruar saktë planet tuaja të së ardhshmes duke përdorur kohën e ardhshme dhe harmonizuar prapashtesat.';
-  } else if (chapterId === 15) {
+  } else if (chapterId === 11) {
     successFeedback = 'Shkëlqyeshëm! Keni përshkruar saktë rutinën tuaj të përditshme duke përdorur kohën e gjerë dhe treguesit e frekuencës.';
-  } else if (chapterId === 16) {
+  } else if (chapterId === 12) {
     successFeedback = 'Shkëlqyeshëm! Keni përshkruar saktë aftësitë tuaja duke përdorur foljen e mundësisë (Yeterlilik Fiili) në trajtën e duhur.';
-  } else if (chapterId === 17) {
+  } else if (chapterId === 13) {
     successFeedback = 'Shkëlqyeshëm! Keni shkruar saktë për detyrimet ose nevojat tuaja duke përdorur mënyrën detyrore (Gereklilik Kipi) ose strukturat e nevojës.';
-  } else if (chapterId === 18) {
+  } else if (chapterId === 14) {
     successFeedback = 'Shkëlqyeshëm! Keni shkruar saktë krahasimin duke përdorur fjalën \'daha\' dhe rasën rrjedhore (-dan/-den).';
-  } else if (chapterId === 19) {
+  } else if (chapterId === 15) {
     successFeedback = 'Shkëlqyeshëm! Keni përshkruar saktë fëmijërinë dhe zakonet tuaja të kaluara duke përdorur kohën e shkuar të vazhdueshme.';
-  } else if (chapterId === 20) {
+  } else if (chapterId === 16) {
     successFeedback = 'Shkëlqyeshëm! Keni përshkruar saktë veprimet dhe arsyet e ditës suaj duke përdorur saktë lidhëzat dhe zarf-foljet.';
-  } else if (chapterId === 21) {
+  } else if (chapterId === 0) {
     successFeedback = 'Shkëlqyeshëm! Keni shkruar saktë përshëndetjen tuaj të parë në turqisht duke përdorur shkronjat dhe shqiptimin e duhur.';
-  } else if (chapterId === 4) {
+  } else if (chapterId === 17) {
     successFeedback = 'Shkëlqyeshëm! Keni shkruar një paragraf duke përdorur saktë kohën e shkuar të vazhdueshme ose zarf-foljen \'-ken\' dhe lidhëzat përkatëse.';
-  } else if (chapterId === 22) {
+  } else if (chapterId === 18) {
     successFeedback = 'Shkëlqyeshëm! Keni shkruar një përshkrim të saktë duke përdorur foljet reciproke në formën e duhur.';
-  } else if (chapterId === 23) {
+  } else if (chapterId === 19) {
     successFeedback = 'Shkëlqyeshëm! Keni shkruar një paragraf të saktë duke përdorur strukturën kushtore ose dëshirore për të përshkruar rëndësinë e edukimit.';
-  } else if (chapterId === 24) {
+  } else if (chapterId === 20) {
     successFeedback = 'Shkëlqyeshëm! Keni shkruar një paragraf të saktë duke përdorur prapashtesat e detyrimit dhe kohëzgjatjes për të përshkruar shtëpinë ose mësimin e gjuhës.';
-  } else if (chapterId === 25) {
+  } else if (chapterId === 21) {
     successFeedback = 'Shkëlqyeshëm! Keni shkruar një paragraf të saktë duke përdorur përemrin ose foljen vetvetore dhe strukturat e detyrimit për të përshkruar qëllimet tuaja.';
-  } else if (chapterId === 26) {
+  } else if (chapterId === 22) {
     successFeedback = 'Shkëlqyeshëm! Keni shkruar një paragraf të saktë duke përdorur foljet pasive në kohën e duhur.';
-  } else if (chapterId === 27) {
+  } else if (chapterId === 23) {
     successFeedback = 'Shkëlqyeshëm! Keni shkruar një paragraf të saktë duke përdorur pjesoret relative (sıfat-fiil) në formën duhur.';
-  } else if (chapterId === 28) {
+  } else if (chapterId === 24) {
     successFeedback = 'Shkëlqyeshëm! Keni shkruar një autobiografi ose përmbledhje të saktë duke kombinuar pjesoret relative dhe strukturat e tjera të nivelit B1.';
-  } else if (chapterId === 5) {
+  } else if (chapterId === 25) {
     successFeedback = 'Shkëlqyeshëm! Fjali kushtore e saktë me përdorim të rregullt të prapashtesës së kushtit (-se/-sa).';
-  } else if (chapterId === 6) {
+  } else if (chapterId === 26) {
     successFeedback = 'Shkëlqyeshëm! Keni krijuar një fjali të saktë duke përdorur strukturën e pjesoreve (sıfat-fiil).';
-  } else if (chapterId === 7) {
+  } else if (chapterId === 27) {
     successFeedback = 'Shkëlqyeshëm! Keni përdorur me sukses idiomën e kërkuar në fjalinë tuaj.';
   }
 

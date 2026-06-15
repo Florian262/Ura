@@ -4,11 +4,10 @@ import { ProgressRepository } from '../../../infrastructure/repository/ProgressR
 import { ChapterRepository } from '../../../infrastructure/repository/ChapterRepository';
 
 export const ProgressPage: React.FC = () => {
-  const { chapters, loadChapter, resetAllData } = useLesson();
+  const { chapters, loadChapter, resetAllData, progressMap } = useLesson();
 
   const stats = useMemo(() => {
     const totalChaptersCount = chapters.length;
-    const progressMap = ProgressRepository.getProgressMap();
     const progressItems = Object.values(progressMap);
     
     const completedChapters = progressItems.filter(p => p.is_completed).length;
@@ -52,7 +51,7 @@ export const ProgressPage: React.FC = () => {
       lastAccessedDate,
       lastSession
     };
-  }, [chapters]);
+  }, [chapters, progressMap]);
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12 animate-fade-in space-y-8 relative">
@@ -141,7 +140,7 @@ export const ProgressPage: React.FC = () => {
 
         <div className="divide-y divide-[#E9ECEF]">
           {chapters.map(ch => {
-            const progress = ProgressRepository.getChapterProgress(ch.id);
+            const progress = progressMap[ch.id];
             const isCompleted = progress?.is_completed || false;
             
             return (

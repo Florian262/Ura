@@ -19,7 +19,8 @@ export const ChapterContainer: React.FC = () => {
     chapters,
     loadChapter,
     exitToDashboard,
-    listeningBlock
+    listeningBlock,
+    scrollTarget
   } = useLesson();
 
   const [completions, setCompletions] = React.useState<Record<string, boolean>>({
@@ -138,17 +139,10 @@ export const ChapterContainer: React.FC = () => {
 
   // Listen for navigation requests from the sidebar
   React.useEffect(() => {
-    const handleNavigate = (e: Event) => {
-      const sectionId = (e as CustomEvent<string>).detail;
-      if (sectionId) {
-        handleTabClick(sectionId);
-      }
-    };
-    window.addEventListener('navigate-to-section', handleNavigate);
-    return () => {
-      window.removeEventListener('navigate-to-section', handleNavigate);
-    };
-  }, [handleTabClick]);
+    if (scrollTarget) {
+      handleTabClick(scrollTarget.sectionId);
+    }
+  }, [scrollTarget, handleTabClick]);
 
   if (!currentChapter) return null;
 

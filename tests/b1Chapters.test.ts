@@ -10,7 +10,7 @@ import { b1Chapter8 } from '../src/infrastructure/db/lessons/b1_chapter8';
 
 describe('B1 Level Chapter 1 (Haberin Var Mı?) Content Integrity', () => {
   it('has valid metadata and order index', () => {
-    expect(b1Chapter1.id).toBe(4);
+    expect(b1Chapter1.id).toBe(17);
     expect(b1Chapter1.level).toBe('B1');
     expect(b1Chapter1.orderIndex).toBe(1);
     expect(b1Chapter1.title.turkish).toBe('Haberin Var Mı?');
@@ -52,7 +52,7 @@ describe('B1 Level Chapter 1 (Haberin Var Mı?) Content Integrity', () => {
 
 describe('B1 Level Chapter 2 (Yorumlar ve Görüşler) Content Integrity', () => {
   it('has valid metadata and order index', () => {
-    expect(b1Chapter2.id).toBe(22);
+    expect(b1Chapter2.id).toBe(18);
     expect(b1Chapter2.level).toBe('B1');
     expect(b1Chapter2.orderIndex).toBe(2);
     expect(b1Chapter2.title.turkish).toBe('Yorumlar ve Görüşler');
@@ -89,7 +89,7 @@ describe('B1 Level Chapter 2 (Yorumlar ve Görüşler) Content Integrity', () =>
 
 describe('B1 Level Chapter 3 (Eğitim) Content Integrity', () => {
   it('has valid metadata and order index', () => {
-    expect(b1Chapter3.id).toBe(23);
+    expect(b1Chapter3.id).toBe(19);
     expect(b1Chapter3.level).toBe('B1');
     expect(b1Chapter3.orderIndex).toBe(3);
     expect(b1Chapter3.title.turkish).toBe('Eğitim');
@@ -131,7 +131,7 @@ describe('B1 Level Chapter 3 (Eğitim) Content Integrity', () => {
 
 describe('B1 Level Chapter 4 (Gelin Tanış Olalım) Content Integrity', () => {
   it('has valid metadata and order index', () => {
-    expect(b1Chapter4.id).toBe(24);
+    expect(b1Chapter4.id).toBe(20);
     expect(b1Chapter4.level).toBe('B1');
     expect(b1Chapter4.orderIndex).toBe(4);
     expect(b1Chapter4.title.turkish).toBe('Gelin Tanış Olalım');
@@ -173,7 +173,7 @@ describe('B1 Level Chapter 4 (Gelin Tanış Olalım) Content Integrity', () => {
 
 describe('B1 Level Chapter 5 (Engelleri Kaldıralım) Content Integrity', () => {
   it('has valid metadata and order index', () => {
-    expect(b1Chapter5.id).toBe(25);
+    expect(b1Chapter5.id).toBe(21);
     expect(b1Chapter5.level).toBe('B1');
     expect(b1Chapter5.orderIndex).toBe(5);
     expect(b1Chapter5.title.turkish).toBe('Engelleri Kaldıralım');
@@ -215,7 +215,7 @@ describe('B1 Level Chapter 5 (Engelleri Kaldıralım) Content Integrity', () => 
 
 describe('B1 Level Chapter 6 (Kurgu) Content Integrity', () => {
   it('has valid metadata and order index', () => {
-    expect(b1Chapter6.id).toBe(26);
+    expect(b1Chapter6.id).toBe(22);
     expect(b1Chapter6.level).toBe('B1');
     expect(b1Chapter6.orderIndex).toBe(6);
     expect(b1Chapter6.title.turkish).toBe('Kurgu');
@@ -257,7 +257,7 @@ describe('B1 Level Chapter 6 (Kurgu) Content Integrity', () => {
 
 describe('B1 Level Chapter 7 (Kutlama) Content Integrity', () => {
   it('has valid metadata and order index', () => {
-    expect(b1Chapter7.id).toBe(27);
+    expect(b1Chapter7.id).toBe(23);
     expect(b1Chapter7.level).toBe('B1');
     expect(b1Chapter7.orderIndex).toBe(7);
     expect(b1Chapter7.title.turkish).toBe('Kutlama');
@@ -299,7 +299,7 @@ describe('B1 Level Chapter 7 (Kutlama) Content Integrity', () => {
 
 describe('B1 Level Chapter 8 (Ömür Dediğin) Content Integrity', () => {
   it('has valid metadata and order index', () => {
-    expect(b1Chapter8.id).toBe(28);
+    expect(b1Chapter8.id).toBe(24);
     expect(b1Chapter8.level).toBe('B1');
     expect(b1Chapter8.orderIndex).toBe(8);
     expect(b1Chapter8.title.turkish).toBe('Ömür Dediğin');

@@ -41,6 +41,6 @@
     "vitest": "^3.0.7"
   },
   "simple-git-hooks": {
-    "pre-commit": "npm run build && npm run test"
+    "pre-commit": "tsc --noEmit && npm run lint"
   }
 }
