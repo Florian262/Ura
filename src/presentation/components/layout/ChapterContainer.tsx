@@ -167,28 +167,28 @@ export const ChapterContainer: React.FC = () => {
         )}
 
         {/* SECTION 2: VOCABULARY ACQUISITION */}
-        {currentChapter.id !== 21 && (
+        {currentChapter.id !== 0 && (
           <section id="vocab" className="scroll-mt-28 md:scroll-mt-24">
             <VocabularyModule onComplete={() => markSectionComplete('vocab')} />
           </section>
         )}
 
         {/* SECTION 3: GRAMMAR PRESENTATION */}
-        {currentChapter.id !== 21 && (
+        {currentChapter.id !== 0 && (
           <section id="grammar" className="scroll-mt-28 md:scroll-mt-24">
             <GrammarModule onComplete={() => markSectionComplete('grammar')} />
           </section>
         )}
 
         {/* SECTION 4: WRITING ENGINE */}
-        {currentChapter.id !== 21 && (
+        {currentChapter.id !== 0 && (
           <section id="writing" className="scroll-mt-28 md:scroll-mt-24">
             <WritingModule onComplete={() => markSectionComplete('writing')} />
           </section>
         )}
 
         {/* SECTION 5: INTERACTIVE EXERCISES */}
-        {currentChapter.id !== 21 && (
+        {currentChapter.id !== 0 && (
           <section id="exercises" className="scroll-mt-28 md:scroll-mt-24">
             <ExerciseModule onComplete={() => markSectionComplete('exercises')} />
           </section>

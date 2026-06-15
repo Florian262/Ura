@@ -600,7 +600,7 @@ export const ReadingModule: React.FC = () => {
           <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-widest">Sekuenca 1</span>
           <h2 className="text-xl font-black text-[#1A1D20] uppercase font-sans">Lexim & Dëgjim (Okuma ve Dinleme)</h2>
         </div>
-        {readingBlock.chapter_id !== 21 && (
+        {readingBlock.chapter_id !== 0 && (
           <div className="flex gap-2">
             {/* Audio Hook - Dialogue/Narrative TTS loop */}
             {dialogueTurkish.length > 0 && (
@@ -649,7 +649,7 @@ export const ReadingModule: React.FC = () => {
       </div>
 
       {/* Reading Content Pane - Switching dynamically between Dialogue bubble layout and Prose paragraph layout */}
-      {readingBlock.chapter_id === 21 ? (
+      {readingBlock.chapter_id === 0 ? (
         renderIntroGuide()
       ) : (
         <div className="bg-transparent md:bg-neutral-50 md:rounded-2xl p-0 md:p-6 mb-6 md:mb-8 max-h-[450px] overflow-y-auto border-none md:border md:border-[#E9ECEF] no-scrollbar md:shadow-inner">
