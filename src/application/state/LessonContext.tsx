@@ -53,6 +53,14 @@ interface LessonContextType {
 
 const LessonContext = createContext<LessonContextType | undefined>(undefined);
 
+const getTodayDateString = () => {
+  const d = new Date();
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+};
+
 export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [chapters, setChapters] = useState<Chapter[]>([]);
   const [currentChapter, setCurrentChapter] = useState<Chapter | null>(null);
@@ -86,11 +94,12 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   // Timer States
   const [sessionSeconds, setSessionSeconds] = useState<number>(0);
   const [lifetimeSeconds, setLifetimeSeconds] = useState<number>(0);
-  const [isSessionRunning, setIsSessionRunning] = useState<boolean>(false);
+  const [isSessionRunning, setIsSessionRunning] = useState<boolean>(true);
   const [hasSavedSession, setHasSavedSession] = useState<boolean>(false);
 
   const sessionSecondsRef = useRef<number>(0);
   const lifetimeSecondsRef = useRef<number>(0);
+  const currentDateRef = useRef<string>(getTodayDateString());
 
   // Sync refs with state to prevent stale closures in unload event listeners
   useEffect(() => {
@@ -104,17 +113,14 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   // Load timer values from localStorage on mount
   useEffect(() => {
     const savedLifetime = parseInt(localStorage.getItem('ura_lifetime_seconds') || '0', 10);
-    const savedSession = parseInt(localStorage.getItem('ura_session_seconds') || '0', 10);
+    const today = getTodayDateString();
+    currentDateRef.current = today;
+    const savedDaily = parseInt(localStorage.getItem(`ura_daily_seconds_${today}`) || '0', 10);
+    
     setLifetimeSeconds(savedLifetime);
-    setSessionSeconds(savedSession);
-
-    if (savedSession > 0) {
-      setHasSavedSession(true);
-      setIsSessionRunning(false); // Kept paused until the user decides to continue or reset
-    } else {
-      setHasSavedSession(false);
-      setIsSessionRunning(true); // Start session immediately
-    }
+    setSessionSeconds(savedDaily);
+    setIsSessionRunning(true);
+    setHasSavedSession(false);
   }, []);
 
   // Background clock interval (runs every second)
@@ -122,30 +128,37 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     const interval = setInterval(() => {
       // Accumulate time only if the page/tab is currently active in the foreground
       if (document.visibilityState === 'visible') {
+        const today = getTodayDateString();
+        
+        if (today !== currentDateRef.current) {
+          // Day rollover occurred
+          currentDateRef.current = today;
+          setSessionSeconds(0);
+          localStorage.setItem(`ura_daily_seconds_${today}`, '0');
+        }
+
         setLifetimeSeconds(prev => {
           const next = prev + 1;
           localStorage.setItem('ura_lifetime_seconds', next.toString());
           return next;
         });
 
-        if (isSessionRunning) {
-          setSessionSeconds(prev => {
-            const next = prev + 1;
-            localStorage.setItem('ura_session_seconds', next.toString());
-            return next;
-          });
-        }
+        setSessionSeconds(prev => {
+          const next = prev + 1;
+          localStorage.setItem(`ura_daily_seconds_${today}`, next.toString());
+          return next;
+        });
       }
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [isSessionRunning]);
+  }, []);
 
   // Unload and visibility change emergency saving mechanisms
   useEffect(() => {
     const handleSave = () => {
       localStorage.setItem('ura_lifetime_seconds', lifetimeSecondsRef.current.toString());
-      localStorage.setItem('ura_session_seconds', sessionSecondsRef.current.toString());
+      localStorage.setItem(`ura_daily_seconds_${currentDateRef.current}`, sessionSecondsRef.current.toString());
     };
 
     window.addEventListener('beforeunload', handleSave);
@@ -346,21 +359,11 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     setActivePage('lessons');
   };
 
-  const resumeSession = () => {
-    setIsSessionRunning(true);
-    setHasSavedSession(false);
-  };
+  const resumeSession = () => {};
 
-  const resetSession = () => {
-    setSessionSeconds(0);
-    localStorage.setItem('ura_session_seconds', '0');
-    setIsSessionRunning(true);
-    setHasSavedSession(false);
-  };
+  const resetSession = () => {};
 
-  const toggleSession = () => {
-    setIsSessionRunning(prev => !prev);
-  };
+  const toggleSession = () => {};
 
   const resetAllData = () => {
     const confirmation = window.confirm(

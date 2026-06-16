@@ -9,7 +9,7 @@ import { Logo } from './presentation/components/common/Logo';
 import { WelcomePage } from './presentation/components/layout/WelcomePage';
 import { SplashScreen } from './presentation/components/layout/SplashScreen';
 import { VocabularyBuilderPage } from './presentation/components/layout/VocabularyBuilderPage';
-import { A2FinishingTestPage } from './presentation/components/layout/A2FinishingTestPage';
+import { FinishingTestPage } from './presentation/components/layout/FinishingTestPage';
 import JourneyDashboard from './presentation/components/layout/JourneyDashboard';
 import { EverydayPracticePage } from './presentation/components/layout/EverydayPracticePage';
 const HomeIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" }) => (
@@ -138,7 +138,17 @@ const MainLayout: React.FC = () => {
       case 'progress':
         return <ProgressPage />;
       case 'a2_test':
-        return <A2FinishingTestPage />;
+        return <FinishingTestPage level="A2" subType="official" />;
+      case 'a2_practice_a':
+        return <FinishingTestPage level="A2" subType="practice_a" />;
+      case 'a2_practice_b':
+        return <FinishingTestPage level="A2" subType="practice_b" />;
+      case 'b1_test':
+        return <FinishingTestPage level="B1" subType="official" />;
+      case 'b1_practice_a':
+        return <FinishingTestPage level="B1" subType="practice_a" />;
+      case 'b1_practice_b':
+        return <FinishingTestPage level="B1" subType="practice_b" />;
       default:
         return <LessonDashboard />;
     }

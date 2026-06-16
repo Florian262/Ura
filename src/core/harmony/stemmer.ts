@@ -180,6 +180,8 @@ export interface StrippedSuffix {
 const SUFFIX_DETAILS: Array<{ pattern: RegExp; type: string; label: string; meaning: string }> = [
   // Since suffix (spaces removed in clean word)
   { pattern: /(?:d|t)[ıiuü]ğ[ıiuü](?:m|n|miz|niz)?(?:dan|den)beri$/i, type: 'since', label: 'diğinden beri (që kur)', meaning: 'që kur' },
+  // Relative / Pronoun suffix -ki
+  { pattern: /(?:ki)$/i, type: 'derivational', label: 'ki (relativizues)', meaning: 'që është në / i/e' },
   // Plural
   { pattern: /(?:lar|ler)$/i, type: 'plural', label: 'ler/lar (shumës)', meaning: 'shumës' },
   // Person Copula / Verb person - Split optional 'y' to prevent greedy root collision
@@ -198,6 +200,7 @@ const SUFFIX_DETAILS: Array<{ pattern: RegExp; type: string; label: string; mean
   { pattern: /(?:da|de|ta|te)$/i, type: 'case', label: 'da (në/tek)', meaning: 'në / tek' },
   { pattern: /(?:yla|yle)$/i, type: 'case', label: 'la (me)', meaning: 'me' },
   { pattern: /(?:la|le)$/i, type: 'case', label: 'la (me)', meaning: 'me' },
+  { pattern: /(?:ca|ce|ça|çe)$/i, type: 'case', label: 'ca (sipas/për/si)', meaning: 'sipas / për / si' },
   { pattern: /(?:nın|nin|nun|nün)$/i, type: 'case', label: 'in (e/i)', meaning: 'i/e (gjini)' },
   { pattern: /(?:ın|in|un|ün)$/i, type: 'case', label: 'in (e/i)', meaning: 'i/e (gjini)' },
   { pattern: /(?:ye|ya)$/i, type: 'case', label: 'e (drejt/te)', meaning: 'drejt / te' },
@@ -224,7 +227,7 @@ const SUFFIX_DETAILS: Array<{ pattern: RegExp; type: string; label: string; mean
   { pattern: /(?:yecek|yacak|yeceğ|yacağ)$/i, type: 'tense', label: 'ecek (koha e ardhme)', meaning: 'do të' },
   { pattern: /(?:ecek|acak|eceğ|acağ)$/i, type: 'tense', label: 'ecek (koha e ardhme)', meaning: 'do të' },
   { pattern: /(?:miş|mış|muş|müş)$/i, type: 'tense', label: 'miş (e shkuar e pacaktuar)', meaning: 'paska' },
-  { pattern: /(?:[dt][ıiuü])$/i, type: 'tense', label: 'di (e kryer e thjeshtë)', meaning: 'të shkuar' },
+  { pattern: /(?:y?[dt][ıiuü])$/i, type: 'tense', label: 'di (e kryer e thjeshtë)', meaning: 'të shkuar' },
   { pattern: /(?:[ti][ıiuü])$/i, type: 'tense', label: 'ti (e kryer e thjeshtë)', meaning: 'të shkuar' },
   { pattern: /(?:[dt])$/i, type: 'tense', label: 'di (e kryer e thjeshtë)', meaning: 'të shkuar' },
   { pattern: /(?:yarak|yerek)$/i, type: 'gerund', label: 'erek (duke)', meaning: 'duke' },
@@ -245,7 +248,7 @@ const SUFFIX_DETAILS: Array<{ pattern: RegExp; type: string; label: string; mean
   { pattern: /(?:saydı|seydi)$/i, type: 'conditional', label: 'seydi (sikur të)', meaning: 'sikur të' },
   { pattern: /(?:salar|seler)$/i, type: 'conditional', label: 'seler (nëse ata)', meaning: 'nëse ata' },
   { pattern: /(?:sak|sek)$/i, type: 'conditional', label: 'sek (nëse ne)', meaning: 'nëse ne' },
-  { pattern: /(?:sa|se)$/i, type: 'conditional', label: 'se (nëse)', meaning: 'nëse' },
+  { pattern: /(?:y?sa|y?se)$/i, type: 'conditional', label: 'se (nëse)', meaning: 'nëse' },
   { pattern: /(?:mek|mak)$/i, type: 'infinitive', label: 'mak (paskajore)', meaning: 'të' },
   { pattern: /(?:yabil|yebil)$/i, type: 'potential', label: 'abil (mundësi)', meaning: 'mund të' },
   { pattern: /(?:abil|ebil)$/i, type: 'potential', label: 'abil (mundësi)', meaning: 'mund të' },
@@ -254,7 +257,9 @@ const SUFFIX_DETAILS: Array<{ pattern: RegExp; type: string; label: string; mean
   // Derivational suffixes
   { pattern: /(?:lı|li|lu|lü)$/i, type: 'derivational', label: 'li (me)', meaning: 'me' },
   { pattern: /(?:siz|sız|suz|süz)$/i, type: 'derivational', label: 'siz (pa)', meaning: 'pa' },
-  { pattern: /(?:lan|len)$/i, type: 'derivational', label: 'len (bëhem)', meaning: 'bëhem' }
+  { pattern: /(?:lan|len)$/i, type: 'derivational', label: 'len (bëhem)', meaning: 'bëhem' },
+  { pattern: /(?:lık|lik|luk|lük)$/i, type: 'derivational', label: 'lik (abstrakt)', meaning: 'krijon emra/mbiemra' },
+  { pattern: /(?:cı|ci|cu|cü|çı|çi|çu|çü)$/i, type: 'derivational', label: 'ci (profesion)', meaning: 'bërës i/e' }
 ];
 
 function recursiveLookupWithSuffixes(

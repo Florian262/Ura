@@ -1584,7 +1584,7 @@ export const basicGrammarVocabularyData: BasicGrammarVocabularyItem[] = [
     id: "g-struct-92",
     word: "Hakkında",
     translation: "Rreth / Në lidhje me / Për",
-    pos: "lidhëz",
+    pos: "ndajfolje",
     notes: "Prepozicion që vendoset pas emrit."
   },
   {
@@ -2867,5 +2867,1449 @@ export const basicGrammarVocabularyData: BasicGrammarVocabularyItem[] = [
     translation: "Të blesh / blej",
     pos: "folje",
     notes: "Marrja e një malli ose shërbimi në shkëmbim të parave."
+  },
+  {
+    id: "g-struct-276",
+    word: "mıydı",
+    translation: "a ishte? / a kishit?",
+    pos: "shprehje",
+    notes: "Pjesëza pyetëse (mı/mi/mu/mü) e ndjekur nga koha e shkuar (-ydı/-ydi)."
+  },
+  {
+    id: "g-struct-277",
+    word: "musunuz",
+    translation: "a jeni ju? / a dëshironi ju?",
+    pos: "shprehje",
+    notes: "Pjesëza pyetëse (mı/mi/mu/mü) e kombinuar me vetën e dytë shumës (sunuz/sünüz)."
+  },
+  {
+    id: "g-struct-278",
+    word: "hoş",
+    translation: "I këndshëm / mirë",
+    pos: "mbiemër",
+    notes: "Përdoret në shprehje si 'hoş geldiniz'."
+  },
+  {
+    id: "g-struct-279",
+    word: "borç",
+    translation: "Borxh",
+    pos: "emër",
+    is_balkan: true,
+    notes: "Detyrim financiar ose moral."
+  },
+  {
+    id: "g-struct-280",
+    word: "toplam",
+    translation: "Gjithsej / total",
+    pos: "emër",
+    notes: "Shuma e të gjitha pjesëve."
+  },
+  {
+    id: "g-struct-281",
+    word: "fincan",
+    translation: "Filxhan",
+    pos: "emër",
+    is_balkan: true,
+    notes: "Enë e vogël për të pirë kafe ose çaj."
+  },
+  {
+    id: "g-struct-282",
+    word: "sade",
+    translation: "E thjeshtë / pa sheqer",
+    pos: "mbiemër",
+    is_balkan: true,
+    notes: "Pa shtesa, pa zbukurime ose pa sheqer (për kafenë)."
+  },
+  {
+    id: "g-struct-283",
+    word: "orta",
+    translation: "Mesatare / e mesme",
+    pos: "mbiemër",
+    notes: "Në mes të dy skajeve; me pak sheqer (për kafenë)."
+  },
+  {
+    id: "g-struct-284",
+    word: "getirmek",
+    translation: "Të sjellësh",
+    pos: "folje",
+    notes: "Marrja e diçkaje dhe dërgimi i saj në një vend tjetër."
+  },
+  {
+    id: "g-struct-285",
+    word: "istek",
+    translation: "Dëshirë / kërkesë",
+    pos: "emër",
+    notes: "Ajo që dëshiron ose kërkon dikush."
+  },
+  {
+    id: "g-struct-286",
+    word: "afiyet",
+    translation: "Shëndet / oreks",
+    pos: "emër",
+    notes: "Përdoret kryesisht në shprehjen 'Afiyet olsun' (Ju bëftë mirë)."
+  },
+  {
+    id: "g-struct-287",
+    word: "trafik",
+    translation: "Trafik",
+    pos: "emër",
+    notes: "Lëvizja e automjeteve ose këmbësorëve në rrugë."
+  },
+  {
+    id: "g-struct-288",
+    word: "ücret",
+    translation: "Pagesë / tarifë / çmim",
+    pos: "emër",
+    notes: "Sasia e parave që paguhet për një shërbim ose punë."
+  },
+  {
+    id: "g-struct-289",
+    word: "tutmak",
+    translation: "Të kushtojë / të mbash",
+    pos: "folje",
+    notes: "Përdoret edhe për të shprehur koston totale (p.sh. 'ne kadar tutar')."
+  },
+  {
+    id: "g-struct-290",
+    word: "kemer",
+    translation: "Rrip",
+    pos: "emër",
+    notes: "Rrip që përdoret për siguri ose për të mbajtur rrobat."
+  },
+  {
+    id: "g-struct-291",
+    word: "Kosovalı",
+    translation: "Kosovar",
+    pos: "mbiemër",
+    notes: "Person ose diçka që vjen nga Kosova."
+  },
+  {
+    id: "g-struct-292",
+    word: "üzere",
+    translation: "Për / me qëllim që",
+    pos: "lidhëz",
+    notes: "Përdoret në shprehje si 'Görüşmek üzere' (Shihemi së shpejti)."
+  },
+  {
+    id: "g-struct-293",
+    word: "hanım",
+    translation: "Zonjë / grua",
+    pos: "emër",
+    notes: "Përdoret si titull respekti për femrat ose për të treguar bashkëshorten."
+  },
+  {
+    id: "g-struct-294",
+    word: "lise",
+    translation: "Shkollë e mesme",
+    pos: "emër",
+    notes: "Institucion arsimor pas shkollës fillore."
+  },
+  {
+    id: "g-struct-295",
+    word: "piknik",
+    translation: "Piknik",
+    pos: "emër",
+    notes: "Ngrënie dhe argëtim në natyrë."
+  },
+  {
+    id: "g-struct-296",
+    word: "balkon",
+    translation: "Ballkon",
+    pos: "emër",
+    notes: "Pjesë e jashtme e hapur e një ndërtese."
+  },
+  {
+    id: "g-struct-297",
+    word: "mahalle",
+    translation: "Lagje",
+    pos: "emër",
+    is_balkan: true,
+    notes: "Ndarje territoriale e një qyteti ose fshati."
+  },
+  {
+    id: "g-struct-298",
+    word: "hareketli",
+    translation: "I gjallë / aktiv",
+    pos: "mbiemër",
+    notes: "Që ka shumë lëvizje ose aktivitet."
+  },
+  {
+    id: "g-struct-299",
+    word: "yan",
+    translation: "Anë / pranë",
+    pos: "emër",
+    notes: "Pjesa anësore ose hapësira afër diçkaje."
+  },
+  {
+    id: "g-struct-300",
+    word: "fırın",
+    translation: "Furrë / furrë buke",
+    pos: "emër",
+    is_balkan: true,
+    notes: "Vendi ku piqet buka ose pajisje gatimi."
+  },
+  {
+    id: "g-struct-301",
+    word: "dışarı",
+    translation: "Jashtë",
+    pos: "ndajfolje",
+    notes: "Hapësira jashtë një ndërtese ose vendi."
+  },
+  {
+    id: "g-struct-302",
+    word: "yiyoruz",
+    translation: "Po hamë",
+    pos: "folje",
+    notes: "Veta e parë shumës e foljes 'yemek' në kohën e tashme."
+  },
+  {
+    id: "g-struct-303",
+    word: "yiyorlar",
+    translation: "Po hanë",
+    pos: "folje",
+    notes: "Veta e tretë shumës e foljes 'yemek' në kohën e tashme."
+  },
+  {
+    id: "g-struct-304",
+    word: "yarın",
+    translation: "Nesër",
+    pos: "ndajfolje",
+    notes: "Dita pas ditës së sotme."
+  },
+  {
+    id: "g-struct-305",
+    word: "Şikayet",
+    translation: "Ankesë",
+    pos: "emër",
+    notes: "Shprehje e pakënaqësisë ose dhimbjes."
+  },
+  {
+    id: "g-struct-306",
+    word: "Halsiz",
+    translation: "I pafuqishëm / pa fuqi",
+    pos: "mbiemër",
+    notes: "Ndjenja e lodhjes ose mungesës së energjisë."
+  },
+  {
+    id: "g-struct-307",
+    word: "Öksürmek",
+    translation: "Të kollitesh",
+    pos: "folje",
+    notes: "Nxjerrja e ajrit me zhurmë nga mushkëritë."
+  },
+  {
+    id: "g-struct-308",
+    word: "Ölçmek",
+    translation: "Të masësh",
+    pos: "folje",
+    notes: "Përcaktimi i madhësisë, peshës ose temperaturës."
+  },
+  {
+    id: "g-struct-309",
+    word: "Boğaz",
+    translation: "Fyt / grykë",
+    pos: "emër",
+    notes: "Pjesa e brendshme e qafës."
+  },
+  {
+    id: "g-struct-310",
+    word: "Ciddi",
+    translation: "Serioz",
+    pos: "mbiemër",
+    notes: "Që ka rëndësi; jo shaka."
+  },
+  {
+    id: "g-struct-311",
+    word: "Bey",
+    translation: "Zotëri / zoti",
+    pos: "emër",
+    notes: "Titull mirësjelljeje që vendoset pas emrit të meshkujve."
+  },
+  {
+    id: "g-struct-312",
+    word: "Kullanmak",
+    translation: "Të përdorësh / të ngasësh",
+    pos: "folje",
+    notes: "Vënia në punë e një mjeti ose zbatimi i një metode."
+  },
+  {
+    id: "g-struct-313",
+    word: "Kesici",
+    translation: "Prerës / ndalues",
+    pos: "mbiemër",
+    notes: "Përdoret në 'ağrı kesici' (kundërdhembje / analgjezik)."
+  },
+  {
+    id: "g-struct-314",
+    word: "Defa",
+    translation: "Herë / radhë",
+    pos: "emër",
+    notes: "Përsëritja e një veprimi."
+  },
+  {
+    id: "g-struct-315",
+    word: "Tok",
+    translation: "I ngopur",
+    pos: "mbiemër",
+    notes: "Që nuk ka uri; barku i plotë."
+  },
+  {
+    id: "g-struct-316",
+    word: "Rica",
+    translation: "Lutje",
+    pos: "emër",
+    notes: "Kërkesë e sjellshme (p.sh. 'Rica ederim' - Ju lutem / s'ka përse)."
+  },
+  {
+    id: "g-struct-317",
+    word: "Tekrar",
+    translation: "Përsëri / sërish",
+    pos: "ndajfolje",
+    notes: "Edhe një herë tjetër."
+  },
+  {
+    id: "g-struct-318",
+    word: "Beyefendi",
+    translation: "Zotëri",
+    pos: "emër",
+    notes: "Mënyrë shumë e sjellshme për t'iu drejtuar një mashkulli."
+  },
+  {
+    id: "g-struct-319",
+    word: "Gecelik",
+    translation: "Për natë / nate",
+    pos: "mbiemër",
+    notes: "Që lidhet me natën ose koston për një natë."
+  },
+  {
+    id: "g-struct-320",
+    word: "Kontrol",
+    translation: "Kontroll / verifikim",
+    pos: "emër",
+    notes: "Mbikëqyrja ose verifikimi i diçkaje."
+  },
+  {
+    id: "g-struct-321",
+    word: "Kişilik",
+    translation: "Për persona",
+    pos: "mbiemër",
+    notes: "Që i përshtatet një numri të caktuar njerëzish (p.sh. tek kişilik = për një person)."
+  },
+  {
+    id: "g-struct-322",
+    word: "Kimlik",
+    translation: "Letërnjoftim / ID / identitet",
+    pos: "emër",
+    notes: "Dokument zyrtar që vërteton identitetin e një personi."
+  },
+  {
+    id: "g-struct-323",
+    word: "Kat",
+    translation: "Kat",
+    pos: "emër",
+    notes: "Ndarje horizontale e një ndërtese."
+  },
+  {
+    id: "g-struct-324",
+    word: "Servis",
+    translation: "Shërbim / servis",
+    pos: "emër",
+    notes: "Shërbimi i ushqimit, pijeve ose transportit."
+  },
+  {
+    id: "g-struct-325",
+    word: "Ücretsiz",
+    translation: "Pa pagesë / falas",
+    pos: "mbiemër",
+    notes: "Që nuk kushton para."
+  },
+  {
+    id: "g-struct-326",
+    word: "Kağıt",
+    translation: "Letër",
+    pos: "emër",
+    is_balkan: true,
+    notes: "Material i hollë mbi të cilin shkruhet."
+  },
+  {
+    id: "g-struct-327",
+    word: "Anahtar",
+    translation: "Çelës",
+    pos: "emër",
+    is_balkan: true,
+    notes: "Mjet për të hapur ose mbyllur bravën."
+  },
+  {
+    id: "g-struct-328",
+    word: "Dördüncü",
+    translation: "I katërti",
+    pos: "mbiemër",
+    notes: "Numri rreshtor që vjen pas të tretit."
+  },
+  {
+    id: "g-struct-329",
+    word: "Numara",
+    translation: "Numër",
+    pos: "emër",
+    is_balkan: true,
+    notes: "Shenjë ose fjalë që tregon sasi ose radhë."
+  },
+  {
+    id: "g-struct-330",
+    word: "Yardımcı",
+    translation: "Ndihmës / ndihmues",
+    pos: "mbiemër",
+    notes: "Që jep ndihmë ose shërben si asistent."
+  },
+  {
+    id: "g-struct-331",
+    word: "Masmavi",
+    translation: "I kaltër i kulluar",
+    pos: "mbiemër",
+    notes: "Krejtësisht i kaltër (intensifikim i ngjyrës mavi)."
+  },
+  {
+    id: "g-struct-332",
+    word: "Yöre",
+    translation: "Zonë / rajon",
+    pos: "emër",
+    notes: "Rrethinë ose zonë e caktuar gjeografike."
+  },
+  {
+    id: "g-struct-333",
+    word: "Tur",
+    translation: "Xhiro / tur / udhëtim",
+    pos: "emër",
+    is_balkan: true,
+    notes: "Udhëtim i shkurtër shëtitës."
+  },
+  {
+    id: "g-struct-334",
+    word: "Koy",
+    translation: "Gjiri / gji detar",
+    pos: "emër",
+    notes: "Gji i vogël dhe i mbrojtur detar."
+  },
+  {
+    id: "g-struct-335",
+    word: "Enerjik",
+    translation: "Energjik",
+    pos: "mbiemër",
+    notes: "Që ka shumë energji ose gjallëri."
+  },
+  {
+    id: "g-struct-336",
+    word: "Mezun",
+    translation: "I diplomuar / mezun",
+    pos: "mbiemër",
+    notes: "Person që ka përfunduar studimet."
+  },
+  {
+    id: "g-struct-337",
+    word: "Kattaki",
+    translation: "në katin",
+    pos: "mbiemër",
+    notes: "Që ndodhet në një kat të caktuar."
+  },
+  {
+    id: "g-struct-338",
+    word: "Yöresel",
+    translation: "lokale / rajonale",
+    pos: "mbiemër",
+    notes: "Që i përket një yöre (zone/rajoni) të caktuar."
+  },
+  {
+    id: "g-struct-339",
+    word: "Günlük",
+    translation: "E përditshme / e ditës / ditar",
+    pos: "mbiemër",
+    notes: "Që ka të bëjë me jetën e përditshme ose tarifën ditore."
+  },
+  {
+    id: "g-struct-340",
+    word: "Ekonomik",
+    translation: "Ekonomik",
+    pos: "mbiemër",
+    notes: "Që kushton pak ose ka të bëjë me ekonominë."
+  },
+  {
+    id: "g-struct-341",
+    word: "Kiralamak",
+    translation: "Marr ose jap me qira",
+    pos: "folje",
+    notes: "Veprimi i marrjes ose dhënies së diçkaje me qira."
+  },
+  {
+    id: "g-struct-342",
+    word: "Sigorta",
+    translation: "Sigurim / siguracion",
+    pos: "emër",
+    notes: "Mbrojtje financiare ndaj rreziqeve."
+  },
+  {
+    id: "g-struct-343",
+    word: "Dahil",
+    translation: "I përfshirë / duka përfshirë",
+    pos: "mbiemër",
+    notes: "Që është brenda ose pjesë e diçkaje."
+  },
+  {
+    id: "g-struct-344",
+    word: "Yıllık",
+    translation: "Vjetor / -vjeçar",
+    pos: "mbiemër",
+    notes: "Që zgjat një vit ose lidhet me vjetërsinë."
+  },
+  {
+    id: "g-struct-345",
+    word: "Benzinli",
+    translation: "Me benzinë",
+    pos: "mbiemër",
+    notes: "Mjet që funksionon me karburant benzinë."
+  },
+  {
+    id: "g-struct-346",
+    word: "Dizel",
+    translation: "Dizel / naftë",
+    pos: "emër",
+    notes: "Karburant nafte ose motor dizel."
+  },
+  {
+    id: "g-struct-347",
+    word: "Manuel",
+    translation: "Manual / me dorë",
+    pos: "mbiemër",
+    notes: "Që bëhet ose drejtohet me dorë."
+  },
+  {
+    id: "g-struct-348",
+    word: "Vitesli",
+    translation: "Me ndërrues shpejtësie / me marsha",
+    pos: "mbiemër",
+    notes: "Mjet që ka ndërrues shpejtësie (vites)."
+  },
+  {
+    id: "g-struct-349",
+    word: "Depo",
+    translation: "Depo / rezervuar",
+    pos: "emër",
+    notes: "Vendi ku ruhen mallrat ose karburanti."
+  },
+  {
+    id: "g-struct-350",
+    word: "Geri",
+    translation: "Prapa / mbrapsht",
+    pos: "ndajfolje",
+    notes: "Në drejtim të kundërt ose prapa."
+  },
+  {
+    id: "g-struct-351",
+    word: "Ödeme",
+    translation: "Pagesë",
+    pos: "emër",
+    notes: "Veprimi i dhënies së parave për diçka."
+  },
+  {
+    id: "g-struct-352",
+    word: "Kredi",
+    translation: "Kredi / besim",
+    pos: "emër",
+    notes: "Sasi parash e marrë hua ose kredi bankare."
+  },
+  {
+    id: "g-struct-353",
+    word: "Göstermek",
+    translation: "Tregoj / shfaq",
+    pos: "folje",
+    notes: "Bëj të dukshme diçka për të tjerët."
+  },
+  {
+    id: "g-struct-354",
+    word: "Teslim",
+    translation: "Dorëzim / teslim",
+    pos: "emër",
+    notes: "Veprimi i dhënies së diçkaje në duart e tjetrit."
+  },
+  {
+    id: "g-struct-355",
+    word: "Otopark",
+    translation: "Otopark / vendparkim",
+    pos: "emër",
+    notes: "Hapësirë e rezervuar për parkimin e makinave."
+  },
+  {
+    id: "g-struct-356",
+    word: "Garson",
+    translation: "Kamarier",
+    pos: "emër",
+    notes: "Shërbyes në restorant ose kafene."
+  },
+  {
+    id: "g-struct-357",
+    word: "Maalesef",
+    translation: "Fatkeqësisht",
+    pos: "ndajfolje",
+    notes: "Për fat të keq."
+  },
+  {
+    id: "g-struct-358",
+    word: "Özür",
+    translation: "Ndjesë / kërkim falje / defekt",
+    pos: "emër",
+    notes: "Kërkesë për falje pas një gabimi."
+  },
+  {
+    id: "g-struct-359",
+    word: "İletmek",
+    translation: "Përcjell / dërgoj / transmetoj",
+    pos: "folje",
+    notes: "Kaloj një mesazh ose gjë te dikush tjetër."
+  },
+  {
+    id: "g-struct-360",
+    word: "Yiyelim",
+    translation: "Le të hamë",
+    pos: "folje",
+    notes: "Forma e dëshirore/urdhërore e vetës së parë shumës të foljes yemek (të hamë)."
+  },
+  {
+    id: "g-struct-361",
+    word: "Müessese",
+    translation: "Institucion / lokal / ndërmarrje",
+    pos: "emër",
+    notes: "Ndërmarrje, firmë ose lokal tregtar."
+  },
+  {
+    id: "g-struct-362",
+    word: "Naziklik",
+    translation: "Mirësjellje / mirësi / nazikllëk",
+    pos: "emër",
+    notes: "Cilësia e të qenit i sjellshëm ose i kujdesshëm."
+  },
+  {
+    id: "g-struct-363",
+    word: "Uçmak",
+    translation: "Fluturoj",
+    pos: "folje",
+    notes: "Lëviz nëpër ajër si shpendët ose aeroplanët."
+  },
+  {
+    id: "g-struct-364",
+    word: "Yorucu",
+    translation: "I lodhshëm",
+    pos: "mbiemër",
+    notes: "Që të lodh ose kërkon shumë sforcim."
+  },
+  {
+    id: "g-struct-365",
+    word: "Video",
+    translation: "Video",
+    pos: "emër",
+    notes: "Regjistrim pamjesh të lëvizshme."
+  },
+  {
+    id: "g-struct-366",
+    word: "Kısa",
+    translation: "I shkurtër",
+    pos: "mbiemër",
+    notes: "Që ka gjatësi ose kohëzgjatje të vogël."
+  },
+  {
+    id: "g-struct-367",
+    word: "Banka",
+    translation: "Bankë",
+    pos: "emër",
+    notes: "Institucion financiar ku depozitohen dhe huazohen para."
+  },
+  {
+    id: "g-struct-368",
+    word: "Avro",
+    translation: "Euro",
+    pos: "emër",
+    notes: "Valuta zyrtare e Bashkimit Evropian."
+  },
+  {
+    id: "g-struct-369",
+    word: "Vade",
+    translation: "Afat / afat kohor",
+    pos: "emër",
+    notes: "Koha e caktuar për kryerjen e një detyrimi ose pagese."
+  },
+  {
+    id: "g-struct-370",
+    word: "Vadesiz",
+    translation: "Pa afat / rrjedhëse (për llogarinë)",
+    pos: "mbiemër",
+    notes: "Llogari bankare nga e cila mund të tërhiqen para në çdo kohë."
+  },
+  {
+    id: "g-struct-371",
+    word: "Mevduat",
+    translation: "Depozitë",
+    pos: "emër",
+    notes: "Para të vendosura në një llogari bankare."
+  },
+  {
+    id: "g-struct-372",
+    word: "Hesap",
+    translation: "Llogari / llogaritje",
+    pos: "emër",
+    notes: "Regjistrim financiar ose veprim matematik."
+  },
+  {
+    id: "g-struct-373",
+    word: "İkametgah",
+    translation: "Vendbanim / ikametgah",
+    pos: "emër",
+    notes: "Vendi ku banon ligjërisht një person."
+  },
+  {
+    id: "g-struct-374",
+    word: "Belge",
+    translation: "Dokument / dëshmi",
+    pos: "emër",
+    notes: "Shkresë zyrtare që vërteton diçka."
+  },
+  {
+    id: "g-struct-375",
+    word: "Üzeri",
+    translation: "Sipërfaqe / pjesa e sipërme / mbi",
+    pos: "emër",
+    notes: "Pjesa e sipërme e diçkaje."
+  },
+  {
+    id: "g-struct-376",
+    word: "Bireysel",
+    translation: "Individual / personal",
+    pos: "mbiemër",
+    notes: "Që i përket një personi të vetëm."
+  },
+  {
+    id: "g-struct-377",
+    word: "Kesmek",
+    translation: "Pres / ndal / ndërpres",
+    pos: "folje",
+    notes: "Ndarja e diçkaje me një mjet të mprehtë ose ndalimi i një pagese."
+  },
+  {
+    id: "g-struct-378",
+    word: "Mobil",
+    translation: "Celular / mobil / lëvizës",
+    pos: "mbiemër",
+    notes: "Që lëviz ose lidhet me telefonat celularë."
+  },
+  {
+    id: "g-struct-379",
+    word: "Bankacılık",
+    translation: "Veprimtari bankare / bankim",
+    pos: "emër",
+    notes: "Profesioni ose veprimtaria që lidhet med bankat."
+  },
+  {
+    id: "g-struct-380",
+    word: "EFT",
+    translation: "EFT (transfertë ndërbankare)",
+    pos: "emër",
+    notes: "Transfertë elektronike e fondeve midis bankave të ndryshme."
+  },
+  {
+    id: "g-struct-381",
+    word: "Talep",
+    translation: "Kërkesë / kërkesë tregtare",
+    pos: "emër",
+    notes: "Dëshira ose kërkesa zyrtare për diçka."
+  },
+  {
+    id: "g-struct-382",
+    word: "Sistem",
+    translation: "Sistem",
+    pos: "emër",
+    notes: "Tërësi elementesh të lidhura organikisht mes vete."
+  },
+  {
+    id: "g-struct-383",
+    word: "Geçici",
+    translation: "I përkohshëm",
+    pos: "mbiemër",
+    notes: "Që zgjat për një kohë të shkurtër."
+  },
+  {
+    id: "g-struct-384",
+    word: "Göndermek",
+    translation: "Dërgoj",
+    pos: "folje",
+    notes: "Veprimi i nisjes së diçkaje drejt një destinacioni."
+  },
+  {
+    id: "g-struct-385",
+    word: "Giriş",
+    translation: "Hyrje / hyrja",
+    pos: "emër",
+    notes: "Vendi ose veprimi i hyrjes në një ndërtesë ose sistem."
+  },
+  {
+    id: "g-struct-386",
+    word: "Yardım",
+    translation: "Ndihmë",
+    pos: "emër",
+    notes: "Mbështetje ose asistencë e dhënë dikujt."
+  },
+  {
+    id: "g-struct-387",
+    word: "Oldukça",
+    translation: "Mjaft / relativisht",
+    pos: "ndajfolje",
+    notes: "Përdoret për të treguar një shkallë të lartë."
+  },
+  {
+    id: "g-struct-388",
+    word: "Yenilikçi",
+    translation: "Inovativ / novator",
+    pos: "mbiemër",
+    notes: "Që sjell risi ose ide të reja."
+  },
+  {
+    id: "g-struct-389",
+    word: "Web",
+    translation: "Ueb / rrjet",
+    pos: "emër",
+    notes: "Rrjeti botëror i informacionit."
+  },
+  {
+    id: "g-struct-390",
+    word: "Teknik",
+    translation: "Teknik",
+    pos: "mbiemër",
+    notes: "Që lidhet me shkencën e zbatuar ose metodat e punës."
+  },
+  {
+    id: "g-struct-391",
+    word: "Bahsetmek",
+    translation: "Flas / përmend / bëj fjalë",
+    pos: "folje",
+    notes: "Të flasësh rreth një teme ose personi."
+  },
+  {
+    id: "g-struct-392",
+    word: "Sorumlu",
+    translation: "Përgjegjës",
+    pos: "mbiemër",
+    notes: "Personi që mban përgjegjësi për diçka."
+  },
+  {
+    id: "g-struct-393",
+    word: "Stres",
+    translation: "Stres",
+    pos: "emër",
+    notes: "Gjendje tensioni nervor ose psikologjik."
+  },
+  {
+    id: "g-struct-394",
+    word: "Birlik",
+    translation: "Bashkim / unitet / bashkëpunim",
+    pos: "emër",
+    notes: "Gjendja e të qenit të bashkuar."
+  },
+  {
+    id: "g-struct-395",
+    word: "Katkı",
+    translation: "Kontribut / shtesë",
+    pos: "emër",
+    notes: "Ndihma ose pjesa që jepet për të arritur një qëllim."
+  },
+  {
+    id: "g-struct-396",
+    word: "Stresli",
+    translation: "I stresuar / stresues",
+    pos: "mbiemër",
+    notes: "Që shkakton ose ndjen stres."
+  },
+  {
+    id: "g-struct-397",
+    word: "Sıra",
+    translation: "Radhë / bangë / radha",
+    pos: "emër",
+    notes: "Rresht i rregullt ose bankë shkollore."
+  },
+  {
+    id: "g-struct-398",
+    word: "Bölmek",
+    translation: "Ndaj / pjesëtoj / copëtoj",
+    pos: "folje",
+    notes: "Ndarja e një tërësie në disa pjesë."
+  },
+  {
+    id: "g-struct-399",
+    word: "Ekip",
+    translation: "Ekip / skuadër",
+    pos: "emër",
+    notes: "Grup njerëzish që punojnë së bashku."
+  },
+  {
+    id: "g-struct-400",
+    word: "Çözmek",
+    translation: "Zgjidh",
+    pos: "folje",
+    notes: "Gjetja e përgjigjes për një problem ose nyjë."
+  },
+  {
+    id: "g-struct-401",
+    word: "Model",
+    translation: "Model",
+    pos: "emër",
+    notes: "Shembull për t'u ndjekur ose model pune."
+  },
+  {
+    id: "g-struct-402",
+    word: "Hibrit",
+    translation: "Hibrit",
+    pos: "mbiemër",
+    notes: "Përzierje e dy elementeve të ndryshme (p.sh. punë nga shtëpia dhe nga zyra)."
+  },
+  {
+    id: "g-struct-403",
+    word: "Uygun",
+    translation: "I përshtatshëm / i harmonishëm",
+    pos: "mbiemër",
+    notes: "Që i përshtatet rrethanave ose kushteve."
+  },
+  {
+    id: "g-struct-404",
+    word: "Bitmek",
+    translation: "Mbaroj / përfundoj",
+    pos: "folje",
+    notes: "Arritja në fund të një procesi ose pune."
+  },
+  {
+    id: "g-struct-405",
+    word: "Nitelik",
+    translation: "Cilësi / kualifikim / veçori",
+    pos: "emër",
+    notes: "Karakteristikë ose aftësi e një personi ose gjëje."
+  },
+  {
+    id: "g-struct-406",
+    word: "Dönüş",
+    translation: "Kthim / kthim përgjigje",
+    pos: "emër",
+    notes: "Veprimi i kthimit prapa ose përgjigjja e një mesazhi."
+  },
+  {
+    id: "g-struct-407",
+    word: "Daire",
+    translation: "Banesë / apartament / rreth",
+    pos: "emër",
+    notes: "Njësi banimi në një ndërtesë shumëkatëshe."
+  },
+  {
+    id: "g-struct-408",
+    word: "Satılık",
+    translation: "Në shitje / për shitje",
+    pos: "mbiemër",
+    notes: "Gjë që ofrohet për t'u blerë me para."
+  },
+  {
+    id: "g-struct-409",
+    word: "Tam",
+    translation: "I plotë / plotësisht / saktësisht",
+    pos: "mbiemër",
+    notes: "Pa asnjë mungesë ose pikërisht."
+  },
+  {
+    id: "g-struct-410",
+    word: "Mesafe",
+    translation: "Distancë / largësi",
+    pos: "emër",
+    notes: "Hapësira midis du pikave."
+  },
+  {
+    id: "g-struct-411",
+    word: "Doğalgaz",
+    translation: "Gaz natyror",
+    pos: "emër",
+    notes: "Lëndë djegëse e gaztë natyrore."
+  },
+  {
+    id: "g-struct-412",
+    word: "Doğalgazlı",
+    translation: "Me gaz natyror",
+    pos: "mbiemër",
+    notes: "Banesë që përdor gazin natyror për ngrohje."
+  },
+  {
+    id: "g-struct-413",
+    word: "Kombi",
+    translation: "Kombi / ngrohje qendrore",
+    pos: "emër",
+    notes: "Pajisje individuale për ngrohjen e ujit dhe banesës."
+  },
+  {
+    id: "g-struct-414",
+    word: "Kombili",
+    translation: "Me ngrohje qendrore individuale",
+    pos: "mbiemër",
+    notes: "Që ka të instaluar pajisjen kombi."
+  },
+  {
+    id: "g-struct-415",
+    word: "Asansör",
+    translation: "Ashensor",
+    pos: "emër",
+    notes: "Mjet për ngjitjen dhe zbritjen e njerëzve në kate."
+  },
+  {
+    id: "g-struct-416",
+    word: "Aidat",
+    translation: "Pagesë mirëmbajtjeje / kuotë",
+    pos: "emër",
+    notes: "Pagesë mujore e detyrueshme për shërbimet e përbashkëta të pallatit."
+  },
+  {
+    id: "g-struct-417",
+    word: "Bedel",
+    translation: "Kosto / vlerë / çmim",
+    pos: "emër",
+    notes: "Vlera në para e diçkaje."
+  },
+  {
+    id: "g-struct-418",
+    word: "Mevcut",
+    translation: "I pranishëm / ekzistues",
+    pos: "mbiemër",
+    notes: "Që ndodhet ose gjendet në një vend."
+  },
+  {
+    id: "g-struct-419",
+    word: "Sahip",
+    translation: "Pronar / zotërues",
+    pos: "emër",
+    notes: "Personi që zotëron diçka."
+  },
+  {
+    id: "g-struct-420",
+    word: "Kontrat",
+    translation: "Kontratë",
+    pos: "emër",
+    notes: "Marrëveshje me shkrim midis dy palëve."
+  },
+  {
+    id: "g-struct-421",
+    word: "Kira",
+    translation: "Qira",
+    pos: "emër",
+    notes: "Pagesa për përdorimin e përkohshëm të një prone."
+  },
+  {
+    id: "g-struct-422",
+    word: "Standart",
+    translation: "Standard",
+    pos: "mbiemër",
+    notes: "Që ndedh një rregull ose normë të caktuar."
+  },
+  {
+    id: "g-struct-423",
+    word: "Artış",
+    translation: "Rritje",
+    pos: "emër",
+    notes: "Shtimi në sasi, madhësi ose vlerë."
+  },
+  {
+    id: "g-struct-424",
+    word: "Makul",
+    translation: "I arsyeshëm",
+    pos: "mbiemër",
+    notes: "Që pranohet nga arsyeja, i përshtatshëm."
+  },
+  {
+    id: "g-struct-425",
+    word: "Kiracı",
+    translation: "Qiramarrës",
+    pos: "emër",
+    notes: "Personi që merr një pronë me qira."
+  },
+  {
+    id: "g-struct-426",
+    word: "Dizüstü",
+    translation: "Laptop / dizüstü",
+    pos: "mbiemër",
+    notes: "Kompjuter i vogël portativ."
+  },
+  {
+    id: "g-struct-427",
+    word: "Isınmak",
+    translation: "Ngrohem / nxehem",
+    pos: "folje",
+    notes: "Rritja e temperaturës së diçkaje."
+  },
+  {
+    id: "g-struct-428",
+    word: "Kapanmak",
+    translation: "Mbyllem / fikem",
+    pos: "folje",
+    notes: "Ndërprerja e funksionimit ose mbyllja."
+  },
+  {
+    id: "g-struct-429",
+    word: "Çizgi",
+    translation: "Vijë / vizë",
+    pos: "emër",
+    notes: "Gjurmë e hollë dhe e gjatë në një sipërfaqe."
+  },
+  {
+    id: "g-struct-430",
+    word: "Fan",
+    translation: "Ventilator / fan",
+    pos: "emër",
+    notes: "Pajisje që rrotullohet për të krijuar rrymë ajri."
+  },
+  {
+    id: "g-struct-431",
+    word: "Tıkanıklık",
+    translation: "Bllokim",
+    pos: "emër",
+    notes: "Gjendje e bllokuar e një tubi ose rruge ajri."
+  },
+  {
+    id: "g-struct-432",
+    word: "Termal",
+    translation: "Termal",
+    pos: "mbiemër",
+    notes: "Që ka të bëjë me nxehtësinë."
+  },
+  {
+    id: "g-struct-433",
+    word: "Macun",
+    translation: "Pastë / mastikë",
+    pos: "emër",
+    notes: "Përbërje e butë dhe ngjitëse."
+  },
+  {
+    id: "g-struct-434",
+    word: "Cihaz",
+    translation: "Pajisje / aparat / cihaz",
+    pos: "emër",
+    notes: "Mjet teknik i ndërtuar për një qëllim të caktuar."
+  },
+  {
+    id: "g-struct-435",
+    word: "Kapsam",
+    translation: "Shtrirje / fushëveprim / kornizë",
+    pos: "emër",
+    notes: "Kufijtë brenda të cilëve shtrihet diçka."
+  },
+  {
+    id: "g-struct-436",
+    word: "Sıvı",
+    translation: "Lëng / i lëngshëm",
+    pos: "emër",
+    notes: "Gjendje e lëndës që rrjedh dhe merr formën e enës."
+  },
+  {
+    id: "g-struct-437",
+    word: "Düşme",
+    translation: "Rënie / rrëzim",
+    pos: "emër",
+    notes: "Lëvizje e shpejtë nga lart poshtë."
+  },
+  {
+    id: "g-struct-438",
+    word: "Hasar",
+    translation: "Dëm / dëmtim",
+    pos: "emër",
+    notes: "Humbje ose dëmtim material."
+  },
+  {
+    id: "g-struct-439",
+    word: "Düşürmek",
+    translation: "Rrëzoj / lëshoj / rrëzoj poshtë",
+    pos: "folje",
+    notes: "Bëj që diçka të bjerë nga lart."
+  },
+  {
+    id: "g-struct-440",
+    word: "Dökülmek",
+    translation: "Derdhem / më derdhet",
+    pos: "folje",
+    notes: "Rrjedhja e një lëngu ose rënia e shumë gjërave."
+  },
+  {
+    id: "g-struct-441",
+    word: "Tespit",
+    translation: "Përcaktim / identifikim / konstatim",
+    pos: "emër",
+    notes: "Gjetja ose konstatimi i saktë i diçkaje."
+  },
+  {
+    id: "g-struct-442",
+    word: "Yedek",
+    translation: "Rezervë / backup",
+    pos: "mbiemër",
+    notes: "Që mbahet për raste nevoje ose si kopje."
+  },
+  {
+    id: "g-struct-443",
+    word: "Parça",
+    translation: "Pjesë / copë",
+    pos: "emër",
+    notes: "Një nga elementet që përbëjnë një tërësi."
+  },
+  {
+    id: "g-struct-444",
+    word: "Disk",
+    translation: "Disk",
+    pos: "emër",
+    notes: "Pllakë e rrumbullakët për ruajtjen e të dhënave."
+  },
+  {
+    id: "g-struct-445",
+    word: "Form",
+    translation: "Formular / formë",
+    notes: "Fletë me rubrika që duhen plotësuar.",
+    pos: "emër"
+  },
+  {
+    id: "g-struct-446",
+    word: "Ajans",
+    translation: "Agjenci",
+    pos: "emër",
+    notes: "Ndërmarrje që kryen shërbime të caktuara."
+  },
+  {
+    id: "g-struct-447",
+    word: "Finansal",
+    translation: "Financiar",
+    pos: "mbiemër",
+    notes: "Që ka të bëjë me financat ose paratë."
+  },
+  {
+    id: "g-struct-448",
+    word: "Risk",
+    translation: "Rrezik",
+    pos: "emër",
+    notes: "Mundësia e një humbjeje ose dëmi."
+  },
+  {
+    id: "g-struct-449",
+    word: "Şok",
+    translation: "Shok / tronditje",
+    pos: "emër",
+    notes: "Tronditje e fortë emocionale ose fizike."
+  },
+  {
+    id: "g-struct-450",
+    word: "Bariyer",
+    translation: "Barrierë / pengesë",
+    pos: "emër",
+    notes: "Pengesë që bllokon kalimin."
+  },
+  {
+    id: "g-struct-451",
+    word: "İnanılmaz",
+    translation: "I pabesueshëm / i jashtëzakonshëm",
+    pos: "mbiemër",
+    notes: "Që është shumë i vështirë për t'u besuar."
+  },
+  {
+    id: "g-struct-452",
+    word: "Misafirperverlik",
+    translation: "Mikpritje",
+    pos: "emër",
+    notes: "Sellers e mirë dhe bujare ndaj mysafirëve."
+  },
+  {
+    id: "g-struct-453",
+    word: "Sayesinde",
+    translation: "Falë / me ndihmën e",
+    pos: "ndajfolje",
+    notes: "Përdoret për të treguar ndikimin pozitiv të dikujt/diçkaje."
+  },
+  {
+    id: "g-struct-454",
+    word: "Yavaş",
+    translation: "Ngadalë / i ngadaltë",
+    pos: "mbiemër",
+    notes: "Që nuk lëviz shpejt."
+  },
+  {
+    id: "g-struct-455",
+    word: "Yerel",
+    translation: "Lokal / vendor",
+    pos: "mbiemër",
+    notes: "Që i përket një vendi ose zone të caktuar."
+  },
+  {
+    id: "g-struct-456",
+    word: "Hazine",
+    translation: "Thesar / hazine",
+    pos: "emër",
+    notes: "Grumbull gjërash me vlerë të madhe."
+  },
+  {
+    id: "g-struct-457",
+    word: "Hal",
+    translation: "Gjendje / rast / rrethanë",
+    pos: "emër",
+    notes: "Situata ose gjendja në të cilën ndodhet dikush."
+  },
+  {
+    id: "g-struct-458",
+    word: "Hareketsiz",
+    translation: "Pa lëvizje / pasiv / sedentar",
+    pos: "mbiemër",
+    notes: "Që nuk lëviz ose bën pak aktivitet fizik."
+  },
+  {
+    id: "g-struct-459",
+    word: "Tarz",
+    translation: "Stil / mënyrë / tarz",
+    pos: "emër",
+    notes: "Mënyra e të vepruarit ose të veshurit."
+  },
+  {
+    id: "g-struct-460",
+    word: "Beslenme",
+    translation: "Ushqyerje / ushqim / dietë",
+    pos: "emër",
+    notes: "Marrja e lëndëve ushqyese për trupin."
+  },
+  {
+    id: "g-struct-461",
+    word: "Organik",
+    translation: "Organik",
+    pos: "mbiemër",
+    notes: "Që prodhohet në mënyrë natyrale, pa kimikate."
+  },
+  {
+    id: "g-struct-462",
+    word: "Gıda",
+    translation: "Ushqim / artikull ushqimor",
+    pos: "emër",
+    notes: "Çdo lëndë që shërben si ushqim."
+  },
+  {
+    id: "g-struct-463",
+    word: "Azaltmak",
+    translation: "Reduktoj / pakësoj",
+    pos: "folje",
+    notes: "Zvogëlimi i sasisë ose shkallës së diçkaje."
+  },
+  {
+    id: "g-struct-464",
+    word: "Birkaç",
+    translation: "Pak / disa",
+    pos: "mbiemër",
+    notes: "Një numër i vogël dhe i pacaktuar."
+  },
+  {
+    id: "g-struct-465",
+    word: "Zihinsel",
+    translation: "Mendor",
+    pos: "mbiemër",
+    notes: "Që lidhet me mendjen ose trurin."
+  },
+  {
+    id: "g-struct-466",
+    word: "Odaklanma",
+    translation: "Përqendrim / fokusim",
+    pos: "emër",
+    notes: "Drejtimi i gjithë vëmendjes te një pikë."
+  },
+  {
+    id: "g-struct-467",
+    word: "Yükselmek",
+    translation: "Ngrihem / rritem / ngjitem",
+    pos: "folje",
+    notes: "Lëvizja drejt një niveli më të lartë."
+  },
+  {
+    id: "g-struct-468",
+    word: "Üye",
+    translation: "Anëtar",
+    pos: "emër",
+    notes: "Person që bën pjesë në një grup ose shoqëri."
+  },
+  {
+    id: "g-struct-469",
+    word: "Antrenman",
+    translation: "Stërvitje / ushtrim",
+    pos: "emër",
+    notes: "Stërvitje fizike ose sportive."
+  },
+  {
+    id: "g-struct-470",
+    word: "Aylık",
+    translation: "Mujor / rrogë mujore",
+    pos: "mbiemër",
+    notes: "Që përsëritet ose paguhet çdo muaj."
+  },
+  {
+    id: "g-struct-471",
+    word: "Bilinç",
+    translation: "Ndërgjegje / vetëdije",
+    pos: "emër",
+    notes: "Aftësia për të kuptuar mjedisin dhe veten."
+  },
+  {
+    id: "g-struct-472",
+    word: "Amaç",
+    translation: "Qëllim / synim",
+    pos: "emër",
+    notes: "Objektivi që synohet të arrihet."
+  },
+  {
+    id: "g-struct-473",
+    word: "Ekolojik",
+    translation: "Ekologjik",
+    pos: "mbiemër",
+    notes: "Që lidhet me mjedisin dhe ekologjinë."
+  },
+  {
+    id: "g-struct-474",
+    word: "Toplamak",
+    translation: "Mbledh / grumbulloj / pastroj",
+    pos: "folje",
+    notes: "Veprimi i mbledhjes së gjërave në një vend."
+  },
+  {
+    id: "g-struct-475",
+    word: "Dönüşüm",
+    translation: "Transformim / kthim / dönüşüm",
+    pos: "emër",
+    notes: "Ndryshimi i formës ose gjendjes së diçkaje."
+  },
+  {
+    id: "g-struct-476",
+    word: "Arazi",
+    translation: "Tokë / truall / terren",
+    pos: "emër",
+    notes: "Sipërfaqe toke e zbrazët ose e punueshme."
+  },
+  {
+    id: "g-struct-477",
+    word: "Fidan",
+    translation: "Fidan / pemë e re",
+    pos: "emër",
+    notes: "Pemë e vogël dhe e re gati për t'u mbjellë."
+  },
+  {
+    id: "g-struct-478",
+    word: "Dikmek",
+    translation: "Mbjell / qep",
+    pos: "folje",
+    notes: "Veprimi i vendosjes së fidanit në tokë ose i qepjes së rrobave."
+  },
+  {
+    id: "g-struct-479",
+    word: "Plastik",
+    translation: "Plastikë / plastik",
+    pos: "emër",
+    notes: "Material sintetik i përdorur gjerësisht."
+  },
+  {
+    id: "g-struct-480",
+    word: "Düzenlemek",
+    translation: "Organizoj / rregulloj",
+    pos: "folje",
+    notes: "Veprimi i vënies në rregull ose organizimit të një aktiviteti."
   }
 ];

@@ -104,6 +104,93 @@ const ScenarioIcon: React.FC<{ name: string; className?: string }> = ({ name, cl
           <line x1="3" y1="10" x2="21" y2="10" />
         </svg>
       );
+    case 'doctor':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+        </svg>
+      );
+    case 'hotel':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M2 4v16" />
+          <path d="M2 8h18a2 2 0 0 1 2 2v10" />
+          <path d="M2 17h20" />
+          <circle cx="6" cy="11" r="2" />
+        </svg>
+      );
+    case 'travel':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="8" width="18" height="12" rx="2" />
+          <path d="M7 8V5a3 3 0 0 1 3-3h4a3 3 0 0 1 3 3v3" />
+          <path d="M3 14h18" />
+        </svg>
+      );
+    case 'future':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+        </svg>
+      );
+    case 'bank':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="21" width="18" height="2" />
+          <rect x="5" y="11" width="14" height="10" />
+          <path d="M3 11l9-7 9 7" />
+          <path d="M9 21v-4a3 3 0 0 1 6 0v4" />
+        </svg>
+      );
+    case 'job':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+        </svg>
+      );
+    case 'home':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>
+      );
+    case 'repair':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+        </svg>
+      );
+    case 'business':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M4.5 16.5c-1.5 1.26-2 3.42-2 3.42s2.16-.5 3.42-2M21 3s-6.5 0-11 4.5a18.9 18.9 0 0 0-4.5 11c0 0 3 0 5-2l6.5-6.5C21 5.5 21 3 21 3z" />
+          <path d="M9 15l3 3" />
+        </svg>
+      );
+    case 'culture':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="2" y1="12" x2="22" y2="12" />
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+        </svg>
+      );
+    case 'sports':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+      );
+    case 'nature':
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.58 1 9.2a7 7 0 0 1-9 8.8z" />
+          <path d="M19 2L9.8 11.2" />
+        </svg>
+      );
     default:
       return (
         <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -145,6 +232,54 @@ export const EverydayPracticePage: React.FC = () => {
 
   // Global translation toggle
   const [showAllTranslations, setShowAllTranslations] = useState<boolean>(false);
+
+  // Sidebar resizing and layout states
+  const [sidebarWidth, setSidebarWidth] = useState<number>(320);
+  const [isResizing, setIsResizing] = useState<boolean>(false);
+  const [isLargeScreen, setIsLargeScreen] = useState<boolean>(false);
+  const [isMobileListOpen, setIsMobileListOpen] = useState<boolean>(false);
+
+  // Monitor media query for desktop layout
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 1024px)');
+    setIsLargeScreen(mediaQuery.matches);
+    const handler = (e: MediaQueryListEvent) => setIsLargeScreen(e.matches);
+    mediaQuery.addEventListener('change', handler);
+    return () => mediaQuery.removeEventListener('change', handler);
+  }, []);
+
+  const startResizing = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsResizing(true);
+  };
+
+  useEffect(() => {
+    if (!isResizing) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const workspace = document.getElementById('everyday-practice-workspace');
+      if (workspace) {
+        const rect = workspace.getBoundingClientRect();
+        const newWidth = e.clientX - rect.left;
+        setSidebarWidth(Math.max(200, Math.min(500, newWidth)));
+      }
+    };
+
+    const handleMouseUp = () => {
+      setIsResizing(false);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseup', handleMouseUp);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [isResizing]);
+
+  // Derived state to customize sidebar element layout responsively
+  const isNarrow = sidebarWidth < 280;
+  const isVeryNarrow = sidebarWidth < 230;
 
   // Filter items based on selected level and type
   const filteredItems = useMemo(() => {
@@ -397,57 +532,116 @@ export const EverydayPracticePage: React.FC = () => {
 
       </div>
 
-      {/* Main Grid Workspace */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 relative z-10">
-        
-        {/* Left Side: Scenarios List */}
-        <div className="space-y-4">
-          <h3 className="text-xs font-bold text-[var(--color-text-primary)] uppercase tracking-wider">
-            Skenarët e Disponueshëm ({filteredItems.length})
-          </h3>
-          
-          {filteredItems.length > 0 ? (
-            <div className="space-y-3">
-              {filteredItems.map(item => (
-                <button
-                  key={item.id}
-                  onClick={() => setActiveItem(item)}
-                  className={`w-full text-left p-4 rounded-xl border transition-all cursor-pointer flex items-start gap-4 outline-hidden ${
-                    activeItem?.id === item.id
-                      ? 'bg-[#3A5A40]/10 border-[#3A5A40] shadow-xs'
-                      : 'bg-[var(--color-bg-surface)] border-[var(--color-border-primary)] hover:border-neutral-400 dark:hover:border-neutral-600'
-                  }`}
-                >
-                  <span className="p-2.5 bg-[var(--color-bg-canvas)] rounded-lg border border-[var(--color-border-primary)] shrink-0 select-none flex items-center justify-center">
-                    <ScenarioIcon name={item.icon} className={`w-5.5 h-5.5 ${activeItem?.id === item.id ? 'text-[#3A5A40]' : 'text-[var(--color-text-secondary)]'}`} />
+      {/* Main Workspace */}
+      <div 
+        id="everyday-practice-workspace"
+        className={`flex flex-col lg:flex-row gap-6 relative z-10 ${
+          isResizing ? 'select-none cursor-col-resize' : ''
+        }`}
+      >
+        {/* Mobile Selector Dropdown */}
+        {!isLargeScreen && (
+          <div className="w-full">
+            <button 
+              onClick={() => setIsMobileListOpen(true)}
+              className="w-full py-3.5 px-4 bg-[var(--color-bg-surface)] border border-[var(--color-border-primary)] rounded-2xl flex items-center justify-between text-xs font-bold text-[var(--color-text-primary)] hover:border-neutral-400 dark:hover:border-neutral-600 transition shadow-2xs cursor-pointer"
+            >
+              <span className="flex items-center gap-2">
+                <ScenarioIcon name={activeItem?.icon || 'default'} className="w-4.5 h-4.5 text-[#3A5A40]" />
+                {activeItem ? (
+                  <span>
+                    {activeItem.titleTurkish} <span className="text-[10px] text-[var(--color-text-secondary)] font-normal italic">({activeItem.titleAlbanian})</span>
                   </span>
-                  <div className="space-y-1.5 min-w-0">
-                    <h4 className="text-sm font-bold text-[var(--color-text-primary)] truncate">
-                      {item.titleTurkish}
-                    </h4>
-                    <h5 className="text-xs text-[var(--color-text-secondary)] italic truncate">
-                      {item.titleAlbanian}
-                    </h5>
-                    <p className="text-[10px] text-[var(--color-text-secondary)] leading-relaxed font-light line-clamp-2">
-                      {item.descriptionAlbanian}
-                    </p>
-                  </div>
-                </button>
-              ))}
+                ) : (
+                  'Zgjidh një skenar...'
+                )}
+              </span>
+              <span className="text-[10px] text-[var(--color-text-secondary)] font-medium">
+                Ndrysho Skenarin ▾
+              </span>
+            </button>
+          </div>
+        )}
+
+        {/* Left Side: Scenarios List (Desktop Only, Resizable Card) */}
+        {isLargeScreen && (
+          <div 
+            style={{ width: `${sidebarWidth}px` }}
+            className="glass-panel border border-[var(--color-border-primary)] bg-[var(--color-bg-surface)] rounded-2xl p-5 shadow-xs space-y-4 shrink-0 relative flex flex-col self-start"
+          >
+            <h3 className={`font-bold text-[var(--color-text-primary)] uppercase tracking-wider ${
+              isVeryNarrow ? 'text-[9px]' : 'text-xs'
+            }`}>
+              {isVeryNarrow ? `Skenarët (${filteredItems.length})` : `Skenarët e Disponueshëm (${filteredItems.length})`}
+            </h3>
+            
+            {filteredItems.length > 0 ? (
+              <div className="space-y-3 overflow-y-auto max-h-[65vh] pr-1 no-scrollbar flex-grow">
+                {filteredItems.map(item => (
+                  <button
+                    key={item.id}
+                    onClick={() => setActiveItem(item)}
+                    className={`w-full text-left rounded-xl border transition-all cursor-pointer flex items-start outline-hidden ${
+                      isVeryNarrow ? 'p-2 gap-2' : isNarrow ? 'p-3 gap-3' : 'p-4 gap-4'
+                    } ${
+                      activeItem?.id === item.id
+                        ? 'bg-[#3A5A40]/10 border-[#3A5A40] shadow-xs'
+                        : 'bg-[var(--color-bg-surface)] border-[var(--color-border-primary)] hover:border-neutral-400 dark:hover:border-neutral-600'
+                    }`}
+                  >
+                    <span className={`bg-[var(--color-bg-canvas)] rounded-lg border border-[var(--color-border-primary)] shrink-0 select-none flex items-center justify-center ${
+                      isVeryNarrow ? 'p-1.5' : 'p-2.5'
+                    }`}>
+                      <ScenarioIcon name={item.icon} className={`${
+                        isVeryNarrow ? 'w-4 h-4' : 'w-5.5 h-5.5'
+                      } ${activeItem?.id === item.id ? 'text-[#3A5A40]' : 'text-[var(--color-text-secondary)]'}`} />
+                    </span>
+                    <div className="space-y-1 min-w-0 flex-1">
+                      <h4 className={`font-bold text-[var(--color-text-primary)] truncate ${
+                        isVeryNarrow ? 'text-xs' : 'text-sm'
+                      }`}>
+                        {item.titleTurkish}
+                      </h4>
+                      <h5 className={`text-[var(--color-text-secondary)] italic truncate ${
+                        isVeryNarrow ? 'text-[10px]' : 'text-xs'
+                      }`}>
+                        {item.titleAlbanian}
+                      </h5>
+                      {!isNarrow && (
+                        <p className="text-[10px] text-[var(--color-text-secondary)] leading-relaxed font-light line-clamp-2 mt-1">
+                          {item.descriptionAlbanian}
+                        </p>
+                      )}
+                    </div>
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <div className={`text-center rounded-2xl border border-[var(--color-border-primary)] bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)] ${
+                isNarrow ? 'p-4 space-y-1.5' : 'p-8 space-y-2'
+              }`}>
+                <WarningIcon className={`${isNarrow ? 'w-6 h-6' : 'w-8 h-8'} text-amber-500 mx-auto`} />
+                <p className="text-xs font-bold">Nuk u gjet asnjë skenar</p>
+                {!isNarrow && (
+                  <p className="text-[10px] font-light mt-1 max-w-xs mx-auto leading-relaxed">
+                    Skenarët e stërvitjes për nivelin <span className="font-bold">{selectedLevel}</span> do të ngarkohen së shpejti. Zgjidhni nivelin <span className="font-bold text-[#3A5A40]">A1</span> për të filluar.
+                  </p>
+                )}
+              </div>
+            )}
+
+            {/* Resize Handle on Right Edge */}
+            <div
+              onMouseDown={startResizing}
+              className="absolute -right-1 top-4 bottom-4 w-2 cursor-col-resize hover:bg-[#3A5A40]/30 rounded-full transition-colors flex items-center justify-center z-20 group"
+            >
+              <div className="w-0.5 h-8 bg-neutral-350 dark:bg-neutral-700 group-hover:bg-[#3A5A40] rounded-sm transition-colors" />
             </div>
-          ) : (
-            <div className="p-8 text-center rounded-2xl border border-[var(--color-border-primary)] bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)] space-y-2">
-              <WarningIcon className="w-8 h-8 text-amber-500 mx-auto" />
-              <p className="text-xs font-bold">Nuk u gjet asnjë skenar</p>
-              <p className="text-[10px] font-light mt-1 max-w-xs mx-auto leading-relaxed">
-                Skenarët e stërvitjes për nivelin <span className="font-bold">{selectedLevel}</span> do të ngarkohen së shpejti. Zgjidhni nivelin <span className="font-bold text-[#3A5A40]">A1</span> për të filluar.
-              </p>
-            </div>
-          )}
-        </div>
+          </div>
+        )}
 
         {/* Right Side: Active Workspace Viewer */}
-        <div className="lg:col-span-2">
+        <div className="flex-grow min-w-0">
           {activeItem ? (
             <div className="glass-panel border border-[var(--color-border-primary)] bg-[var(--color-bg-surface)] rounded-2xl p-6 shadow-sm min-h-[50vh] flex flex-col justify-between">
               
@@ -842,6 +1036,71 @@ export const EverydayPracticePage: React.FC = () => {
           onClose={() => setIsDrawerOpen(false)}
           onSpeak={(word, lang) => playText(word, lang)}
         />,
+        document.body
+      )}
+
+      {/* Mobile Scenarios Drawer/Modal */}
+      {!isLargeScreen && isMobileListOpen && createPortal(
+        <div 
+          className="fixed inset-0 bg-black/60 z-55 flex items-end sm:items-center justify-center p-4 animate-fade-in"
+          onClick={() => setIsMobileListOpen(false)}
+        >
+          <div 
+            className="bg-[var(--color-bg-surface)] border border-[var(--color-border-primary)] w-full max-w-md rounded-t-3xl sm:rounded-3xl p-5 space-y-4 max-h-[80vh] overflow-y-auto shadow-xl"
+            onClick={e => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center pb-2.5 border-b border-[var(--color-border-primary)]">
+              <h3 className="text-xs font-bold text-[var(--color-text-primary)] uppercase tracking-wider">
+                Skenarët e Disponueshëm ({filteredItems.length})
+              </h3>
+              <button 
+                onClick={() => setIsMobileListOpen(false)} 
+                className="text-[10px] font-bold text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200 cursor-pointer"
+              >
+                Mbyll
+              </button>
+            </div>
+            
+            {filteredItems.length > 0 ? (
+              <div className="space-y-2.5 overflow-y-auto no-scrollbar">
+                {filteredItems.map(item => (
+                  <button
+                    key={item.id}
+                    onClick={() => {
+                      setActiveItem(item);
+                      setIsMobileListOpen(false);
+                    }}
+                    className={`w-full text-left p-3.5 rounded-xl border transition-all cursor-pointer flex items-start gap-3.5 outline-hidden ${
+                      activeItem?.id === item.id
+                        ? 'bg-[#3A5A40]/10 border-[#3A5A40]'
+                        : 'bg-[var(--color-bg-surface)] border-[var(--color-border-primary)]'
+                    }`}
+                  >
+                    <span className="p-2.5 bg-[var(--color-bg-canvas)] rounded-lg border border-[var(--color-border-primary)] shrink-0 flex items-center justify-center">
+                      <ScenarioIcon name={item.icon} className={`w-5.5 h-5.5 ${activeItem?.id === item.id ? 'text-[#3A5A40]' : 'text-[var(--color-text-secondary)]'}`} />
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <h4 className="text-xs font-bold text-[var(--color-text-primary)] truncate">
+                        {item.titleTurkish}
+                      </h4>
+                      <h5 className="text-[10px] text-[var(--color-text-secondary)] italic truncate">
+                        {item.titleAlbanian}
+                      </h5>
+                      <p className="text-[9px] text-[var(--color-text-secondary)] leading-relaxed font-light line-clamp-2 mt-1">
+                        {item.descriptionAlbanian}
+                      </p>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <div className="py-6 text-center text-[var(--color-text-secondary)] space-y-2">
+                <WarningIcon className="w-8 h-8 text-amber-500 mx-auto" />
+                <p className="text-xs font-bold">Nuk u gjet asnjë skenar</p>
+              </div>
+            )}
+          </div>
+        </div>,
         document.body
       )}
 

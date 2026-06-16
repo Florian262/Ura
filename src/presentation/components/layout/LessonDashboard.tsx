@@ -29,10 +29,6 @@ export const LessonDashboard: React.FC = () => {
     sessionSeconds,
     lifetimeSeconds,
     isSessionRunning,
-    hasSavedSession,
-    resumeSession,
-    resetSession,
-    toggleSession,
     progressMap
   } = useLesson();
   
@@ -78,6 +74,28 @@ export const LessonDashboard: React.FC = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isTimerExpanded]);
+
+  useEffect(() => {
+    const shouldScrollToB2 = localStorage.getItem('ura_scroll_to_b2') === 'true';
+    if (shouldScrollToB2) {
+      localStorage.removeItem('ura_scroll_to_b2');
+      setSelectedLevel('B2');
+      setTimeout(() => {
+        const el = document.getElementById('card-B2');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          anime({
+            targets: el,
+            scale: [1, 1.03, 1],
+            duration: 800,
+            easing: 'easeInOutQuad',
+            direction: 'alternate',
+            loop: 2
+          });
+        }
+      }, 350);
+    }
+  }, []);
 
   // Group chapters by level
   const levels: Record<string, Chapter[]> = {
@@ -440,6 +458,15 @@ export const LessonDashboard: React.FC = () => {
     });
   };
 
+  const isB1Completed = () => {
+    const b1Chapters = levels['B1'] || [];
+    if (b1Chapters.length === 0) return false;
+    return b1Chapters.every(ch => {
+      const progress = progressMap[ch.id];
+      return progress?.is_completed === true;
+    });
+  };
+
   return (
     <div className="max-w-4xl mx-auto px-6 py-12 relative min-h-[70vh]">
       
@@ -554,20 +581,14 @@ export const LessonDashboard: React.FC = () => {
                       </svg>
                       <span className="text-[9px] font-bold text-[var(--color-text-secondary)] uppercase tracking-wider">Koha e Mësimit</span>
                       {/* Status badge */}
-                      <span className={`w-1.5 h-1.5 rounded-full ${
-                        hasSavedSession 
-                          ? 'bg-amber-500 animate-pulse' 
-                          : isSessionRunning 
-                            ? 'bg-emerald-500 animate-pulse' 
-                            : 'bg-neutral-400'
-                      }`} />
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                     </div>
                     
                     <div className="flex items-baseline gap-1 mt-1">
                       <span className="text-xl font-extrabold text-[var(--color-text-primary)] font-technical tracking-wide">
                         {formatSessionTime(isTimerExpanded ? sessionSeconds : staticSessionSeconds)}
                       </span>
-                      <span className="text-[9px] font-bold text-[var(--color-text-secondary)] uppercase">Sesioni</span>
+                      <span className="text-[9px] font-bold text-[var(--color-text-secondary)] uppercase">Sot</span>
                     </div>
                   </div>
 
@@ -601,7 +622,7 @@ export const LessonDashboard: React.FC = () => {
                 </div>
                 
                 <p className="text-[9px] text-[var(--color-text-secondary)] font-light mt-0.5">
-                  {hasSavedSession ? 'Sesion i pezulluar' : isSessionRunning ? 'Duke numëruar kohën...' : 'Kohëmatësi i ndaluar'}
+                  Regjistrim automatik...
                 </p>
               </div>
 
@@ -609,82 +630,18 @@ export const LessonDashboard: React.FC = () => {
               {isTimerExpanded && (
                 <div 
                   className="mt-4 pt-4 border-t border-[#DDE1E5] dark:border-neutral-800 space-y-4 text-left cursor-default animate-fade-in"
-                  onClick={(e) => e.stopPropagation()} // Prevent card closing when clicking buttons
+                  onClick={(e) => e.stopPropagation()} // Prevent card closing when clicking details
                 >
                   <div className="space-y-1">
-                    <span className="text-[8px] font-bold text-neutral-400 uppercase tracking-widest block">Koha e Plotë e Kaluar</span>
+                    <span className="text-[8px] font-bold text-neutral-400 uppercase tracking-widest block">Koha e Plotë në Aplikacion</span>
                     <span className="text-xs font-black text-[#3A5A40] dark:text-[#52B788] block font-sans">
                       {formatLifetimeTime(lifetimeSeconds)}
                     </span>
                   </div>
 
                   <p className="text-[10px] text-neutral-500 leading-relaxed font-light">
-                    Ky panel regjistron kohën tuaj të studimit. Ndalohet automatikisht kur dilni nga aplikacioni.
+                    Ky panel tregon kohën që keni kaluar duke studiuar sot, si dhe kohën totale që nga fillimi i përdorimit të aplikacionit.
                   </p>
-
-                  {/* Actions / Prompts */}
-                  {hasSavedSession ? (
-                    <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-3 space-y-2">
-                      <span className="text-[9px] font-bold text-amber-800 dark:text-amber-300 block">Keni një sesion të pambaruar!</span>
-                      <div className="flex flex-col gap-1.5">
-                        <button
-                          onClick={() => {
-                            resumeSession();
-                          }}
-                          className="w-full py-1.5 bg-[#3A5A40] hover:bg-[#2C4430] active:scale-95 transition text-white font-bold text-[9px] uppercase tracking-wider rounded-lg cursor-pointer text-center"
-                        >
-                          Vazhdo Sesionin
-                        </button>
-                        <button
-                          onClick={() => {
-                            resetSession();
-                          }}
-                          className="w-full py-1.5 bg-neutral-200 dark:bg-neutral-800 hover:bg-neutral-300 dark:hover:bg-neutral-700 active:scale-95 transition text-neutral-700 dark:text-neutral-300 font-bold text-[9px] uppercase tracking-wider rounded-lg cursor-pointer text-center"
-                        >
-                          Fillo nga e para
-                        </button>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="flex gap-2">
-                      <button
-                        onClick={toggleSession}
-                        className={`flex-grow flex items-center justify-center gap-1 py-2 font-bold text-[9px] uppercase tracking-wider rounded-lg transition active:scale-95 cursor-pointer ${
-                          isSessionRunning 
-                            ? 'bg-amber-600 hover:bg-amber-700 text-white' 
-                            : 'bg-[#3A5A40] hover:bg-[#2C4430] text-white'
-                        }`}
-                      >
-                        {isSessionRunning ? (
-                          <>
-                            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
-                              <rect x="6" y="4" width="4" height="16" rx="1" />
-                              <rect x="14" y="4" width="4" height="16" rx="1" />
-                            </svg>
-                            Pezullo
-                          </>
-                        ) : (
-                          <>
-                            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
-                              <polygon points="5 3 19 12 5 21 5 3" />
-                            </svg>
-                            Fillo
-                          </>
-                        )}
-                      </button>
-                      
-                      <button
-                        onClick={resetSession}
-                        className="flex-grow flex items-center justify-center gap-1 py-2 bg-neutral-150 hover:bg-neutral-250 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 font-bold text-[9px] uppercase tracking-wider rounded-lg transition active:scale-95 cursor-pointer"
-                      >
-                        <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M21.5 2v6h-6" />
-                          <path d="M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
-                        </svg>
-                        Rikujto
-                      </button>
-                    </div>
-                  )}
                 </div>
               )}
             </div>
@@ -723,7 +680,9 @@ export const LessonDashboard: React.FC = () => {
               
               const isCompleted = percentage === 100;
               const isCurrentExpanded = selectedLevel === level;
-              const locked = (levels[level] || []).length === 0;
+              
+              const isB1Passed = localStorage.getItem('ura_b1_test_passed') === 'true';
+              const locked = (levels[level] || []).length === 0 || ((level === 'B2' || level === 'C1' || level === 'C2') && !isB1Passed);
               
               return (
                 <div key={level} className="relative">
@@ -880,91 +839,303 @@ export const LessonDashboard: React.FC = () => {
 
                           {/* A2 Finishing Test rendering */}
                           {level === 'A2' && (
-                            <div className="mt-8 border-t border-[var(--color-border-primary-glass)] pt-6">
+                            <div className="mt-8 border-t border-[var(--color-border-primary-glass)] pt-6 space-y-4">
                               {(() => {
                                 const completedAll = isA2Completed();
                                 const hasPassed = localStorage.getItem('ura_a2_test_passed') === 'true';
                                 const testScore = localStorage.getItem('ura_a2_test_score');
 
+                                const practiceAScore = localStorage.getItem('ura_a2_practice_a_score');
+                                const practiceAPassed = localStorage.getItem('ura_a2_practice_a_passed') === 'true';
+
+                                const practiceBScore = localStorage.getItem('ura_a2_practice_b_score');
+                                const practiceBPassed = localStorage.getItem('ura_a2_practice_b_passed') === 'true';
+
                                 return (
-                                  <button
-                                    onClick={(e) => {
-                                      e.stopPropagation();
-                                      setActivePage('a2_test');
-                                    }}
-                                    className={`w-full text-left p-6 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 transition-all duration-300 relative outline-hidden border cursor-pointer shadow-xs hover:shadow-md hover:-translate-y-0.5 ${
-                                      hasPassed 
-                                        ? 'bg-gradient-to-r from-emerald-500/10 to-teal-500/5 border-emerald-500/30 dark:border-emerald-500/20' 
-                                        : completedAll 
-                                          ? 'bg-gradient-to-r from-amber-500/10 to-yellow-500/5 border-amber-500/40 dark:border-amber-500/30'
-                                          : 'bg-neutral-50/50 dark:bg-neutral-900/30 border-neutral-200 dark:border-neutral-800'
-                                    }`}
-                                  >
-                                    <div className="flex-1 space-y-2">
-                                      <div className="flex items-center gap-2 flex-wrap">
-                                        <span className="text-[9px] font-mono font-bold tracking-wider px-2.5 py-0.5 bg-[#111315] dark:bg-neutral-900 text-stone-300 border border-neutral-700 rounded-md select-none">
-                                          PROVIMI PËRFUNDIMTAR A2
-                                        </span>
-                                        {!completedAll && (
-                                          <span className="text-[9px] uppercase font-mono tracking-wider font-black px-2 py-0.5 border border-amber-500/20 text-amber-600 bg-amber-500/10 rounded-md select-none">
-                                            Sfidë e Hapur
-                                          </span>
-                                        )}
-                                        {completedAll && !hasPassed && (
-                                          <span className="text-[9px] uppercase font-mono tracking-wider font-black px-2 py-0.5 border border-emerald-500/20 text-emerald-600 bg-emerald-500/10 rounded-md select-none animate-pulse">
-                                            Gati për Test
-                                          </span>
-                                        )}
-                                        {hasPassed && (
-                                          <span className="text-[9px] uppercase font-mono tracking-wider font-black px-2 py-0.5 border border-emerald-500/30 text-white bg-emerald-600 rounded-md select-none">
-                                            Kaluar — {testScore}%
-                                          </span>
-                                        )}
-                                      </div>
-
-                                      <h3 className="text-base font-black text-[#111315] dark:text-white uppercase tracking-tight">
-                                        Provimi Gjithëpërfshirës i Nivelit A2
-                                      </h3>
-                                      <p className="text-xs text-[#636B74] dark:text-neutral-400 font-light leading-relaxed max-w-xl">
-                                        {completedAll
-                                          ? 'Ju keni përfunduar të gjithë kapitujt e nivelit A2! Testoni njohuritë tuaja leximore, gramatikore, sintaksore dhe të përkthimit në këtë provim përfundimtar me 25 pyetje.'
-                                          : 'Kapitujt e nivelit A2 nuk janë përfunduar plotësisht, por ju mund të hyni në provim për të testuar njohuritë tuaja në çdo kohë.'}
-                                      </p>
-                                    </div>
-
-                                    <div className="flex items-center gap-3 shrink-0">
-                                      <div className={`w-12 h-12 flex items-center justify-center rounded-2xl shadow-sm ${
+                                  <div className="space-y-4">
+                                    {/* 1. Official A2 Finishing Test */}
+                                    <button
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        setActivePage('a2_test');
+                                      }}
+                                      className={`w-full text-left p-6 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 transition-all duration-300 relative outline-hidden border cursor-pointer shadow-xs hover:shadow-md hover:-translate-y-0.5 ${
                                         hasPassed 
-                                          ? 'bg-emerald-500/10 border border-emerald-500/20' 
+                                          ? 'bg-gradient-to-r from-emerald-500/10 to-teal-500/5 border-emerald-500/30 dark:border-emerald-500/20' 
                                           : completedAll 
-                                            ? 'bg-amber-500/15 border border-amber-500/30' 
-                                            : 'bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700'
-                                      }`}>
-                                        <svg 
-                                          className={`w-6 h-6 ${
-                                            hasPassed 
-                                              ? 'text-emerald-500 drop-shadow-[0_2px_4px_rgba(16,185,129,0.3)]' 
-                                              : completedAll 
-                                                ? 'text-amber-500 animate-bounce drop-shadow-[0_2px_4px_rgba(245,158,11,0.3)]' 
-                                                : 'text-neutral-400'
-                                          }`} 
-                                          style={completedAll && !hasPassed ? { animationDuration: '2.5s' } : undefined}
-                                          viewBox="0 0 24 24" 
-                                          fill="none" 
-                                          stroke="currentColor" 
-                                          strokeWidth="2.2" 
-                                          strokeLinecap="round" 
-                                          strokeLinejoin="round"
-                                        >
-                                          <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
-                                          <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
-                                          <path d="M4 22h16" />
-                                          <path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34" />
-                                          <path d="M12 2a6 6 0 0 1 6 6v5H6V8a6 6 0 0 1 6-6z" />
-                                        </svg>
+                                            ? 'bg-gradient-to-r from-amber-500/10 to-yellow-500/5 border-amber-500/40 dark:border-amber-500/30'
+                                            : 'bg-neutral-50/50 dark:bg-neutral-900/30 border-neutral-200 dark:border-neutral-800'
+                                      }`}
+                                    >
+                                      <div className="flex-1 space-y-2">
+                                        <div className="flex items-center gap-2 flex-wrap">
+                                          <span className="text-[9px] font-mono font-bold tracking-wider px-2.5 py-0.5 bg-[#111315] dark:bg-neutral-900 text-stone-300 border border-neutral-700 rounded-md select-none">
+                                            PROVIMI PËRFUNDIMTAR A2
+                                          </span>
+                                          {!completedAll && (
+                                            <span className="text-[9px] uppercase font-mono tracking-wider font-black px-2 py-0.5 border border-amber-500/20 text-amber-600 bg-amber-500/10 rounded-md select-none">
+                                              Sfidë e Hapur
+                                            </span>
+                                          )}
+                                          {completedAll && !hasPassed && (
+                                            <span className="text-[9px] uppercase font-mono tracking-wider font-black px-2 py-0.5 border border-emerald-500/20 text-emerald-600 bg-emerald-500/10 rounded-md select-none animate-pulse">
+                                              Gati për Test
+                                            </span>
+                                          )}
+                                          {hasPassed && (
+                                            <span className="text-[9px] uppercase font-mono tracking-wider font-black px-2 py-0.5 border border-emerald-500/30 text-white bg-emerald-600 rounded-md select-none">
+                                              Kaluar — {testScore}%
+                                            </span>
+                                          )}
+                                        </div>
+
+                                        <h3 className="text-base font-black text-[#111315] dark:text-white uppercase tracking-tight">
+                                          Provimi Gjithëpërfshirës i Nivelit A2
+                                        </h3>
+                                        <p className="text-xs text-[#636B74] dark:text-neutral-400 font-light leading-relaxed max-w-xl">
+                                          {completedAll
+                                            ? 'Ju keni përfunduar të gjithë kapitujt e nivelit A2! Testoni njohuritë tuaja leximore, gramatikore, sintaksore dhe të përkthimit në këtë provim përfundimtar me 25 pyetje.'
+                                            : 'Kapitujt e nivelit A2 nuk janë përfunduar plotësisht, por ju mund të hyni në provim për të testuar njohuritë tuaja në çdo kohë.'}
+                                        </p>
                                       </div>
+
+                                      <div className="flex items-center gap-3 shrink-0">
+                                        <div className={`w-12 h-12 flex items-center justify-center rounded-2xl shadow-sm ${
+                                          hasPassed 
+                                            ? 'bg-emerald-500/10 border border-emerald-500/20' 
+                                            : completedAll 
+                                              ? 'bg-amber-500/15 border border-amber-500/30' 
+                                              : 'bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700'
+                                        }`}>
+                                          <svg 
+                                            className={`w-6 h-6 ${
+                                              hasPassed 
+                                                ? 'text-emerald-500 drop-shadow-[0_2px_4px_rgba(16,185,129,0.3)]' 
+                                                : completedAll 
+                                                  ? 'text-amber-500 animate-bounce drop-shadow-[0_2px_4px_rgba(245,158,11,0.3)]' 
+                                                  : 'text-neutral-400'
+                                            }`} 
+                                            style={completedAll && !hasPassed ? { animationDuration: '2.5s' } : undefined}
+                                            viewBox="0 0 24 24" 
+                                            fill="none" 
+                                            stroke="currentColor" 
+                                            strokeWidth="2.2" 
+                                            strokeLinecap="round" 
+                                            strokeLinejoin="round"
+                                          >
+                                            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                                            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                                            <path d="M4 22h16" />
+                                            <path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34" />
+                                            <path d="M12 2a6 6 0 0 1 6 6v5H6V8a6 6 0 0 1 6-6z" />
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </button>
+
+                                    {/* 2. Practice Tests Grid */}
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                      {/* Practice Test A */}
+                                      <button
+                                        onClick={(e) => {
+                                          e.stopPropagation();
+                                          setActivePage('a2_practice_a');
+                                        }}
+                                        className="text-left p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/20 hover:shadow-xs hover:border-[var(--color-brand-accent)]/30 transition-all duration-200 cursor-pointer flex justify-between items-center"
+                                      >
+                                        <div>
+                                          <span className="text-[8px] font-mono tracking-wider font-extrabold text-[#636B74] uppercase block">Test Praktik</span>
+                                          <h4 className="text-xs font-bold text-[#111315] dark:text-white mt-1">A2 - Test Praktike A</h4>
+                                          {practiceAScore ? (
+                                            <span className={`inline-block text-[9px] font-black mt-1.5 px-2 py-0.5 rounded-md ${
+                                              practiceAPassed ? 'bg-emerald-500/10 text-emerald-600 border border-emerald-500/20' : 'bg-amber-500/10 text-amber-600 border border-amber-500/20'
+                                            }`}>
+                                              Rezultati: {practiceAScore}% {practiceAPassed ? '✓' : ''}
+                                            </span>
+                                          ) : (
+                                            <span className="text-[9px] text-neutral-450 italic mt-1.5 block">Nuk është tentuar ende</span>
+                                          )}
+                                        </div>
+                                        <span className="text-base text-neutral-400">➔</span>
+                                      </button>
+
+                                      {/* Practice Test B */}
+                                      <button
+                                        onClick={(e) => {
+                                          e.stopPropagation();
+                                          setActivePage('a2_practice_b');
+                                        }}
+                                        className="text-left p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/20 hover:shadow-xs hover:border-[var(--color-brand-accent)]/30 transition-all duration-200 cursor-pointer flex justify-between items-center"
+                                      >
+                                        <div>
+                                          <span className="text-[8px] font-mono tracking-wider font-extrabold text-[#636B74] uppercase block">Test Praktik</span>
+                                          <h4 className="text-xs font-bold text-[#111315] dark:text-white mt-1">A2 - Test Praktike B</h4>
+                                          {practiceBScore ? (
+                                            <span className={`inline-block text-[9px] font-black mt-1.5 px-2 py-0.5 rounded-md ${
+                                              practiceBPassed ? 'bg-emerald-500/10 text-emerald-600 border border-emerald-500/20' : 'bg-amber-500/10 text-amber-600 border border-amber-500/20'
+                                            }`}>
+                                              Rezultati: {practiceBScore}% {practiceBPassed ? '✓' : ''}
+                                            </span>
+                                          ) : (
+                                            <span className="text-[9px] text-neutral-450 italic mt-1.5 block">Nuk është tentuar ende</span>
+                                          )}
+                                        </div>
+                                        <span className="text-base text-neutral-450">➔</span>
+                                      </button>
                                     </div>
-                                  </button>
+                                  </div>
+                                );
+                              })()}
+                            </div>
+                          )}
+
+                          {/* B1 Finishing & Practice Tests rendering */}
+                          {level === 'B1' && (
+                            <div className="mt-8 border-t border-[var(--color-border-primary-glass)] pt-6 space-y-4">
+                              {(() => {
+                                const completedAll = isB1Completed();
+                                const hasPassed = localStorage.getItem('ura_b1_test_passed') === 'true';
+                                const testScore = localStorage.getItem('ura_b1_test_score');
+
+                                const practiceAScore = localStorage.getItem('ura_b1_practice_a_score');
+                                const practiceAPassed = localStorage.getItem('ura_b1_practice_a_passed') === 'true';
+
+                                const practiceBScore = localStorage.getItem('ura_b1_practice_b_score');
+                                const practiceBPassed = localStorage.getItem('ura_b1_practice_b_passed') === 'true';
+
+                                return (
+                                  <div className="space-y-4">
+                                    {/* 1. Official B1 Finishing Test */}
+                                    <button
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        setActivePage('b1_test');
+                                      }}
+                                      className={`w-full text-left p-6 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 transition-all duration-300 relative outline-hidden border cursor-pointer shadow-xs hover:shadow-md hover:-translate-y-0.5 ${
+                                        hasPassed 
+                                          ? 'bg-gradient-to-r from-emerald-500/10 to-teal-500/5 border-emerald-500/30 dark:border-emerald-500/20' 
+                                          : completedAll 
+                                            ? 'bg-gradient-to-r from-amber-500/10 to-yellow-500/5 border-amber-500/40 dark:border-amber-500/30'
+                                            : 'bg-neutral-50/50 dark:bg-neutral-900/30 border-neutral-200 dark:border-neutral-800'
+                                      }`}
+                                    >
+                                      <div className="flex-1 space-y-2">
+                                        <div className="flex items-center gap-2 flex-wrap">
+                                          <span className="text-[9px] font-mono font-bold tracking-wider px-2.5 py-0.5 bg-[#111315] dark:bg-neutral-900 text-stone-300 border border-neutral-700 rounded-md select-none">
+                                            PROVIMI PËRFUNDIMTAR B1
+                                          </span>
+                                          {!completedAll && (
+                                            <span className="text-[9px] uppercase font-mono tracking-wider font-black px-2 py-0.5 border border-amber-500/20 text-amber-600 bg-amber-500/10 rounded-md select-none">
+                                              Sfidë e Hapur
+                                            </span>
+                                          )}
+                                          {completedAll && !hasPassed && (
+                                            <span className="text-[9px] uppercase font-mono tracking-wider font-black px-2 py-0.5 border border-emerald-500/20 text-emerald-600 bg-emerald-500/10 rounded-md select-none animate-pulse">
+                                              Gati për Test
+                                            </span>
+                                          )}
+                                          {hasPassed && (
+                                            <span className="text-[9px] uppercase font-mono tracking-wider font-black px-2 py-0.5 border border-emerald-500/30 text-white bg-emerald-600 rounded-md select-none">
+                                              Kaluar — {testScore}%
+                                            </span>
+                                          )}
+                                        </div>
+
+                                        <h3 className="text-base font-black text-[#111315] dark:text-white uppercase tracking-tight">
+                                          Provimi Gjithëpërfshirës i Nivelit B1
+                                        </h3>
+                                        <p className="text-xs text-[#636B74] dark:text-neutral-400 font-light leading-relaxed max-w-xl">
+                                          {completedAll
+                                            ? 'Ju keni përfunduar të gjithë kapitujt e nivelit B1! Kaloni këtë provim me të paktën 80% për të zhbllokuar nivelin B2.'
+                                            : 'Kapitujt e nivelit B1 nuk janë përfunduar plotësisht, por ju mund të provoni veten për të parë nivelin tuaj aktual.'}
+                                        </p>
+                                      </div>
+
+                                      <div className="flex items-center gap-3 shrink-0">
+                                        <div className={`w-12 h-12 flex items-center justify-center rounded-2xl shadow-sm ${
+                                          hasPassed 
+                                            ? 'bg-emerald-500/10 border border-emerald-500/20' 
+                                            : completedAll 
+                                              ? 'bg-amber-500/15 border border-amber-500/30' 
+                                              : 'bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700'
+                                        }`}>
+                                          <svg 
+                                            className={`w-6 h-6 ${
+                                              hasPassed 
+                                                ? 'text-emerald-500 drop-shadow-[0_2px_4px_rgba(16,185,129,0.3)]' 
+                                                : completedAll 
+                                                  ? 'text-amber-500 animate-bounce drop-shadow-[0_2px_4px_rgba(245,158,11,0.3)]' 
+                                                  : 'text-neutral-400'
+                                            }`} 
+                                            style={completedAll && !hasPassed ? { animationDuration: '2.5s' } : undefined}
+                                            viewBox="0 0 24 24" 
+                                            fill="none" 
+                                            stroke="currentColor" 
+                                            strokeWidth="2.2" 
+                                            strokeLinecap="round" 
+                                            strokeLinejoin="round"
+                                          >
+                                            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                                            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                                            <path d="M4 22h16" />
+                                            <path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34" />
+                                            <path d="M12 2a6 6 0 0 1 6 6v5H6V8a6 6 0 0 1 6-6z" />
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </button>
+
+                                    {/* 2. Practice Tests Grid */}
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                      {/* Practice Test A */}
+                                      <button
+                                        onClick={(e) => {
+                                          e.stopPropagation();
+                                          setActivePage('b1_practice_a');
+                                        }}
+                                        className="text-left p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/20 hover:shadow-xs hover:border-[var(--color-brand-accent)]/30 transition-all duration-200 cursor-pointer flex justify-between items-center"
+                                      >
+                                        <div>
+                                          <span className="text-[8px] font-mono tracking-wider font-extrabold text-[#636B74] uppercase block">Test Praktik</span>
+                                          <h4 className="text-xs font-bold text-[#111315] dark:text-white mt-1">B1 - Test Praktike A</h4>
+                                          {practiceAScore ? (
+                                            <span className={`inline-block text-[9px] font-black mt-1.5 px-2 py-0.5 rounded-md ${
+                                              practiceAPassed ? 'bg-emerald-500/10 text-emerald-600 border border-emerald-500/20' : 'bg-amber-500/10 text-amber-600 border border-amber-500/20'
+                                            }`}>
+                                              Rezultati: {practiceAScore}% {practiceAPassed ? '✓' : ''}
+                                            </span>
+                                          ) : (
+                                            <span className="text-[9px] text-neutral-450 italic mt-1.5 block">Nuk është tentuar ende</span>
+                                          )}
+                                        </div>
+                                        <span className="text-base text-neutral-400">➔</span>
+                                      </button>
+
+                                      {/* Practice Test B */}
+                                      <button
+                                        onClick={(e) => {
+                                          e.stopPropagation();
+                                          setActivePage('b1_practice_b');
+                                        }}
+                                        className="text-left p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/20 hover:shadow-xs hover:border-[var(--color-brand-accent)]/30 transition-all duration-200 cursor-pointer flex justify-between items-center"
+                                      >
+                                        <div>
+                                          <span className="text-[8px] font-mono tracking-wider font-extrabold text-[#636B74] uppercase block">Test Praktik</span>
+                                          <h4 className="text-xs font-bold text-[#111315] dark:text-white mt-1">B1 - Test Praktike B</h4>
+                                          {practiceBScore ? (
+                                            <span className={`inline-block text-[9px] font-black mt-1.5 px-2 py-0.5 rounded-md ${
+                                              practiceBPassed ? 'bg-emerald-500/10 text-emerald-600 border border-emerald-500/20' : 'bg-amber-500/10 text-amber-600 border border-amber-500/20'
+                                            }`}>
+                                              Rezultati: {practiceBScore}% {practiceBPassed ? '✓' : ''}
+                                            </span>
+                                          ) : (
+                                            <span className="text-[9px] text-neutral-450 italic mt-1.5 block">Nuk është tentuar ende</span>
+                                          )}
+                                        </div>
+                                        <span className="text-base text-neutral-450">➔</span>
+                                      </button>
+                                    </div>
+                                  </div>
                                 );
                               })()}
                             </div>

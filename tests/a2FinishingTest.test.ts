@@ -5,7 +5,8 @@ import {
   A2_SUFFIX_QUESTIONS,
   A2_WORDSORT_QUESTIONS,
   A2_WRITING_QUESTIONS,
-  generateRandomA2Test
+  generateRandomA2Test,
+  getA2Test
 } from '../src/infrastructure/db/a2TestPool';
 
 describe('Level A2 Comprehensive Finishing Test Pool & Generator', () => {
@@ -88,6 +89,39 @@ describe('Level A2 Comprehensive Finishing Test Pool & Generator', () => {
     // Total questions in test = 5 (reading) + 5 (mcq) + 6 (suffix) + 6 (sort) + 3 (writing) = 25
     const totalQuestions = 5 + test.multipleChoice.length + test.suffixBuilder.length + test.wordSort.length + test.writing.length;
     expect(totalQuestions).toBe(25);
+  });
+
+  it('should generate official, practice_a, and practice_b sets with no overlapping question IDs', () => {
+    const official = getA2Test('official');
+    const practiceA = getA2Test('practice_a');
+    const practiceB = getA2Test('practice_b');
+
+    const getIds = (test: any) => {
+      const ids: string[] = [];
+      test.readingSection.questions.forEach((q: any) => ids.push(q.id));
+      test.multipleChoice.forEach((q: any) => ids.push(q.id));
+      test.suffixBuilder.forEach((q: any) => ids.push(q.id));
+      test.wordSort.forEach((q: any) => ids.push(q.id));
+      test.writing.forEach((q: any) => ids.push(q.id));
+      return ids;
+    };
+
+    const officialIds = getIds(official);
+    const practiceAIds = getIds(practiceA);
+    const practiceBIds = getIds(practiceB);
+
+    expect(officialIds).toHaveLength(25);
+    expect(practiceAIds).toHaveLength(25);
+    expect(practiceBIds).toHaveLength(25);
+
+    officialIds.forEach(id => {
+      expect(practiceAIds).not.toContain(id);
+      expect(practiceBIds).not.toContain(id);
+    });
+
+    practiceAIds.forEach(id => {
+      expect(practiceBIds).not.toContain(id);
+    });
   });
 
 });

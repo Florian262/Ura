@@ -1034,3 +1034,32 @@ export function generateRandomA2Test(): A2Test {
     writing: selectedWriting
   };
 }
+
+export function getA2Test(subType: 'official' | 'practice_a' | 'practice_b'): A2Test {
+  if (subType === 'official') {
+    return {
+      readingSection: A2_READING_SECTIONS[0],
+      multipleChoice: A2_MC_QUESTIONS.slice(0, 5),
+      suffixBuilder: A2_SUFFIX_QUESTIONS.slice(0, 6),
+      wordSort: A2_WORDSORT_QUESTIONS.slice(0, 6),
+      writing: A2_WRITING_QUESTIONS.slice(0, 3)
+    };
+  } else if (subType === 'practice_a') {
+    return {
+      readingSection: A2_READING_SECTIONS[1],
+      multipleChoice: A2_MC_QUESTIONS.slice(5, 10),
+      suffixBuilder: A2_SUFFIX_QUESTIONS.slice(6, 12),
+      wordSort: A2_WORDSORT_QUESTIONS.slice(6, 12),
+      writing: A2_WRITING_QUESTIONS.slice(3, 6)
+    };
+  } else {
+    return {
+      readingSection: A2_READING_SECTIONS[2],
+      multipleChoice: A2_MC_QUESTIONS.slice(10, 15),
+      suffixBuilder: A2_SUFFIX_QUESTIONS.slice(12, 18),
+      wordSort: A2_WORDSORT_QUESTIONS.slice(12, 18),
+      writing: A2_WRITING_QUESTIONS.slice(6, 9)
+    };
+  }
+}
+
