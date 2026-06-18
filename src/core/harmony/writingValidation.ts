@@ -471,8 +471,13 @@ export function evaluateWriting(chapterId: number, input: string): EvaluationRes
   }
 
   const cleanInput = input.trim();
+  const b2Chapters = [25, 26];
   const b1Chapters = [17, 18, 19, 20, 21, 22, 23, 24];
-  const minLength = b1Chapters.includes(chapterId) ? 60 : 10;
+  const minLength = b2Chapters.includes(chapterId)
+    ? 120
+    : b1Chapters.includes(chapterId)
+      ? 60
+      : 10;
   if (cleanInput.length < minLength) {
     return { 
       status: 'error', 
@@ -582,9 +587,9 @@ export function evaluateWriting(chapterId: number, input: string): EvaluationRes
   } else if (chapterId === 24) {
     successFeedback = 'Shkëlqyeshëm! Keni shkruar një autobiografi ose përmbledhje të saktë duke kombinuar pjesoret relative dhe strukturat e tjera të nivelit B1.';
   } else if (chapterId === 25) {
-    successFeedback = 'Shkëlqyeshëm! Fjali kushtore e saktë me përdorim të rregullt të prapashtesës së kushtit (-se/-sa).';
+    successFeedback = 'Shkëlqyeshëm! Keni shkruar një përshkrim të saktë të udhëtimit duke përdorur foljet vetvetore ose reciproke dhe lidhëzat shtuese.';
   } else if (chapterId === 26) {
-    successFeedback = 'Shkëlqyeshëm! Keni krijuar një fjali të saktë duke përdorur strukturën e pjesoreve (sıfat-fiil).';
+    successFeedback = 'Shkëlqyeshëm! Keni shkruar një tekst të saktë rreth mjedisit duke përdorur nominalizimin me \'-DIK\' dhe fjalët kyçe përkatëse.';
   } else if (chapterId === 27) {
     successFeedback = 'Shkëlqyeshëm! Keni përdorur me sukses idiomën e kërkuar në fjalinë tuaj.';
   }

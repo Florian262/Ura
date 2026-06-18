@@ -23,29 +23,12 @@ import { b1Chapter5 } from './b1_chapter5';
 import { b1Chapter6 } from './b1_chapter6';
 import { b1Chapter7 } from './b1_chapter7';
 import { b1Chapter8 } from './b1_chapter8';
+import { b2Chapter1 } from './b2_chapter1';
+import { b2Chapter2 } from './b2_chapter2';
 import type { UnifiedLesson } from './a1_chapter1';
 
-const b2Chapter1: UnifiedLesson = {
-  id: 25,
-  level: 'B2',
-  orderIndex: 1,
-  title: {
-    turkish: 'Dilek-Şart Kipi (-se)',
-    albanian: 'Fjalia Kushtore'
-  },
-  reading: {
-    layoutStyle: 'narrative',
-    audioAssetStub: null,
-    content: [],
-    questions: []
-  },
-  vocabulary: [],
-  grammar: [],
-  exercises: []
-};
-
 const c1Chapter1: UnifiedLesson = {
-  id: 26,
+  id: 33,
   level: 'C1',
   orderIndex: 1,
   title: {
@@ -64,7 +47,7 @@ const c1Chapter1: UnifiedLesson = {
 };
 
 const c2Chapter1: UnifiedLesson = {
-  id: 27,
+  id: 41,
   level: 'C2',
   orderIndex: 1,
   title: {
@@ -109,6 +92,7 @@ export const ALL_UNIFIED_LESSONS: UnifiedLesson[] = [
   b1Chapter7,
   b1Chapter8,
   b2Chapter1,
+  b2Chapter2,
   c1Chapter1,
   c2Chapter1
 ];

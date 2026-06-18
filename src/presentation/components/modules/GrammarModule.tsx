@@ -4,31 +4,142 @@ import { SuffixRegistry } from '../../../core/harmony/strategies/suffixRegistry'
 
 const renderMarkdown = (text: string) => {
   if (!text) return '';
-  
-  const boldParts = text.split('**');
-  
-  return boldParts.map((boldPart, boldIdx) => {
-    const isBold = boldIdx % 2 === 1;
-    const italicParts = boldPart.split('*');
-    
-    const content = italicParts.map((italicPart, italicIdx) => {
-      const isItalic = italicIdx % 2 === 1;
-      if (isItalic) {
-        return <em key={italicIdx} className="italic">{italicPart}</em>;
-      }
-      return italicPart;
-    });
 
-    if (isBold) {
-      return (
-        <strong key={boldIdx} className="font-bold text-[#3A5A40] dark:text-[#14B8A6]">
-          {content}
-        </strong>
-      );
-    }
+  const lines = text.split('\n');
+  const elements: React.ReactNode[] = [];
+  
+  let inTable = false;
+  let tableRows: string[][] = [];
+
+  const parseInline = (inlineText: string): React.ReactNode => {
+    const boldParts = inlineText.split('**');
+    return boldParts.map((boldPart, boldIdx) => {
+      const isBold = boldIdx % 2 === 1;
+      const italicParts = boldPart.split('*');
+      
+      const content = italicParts.map((italicPart, italicIdx) => {
+        const isItalic = italicIdx % 2 === 1;
+        if (isItalic) {
+          return <em key={italicIdx} className="italic">{italicPart}</em>;
+        }
+        return italicPart;
+      });
+
+      if (isBold) {
+        return (
+          <strong key={boldIdx} className="font-bold text-[#3A5A40] dark:text-[#14B8A6]">
+            {content}
+          </strong>
+        );
+      }
+      return <span key={boldIdx}>{content}</span>;
+    });
+  };
+
+  const renderTable = (rows: string[][], tableIdx: number) => {
+    if (rows.length === 0) return null;
     
-    return <span key={boldIdx}>{content}</span>;
-  });
+    let hasHeader = false;
+    let headerRow: string[] = [];
+    let bodyRows: string[][] = [];
+
+    if (rows.length > 1 && rows[1].every(cell => cell.trim().startsWith('-') || cell.trim().startsWith(':-') || cell.trim().startsWith(':--'))) {
+      hasHeader = true;
+      headerRow = rows[0];
+      bodyRows = rows.slice(2);
+    } else {
+      bodyRows = rows;
+    }
+
+    return (
+      <div key={`table-${tableIdx}`} className="overflow-x-auto my-4 rounded-xl border border-[#E9ECEF] dark:border-neutral-800 shadow-xs">
+        <table className="min-w-full text-xs font-technical text-left border-collapse bg-white dark:bg-neutral-900">
+          {hasHeader && (
+            <thead className="bg-[#3A5A40]/10 text-[#3A5A40] dark:bg-neutral-800 dark:text-neutral-200">
+              <tr>
+                {headerRow.map((cell, cIdx) => (
+                  <th key={cIdx} className="px-4 py-3 font-bold border-b border-[#E9ECEF] dark:border-neutral-800">
+                    {parseInline(cell.trim())}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+          )}
+          <tbody className="divide-y divide-[#E9ECEF] dark:divide-neutral-800 text-neutral-700 dark:text-neutral-350">
+            {bodyRows.map((row, rIdx) => (
+              <tr key={rIdx} className="hover:bg-neutral-50 dark:hover:bg-neutral-850 transition-colors">
+                {row.map((cell, cIdx) => (
+                  <td key={cIdx} className="px-4 py-2.5 border-b border-[#E9ECEF] dark:border-neutral-800">
+                    {parseInline(cell.trim())}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  };
+
+  let lineIdx = 0;
+  while (lineIdx < lines.length) {
+    const line = lines[lineIdx];
+    const isTableRow = line.trim().startsWith('|') && line.trim().endsWith('|');
+
+    if (isTableRow) {
+      if (!inTable) {
+        inTable = true;
+        tableRows = [];
+      }
+      const cells = line.split('|').slice(1, -1);
+      tableRows.push(cells);
+      lineIdx++;
+    } else {
+      if (inTable) {
+        elements.push(renderTable(tableRows, lineIdx));
+        inTable = false;
+        tableRows = [];
+      }
+
+      const trimmedLine = line.trim();
+      if (trimmedLine.startsWith('💡 Pse është ndryshe?') || trimmedLine.startsWith('⚠️ Ndryshimi Shqip-Turqisht:') || trimmedLine.startsWith('💡 Këshillë:')) {
+        elements.push(
+          <div key={`callout-${lineIdx}`} className="my-4 border-l-4 border-[#3A5A40] bg-[#3A5A40]/5 dark:bg-[#3A5A40]/10 rounded-r-xl p-4 text-xs md:text-sm shadow-xs transition duration-200 font-sans leading-relaxed">
+            <div className="font-bold text-[#3A5A40] dark:text-[#14B8A6] mb-1.5 flex items-center gap-1.5 uppercase tracking-wide">
+              <span>{trimmedLine.startsWith('💡') ? '💡' : '⚠️'}</span>
+              <span>{trimmedLine.split(':')[0].slice(2).trim() || 'Kujdes'}</span>
+            </div>
+            <p className="text-neutral-700 dark:text-neutral-300 font-light italic">
+              {parseInline(trimmedLine.split(':').slice(1).join(':').trim())}
+            </p>
+          </div>
+        );
+      } else if (trimmedLine.startsWith('> ')) {
+        elements.push(
+          <div key={`quote-${lineIdx}`} className="my-4 border-l-4 border-neutral-300 dark:border-neutral-700 pl-4 py-1 text-xs md:text-sm font-light italic text-neutral-600 dark:text-neutral-400">
+            {parseInline(trimmedLine.substring(2).trim())}
+          </div>
+        );
+      } else {
+        if (line.trim().length > 0) {
+          elements.push(
+            <p key={`p-${lineIdx}`} className="my-2 leading-relaxed">
+              {parseInline(line)}
+            </p>
+          );
+        } else {
+          elements.push(<div key={`br-${lineIdx}`} className="h-2" />);
+        }
+      }
+      lineIdx++;
+    }
+  }
+
+  if (inTable) {
+    elements.push(renderTable(tableRows, lineIdx));
+  }
+
+  return elements;
 };
 
 

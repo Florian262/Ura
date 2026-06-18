@@ -28,6 +28,7 @@ export interface UnifiedLesson {
     isSharedBalkanWord: boolean;
     notesAlbanian: string | null;
     audioAssetStub: string | null;
+    stemBreakdown?: string;
   }>;
   grammar: Array<{
     titleAlbanian: string;
@@ -40,7 +41,7 @@ export interface UnifiedLesson {
     } | null;
   }>;
   exercises: Array<{
-    type: 'MULTIPLE_CHOICE' | 'WORD_SORT' | 'SUFFIX_BUILDER';
+    type: 'MULTIPLE_CHOICE' | 'WORD_SORT' | 'SUFFIX_BUILDER' | 'CLOZE' | 'ERROR_CORRECTION' | 'CONNECTOR_MATCHING';
     promptAlbanian: string;
     payload: any;
     validation: any;

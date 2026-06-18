@@ -620,5 +620,49 @@ export const WRITING_PROMPTS: Record<number, WritingPrompt> = {
         feedback: "Gabim: Duhet të përdorni të paktën një përemër vetvetor ('kendi'), folje pasive/vetvetore (p.sh., 'hazırlanmak', 'yazılmak'), ose një strukturë kushtore/dëshirore (p.sh., '-se', '-seydi')."
       }
     ]
+  },
+  25: {
+    chapterId: 25,
+    type: 'guided',
+    promptAlbanian: "Shkruani një tekst përshkrues (80-120 fjalë) rreth një eksperience udhëtimi ose një vendi historik që keni vizituar ose dëshironi të vizitoni (p.sh., Kulla e Galatës ose Shtëpia e Shën Mërisë). Përdorni foljet vetvetore (p.sh., hazırlanmak, arınmak) ose reciproke (p.sh., karşılaşmak, kucaklaşmak) dhe të paktën një lidhëz shtuese (üstelik, bunun yanı sıra, dahası).",
+    grammarTipAlbanian: "Sigurohuni që teksti të ndjekë strukturën me tre paragrafe (Giriş, Gelişme, Sonuç). Përdorni të paktën një folje vetvetore (p.sh., 'hazırlandım') ose reciproke (p.sh., 'karşılaştım') dhe të paktën një lidhëz shtuese si 'üstelik', 'bunun yanı sıra', ose 'dahası'.",
+    sampleAnswers: [
+      "İstanbul'a gittiğimde Galata Kulesi'ni ziyaret ettim. Ziyaretçiler orada tarihin derinlikleriyle karşılaşırlar. Üstelik kulenin tepesinden manzara harikadır. Bunun yanı sıra, seyahat hazırlığı yaparken kendimi çok heyecanlı hissettim. İnsanlar geçmişin izleriyle kucaklaşırlar; dahası, seyahat etmek insanı tazeler."
+    ],
+    grammarLabel: "Seyahat ve Keşif (Morfologjia B2)",
+    validationRules: [
+      {
+        type: 'required_pattern',
+        regex: 'üstelik|bunun yanı sıra|dahası',
+        feedback: "Mungon një nga lidhëzat shtuese të kërkuara ('üstelik', 'bunun yanı sıra', ose 'dahası')."
+      },
+      {
+        type: 'required_pattern',
+        regex: 'karşılaş|kucaklaş|arın|bulun|hazırlan|buluş|görüş',
+        feedback: "Mungon përdorimi i foljeve vetvetore ose reciproke të kërkuara (p.sh., 'karşılaşmak', 'kucaklaşmak', 'arınmak', 'bulunmak', 'hazırlanmak')."
+      }
+    ]
+  },
+  26: {
+    chapterId: 26,
+    type: 'guided',
+    promptAlbanian: "Shkruani një tekst argumentues (80-120 fjalë) rreth çështjeve të mjedisit dhe rëndësisë së zhvillimit të qëndrueshëm (p.sh., ngrohja globale, burimet e rinovueshme ose detyrimet tona individuale). Përdorni nominalizimin me '-DIK' (p.sh., olduğunu, yaptığımızı, yöneldiğini) dhe fjalë kyçe të mjedisit si 'çevre', 'doğa', 'küresel ısınma' ose 'sürdürülebilirlik'.",
+    grammarTipAlbanian: "Sigurohuni që teksti të ndjekë strukturën me tre paragrafe (Giriş, Gelişme, Sonuç). Përdorni nominalizimin me prapashtesën '-DIK' (p.sh., 'olduğunu', 'yaptığımızı', 'korumamız gerektiğini') për të shprehur fakte apo mendime, dhe përfshini fjalë kyçe nga fjalori i kapitullit.",
+    sampleAnswers: [
+      "Günümüzde küresel ısınmanın doğa üzerindeki yıkıcı etkilerini yakından hissediyoruz. Atmosferdeki karbondioksit miktarının arttığını bilmek hepimizi endişelendiriyor. Çevreyi korumak için acil önlemler alınması gerektiğini düşünüyorum. Birçok ülkenin yenilenebilir enerji kaynaklarına yöneldiğini görüyoruz. Bireysel olarak ise su tüketimini azaltmanın ve plastik kullanımını sınırlandırmanın çevreye olan borcumuz olduğunu unutmamalıyız. Doğayı korumanın gelecek nesillere daha yaşanabilir bir dünya bırakmanın tek yolu olduğu gerçektir."
+    ],
+    grammarLabel: "Çevre ve Sürdürülebilirlik (Nominalizimi -DIK)",
+    validationRules: [
+      {
+        type: 'required_pattern',
+        regex: '[a-zçğışöü]+(?:dığ|diğ|duğ|düğ|tığ|tiğ|tuğ|tüğ|dık|dik|duk|dük|tık|tik|tuk|tük)[a-zçğışöü]*',
+        feedback: "Mungon përdorimi i nominalizimit me prapashtesën '-DIK' (p.sh., 'olduğunu', 'yaptığımızı', 'yöneldiğini')."
+      },
+      {
+        type: 'required_pattern',
+        regex: 'çevre|doğa|küresel|ısınma|sürdürülebilirlik|yenilenebilir|tüketim',
+        feedback: "Mungon përdorimi i fjalëve kyçe të mjedisit (p.sh., 'çevre', 'doğa', 'küresel ısınma', 'sürdürülebilirlik')."
+      }
+    ]
   }
 };

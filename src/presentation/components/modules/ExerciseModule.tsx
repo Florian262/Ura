@@ -13,6 +13,12 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
   const [sortedWordsList, setSortedWordsList] = useState<Record<number, string[]>>({});
   const [builderSuffixes, setBuilderSuffixes] = useState<Record<number, string>>({});
   
+  // B2 Specific States
+  const [clozeAnswers, setClozeAnswers] = useState<Record<number, string>>({});
+  const [selectedErrorWord, setSelectedErrorWord] = useState<Record<number, string>>({});
+  const [errorCorrectionAnswers, setErrorCorrectionAnswers] = useState<Record<number, string>>({});
+  const [connectorAnswers, setConnectorAnswers] = useState<Record<number, string>>({});
+
   const [checkedExercises, setCheckedExercises] = useState<Record<number, boolean>>({});
   const [exerciseResults, setExerciseResults] = useState<Record<number, { correct: boolean; msg: string }>>({});
 
@@ -48,7 +54,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
       <div className="bg-neutral-50/50 md:bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-4 md:p-5 space-y-4 md:shadow-inner animate-fade-in">
         <div>
           <span className="text-[9px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-md uppercase tracking-wider shadow-xs">
-            Lloji A: Skuadra e Shumësit (Zgjedhje e Shumëfishtë)
+            Zgjedhje e Shumëfishtë (Çoktan Seçmeli)
           </span>
           <p className="text-sm font-light text-[#565E64] mt-2">{ex.prompt_albanian}</p>
         </div>
@@ -85,9 +91,19 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
             Kontrollo Përgjigjen
           </button>
         ) : (
-          <p className={`text-xs font-semibold mt-2 leading-relaxed ${result.correct ? 'text-[#3A5A40]' : 'text-[#c0392b]'}`}>
-            {result.correct ? '✓ ' : '✗ '} {result.msg}
-          </p>
+          <div className="flex items-center gap-3 mt-2 flex-wrap">
+            <p className={`text-xs font-semibold leading-relaxed ${result.correct ? 'text-[#3A5A40]' : 'text-[#c0392b]'}`}>
+              {result.correct ? '✓ ' : '✗ '} {result.msg}
+            </p>
+            {!result.correct && (
+              <button
+                onClick={() => resetSingleExercise(ex.id, 'MULTIPLE_CHOICE')}
+                className="px-2.5 py-1 text-[10px] font-bold border border-rose-200 text-rose-700 bg-rose-50 hover:bg-rose-100 rounded-lg cursor-pointer transition flex items-center gap-1"
+              >
+                Provo Përsëri 🔄
+              </button>
+            )}
+          </div>
         )}
       </div>
     );
@@ -101,19 +117,16 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
     const result = exerciseResults[ex.id];
     const currentSorted = sortedWordsList[ex.id] || [];
 
-    // Source words not yet placed in the sorted pool
     const unusedWords = payload.words.filter((w: string) => !currentSorted.includes(w));
 
     const handleWordTap = (word: string, isSortingPool: boolean) => {
       if (isChecked) return;
       if (isSortingPool) {
-        // Remove from sorting pool
         setSortedWordsList(prev => ({
           ...prev,
           [ex.id]: currentSorted.filter(w => w !== word)
         }));
       } else {
-        // Append to sorting pool
         setSortedWordsList(prev => ({
           ...prev,
           [ex.id]: [...currentSorted, word]
@@ -148,12 +161,11 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
       <div className="bg-neutral-50/50 md:bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-4 md:p-5 space-y-4 md:shadow-inner animate-fade-in">
         <div>
           <span className="text-[9px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-md uppercase tracking-wider shadow-xs">
-            Lloji B: Ndërtuesi i Sintaksës (Radhitja e Fjalëve)
+            Radhitja e Fjalëve (Cümle Kurma)
           </span>
           <p className="text-sm font-light text-[#565E64] mt-2">{ex.prompt_albanian}</p>
         </div>
 
-        {/* Placing slots display */}
         <div className="bg-white border border-[#E9ECEF] rounded-xl p-4 min-h-[50px] flex items-center justify-start gap-2 flex-wrap shadow-xs">
           {currentSorted.length === 0 ? (
             <span className="text-xs text-neutral-400 italic">Shtypni fjalët e mëposhtme për t'i vendosur këtu sipas radhës...</span>
@@ -177,7 +189,6 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
           )}
         </div>
 
-        {/* Source tags pool */}
         {!isChecked && unusedWords.length > 0 && (
           <div className="flex flex-wrap gap-2 pt-2">
             {unusedWords.map((w: string) => (
@@ -192,7 +203,6 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
           </div>
         )}
 
-        {/* Sorting controls */}
         {!isChecked ? (
           <div className="flex gap-2">
             <button
@@ -211,19 +221,16 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
             )}
           </div>
         ) : (
-          <div className="space-y-3">
+          <div className="flex items-center gap-3 flex-wrap">
             <p className={`text-xs font-semibold leading-relaxed ${result.correct ? 'text-[#3A5A40]' : 'text-[#c0392b]'}`}>
               {result.correct ? '✓ ' : '✗ '} {result.msg}
             </p>
             {!result.correct && (
               <button
-                onClick={() => {
-                  setCheckedExercises(prev => ({ ...prev, [ex.id]: false }));
-                  resetSorting();
-                }}
-                className="px-3 py-1.5 bg-white border border-[#E9ECEF] text-[#565E64] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-lg text-xs font-bold cursor-pointer shadow-xs"
+                onClick={() => resetSingleExercise(ex.id, 'WORD_SORT')}
+                className="px-2.5 py-1 text-[10px] font-bold border border-rose-200 text-rose-700 bg-rose-50 hover:bg-rose-100 rounded-lg cursor-pointer transition flex items-center gap-1"
               >
-                Provo Përsëri
+                Provo Përsëri 🔄
               </button>
             )}
           </div>
@@ -263,12 +270,11 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
       <div className="bg-neutral-50/50 md:bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-4 md:p-5 space-y-4 md:shadow-inner animate-fade-in">
         <div>
           <span className="text-[9px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-md uppercase tracking-wider shadow-xs">
-            Lloji C: Ndërtuesi i Prapashtesave (Agglutination Builder)
+            Ndërtuesi i Prapashtesave (Ek Ekleme)
           </span>
           <p className="text-sm font-light text-[#565E64] mt-2">{ex.prompt_albanian}</p>
         </div>
 
-        {/* Dynamic visual merging canvas */}
         <div className="bg-white border border-[#E9ECEF] rounded-2xl p-6 flex justify-center items-center shadow-xs">
           <div className="flex flex-wrap justify-center items-center gap-2 text-xl font-technical">
             <span className="px-4 py-2 border border-[#E9ECEF] bg-neutral-50 text-[#1A1D20] rounded-xl font-semibold uppercase shadow-xs">
@@ -276,7 +282,6 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
             </span>
             <span className="text-[#3A5A40] font-black">+</span>
             
-            {/* Suffix slot */}
             <div className={`px-4 py-2 border border-dashed rounded-xl min-w-[70px] text-center font-bold transition duration-200 shadow-xs ${
               currentSuffix 
                 ? isChecked
@@ -284,7 +289,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
                     ? 'bg-emerald-100/50 border-emerald-500 text-emerald-800'
                     : 'bg-rose-100/50 border-rose-500 text-rose-800'
                   : 'bg-[#3A5A40]/10 border-[#3A5A40] text-[#3A5A40]' 
-                : 'border-neutral-300 bg-neutral-100 text-neutral-450'
+                : 'border-neutral-300 bg-neutral-100 text-neutral-455'
             }`}>
               {currentSuffix ? `-${currentSuffix}` : '?'}
             </div>
@@ -306,7 +311,6 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
           </div>
         </div>
 
-        {/* Suffix selectors */}
         {!isChecked && (
           <div className="flex flex-wrap gap-2 justify-center">
             {payload.suffixes.map((suff: string) => (
@@ -325,7 +329,6 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
           </div>
         )}
 
-        {/* Control Button */}
         {!isChecked ? (
           <div className="flex justify-center">
             <button
@@ -336,19 +339,16 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
             </button>
           </div>
         ) : (
-          <div className="text-center space-y-3">
-            <p className={`text-xs font-semibold leading-relaxed ${result.correct ? 'text-[#3A5A40]' : 'text-[#c0392b]'}`}>
+          <div className="flex items-center justify-center gap-3 flex-wrap">
+            <p className={`text-center text-xs font-semibold leading-relaxed ${result.correct ? 'text-[#3A5A40]' : 'text-[#c0392b]'}`}>
               {result.correct ? '✓ ' : '✗ '} {result.msg}
             </p>
             {!result.correct && (
               <button
-                onClick={() => {
-                  setCheckedExercises(prev => ({ ...prev, [ex.id]: false }));
-                  setBuilderSuffixes(prev => ({ ...prev, [ex.id]: '' }));
-                }}
-                className="px-3 py-1.5 bg-white border border-[#E9ECEF] text-[#565E64] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-lg text-xs font-bold cursor-pointer shadow-xs"
+                onClick={() => resetSingleExercise(ex.id, 'SUFFIX_BUILDER')}
+                className="px-2.5 py-1 text-[10px] font-bold border border-rose-200 text-rose-700 bg-rose-50 hover:bg-rose-100 rounded-lg cursor-pointer transition flex items-center gap-1"
               >
-                Provo Përsëri
+                Provo Përsëri 🔄
               </button>
             )}
           </div>
@@ -357,6 +357,331 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
     );
   };
 
+  // Render Exercise Type D: Cloze (B2 Suffix Fill-in-the-blank)
+  const renderCloze = (ex: any) => {
+    const payload = JSON.parse(ex.source_payload_json);
+    const target = JSON.parse(ex.validation_target_json);
+    const isChecked = checkedExercises[ex.id];
+    const result = exerciseResults[ex.id];
+    const currentAnswer = clozeAnswers[ex.id] || '';
+
+    const parts = payload.sentence.split('___');
+    const left = parts[0] || '';
+    const right = parts.slice(1).join('___');
+
+    const checkAnswer = () => {
+      if (!currentAnswer) {
+        alert('Ju lutemi zgjidhni një prapashtesë për të mbushur zbrazëtirën!');
+        return;
+      }
+      const correct = currentAnswer === target.correct_answer;
+      setCheckedExercises(prev => ({ ...prev, [ex.id]: true }));
+      setExerciseResults(prev => ({
+        ...prev,
+        [ex.id]: {
+          correct,
+          msg: correct 
+            ? (target.msg_success || 'E saktë!') 
+            : (target.msg_failure || 'E pasaktë.')
+        }
+      }));
+    };
+
+    return (
+      <div className="bg-neutral-50/50 md:bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-4 md:p-5 space-y-4 md:shadow-inner animate-fade-in">
+        <div>
+          <span className="text-[9px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-md uppercase tracking-wider shadow-xs">
+            Mbushja e Zbrazëtirave (Boşluk Doldurma)
+          </span>
+          <p className="text-sm font-light text-[#565E64] mt-2">{ex.prompt_albanian}</p>
+        </div>
+
+        <div className="bg-white border border-[#E9ECEF] rounded-2xl p-4 text-center shadow-xs">
+          <div className="text-base font-technical inline-block">
+            <span>{left}</span>
+            <span className={`px-2 py-1 mx-1.5 border border-dashed rounded-lg font-bold transition ${
+              currentAnswer
+                ? isChecked
+                  ? result.correct
+                    ? 'bg-emerald-100/50 border-emerald-500 text-emerald-800'
+                    : 'bg-rose-100/50 border-rose-500 text-rose-800'
+                  : 'bg-[#3A5A40]/10 border-[#3A5A40] text-[#3A5A40]'
+                : 'border-neutral-300 bg-neutral-50 text-neutral-400'
+            }`}>
+              {currentAnswer ? `-${currentAnswer}` : ' ___ '}
+            </span>
+            <span>{right}</span>
+          </div>
+        </div>
+
+        {!isChecked && (
+          <div className="flex flex-wrap gap-2 justify-center">
+            {payload.options.map((opt: string) => (
+              <button
+                key={opt}
+                onClick={() => setClozeAnswers(prev => ({ ...prev, [ex.id]: opt }))}
+                className={`px-3 py-1.5 rounded-lg border text-xs font-bold font-technical cursor-pointer transition ${
+                  currentAnswer === opt
+                    ? 'bg-[#3A5A40] text-white border-[#3A5A40]'
+                    : 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50'
+                }`}
+              >
+                -{opt}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {!isChecked ? (
+          <div className="flex justify-center">
+            <button
+              onClick={checkAnswer}
+              className="px-4 py-2.5 bg-white border border-[#E9ECEF] text-[#1A1D20] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-xl text-xs font-bold transition cursor-pointer shadow-xs hover:shadow"
+            >
+              Kontrollo Fjalinë
+            </button>
+          </div>
+        ) : (
+          <div className="flex items-center justify-center gap-3 flex-wrap">
+            <p className={`text-center text-xs font-semibold leading-relaxed ${result.correct ? 'text-[#3A5A40]' : 'text-[#c0392b]'}`}>
+              {result.correct ? '✓ ' : '✗ '} {result.msg}
+            </p>
+            {!result.correct && (
+              <button
+                onClick={() => resetSingleExercise(ex.id, 'CLOZE')}
+                className="px-2.5 py-1 text-[10px] font-bold border border-rose-200 text-rose-700 bg-rose-50 hover:bg-rose-100 rounded-lg cursor-pointer transition flex items-center gap-1"
+              >
+                Provo Përsëri 🔄
+              </button>
+            )}
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  // Render Exercise Type E: Error Correction (B2 Click-to-find-error)
+  const renderErrorCorrection = (ex: any) => {
+    const payload = JSON.parse(ex.source_payload_json);
+    const target = JSON.parse(ex.validation_target_json);
+    const isChecked = checkedExercises[ex.id];
+    const result = exerciseResults[ex.id];
+    
+    const selectedWord = selectedErrorWord[ex.id] || '';
+    const currentCorrection = errorCorrectionAnswers[ex.id] || '';
+
+    const words = payload.sentence.split(' ');
+
+    const checkAnswer = () => {
+      if (!selectedWord) {
+        alert('Ju lutemi shtypni mbi fjalën e pasaktë në fjali!');
+        return;
+      }
+      if (!currentCorrection) {
+        alert('Ju lutemi zgjidhni korrigjimin e saktë më poshtë!');
+        return;
+      }
+
+      const correct = selectedWord.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"']/g, '').toLowerCase() === target.correct_word.toLowerCase() && 
+                      currentCorrection === target.correction;
+
+      setCheckedExercises(prev => ({ ...prev, [ex.id]: true }));
+      setExerciseResults(prev => ({
+        ...prev,
+        [ex.id]: {
+          correct,
+          msg: correct 
+            ? (target.msg_success || 'E saktë!') 
+            : (target.msg_failure || 'E pasaktë.')
+        }
+      }));
+    };
+
+    return (
+      <div className="bg-neutral-50/50 md:bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-4 md:p-5 space-y-4 md:shadow-inner animate-fade-in">
+        <div>
+          <span className="text-[9px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-md uppercase tracking-wider shadow-xs">
+            Gjetja dhe Korrigjimi i Gabimeve (Hata Düzeltme)
+          </span>
+          <p className="text-sm font-light text-[#565E64] mt-2">{ex.prompt_albanian}</p>
+        </div>
+
+        {/* Word clicking container */}
+        <div className="bg-white border border-[#E9ECEF] rounded-2xl p-4 flex flex-wrap gap-2 justify-center shadow-xs">
+          {words.map((w: string, idx: number) => {
+            const cleanW = w.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"']/g, '');
+            const isWordSelected = selectedWord === cleanW;
+
+            let buttonStyle = 'bg-neutral-50 border-[#E9ECEF] text-neutral-800 hover:bg-neutral-100';
+            if (isWordSelected) {
+              buttonStyle = isChecked
+                ? result.correct
+                  ? 'bg-emerald-100/50 border-emerald-500 text-emerald-800 font-bold'
+                  : 'bg-rose-100/50 border-rose-500 text-rose-800 font-bold'
+                : 'bg-amber-100/60 border-amber-500 text-amber-800 font-bold shadow-xs';
+            }
+
+            return (
+              <button
+                key={idx}
+                disabled={isChecked}
+                onClick={() => {
+                  setSelectedErrorWord(prev => ({ ...prev, [ex.id]: cleanW }));
+                  setErrorCorrectionAnswers(prev => ({ ...prev, [ex.id]: '' })); // Reset correction
+                }}
+                className={`px-3 py-1.5 rounded-lg border text-sm font-technical transition duration-150 cursor-pointer ${buttonStyle}`}
+              >
+                {w}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Correction options */}
+        {selectedWord && (
+          <div className="p-4 bg-white border border-[#E9ECEF] rounded-xl text-center space-y-3 animate-fade-in">
+            <p className="text-xs text-neutral-500">
+              Keni përzgjedhur fjalën <span className="font-bold text-amber-700">"{selectedWord}"</span>. Si duhet të korrigjohet ajo?
+            </p>
+            <div className="flex flex-wrap gap-2 justify-center">
+              {payload.options.map((opt: string) => {
+                const isOptionSelected = currentCorrection === opt;
+                let optStyle = 'bg-white border-[#E9ECEF] text-neutral-700 hover:bg-neutral-50';
+                
+                if (isOptionSelected) optStyle = 'bg-[#3A5A40] text-white border-[#3A5A40]';
+                if (isChecked && opt === target.correction) {
+                  optStyle = 'bg-emerald-500 text-white border-emerald-500 font-bold';
+                }
+
+                return (
+                  <button
+                    key={opt}
+                    disabled={isChecked}
+                    onClick={() => setErrorCorrectionAnswers(prev => ({ ...prev, [ex.id]: opt }))}
+                    className={`px-3 py-1.5 rounded-lg border text-xs font-technical transition cursor-pointer ${optStyle}`}
+                  >
+                    {opt}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {!isChecked ? (
+          <div className="flex justify-center">
+            <button
+              onClick={checkAnswer}
+              className="px-4 py-2.5 bg-white border border-[#E9ECEF] text-[#1A1D20] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-xl text-xs font-bold transition cursor-pointer shadow-xs hover:shadow"
+            >
+              Korrigjo Gabimin
+            </button>
+          </div>
+        ) : (
+          <div className="flex items-center justify-center gap-3 flex-wrap">
+            <p className={`text-center text-xs font-semibold leading-relaxed ${result.correct ? 'text-[#3A5A40]' : 'text-[#c0392b]'}`}>
+              {result.correct ? '✓ ' : '✗ '} {result.msg}
+            </p>
+            {!result.correct && (
+              <button
+                onClick={() => resetSingleExercise(ex.id, 'ERROR_CORRECTION')}
+                className="px-2.5 py-1 text-[10px] font-bold border border-rose-200 text-rose-700 bg-rose-50 hover:bg-rose-100 rounded-lg cursor-pointer transition flex items-center gap-1"
+              >
+                Provo Përsëri 🔄
+              </button>
+            )}
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  // Render Exercise Type F: Connector Matching
+  const renderConnectorMatching = (ex: any) => {
+    const payload = JSON.parse(ex.source_payload_json);
+    const target = JSON.parse(ex.validation_target_json);
+    const isChecked = checkedExercises[ex.id];
+    const result = exerciseResults[ex.id];
+    const currentAnswer = connectorAnswers[ex.id] || '';
+
+    const checkAnswer = () => {
+      if (!currentAnswer) {
+        alert('Ju lutemi zgjidhni një lidhëz turke për të kryer çiftimin!');
+        return;
+      }
+      const correct = currentAnswer === target.correct_answer;
+      setCheckedExercises(prev => ({ ...prev, [ex.id]: true }));
+      setExerciseResults(prev => ({
+        ...prev,
+        [ex.id]: {
+          correct,
+          msg: correct 
+            ? (target.msg_success || 'E saktë!') 
+            : (target.msg_failure || 'E pasaktë.')
+        }
+      }));
+    };
+
+    return (
+      <div className="bg-neutral-50/50 md:bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-4 md:p-5 space-y-4 md:shadow-inner animate-fade-in">
+        <div>
+          <span className="text-[9px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-md uppercase tracking-wider shadow-xs">
+            Përputhja e Lidhëzave (Bağlaç Eşleştirme)
+          </span>
+          <p className="text-sm font-light text-[#565E64] mt-2">{ex.prompt_albanian}</p>
+        </div>
+
+        <div className="grid grid-cols-3 gap-3 max-w-md mx-auto">
+          {payload.options.map((opt: string) => {
+            const isSelected = currentAnswer === opt;
+            let optStyle = 'bg-white border-[#E9ECEF] text-neutral-700 hover:bg-neutral-50';
+            
+            if (isSelected) optStyle = 'bg-[#3A5A40]/10 border-[#3A5A40] text-[#3A5A40] font-bold';
+            if (isChecked) {
+              if (opt === target.correct_answer) optStyle = 'bg-emerald-100/50 border-emerald-500 text-emerald-800 font-bold';
+              else if (isSelected) optStyle = 'bg-rose-100/50 border-rose-500 text-rose-800';
+            }
+
+            return (
+              <button
+                key={opt}
+                disabled={isChecked}
+                onClick={() => setConnectorAnswers(prev => ({ ...prev, [ex.id]: opt }))}
+                className={`p-3 border rounded-xl text-center font-technical cursor-pointer text-xs ${optStyle}`}
+              >
+                {opt}
+              </button>
+            );
+          })}
+        </div>
+
+        {!isChecked ? (
+          <div className="flex justify-center">
+            <button
+              onClick={checkAnswer}
+              className="px-4 py-2.5 bg-white border border-[#E9ECEF] text-[#1A1D20] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-xl text-xs font-bold transition cursor-pointer shadow-xs hover:shadow"
+            >
+              Çifto Lidhëzën
+            </button>
+          </div>
+        ) : (
+          <div className="flex items-center justify-center gap-3 flex-wrap">
+            <p className={`text-center text-xs font-semibold leading-relaxed ${result.correct ? 'text-[#3A5A40]' : 'text-[#c0392b]'}`}>
+              {result.correct ? '✓ ' : '✗ '} {result.msg}
+            </p>
+            {!result.correct && (
+              <button
+                onClick={() => resetSingleExercise(ex.id, 'CONNECTOR_MATCHING')}
+                className="px-2.5 py-1 text-[10px] font-bold border border-rose-200 text-rose-700 bg-rose-50 hover:bg-rose-100 rounded-lg cursor-pointer transition flex items-center gap-1"
+              >
+                Provo Përsëri 🔄
+              </button>
+            )}
+          </div>
+        )}
+      </div>
+    );
+  };
 
   const handleFinishLesson = () => {
     // Check if at least one exercise checked
@@ -368,13 +693,83 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
     markChapterCompleted();
     onComplete?.();
     
-    // Smooth scroll to the completion card at the bottom of the container
     setTimeout(() => {
       const completionCard = document.getElementById('chapter-completion-card');
       if (completionCard) {
         completionCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     }, 150);
+  };
+
+  const allChecked = exercises.every(ex => checkedExercises[ex.id]);
+  const correctCount = Object.values(exerciseResults).filter(res => res.correct).length;
+
+  const resetAllExercises = () => {
+    setCheckedExercises({});
+    setExerciseResults({});
+    setMultipleChoiceAnswers({});
+    setSortedWordsList({});
+    setBuilderSuffixes({});
+    setClozeAnswers({});
+    setSelectedErrorWord({});
+    setErrorCorrectionAnswers({});
+    setConnectorAnswers({});
+  };
+
+  const resetSingleExercise = (exId: number, type: string) => {
+    setCheckedExercises(prev => {
+      const copy = { ...prev };
+      delete copy[exId];
+      return copy;
+    });
+    setExerciseResults(prev => {
+      const copy = { ...prev };
+      delete copy[exId];
+      return copy;
+    });
+    
+    if (type === 'MULTIPLE_CHOICE') {
+      setMultipleChoiceAnswers(prev => {
+        const copy = { ...prev };
+        delete copy[exId];
+        return copy;
+      });
+    } else if (type === 'WORD_SORT') {
+      setSortedWordsList(prev => {
+        const copy = { ...prev };
+        delete copy[exId];
+        return copy;
+      });
+    } else if (type === 'SUFFIX_BUILDER') {
+      setBuilderSuffixes(prev => {
+        const copy = { ...prev };
+        delete copy[exId];
+        return copy;
+      });
+    } else if (type === 'CLOZE') {
+      setClozeAnswers(prev => {
+        const copy = { ...prev };
+        delete copy[exId];
+        return copy;
+      });
+    } else if (type === 'ERROR_CORRECTION') {
+      setSelectedErrorWord(prev => {
+        const copy = { ...prev };
+        delete copy[exId];
+        return copy;
+      });
+      setErrorCorrectionAnswers(prev => {
+        const copy = { ...prev };
+        delete copy[exId];
+        return copy;
+      });
+    } else if (type === 'CONNECTOR_MATCHING') {
+      setConnectorAnswers(prev => {
+        const copy = { ...prev };
+        delete copy[exId];
+        return copy;
+      });
+    }
   };
 
   return (
@@ -384,7 +779,9 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
         <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-widest">Sekuenca 5</span>
         <h2 className="text-xl font-black text-[#1A1D20] uppercase font-sans">Ushtrime Interaktive (Pratik Egzersizler)</h2>
         <p className="text-xs text-[#565E64] font-light mt-1">
-          Testoni njohuritë tuaja praktike mbi shumësin dhe sintaksën përmes ushtrimeve tona interaktive.
+          {exercises[0]?.exercise_type === 'CLOZE' || exercises[0]?.exercise_type === 'ERROR_CORRECTION'
+            ? 'Testoni njohuritë tuaja praktike mbi foljet vetvetore, reciproke dhe lidhëzat shtuese.'
+            : 'Testoni njohuritë tuaja praktike përmes ushtrimeve tona interaktive.'}
         </p>
       </div>
 
@@ -393,9 +790,28 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
           if (ex.exercise_type === 'MULTIPLE_CHOICE') return <div key={ex.id}>{renderMultipleChoice(ex)}</div>;
           if (ex.exercise_type === 'WORD_SORT') return <div key={ex.id}>{renderWordSorting(ex)}</div>;
           if (ex.exercise_type === 'SUFFIX_BUILDER') return <div key={ex.id}>{renderAgglutinationBuilder(ex)}</div>;
+          if (ex.exercise_type === 'CLOZE') return <div key={ex.id}>{renderCloze(ex)}</div>;
+          if (ex.exercise_type === 'ERROR_CORRECTION') return <div key={ex.id}>{renderErrorCorrection(ex)}</div>;
+          if (ex.exercise_type === 'CONNECTOR_MATCHING') return <div key={ex.id}>{renderConnectorMatching(ex)}</div>;
           return null;
         })}
       </div>
+
+      {allChecked && (
+        <div className="bg-[#3A5A40]/10 border border-[#3A5A40]/30 rounded-2xl p-5 text-center space-y-3 animate-fade-in">
+          <span className="text-3xl block">🏆</span>
+          <h3 className="text-sm font-bold text-[#3A5A40] uppercase tracking-wide">Rezultati i Ushtrimeve</h3>
+          <p className="text-xs text-[#565E64] font-light">
+            Keni përfunduar të gjitha ushtrimet e kapitullit! Rezultati juaj: <span className="font-bold font-technical text-base text-[#3A5A40]">{correctCount} / {exercises.length}</span> të sakta.
+          </p>
+          <button
+            onClick={resetAllExercises}
+            className="px-4 py-2.5 bg-white border border-[#3A5A40] text-[#3A5A40] font-bold rounded-xl text-xs hover:bg-[#3A5A40] hover:text-white transition cursor-pointer shadow-xs"
+          >
+            Provo Përsëri 🔄
+          </button>
+        </div>
+      )}
 
       <div className="pt-6 border-t border-[#E9ECEF] flex flex-wrap items-center justify-between gap-4">
         <div>

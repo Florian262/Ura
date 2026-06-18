@@ -1,11 +1,32 @@
 <!doctype html>
-<html lang="en">
+<html lang="sq">
   <head>
     <meta charset="UTF-8" />
+
+    <!-- PWA Manifest (makes the app installable with the URA logo icon) -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Favicon (browser tab) -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Apple / iOS home screen icon -->
+    <link rel="apple-touch-icon" href="/logo_icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Ura" />
+
+    <!-- Android / Chrome theme colour -->
+    <meta name="theme-color" content="#3A5A40" />
+
+    <!-- Windows tile -->
+    <meta name="msapplication-TileImage" content="/logo_icon.png" />
+    <meta name="msapplication-TileColor" content="#3A5A40" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="referrer" content="no-referrer" />
-    <title>ura</title>
+    <meta name="description" content="Mëso turqisht nga shqipja. Plotësisht offline." />
+
+    <title>Ura e Gjuhës</title>
   </head>
   <body>
     <div id="root"></div>

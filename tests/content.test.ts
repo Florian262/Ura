@@ -125,7 +125,7 @@ describe('Unified Lesson Blueprints Content Integrity', () => {
       lesson.exercises.forEach((ex, idx) => {
         expect(ex.promptAlbanian, `Lesson ${lesson.id} exercise ${idx} prompt`).toBeTypeOf('string');
         expect(ex.promptAlbanian.trim().length).toBeGreaterThan(0);
-        expect(['MULTIPLE_CHOICE', 'WORD_SORT', 'SUFFIX_BUILDER']).toContain(ex.type);
+        expect(['MULTIPLE_CHOICE', 'WORD_SORT', 'SUFFIX_BUILDER', 'CLOZE', 'ERROR_CORRECTION', 'CONNECTOR_MATCHING']).toContain(ex.type);
 
         if (ex.type === 'MULTIPLE_CHOICE') {
           expect(ex.payload, `Lesson ${lesson.id} exercise ${idx} multiple choice payload`).toBeTypeOf('object');
@@ -170,6 +170,41 @@ describe('Unified Lesson Blueprints Content Integrity', () => {
           expect(ex.payload.suffixes).toContain(ex.validation.correct_suffix);
           expect(ex.validation.result, `Lesson ${lesson.id} exercise ${idx} expected resulting word`).toBeTypeOf('string');
           expect(ex.validation.result).toBe(ex.payload.root + ex.validation.correct_suffix);
+        }
+
+        if (ex.type === 'CLOZE') {
+          expect(ex.payload, `Lesson ${lesson.id} exercise ${idx} cloze payload`).toBeTypeOf('object');
+          expect(ex.payload.sentence, `Lesson ${lesson.id} exercise ${idx} cloze sentence`).toBeTypeOf('string');
+          expect(ex.payload.sentence).toContain('___');
+          expect(ex.payload.options, `Lesson ${lesson.id} exercise ${idx} cloze options`).toBeInstanceOf(Array);
+          expect(ex.payload.options.length).toBeGreaterThanOrEqual(2);
+
+          expect(ex.validation, `Lesson ${lesson.id} exercise ${idx} cloze validation`).toBeTypeOf('object');
+          expect(ex.validation.correct_answer, `Lesson ${lesson.id} exercise ${idx} cloze correct answer`).toBeTypeOf('string');
+          expect(ex.payload.options).toContain(ex.validation.correct_answer);
+        }
+
+        if (ex.type === 'ERROR_CORRECTION') {
+          expect(ex.payload, `Lesson ${lesson.id} exercise ${idx} error correction payload`).toBeTypeOf('object');
+          expect(ex.payload.sentence, `Lesson ${lesson.id} exercise ${idx} error correction sentence`).toBeTypeOf('string');
+          expect(ex.payload.options, `Lesson ${lesson.id} exercise ${idx} error correction options`).toBeInstanceOf(Array);
+          expect(ex.payload.options.length).toBeGreaterThanOrEqual(2);
+
+          expect(ex.validation, `Lesson ${lesson.id} exercise ${idx} error correction validation`).toBeTypeOf('object');
+          expect(ex.validation.correct_word, `Lesson ${lesson.id} exercise ${idx} error correction target word`).toBeTypeOf('string');
+          expect(ex.validation.correction, `Lesson ${lesson.id} exercise ${idx} error correction fix`).toBeTypeOf('string');
+          expect(ex.payload.sentence).toContain(ex.validation.correct_word);
+          expect(ex.payload.options).toContain(ex.validation.correction);
+        }
+
+        if (ex.type === 'CONNECTOR_MATCHING') {
+          expect(ex.payload, `Lesson ${lesson.id} exercise ${idx} connector matching payload`).toBeTypeOf('object');
+          expect(ex.payload.options, `Lesson ${lesson.id} exercise ${idx} connector matching options`).toBeInstanceOf(Array);
+          expect(ex.payload.options.length).toBeGreaterThanOrEqual(2);
+
+          expect(ex.validation, `Lesson ${lesson.id} exercise ${idx} connector matching validation`).toBeTypeOf('object');
+          expect(ex.validation.correct_answer, `Lesson ${lesson.id} exercise ${idx} connector matching correct answer`).toBeTypeOf('string');
+          expect(ex.payload.options).toContain(ex.validation.correct_answer);
         }
       });
     });

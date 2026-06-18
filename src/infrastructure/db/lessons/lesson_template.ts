@@ -44,7 +44,7 @@ export interface UnifiedLesson {
     } | null;
   }>;
   exercises: Array<{
-    type: 'MULTIPLE_CHOICE' | 'WORD_SORT' | 'SUFFIX_BUILDER';
+    type: 'MULTIPLE_CHOICE' | 'WORD_SORT' | 'SUFFIX_BUILDER' | 'CLOZE' | 'ERROR_CORRECTION' | 'CONNECTOR_MATCHING';
     promptAlbanian: string;
     payload: any;
     validation: any;

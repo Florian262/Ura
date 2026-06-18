@@ -12,14 +12,22 @@ export const WritingModule: React.FC<WritingModuleProps> = ({ onComplete }) => {
   const chapterId = currentChapter?.id || 1;
   const activePrompt = WRITING_PROMPTS[chapterId] || WRITING_PROMPTS[1];
   
-  const b1Chapters = [4, 22, 23, 24];
-  const minLength = b1Chapters.includes(chapterId) ? 60 : 10;
+  const minLength = currentChapter?.level === 'B2'
+    ? 120
+    : currentChapter?.level === 'B1'
+      ? 60
+      : 10;
 
   // States
   const [showPreferenceModal, setShowPreferenceModal] = useState<boolean>(true);
   const [writingInput, setWritingInput] = useState<string>('');
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [evaluationResult, setEvaluationResult] = useState<EvaluationResult | null>(null);
+
+  // B2 Checklist States
+  const [checklistGrammar, setChecklistGrammar] = useState<boolean>(false);
+  const [checklistConnector, setChecklistConnector] = useState<boolean>(false);
+  const [checklistStructure, setChecklistStructure] = useState<boolean>(false);
   
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -33,6 +41,11 @@ export const WritingModule: React.FC<WritingModuleProps> = ({ onComplete }) => {
     setShowPreferenceModal(false);
     setIsSubmitted(false);
     setEvaluationResult(null);
+    
+    // Reset B2 states
+    setChecklistGrammar(false);
+    setChecklistConnector(false);
+    setChecklistStructure(false);
   };
 
   // Helper row keypad overlay
@@ -150,6 +163,37 @@ export const WritingModule: React.FC<WritingModuleProps> = ({ onComplete }) => {
           </div>
 
           <div className="space-y-4">
+            {/* Keyboard Switch Tip for B2 Level */}
+            {currentChapter?.level === 'B2' && (
+              <div className="bg-blue-50/50 dark:bg-blue-950/10 border-l-4 border-blue-500 rounded-r-xl p-4 my-2 space-y-2 shadow-xs transition duration-200">
+                <div className="flex items-center gap-2 text-blue-800 dark:text-blue-400 font-bold text-xs uppercase tracking-wide">
+                  <span>⌨️ Këshillë për Tastierën Turke</span>
+                </div>
+                <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed font-light">
+                  <strong>Mobile:</strong> Për të shkruar më shpejt, shtoni tastierën Turke (TR) në cilësimet e telefonit tuaj.<br />
+                  <strong>Desktop:</strong> Mund të shtypni shkronjat turke (ç, ş, ğ, ı, ö, ü) më lehtë duke kaluar në tastierën Turke (TR) në sistemin tuaj operativ.
+                </p>
+              </div>
+            )}
+
+            {/* Structured Paragraph Guidelines for B2 level essay writing */}
+            {currentChapter?.level === 'B2' && (
+              <div className="bg-[#3A5A40]/5 border border-[#3A5A40]/20 rounded-xl p-4 my-2 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <h5 className="text-xs font-bold text-[#3A5A40] uppercase">1. Giriş (Hyrja)</h5>
+                  <p className="text-[11px] text-[#565E64] font-light mt-1">Prezantoni vendin ose qëllimin e udhëtimit tuaj (20-30 fjalë).</p>
+                </div>
+                <div>
+                  <h5 className="text-xs font-bold text-[#3A5A40] uppercase">2. Gelişme (Zhvillimi)</h5>
+                  <p className="text-[11px] text-[#565E64] font-light mt-1">Përshkruani detajet, vendet që keni parë dhe foljet vetvetore/reciproke (40-60 fjalë).</p>
+                </div>
+                <div>
+                  <h5 className="text-xs font-bold text-[#3A5A40] uppercase">3. Sonuç (Përfundimi)</h5>
+                  <p className="text-[11px] text-[#565E64] font-light mt-1">Jepni mendimin ose ndjenjat tuaja rreth këtij udhëtimi (20-30 fjalë).</p>
+                </div>
+              </div>
+            )}
+
             {/* Conditional past-tense vowel harmony tip banner */}
             {chapterId === 3 && (
               <div className="bg-teal-50/50 dark:bg-teal-950/10 border-l-4 border-teal-500 rounded-r-xl p-4 space-y-2 shadow-xs transition duration-200">
@@ -201,7 +245,7 @@ export const WritingModule: React.FC<WritingModuleProps> = ({ onComplete }) => {
               ref={textareaRef}
               value={writingInput}
               onChange={handleTextareaChange}
-              rows={4}
+              rows={5}
               placeholder="Shkruani tekstin tuaj në turqisht këtu..."
               className="w-full rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 p-4 text-sm font-technical text-neutral-900 dark:text-neutral-100 placeholder-neutral-400 focus:border-teal-500 focus:ring-1 focus:ring-teal-500/25 focus:outline-none tracking-wide shadow-sm transition duration-150"
             ></textarea>
@@ -331,8 +375,107 @@ export const WritingModule: React.FC<WritingModuleProps> = ({ onComplete }) => {
                     </div>
                   )}
                 </div>
+              ) : currentChapter?.level === 'B2' ? (
+                /* INTERACTIVE B2 CHECKLIST SELF-EVALUATION VIEW */
+                <div className="bg-neutral-50/50 dark:bg-neutral-900/30 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-4 md:p-5 space-y-4 md:shadow-inner">
+                  <div>
+                    <span className="text-[10px] font-bold text-teal-600 dark:text-teal-400 uppercase tracking-wider mb-2 block">📋 Vetë-Vlerësimi i Shkrimit (B2 Checklist)</span>
+                    <p className="text-xs text-neutral-500 dark:text-neutral-400 font-light leading-relaxed">
+                      Ju lutemi kontrolloni pikat e mëposhtme bazuar në tekstin që keni shkruar për të zhbllokuar modelin:
+                    </p>
+                  </div>
+                  
+                  <div className="space-y-2 bg-white dark:bg-neutral-950 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-inner">
+                    {/* Word count check */}
+                    <div className="flex items-center justify-between p-2 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-900 transition">
+                      <span className="text-xs text-neutral-700 dark:text-neutral-300">Kam shkruar të paktën 80 fjalë:</span>
+                      <span className={`text-xs font-bold px-2 py-0.5 rounded-md ${
+                        wordCount >= 80 
+                          ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-400' 
+                          : 'bg-rose-100 text-rose-800 dark:bg-rose-950/40 dark:text-rose-400'
+                      }`}>
+                        {wordCount >= 80 ? '✓ Po' : `Jo (${wordCount}/80 fjalë)`}
+                      </span>
+                    </div>
+
+                    {/* Grammar usage check */}
+                    <label className="flex items-center justify-between p-2 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-900 transition cursor-pointer select-none">
+                      <span className="text-xs text-neutral-700 dark:text-neutral-300">Kam përdorur foljet vetvetore ose reciproke (p.sh. hazırlanmak, kucaklaşmak):</span>
+                      <input
+                        type="checkbox"
+                        checked={checklistGrammar}
+                        onChange={(e) => setChecklistGrammar(e.target.checked)}
+                        className="rounded border-neutral-300 text-teal-600 focus:ring-teal-500 h-4 w-4"
+                      />
+                    </label>
+
+                    {/* Connector check */}
+                    <label className="flex items-center justify-between p-2 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-900 transition cursor-pointer select-none">
+                      <span className="text-xs text-neutral-700 dark:text-neutral-300">Kam përdorur të paktën një lidhëz shtuese (üstelik, bunun yanı sıra, dahası):</span>
+                      <input
+                        type="checkbox"
+                        checked={checklistConnector}
+                        onChange={(e) => setChecklistConnector(e.target.checked)}
+                        className="rounded border-neutral-300 text-teal-600 focus:ring-teal-500 h-4 w-4"
+                      />
+                    </label>
+
+                    {/* Structure check */}
+                    <label className="flex items-center justify-between p-2 rounded-lg hover:bg-neutral-50 dark:hover:bg-neutral-900 transition cursor-pointer select-none">
+                      <span className="text-xs text-neutral-700 dark:text-neutral-300">Kam ndjekur strukturën me tre paragrafe (Hyrje, Zhvillim, Përfundim):</span>
+                      <input
+                        type="checkbox"
+                        checked={checklistStructure}
+                        onChange={(e) => setChecklistStructure(e.target.checked)}
+                        className="rounded border-neutral-300 text-teal-600 focus:ring-teal-500 h-4 w-4"
+                      />
+                    </label>
+                  </div>
+
+                  {wordCount >= 80 && checklistGrammar && checklistConnector && checklistStructure ? (
+                    <div className="pt-4 border-t border-neutral-200 dark:border-neutral-800 space-y-4 animate-fade-in">
+                      <div className="bg-emerald-500/10 border border-emerald-500/30 text-emerald-800 dark:text-emerald-400 p-3 rounded-xl text-xs font-bold text-center">
+                        🔓 Modeli i Përgjigjes u Zhbllokua!
+                      </div>
+                      
+                      {activePrompt.sampleAnswers && activePrompt.sampleAnswers.length > 0 && (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div className="p-4 bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl">
+                            <span className="text-[10px] font-bold text-neutral-450 uppercase tracking-widest block mb-2">Eseja Juaj:</span>
+                            <p className="text-xs font-technical text-neutral-800 dark:text-neutral-200 whitespace-pre-line leading-relaxed">
+                              {writingInput}
+                            </p>
+                          </div>
+                          <div className="p-4 bg-teal-50 dark:bg-teal-950/10 border border-teal-200 dark:border-teal-900 rounded-xl">
+                            <span className="text-[10px] font-bold text-teal-700 dark:text-teal-400 uppercase tracking-widest block mb-2">Shembull Model (Nga Profesorët):</span>
+                            <p className="text-xs font-technical text-teal-850 dark:text-neutral-200 italic leading-relaxed">
+                              {activePrompt.sampleAnswers[0]}
+                            </p>
+                          </div>
+                        </div>
+                      )}
+
+                      <div className="bg-white dark:bg-neutral-900/50 p-3 rounded-xl border border-neutral-200 dark:border-neutral-800 flex items-center justify-between shadow-xs">
+                        <span className="text-xs text-neutral-500 dark:text-neutral-400 font-light italic">Krahasuat shkrimin tuaj me modelin dhe gjithçka është në rregull?</span>
+                        <button
+                          onClick={() => {
+                            setIsSubmitted(false);
+                            onComplete?.();
+                          }}
+                          className="px-3 py-1.5 bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/30 rounded-lg text-xs font-bold hover:bg-teal-500/20 dark:hover:bg-teal-400/20 transition cursor-pointer shadow-xs active:scale-95"
+                        >
+                          Auditimi u Krye
+                        </button>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="bg-amber-500/5 border border-amber-500/20 text-amber-800 dark:text-amber-400 p-3 rounded-xl text-xs text-center font-light italic">
+                      Plotësoni të gjitha pikat e checklist-ës për të parë modelin e përgjigjes.
+                    </div>
+                  )}
+                </div>
               ) : (
-                /* MODEL ANSWER / SELF CHECK VIEW */
+                /* STANDARD B1 OR LOWER SELF CHECK VIEW */
                 <div className="bg-neutral-50/50 dark:bg-neutral-900/30 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-4 md:p-5 space-y-4 md:shadow-inner">
                   {activePrompt.sampleAnswers && activePrompt.sampleAnswers.length > 0 && (
                     <div>

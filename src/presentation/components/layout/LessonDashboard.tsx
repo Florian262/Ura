@@ -39,6 +39,7 @@ export const LessonDashboard: React.FC = () => {
   
   // Static state to freeze the display when the card is collapsed/closed
   const [staticSessionSeconds, setStaticSessionSeconds] = useState<number>(sessionSeconds);
+  const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
   const prevExpandedRef = useRef<boolean>(false);
   const initialSyncRef = useRef<boolean>(false);
 
@@ -185,7 +186,6 @@ export const LessonDashboard: React.FC = () => {
   const activeLevelKey = getActiveLevelKey();
   
   // State for active expanded accordion card
-  const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
 
   // Refs to accordion containers and cards
   const containerRefs = useRef<Record<string, HTMLDivElement | null>>({});
@@ -682,7 +682,7 @@ export const LessonDashboard: React.FC = () => {
               const isCurrentExpanded = selectedLevel === level;
               
               const isB1Passed = localStorage.getItem('ura_b1_test_passed') === 'true';
-              const locked = (levels[level] || []).length === 0 || ((level === 'B2' || level === 'C1' || level === 'C2') && !isB1Passed);
+              const locked = (levels[level] || []).length === 0 || ((level === 'C1' || level === 'C2') && !isB1Passed);
               
               return (
                 <div key={level} className="relative">

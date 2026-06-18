@@ -173,4 +173,24 @@ describe('Writing Grading Engine - Chapter Evaluations', () => {
       expect(res.feedback).toContain('Mungon përdorimi i foljeve reciproke');
     });
   });
+
+  // B2 CHAPTER 2 (ID 26 - Env & -DIK nominalization)
+  describe('B2 Chapter 2 (ID 26) Writing Validation', () => {
+    it('passes valid environmental description', () => {
+      const res = evaluateWriting(26, "Günümüzde küresel ısınmanın doğa üzerindeki yıkıcı etkilerini yakından hissediyoruz. Çevreyi korumak için acil önlemler alınması gerektiğini düşünüyorum.");
+      expect(res.status).toBe('success');
+    });
+
+    it('flags missing -DIK nominalization', () => {
+      const res = evaluateWriting(26, "Günümüzde küresel ısınmanın doğa üzerindeki yıkıcı etkilerini yakından hissediyoruz. Çevreyi korumak için acil önlemler almalıyız.");
+      expect(res.status).toBe('error');
+      expect(res.feedback).toContain("Mungon përdorimi i nominalizimit me prapashtesën");
+    });
+
+    it('flags missing environment keywords', () => {
+      const res = evaluateWriting(26, "Bizim çok çalıştığımızı biliyorlar çünkü sınavı kazandık. Yarın sinemaya gideceğimizi söylediler ama biz gitmek istemiyoruz çünkü çok yorgunuz.");
+      expect(res.status).toBe('error');
+      expect(res.feedback).toContain("Mungon përdorimi i fjalëve kyçe të mjedisit");
+    });
+  });
 });

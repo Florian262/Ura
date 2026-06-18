@@ -53,6 +53,7 @@ export interface Vocabulary {
   is_shared_balkan_word: number; // 0 or 1
   notes_albanian: string | null;
   audio_asset_stub: string | null;
+  stem_breakdown?: string;
 }
 
 export interface GrammarCard {
@@ -68,7 +69,7 @@ export interface GrammarCard {
 export interface Exercise {
   id: number;
   chapter_id: number;
-  exercise_type: 'MULTIPLE_CHOICE' | 'WORD_SORT' | 'SUFFIX_BUILDER';
+  exercise_type: 'MULTIPLE_CHOICE' | 'WORD_SORT' | 'SUFFIX_BUILDER' | 'CLOZE' | 'ERROR_CORRECTION' | 'CONNECTOR_MATCHING';
   prompt_albanian: string;
   source_payload_json: string; // Dynamic based on exercise type
   validation_target_json: string; // Solution target
@@ -140,7 +141,8 @@ export const SEED_VOCABULARY: Vocabulary[] = ALL_UNIFIED_LESSONS.flatMap(l =>
     category: v.category,
     is_shared_balkan_word: v.isSharedBalkanWord ? 1 : 0,
     notes_albanian: v.notesAlbanian,
-    audio_asset_stub: v.audioAssetStub
+    audio_asset_stub: v.audioAssetStub,
+    stem_breakdown: v.stemBreakdown
   }))
 );
 

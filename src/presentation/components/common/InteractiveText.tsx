@@ -143,6 +143,11 @@ export const InteractiveText: React.FC<InteractiveTextProps> = ({
           return <span key={idx}>{item.text}</span>;
         }
 
+        const cleanToken = cleanTurkishWord(item.text);
+        const localGlossary = chapterId ? readingGlossary[chapterId] : null;
+        const contextualEntry = localGlossary ? localGlossary[cleanToken] : null;
+        const isHighlight = contextualEntry?.isGrammarHighlight === true;
+
         const isCurrentWordActive = activeWordKey === `${lineId}-${idx}`;
 
         return (
@@ -153,7 +158,9 @@ export const InteractiveText: React.FC<InteractiveTextProps> = ({
             className={`cursor-pointer inline-block rounded px-0.5 transition duration-150 select-none ${
               isCurrentWordActive
                 ? 'bg-teal-500/20 text-[#3A5A40] dark:text-[#14B8A6] font-bold shadow-xs underline decoration-teal-500'
-                : 'hover:bg-neutral-200/60 dark:hover:bg-neutral-800/60 hover:text-[#3A5A40] dark:hover:text-[#14B8A6]'
+                : isHighlight
+                  ? 'bg-amber-100/50 dark:bg-amber-950/20 border-b-2 border-amber-500/80 dark:border-amber-400/80 text-[#B45309] dark:text-amber-400 font-medium'
+                  : 'hover:bg-neutral-200/60 dark:hover:bg-neutral-800/60 hover:text-[#3A5A40] dark:hover:text-[#14B8A6]'
             }`}
           >
             {item.text}
