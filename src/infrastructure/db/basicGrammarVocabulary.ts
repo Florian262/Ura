@@ -4311,5 +4311,636 @@ export const basicGrammarVocabularyData: BasicGrammarVocabularyItem[] = [
     translation: "Organizoj / rregulloj",
     pos: "folje",
     notes: "Veprimi i vënies në rregull ose organizimit të një aktiviteti."
+  },
+  {
+    id: "g-struct-481",
+    word: "Psikoloji",
+    translation: "Psikologji",
+    pos: "emër",
+    notes: "Huazim nga frëngjishtja."
+  },
+  {
+    id: "g-struct-482",
+    word: "Zekâ",
+    translation: "Inteligjencë / zotësi / mençuri",
+    pos: "emër",
+    notes: "Arapça kökenli."
+  },
+  {
+    id: "g-struct-483",
+    word: "Renk",
+    translation: "Ngjyrë",
+    pos: "emër",
+    notes: "Farsça kökenli."
+  },
+  {
+    id: "g-struct-484",
+    word: "Atış",
+    translation: "Rrahje (p.sh. e zemrës) / hedhje",
+    pos: "emër",
+    notes: "Atmak fiilinden türetilmiştir."
+  },
+  {
+    id: "g-struct-485",
+    word: "Hareket",
+    translation: "Lëvizje / veprim / sjellje",
+    pos: "emër",
+    notes: "Arapça kökenli."
+  },
+  {
+    id: "g-struct-486",
+    word: "Oysaki",
+    translation: "ndërsa / kurse / ndërkohë që",
+    pos: "lidhëz",
+    notes: "Karşıtlık bağlacı."
+  },
+  {
+    id: "g-struct-487",
+    word: "Estetik",
+    translation: "Estetik / i bukur",
+    pos: "mbiemër",
+    notes: "Fransızca kökenli."
+  },
+  {
+    id: "g-struct-488",
+    word: "Motivasyon",
+    translation: "Motivim",
+    pos: "emër",
+    notes: "Fransızca kökenli."
+  },
+  {
+    id: "g-struct-489",
+    word: "Neşe",
+    translation: "Gëzim / hare",
+    pos: "emër",
+    notes: "Arapça kökenli."
+  },
+  {
+    id: "g-struct-490",
+    word: "Aksine",
+    translation: "përkundrazi / në të kundërt",
+    pos: "lidhëz",
+    notes: "Karşıtlık bağlacı."
+  },
+  {
+    id: "g-struct-491",
+    word: "Gri",
+    translation: "Gri / e hirtë",
+    pos: "mbiemër",
+    notes: "Fransızca kökenli."
+  },
+  {
+    id: "g-struct-492",
+    word: "Ön",
+    translation: "Para / përpara / ballë",
+    pos: "emër",
+    notes: "Arka kelimesinin zıttı."
+  },
+  {
+    id: "g-struct-493",
+    word: "Duygu",
+    translation: "Ndjenjë / emocion",
+    pos: "emër",
+    notes: "Duymak fiilinden türetilmiştir."
+  },
+  {
+    id: "g-struct-494",
+    word: "Kasaba",
+    translation: "Qytezë / kasaba",
+    pos: "emër",
+    notes: "Arapça kökenli."
+  },
+  {
+    id: "g-struct-495",
+    word: "Sallanmak",
+    translation: "Lëkundem / sallanem",
+    pos: "folje",
+    notes: "Sallamak fiilinin edilgen/dönüşlü şekli."
+  },
+  {
+    id: "g-struct-496",
+    word: "Batmak",
+    translation: "Perëndoj / zhytem / mbytet",
+    pos: "folje",
+    notes: "Güneşin batması veya bir şeyin suya gömülmesi."
+  },
+  {
+    id: "g-struct-497",
+    word: "Tarifsiz",
+    translation: "I papërshkrueshëm",
+    pos: "mbiemër",
+    notes: "Tarif (përshkrim) + siz (pa)."
+  },
+  {
+    id: "g-struct-498",
+    word: "İhtiyar",
+    translation: "I moshuar / plak",
+    pos: "mbiemër",
+    notes: "Yaşlı kimse."
+  },
+  {
+    id: "g-struct-499",
+    word: "Ezber",
+    translation: "Përmendësh / ezber",
+    pos: "ndajfolje",
+    notes: "Arapça kökenli."
+  },
+  {
+    id: "g-struct-500",
+    word: "Deyiş",
+    translation: "Thënie / shprehje",
+    pos: "emër",
+    notes: "Demek fiilinden türetilmiştir."
+  },
+  {
+    id: "g-struct-501",
+    word: "Dalga",
+    translation: "Valë / dallgë",
+    pos: "emër",
+    notes: "Deniz dalgası."
+  },
+  {
+    id: "g-struct-502",
+    word: "Sert",
+    translation: "I fortë / i ashpër / i rreptë",
+    pos: "mbiemër",
+    notes: "Farsça kökenli."
+  },
+  {
+    id: "g-struct-503",
+    word: "Esmek",
+    translation: "Fryn (era)",
+    pos: "folje",
+    notes: "Rüzgarın esmesi."
+  },
+  {
+    id: "g-struct-504",
+    word: "Fener",
+    translation: "Far / fener",
+    pos: "emër",
+    notes: "Rumca kökenli."
+  },
+  {
+    id: "g-struct-505",
+    word: "Işık",
+    translation: "Dritë",
+    pos: "emër",
+    notes: "Işımak fiilinden türetilmiştir."
+  },
+  {
+    id: "g-struct-506",
+    word: "Nitekim",
+    translation: "siç u tha / kështu / vërtet",
+    pos: "lidhëz",
+    notes: "Açıklama bağlacı."
+  },
+  {
+    id: "g-struct-507",
+    word: "Öpmek",
+    translation: "Puth",
+    pos: "folje",
+    notes: "Sevgi veya saygı gösterisi."
+  },
+  {
+    id: "g-struct-508",
+    word: "Öpülmek",
+    translation: "Puthem / të puthet",
+    pos: "folje",
+    notes: "Öpmek fiilinin edilgen şekli."
+  },
+  {
+    id: "g-struct-509",
+    word: "Biçim",
+    translation: "Formë / mënyrë / stil",
+    pos: "emër",
+    notes: "Biçmek fiilinden türetilmiştir."
+  },
+  {
+    id: "g-struct-510",
+    word: "Kaybolmak",
+    translation: "Zhdukem / humbas",
+    pos: "folje",
+    notes: "Kayıp + olmak."
+  },
+  {
+    id: "g-struct-511",
+    word: "Akıl",
+    translation: "Mendje / intelekt",
+    pos: "emër",
+    notes: "Arapça kökenli."
+  },
+  {
+    id: "g-struct-512",
+    word: "Koku",
+    translation: "Aromë / erë / koku",
+    pos: "emër",
+    notes: "Kokmak fiilinden türetilmiştir."
+  },
+  {
+    id: "g-struct-513",
+    word: "Zeka",
+    translation: "Inteligjencë / zotësi / mençuri",
+    pos: "emër",
+    notes: "Circumflex-free spelling variant."
+  },
+  {
+    id: "g-struct-514",
+    word: "gibiydi",
+    translation: "ishte si / ngjante si",
+    pos: "shprehje",
+    notes: "Gibi (si) + idi (ishte)."
+  },
+  {
+    id: "g-struct-515",
+    word: "Aslında",
+    translation: "në fakt / realisht",
+    pos: "lidhëz",
+    notes: "Vurgu bağlacı."
+  },
+  {
+    id: "g-struct-516",
+    word: "Özellikle",
+    translation: "veçanërisht",
+    pos: "lidhëz",
+    notes: "Vurgu bağlacı."
+  },
+  {
+    id: "g-struct-517",
+    word: "Doğrusu",
+    translation: "të them të drejtën / sinqerisht",
+    pos: "lidhëz",
+    notes: "Vurgu bağlacı."
+  },
+  {
+    id: "g-struct-518",
+    word: "Gerçekleşmek",
+    translation: "ndodh / realizohet",
+    pos: "folje",
+    notes: "Gerçek kelimesinden türetilmiştir."
+  },
+  {
+    id: "g-struct-519",
+    word: "İmkan",
+    translation: "mundësia / shansi",
+    pos: "emër",
+    notes: "Arapça kökenli."
+  },
+  {
+    id: "g-struct-520",
+    word: "Terk",
+    translation: "braktisje / terk",
+    pos: "emër",
+    notes: "Terk etmek birleşik fiilinin ilk öğesi."
+  },
+  {
+    id: "g-struct-521",
+    word: "değildi",
+    translation: "nuk ishte",
+    pos: "shprehje",
+    notes: "Değil + idi."
+  },
+  {
+    id: "g-struct-522",
+    word: "Düzey",
+    translation: "niveli",
+    pos: "emër",
+    notes: "Düz kökünden türetilmiştir."
+  },
+  {
+    id: "g-struct-523",
+    word: "Sanayileşme",
+    translation: "industrializimi",
+    pos: "emër",
+    notes: "Sanayileşmek fiilinden türetilmiştir."
+  },
+  {
+    id: "g-struct-524",
+    word: "Bölge",
+    translation: "rajoni / zona",
+    pos: "emër",
+    notes: "Bölmek fiilinden türetilmiştir."
+  },
+  {
+    id: "g-struct-525",
+    word: "Dengesiz",
+    translation: "i paekuilibruar / i pabarabartë",
+    pos: "mbiemër",
+    notes: "Denge + siz."
+  },
+  {
+    id: "g-struct-526",
+    word: "Sosyal",
+    translation: "social / shoqëror",
+    pos: "mbiemër",
+    notes: "Fransızca kökenli."
+  },
+  {
+    id: "g-struct-527",
+    word: "Kent",
+    translation: "qyteti",
+    pos: "emër",
+    notes: "Soğdca kökenli."
+  },
+  {
+    id: "g-struct-528",
+    word: "Bugünkü",
+    translation: "i sotëm",
+    pos: "mbiemër",
+    notes: "Bugün + ki."
+  },
+  {
+    id: "g-struct-529",
+    word: "Dinamik",
+    translation: "dinamik",
+    pos: "mbiemër",
+    notes: "Fransızca kökenli."
+  },
+  {
+    id: "g-struct-530",
+    word: "Kapsamak",
+    translation: "përfshin / përmban",
+    pos: "folje",
+    notes: "Kapmak fiilinden türetilmiştir."
+  },
+  {
+    id: "g-struct-531",
+    word: "Dengeli",
+    translation: "i ekuilibruar / i balancuar",
+    pos: "mbiemër",
+    notes: "Denge + li."
+  },
+  {
+    id: "g-struct-532",
+    word: "Tasarlanmak",
+    translation: "projektohet / dizajnohet",
+    pos: "folje",
+    notes: "Tasarlamak fiilinin edilgen şekli."
+  },
+  {
+    id: "g-struct-533",
+    word: "Program",
+    translation: "programi",
+    pos: "emër",
+    notes: "Fransızca kökenli."
+  },
+  {
+    id: "g-struct-534",
+    word: "Uluslararası",
+    translation: "ndërkombëtar",
+    pos: "mbiemër",
+    notes: "Ulus + lar + arası."
+  },
+  {
+    id: "g-struct-535",
+    word: "Coğrafya",
+    translation: "gjeografi",
+    pos: "emër",
+    notes: "Arapça kökenli."
+  },
+  {
+    id: "g-struct-536",
+    word: "Oluşmak",
+    translation: "formohem / krijohem / lind",
+    pos: "folje",
+    notes: "Olmak fiilinden türetilmiştir."
+  },
+  {
+    id: "g-struct-537",
+    word: "Lider",
+    translation: "udhëheqës / lider",
+    pos: "emër",
+    notes: "İngilizce kökenli."
+  },
+  {
+    id: "g-struct-538",
+    word: "Figür",
+    translation: "figurë / personazh",
+    pos: "emër",
+    notes: "Fransızca kökenli."
+  },
+  {
+    id: "g-struct-539",
+    word: "Sami",
+    translation: "Sami",
+    pos: "emër",
+    notes: "Özel isim."
+  },
+  {
+    id: "g-struct-540",
+    word: "Şemseddin",
+    translation: "Shemsedin",
+    pos: "emër",
+    notes: "Özel isim."
+  },
+  {
+    id: "g-struct-541",
+    word: "Naim",
+    translation: "Naim",
+    pos: "emër",
+    notes: "Özel isim."
+  },
+  {
+    id: "g-struct-542",
+    word: "Ansiklopedi",
+    translation: "enciklopedi",
+    pos: "emër",
+    notes: "Fransızca kökenli."
+  },
+  {
+    id: "g-struct-543",
+    word: "Uyanış",
+    translation: "zgjim / zgjim kulturor",
+    pos: "emër",
+    notes: "Uyanmak fiilinden türetilmiştir."
+  },
+  {
+    id: "g-struct-544",
+    word: "Mektup",
+    translation: "letër / mesazh",
+    pos: "emër",
+    notes: "Arapça kökenli."
+  },
+  {
+    id: "g-struct-545",
+    word: "Entelektüel",
+    translation: "intelektual",
+    pos: "mbiemër",
+    notes: "Fransızca kökenli."
+  },
+  {
+    id: "g-struct-546",
+    word: "Geniş",
+    translation: "i gjerë / gjerë",
+    pos: "mbiemër",
+    notes: "Eski Türkçe kökenli."
+  },
+  {
+    id: "g-struct-547",
+    word: "Sentezlemek",
+    translation: "sintetizoj",
+    pos: "folje",
+    notes: "Sentez kelimesinden türetilmiştir."
+  },
+  {
+    id: "g-struct-548",
+    word: "Tanık",
+    translation: "dëshmitar",
+    pos: "emër",
+    notes: "Tanımak fiilinden türetilmiştir."
+  },
+  {
+    id: "g-struct-549",
+    word: "Vizyoner",
+    translation: "vizionar",
+    pos: "mbiemër",
+    notes: "Fransızca kökenli."
+  },
+  {
+    id: "g-struct-550",
+    word: "Cumhuriyet",
+    translation: "republikë",
+    pos: "emër",
+    notes: "Arapça kökenli."
+  },
+  {
+    id: "g-struct-551",
+    word: "Atatürk",
+    translation: "Atatürk",
+    pos: "emër",
+    notes: "Özel isim."
+  },
+  {
+    id: "g-struct-552",
+    word: "Tarihsel",
+    translation: "historik",
+    pos: "mbiemër",
+    notes: "Tarih + sel."
+  },
+  {
+    id: "g-struct-553",
+    word: "Beslenmek",
+    translation: "ushqehem",
+    pos: "folje",
+    notes: "Beslemek fiilinin edilgen/dönüşlü şekli."
+  },
+  {
+    id: "g-struct-554",
+    word: "Ritim",
+    translation: "ritëm",
+    pos: "emër",
+    notes: "Fransızca kökenli."
+  },
+  {
+    id: "g-struct-555",
+    word: "Asır",
+    translation: "shekull",
+    pos: "emër",
+    notes: "Arapça kökenli."
+  },
+  {
+    id: "g-struct-556",
+    word: "Panayır",
+    translation: "panair",
+    pos: "emër",
+    notes: "Rumca kökenli."
+  },
+  {
+    id: "g-struct-557",
+    word: "Rol",
+    translation: "rol",
+    pos: "emër",
+    notes: "Fransızca kökenli."
+  },
+  {
+    id: "g-struct-558",
+    word: "Modernleşme",
+    translation: "modernizim / modernizim",
+    pos: "emër",
+    notes: "Modern + leş + me."
+  },
+  {
+    id: "g-struct-559",
+    word: "Tehlike",
+    translation: "rrezik / kërcënim",
+    pos: "emër",
+    notes: "Arapça kökenli."
+  },
+  {
+    id: "g-struct-560",
+    word: "Özünde",
+    translation: "në thelb",
+    pos: "shprehje",
+    notes: "Öz + ü + n + de."
+  },
+  {
+    id: "g-struct-561",
+    word: "Sanatsal",
+    translation: "artistik",
+    pos: "mbiemër",
+    notes: "Sanat + sal."
+  },
+  {
+    id: "g-struct-562",
+    word: "Konak",
+    translation: "konak / rezidencë guri / vilë",
+    pos: "emër",
+    notes: "Konmak fiilinden türetilmiştir."
+  },
+  {
+    id: "g-struct-563",
+    word: "Ressam",
+    translation: "piktor",
+    pos: "emër",
+    notes: "Arapça kökenli."
+  },
+  {
+    id: "g-struct-564",
+    word: "Sözün kısası",
+    translation: "shkurt e shqip / shkurtimisht",
+    pos: "shprehje",
+    notes: "Özetleme bağlacı."
+  },
+  {
+    id: "g-struct-565",
+    word: "Sınır",
+    translation: "kufi",
+    pos: "emër",
+    notes: "Rumca kökenli."
+  },
+  {
+    id: "g-struct-566",
+    word: "Birleştirmek",
+    translation: "bashkoj",
+    pos: "folje",
+    notes: "Birleşmek fiilinin ettirgen şekli."
+  },
+  {
+    id: "g-struct-567",
+    word: "Evrensel",
+    translation: "universal / botëror",
+    pos: "mbiemër",
+    notes: "Evren + sel."
+  },
+  {
+    id: "g-struct-568",
+    word: "Tam tersine",
+    translation: "krejt e kundërta / përkundrazi",
+    pos: "shprehje",
+    notes: "Karşıtlık bağlacı."
+  },
+  {
+    id: "g-struct-569",
+    word: "Ezgi",
+    translation: "melodi / këngë",
+    pos: "emër",
+    notes: "Eski Türkçe kökenli."
+  },
+  {
+    id: "g-struct-570",
+    word: "Birleşmek",
+    translation: "bashkohem",
+    pos: "folje",
+    notes: "Bir + leş + mek."
   }
 ];
+

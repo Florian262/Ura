@@ -70,7 +70,7 @@ describe('Automated Glossary Generator and Verification Pipeline', () => {
             const cleanCombined = cleanTurkishWord(token + nextWordToken);
             const compoundMatch = lookupWord(cleanCombined);
 
-            if (compoundMatch) {
+            if (compoundMatch && compoundMatch.word.includes(' ')) {
               const mergedText = [token, ...intermediateTokens, nextWordToken].join('');
               groupedTokens.push({ text: mergedText, isWord: true });
               i = nextWordIdx + 1;
@@ -133,6 +133,7 @@ describe('Automated Glossary Generator and Verification Pipeline', () => {
   root: string;
   translation: string;
   explanation?: string;
+  isGrammarHighlight?: boolean;
 }
 
 export type ReadingGlossary = Record<number, Record<string, GlossaryEntry>>;

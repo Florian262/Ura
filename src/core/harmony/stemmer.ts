@@ -136,6 +136,13 @@ export function findMatchInDictionary(stem: string, allowConjunctions = true): D
     const vm = checkVerbFallback(rev);
     if (vm) return vm as DictionaryEntry;
   }
+  if (stem.endsWith('g')) {
+    const rev = stem.slice(0, -1) + 'k';
+    const m = cleanedDictionary.find(entry => isMatch(entry, rev));
+    if (m) return m as DictionaryEntry;
+    const vm = checkVerbFallback(rev);
+    if (vm) return vm as DictionaryEntry;
+  }
 
   // Try restoring dropped vowel for stems ending in a consonant cluster (e.g. vakt -> vakit, şehr -> şehir, omz -> omuz)
   if (stem.length >= 3) {
@@ -237,6 +244,9 @@ const SUFFIX_DETAILS: Array<{ pattern: RegExp; type: string; label: string; mean
   { pattern: /(?:yınca|yince|yunca|yünce)$/i, type: 'gerund', label: 'ince (kur)', meaning: 'kur' },
   { pattern: /(?:ınca|ince|unca|ünce)$/i, type: 'gerund', label: 'ince (kur)', meaning: 'kur' },
   { pattern: /(?:dik|dık|duk|dük|tik|tık|tuk|tük|diğ|dığ|duğ|düğ|tiğ|tığ|tuğ|tüğ)$/i, type: 'participle', label: 'dik (pjesore)', meaning: 'që ka' },
+  { pattern: /(?:mez|maz)$/i, type: 'participle', label: 'mez (mohim)', meaning: 'që nuk' },
+  { pattern: /(?:yesi|yası)$/i, type: 'participle', label: 'esi (vlerë/dëshirë)', meaning: 'që duhet / i denjë për' },
+  { pattern: /(?:esi|ası)$/i, type: 'participle', label: 'esi (vlerë/dëshirë)', meaning: 'që duhet / i denjë për' },
   { pattern: /(?<=[aeıioöuüâîû])r$/i, type: 'tense', label: 'ar (kohë e gjerë)', meaning: 'zakonisht' },
   { pattern: /(?<=[bcçdfgğhjklmnprsştvyz])(?:ar|er|ır|ir|ur|ür)$/i, type: 'tense', label: 'ar (kohë e gjerë)', meaning: 'zakonisht' },
   { pattern: /(?:malı|meli)$/i, type: 'tense', label: 'meli (detyrim)', meaning: 'duhet të' },

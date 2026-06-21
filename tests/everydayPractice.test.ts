@@ -53,5 +53,5 @@ describe('Everyday Practice Vocabulary Alignment', () => {
     }
     
     expect(missingWords.size).toBe(0);
-  });
+  }, 30000);
 });

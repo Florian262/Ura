@@ -108,22 +108,35 @@ export const ReadingModule: React.FC = () => {
   useEffect(() => {
     if (!activeWordPopup) return;
 
-    const handleScroll = (e: Event) => {
-      // If the scroll event comes from a nested container (not the window/document), close the popup immediately to avoid drift
-      if (e.target !== window && e.target !== document) {
-        closeWordPopup();
-        return;
-      }
-
+    const handleScroll = () => {
       const element = document.getElementById(`word-span-${activeWordPopup.key}`);
       if (element) {
         const rect = element.getBoundingClientRect();
         
-        // Close popup if the word scrolls completely out of the viewport
+        // 1. Close popup if the word scrolls completely out of the viewport
         const isOutOfViewport = rect.bottom < 0 || rect.top > window.innerHeight;
         if (isOutOfViewport) {
           closeWordPopup();
           return;
+        }
+
+        // 2. Close popup if the word scrolls outside its scrollable parent container's visible bounds
+        let parent = element.parentElement;
+        while (parent && parent !== document.body) {
+          const style = window.getComputedStyle(parent);
+          const hasScroll = style.overflow === 'auto' || style.overflow === 'scroll' || 
+                            style.overflowY === 'auto' || style.overflowY === 'scroll' || 
+                            style.overflowX === 'auto' || style.overflowX === 'scroll';
+          if (hasScroll) {
+            const parentRect = parent.getBoundingClientRect();
+            const isOutOfParent = rect.bottom < parentRect.top || rect.top > parentRect.bottom ||
+                                  rect.right < parentRect.left || rect.left > parentRect.right;
+            if (isOutOfParent) {
+              closeWordPopup();
+              return;
+            }
+          }
+          parent = parent.parentElement;
         }
       }
     };
@@ -189,7 +202,9 @@ export const ReadingModule: React.FC = () => {
   const verifyComprehension = () => {
     // Check if all questions are answered
     if (Object.keys(selectedAnswers).length < readingQuestions.length) {
-      alert('Ju lutemi përgjigjuni të gjitha pyetjeve përpara se të verifikoni!');
+      alert(currentChapter?.level === 'B2' 
+        ? 'Lütfen kontrol etmeden önce tüm soruları cevaplayın!' 
+        : 'Ju lutemi përgjigjuni të gjitha pyetjeve përpara se të verifikoni!');
       return;
     }
 
@@ -206,7 +221,9 @@ export const ReadingModule: React.FC = () => {
     if (allCorrect) {
       setReadingCompleted(true);
     } else {
-      alert('Disa përgjigje nuk janë të sakta. Rishikoni dialogun dhe provoni përsëri!');
+      alert(currentChapter?.level === 'B2'
+        ? 'Bazı cevaplar yanlış. Lütfen metni tekrar inceleyip deneyin!'
+        : 'Disa përgjigje nuk janë të sakta. Rishikoni dialogun dhe provoni përsëri!');
     }
   };
 
@@ -593,12 +610,23 @@ export const ReadingModule: React.FC = () => {
     );
   };
 
+  const isB2 = currentChapter?.level === 'B2';
+
   return (
     <div className="glass-panel md:rounded-2xl p-0 md:p-8 bg-transparent md:bg-white border-none md:border md:border-[#E9ECEF] shadow-none md:shadow-sm">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 pb-4 border-b border-[#E9ECEF]">
         <div>
-          <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-widest">Sekuenca 1</span>
-          <h2 className="text-xl font-black text-[#1A1D20] uppercase font-sans">Lexim & Dëgjim (Okuma ve Dinleme)</h2>
+          <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-widest">
+            {isB2 ? '1. Bölüm' : 'Sekuenca 1'}
+          </span>
+          <h2 className="text-xl font-black text-[#1A1D20] uppercase font-sans">
+            {isB2 ? 'Okuma ve Dinleme' : 'Lexim & Dëgjim (Okuma ve Dinleme)'}
+          </h2>
+          {readingBlock.topic && (
+            <h3 className="text-sm font-bold text-[#3A5A40] mt-1.5 font-technical">
+              Konu: {readingBlock.topic}
+            </h3>
+          )}
         </div>
         {readingBlock.chapter_id !== 0 && (
           <div className="flex gap-2">
@@ -625,10 +653,10 @@ export const ReadingModule: React.FC = () => {
               >
                 <span>
                   {isPlaying && (currentSrc === 'dialogue' || (currentSrc && currentSrc.includes('reading')))
-                    ? '⏸ Ndalo'
+                    ? (isB2 ? '⏸ Durdur' : '⏸ Ndalo')
                     : readingBlock.layout_style === 'dialogue'
-                    ? '🔈 Dëgjo Dialogun'
-                    : '🔈 Dëgjo Tekstin'}
+                    ? (isB2 ? '🔈 Diyaloğu Dinle' : '🔈 Dëgjo Dialogun')
+                    : (isB2 ? '🔈 Metni Dinle' : '🔈 Metni Dinle')}
                 </span>
               </button>
             )}
@@ -642,7 +670,9 @@ export const ReadingModule: React.FC = () => {
                   : 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50'
               }`}
             >
-              {showTranslation ? 'Fshih Përkthimin' : 'Shfaq Përkthimin'}
+              {showTranslation 
+                ? (isB2 ? 'Çeviriyi Gizle' : 'Fshih Përkthimin') 
+                : (isB2 ? 'Arnavutça Çeviri' : 'Shfaq Përkthimin')}
             </button>
           </div>
         )}
@@ -878,7 +908,7 @@ export const ReadingModule: React.FC = () => {
         {readingQuestions && readingQuestions.length > 0 ? (
           <>
             <h3 className="text-xs font-bold text-[#1A1D20] uppercase tracking-widest mb-4 flex items-center gap-1.5">
-              <span>🧠</span> Pyetje Kuptueshmërie (Anlama Soruları)
+              <span>🧠</span> {isB2 ? 'Anlama Soruları' : 'Pyetje Kuptueshmërie (Anlama Soruları)'}
             </h3>
 
             <div className="space-y-6">
@@ -891,9 +921,11 @@ export const ReadingModule: React.FC = () => {
                         {qIdx + 1}. {q.question_turkish}
                       </h4>
                       {/* Translation subtitle rule */}
-                      <span className="translation-subtitle mt-0.5">
-                        ({q.question_albanian})
-                      </span>
+                      {(!isB2 || showTranslation) && (
+                        <span className="translation-subtitle mt-0.5">
+                          ({q.question_albanian})
+                        </span>
+                      )}
                     </div>
 
                     {/* Options list */}
@@ -933,13 +965,15 @@ export const ReadingModule: React.FC = () => {
             {/* Verification Trigger */}
             <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-xs text-[#565E64] font-light italic">
-                * Përgjigjuni saktë për të zhbllokuar seksionet e tjera të këtij kapitulli.
+                {isB2 
+                  ? '* Bölümü tamamlamak ve sonraki modülleri açmak için tüm soruları doğru cevaplayınız.'
+                  : '* Përgjigjuni saktë për të zhbllokuar seksionet e tjera të këtij kapitulli.'}
               </p>
               
               <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto justify-end">
                 {readingCompleted && (
                   <div className="flex items-center gap-2 text-[#3A5A40] bg-[#3A5A40]/10 border border-[#3A5A40]/30 px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider select-none">
-                    <span>✓</span> Të gjitha pyetjet u përgjigjën saktë! Moduli u zhbllokua.
+                    <span>✓</span> {isB2 ? 'Tüm sorular doğru cevaplandı! Modül açıldı.' : 'Të gjitha pyetjet u përgjigjën saktë! Moduli u zhbllokua.'}
                   </div>
                 )}
                 
@@ -947,7 +981,9 @@ export const ReadingModule: React.FC = () => {
                   onClick={verifyComprehension}
                   className="px-6 py-3 text-center text-xs font-bold uppercase tracking-widest rounded-xl cursor-pointer select-none active-cta shadow-sm"
                 >
-                  {readingCompleted ? 'Rivedos & Verifiko Përsëri' : 'Verifiko Përgjigjet'}
+                  {readingCompleted 
+                    ? (isB2 ? 'Yeniden Kontrol Et' : 'Rivedos & Verifiko Përsëri') 
+                    : (isB2 ? 'Cevapları Kontrol Et' : 'Verifiko Përgjigjet')}
                 </button>
               </div>
             </div>
@@ -955,16 +991,20 @@ export const ReadingModule: React.FC = () => {
         ) : (
           <div className="mt-2 flex flex-col md:flex-row justify-between items-center gap-4 bg-neutral-50/50 border border-[#E9ECEF] rounded-xl p-5 shadow-xs">
             <div className="text-left">
-              <h4 className="text-xs font-bold text-[#1A1D20] uppercase tracking-wide mb-1">Lexim i thjeshtë</h4>
+              <h4 className="text-xs font-bold text-[#1A1D20] uppercase tracking-wide mb-1">
+                {isB2 ? 'Genel Okuma' : 'Lexim i thjeshtë'}
+              </h4>
               <p className="text-xs text-[#565E64] font-light">
-                Ky lexim nuk përmban pyetje kuptueshmërie. Ju mund ta shënoni direkt si të lexuar për të vazhduar.
+                {isB2 
+                  ? 'Bu okuma metni anlama soruları içermemektedir. Devam etmek için okundu olarak işaretleyebilirsiniz.'
+                  : 'Ky lexim nuk përmban pyetje kuptueshmërie. Ju mund ta shënoni direkt si të lexuar për të vazhduar.'}
               </p>
             </div>
             
             <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 justify-end w-full md:w-auto">
               {readingCompleted && (
                 <div className="flex items-center gap-2 text-[#3A5A40] bg-[#3A5A40]/10 border border-[#3A5A40]/30 px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider shrink-0 select-none">
-                  <span>✓</span> Leximi u krye! Moduli u zhbllokua.
+                  <span>✓</span> {isB2 ? 'Okuma tamamlandı! Modül açıldı.' : 'Leximi u krye! Moduli u zhbllokua.'}
                 </div>
               )}
               
@@ -972,7 +1012,9 @@ export const ReadingModule: React.FC = () => {
                 onClick={() => setReadingCompleted(true)}
                 className="px-6 py-3 text-center text-xs font-bold uppercase tracking-widest rounded-xl cursor-pointer select-none active-cta shadow-sm shrink-0"
               >
-                {readingCompleted ? 'Shëno përsëri si të Lexuar' : 'Shëno si të Lexuar'}
+                {readingCompleted 
+                  ? (isB2 ? 'Tekrar Okundu İşaretle' : 'Shëno përsëri si të Lexuar') 
+                  : (isB2 ? 'Okundu Olarak İşaretle' : 'Shëno si të Lexuar')}
               </button>
             </div>
           </div>

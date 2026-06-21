@@ -9,6 +9,7 @@ export interface UnifiedLesson {
   reading: {
     layoutStyle: 'dialogue' | 'narrative' | 'blog_post';
     audioAssetStub: string | null;
+    topic?: string;
     content: Array<{
       speaker?: string;
       text: string;
@@ -27,13 +28,16 @@ export interface UnifiedLesson {
     category: 'emër' | 'folje' | 'mbiemër' | 'ndajfolje' | 'përemër' | 'lidhëz' | 'pasthirrmë' | 'shprehje';
     isSharedBalkanWord: boolean;
     notesAlbanian: string | null;
+    notesTurkish?: string | null;
     audioAssetStub: string | null;
     stemBreakdown?: string;
   }>;
   grammar: Array<{
     titleAlbanian: string;
+    titleTurkish?: string;
     ruleConceptTurkish: string;
     explanationAlbanian: string;
+    explanationTurkish?: string;
     interactiveExample: {
       root: string;
       strategy: 'plural' | 'habitore' | string;
@@ -43,6 +47,7 @@ export interface UnifiedLesson {
   exercises: Array<{
     type: 'MULTIPLE_CHOICE' | 'WORD_SORT' | 'SUFFIX_BUILDER' | 'CLOZE' | 'ERROR_CORRECTION' | 'CONNECTOR_MATCHING';
     promptAlbanian: string;
+    promptTurkish?: string;
     payload: any;
     validation: any;
   }>;

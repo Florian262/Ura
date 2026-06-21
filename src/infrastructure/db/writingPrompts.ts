@@ -664,5 +664,159 @@ export const WRITING_PROMPTS: Record<number, WritingPrompt> = {
         feedback: "Mungon përdorimi i fjalëve kyçe të mjedisit (p.sh., 'çevre', 'doğa', 'küresel ısınma', 'sürdürülebilirlik')."
       }
     ]
+  },
+  27: {
+    chapterId: 27,
+    type: 'guided',
+    promptAlbanian: "Shkruani një tekst argumentues (80-120 fjalë) rreth ndikimit të teknologjisë dhe inteligjencës artificiale në të ardhmen (p.sh., ndryshimet në profesione, robotët ose çështjet etike). Përdorni nominalizimin me '-mE' ose '-mEk' (p.sh., olmasını, gelişmesini, öğrenmeyi, çalışmakta) dhe të paktën një lidhëz shkaku/pasoje (bu nedenle, bu yüzden, dolayısıyla).",
+    grammarTipAlbanian: "Sigurohuni që teksti të ndjekë strukturën me tre paragrafe (Giriş, Gelişme, Sonuç). Përdorni nominalizimin me prapashtesën '-mE' ose '-mEk' (p.sh., 'gelişmesini', 'öğrenmeyi', 'çalışmak') dhe të paktën një lidhëz shkaku/pasoje si 'bu nedenle', 'bu yüzden', ose 'dolayısıyla'.",
+    sampleAnswers: [
+      "Yapay zekanın hayatımıza girmesiyle birlikte yeni bir dönem başlamıştır. Teknolojiyi anlamak ve doğru kullanmak modern dünyada çok önemlidir. Robotların işlerimizi kolaylaştırması insanlara daha yaratıcı alanlar sunabilir. Bu yüzden, eğitim sistemini de bu yeni dünyaya göre şekillendirmeliyiz. Yeni nesillerin kod yazmayı öğrenmesi hedeflenmektedir. Bu nedenle, teknolojik gelişmeleri takip etmek ve etik kurallar çerçevesinde yönlendirmek hepimizin sorumluluğudur. Geleceği şekillendirmek, teknolojiyi insani değerlerle uyumlu hale getirmekten geçmektedir."
+    ],
+    grammarLabel: "Teknoloji ve Gelecek (Nominalizimi -mE / -mEk)",
+    validationRules: [
+      {
+        type: 'required_pattern',
+        regex: 'bu nedenle|bu yüzden|dolayısıyla',
+        feedback: "Mungon një nga lidhëzat e shkakut dhe pasojës së kërkuar ('bu nedenle', 'bu yüzden', ose 'dolayısıyla')."
+      },
+      {
+        type: 'required_pattern',
+        regex: '[a-zçğışöü]+(?:ma|me|mak|mek)[a-zçğışöü]*',
+        feedback: "Mungon përdorimi i nominalizimit me prapashtesën '-mE' ose '-mEk' (p.sh., 'gelişmesini', 'öğrenmeyi', 'çalışmak')."
+      }
+    ]
+  },
+  28: {
+    chapterId: 28,
+    type: 'guided',
+    promptAlbanian: "Shkruani një tekst argumentues (80-120 fjalë) rreth ndikimit të ngjyrave në emocionet dhe sjelljen tonë (p.sh., si ndikojnë ngjyrat blu, e kuqe apo e verdhë në motivimin tonë dhe në vendin e punës). Përdorni nominalizimin me '-AcAk' (p.sh., etkileyeceğini, olacağını, yansıtacağına) dhe të paktën një lidhëz kundërshtuese (buna karşın, oysaki, ne var ki, aksine).",
+    grammarTipAlbanian: "Sigurohuni që teksti të ndjekë strukturën me tre paragrafe (Giriş, Gelişme, Sonuç). Përdorni nominalizimin me prapashtesën '-AcAk' (p.sh., 'etkileyeceğini', 'olacağını', 'seçeceğini') dhe të paktën një lidhëz kundërshtuese si 'buna karşın', 'oysaki', 'ne var ki', ose 'aksine'.",
+    sampleAnswers: [
+      "Renklerin insan psikolojisi üzerindeki etkileri duygusal zekamızla ilişkilidir. Mavi rengin zihni sakinleştireceğini ve üretkenliği artıracağını biliyoruz. Buna karşın, her bireyin renklere vereceği tepki kendi geçmişine göre değişebilir. Oysaki renklerin hayatımızda sadece estetik bir unsur olduğunu düşünmek büyük bir hatadır. Bir iş yerinde doğru renkleri seçmenin çalışanların motivasyonunu artıracağını unutmamalıyız. Sarı rengin neşeyi temsil edeceğini, aksine gri rengin ise karamsarlık yaratacağını göz önünde bulundurmalıyız. Renklerin duygularımızı yönlendireceğini kabul etmek daha bilinçli seçimler yapmamıza yardımcı olur."
+    ],
+    grammarLabel: "Duygusal Zekâ (Nominalizimi -AcAk & Lidhëzat Kundërshtuese)",
+    validationRules: [
+      {
+        type: 'required_pattern',
+        regex: 'buna karşın|oysaki|ne var ki|aksine',
+        feedback: "Mungon një nga lidhëzat kundërshtuese të kërkuara ('buna karşın', 'oysaki', 'ne var ki', ose 'aksine')."
+      },
+      {
+        type: 'required_pattern',
+        regex: '[a-zçğışöü]+(?:acağ|ecek|eceğ|yacağ|yeceğ)[a-zçğışöü]*',
+        feedback: "Mungon përdorimi i nominalizimit me prapashtesën '-AcAk' (p.sh., 'etkileyeceğini', 'olacağını', 'seçeceğini')."
+      }
+    ]
+  },
+  29: {
+    chapterId: 29,
+    type: 'guided',
+    promptAlbanian: "Shkruani një tekst përshkrues ose letrar (80-120 fjalë) rreth një personazhi, një vendi të dashur apo librit tuaj të preferuar (p.sh. duke përshkruar një port, detin ose një mik). Përdorni të paktën një pjesore (sıfat-fiil, si -an/-en, -dık/-dik, -ası/-esi, -mez) dhe të paktën një lidhëz shpjeguese/ilustruese (örneğin, başka bir deyişle, nitekim).",
+    grammarTipAlbanian: "Sigurohuni që teksti të ndjekë strukturën me tre paragrafe (Giriş, Gelişme, Sonuç). Përdorni pjesoret (sıfat-fiiller) si '-an/-en' (p.sh., yaşayan, esen), '-dık/-dik' (p.sh., tanıdık, bildik), '-ası/-esi' (p.sh., görülesi, öpülesi), ose '-mez' (p.sh., tükenmez, görünmez). Përfshini të paktën një lidhëz si 'örneğin', 'başka bir deyişle', ose 'nitekim'.",
+    sampleAnswers: [
+      "Deniz kenarında, martıların çığlıkları arasında yaşayan eski bir balıkçı kasabası vardı. Limanda, yılların yorgunluğunu taşıyan küçük tekneler sallanıyordu. Güneş batarken ortaya çıkan o tarifsiz renkler, gerçekten görülesi bir manzara sunardı. İnsanlar, denizden gelecek kısmetlerini beklerken tükenmez bir umutla ağlarını onarırlardı. Örneğin, ihtiyar Ali, gençlik yıllarından beri tanıdık limanın her köşesini ezbere bilirdi. Başka bir deyişle, onun ömrü bu dalgaların üzerinde geçmişti. Nitekim, kasaba halkı Ali'nin denizle kurduğu bu derin bağı hayranlıkla izlerdi."
+    ],
+    grammarLabel: "Edebiyat (Pjesoret & Lidhëzat Shpjeguese)",
+    validationRules: [
+      {
+        type: 'required_pattern',
+        regex: 'örneğin|başka bir deyişle|nitekim',
+        feedback: "Mungon një nga lidhëzat shpjeguese/ilustruese të kërkuara ('örneğin', 'başka bir deyişle', ose 'nitekim')."
+      },
+      {
+        type: 'required_pattern',
+        regex: '[a-zçğışöü]+(?:an|en|yan|yen|dığ|diğ|duğ|düğ|tığ|tiğ|tuğ|tüğ|ası|esi|mez|maz)(?=[\\s.,!?]|$)',
+        feedback: "Mungon përdorimi i një pjesoreje (sıfat-fiil) si '-an/-en', '-dık/-dik', '-ası/-esi' ose '-mez'."
+      }
+    ]
+  },
+  30: {
+    chapterId: 30,
+    type: 'guided',
+    promptAlbanian: "Shkruani një tekst argumentues (80-120 fjalë) rhear jetës në qytet dhe sfidave të migrimit (p.sh., si ndryshon jeta e njerëzve kur shpërngulen dhe si mund të ndihmojë planifikimi i duhur). Përdorni kohën kushtore të së shkuarës me '-seydi/-saydı' (p.sh., yapılsaydı, hazırlansaydı, olsaydı) dhe të paktën një lidhëz theksuese (özellikle, aslında, doğrusu).",
+    grammarTipAlbanian: "Sigurohuni që teksti të ndjekë strukturën me tre paragrafe (Giriş, Gelişme, Sonuç). Përdorni prapashtesën e kushtores së shkuar '-seydi/-saydı' (p.sh., 'olsaydı', 'yapılsaydı') dhe të paktën një lidhëz theksuese si 'özellikle', 'aslında', ose 'doğrusu'.",
+    sampleAnswers: [
+      "Türkiye'de son elli yılda yaşanan büyük değişimlerden biri büyük şehirlere göçtür. Aslında, bu göç hareketleri başladığında altyapı yetersizdi. Örneğin, planlama daha sağlıklı yapılsaydı, bugün metropollerde trafik sorunları olmayacaktı. Doğrusu, sanayileşmenin belirli bölgelerde toplanması nüfus dağılımını dengesizleştirdi. Göçün sonuçları, özellikle kültürel yapıda hissedilmektedir. Keşke zamanında bu nüfus artışına uygun konut alanları hazırlansaydık; o zaman bugünkü uyum sorunları neredeyse hiç kalmazdı. Eğer kırsal kalkınmaya yatırım yapılsaydı, insanlar köylerinde kalmayı tercih edebilirlerdi."
+    ],
+    grammarLabel: "Toplum ve Göç (Kushtorja -seydi & Lidhëzat e Fokusit)",
+    validationRules: [
+      {
+        type: 'required_pattern',
+        regex: 'özellikle|aslında|doğrusu',
+        feedback: "Mungon një nga lidhëzat theksuese të kërkuara ('özellikle', 'aslında', ose 'doğrusu')."
+      },
+      {
+        type: 'required_pattern',
+        regex: '[a-zçğışöü]+(?:sayd|seyd)[a-zçğışöü]*',
+        feedback: "Mungon përdorimi i prapashtesës së kushtores së së shkuarës '-seydi / -saydı' (p.sh., 'yapılsaydı', 'olsaydı')."
+      }
+    ]
+  },
+  31: {
+    chapterId: 31,
+    type: 'guided',
+    promptAlbanian: "Shkruani një tekst argumentues ose këshillues (80-120 fjalë) rreth botës së biznesit dhe mundësive të punësimit në Ballkan (p.sh., rëndësia e të mësuarit të gjuhëve ose preferenca e punës në distancë). Përdorni nominalizimet e ligjëratës së zhdrejtë (p.sh., olduğunu, geleceğini, olmasını, paylaşmasını) dhe të paktën një lidhëz krahasuese/kundërshtuese (yerine, maktansa, aksine).",
+    grammarTipAlbanian: "Sigurohuni që teksti të ndjekë strukturën me tre paragrafe (Giriş, Gelişme, Sonuç). Përdorni strukturat e ligjëratës së zhdrejtë me '-dığını / -acağını / -masını' (p.sh., 'olduğunu belirtti', 'çalışmasını istedi') dhe të paktën një lidhëz si 'yerine', 'maktansa', ose 'aksine'.",
+    sampleAnswers: [
+      "Balkanlar ve Türkiye arasındaki ekonomik ilişkiler geliştikçe gençlerin iş bulma fırsatları artmaktadır. Birçok mezun, büyük şirketlerde çalışmanın kariyer fırsatları sunduğunu söylüyor. Ancak bazıları büyük şehirlere taşınmaktansa uzaktan çalışmayı tercih ediyor. Aksine, uluslararası deneyim kazanmanın şart olduğunu savunanlar da var. Şirket yöneticiler, çalışanların esnek saatlere sahip olmasını istediklerini belirttiler. Sadece beklemek yerine, aktif bir şekilde iş ağları kurmak gerekmektedir. Yeni yatırımların istihdamı artıracağını söylemekten memnuniyet duyuyorum."
+    ],
+    grammarLabel: "İş Dünyası (Ligjërata e Zhdrejtë & Lidhëzat Krahasuese)",
+    validationRules: [
+      {
+        type: 'required_pattern',
+        regex: 'yerine|maktansa|aksine',
+        feedback: "Mungon një nga lidhëzat krahasuese ose kundërshtuese të kërkuara ('yerine', 'maktansa', ose 'aksine')."
+      },
+      {
+        type: 'required_pattern',
+        regex: '[a-zçğışöü]+(?:dığ|diğ|duğ|düğ|tığ|tiğ|tuğ|tüğ|acağ|ecek|eceğ|yacağ|yeceğ|ma|me)(?:ı|i|u|ü|n|nı|ni|nu|nü|mı|mi|mu|mü|mizi|nizi|larını|lerini)?(?:\\s+)(?:söyle|belirt|iste|anlat|duy|oku)',
+        feedback: "Mungon përdorimi i ligjëratës së zhdrejtë (p.sh. nominalizimi me '-dığını', '-acağını' ose '-masını' i shoqëruar me folje raportuese si 'söylemek', 'belirtmek' ose 'istemek')."
+      }
+    ]
+  },
+  32: {
+    chapterId: 32,
+    type: 'guided',
+    promptAlbanian: "Shkruani një tekst biografik ose historik (80-120 fjalë) rreth jetës së një figure të rëndësishme historike (p.sh. Sami Frashëri, Atatürk ose një figurë tjetër) ose rreth një ngjarjeje historike të përbashkët. Përdorni të paktën një formë të së shkuarës së tejshkuar ose habitore të së shkuarës (p.sh., -mişti, -iyormuş, -ecekmiş) dhe të paktën një lidhëz përmbledhëse (kısacası, sonuç olarak, özetle).",
+    grammarTipAlbanian: "Sigurohuni që teksti të ndjekë strukturën me tre paragrafe (Giriş, Gelişme, Sonuç). Përdorni prapashtesat si '-mişti' (kishte bërë), '-iyormuş' (thuhet se po bënte), ose '-ecekmiş' (thuhet se do të bënte) dhe të paktën një lidhëz përmbledhëse si 'kısacası', 'sonuç olarak', ose 'özetle'.",
+    sampleAnswers: [
+      "Tarih boyunca Balkanlar ve Türkiye ortak bir geçmişi paylaşmıştır. Şemseddin Sami, Türk culture tarihinde derin izler bırakmıştı. O, Türkçe yazılmış ilk ansiklopedi olan Kamus-ül Alam'ı kaleme almıştı. Mektuplara göre, İstanbul'da yaşadığı yıllarda sürekli yeni eserler üretiyormuş ve eğitim alanında öncü adımlar atıyorlarmış. Kısacası, onun çalışmaları iki halk arasındaki kültürel bağların en güçlü temellerinden birini oluşturdu. Sonuç olarak, onun bıraktığı miras bugün bile tarihçiler tarafından saygıyla incelenmektedir."
+    ],
+    grammarLabel: "Tarih ve Biyografi (Kohët e Përbëra & Lidhëzat Përmbledhëse)",
+    validationRules: [
+      {
+        type: 'required_pattern',
+        regex: 'kısacası|sonuç olarak|özetle',
+        feedback: "Mungon një nga lidhëzat përmbledhëse ose përfunduese të kërkuara ('kısacası', 'sonuç olarak', ose 'özetle')."
+      },
+      {
+        type: 'required_pattern',
+        regex: '[a-zçğışöü]+(?:mişti|mıştı|muştu|müştü|iyormuş|uyormuş|üyormuş|ıyormuş|ecekmiş|acakmış)(?=[\\s.,!?]|$)',
+        feedback: "Mungon përdorimi i prapashtesës së kohës së kryer të tejshkuar ose habitores së të shkuarës (p.sh., '-mişti', '-iyormuş', ose '-ecekmiş')."
+      }
+    ]
+  },
+  33: {
+    chapterId: 33,
+    type: 'guided',
+    promptAlbanian: "Shkruani një tekst përshkrues ose prezantues (80-120 fjalë) rreth një tradite, festivali muzikor ose trashëgimie kulturore të ndarë në Ballkan (p.sh., rëndësia e festivaleve ose vlerat estetike). Përdorni strukturën e emërtimeve të përbëra shtofrënore (zincirleme isim tamlaması, p.sh. halk dansları gösterisi, kültür mirası) dhe të paktën një lidhëz të fokusit ose kontrastit (oysaki, özünde, tam tersine, sözün kısası).",
+    grammarTipAlbanian: "Sigurohuni që teksti të ndjekë strukturën me tre paragrafe (Giriş, Gelişme, Sonuç). Përdorni emërtime të përbëra me tre ose më shumë emra (p.sh., 'Balkan kültür mirası', 'sanat festivali yönetimi') dhe të paktën një lidhëz të fokusit ose kontrastit si 'oysaki', 'özünde', 'tam tersine', ose 'sözün kısası'.",
+    sampleAnswers: [
+      "Balkanlar ve Türkiye arasındaki kültürel bağlar günlük yaşamda karşımıza çıkan sanat birlikteliğinden beslenir. Ortak halk dansları yansıtır bu zengin coğrafyanın estetik değerlerini. Örneğin, asırlardır düzenlenen geleneksel panayırlar, Balkan kültür mirasının korunmasında önemli bir rol oynar. Oysaki modernleşmeyle birlikte bazı sanatçılar unutulabiliyor. Özünde, bu etkinlikler geçmiş ile gelecek arasında sağlam bir sanat köprüsü kurar. Sözün kısası, bu ortak değerleri korumak hepimizin sorumluluğudur."
+    ],
+    grammarLabel: "Sanat ve Kültür (Emërtimet e Përbëra & Lidhëzat e Kontrastit)",
+    validationRules: [
+      {
+        type: 'required_pattern',
+        regex: 'oysaki|özünde|tam tersine|sözün kısası',
+        feedback: "Mungon një nga lidhëzat e fokusit ose kontrastit të kërkuara ('oysaki', 'özünde', 'tam tersine', ose 'sözün kısası')."
+      },
+      {
+        type: 'required_pattern',
+        regex: '[a-zçğışöü]+(?:\\s+)[a-zçğışöü]+(?:\\s+)[a-zçğışöü]+(?:ı|i|u|ü|sı|si|su|sü)(?:nı|ni|nu|nü|nın|nin|nun|nün|na|ne|nda|nde|ndan|nden)?',
+        feedback: "Mungon përdorimi i një emërtimi të përbërë shtofrënor (zincirleme isim tamlaması, p.sh. 'Balkan kültür mirası' ose 'sanat festivali yönetimi')."
+      }
+    ]
   }
 };

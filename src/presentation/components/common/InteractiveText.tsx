@@ -100,34 +100,79 @@ export const InteractiveText: React.FC<InteractiveTextProps> = ({
     }
 
     const cleanToken = cleanTurkishWord(token);
-    if (!compoundFirstWords.has(cleanToken)) {
+    const localGlossary = chapterId ? readingGlossary[chapterId] : null;
+    const hasGlossaryCompoundStart = !!(localGlossary && Object.keys(localGlossary).some(key => key.startsWith(cleanToken) && key !== cleanToken));
+
+    if (!compoundFirstWords.has(cleanToken) && !hasGlossaryCompoundStart) {
       groupedTokens.push({ text: token, isWord: true });
       i++;
       continue;
     }
 
-    // Look ahead to check if this word token + intermediate tokens + next word token forms a compound word
-    let nextWordIdx = -1;
-    let intermediateTokens: string[] = [];
-    for (let j = i + 1; j < tokens.length; j++) {
-      const t = tokens[j];
-      const isNextWord = /^[a-zçğışöüÇĞİŞÖÜâîûÂÎÛ]+$/i.test(t.replace(/['’]/g, ''));
-      if (isNextWord) {
-        nextWordIdx = j;
+    // Helper to check if a combination of words forms a compound match in glossary or dictionary
+    const isCompoundMatch = (cleanStr: string) => {
+      if (localGlossary && localGlossary[cleanStr]) {
+        return true;
+      }
+      const entry = lookupWord(cleanStr);
+      return !!(entry && entry.word.includes(' '));
+    };
+
+    // Look ahead for subsequent word tokens
+    let nextWords: { token: string; idx: number; intermediate: string[] }[] = [];
+    let currentIdx = i;
+    for (let count = 0; count < 2; count++) {
+      let nextWordIdx = -1;
+      let intermediate: string[] = [];
+      for (let j = currentIdx + 1; j < tokens.length; j++) {
+        const t = tokens[j];
+        const isNextWord = /^[a-zçğışöüÇĞİŞÖÜâîûÂÎÛ]+$/i.test(t.replace(/['’]/g, ''));
+        if (isNextWord) {
+          nextWordIdx = j;
+          break;
+        }
+        intermediate.push(t);
+      }
+      if (nextWordIdx !== -1) {
+        nextWords.push({
+          token: tokens[nextWordIdx],
+          idx: nextWordIdx,
+          intermediate
+        });
+        currentIdx = nextWordIdx;
+      } else {
         break;
       }
-      intermediateTokens.push(t);
     }
 
-    if (nextWordIdx !== -1) {
-      const nextWordToken = tokens[nextWordIdx];
-      const cleanCombined = cleanTurkishWord(token + nextWordToken);
-      const compoundMatch = lookupWord(cleanCombined);
-
-      if (compoundMatch) {
-        const mergedText = [token, ...intermediateTokens, nextWordToken].join('');
+    // Try 3-word compound match first
+    if (nextWords.length === 2) {
+      const cleanCombined3 = cleanTurkishWord(token + nextWords[0].token + nextWords[1].token);
+      if (isCompoundMatch(cleanCombined3)) {
+        const mergedText = [
+          token,
+          ...nextWords[0].intermediate,
+          nextWords[0].token,
+          ...nextWords[1].intermediate,
+          nextWords[1].token
+        ].join('');
         groupedTokens.push({ text: mergedText, isWord: true });
-        i = nextWordIdx + 1;
+        i = nextWords[1].idx + 1;
+        continue;
+      }
+    }
+
+    // Try 2-word compound match second
+    if (nextWords.length >= 1) {
+      const cleanCombined2 = cleanTurkishWord(token + nextWords[0].token);
+      if (isCompoundMatch(cleanCombined2)) {
+        const mergedText = [
+          token,
+          ...nextWords[0].intermediate,
+          nextWords[0].token
+        ].join('');
+        groupedTokens.push({ text: mergedText, isWord: true });
+        i = nextWords[0].idx + 1;
         continue;
       }
     }

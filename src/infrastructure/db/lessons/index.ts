@@ -25,10 +25,17 @@ import { b1Chapter7 } from './b1_chapter7';
 import { b1Chapter8 } from './b1_chapter8';
 import { b2Chapter1 } from './b2_chapter1';
 import { b2Chapter2 } from './b2_chapter2';
+import { b2Chapter3 } from './b2_chapter3';
+import { b2Chapter4 } from './b2_chapter4';
+import { b2Chapter5 } from './b2_chapter5';
+import { b2Chapter6 } from './b2_chapter6';
+import { b2Chapter7 } from './b2_chapter7';
+import { b2Chapter8 } from './b2_chapter8';
+import { b2Chapter9 } from './b2_chapter9';
 import type { UnifiedLesson } from './a1_chapter1';
 
 const c1Chapter1: UnifiedLesson = {
-  id: 33,
+  id: 34,
   level: 'C1',
   orderIndex: 1,
   title: {
@@ -93,6 +100,13 @@ export const ALL_UNIFIED_LESSONS: UnifiedLesson[] = [
   b1Chapter8,
   b2Chapter1,
   b2Chapter2,
+  b2Chapter3,
+  b2Chapter4,
+  b2Chapter5,
+  b2Chapter6,
+  b2Chapter7,
+  b2Chapter8,
+  b2Chapter9,
   c1Chapter1,
   c2Chapter1
 ];

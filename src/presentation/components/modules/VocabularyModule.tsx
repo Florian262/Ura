@@ -7,12 +7,32 @@ interface VocabularyModuleProps {
 }
 
 export const VocabularyModule: React.FC<VocabularyModuleProps> = ({ onComplete }) => {
-  const { vocabulary } = useLesson();
+  const { vocabulary, currentChapter } = useLesson();
   const { play, playText, isPlaying, currentSrc } = useAudioPlayer();
   // Modes: 'list' | 'flashcard' | 'production'
   const [vocabularyMode, setVocabularyMode] = useState<'list' | 'flashcard' | 'production'>('list');
   const [revealedIds, setRevealedIds] = useState<Record<number, boolean>>({});
   const [revealedStemIds, setRevealedStemIds] = useState<Record<number, boolean>>({});
+  const [showTranslation, setShowTranslation] = useState<boolean>(false);
+
+  const isB2 = currentChapter?.level === 'B2';
+
+  const getCategoryLabel = (category: string) => {
+    if (isB2) {
+      const mapping: Record<string, string> = {
+        'emër': 'İsim',
+        'folje': 'Fiil',
+        'mbiemër': 'Sıfat',
+        'ndajfolje': 'Zarf',
+        'përemër': 'Zamir',
+        'lidhëz': 'Bağlaç',
+        'pasthirrmë': 'Ünlem',
+        'shprehje': 'İfade',
+      };
+      return mapping[category] || category;
+    }
+    return category;
+  };
 
   // Production Mode states
   const [productionIndex, setProductionIndex] = useState<number>(0);
@@ -74,13 +94,31 @@ export const VocabularyModule: React.FC<VocabularyModuleProps> = ({ onComplete }
     <div className="glass-panel md:rounded-2xl p-0 md:p-8 bg-transparent md:bg-white border-none md:border md:border-[#E9ECEF] shadow-none md:shadow-sm">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 pb-4 border-b border-[#E9ECEF]">
         <div>
-          <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-widest">Sekuenca 2</span>
-          <h2 className="text-xl font-black text-[#1A1D20] uppercase font-sans">Fjalori i Ri (Yeni Kelimeler)</h2>
+          <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-widest">
+            {isB2 ? '2. Bölüm' : 'Sekuenca 2'}
+          </span>
+          <h2 className="text-xl font-black text-[#1A1D20] uppercase font-sans">
+            {isB2 ? 'Yeni Kelimeler' : 'Fjalori i Ri (Yeni Kelimeler)'}
+          </h2>
           <p className="text-xs text-[#565E64] font-light mt-1">
-            Lexiku i prezantuar në tekst. Vini re fjalët e shënuara si huazime të përbashkëta historike.
+            {isB2 
+              ? 'Metinde geçen yeni kelimeler. Ortak kelimelere dikkat ediniz.' 
+              : 'Lexiku i prezantuar në tekst. Vini re fjalët e shënuara si huazime të përbashkëta historike.'}
           </p>
         </div>
         <div className="flex gap-2 flex-wrap">
+          {isB2 && (
+            <button
+              onClick={() => setShowTranslation(!showTranslation)}
+              className={`px-3 py-1.5 rounded-xl border text-xs font-bold transition duration-200 cursor-pointer shadow-xs whitespace-nowrap ${
+                showTranslation
+                  ? 'bg-[#3A5A40] text-white border-[#3A5A40]'
+                  : 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50'
+              }`}
+            >
+              {showTranslation ? 'Çeviriyi Gizle' : 'Arnavutça Çeviri'}
+            </button>
+          )}
           <button
             onClick={() => setVocabularyMode('list')}
             className={`px-3 py-1.5 rounded-xl border text-xs font-bold transition duration-200 cursor-pointer shadow-xs whitespace-nowrap ${
@@ -89,7 +127,7 @@ export const VocabularyModule: React.FC<VocabularyModuleProps> = ({ onComplete }
                 : 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50'
             }`}
           >
-            📋 Mënyra Listë
+            {isB2 ? '📋 Liste Görünümü' : '📋 Mënyra Listë'}
           </button>
           <button
             onClick={() => {
@@ -102,7 +140,7 @@ export const VocabularyModule: React.FC<VocabularyModuleProps> = ({ onComplete }
                 : 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50'
             }`}
           >
-            🎴 Mënyra Flashcard
+            {isB2 ? '🎴 Kart Eşleştirme' : '🎴 Mënyra Flashcard'}
           </button>
           <button
             onClick={() => {
@@ -119,7 +157,7 @@ export const VocabularyModule: React.FC<VocabularyModuleProps> = ({ onComplete }
                 : 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50'
             }`}
           >
-            ✍️ Lojë Shkrimi
+            {isB2 ? '✍️ Yazma Oyunu' : '✍️ Lojë Shkrimi'}
           </button>
         </div>
       </div>
@@ -129,24 +167,30 @@ export const VocabularyModule: React.FC<VocabularyModuleProps> = ({ onComplete }
           <div className="flex justify-between items-center pb-3 border-b border-[#E9ECEF]/80">
             <div>
               <span className="text-[10px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-md uppercase tracking-wider shadow-xs">
-                Spelling & Production Game
+                {isB2 ? 'Yazma Oyunu' : 'Spelling & Production Game'}
               </span>
-              <p className="text-xs text-[#565E64] font-light mt-1">Shkruani fjalën korresponduese në turqisht.</p>
+              <p className="text-xs text-[#565E64] font-light mt-1">
+                {isB2 ? 'Kelimenin Türkçe karşılığını yazınız.' : 'Shkruani fjalën korresponduese në turqisht.'}
+              </p>
             </div>
             <span className="text-xs font-semibold text-[#3A5A40] font-technical">
-              Fjala {productionIndex + 1} nga {vocabulary.length}
+              {isB2 
+                ? `Kelime ${productionIndex + 1} / ${vocabulary.length}` 
+                : `Fjala ${productionIndex + 1} nga ${vocabulary.length}`}
             </span>
           </div>
 
           <div className="space-y-4">
             {/* Albanian Prompt */}
             <div className="text-center p-4 bg-white rounded-xl border border-[#E9ECEF] shadow-xs">
-              <span className="text-[10px] text-neutral-400 uppercase tracking-widest block font-bold">Shqip:</span>
+              <span className="text-[10px] text-neutral-400 uppercase tracking-widest block font-bold">
+                {isB2 ? 'Arnavutça:' : 'Shqip:'}
+              </span>
               <h3 className="text-lg font-bold text-[#3A5A40] leading-snug mt-1">
                 {currentProdWord.albanian_word}
               </h3>
               <span className="text-[9px] font-semibold uppercase tracking-wider text-[#0D9488] bg-[#0D9488]/10 border border-[#0D9488]/30 px-2 py-0.5 rounded-md inline-block mt-2">
-                {currentProdWord.category}
+                {getCategoryLabel(currentProdWord.category)}
               </span>
             </div>
 
@@ -157,7 +201,7 @@ export const VocabularyModule: React.FC<VocabularyModuleProps> = ({ onComplete }
                 value={typedAnswer}
                 disabled={productionChecked && productionCorrect}
                 onChange={(e) => setTypedAnswer(e.target.value)}
-                placeholder="Shkruani fjalën në turqisht..."
+                placeholder={isB2 ? 'Türkçe kelimeyi yazınız...' : 'Shkruani fjalën në turqisht...'}
                 className="w-full px-4 py-3 text-sm font-technical border border-[#E9ECEF] rounded-xl focus:outline-hidden focus:border-[#3A5A40] focus:ring-1 focus:ring-[#3A5A40] bg-white text-neutral-900 shadow-inner text-center"
               />
 
@@ -185,19 +229,21 @@ export const VocabularyModule: React.FC<VocabularyModuleProps> = ({ onComplete }
                     onClick={handleCheckProduction}
                     className="px-5 py-2.5 bg-[#3A5A40] text-white font-bold rounded-xl text-xs uppercase tracking-widest transition cursor-pointer select-none active-cta shadow-md"
                   >
-                    Kontrollo
+                    {isB2 ? 'Kontrol Et' : 'Kontrollo'}
                   </button>
                   <button
                     onClick={() => setShowAnswer(true)}
                     className="px-4 py-2 bg-white border border-[#E9ECEF] text-[#565E64] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-xl text-xs font-bold transition cursor-pointer shadow-xs"
                   >
-                    Trego Përgjigjen
+                    {isB2 ? 'Cevabı Göster' : 'Trego Përgjigjen'}
                   </button>
                 </>
               ) : (
                 <div className="text-center w-full space-y-3">
                   <p className={`text-sm font-bold ${productionCorrect ? 'text-[#3A5A40]' : 'text-[#c0392b]'}`}>
-                    {productionCorrect ? '✓ E saktë!' : '✗ E pasaktë. Provojeni përsëri.'}
+                    {productionCorrect 
+                      ? (isB2 ? '✓ Doğru!' : '✓ E saktë!') 
+                      : (isB2 ? '✗ Yanlış. Tekrar deneyiniz.' : '✗ E pasaktë. Provojeni përsëri.')}
                   </p>
                   {!productionCorrect && (
                     <div className="flex gap-2 justify-center">
@@ -205,13 +251,13 @@ export const VocabularyModule: React.FC<VocabularyModuleProps> = ({ onComplete }
                         onClick={() => setProductionChecked(false)}
                         className="px-4 py-2 bg-[#3A5A40] text-white font-bold rounded-xl text-xs transition cursor-pointer"
                       >
-                        Provo përsëri
+                        {isB2 ? 'Tekrar Dene' : 'Provo përsëri'}
                       </button>
                       <button
                         onClick={() => setShowAnswer(true)}
                         className="px-4 py-2 bg-white border border-[#E9ECEF] text-[#565E64] hover:text-[#3A5A40] hover:text-[#3A5A40] rounded-xl text-xs font-bold transition cursor-pointer shadow-xs"
                       >
-                        Trego Përgjigjen
+                        {isB2 ? 'Cevabı Göster' : 'Trego Përgjigjen'}
                       </button>
                     </div>
                   )}
@@ -222,13 +268,15 @@ export const VocabularyModule: React.FC<VocabularyModuleProps> = ({ onComplete }
             {/* Answer Display */}
             {showAnswer && (
               <div className="p-3 bg-[#3A5A40]/10 border border-[#3A5A40]/30 rounded-xl text-center animate-fade-in space-y-1.5">
-                <span className="text-[10px] text-neutral-400 uppercase tracking-widest block font-bold">Fjala e saktë:</span>
+                <span className="text-[10px] text-neutral-400 uppercase tracking-widest block font-bold">
+                  {isB2 ? 'Doğru Kelime:' : 'Fjala e saktë:'}
+                </span>
                 <span lang="tr" className="text-base font-extrabold text-[#3A5A40] font-technical tracking-wide">
                   {currentProdWord.turkish_word}
                 </span>
                 {currentProdWord.stem_breakdown && (
                   <p className="text-[11px] text-[#565E64] font-technical pt-1 border-t border-[#3A5A40]/20">
-                    Morfologjia: {currentProdWord.stem_breakdown}
+                    {isB2 ? 'Kelime Yapısı:' : 'Morfologjia:'} {currentProdWord.stem_breakdown}
                   </p>
                 )}
               </div>
@@ -245,7 +293,7 @@ export const VocabularyModule: React.FC<VocabularyModuleProps> = ({ onComplete }
                     : 'border-[#E9ECEF] bg-white text-[#565E64] hover:bg-neutral-50'
                 }`}
               >
-                ← Paraardhësja
+                {isB2 ? '← Önceki' : '← Paraardhësja'}
               </button>
               <button
                 onClick={handleNextProduction}
@@ -256,7 +304,7 @@ export const VocabularyModule: React.FC<VocabularyModuleProps> = ({ onComplete }
                     : 'border-[#E9ECEF] bg-white text-[#565E64] hover:bg-neutral-50'
                 }`}
               >
-                Pasardhësja →
+                {isB2 ? 'Sonraki →' : 'Pasardhësja →'}
               </button>
             </div>
           </div>
@@ -305,15 +353,17 @@ export const VocabularyModule: React.FC<VocabularyModuleProps> = ({ onComplete }
                               {v.turkish_word}
                             </h3>
                             <span className="text-[9px] font-semibold uppercase tracking-wider text-[#0D9488] bg-[#0D9488]/10 border border-[#0D9488]/30 px-2 py-0.5 rounded-md">
-                              {v.category}
+                              {getCategoryLabel(v.category)}
                             </span>
                             {isBalkan && (
                               <span className="text-[9px] font-bold uppercase tracking-wider text-[#3A5A40] bg-[#3A5A40]/10 border border-[#3A5A40]/30 px-2 py-0.5 rounded-md">
-                                Balkanizëm 🤝
+                                {isB2 ? 'Ortak Kelime 🤝' : 'Balkanizëm 🤝'}
                               </span>
                             )}
                           </div>
-                          <p className="text-[10px] text-neutral-400 mt-2">(Kliko për ta zbuluar shqip)</p>
+                          <p className="text-[10px] text-neutral-400 mt-2">
+                            {isB2 ? '(Arnavutça karşılığını görmek için tıklayın)' : '(Kliko për ta zbuluar shqip)'}
+                          </p>
                         </div>
                         
                         <button
@@ -347,18 +397,31 @@ export const VocabularyModule: React.FC<VocabularyModuleProps> = ({ onComplete }
                       }}
                     >
                       <div className="space-y-2 flex-1">
-                        <span className="text-[9px] font-bold text-neutral-400 uppercase tracking-widest block">Shqip:</span>
+                        <span className="text-[9px] font-bold text-neutral-400 uppercase tracking-widest block">
+                          {isB2 ? 'Arnavutça:' : 'Shqip:'}
+                        </span>
                         <span className="text-base font-bold text-[var(--color-brand-accent)] block leading-snug">
                           {v.albanian_word}
                         </span>
-                        {v.notes_albanian && (
-                          <p className="text-[11px] text-[var(--color-text-secondary)] font-light italic leading-relaxed mt-1 border-t border-[var(--color-border-primary)]/40 pt-1.5">
-                            {v.notes_albanian}
-                          </p>
+                        {isB2 ? (
+                          (v.notes_turkish || v.notes_albanian) && (
+                            <div className="text-[11px] text-[var(--color-text-secondary)] font-light italic leading-relaxed mt-1 border-t border-[var(--color-border-primary)]/40 pt-1.5">
+                              <p>{v.notes_turkish || v.notes_albanian}</p>
+                              {showTranslation && v.notes_turkish && v.notes_albanian && (
+                                <p className="text-[10px] text-neutral-400 mt-1">Shqip: {v.notes_albanian}</p>
+                              )}
+                            </div>
+                          )
+                        ) : (
+                          v.notes_albanian && (
+                            <p className="text-[11px] text-[var(--color-text-secondary)] font-light italic leading-relaxed mt-1 border-t border-[var(--color-border-primary)]/40 pt-1.5">
+                              {v.notes_albanian}
+                            </p>
+                          )
                         )}
                         {v.stem_breakdown && (
                           <div className="p-2 bg-[#3A5A40]/5 rounded-xl border border-[#3A5A40]/25 text-[10px] font-technical font-medium text-[#3A5A40]">
-                            Zbërthimi: {v.stem_breakdown}
+                            {isB2 ? 'Kelime Yapısı:' : 'Zbërthimi:'} {v.stem_breakdown}
                           </div>
                         )}
                       </div>
@@ -387,23 +450,25 @@ export const VocabularyModule: React.FC<VocabularyModuleProps> = ({ onComplete }
                       
                       {/* Part of Speech Badge */}
                       <span className="text-[9px] font-semibold uppercase tracking-wider text-[#0D9488] bg-[#0D9488]/10 border border-[#0D9488]/30 px-2 py-0.5 rounded-md select-none shrink-0">
-                        {v.category}
+                        {getCategoryLabel(v.category)}
                       </span>
   
                       {/* Balkanism Accent Light Indicator */}
                       {isBalkan && (
                         <span className="text-[9px] font-bold uppercase tracking-wider text-[#3A5A40] bg-[#3A5A40]/10 border border-[#3A5A40]/30 px-2 py-0.5 rounded-md select-none shrink-0">
-                          Balkanizëm 🤝
+                          {isB2 ? 'Ortak Kelime 🤝' : 'Balkanizëm 🤝'}
                         </span>
                       )}
                     </div>
                     
                     {/* Albanian Translation - Translation Rule */}
-                    <div className="relative">
-                      <span className={`translation-subtitle mt-0.5 block transition duration-200`}>
-                        {v.albanian_word}
-                      </span>
-                    </div>
+                    {(!isB2 || showTranslation) && (
+                      <div className="relative">
+                        <span className={`translation-subtitle mt-0.5 block transition duration-200`}>
+                          {v.albanian_word}
+                        </span>
+                      </div>
+                    )}
                   </div>
   
                   <button
@@ -428,12 +493,25 @@ export const VocabularyModule: React.FC<VocabularyModuleProps> = ({ onComplete }
                 </div>
   
                 {/* Context Tag/Notes detailing lexical links */}
-                {v.notes_albanian && (
-                  <div className="mt-3 pt-2.5 border-t border-[#E9ECEF]/80 dark:border-neutral-800/80 text-xs text-[#565E64] dark:text-neutral-400 font-light italic leading-relaxed">
-                    {v.notes_albanian}
-                  </div>
+                {isB2 ? (
+                  (v.notes_turkish || v.notes_albanian) && (
+                    <div className="mt-3 pt-2.5 border-t border-[#E9ECEF]/80 dark:border-neutral-800/80 text-xs text-[#565E64] dark:text-neutral-400 font-light italic leading-relaxed">
+                      <div>{v.notes_turkish || v.notes_albanian}</div>
+                      {showTranslation && v.notes_turkish && v.notes_albanian && (
+                        <div className="mt-1 text-[11px] text-neutral-400">
+                          Përkthimi: {v.notes_albanian}
+                        </div>
+                      )}
+                    </div>
+                  )
+                ) : (
+                  v.notes_albanian && (
+                    <div className="mt-3 pt-2.5 border-t border-[#E9ECEF]/80 dark:border-neutral-800/80 text-xs text-[#565E64] dark:text-neutral-400 font-light italic leading-relaxed">
+                      {v.notes_albanian}
+                    </div>
+                  )
                 )}
-
+ 
                 {/* Agglutinative Stem Breakdown */}
                 {v.stem_breakdown && (
                   <div className="mt-3 pt-2.5 border-t border-[#E9ECEF]/80 dark:border-neutral-800/80">
@@ -441,7 +519,9 @@ export const VocabularyModule: React.FC<VocabularyModuleProps> = ({ onComplete }
                       onClick={() => setRevealedStemIds(prev => ({ ...prev, [v.id]: !prev[v.id] }))}
                       className="text-[10px] font-bold text-[#3A5A40] hover:underline flex items-center gap-1 cursor-pointer bg-transparent border-0 p-0"
                     >
-                      <span>🔍</span> {revealedStemIds[v.id] ? 'Fshih analizën e rrënjës' : 'Zbërthe rrënjën (Morfologjia)'}
+                      <span>🔍</span> {revealedStemIds[v.id] 
+                        ? (isB2 ? 'Analizi Gizle' : 'Fshih analizën e rrënjës') 
+                        : (isB2 ? 'Kelime Analizi (Morfoloji)' : 'Zbërthe rrënjën (Morfologjia)')}
                     </button>
                     {revealedStemIds[v.id] && (
                       <div className="mt-2 p-2.5 bg-[#3A5A40]/5 rounded-xl border border-[#3A5A40]/25 text-xs font-technical font-medium text-[#3A5A40] animate-fade-in">

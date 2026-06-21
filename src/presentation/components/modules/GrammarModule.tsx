@@ -148,12 +148,15 @@ interface GrammarModuleProps {
 }
 
 export const GrammarModule: React.FC<GrammarModuleProps> = ({ onComplete }) => {
-  const { grammarCards, carouselStep, setCarouselStep } = useLesson();
+  const { grammarCards, carouselStep, setCarouselStep, currentChapter } = useLesson();
   
   // Local states for interactive tool
   const [selectedWord, setSelectedWord] = useState<string>('kitap');
   const [interactiveResult, setInteractiveResult] = useState<any>(null);
   const [customWordInput, setCustomWordInput] = useState<string>('');
+  const [showTranslation, setShowTranslation] = useState<boolean>(false);
+
+  const isB2 = currentChapter?.level === 'B2';
 
   const currentCard = grammarCards[carouselStep] || grammarCards[0];
 
@@ -209,7 +212,9 @@ export const GrammarModule: React.FC<GrammarModuleProps> = ({ onComplete }) => {
       runAgglutination(cleanWord);
       setCustomWordInput('');
     } else {
-      alert('Ju lutemi shkruani një fjalë të vlefshme me shkronja!');
+      alert(isB2 
+        ? 'Lütfen sadece harflerden oluşan geçerli bir kelime giriniz!' 
+        : 'Ju lutemi shkruani një fjalë të vlefshme me shkronja!');
     }
   };
 
@@ -228,13 +233,33 @@ export const GrammarModule: React.FC<GrammarModuleProps> = ({ onComplete }) => {
 
   return (
     <div className="glass-panel md:rounded-2xl p-0 md:p-8 bg-transparent md:bg-white border-none md:border md:border-[#E9ECEF] shadow-none md:shadow-sm">
-      <div className="mb-6 pb-4 border-b border-[#E9ECEF] flex justify-between items-center">
+      <div className="mb-6 pb-4 border-b border-[#E9ECEF] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-widest">Sekuenca 3</span>
-          <h2 className="text-xl font-black text-[#1A1D20] uppercase font-sans">Këndi i Gramatikës (Dil Bilgisi)</h2>
+          <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-widest">
+            {isB2 ? '3. Bölüm' : 'Sekuenca 3'}
+          </span>
+          <h2 className="text-xl font-black text-[#1A1D20] uppercase font-sans">
+            {isB2 ? 'Dil Bilgisi' : 'Këndi i Gramatikës (Dil Bilgisi)'}
+          </h2>
         </div>
-        <div className="text-xs text-[#565E64] font-medium font-technical">
-          Hapi {carouselStep + 1} nga {grammarCards.length}
+        <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+          {isB2 && (
+            <button
+              onClick={() => setShowTranslation(!showTranslation)}
+              className={`px-3 py-1.5 rounded-xl border text-xs font-bold transition duration-200 cursor-pointer shadow-xs whitespace-nowrap ${
+                showTranslation
+                  ? 'bg-[#3A5A40] text-white border-[#3A5A40]'
+                  : 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50'
+              }`}
+            >
+              {showTranslation ? 'Çeviriyi Gizle' : 'Arnavutça Çeviri'}
+            </button>
+          )}
+          <div className="text-xs text-[#565E64] font-medium font-technical whitespace-nowrap">
+            {isB2 
+              ? `Adım ${carouselStep + 1} / ${grammarCards.length}` 
+              : `Hapi ${carouselStep + 1} nga ${grammarCards.length}`}
+          </div>
         </div>
       </div>
 
@@ -244,15 +269,26 @@ export const GrammarModule: React.FC<GrammarModuleProps> = ({ onComplete }) => {
         <div>
           {/* Card Title */}
           <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-wider block mb-1">
-            {currentCard.title_albanian}
+            {isB2 ? (currentCard.title_turkish || currentCard.title_albanian) : currentCard.title_albanian}
           </span>
+          {isB2 && showTranslation && currentCard.title_turkish && (
+            <span className="text-[9px] font-medium text-neutral-400 uppercase tracking-wider block mb-1">
+              Shqip: {currentCard.title_albanian}
+            </span>
+          )}
           <h3 lang="tr" className="text-xl font-black text-[#1A1D20] font-technical mb-4 tracking-tight">
             {currentCard.rule_concept_turkish}
           </h3>
 
-          {/* Explanation in Albanian */}
+          {/* Explanation */}
           <div className="text-sm md:text-base text-[#1A1D20] dark:text-[#F1F5F9] font-normal leading-relaxed whitespace-pre-line space-y-2">
-            {renderMarkdown(currentCard.explanation_albanian)}
+            {renderMarkdown(isB2 ? (currentCard.explanation_turkish || currentCard.explanation_albanian) : currentCard.explanation_albanian)}
+            {isB2 && showTranslation && currentCard.explanation_turkish && (
+              <div className="mt-4 pt-4 border-t border-[#E9ECEF]/60 text-xs md:text-sm text-neutral-500 font-light italic leading-relaxed">
+                <p className="font-semibold not-italic mb-1">Përkthimi Shqip:</p>
+                {renderMarkdown(currentCard.explanation_albanian)}
+              </div>
+            )}
           </div>
         </div>
 
@@ -260,14 +296,16 @@ export const GrammarModule: React.FC<GrammarModuleProps> = ({ onComplete }) => {
         {currentCard.interactive_example_json && (
           <div className="mt-8 pt-6 border-t border-[#E9ECEF]">
             <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-widest block mb-3">
-              ⚡ Provo Harmoninë Vokalore në Kohë Reale:
+              {isB2 ? '⚡ Ses Uyumunu Gerçek Zamanlı Deneyin:' : '⚡ Provo Harmoninë Vokalore në Kohë Reale:'}
             </span>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
               {/* Word Selectors & Custom Input */}
               <div className="space-y-4">
                 <div>
-                  <p className="text-xs text-[#1A1D20] font-medium mb-2 italic">Zgjidhni një rrënjë fjalë:</p>
+                  <p className="text-xs text-[#1A1D20] font-medium mb-2 italic">
+                    {isB2 ? 'Bir kelime kökü seçiniz:' : 'Zgjidhni një rrënjë fjalë:'}
+                  </p>
                   <div className="grid grid-cols-3 gap-2">
                     {cardSampleWords.map((sw: any) => (
                       <button
@@ -287,7 +325,9 @@ export const GrammarModule: React.FC<GrammarModuleProps> = ({ onComplete }) => {
                 </div>
 
                 <div className="border-t border-[#E9ECEF]/60 pt-3">
-                  <p className="text-xs text-[#1A1D20] font-medium mb-1.5 italic">Ose shkruani fjalën tuaj:</p>
+                  <p className="text-xs text-[#1A1D20] font-medium mb-1.5 italic">
+                    {isB2 ? 'Veya kendi kelimenizi yazın:' : 'Ose shkruani fjalën tuaj:'}
+                  </p>
                   <form 
                     onSubmit={(e) => {
                       e.preventDefault();
@@ -299,14 +339,14 @@ export const GrammarModule: React.FC<GrammarModuleProps> = ({ onComplete }) => {
                       type="text"
                       value={customWordInput}
                       onChange={(e) => setCustomWordInput(e.target.value)}
-                      placeholder="p.sh., defter, masa, araba..."
+                      placeholder={isB2 ? 'örneğin, defter, masa, araba...' : 'p.sh., defter, masa, araba...'}
                       className="px-3 py-2 text-xs border border-[#E9ECEF] rounded-xl focus:outline-hidden focus:border-[#3A5A40] focus:ring-1 focus:ring-[#3A5A40] flex-1 bg-white font-technical"
                     />
                     <button
                       type="submit"
                       className="px-4 py-2 bg-[#3A5A40] hover:bg-[#2A3F2E] text-white font-bold rounded-xl text-xs transition cursor-pointer select-none whitespace-nowrap active:scale-95"
                     >
-                      Provo ⚡
+                      {isB2 ? 'Dene ⚡' : 'Provo ⚡'}
                     </button>
                   </form>
                 </div>
@@ -357,7 +397,7 @@ export const GrammarModule: React.FC<GrammarModuleProps> = ({ onComplete }) => {
                 : 'border-[#E9ECEF] bg-white text-[#565E64] hover:bg-neutral-50 hover:shadow-xs'
             }`}
           >
-            ← Prapa
+            {isB2 ? '← Geri' : '← Prapa'}
           </button>
 
           {/* Dot progress indicator */}
@@ -382,7 +422,7 @@ export const GrammarModule: React.FC<GrammarModuleProps> = ({ onComplete }) => {
                 : 'border-[#E9ECEF] bg-white text-[#565E64] hover:bg-neutral-50 hover:shadow-xs'
             }`}
           >
-            Para →
+            {isB2 ? 'İleri →' : 'Para →'}
           </button>
         </div>
       </div>

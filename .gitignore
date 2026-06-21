@@ -32,6 +32,7 @@ scratch/
 # Root-level local planning documents (not for version control)
 b2_brainstorm.md
 implementation_plan.md
+handover.md
 
 # Editor directories and files
 .vscode/*

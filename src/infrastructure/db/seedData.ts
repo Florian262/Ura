@@ -15,6 +15,7 @@ export interface ReadingBlock {
   content_turkish: string; // JSON string of dialogue items or single block of text
   content_albanian: string; // JSON string of dialogue items or single block of text
   audio_asset_stub: string | null;
+  topic?: string;
 }
 
 export interface ReadingQuestion {
@@ -52,6 +53,7 @@ export interface Vocabulary {
   category: 'emër' | 'folje' | 'mbiemër' | 'ndajfolje' | 'përemër' | 'lidhëz' | 'pasthirrmë' | 'shprehje';
   is_shared_balkan_word: number; // 0 or 1
   notes_albanian: string | null;
+  notes_turkish?: string | null;
   audio_asset_stub: string | null;
   stem_breakdown?: string;
 }
@@ -61,8 +63,10 @@ export interface GrammarCard {
   chapter_id: number;
   step_order: number;
   title_albanian: string;
+  title_turkish?: string;
   rule_concept_turkish: string;
   explanation_albanian: string;
+  explanation_turkish?: string;
   interactive_example_json: string | null; // e.g. {"root": "kitap", "strategy": "plural"}
 }
 
@@ -71,6 +75,7 @@ export interface Exercise {
   chapter_id: number;
   exercise_type: 'MULTIPLE_CHOICE' | 'WORD_SORT' | 'SUFFIX_BUILDER' | 'CLOZE' | 'ERROR_CORRECTION' | 'CONNECTOR_MATCHING';
   prompt_albanian: string;
+  prompt_turkish?: string;
   source_payload_json: string; // Dynamic based on exercise type
   validation_target_json: string; // Solution target
 }
@@ -94,7 +99,8 @@ export const SEED_READING_BLOCKS: ReadingBlock[] = ALL_UNIFIED_LESSONS
     layout_style: l.reading.layoutStyle,
     content_turkish: JSON.stringify(l.reading.content.map(c => ({ speaker: c.speaker, text: c.text }))),
     content_albanian: JSON.stringify(l.reading.content.map(c => ({ speaker: c.speaker, text: c.translation }))),
-    audio_asset_stub: l.reading.audioAssetStub
+    audio_asset_stub: l.reading.audioAssetStub,
+    topic: l.reading.topic
   }));
 
 export const SEED_READING_QUESTIONS: ReadingQuestion[] = ALL_UNIFIED_LESSONS.flatMap(l => 
@@ -141,6 +147,7 @@ export const SEED_VOCABULARY: Vocabulary[] = ALL_UNIFIED_LESSONS.flatMap(l =>
     category: v.category,
     is_shared_balkan_word: v.isSharedBalkanWord ? 1 : 0,
     notes_albanian: v.notesAlbanian,
+    notes_turkish: v.notesTurkish || null,
     audio_asset_stub: v.audioAssetStub,
     stem_breakdown: v.stemBreakdown
   }))
@@ -152,8 +159,10 @@ export const SEED_GRAMMAR_CARDS: GrammarCard[] = ALL_UNIFIED_LESSONS.flatMap(l =
     chapter_id: l.id,
     step_order: index + 1,
     title_albanian: g.titleAlbanian,
+    title_turkish: g.titleTurkish || undefined,
     rule_concept_turkish: g.ruleConceptTurkish,
     explanation_albanian: g.explanationAlbanian,
+    explanation_turkish: g.explanationTurkish || undefined,
     interactive_example_json: g.interactiveExample ? JSON.stringify(g.interactiveExample) : null
   }))
 );
@@ -164,6 +173,7 @@ export const SEED_EXERCISES: Exercise[] = ALL_UNIFIED_LESSONS.flatMap(l =>
     chapter_id: l.id,
     exercise_type: e.type,
     prompt_albanian: e.promptAlbanian,
+    prompt_turkish: e.promptTurkish || undefined,
     source_payload_json: JSON.stringify(e.payload),
     validation_target_json: JSON.stringify(e.validation)
   }))

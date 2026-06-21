@@ -6,7 +6,7 @@ interface ExerciseModuleProps {
 }
 
 export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) => {
-  const { exercises, markChapterCompleted, readingCompleted } = useLesson();
+  const { exercises, markChapterCompleted, readingCompleted, currentChapter } = useLesson();
   
   // States for exercises (keyed by exercise ID to prevent cross-card state contamination)
   const [multipleChoiceAnswers, setMultipleChoiceAnswers] = useState<Record<number, string>>({});
@@ -21,6 +21,9 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
 
   const [checkedExercises, setCheckedExercises] = useState<Record<number, boolean>>({});
   const [exerciseResults, setExerciseResults] = useState<Record<number, { correct: boolean; msg: string }>>({});
+  const [showTranslation, setShowTranslation] = useState<boolean>(false);
+
+  const isB2 = currentChapter?.level === 'B2';
 
   if (exercises.length === 0) return null;
 
@@ -34,7 +37,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
 
     const checkAnswer = () => {
       if (!currentAnswer) {
-        alert('Ju lutemi zgjidhni një opsion!');
+        alert(isB2 ? 'Lütfen bir şık seçiniz!' : 'Ju lutemi zgjidhni një opsion!');
         return;
       }
       const correct = currentAnswer === target.correct_answer;
@@ -44,8 +47,8 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
         [ex.id]: {
           correct,
           msg: correct 
-            ? (target.msg_success || 'E saktë!') 
-            : (target.msg_failure || 'E pasaktë.')
+            ? (target.msg_success || (isB2 ? 'Doğru!' : 'E saktë!')) 
+            : (target.msg_failure || (isB2 ? 'Yanlış.' : 'E pasaktë.'))
         }
       }));
     };
@@ -54,9 +57,14 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
       <div className="bg-neutral-50/50 md:bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-4 md:p-5 space-y-4 md:shadow-inner animate-fade-in">
         <div>
           <span className="text-[9px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-md uppercase tracking-wider shadow-xs">
-            Zgjedhje e Shumëfishtë (Çoktan Seçmeli)
+            {isB2 ? 'Çoktan Seçmeli' : 'Zgjedhje e Shumëfishtë (Çoktan Seçmeli)'}
           </span>
-          <p className="text-sm font-light text-[#565E64] mt-2">{ex.prompt_albanian}</p>
+          <p className="text-sm font-light text-[#565E64] mt-2">
+            {isB2 ? (ex.prompt_turkish || ex.prompt_albanian) : ex.prompt_albanian}
+          </p>
+          {isB2 && showTranslation && ex.prompt_turkish && (
+            <p className="text-xs text-neutral-450 italic mt-1">Shqip: {ex.prompt_albanian}</p>
+          )}
         </div>
 
         <div className="grid grid-cols-2 gap-3 max-w-md">
@@ -88,19 +96,24 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
             onClick={checkAnswer}
             className="px-4 py-2.5 bg-white border border-[#E9ECEF] text-[#1A1D20] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-xl text-xs font-bold transition cursor-pointer shadow-xs hover:shadow-xs"
           >
-            Kontrollo Përgjigjen
+            {isB2 ? 'Kontrol Et' : 'Kontrollo Përgjigjen'}
           </button>
         ) : (
           <div className="flex items-center gap-3 mt-2 flex-wrap">
             <p className={`text-xs font-semibold leading-relaxed ${result.correct ? 'text-[#3A5A40]' : 'text-[#c0392b]'}`}>
               {result.correct ? '✓ ' : '✗ '} {result.msg}
             </p>
+            {isB2 && showTranslation && (
+              <p className="text-xs text-neutral-450 font-light italic w-full">
+                Shqip: {result.correct ? (target.msg_success_albanian || 'E saktë!') : (target.msg_failure_albanian || 'E pasaktë.')}
+              </p>
+            )}
             {!result.correct && (
               <button
                 onClick={() => resetSingleExercise(ex.id, 'MULTIPLE_CHOICE')}
                 className="px-2.5 py-1 text-[10px] font-bold border border-rose-200 text-rose-700 bg-rose-50 hover:bg-rose-100 rounded-lg cursor-pointer transition flex items-center gap-1"
               >
-                Provo Përsëri 🔄
+                {isB2 ? 'Tekrar Dene 🔄' : 'Provo Përsëri 🔄'}
               </button>
             )}
           </div>
@@ -136,7 +149,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
 
     const checkAnswer = () => {
       if (currentSorted.length < target.correct_sequence.length) {
-        alert('Ju lutemi radhitni të gjitha fjalët përpara kontrollit!');
+        alert(isB2 ? 'Lütfen kontrol etmeden önce tüm kelimeleri sıralayınız!' : 'Ju lutemi radhitni të gjitha fjalët përpara kontrollit!');
         return;
       }
 
@@ -147,8 +160,8 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
         [ex.id]: {
           correct,
           msg: correct
-            ? (target.msg_success || "E saktë!")
-            : (target.msg_failure || "E pasaktë.")
+            ? (target.msg_success || (isB2 ? 'Doğru!' : 'E saktë!'))
+            : (target.msg_failure || (isB2 ? 'Yanlış.' : 'E pasaktë.'))
         }
       }));
     };
@@ -161,14 +174,21 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
       <div className="bg-neutral-50/50 md:bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-4 md:p-5 space-y-4 md:shadow-inner animate-fade-in">
         <div>
           <span className="text-[9px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-md uppercase tracking-wider shadow-xs">
-            Radhitja e Fjalëve (Cümle Kurma)
+            {isB2 ? 'Cümle Kurma' : 'Radhitja e Fjalëve (Cümle Kurma)'}
           </span>
-          <p className="text-sm font-light text-[#565E64] mt-2">{ex.prompt_albanian}</p>
+          <p className="text-sm font-light text-[#565E64] mt-2">
+            {isB2 ? (ex.prompt_turkish || ex.prompt_albanian) : ex.prompt_albanian}
+          </p>
+          {isB2 && showTranslation && ex.prompt_turkish && (
+            <p className="text-xs text-neutral-455 italic mt-1">Shqip: {ex.prompt_albanian}</p>
+          )}
         </div>
 
         <div className="bg-white border border-[#E9ECEF] rounded-xl p-4 min-h-[50px] flex items-center justify-start gap-2 flex-wrap shadow-xs">
           {currentSorted.length === 0 ? (
-            <span className="text-xs text-neutral-400 italic">Shtypni fjalët e mëposhtme për t'i vendosur këtu sipas radhës...</span>
+            <span className="text-xs text-neutral-400 italic">
+              {isB2 ? 'Aşağıdaki kelimelere tıklayarak sırasıyla buraya yerleştirin...' : 'Shtypni fjalët e mëposhtme për t\'i vendosur këtu sipas radhës...'}
+            </span>
           ) : (
             currentSorted.map(w => (
               <button
@@ -209,14 +229,14 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
               onClick={checkAnswer}
               className="px-4 py-2.5 bg-white border border-[#E9ECEF] text-[#1A1D20] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-xl text-xs font-bold transition cursor-pointer shadow-xs hover:shadow"
             >
-              Kontrollo Sintaksën
+              {isB2 ? 'Sözdizimini Kontrol Et' : 'Kontrollo Sintaksën'}
             </button>
             {currentSorted.length > 0 && (
               <button
                 onClick={resetSorting}
                 className="px-3 py-2 text-xs text-[#565E64] hover:text-[#1A1D20] bg-transparent border-0 cursor-pointer"
               >
-                Rivendos
+                {isB2 ? 'Sıfırla' : 'Rivendos'}
               </button>
             )}
           </div>
@@ -225,12 +245,17 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
             <p className={`text-xs font-semibold leading-relaxed ${result.correct ? 'text-[#3A5A40]' : 'text-[#c0392b]'}`}>
               {result.correct ? '✓ ' : '✗ '} {result.msg}
             </p>
+            {isB2 && showTranslation && (
+              <p className="text-xs text-neutral-450 font-light italic w-full">
+                Shqip: {result.correct ? (target.msg_success_albanian || 'E saktë!') : (target.msg_failure_albanian || 'E pasaktë.')}
+              </p>
+            )}
             {!result.correct && (
               <button
                 onClick={() => resetSingleExercise(ex.id, 'WORD_SORT')}
                 className="px-2.5 py-1 text-[10px] font-bold border border-rose-200 text-rose-700 bg-rose-50 hover:bg-rose-100 rounded-lg cursor-pointer transition flex items-center gap-1"
               >
-                Provo Përsëri 🔄
+                {isB2 ? 'Tekrar Dene 🔄' : 'Provo Përsëri 🔄'}
               </button>
             )}
           </div>
@@ -249,7 +274,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
 
     const checkAnswer = () => {
       if (!currentSuffix) {
-        alert('Ju lutemi zgjidhni një prapashtesë për ta bashkuar!');
+        alert(isB2 ? 'Lütfen birleştirmek için bir ek seçiniz!' : 'Ju lutemi zgjidhni një prapashtesë për ta bashkuar!');
         return;
       }
 
@@ -260,8 +285,8 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
         [ex.id]: {
           correct,
           msg: correct
-            ? (target.msg_success || "E saktë!")
-            : (target.msg_failure || "E pasaktë.")
+            ? (target.msg_success || (isB2 ? 'Doğru!' : 'E saktë!'))
+            : (target.msg_failure || (isB2 ? 'Yanlış.' : 'E pasaktë.'))
         }
       }));
     };
@@ -270,9 +295,14 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
       <div className="bg-neutral-50/50 md:bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-4 md:p-5 space-y-4 md:shadow-inner animate-fade-in">
         <div>
           <span className="text-[9px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-md uppercase tracking-wider shadow-xs">
-            Ndërtuesi i Prapashtesave (Ek Ekleme)
+            {isB2 ? 'Ek Ekleme' : 'Ndërtuesi i Prapashtesave (Ek Ekleme)'}
           </span>
-          <p className="text-sm font-light text-[#565E64] mt-2">{ex.prompt_albanian}</p>
+          <p className="text-sm font-light text-[#565E64] mt-2">
+            {isB2 ? (ex.prompt_turkish || ex.prompt_albanian) : ex.prompt_albanian}
+          </p>
+          {isB2 && showTranslation && ex.prompt_turkish && (
+            <p className="text-xs text-neutral-455 italic mt-1">Shqip: {ex.prompt_albanian}</p>
+          )}
         </div>
 
         <div className="bg-white border border-[#E9ECEF] rounded-2xl p-6 flex justify-center items-center shadow-xs">
@@ -335,7 +365,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
               onClick={checkAnswer}
               className="px-4 py-2.5 bg-white border border-[#E9ECEF] text-[#1A1D20] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-xl text-xs font-bold transition cursor-pointer shadow-xs hover:shadow"
             >
-              Bashko & Kontrollo
+              {isB2 ? 'Birleştir ve Kontrol Et' : 'Bashko & Kontrollo'}
             </button>
           </div>
         ) : (
@@ -343,12 +373,17 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
             <p className={`text-center text-xs font-semibold leading-relaxed ${result.correct ? 'text-[#3A5A40]' : 'text-[#c0392b]'}`}>
               {result.correct ? '✓ ' : '✗ '} {result.msg}
             </p>
+            {isB2 && showTranslation && (
+              <p className="text-xs text-neutral-450 font-light italic w-full text-center">
+                Shqip: {result.correct ? (target.msg_success_albanian || 'E saktë!') : (target.msg_failure_albanian || 'E pasaktë.')}
+              </p>
+            )}
             {!result.correct && (
               <button
                 onClick={() => resetSingleExercise(ex.id, 'SUFFIX_BUILDER')}
                 className="px-2.5 py-1 text-[10px] font-bold border border-rose-200 text-rose-700 bg-rose-50 hover:bg-rose-100 rounded-lg cursor-pointer transition flex items-center gap-1"
               >
-                Provo Përsëri 🔄
+                {isB2 ? 'Tekrar Dene 🔄' : 'Provo Përsëri 🔄'}
               </button>
             )}
           </div>
@@ -371,7 +406,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
 
     const checkAnswer = () => {
       if (!currentAnswer) {
-        alert('Ju lutemi zgjidhni një prapashtesë për të mbushur zbrazëtirën!');
+        alert(isB2 ? 'Lütfen boşluğu doldurmak için bir ek seçiniz!' : 'Ju lutemi zgjidhni një prapashtesë për të mbushur zbrazëtirën!');
         return;
       }
       const correct = currentAnswer === target.correct_answer;
@@ -381,8 +416,8 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
         [ex.id]: {
           correct,
           msg: correct 
-            ? (target.msg_success || 'E saktë!') 
-            : (target.msg_failure || 'E pasaktë.')
+            ? (target.msg_success || (isB2 ? 'Doğru!' : 'E saktë!')) 
+            : (target.msg_failure || (isB2 ? 'Yanlış.' : 'E pasaktë.'))
         }
       }));
     };
@@ -391,9 +426,14 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
       <div className="bg-neutral-50/50 md:bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-4 md:p-5 space-y-4 md:shadow-inner animate-fade-in">
         <div>
           <span className="text-[9px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-md uppercase tracking-wider shadow-xs">
-            Mbushja e Zbrazëtirave (Boşluk Doldurma)
+            {isB2 ? 'Boşluk Doldurma' : 'Mbushja e Zbrazëtirave (Boşluk Doldurma)'}
           </span>
-          <p className="text-sm font-light text-[#565E64] mt-2">{ex.prompt_albanian}</p>
+          <p className="text-sm font-light text-[#565E64] mt-2">
+            {isB2 ? (ex.prompt_turkish || ex.prompt_albanian) : ex.prompt_albanian}
+          </p>
+          {isB2 && showTranslation && ex.prompt_turkish && (
+            <p className="text-xs text-neutral-455 italic mt-1">Shqip: {ex.prompt_albanian}</p>
+          )}
         </div>
 
         <div className="bg-white border border-[#E9ECEF] rounded-2xl p-4 text-center shadow-xs">
@@ -438,7 +478,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
               onClick={checkAnswer}
               className="px-4 py-2.5 bg-white border border-[#E9ECEF] text-[#1A1D20] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-xl text-xs font-bold transition cursor-pointer shadow-xs hover:shadow"
             >
-              Kontrollo Fjalinë
+              {isB2 ? 'Cümleyi Kontrol Et' : 'Kontrollo Fjalinë'}
             </button>
           </div>
         ) : (
@@ -446,12 +486,17 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
             <p className={`text-center text-xs font-semibold leading-relaxed ${result.correct ? 'text-[#3A5A40]' : 'text-[#c0392b]'}`}>
               {result.correct ? '✓ ' : '✗ '} {result.msg}
             </p>
+            {isB2 && showTranslation && (
+              <p className="text-xs text-neutral-450 font-light italic w-full text-center">
+                Shqip: {result.correct ? (target.msg_success_albanian || 'E saktë!') : (target.msg_failure_albanian || 'E pasaktë.')}
+              </p>
+            )}
             {!result.correct && (
               <button
                 onClick={() => resetSingleExercise(ex.id, 'CLOZE')}
                 className="px-2.5 py-1 text-[10px] font-bold border border-rose-200 text-rose-700 bg-rose-50 hover:bg-rose-100 rounded-lg cursor-pointer transition flex items-center gap-1"
               >
-                Provo Përsëri 🔄
+                {isB2 ? 'Tekrar Dene 🔄' : 'Provo Përsëri 🔄'}
               </button>
             )}
           </div>
@@ -460,7 +505,6 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
     );
   };
 
-  // Render Exercise Type E: Error Correction (B2 Click-to-find-error)
   const renderErrorCorrection = (ex: any) => {
     const payload = JSON.parse(ex.source_payload_json);
     const target = JSON.parse(ex.validation_target_json);
@@ -474,11 +518,11 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
 
     const checkAnswer = () => {
       if (!selectedWord) {
-        alert('Ju lutemi shtypni mbi fjalën e pasaktë në fjali!');
+        alert(isB2 ? 'Lütfen cümledeki yanlış kelimeye tıklayınız!' : 'Ju lutemi shtypni mbi fjalën e pasaktë në fjali!');
         return;
       }
       if (!currentCorrection) {
-        alert('Ju lutemi zgjidhni korrigjimin e saktë më poshtë!');
+        alert(isB2 ? 'Lütfen aşağıdaki doğru düzeltmeyi seçiniz!' : 'Ju lutemi zgjidhni korrigjimin e saktë më poshtë!');
         return;
       }
 
@@ -491,8 +535,8 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
         [ex.id]: {
           correct,
           msg: correct 
-            ? (target.msg_success || 'E saktë!') 
-            : (target.msg_failure || 'E pasaktë.')
+            ? (target.msg_success || (isB2 ? 'Doğru!' : 'E saktë!')) 
+            : (target.msg_failure || (isB2 ? 'Yanlış.' : 'E pasaktë.'))
         }
       }));
     };
@@ -501,9 +545,14 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
       <div className="bg-neutral-50/50 md:bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-4 md:p-5 space-y-4 md:shadow-inner animate-fade-in">
         <div>
           <span className="text-[9px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-md uppercase tracking-wider shadow-xs">
-            Gjetja dhe Korrigjimi i Gabimeve (Hata Düzeltme)
+            {isB2 ? 'Hata Düzeltme' : 'Gjetja dhe Korrigjimi i Gabimeve (Hata Düzeltme)'}
           </span>
-          <p className="text-sm font-light text-[#565E64] mt-2">{ex.prompt_albanian}</p>
+          <p className="text-sm font-light text-[#565E64] mt-2">
+            {isB2 ? (ex.prompt_turkish || ex.prompt_albanian) : ex.prompt_albanian}
+          </p>
+          {isB2 && showTranslation && ex.prompt_turkish && (
+            <p className="text-xs text-neutral-455 italic mt-1">Shqip: {ex.prompt_albanian}</p>
+          )}
         </div>
 
         {/* Word clicking container */}
@@ -540,8 +589,10 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
         {/* Correction options */}
         {selectedWord && (
           <div className="p-4 bg-white border border-[#E9ECEF] rounded-xl text-center space-y-3 animate-fade-in">
-            <p className="text-xs text-neutral-500">
-              Keni përzgjedhur fjalën <span className="font-bold text-amber-700">"{selectedWord}"</span>. Si duhet të korrigjohet ajo?
+            <p className="text-xs text-neutral-505">
+              {isB2 
+                ? (<span><span className="font-bold text-amber-700">"{selectedWord}"</span> kelimesini seçtiniz. Bu kelime nasıl düzeltilmelidir?</span>)
+                : (<span>Keni përzgjedhur fjalën <span className="font-bold text-amber-700">"{selectedWord}"</span>. Si duhet të korrigjohet ajo?</span>)}
             </p>
             <div className="flex flex-wrap gap-2 justify-center">
               {payload.options.map((opt: string) => {
@@ -574,7 +625,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
               onClick={checkAnswer}
               className="px-4 py-2.5 bg-white border border-[#E9ECEF] text-[#1A1D20] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-xl text-xs font-bold transition cursor-pointer shadow-xs hover:shadow"
             >
-              Korrigjo Gabimin
+              {isB2 ? 'Hatayı Düzelt' : 'Korrigjo Gabimin'}
             </button>
           </div>
         ) : (
@@ -582,12 +633,17 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
             <p className={`text-center text-xs font-semibold leading-relaxed ${result.correct ? 'text-[#3A5A40]' : 'text-[#c0392b]'}`}>
               {result.correct ? '✓ ' : '✗ '} {result.msg}
             </p>
+            {isB2 && showTranslation && (
+              <p className="text-xs text-neutral-450 font-light italic w-full text-center">
+                Shqip: {result.correct ? (target.msg_success_albanian || 'E saktë!') : (target.msg_failure_albanian || 'E pasaktë.')}
+              </p>
+            )}
             {!result.correct && (
               <button
                 onClick={() => resetSingleExercise(ex.id, 'ERROR_CORRECTION')}
                 className="px-2.5 py-1 text-[10px] font-bold border border-rose-200 text-rose-700 bg-rose-50 hover:bg-rose-100 rounded-lg cursor-pointer transition flex items-center gap-1"
               >
-                Provo Përsëri 🔄
+                {isB2 ? 'Tekrar Dene 🔄' : 'Provo Përsëri 🔄'}
               </button>
             )}
           </div>
@@ -606,7 +662,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
 
     const checkAnswer = () => {
       if (!currentAnswer) {
-        alert('Ju lutemi zgjidhni një lidhëz turke për të kryer çiftimin!');
+        alert(isB2 ? 'Lütfen eşleştirmek için bir kelime/bağlaç seçiniz!' : 'Ju lutemi zgjidhni një lidhëz turke për të kryer çiftimin!');
         return;
       }
       const correct = currentAnswer === target.correct_answer;
@@ -616,8 +672,8 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
         [ex.id]: {
           correct,
           msg: correct 
-            ? (target.msg_success || 'E saktë!') 
-            : (target.msg_failure || 'E pasaktë.')
+            ? (target.msg_success || (isB2 ? 'Doğru!' : 'E saktë!')) 
+            : (target.msg_failure || (isB2 ? 'Yanlış.' : 'E pasaktë.'))
         }
       }));
     };
@@ -626,9 +682,14 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
       <div className="bg-neutral-50/50 md:bg-neutral-50 border border-[#E9ECEF] rounded-2xl p-4 md:p-5 space-y-4 md:shadow-inner animate-fade-in">
         <div>
           <span className="text-[9px] font-bold text-[#3A5A40] bg-white border border-[#E9ECEF] px-2 py-0.5 rounded-md uppercase tracking-wider shadow-xs">
-            Përputhja e Lidhëzave (Bağlaç Eşleştirme)
+            {isB2 ? 'Bağlaç Eşleştirme' : 'Përputhja e Lidhëzave (Bağlaç Eşleştirme)'}
           </span>
-          <p className="text-sm font-light text-[#565E64] mt-2">{ex.prompt_albanian}</p>
+          <p className="text-sm font-light text-[#565E64] mt-2">
+            {isB2 ? (ex.prompt_turkish || ex.prompt_albanian) : ex.prompt_albanian}
+          </p>
+          {isB2 && showTranslation && ex.prompt_turkish && (
+            <p className="text-xs text-neutral-455 italic mt-1">Shqip: {ex.prompt_albanian}</p>
+          )}
         </div>
 
         <div className="grid grid-cols-3 gap-3 max-w-md mx-auto">
@@ -661,7 +722,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
               onClick={checkAnswer}
               className="px-4 py-2.5 bg-white border border-[#E9ECEF] text-[#1A1D20] hover:border-[#3A5A40] hover:text-[#3A5A40] rounded-xl text-xs font-bold transition cursor-pointer shadow-xs hover:shadow"
             >
-              Çifto Lidhëzën
+              {isB2 ? 'Bağlacı Eşleştir' : 'Çifto Lidhëzën'}
             </button>
           </div>
         ) : (
@@ -669,12 +730,17 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
             <p className={`text-center text-xs font-semibold leading-relaxed ${result.correct ? 'text-[#3A5A40]' : 'text-[#c0392b]'}`}>
               {result.correct ? '✓ ' : '✗ '} {result.msg}
             </p>
+            {isB2 && showTranslation && (
+              <p className="text-xs text-neutral-450 font-light italic w-full text-center">
+                Shqip: {result.correct ? (target.msg_success_albanian || 'E saktë!') : (target.msg_failure_albanian || 'E pasaktë.')}
+              </p>
+            )}
             {!result.correct && (
               <button
                 onClick={() => resetSingleExercise(ex.id, 'CONNECTOR_MATCHING')}
                 className="px-2.5 py-1 text-[10px] font-bold border border-rose-200 text-rose-700 bg-rose-50 hover:bg-rose-100 rounded-lg cursor-pointer transition flex items-center gap-1"
               >
-                Provo Përsëri 🔄
+                {isB2 ? 'Tekrar Dene 🔄' : 'Provo Përsëri 🔄'}
               </button>
             )}
           </div>
@@ -686,7 +752,9 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
   const handleFinishLesson = () => {
     // Check if at least one exercise checked
     if (Object.keys(checkedExercises).length === 0) {
-      alert('Ju lutemi provoni së paku njërën nga ushtrimet përpara se të kryeni kapitullin!');
+      alert(isB2 
+        ? 'Bölümü bitirmeden önce lütfen en az bir egzersizi yapmayı deneyin!' 
+        : 'Ju lutemi provoni së paku njërën nga ushtrimet përpara se të kryeni kapitullin!');
       return;
     }
     
@@ -775,40 +843,113 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
   return (
     <div className="glass-panel md:rounded-2xl p-0 md:p-8 bg-transparent md:bg-white border-none md:border md:border-[#E9ECEF] space-y-8 shadow-none md:shadow-sm">
       
-      <div className="mb-6 pb-4 border-b border-[#E9ECEF]">
-        <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-widest">Sekuenca 5</span>
-        <h2 className="text-xl font-black text-[#1A1D20] uppercase font-sans">Ushtrime Interaktive (Pratik Egzersizler)</h2>
-        <p className="text-xs text-[#565E64] font-light mt-1">
-          {exercises[0]?.exercise_type === 'CLOZE' || exercises[0]?.exercise_type === 'ERROR_CORRECTION'
-            ? 'Testoni njohuritë tuaja praktike mbi foljet vetvetore, reciproke dhe lidhëzat shtuese.'
-            : 'Testoni njohuritë tuaja praktike përmes ushtrimeve tona interaktive.'}
-        </p>
+      <div className="mb-6 pb-4 border-b border-[#E9ECEF] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div>
+          <span className="text-[10px] font-bold text-[#3A5A40] uppercase tracking-widest">
+            {isB2 ? '5. Bölüm' : 'Sekuenca 5'}
+          </span>
+          <h2 className="text-xl font-black text-[#1A1D20] uppercase font-sans">
+            {isB2 ? 'Uygulamalı Egzersizler' : 'Ushtrime Interaktive (Pratik Egzersizler)'}
+          </h2>
+          <p className="text-xs text-[#565E64] font-light mt-1">
+            {isB2 
+              ? 'Dönüşlülük, edilgenlik, işteşlik ve ek kelimelerle ilgili bilgilerinizi pratik egzersizlerle test edin.'
+              : (exercises[0]?.exercise_type === 'CLOZE' || exercises[0]?.exercise_type === 'ERROR_CORRECTION'
+                ? 'Testoni njohuritë tuaja praktike mbi foljet vetvetore, reciproke dhe lidhëzat shtuese.'
+                : 'Testoni njohuritë tuaja praktike përmes ushtrimeve tona interaktive.')}
+          </p>
+        </div>
+        {isB2 && (
+          <button
+            onClick={() => setShowTranslation(!showTranslation)}
+            className={`px-3 py-1.5 rounded-xl border text-xs font-bold transition duration-200 cursor-pointer shadow-xs whitespace-nowrap ${
+              showTranslation
+                ? 'bg-[#3A5A40] text-white border-[#3A5A40]'
+                : 'bg-white border-[#E9ECEF] text-[#565E64] hover:bg-neutral-50'
+            }`}
+          >
+            {showTranslation ? 'Çeviriyi Gizle' : 'Arnavutça Çeviri'}
+          </button>
+        )}
       </div>
 
-      <div className="space-y-8">
-        {exercises.map(ex => {
-          if (ex.exercise_type === 'MULTIPLE_CHOICE') return <div key={ex.id}>{renderMultipleChoice(ex)}</div>;
-          if (ex.exercise_type === 'WORD_SORT') return <div key={ex.id}>{renderWordSorting(ex)}</div>;
-          if (ex.exercise_type === 'SUFFIX_BUILDER') return <div key={ex.id}>{renderAgglutinationBuilder(ex)}</div>;
-          if (ex.exercise_type === 'CLOZE') return <div key={ex.id}>{renderCloze(ex)}</div>;
-          if (ex.exercise_type === 'ERROR_CORRECTION') return <div key={ex.id}>{renderErrorCorrection(ex)}</div>;
-          if (ex.exercise_type === 'CONNECTOR_MATCHING') return <div key={ex.id}>{renderConnectorMatching(ex)}</div>;
-          return null;
-        })}
-      </div>
+      {isB2 ? (
+        <div className="space-y-12">
+          {/* Egzersiz 1: Boşluk Doldurma */}
+          <div className="space-y-6">
+            <div className="border-b border-[#E9ECEF] pb-2">
+              <h3 className="text-lg font-bold text-[#3A5A40]">Egzersiz 1: Boşluk Doldurma</h3>
+              <p className="text-xs text-[#565E64] font-light mt-1">Cümlelerdeki boşlukları uygun dönüşlülük, edilgenlik veya işteşlik ekleriyle doldurunuz.</p>
+            </div>
+            <div className="space-y-6">
+              {exercises
+                .filter(ex => ex.exercise_type === 'CLOZE')
+                .map(ex => (
+                  <div key={ex.id}>{renderCloze(ex)}</div>
+                ))}
+            </div>
+          </div>
+
+          {/* Egzersiz 2: Hata Düzeltme */}
+          <div className="space-y-6">
+            <div className="border-b border-[#E9ECEF] pb-2">
+              <h3 className="text-lg font-bold text-[#3A5A40]">Egzersiz 2: Hata Düzeltme</h3>
+              <p className="text-xs text-[#565E64] font-light mt-1">Cümledeki dil bilgisi veya yazım hatasını bularak düzeltiniz.</p>
+            </div>
+            <div className="space-y-6">
+              {exercises
+                .filter(ex => ex.exercise_type === 'ERROR_CORRECTION')
+                .map(ex => (
+                  <div key={ex.id}>{renderErrorCorrection(ex)}</div>
+                ))}
+            </div>
+          </div>
+
+          {/* Egzersiz 3: Bağlaç Eşleştirme */}
+          <div className="space-y-6">
+            <div className="border-b border-[#E9ECEF] pb-2">
+              <h3 className="text-lg font-bold text-[#3A5A40]">Egzersiz 3: Bağlaç ve Kelime Eşleştirme</h3>
+              <p className="text-xs text-[#565E64] font-light mt-1">Verilen Türkçe bağlaçları veya kelimeleri anlamlarıyla eşleştiriniz.</p>
+            </div>
+            <div className="space-y-6">
+              {exercises
+                .filter(ex => ex.exercise_type === 'CONNECTOR_MATCHING')
+                .map(ex => (
+                  <div key={ex.id}>{renderConnectorMatching(ex)}</div>
+                ))}
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="space-y-8">
+          {exercises.map(ex => {
+            if (ex.exercise_type === 'MULTIPLE_CHOICE') return <div key={ex.id}>{renderMultipleChoice(ex)}</div>;
+            if (ex.exercise_type === 'WORD_SORT') return <div key={ex.id}>{renderWordSorting(ex)}</div>;
+            if (ex.exercise_type === 'SUFFIX_BUILDER') return <div key={ex.id}>{renderAgglutinationBuilder(ex)}</div>;
+            if (ex.exercise_type === 'CLOZE') return <div key={ex.id}>{renderCloze(ex)}</div>;
+            if (ex.exercise_type === 'ERROR_CORRECTION') return <div key={ex.id}>{renderErrorCorrection(ex)}</div>;
+            if (ex.exercise_type === 'CONNECTOR_MATCHING') return <div key={ex.id}>{renderConnectorMatching(ex)}</div>;
+            return null;
+          })}
+        </div>
+      )}
 
       {allChecked && (
-        <div className="bg-[#3A5A40]/10 border border-[#3A5A40]/30 rounded-2xl p-5 text-center space-y-3 animate-fade-in">
+        <div className="bg-[#3A5A40]/10 border border-[#3A5A40]/30 rounded-2xl p-5 text-center space-y-3 animate-fade-in" id="chapter-completion-card">
           <span className="text-3xl block">🏆</span>
-          <h3 className="text-sm font-bold text-[#3A5A40] uppercase tracking-wide">Rezultati i Ushtrimeve</h3>
+          <h3 className="text-sm font-bold text-[#3A5A40] uppercase tracking-wide">
+            {isB2 ? 'Egzersiz Sonuçları' : 'Rezultati i Ushtrimeve'}
+          </h3>
           <p className="text-xs text-[#565E64] font-light">
-            Keni përfunduar të gjitha ushtrimet e kapitullit! Rezultati juaj: <span className="font-bold font-technical text-base text-[#3A5A40]">{correctCount} / {exercises.length}</span> të sakta.
+            {isB2 
+              ? (<span>Bölümdeki tüm egzersizleri tamamladınız! Sonucunuz: <span className="font-bold font-technical text-base text-[#3A5A40]">{correctCount} / {exercises.length}</span> doğru.</span>)
+              : (<span>Keni përfunduar të gjitha ushtrimet e kapitullit! Rezultati juaj: <span className="font-bold font-technical text-base text-[#3A5A40]">{correctCount} / {exercises.length}</span> të sakta.</span>)}
           </p>
           <button
             onClick={resetAllExercises}
             className="px-4 py-2.5 bg-white border border-[#3A5A40] text-[#3A5A40] font-bold rounded-xl text-xs hover:bg-[#3A5A40] hover:text-white transition cursor-pointer shadow-xs"
           >
-            Provo Përsëri 🔄
+            {isB2 ? 'Tekrar Dene 🔄' : 'Provo Përsëri 🔄'}
           </button>
         </div>
       )}
@@ -817,7 +958,7 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
         <div>
           {readingCompleted && (
             <div className="text-xs text-[#3A5A40] bg-[#3A5A40]/10 border border-[#3A5A40]/30 px-4 py-2.5 rounded-xl font-bold uppercase tracking-wider flex items-center gap-1.5 select-none">
-              <span>✓</span> Ky kapitull u përfundua!
+              <span>✓</span> {isB2 ? 'Bu bölüm tamamlandı!' : 'Ky kapitull u përfundua!'}
             </div>
           )}
         </div>
@@ -825,7 +966,9 @@ export const ExerciseModule: React.FC<ExerciseModuleProps> = ({ onComplete }) =>
           onClick={handleFinishLesson}
           className="px-6 py-3.5 bg-[#3A5A40] hover:bg-[#2A3F2E] text-white font-bold rounded-xl text-xs uppercase tracking-widest transition cursor-pointer select-none active-cta shadow-md"
         >
-          {readingCompleted ? 'Kryej Kapitullin Përsëri 🏆' : 'Kryej Kapitullin 🏆'}
+          {readingCompleted 
+            ? (isB2 ? 'Bölümü Tekrar Tamamla 🏆' : 'Kryej Kapitullin Përsëri 🏆') 
+            : (isB2 ? 'Bölümü Tamamla 🏆' : 'Kryej Kapitullin 🏆')}
         </button>
       </div>
     </div>
