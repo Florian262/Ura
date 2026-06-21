@@ -66,7 +66,7 @@ npm run test
 
 ---
 
-## 🗺️ Curriculum Roadmap (Levels A1 & A2)
+## 🗺️ Curriculum Roadmap (Levels A1–B2)
 
 ### 🟢 Level A1: Foundations
 * **Chapter 1**: Prezantimi & Origjina (Introduction & Origin suffix `-lı/yim`)
@@ -87,6 +87,27 @@ npm run test
 * **Chapter 6**: Krahasimi & Rasa Rrjedhore (Comparison using `daha` and Ablative `-dan/-den`)
 * **Chapter 7**: Koha e Shkuar e Vazhdueshme (Past Continuous `-iyordu`)
 * **Chapter 8**: Lidhëzat & Zarf-Foljet e Thjeshta (Connectors `çünkü / bu yüzden` & Adverbial `-ip`)
+
+### 🟡 Level B1: Upper-Intermediate Transition
+* **Chapter 1**: Haberin Var Mı? / A ke ndonjë lajm? (Past Continuous `-iyordu` & Adverbial `-ken`)
+* **Chapter 2**: Yorumlar ve Görüşler / Komente dhe opinione (Reciprocal Verbs `-(I)ş`)
+* **Chapter 3**: Eğitim / Edukimi & Arsimi (Conditional Mood `-se/-sa` & Past Conditional `-seydi`)
+* **Chapter 4**: Gelin Tanış Olalım / Ejani të njihemi (Obligation `-malı`, Causatives, & Adverbial `-diğinden beri`)
+* **Chapter 5**: Engelleri Kaldıralım / Të heqim pengesat (Reflexive Verbs `-(I)n`, Pronoun `kendi`, & `-mek zorunda`)
+* **Chapter 6**: Kurgu / Fiksioni / Trillimi (Passive Voice `-il/-in` & Journalism 5W1H)
+* **Chapter 7**: Kutlama / Festimet (Relative Participles `-an`, `-dık`, & `-acak`)
+* **Chapter 8**: Ömür Dediğin / Kjo që quhet jetë (B1 grammar synthesis & verb voice summary)
+
+### 🟠 Level B2: Advanced Competency
+* **Chapter 1**: Seyahat ve Keşif / Udhëtimi dhe Zbulimi (Reflexive/Reciprocal review & Addition Connectors)
+* **Chapter 2**: Çevre ve Sürdürülebilirlik / Mjedisi dhe Zhvillimi i Qëndrueshëm (Nominalization `-dik` & Case Inflexions)
+* **Chapter 3**: Teknoloji ve Gelecek / Teknologjia dhe e Ardhmja (Nominalization `-me/-mek` & Cause-Result Connectors)
+* **Chapter 4**: Duygusal Zekâ / Inteligjenca Emocionale (Nominalization `-ecek` & Contrast Connectors)
+* **Chapter 5**: Edebiyat ve Kısa Hikaye / Letërsia dhe Tregimi i Shkurtër (Grammatical Participles & Exemplification Connectors)
+* **Chapter 6**: Toplum ve Göç / Shoqëria dhe Migrimi (Unreal Past Conditional `-seydi` & Focus/Emphasis Connectors)
+* **Chapter 7**: İş Dünyası ve Ekonomi / Bota e Biznesit dhe Ekonomia (Indirect Reported Speech & Comparative Connectors)
+* **Chapter 8**: Tarih ve Biyografi / Historia dhe Biografia (Pluperfect `-mişti`, Narrative Past `-iyormuş`, & Summary Connectors)
+* **Chapter 9**: Sanat ve Kültür / Arti dhe Kultura (Chain Noun Compounds, Advanced Aorist, & Contrast Connectors)
 
 ---
 
