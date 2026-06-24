@@ -9,7 +9,11 @@ export const SettingsPage: React.FC = () => {
     toggleTheme,
     fontSize,
     setFontSize,
-    resetAllData
+    resetAllData,
+    isInstallable,
+    isIOS,
+    isStandalone,
+    installApp
   } = useLesson();
 
   // Local state for profile editor
@@ -177,6 +181,57 @@ export const SettingsPage: React.FC = () => {
                   Ndrysho 🌗
                 </button>
               </div>
+            </div>
+
+            {/* PWA Caching & Install Card */}
+            <div className="glass-panel p-6 space-y-4 border border-neutral-200/60 dark:border-neutral-800">
+              <h3 className="text-sm font-black text-neutral-800 dark:text-neutral-100 uppercase tracking-wide flex items-center gap-2">
+                <span>📲</span> Instalo Aplikacionin
+              </h3>
+              <p className="text-[11px] text-neutral-500 dark:text-neutral-400 font-light leading-relaxed">
+                Ndryshojeni portalin në një aplikacion të plotë celular ose desktop që funksionon 100% pa internet.
+              </p>
+
+              {isStandalone ? (
+                <div className="p-3 bg-emerald-500/10 dark:bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 dark:text-emerald-450 rounded-xl text-xs font-bold flex items-center gap-2">
+                  <span>✓</span> Aplikacioni është i instaluar dhe po ekzekutohet në pajisjen tuaj.
+                </div>
+              ) : isInstallable ? (
+                <div className="flex justify-between items-center bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-3 rounded-2xl">
+                  <div className="text-left">
+                    <span className="text-xs font-bold text-neutral-800 dark:text-neutral-200 block">
+                      Gati për Instalimi
+                    </span>
+                    <span className="text-[9px] text-neutral-500 font-light block">
+                      Instaloni menjëherë në ekranin tuaj fillestar.
+                    </span>
+                  </div>
+                  <button
+                    onClick={installApp}
+                    className="px-4 py-2 bg-[#3A5A40] text-white hover:bg-[#2D4A36] rounded-xl text-xs font-bold transition cursor-pointer select-none shadow-xs animate-pulse"
+                  >
+                    Instalo
+                  </button>
+                </div>
+              ) : isIOS ? (
+                <div className="p-4 bg-amber-500/5 dark:bg-amber-500/5 border border-amber-500/15 text-neutral-700 dark:text-neutral-300 rounded-xl text-[11px] leading-relaxed space-y-2">
+                  <span className="font-bold text-amber-700 dark:text-amber-450 block uppercase tracking-wide">
+                    Udhëzime për iOS (Safari)
+                  </span>
+                  <p>
+                    Për të instaluar aplikacionin në iPhone ose iPad tuaj:
+                  </p>
+                  <ol className="list-decimal pl-4 space-y-1 font-light">
+                    <li>Shtypni butonin <strong>"Shpërndaj" (Share)</strong> <span className="inline-block px-1 bg-neutral-100 dark:bg-neutral-800 rounded">⎙</span> në fund të Safari.</li>
+                    <li>Rrotulloni poshtë dhe zgjidhni <strong>"Shto në ekranin fillestar" (Add to Home Screen)</strong>.</li>
+                    <li>Shtypni <strong>"Shto" (Add)</strong> në cepin e djathtë lart.</li>
+                  </ol>
+                </div>
+              ) : (
+                <div className="p-3 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-500 dark:text-neutral-400 rounded-xl text-[10px] italic">
+                  Shënim: Aplikacioni tashmë mund të jetë i instaluar, ose shfletuesi juaj aktual nuk mbështet instalimin e drejtpërdrejtë të PWA. Sigurohuni që po përdorni Chrome, Edge ose Safari.
+                </div>
+              )}
             </div>
 
           </div>

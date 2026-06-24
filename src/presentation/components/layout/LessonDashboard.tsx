@@ -29,13 +29,18 @@ export const LessonDashboard: React.FC = () => {
     sessionSeconds,
     lifetimeSeconds,
     isSessionRunning,
-    progressMap
+    progressMap,
+    streakCount
   } = useLesson();
   
   const [isTimerExpanded, setIsTimerExpanded] = useState<boolean>(false);
+  const [isProgressExpanded, setIsProgressExpanded] = useState<boolean>(false);
+  const [isStreakExpanded, setIsStreakExpanded] = useState<boolean>(false);
   
-  // Ref for the Timer card to handle click outside
+  // Refs for cards to handle click outside
   const timerCardRef = useRef<HTMLDivElement | null>(null);
+  const progressCardRef = useRef<HTMLDivElement | null>(null);
+  const streakCardRef = useRef<HTMLDivElement | null>(null);
   
   // Static state to freeze the display when the card is collapsed/closed
   const [staticSessionSeconds, setStaticSessionSeconds] = useState<number>(sessionSeconds);
@@ -75,6 +80,40 @@ export const LessonDashboard: React.FC = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isTimerExpanded]);
+
+  // Click outside listener for the progress card
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (progressCardRef.current && !progressCardRef.current.contains(event.target as Node)) {
+        setIsProgressExpanded(false);
+      }
+    };
+
+    if (isProgressExpanded) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isProgressExpanded]);
+
+  // Click outside listener for the streak card
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (streakCardRef.current && !streakCardRef.current.contains(event.target as Node)) {
+        setIsStreakExpanded(false);
+      }
+    };
+
+    if (isStreakExpanded) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isStreakExpanded]);
 
   useEffect(() => {
     const shouldScrollToB2 = localStorage.getItem('ura_scroll_to_b2') === 'true';
@@ -171,19 +210,7 @@ export const LessonDashboard: React.FC = () => {
     return { completed: completedCount, total: chapterList.length, percentage };
   };
 
-  // Determine active incomplete level
-  const getActiveLevelKey = () => {
-    const keys = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
-    for (const key of keys) {
-      const { percentage, total } = getLevelProgress(key);
-      if (percentage < 100 && total > 0) {
-        return key;
-      }
-    }
-    return 'A1'; // Default fallback
-  };
 
-  const activeLevelKey = getActiveLevelKey();
   
   // State for active expanded accordion card
 
@@ -487,7 +514,7 @@ export const LessonDashboard: React.FC = () => {
                 <svg className="w-3.5 h-3.5 text-amber-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
                 </svg>
-                <span className="text-[9px] font-bold text-amber-600 dark:text-amber-400 font-mono">1 ditë</span>
+                <span className="text-[9px] font-bold text-amber-600 dark:text-amber-400 font-mono">{streakCount === 1 ? '1 ditë' : `${streakCount} ditë`}</span>
               </div>
             </div>
             {userName && (
@@ -547,20 +574,59 @@ export const LessonDashboard: React.FC = () => {
 
           {/* Frosted Stats Pedestal Row */}
           <div className="grid grid-cols-3 gap-4 mt-6 items-start">
-            <div className="glass-panel p-4 flex flex-col justify-between select-none relative overflow-hidden bg-white/40 dark:bg-neutral-900/40 stat-card-anim">
-              <div className="flex items-center gap-2 mb-2">
-                <svg className="w-4 h-4 text-[var(--color-brand-accent)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10" />
-                  <polyline points="12 6 12 12 16 14" />
-                </svg>
-                <span className="text-[9px] font-bold text-[var(--color-text-secondary)] uppercase tracking-wider">Mësimi</span>
+            <div 
+              ref={progressCardRef}
+              onClick={() => setIsProgressExpanded(!isProgressExpanded)}
+              className={`glass-panel p-4 flex flex-col justify-between select-none relative overflow-hidden bg-white/40 dark:bg-neutral-900/40 stat-card-anim cursor-pointer transition-all duration-300 ${
+                isProgressExpanded ? 'ring-2 ring-[var(--color-brand-accent)] border-[var(--color-brand-accent)] shadow-md scale-[1.01]' : 'hover:shadow-md'
+              }`}
+            >
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <svg className="w-4 h-4 text-[var(--color-brand-accent)] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="m9 12 2 2 4-4" />
+                  </svg>
+                  <span className="text-[9px] font-bold text-[var(--color-text-secondary)] uppercase tracking-wider">Mësimi</span>
+                </div>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-xl font-extrabold text-[var(--color-text-primary)]">{stats.completionPercentage}%</span>
+                </div>
+                <p className="text-[9px] text-[var(--color-text-secondary)] font-light mt-1">
+                  {stats.completedChapters}/{chapters.length} kapituj kryer (detaje)
+                </p>
               </div>
-              <div className="flex items-baseline gap-1">
-                <span className="text-xl font-extrabold text-[var(--color-text-primary)]">{stats.completionPercentage}%</span>
-              </div>
-              <p className="text-[9px] text-[var(--color-text-secondary)] font-light mt-1">
-                {stats.completedChapters}/{chapters.length} kapituj kryer
-              </p>
+
+              {isProgressExpanded && (
+                <div 
+                  className="mt-4 pt-4 border-t border-[#DDE1E5] dark:border-neutral-800 space-y-3 text-left cursor-default animate-fade-in"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <span className="text-[8px] font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-widest block font-mono">
+                    Nivelet e Kompletuara
+                  </span>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
+                    {['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map(lvl => {
+                      const { total, percentage } = getLevelProgress(lvl);
+                      if (total === 0) return null;
+                      return (
+                        <div key={lvl} className="space-y-0.5">
+                          <div className="flex justify-between items-center text-[9px] font-bold">
+                            <span className="text-neutral-700 dark:text-neutral-300">Niveli {lvl}</span>
+                            <span className="text-neutral-500 font-mono">{percentage}%</span>
+                          </div>
+                          <div className="w-full bg-neutral-200/50 dark:bg-stone-900/60 h-1.5 rounded-full overflow-hidden">
+                            <div 
+                              className="bg-teal-500 h-full rounded-full transition-all duration-500"
+                              style={{ width: `${percentage}%` }}
+                            />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Session Timer Card (Option 4) */}
@@ -646,23 +712,43 @@ export const LessonDashboard: React.FC = () => {
               )}
             </div>
 
-            <div className="glass-panel p-4 flex flex-col justify-between select-none relative overflow-hidden bg-white/40 dark:bg-neutral-900/40 stat-card-anim">
-              <div className="flex items-center gap-2 mb-2">
-                <svg className="w-4 h-4 text-amber-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
-                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
-                  <path d="M4 22h16" />
-                  <path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34" />
-                  <path d="M12 2a6 6 0 0 1 6 6v5H6V8a6 6 0 0 1 6-6z" />
-                </svg>
-                <span className="text-[9px] font-bold text-[var(--color-text-secondary)] uppercase tracking-wider">Synimi</span>
+            <div 
+              ref={streakCardRef}
+              onClick={() => setIsStreakExpanded(!isStreakExpanded)}
+              className={`glass-panel p-4 flex flex-col justify-between select-none relative overflow-hidden bg-white/40 dark:bg-neutral-900/40 stat-card-anim cursor-pointer transition-all duration-300 ${
+                isStreakExpanded ? 'ring-2 ring-amber-500 border-amber-500 shadow-md scale-[1.01]' : 'hover:shadow-md'
+              }`}
+            >
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <svg className="w-4 h-4 text-amber-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+                  </svg>
+                  <span className="text-[9px] font-bold text-[var(--color-text-secondary)] uppercase tracking-wider">Vazhdimësia</span>
+                </div>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-xl font-extrabold text-[var(--color-text-primary)]">{streakCount} {streakCount === 1 ? 'Ditë' : 'Ditë'}</span>
+                </div>
+                <p className="text-[9px] text-[var(--color-text-secondary)] font-light mt-1">
+                  Ditë rresht në studim (detaje)
+                </p>
               </div>
-              <div className="flex items-baseline gap-1">
-                <span className="text-xl font-extrabold text-[var(--color-text-primary)]">{activeLevelKey}</span>
-              </div>
-              <p className="text-[9px] text-[var(--color-text-secondary)] font-light mt-1">
-                Niveli aktual aktiv
-              </p>
+
+              {isStreakExpanded && (
+                <div 
+                  className="mt-4 pt-4 border-t border-[#DDE1E5] dark:border-neutral-800 space-y-2 text-left cursor-default animate-fade-in"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <span className="text-[8px] font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-widest block font-mono">
+                    Statistikat e Vazhdimësisë
+                  </span>
+                  <p className="text-[10px] text-neutral-500 dark:text-neutral-400 leading-relaxed font-light">
+                    {streakCount > 1 
+                      ? `Vazhdoni kështu! Keni ${streakCount} ditë rresht që studioni. Çdo ditë e re shton njohuri të reja!`
+                      : "Filloni zakonin tuaj sot! Studioni çdo ditë për të mbajtur flakën e vazhdimësisë ndezur."}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>

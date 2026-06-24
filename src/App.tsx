@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import { LessonProvider, useLesson } from './application/state/LessonContext';
-import { LessonDashboard } from './presentation/components/layout/LessonDashboard';
-import { ChapterContainer } from './presentation/components/layout/ChapterContainer';
-import { DictionaryPage } from './presentation/components/layout/DictionaryPage';
-import { PlaygroundPage } from './presentation/components/layout/PlaygroundPage';
-import { ProgressPage } from './presentation/components/layout/ProgressPage';
 import { Logo } from './presentation/components/common/Logo';
-import { WelcomePage } from './presentation/components/layout/WelcomePage';
 import { SplashScreen } from './presentation/components/layout/SplashScreen';
-import { VocabularyBuilderPage } from './presentation/components/layout/VocabularyBuilderPage';
-import { FinishingTestPage } from './presentation/components/layout/FinishingTestPage';
-import { EverydayPracticePage } from './presentation/components/layout/EverydayPracticePage';
-import { SavedWordsPage } from './presentation/components/layout/SavedWordsPage';
-import { SettingsPage } from './presentation/components/layout/SettingsPage';
+
+const LessonDashboard = React.lazy(() => import('./presentation/components/layout/LessonDashboard').then(m => ({ default: m.LessonDashboard })));
+const ChapterContainer = React.lazy(() => import('./presentation/components/layout/ChapterContainer').then(m => ({ default: m.ChapterContainer })));
+const DictionaryPage = React.lazy(() => import('./presentation/components/layout/DictionaryPage').then(m => ({ default: m.DictionaryPage })));
+const PlaygroundPage = React.lazy(() => import('./presentation/components/layout/PlaygroundPage').then(m => ({ default: m.PlaygroundPage })));
+const ProgressPage = React.lazy(() => import('./presentation/components/layout/ProgressPage').then(m => ({ default: m.ProgressPage })));
+const WelcomePage = React.lazy(() => import('./presentation/components/layout/WelcomePage').then(m => ({ default: m.WelcomePage })));
+const VocabularyBuilderPage = React.lazy(() => import('./presentation/components/layout/VocabularyBuilderPage').then(m => ({ default: m.VocabularyBuilderPage })));
+const FinishingTestPage = React.lazy(() => import('./presentation/components/layout/FinishingTestPage').then(m => ({ default: m.FinishingTestPage })));
+const EverydayPracticePage = React.lazy(() => import('./presentation/components/layout/EverydayPracticePage').then(m => ({ default: m.EverydayPracticePage })));
+const SavedWordsPage = React.lazy(() => import('./presentation/components/layout/SavedWordsPage').then(m => ({ default: m.SavedWordsPage })));
+const SettingsPage = React.lazy(() => import('./presentation/components/layout/SettingsPage').then(m => ({ default: m.SettingsPage })));
 
 
 
@@ -79,8 +80,14 @@ const SettingsIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" 
   </svg>
 );
 
-
-
+const PageLoadingFallback: React.FC = () => (
+  <div className="flex-grow flex flex-col items-center justify-center min-h-[50vh] p-8 animate-fade-in text-center">
+    <div className="w-10 h-10 border-4 border-[var(--color-brand-accent-light)] border-t-[var(--color-brand-accent)] rounded-full animate-spin"></div>
+    <span className="text-xs font-mono font-bold tracking-wider text-[var(--color-text-secondary)] mt-4 uppercase">
+      Po ngarkohet...
+    </span>
+  </div>
+);
 
 const MainLayout: React.FC = () => {
   const [showSplash, setShowSplash] = useState<boolean>(true);
@@ -180,7 +187,11 @@ const MainLayout: React.FC = () => {
   }
 
   if (activePage === 'welcome') {
-    return <WelcomePage />;
+    return (
+      <React.Suspense fallback={<PageLoadingFallback />}>
+        <WelcomePage />
+      </React.Suspense>
+    );
   }
 
   return (
@@ -450,7 +461,9 @@ const MainLayout: React.FC = () => {
       <main className="flex-grow flex flex-col justify-between relative min-h-screen">
         {/* Active Page Renders Here */}
         <div className="flex-grow">
-          {renderActivePage()}
+          <React.Suspense fallback={<PageLoadingFallback />}>
+            {renderActivePage()}
+          </React.Suspense>
         </div>
 
         {/* Bottom Persistent footer */}

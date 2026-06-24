@@ -59,6 +59,15 @@ interface LessonContextType {
   resetAllData: () => void;
   toggleTheme: () => void;
 
+  // PWA State & Actions
+  deferredPrompt: any;
+  isInstallable: boolean;
+  isIOS: boolean;
+  isStandalone: boolean;
+  installApp: () => Promise<void>;
+
+  // Streak State
+  streakCount: number;
 }
 
 const LessonContext = createContext<LessonContextType | undefined>(undefined);
@@ -110,6 +119,47 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const [lifetimeSeconds, setLifetimeSeconds] = useState<number>(0);
   const [isSessionRunning, setIsSessionRunning] = useState<boolean>(true);
   const [hasSavedSession, setHasSavedSession] = useState<boolean>(false);
+
+  // PWA states
+  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
+  const [isStandalone, setIsStandalone] = useState<boolean>(false);
+  const [isIOS, setIsIOS] = useState<boolean>(false);
+
+  // Streak state
+  const [streakCount, setStreakCount] = useState<number>(1);
+
+  useEffect(() => {
+    // Detect standalone mode
+    const standalone = window.matchMedia('(display-mode: standalone)').matches || (window.navigator as any).standalone === true;
+    setIsStandalone(standalone);
+
+    // Detect iOS
+    const ios = /iPad|iPhone|iPod/.test(window.navigator.userAgent) || (window.navigator.userAgent.includes('Mac') && 'ontouchend' in document);
+    setIsIOS(ios);
+
+    // Listen for beforeinstallprompt
+    const handleBeforeInstallPrompt = (e: Event) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+    };
+
+    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    };
+  }, []);
+
+  const installApp = async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    const choiceResult = await deferredPrompt.userChoice;
+    if (choiceResult.outcome === 'accepted') {
+      console.log('PWA installation accepted');
+    } else {
+      console.log('PWA installation dismissed');
+    }
+    setDeferredPrompt(null);
+  };
 
   const sessionSecondsRef = useRef<number>(0);
   const lifetimeSecondsRef = useRef<number>(0);
@@ -188,6 +238,39 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   useEffect(() => {
     const list = ChapterRepository.getAllChapters();
     setChapters(list);
+
+    // Load and calculate study streak
+    const today = getTodayDateString();
+    const savedStreak = parseInt(localStorage.getItem('ura_streak_count') || '0', 10);
+    const savedLastActive = localStorage.getItem('ura_last_active_date') || '';
+
+    if (savedLastActive === today) {
+      // Already active today, streak is current
+      setStreakCount(savedStreak || 1);
+    } else {
+      // Check if yesterday was active
+      const yesterday = new Date();
+      yesterday.setDate(yesterday.getDate() - 1);
+      const yesterdayStr = `${yesterday.getFullYear()}-${String(yesterday.getMonth() + 1).padStart(2, '0')}-${String(yesterday.getDate()).padStart(2, '0')}`;
+      
+      if (savedLastActive === yesterdayStr) {
+        // Yesterday was active, increment streak today!
+        const nextStreak = savedStreak + 1;
+        setStreakCount(nextStreak);
+        localStorage.setItem('ura_streak_count', nextStreak.toString());
+        localStorage.setItem('ura_last_active_date', today);
+      } else if (savedLastActive === '') {
+        // First time using the app, start streak at 1
+        setStreakCount(1);
+        localStorage.setItem('ura_streak_count', '1');
+        localStorage.setItem('ura_last_active_date', today);
+      } else {
+        // Streak was broken, reset to 1
+        setStreakCount(1);
+        localStorage.setItem('ura_streak_count', '1');
+        localStorage.setItem('ura_last_active_date', today);
+      }
+    }
 
     // Load saved username
     const savedName = localStorage.getItem('ura_user_name') || '';
@@ -517,10 +600,13 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       toggleSavedWord,
       isWordSaved,
       fontSize,
-      setFontSize
-
-
-
+      setFontSize,
+      deferredPrompt,
+      isInstallable: !!deferredPrompt,
+      isIOS,
+      isStandalone,
+      installApp,
+      streakCount
     }}>
       {children}
     </LessonContext.Provider>
