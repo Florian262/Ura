@@ -1,5 +1,5 @@
-import { PluralStrategy } from './pluralStrategy';
-import { HabitoreStrategy } from './habitoreStrategy';
+import { PluralStrategy } from './PluralStrategy';
+import { HabitoreStrategy } from './HabitoreStrategy';
 import { LocativeStrategy } from './LocativeStrategy';
 import { CopulaStrategy } from './CopulaStrategy';
 import { PresentContinuousStrategy } from './PresentContinuousStrategy';

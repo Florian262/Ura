@@ -10,8 +10,12 @@ import { WelcomePage } from './presentation/components/layout/WelcomePage';
 import { SplashScreen } from './presentation/components/layout/SplashScreen';
 import { VocabularyBuilderPage } from './presentation/components/layout/VocabularyBuilderPage';
 import { FinishingTestPage } from './presentation/components/layout/FinishingTestPage';
-import JourneyDashboard from './presentation/components/layout/JourneyDashboard';
 import { EverydayPracticePage } from './presentation/components/layout/EverydayPracticePage';
+import { SavedWordsPage } from './presentation/components/layout/SavedWordsPage';
+import { SettingsPage } from './presentation/components/layout/SettingsPage';
+
+
+
 const HomeIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
     <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -69,6 +73,21 @@ const ChatIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" }) =
   </svg>
 );
 
+const StarIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+  </svg>
+);
+
+const SettingsIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="3" />
+    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+  </svg>
+);
+
+
+
 
 const MainLayout: React.FC = () => {
   const [showSplash, setShowSplash] = useState<boolean>(true);
@@ -91,13 +110,17 @@ const MainLayout: React.FC = () => {
 
   const navItems = [
     { id: 'lessons', label: 'Dashboard', icon: <HomeIcon className="w-5 h-5" />, desc: 'Kapitujt e Studimit' },
-    { id: 'journey', label: 'Udhëtimi', icon: <BridgeIcon className="w-5 h-5" />, desc: 'Udhëtimi Parallaks' },
     { id: 'lesson_active', label: 'Kapitulli Aktiv', icon: <BookOpenIcon className="w-5 h-5" />, desc: 'Mësimi aktual', disabled: !currentChapter },
+
     { id: 'everyday_practice', label: 'Praktikë Ditore', icon: <ChatIcon className="w-5 h-5" />, desc: 'Dialogje & Tregime Praktike' },
     { id: 'dictionary', label: 'Fjalori', icon: <SearchIcon className="w-5 h-5" />, desc: 'Balkanizmat e përbashkët' },
     { id: 'vocab_builder', label: 'Fjalorthi Tematik', icon: <BooksIcon className="w-5 h-5" />, desc: 'Fjalët A1 & A2' },
+    { id: 'saved_words', label: 'Të Ruajturat', icon: <StarIcon className="w-5 h-5" />, desc: 'Fjalët e mia të ruajtura' },
     { id: 'playground', label: 'Playground', icon: <LightningIcon className="w-5 h-5" />, desc: 'Motorri Aglutinues' },
-    { id: 'progress', label: 'Progresi Im', icon: <BarChartIcon className="w-5 h-5" />, desc: 'Statistikat & Gjurmimi' }
+    { id: 'progress', label: 'Progresi Im', icon: <BarChartIcon className="w-5 h-5" />, desc: 'Statistikat & Gjurmimi' },
+    { id: 'settings', label: 'Cilësimet', icon: <SettingsIcon className="w-5 h-5" />, desc: 'Madhësia e shkronjave & Rregullat' }
+
+
   ];
 
   const handleNavClick = (pageId: string) => {
@@ -123,20 +146,25 @@ const MainLayout: React.FC = () => {
     switch (activePage) {
       case 'lessons':
         return <LessonDashboard />;
-      case 'journey':
-        return <JourneyDashboard />;
       case 'lesson_active':
         return <ChapterContainer />;
+
       case 'everyday_practice':
         return <EverydayPracticePage />;
       case 'dictionary':
         return <DictionaryPage />;
       case 'vocab_builder':
         return <VocabularyBuilderPage />;
+      case 'saved_words':
+        return <SavedWordsPage />;
       case 'playground':
         return <PlaygroundPage />;
+
       case 'progress':
         return <ProgressPage />;
+      case 'settings':
+        return <SettingsPage />;
+
       case 'a2_test':
         return <FinishingTestPage level="A2" subType="official" />;
       case 'a2_practice_a':
@@ -433,16 +461,15 @@ const MainLayout: React.FC = () => {
         </div>
 
         {/* Bottom Persistent footer */}
-        {activePage !== 'journey' && (
-          <footer className="w-full bg-[var(--color-bg-surface)] border-t border-[var(--color-border-primary)] py-6 text-center text-[10px] text-[var(--color-text-secondary)] font-light space-y-1.5">
-            <p className="tracking-wide">
-              © {new Date().getFullYear()} Ura e Gjuhës. Zhvilluar për studim profesional offline.
-            </p>
-            <p className="italic text-[var(--color-text-secondary)] opacity-60 max-w-lg mx-auto leading-relaxed px-4">
-              Ky portal përdor huazimet e përbashkëta Ballkanike dhe krahasimet e Mënyrës Habitore me Kohën e Shkuar të Pacaktuar turke për të përshpejtuar mësimin.
-            </p>
-          </footer>
-        )}
+        <footer className="w-full bg-[var(--color-bg-surface)] border-t border-[var(--color-border-primary)] py-6 text-center text-[10px] text-[var(--color-text-secondary)] font-light space-y-1.5">
+          <p className="tracking-wide">
+            © {new Date().getFullYear()} Ura e Gjuhës. Zhvilluar për studim profesional offline.
+          </p>
+          <p className="italic text-[var(--color-text-secondary)] opacity-60 max-w-lg mx-auto leading-relaxed px-4">
+            Ky portal përdor huazimet e përbashkëta Ballkanike dhe krahasimet e Mënyrës Habitore me Kohën e Shkuar të Pacaktuar turke për të përshpejtuar mësimin.
+          </p>
+        </footer>
+
       </main>
 
     </div>

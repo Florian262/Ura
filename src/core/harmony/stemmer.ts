@@ -97,6 +97,16 @@ const checkVerbFallback = (s: string) => {
 export function findMatchInDictionary(stem: string, allowConjunctions = true): DictionaryEntry | null {
   if (!stem) return null;
 
+  // Special fallbacks for vowel-narrowed stems of 'demek' (d/di -> demek) and 'yemek' (y/yi -> yemek)
+  if (stem === 'd' || stem === 'di') {
+    const match = cleanedDictionary.find(entry => entry.cleanWord === 'demek');
+    if (match) return match as DictionaryEntry;
+  }
+  if (stem === 'y' || stem === 'yi') {
+    const match = cleanedDictionary.find(entry => entry.cleanWord === 'yemek');
+    if (match) return match as DictionaryEntry;
+  }
+
   const isMatch = (entry: any, targetStem: string) => {
     if (!allowConjunctions && (entry.pos === 'lidhëz' || entry.pos === 'pasthirrmë')) {
       return false;
@@ -106,6 +116,14 @@ export function findMatchInDictionary(stem: string, allowConjunctions = true): D
 
   const match = cleanedDictionary.find(entry => isMatch(entry, stem));
   if (match) return match as DictionaryEntry;
+
+  // Try restoring dropped final vowel (e.g., kendi -> kend)
+  const finalVowels = ['ı', 'i', 'u', 'ü', 'a', 'e'];
+  for (const v of finalVowels) {
+    const candidate = stem + v;
+    const m = cleanedDictionary.find(entry => isMatch(entry, candidate));
+    if (m) return m as DictionaryEntry;
+  }
 
   // Try softening reversals
   if (stem.endsWith('b')) {
@@ -185,12 +203,21 @@ export interface StrippedSuffix {
 }
 
 const SUFFIX_DETAILS: Array<{ pattern: RegExp; type: string; label: string; meaning: string }> = [
+  // Possessives (checked early to avoid conflict with shorter copula suffixes on vowel-ending stems)
+  { pattern: /(?:mız|miz|muz|müz)$/i, type: 'possessive', label: 'imiz (ynë/jona)', meaning: 'ynë / jona' },
+  { pattern: /(?:nız|niz|nuz|nüz)$/i, type: 'possessive', label: 'iniz (juaj)', meaning: 'juaj' },
+
   // Since suffix (spaces removed in clean word)
   { pattern: /(?:d|t)[ıiuü]ğ[ıiuü](?:m|n|miz|niz)?(?:dan|den)beri$/i, type: 'since', label: 'diğinden beri (që kur)', meaning: 'që kur' },
   // Relative / Pronoun suffix -ki
   { pattern: /(?:ki)$/i, type: 'derivational', label: 'ki (relativizues)', meaning: 'që është në / i/e' },
   // Plural
   { pattern: /(?:lar|ler)$/i, type: 'plural', label: 'ler/lar (shumës)', meaning: 'shumës' },
+
+  // Genitive/Case endings (checked before person copulas and buffer-y imperatives to ensure proper root resolution on stems ending in y/vowel)
+  { pattern: /(?:nın|nin|nun|nün)$/i, type: 'case', label: 'in (e/i)', meaning: 'i/e (gjini)' },
+  { pattern: /(?:ın|in|un|ün)$/i, type: 'case', label: 'in (e/i)', meaning: 'i/e (gjini)' },
+
   // Person Copula / Verb person - Split optional 'y' to prevent greedy root collision
   { pattern: /(?:sınız|siniz|sunuz|sünüz)$/i, type: 'person', label: 'siniz (ju)', meaning: 'ju jeni' },
   { pattern: /(?:yım|yim|yum|yüm)$/i, type: 'person', label: 'im (unë)', meaning: 'unë / jam' },
@@ -208,8 +235,6 @@ const SUFFIX_DETAILS: Array<{ pattern: RegExp; type: string; label: string; mean
   { pattern: /(?:yla|yle)$/i, type: 'case', label: 'la (me)', meaning: 'me' },
   { pattern: /(?:la|le)$/i, type: 'case', label: 'la (me)', meaning: 'me' },
   { pattern: /(?:ca|ce|ça|çe)$/i, type: 'case', label: 'ca (sipas/për/si)', meaning: 'sipas / për / si' },
-  { pattern: /(?:nın|nin|nun|nün)$/i, type: 'case', label: 'in (e/i)', meaning: 'i/e (gjini)' },
-  { pattern: /(?:ın|in|un|ün)$/i, type: 'case', label: 'in (e/i)', meaning: 'i/e (gjini)' },
   { pattern: /(?:ye|ya)$/i, type: 'case', label: 'e (drejt/te)', meaning: 'drejt / te' },
   // Active participle (placed here so it is checked before e/a and n, but after dan/den/ta/te/etc. to avoid masking them)
   { pattern: /(?:yan|yen)$/i, type: 'participle', label: 'en (që)', meaning: 'që' },
@@ -218,8 +243,6 @@ const SUFFIX_DETAILS: Array<{ pattern: RegExp; type: string; label: string; mean
   { pattern: /(?:yı|yi|yu|yü)$/i, type: 'case', label: 'i (kallëzore)', meaning: '(kallëzore)' },
   { pattern: /(?:ı|i|u|ü)$/i, type: 'case', label: 'i (kallëzore)', meaning: '(kallëzore)' },
   // Possessives
-  { pattern: /(?:mız|miz|muz|müz)$/i, type: 'possessive', label: 'imiz (ynë/jona)', meaning: 'ynë / jona' },
-  { pattern: /(?:nız|niz|nuz|nüz)$/i, type: 'possessive', label: 'iniz (juaj)', meaning: 'juaj' },
   { pattern: /(?:ları|leri)$/i, type: 'possessive', label: 'leri (e tyre)', meaning: 'e tyre' },
   { pattern: /(?:si|sı|su|sü)$/i, type: 'possessive', label: 'i (tij/saj)', meaning: 'i/e tij/saj' },
   { pattern: /(?:ı|i|u|ü)$/i, type: 'possessive', label: 'i (tij/saj)', meaning: 'i/e tij/saj' },

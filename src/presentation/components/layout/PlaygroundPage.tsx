@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { PluralStrategy } from '../../../core/harmony/strategies/pluralStrategy';
-import { HabitoreStrategy } from '../../../core/harmony/strategies/habitoreStrategy';
+import { PluralStrategy } from '../../../core/harmony/strategies/PluralStrategy';
+import { HabitoreStrategy } from '../../../core/harmony/strategies/HabitoreStrategy';
 import { applyConsonantMutation, endsWithKetcap } from '../../../core/harmony/consonantMutation';
 import { getLastVowel, getVowelHarmony2, getVowelHarmony4 } from '../../../core/harmony/vowelHarmony';
 
-const TURKISH_CHARS_REGEX = /[^a-zA-ZçğıöşüÇĞİÖŞÜ]/g;
+const TURKISH_CHARS_REGEX = /[^a-zA-ZçğıöşüÇĞİÖŞÜâîûÂÎÛ]/g;
 
 export const PlaygroundPage: React.FC = () => {
   const [customWord, setCustomWord] = useState<string>('kitap');

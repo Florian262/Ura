@@ -152,7 +152,6 @@ export const GrammarModule: React.FC<GrammarModuleProps> = ({ onComplete }) => {
   
   // Local states for interactive tool
   const [selectedWord, setSelectedWord] = useState<string>('kitap');
-  const [interactiveResult, setInteractiveResult] = useState<any>(null);
   const [customWordInput, setCustomWordInput] = useState<string>('');
   const [showTranslation, setShowTranslation] = useState<boolean>(false);
 
@@ -160,10 +159,27 @@ export const GrammarModule: React.FC<GrammarModuleProps> = ({ onComplete }) => {
 
   const currentCard = grammarCards[carouselStep] || grammarCards[0];
 
+  // Sync selectedWord when currentCard.id changes (stores information from previous renders without useEffect)
+  const [prevCardId, setPrevCardId] = useState<number | undefined>(undefined);
+  if (currentCard && currentCard.id !== prevCardId) {
+    setPrevCardId(currentCard.id);
+    const currentConfig = currentCard.interactive_example_json 
+      ? JSON.parse(currentCard.interactive_example_json)
+      : null;
+    setSelectedWord(currentConfig?.root || 'kitap');
+  }
+
+  // Derive interactive configuration and strategy results
   const config = currentCard?.interactive_example_json 
     ? JSON.parse(currentCard.interactive_example_json)
     : null;
   const cardSampleWords = config?.sampleWords || [];
+  const strategyKey = config?.strategy || 'plural';
+  const StrategyClass = SuffixRegistry[strategyKey];
+
+  const interactiveResult = (StrategyClass && selectedWord)
+    ? new StrategyClass().apply(selectedWord)
+    : null;
 
   // Trigger onComplete when reaching the final step in the carousel
   useEffect(() => {
@@ -184,32 +200,14 @@ export const GrammarModule: React.FC<GrammarModuleProps> = ({ onComplete }) => {
     }
   };
 
-  // Run dynamic strategy on the selected word
-  const runAgglutination = (word: string) => {
-    setSelectedWord(word);
-    
-    const currentConfig = currentCard?.interactive_example_json 
-      ? JSON.parse(currentCard.interactive_example_json)
-      : null;
-    const strategyKey = currentConfig?.strategy || 'plural';
-    const StrategyClass = SuffixRegistry[strategyKey];
-
-    if (StrategyClass) {
-      const strategy = new StrategyClass();
-      const output = strategy.apply(word);
-      setInteractiveResult(output);
-      onComplete?.();
-    }
-  };
-
   const handleCustomWordSubmit = () => {
     const cleanWord = customWordInput
       .toLowerCase()
       .trim()
-      .replace(/[^a-zçğışöüÇĞİŞÖÜ]/gi, '');
+      .replace(/[^a-zçğışöüÇĞİŞÖÜâîûÂÎÛ]/gi, ''); // Align with Playground circumflexes support
       
     if (cleanWord.length > 0) {
-      runAgglutination(cleanWord);
+      setSelectedWord(cleanWord);
       setCustomWordInput('');
     } else {
       alert(isB2 
@@ -217,17 +215,6 @@ export const GrammarModule: React.FC<GrammarModuleProps> = ({ onComplete }) => {
         : 'Ju lutemi shkruani një fjalë të vlefshme me shkronja!');
     }
   };
-
-  // Initialize interactive result on card change
-  useEffect(() => {
-    if (currentCard?.interactive_example_json) {
-      const currentConfig = JSON.parse(currentCard.interactive_example_json);
-      const initialWord = currentConfig.root || 'kitap';
-      runAgglutination(initialWord);
-    } else {
-      setInteractiveResult(null);
-    }
-  }, [currentCard?.id]);
 
   if (grammarCards.length === 0) return null;
 
@@ -310,7 +297,7 @@ export const GrammarModule: React.FC<GrammarModuleProps> = ({ onComplete }) => {
                     {cardSampleWords.map((sw: any) => (
                       <button
                         key={sw.turkish}
-                        onClick={() => runAgglutination(sw.turkish)}
+                        onClick={() => setSelectedWord(sw.turkish)}
                         className={`px-3 py-2 rounded-xl border text-xs font-bold transition duration-200 cursor-pointer shadow-xs ${
                           selectedWord === sw.turkish
                             ? 'bg-[#3A5A40]/10 text-[#3A5A40] border-[#3A5A40]'

@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { useLesson } from '../../../application/state/LessonContext';
+
 
 export interface DictionaryEntry {
   id: string;
@@ -32,7 +34,11 @@ export const WordDetailDrawer: React.FC<WordDetailDrawerProps> = ({
   onClose,
   onSpeak,
 }) => {
+  const { toggleSavedWord, isWordSaved } = useLesson();
+  const isSaved = entry ? isWordSaved(entry.word) : false;
+
   // Prevent body scrolling when the drawer is open (only on mobile screens)
+
   useEffect(() => {
     const isMobile = window.innerWidth < 768;
     if (isOpen && isMobile) {
@@ -108,10 +114,22 @@ export const WordDetailDrawer: React.FC<WordDetailDrawerProps> = ({
             {/* Actions */}
             <div className="flex gap-2">
               <button
+                onClick={() => entry && toggleSavedWord(entry)}
+                className={`w-9 h-9 rounded-lg border flex items-center justify-center cursor-pointer shadow-xs transition duration-200 text-lg ${
+                  isSaved 
+                    ? 'bg-amber-50 dark:bg-amber-950/20 border-amber-300 dark:border-amber-600 text-amber-500 dark:text-amber-400 hover:bg-amber-100/50' 
+                    : 'border-[#E9ECEF] dark:border-neutral-800 hover:border-amber-400 dark:hover:border-amber-400 bg-white dark:bg-neutral-850 text-neutral-400 hover:text-amber-500'
+                }`}
+                title={isSaved ? "Hiq nga të ruajturat" : "Ruaj fjalën (⭐)"}
+              >
+                {isSaved ? '★' : '☆'}
+              </button>
+              <button
                 onClick={() => onSpeak(entry.word, entry.source)}
                 className="w-9 h-9 rounded-lg border border-[#E9ECEF] dark:border-neutral-800 hover:border-[#3A5A40] dark:hover:border-[#14B8A6] hover:text-[#3A5A40] dark:hover:text-[#14B8A6] bg-white dark:bg-neutral-850 flex items-center justify-center cursor-pointer shadow-xs transition duration-200 text-lg"
                 title="Shqipto fjalën zanor"
               >
+
                 🔊
               </button>
               <button

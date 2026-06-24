@@ -15,10 +15,9 @@ describe('Automated Glossary Generator and Verification Pipeline', () => {
     // 1. Initialize our working glossary copy with the existing manual glossary entries
     const updatedGlossary: Record<number, Record<string, { root: string; translation: string; explanation?: string }>> = {};
     
-    // Copy existing glossary entries
-    for (const chapterIdStr of Object.keys(readingGlossary)) {
-      const chapterId = parseInt(chapterIdStr, 10);
-      updatedGlossary[chapterId] = { ...readingGlossary[chapterId] };
+    // Start from a clean slate to find all missing words and rebuild the dictionary mappings accurately
+    for (const lesson of ALL_UNIFIED_LESSONS) {
+      updatedGlossary[lesson.id] = {};
     }
 
     const unresolvableWordsReport: Array<{ lessonId: number; level: string; word: string; sentence: string }> = [];

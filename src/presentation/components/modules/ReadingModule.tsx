@@ -46,7 +46,8 @@ const Avatar: React.FC<{ speakerName: string }> = ({ speakerName }) => {
 };
 
 export const ReadingModule: React.FC = () => {
-  const { currentChapter, readingBlock, readingQuestions, setReadingCompleted, readingCompleted } = useLesson();
+  const { currentChapter, readingBlock, readingQuestions, setReadingCompleted, readingCompleted, toggleSavedWord, isWordSaved } = useLesson();
+
   const { play, playDialogue, playText, stop, isPlaying, currentSrc, activeDialogueIndex } = useAudioPlayer();
   const [showTranslation, setShowTranslation] = useState<boolean>(false);
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, number>>({});
@@ -89,7 +90,11 @@ export const ReadingModule: React.FC = () => {
   useEffect(() => {
     if (!activeWordPopup) return;
 
-    const handleOutsideClick = () => {
+    const handleOutsideClick = (e: MouseEvent | TouchEvent) => {
+      const popover = document.getElementById('word-popover-bubble');
+      if (popover && popover.contains(e.target as Node)) {
+        return;
+      }
       closeWordPopup();
     };
 
@@ -104,6 +109,7 @@ export const ReadingModule: React.FC = () => {
       window.removeEventListener('touchstart', handleOutsideClick);
     };
   }, [activeWordPopup]);
+
 
   useEffect(() => {
     if (!activeWordPopup) return;
@@ -1024,6 +1030,7 @@ export const ReadingModule: React.FC = () => {
       {/* Global Word Popover Bubble */}
       {activeWordPopup && createPortal(
         <div
+          id="word-popover-bubble"
           style={{ 
             top: `${activeWordPopup.pos.top}px`, 
             left: `${activeWordPopup.pos.left}px`,
@@ -1032,6 +1039,7 @@ export const ReadingModule: React.FC = () => {
           }}
           className="absolute z-55 pointer-events-auto"
         >
+
           <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-850 rounded-2xl shadow-lg p-4 animate-fade-in text-left flex flex-col gap-2.5">
           {/* Header */}
           <div className="flex justify-between items-start border-b border-neutral-100 dark:border-neutral-800 pb-1.5">
@@ -1044,16 +1052,33 @@ export const ReadingModule: React.FC = () => {
               </span>
             </div>
             
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                playText(activeWordPopup.entry.word, 'tr');
-              }}
-              className="w-7 h-7 rounded-lg border border-neutral-200 dark:border-neutral-800 hover:bg-[#3A5A40]/10 hover:text-[#3A5A40] flex items-center justify-center text-xs transition bg-white dark:bg-neutral-850 cursor-pointer text-neutral-500 dark:text-neutral-400"
-              title="Dëgjo fjalën"
-            >
-              🔊
-            </button>
+            <div className="flex items-center gap-1">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleSavedWord(activeWordPopup.entry);
+                }}
+                className={`w-7 h-7 rounded-lg border flex items-center justify-center text-xs transition cursor-pointer ${
+                  isWordSaved(activeWordPopup.entry.word)
+                    ? 'bg-amber-50 dark:bg-amber-950/20 border-amber-300 dark:border-amber-600 text-amber-500 dark:text-amber-400 hover:bg-amber-100/50'
+                    : 'border-neutral-200 dark:border-neutral-800 hover:border-amber-400 dark:hover:border-amber-400 bg-white dark:bg-neutral-850 text-neutral-400 hover:text-amber-500'
+                }`}
+                title={isWordSaved(activeWordPopup.entry.word) ? "Hiq nga të ruajturat" : "Ruaj fjalën (⭐)"}
+              >
+                {isWordSaved(activeWordPopup.entry.word) ? '★' : '☆'}
+              </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  playText(activeWordPopup.entry.word, 'tr');
+                }}
+                className="w-7 h-7 rounded-lg border border-neutral-200 dark:border-neutral-800 hover:bg-[#3A5A40]/10 hover:text-[#3A5A40] flex items-center justify-center text-xs transition bg-white dark:bg-neutral-850 cursor-pointer text-neutral-500 dark:text-neutral-400"
+                title="Dëgjo fjalën"
+              >
+                🔊
+              </button>
+            </div>
+
           </div>
 
           {/* Translation content */}

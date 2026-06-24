@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect, useRef } from 'r
 import type { Chapter, ReadingBlock, ReadingQuestion, Vocabulary, GrammarCard, Exercise, ListeningBlock, ListeningQuestion } from '../../infrastructure/db/seedData';
 import { ChapterRepository } from '../../infrastructure/repository/ChapterRepository';
 import { ProgressRepository, type UserProgress } from '../../infrastructure/repository/ProgressRepository';
+import type { DictionaryEntry } from '../../presentation/components/common/WordDetailDrawer';
 
 
 interface LessonContextType {
@@ -14,6 +15,16 @@ interface LessonContextType {
   vocabulary: Vocabulary[];
   grammarCards: GrammarCard[];
   exercises: Exercise[];
+  
+  // Bookmarked Words
+  savedWords: DictionaryEntry[];
+  toggleSavedWord: (entry: DictionaryEntry) => void;
+  isWordSaved: (wordText: string) => boolean;
+
+  fontSize: 'small' | 'medium' | 'large' | 'xlarge';
+  setFontSize: (size: 'small' | 'medium' | 'large' | 'xlarge') => void;
+
+
   
   // Active State
   activePage: string;
@@ -44,11 +55,10 @@ interface LessonContextType {
   saveCurrentProgress: (sectionId?: string) => void;
   markChapterCompleted: () => void;
   completeWelcome: (name: string) => void;
+  updateUserName: (name: string) => void;
   resetAllData: () => void;
   toggleTheme: () => void;
-  resumeSession: () => void;
-  resetSession: () => void;
-  toggleSession: () => void;
+
 }
 
 const LessonContext = createContext<LessonContextType | undefined>(undefined);
@@ -64,6 +74,10 @@ const getTodayDateString = () => {
 export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [chapters, setChapters] = useState<Chapter[]>([]);
   const [currentChapter, setCurrentChapter] = useState<Chapter | null>(null);
+  const [savedWords, setSavedWords] = useState<DictionaryEntry[]>([]);
+  const [fontSize, setFontSizeState] = useState<'small' | 'medium' | 'large' | 'xlarge'>('medium');
+
+
   
   // Active Navigation Page
   const [activePage, setActivePage] = useState<string>('lessons');
@@ -182,6 +196,25 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     // Load progress map
     const pMap = ProgressRepository.getProgressMap();
     setProgressMap(pMap);
+
+    // Load saved words
+    const savedWordsData = localStorage.getItem('ura_saved_words');
+    if (savedWordsData) {
+      try {
+        setSavedWords(JSON.parse(savedWordsData));
+      } catch (e) {
+        console.error('Gabim gjatë leximit të fjalëve të ruajtura nga LocalStorage', e);
+      }
+    }
+
+    // Load saved font size
+    const savedSize = (localStorage.getItem('ura_font_size') as any) || 'medium';
+    setFontSizeState(savedSize);
+    const rootEl = document.documentElement;
+    rootEl.classList.remove('font-size-small', 'font-size-medium', 'font-size-large', 'font-size-xlarge');
+    rootEl.classList.add(`font-size-${savedSize}`);
+
+
 
     // Load saved theme
     const savedTheme = (localStorage.getItem('ura_theme') as 'light' | 'dark') || 'light';
@@ -351,19 +384,52 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     setActivePage('lessons');
   };
 
+  const updateUserName = (name: string) => {
+    const trimmed = name.trim();
+    localStorage.setItem('ura_user_name', trimmed);
+    setUserNameState(trimmed);
+  };
+
+  const toggleSavedWord = (entry: DictionaryEntry) => {
+
+    setSavedWords(prev => {
+      const exists = prev.some(w => w.word.toLowerCase().trim() === entry.word.toLowerCase().trim());
+      let next;
+      if (exists) {
+        next = prev.filter(w => w.word.toLowerCase().trim() !== entry.word.toLowerCase().trim());
+      } else {
+        next = [...prev, entry];
+      }
+      localStorage.setItem('ura_saved_words', JSON.stringify(next));
+      return next;
+    });
+  };
+
+  const isWordSaved = (wordText: string): boolean => {
+    if (!wordText) return false;
+    const cleanWord = wordText.toLowerCase().trim();
+    return savedWords.some(w => w.word.toLowerCase().trim() === cleanWord);
+  };
+
+  const setFontSize = (size: 'small' | 'medium' | 'large' | 'xlarge') => {
+    setFontSizeState(size);
+    localStorage.setItem('ura_font_size', size);
+    
+    // Apply styling class to html root
+    const root = document.documentElement;
+    root.classList.remove('font-size-small', 'font-size-medium', 'font-size-large', 'font-size-xlarge');
+    root.classList.add(`font-size-${size}`);
+  };
+
   const completeWelcome = (name: string) => {
+
+
     const trimmed = name.trim();
     localStorage.setItem('ura_user_name', trimmed);
     localStorage.setItem('ura_welcome_seen', 'true');
     setUserNameState(trimmed);
     setActivePage('lessons');
   };
-
-  const resumeSession = () => {};
-
-  const resetSession = () => {};
-
-  const toggleSession = () => {};
 
   const resetAllData = () => {
     const confirmation = window.confirm(
@@ -388,6 +454,10 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       setVocabulary([]);
       setGrammarCards([]);
       setExercises([]);
+      setSavedWords([]);
+      setFontSize('medium');
+
+
       setUserNameState('');
       setActiveSectionState('reading');
       setReadingCompleted(false);
@@ -416,6 +486,7 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       vocabulary,
       grammarCards,
       exercises,
+      savedWords,
       activePage,
       activeSection,
       readingCompleted,
@@ -440,11 +511,16 @@ export const LessonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       saveCurrentProgress,
       markChapterCompleted,
       completeWelcome,
+      updateUserName,
       resetAllData,
       toggleTheme,
-      resumeSession,
-      resetSession,
-      toggleSession
+      toggleSavedWord,
+      isWordSaved,
+      fontSize,
+      setFontSize
+
+
+
     }}>
       {children}
     </LessonContext.Provider>

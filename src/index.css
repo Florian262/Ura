@@ -75,6 +75,11 @@
   --shadow-elevated: 0 1px 2px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.25), 0 12px 24px rgba(0, 0, 0, 0.35);
 }
 
+html.font-size-small { font-size: 14px !important; }
+html.font-size-medium { font-size: 16px !important; }
+html.font-size-large { font-size: 18px !important; }
+html.font-size-xlarge { font-size: 20px !important; }
+
 body {
   margin: 0;
   min-height: 100vh;
